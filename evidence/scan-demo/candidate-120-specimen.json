@@ -1,0 +1,29 @@
+{
+  "request": {
+    "task": "end-to-end OBJ to PicoGK STL demo",
+    "triangles": 1240465,
+    "boundary_edges": 8611,
+    "connected_surface_components": 2,
+    "units_confirmed": false,
+    "user_allows_demo_assumptions": true,
+    "mm_per_source_unit_assumed": 1.0,
+    "voxel_mm_assumed": 0.5
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a bounded scan-to-PicoGK demo planner. Return exactly one JSON object with keys method, target_faces, poisson_depth, mm_per_source_unit, voxel_mm, manufacturing_qualified. method is screened_poisson for open scans or direct_voxelization for closed scans. User-declared demo scale and voxel step must be preserved. Allowed Poisson depth 8 or 9; allowed target_faces 180000 or 300000. Use 9 and 180000 for scans above 1000000 triangles. manufacturing_qualified must always be false. No code, prose, fences or invented physical measurements."
+    },
+    {
+      "role": "user",
+      "content": "{\"task\": \"end-to-end OBJ to PicoGK STL demo\", \"triangles\": 1240465, \"boundary_edges\": 8611, \"connected_surface_components\": 2, \"units_confirmed\": false, \"user_allows_demo_assumptions\": true, \"mm_per_source_unit_assumed\": 1.0, \"voxel_mm_assumed\": 0.5}"
+    }
+  ],
+  "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":1.0,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+  "finish_reason": "stop",
+  "adapter_sha256": "c700014e4061ede1a6bb1f6e0c5a084f759f5f47fd4bc585cc2c795e89f6c970",
+  "model_called": true,
+  "geometry_encoder": false,
+  "accepted": false,
+  "rejection": "Proposal disagrees with independently registered scan policy/assumptions"
+}

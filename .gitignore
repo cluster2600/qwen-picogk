@@ -8,3 +8,5 @@ __pycache__/
 native/bin/
 native/obj/
 !native/packages.lock.json
+scan-native/bin/
+scan-native/obj/

@@ -101,6 +101,26 @@ def check(weights=False):
         assert hashlib.sha256((ROOT/'scripts/animate_mesh.py').read_bytes()).hexdigest()==receipt['source_sha256']
     print(json.dumps({'data_files_verified': len(manifest['data_files']), 'synthetic_cases': len(cases),
                       'training_rows': len(rows), 'weights_verified': weights, 'dataset_code_executed': False}))
+    if (ROOT/'scan-demo.json').exists():
+        scan=json.loads((ROOT/'scan-demo.json').read_text())
+        for name,sha in {**scan['sources_sha256'],**scan['data_sha256']}.items():
+            path=(ROOT/name).resolve()
+            assert path.is_relative_to(ROOT) and hashlib.sha256(path.read_bytes()).hexdigest()==sha
+        from scan_policy import expected
+        records=json.loads((ROOT/'data/scan-demo/cases.json').read_text())
+        signatures={}
+        for split,count in [('train',480),('valid',24),('test',40)]:
+            part=[r for r in records if r['split']==split]
+            assert len(part)==count and all(expected(r['request'])==r['expected'] for r in part)
+            signatures[split]={json.dumps(r['request'],sort_keys=True) for r in part}
+            messages=[json.loads(line) for line in (ROOT/'data/scan-demo'/(split+'.jsonl')).read_text().splitlines()]
+            assert len(messages)==count
+            assert all(json.loads(row['messages'][2]['content'])==r['expected'] for row,r in zip(messages,part))
+        assert not(signatures['train']&signatures['valid'] or signatures['train']&signatures['test'] or signatures['valid']&signatures['test'])
+        if weights:
+            for name,sha in scan['adapter'].items():
+                assert hashlib.sha256((ROOT/'models/scan-demo'/name).read_bytes()).hexdigest()==sha
+        print('Separate scan-demo source/data integrity passed; no scan geometry executed')
 
 
 if __name__ == '__main__':

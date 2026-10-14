@@ -1,0 +1,36 @@
+{
+  "schema": "qwen-picogk.scan-demo@1",
+  "adapter": {
+    "adapters.safetensors": "f5835f5edca280da7451ef9becebfa4acf3acd434e0640f5dcc750a83ac68bc1",
+    "adapter_config.json": "c5e0a3dcd8210fc8c13db1e627fbe679e5227c76c06e537eaca59cac5790f5fb"
+  },
+  "system_prompt": "You are the scan-demo tool planner. Output only JSON with method, target_faces, poisson_depth, mm_per_source_unit, voxel_mm, manufacturing_qualified. If surface_topology is open, method must be screened_poisson. If surface_topology is closed, method must be direct_voxelization. Copy the declared scale and voxel step exactly. Use target_faces 180000 when triangles > 1000000, otherwise 300000. Use poisson_depth 9. manufacturing_qualified is always false. Proposals are independently checked. No code, prose or physical certification.",
+  "sources_sha256": {
+    "scan_demo.py": "78261f46f4e69572f081a7aa51b34f2eb84d28c3019a9dd9c0bdb585985e837b",
+    "scripts/scan_mesh.py": "fd3458690acf083d8d62d06c5e083f44d7ca00fda9d3f780c2067b267f201b89",
+    "scripts/scan_policy.py": "e1667ed881c297e163f49d6f57c1bd07b825537b23d4a956028daa222fc062d1",
+    "scan-native/Program.cs": "09502cb21da03a35e46c09c0d7cb10066035cdf03a28354a97b2d96e3f281eb1",
+    "scan-native/ScanDemo.csproj": "6a178802213298f554bd2a840bb37b14cbe35e7a8819aa45e27f70f3b80755d3",
+    "scan-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f"
+  },
+  "geometry_image_id": "sha256:f9c09072b2cfb4d177c8700263f76c6f065d81fd68f8115697a884b4473e63b1",
+  "trained_parent_sha256": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
+  "data_sha256": {
+    "data/scan-demo/train.jsonl": "1bc49906bac867e046212f55babb32f5a4c99bc3c922b7d0016ed0c86f4594e2",
+    "data/scan-demo/test.jsonl": "4919f28e01127ddf9df76a95b6c49ff49461110336c2d3857abf1714a3998a34",
+    "data/scan-demo/cases.json": "2d9002fd97b81a424ac99fca243fab57f5238038ea23ef992ffd85ce6d5a4b69",
+    "data/scan-demo/valid.jsonl": "3df0b0c00dd11edb01e76d3dd42f4fbcf0ce6075c29919180baa885c8e11b49b",
+    "training-scan-demo.yaml": "9360311295bc2b6cddb99fdb424b0810018976cdf79db4fa700144dea1231622",
+    "evidence/scan-demo/released-planner-rejected.json": "3e7bf941430e1cd32fa628ab123fed5b9abf0fd6d79966af36179885b80fe9c2",
+    "evidence/scan-demo/candidate-120-specimen.json": "d294d7bfd9b97c6bfb2cd10df355eee1c2f3b7f8ce7f2ca43c1ab84e2a324fde",
+    "evidence/scan-demo/training-registered-v2.json": "ce08b5b38cdb4177fdd260b1299c9836ba95c877b4667a1c898e5adaf35418e4",
+    "evidence/scan-demo/scan-evaluation-v2.json": "e7fde76f1f44780faeb188a5267204bdcf1fe11661e6ac02fd83eb77c1249cc4",
+    "evidence/scan-demo/execution-final-registered.json": "35475945854b63ef4c38a559e786687d100a98a9cf8f7d4ce86552930cc4a7ac",
+    "evidence/scan-demo/training-registered.json": "99ec2e879e2689fd8935a085e8231251ef3a674b6d812f1d17d53eb80bbd981d",
+    "evidence/scan-demo/scan-evaluation.json": "738526520574dcf93831da3560f29f810752aac12cd36cf8ce68f5f004ed984d",
+    "evidence/scan-demo/candidate-160-exact-specimen.json": "9fc5346cdb6be985e1c9941da12b459434eb61a1916af0f427c5a10b588c9f2c",
+    "evidence/scan-demo/execution-final.json": "2d9c61e02a9752675f725d6828a7d9399c437d89a4c9393ef4663b781e017a1b",
+    "evidence/scan-demo/automatic-scan-rejected.json": "b50168ffe3f7fa0de570daf4a653c26e9349d219f4b4db60fd3c21c314c4a966",
+    "evidence/scan-demo/execution-policy-v1.py.txt": "6e4e5c12f562c56dd08989c54d29f8fe4a02bc3e855401942cca55525f9c79cd"
+  }
+}

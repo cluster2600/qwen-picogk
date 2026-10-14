@@ -2,6 +2,11 @@
 
 ## Current answer
 
+The original release described below remains unchanged. A separate
+[end-to-end OBJ-to-STL demo](OBJ_TO_STL_DEMO.md) adds typed scan analysis,
+an additional tool-planning adapter and independent geometry checks. This is
+a tool-assisted workflow, not raw-scan understanding inherited by this adapter.
+
 The released adapter is a **text model**, based on `Qwen2ForCausalLM`. It has
 no point-cloud/mesh encoder and was not trained on scan-to-PicoGK pairs.
 `infer.py` accepts explicit numeric fields for six bounded categories; it

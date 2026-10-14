@@ -1,0 +1,17 @@
+{
+  "scope": "separate scan demo tool planner; synthetic numeric metadata; no raw mesh training",
+  "train": 360,
+  "valid": 24,
+  "test": 30,
+  "split_signatures_disjoint": true,
+  "seed": 9931414,
+  "checkpoint_policy": "fixed 120 final steps; test evaluated once after training; no tuning on test",
+  "parent_sha256": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
+  "files": {
+    "training-data/train.jsonl": "eb3b618c4baae983132929c8c0886c86ef80d5cef99583084d4a0d0aa4e4af6d",
+    "training-data/test.jsonl": "71a5e993426b226c8b781d4c7615dc75ec0773246078fba774228a94cddfeea6",
+    "training-data/valid.jsonl": "94586fff9ea682b4c286375ee2e93d7f3f1c2c14eaa33c2b5adacc3a5d9f60bb",
+    "training-config.yaml": "1e1083ec1635401d6d0f362cdcdb41f15d5838ec0e48bf9e06b00a57c5668631",
+    "scan-training-cases.json": "16cf8496e2e0a5be432fabc66661439501c254aaec038a98457fbf30c94dc0ba"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "status": "demo_geometry_rejected",
+  "input_sha256": "244d4caeb2c4ac4a692b650ec9d766bee2a8124335a0236a55a1d30c1b2b98ba",
+  "model_adapter_sha256": "f5835f5edca280da7451ef9becebfa4acf3acd434e0640f5dcc750a83ac68bc1",
+  "quality": {
+    "status": "demo_geometry_rejected",
+    "checks": {
+      "watertight": true,
+      "winding_consistent": true,
+      "one_component": false,
+      "positive_volume": true,
+      "no_zero_area_faces": true,
+      "topology_clean": true,
+      "scan_coverage": true,
+      "reconstructed_surface": false
+    },
+    "topology": {
+      "self_intersection_faces": 0,
+      "nonmanifold_edge_faces": 0,
+      "nonmanifold_vertices": 0
+    },
+    "components": 2,
+    "triangles": 2315628,
+    "volume_mm3_assumed": 1151080.9676847935,
+    "scan_to_native": {
+      "samples": 2000,
+      "seed": 9931414,
+      "rms_mm": 0.03482917913412468,
+      "p95_mm": 0.07218784177087913,
+      "sampled_max_mm": 0.2592743853664021,
+      "method": "area_uniform_points_to_triangles; sampled extrema, not exact Hausdorff"
+    },
+    "native_to_open_scan": {
+      "samples": 2000,
+      "seed": 9931415,
+      "rms_mm": 1.8544547608563604,
+      "p95_mm": 0.7051169698289234,
+      "sampled_max_mm": 19.898844965592662,
+      "method": "area_uniform_points_to_triangles; sampled extrema, not exact Hausdorff"
+    },
+    "native_sha256": "cc2012f40ab8b917f910482a97b89e848a5fd84296d741ee97fa84e7079017c6",
+    "source_sha256": "244d4caeb2c4ac4a692b650ec9d766bee2a8124335a0236a55a1d30c1b2b98ba",
+    "manufacturing_qualified": false,
+    "supports_prepared": false,
+    "scale_verified": false,
+    "rotation_authorized": false
+  },
+  "assumptions": {
+    "mm_per_source_unit": 1.0,
+    "voxel_mm": 0.5,
+    "material": "AlSi10Mg",
+    "process": "laser powder bed fusion"
+  },
+  "llm_role": "typed topology features to guarded tool plan; not a raw-mesh encoder or C# author",
+  "human_geometry_editing": false,
+  "manufacturing_qualified": false,
+  "source_binding": {
+    "scan_demo.py": "78261f46f4e69572f081a7aa51b34f2eb84d28c3019a9dd9c0bdb585985e837b",
+    "scripts/scan_mesh.py": "fd3458690acf083d8d62d06c5e083f44d7ca00fda9d3f780c2067b267f201b89",
+    "scripts/scan_policy.py": "6e4e5c12f562c56dd08989c54d29f8fe4a02bc3e855401942cca55525f9c79cd",
+    "scan-native/Program.cs": "09502cb21da03a35e46c09c0d7cb10066035cdf03a28354a97b2d96e3f281eb1",
+    "scan-native/ScanDemo.csproj": "6a178802213298f554bd2a840bb37b14cbe35e7a8819aa45e27f70f3b80755d3",
+    "scan-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f"
+  },
+  "source_policy_snapshot": "evidence/scan-demo/execution-policy-v1.py.txt"
+}

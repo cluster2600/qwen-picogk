@@ -1,0 +1,16 @@
+{
+  "seed": 9931415,
+  "scope": "typed topology feature to guarded tool plan; not raw scan learning",
+  "fixed_iters": 160,
+  "separate_new_final": 40,
+  "v1_final_not_reused": true,
+  "parent_sha256": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
+  "files": {
+    "training-data-v2/train.jsonl": "1bc49906bac867e046212f55babb32f5a4c99bc3c922b7d0016ed0c86f4594e2",
+    "training-data-v2/test.jsonl": "4919f28e01127ddf9df76a95b6c49ff49461110336c2d3857abf1714a3998a34",
+    "training-data-v2/valid.jsonl": "3df0b0c00dd11edb01e76d3dd42f4fbcf0ce6075c29919180baa885c8e11b49b",
+    "scan-training-cases-v2.json": "2d9002fd97b81a424ac99fca243fab57f5238038ea23ef992ffd85ce6d5a4b69",
+    "training-config-v2.yaml": "9360311295bc2b6cddb99fdb424b0810018976cdf79db4fa700144dea1231622",
+    "planner-system-v2.txt": "3f818a77a900ff6bdee19cd067e1b83cd0367b8c36f6dc40a6f42ab2cca5c712"
+  }
+}

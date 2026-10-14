@@ -1,0 +1,1357 @@
+{
+  "adapter_sha256": "c700014e4061ede1a6bb1f6e0c5a084f759f5f47fd4bc585cc2c795e89f6c970",
+  "records": [
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 635992,
+        "boundary_edges": 19735,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.6
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.6,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.6,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1517879,
+        "boundary_edges": 0,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 94649,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.5
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.5,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1642842,
+        "boundary_edges": 0,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 1,
+        "voxel_mm_assumed": 0.8
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 1,
+        "voxel_mm": 0.8,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":1,\"voxel_mm\":0.8,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 150639,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": false,
+      "rejection": "Proposal disagrees with independently registered scan policy/assumptions"
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1540620,
+        "boundary_edges": 3865,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1422929,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.8
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.8,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.8,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 506452,
+        "boundary_edges": 0,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1274607,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.8
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.8,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.8,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1267265,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1281397,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.8
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.8,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.8,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1584315,
+        "boundary_edges": 3374,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.5
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.5,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 267356,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 1,
+        "voxel_mm_assumed": 0.6
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 1,
+        "voxel_mm": 0.6,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":1,\"voxel_mm\":0.6,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 81329,
+        "boundary_edges": 8306,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.4
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.4,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.4,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 207725,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.5
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.5,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1790390,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 876774,
+        "boundary_edges": 14547,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.6
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.6,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.6,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1590861,
+        "boundary_edges": 8583,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1751907,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.5
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.5,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1643537,
+        "boundary_edges": 0,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1350427,
+        "boundary_edges": 13308,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 1,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 1,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":1,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 86771,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.8
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.8,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.8,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 733811,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.4
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.4,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.4,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "valid",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1696043,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1495982,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 66466,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.8
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.8,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.8,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1185670,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.6
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.6,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.6,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 663502,
+        "boundary_edges": 3088,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 1,
+        "voxel_mm_assumed": 0.6
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 1,
+        "voxel_mm": 0.6,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":1,\"voxel_mm\":0.6,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": false,
+      "rejection": "Proposal disagrees with independently registered scan policy/assumptions"
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1269998,
+        "boundary_edges": 0,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.8
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.8,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.8,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1088728,
+        "boundary_edges": 0,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.8
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.8,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.8,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 980862,
+        "boundary_edges": 15548,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 778620,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.5
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.5,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 635807,
+        "boundary_edges": 14712,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 363790,
+        "boundary_edges": 0,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1651168,
+        "boundary_edges": 2154,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.4
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.4,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.4,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1211017,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.8
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.8,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.8,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1089761,
+        "boundary_edges": 13807,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 572041,
+        "boundary_edges": 0,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1311518,
+        "boundary_edges": 6763,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1227723,
+        "boundary_edges": 17707,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 1,
+        "voxel_mm_assumed": 0.5
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 1,
+        "voxel_mm": 0.5,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":1,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 533419,
+        "boundary_edges": 5187,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.4
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.4,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.4,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 496052,
+        "boundary_edges": 3303,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1295751,
+        "boundary_edges": 7145,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1646270,
+        "boundary_edges": 6242,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 1,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 1,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":1,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 59721,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 1,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 1,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":1,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1435600,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.5,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.5,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.5,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1220312,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 1,
+        "voxel_mm_assumed": 0.4
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 1,
+        "voxel_mm": 0.4,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":1,\"voxel_mm\":0.4,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 760617,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 1,
+        "voxel_mm_assumed": 0.6
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 1,
+        "voxel_mm": 0.6,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":1,\"voxel_mm\":0.6,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1765525,
+        "boundary_edges": 0,
+        "connected_surface_components": 3,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 1,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 1,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":1,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 50107,
+        "boundary_edges": 14186,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.5
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.5,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": false,
+      "rejection": "Proposal disagrees with independently registered scan policy/assumptions"
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1485832,
+        "boundary_edges": 19402,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 0.1,
+        "voxel_mm_assumed": 1.2
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 0.1,
+        "voxel_mm": 1.2,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":0.1,\"voxel_mm\":1.2,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1278733,
+        "boundary_edges": 8617,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.5
+      },
+      "expected": {
+        "method": "screened_poisson",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.5,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 889728,
+        "boundary_edges": 0,
+        "connected_surface_components": 1,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.3
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 300000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.3,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.3,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "split": "test",
+      "request": {
+        "task": "end-to-end OBJ to PicoGK STL demo",
+        "triangles": 1382182,
+        "boundary_edges": 0,
+        "connected_surface_components": 2,
+        "units_confirmed": false,
+        "user_allows_demo_assumptions": true,
+        "mm_per_source_unit_assumed": 2,
+        "voxel_mm_assumed": 0.8
+      },
+      "expected": {
+        "method": "direct_voxelization",
+        "target_faces": 180000,
+        "poisson_depth": 9,
+        "mm_per_source_unit": 2,
+        "voxel_mm": 0.8,
+        "manufacturing_qualified": false
+      },
+      "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":180000,\"poisson_depth\":9,\"mm_per_source_unit\":2,\"voxel_mm\":0.8,\"manufacturing_qualified\":false}",
+      "finish_reason": "stop",
+      "passed": true,
+      "rejection": null
+    }
+  ],
+  "scope": "numeric tool planning only; no geometric learning",
+  "single_seed": true
+}

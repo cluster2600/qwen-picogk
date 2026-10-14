@@ -19,6 +19,13 @@ general CAD assistant or a manufacturing qualification system.
 show both an admitted nonplanar tapered truss and a rejected K16-study
 diffuser request. This text adapter does not accept or reconstruct raw scans.
 
+A separate [OBJ-to-STL demonstration chain](docs/OBJ_TO_STL_DEMO.md) now uses
+a dedicated tool-planning adapter, independent scan analysis, reconstruction
+algorithms and a trusted PicoGK host. The model proposes a bounded plan from
+typed features; geometry checks control STL delivery. This addition does not
+replace the original planner or its benchmark, and it does not qualify a
+metal part for manufacture.
+
 The [traceable gallery](docs/visuals/README.md) contains five real model calls,
 their raw responses, native PicoGK STL files and mesh renders. The diagrams
 in [architecture and evidence flow](docs/ARCHITECTURE.md) document the system.
