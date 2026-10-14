@@ -84,8 +84,21 @@ def check(root=ROOT, assets=None, native_runtime=False):
     assert token_receipt['rows'] == 224 and token_receipt['truncated_rows'] == 0
     assert token_receipt['corpus_sha256'] == digest(targeted)
     assert token_receipt['all_assistant_eos_exact'] and token_receipt['all_prompt_prefixes_exact'] and token_receipt['all_single_csharp_fences']
+    seen_root = root/'evidence/seen-replay005'
+    selected = json.loads((seen_root/'selected-rows.json').read_text())
+    comparison = json.loads((seen_root/'comparison.json').read_text())
+    seen_answers = {row['id']: row['response'] for row in json.loads((seen_root/'capture/responses.json').read_text())}
+    target_rows = [json.loads(line) for line in targeted.read_text().splitlines()]
+    assert len(selected['rows']) == len(seen_answers) == 6
+    assert selected['corpus_sha256'] == digest(targeted)
+    assert comparison['qualification_eligible'] is False and comparison['qualification_credit'] == 0
+    assert comparison['all_code_and_answer_bytes_exact'] is True and comparison['native_execution_repeated'] is False
+    for row in selected['rows']:
+        answer = target_rows[row['training_line_1based']-1]['messages'][1]['content']
+        assert seen_answers[row['id']] == answer
+        assert hashlib.sha256(answer.encode()).hexdigest() == row['expected_answer_sha256']
     results = json.loads((root/'evidence/results-summary.json').read_text())['results']
-    assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0)]
+    assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0), (4, 2)]
     assert all(row['manufacturing_authorized'] is False for row in results)
     assert 'TRUSTED_PROFILE_SHA256 = None' in (root/'qwen-picogk-am').read_text()
     forbidden = re.compile(r'/Users/|-----BEGIN .*PRIVATE KEY|Bearer [A-Za-z0-9._-]{12,}|sk-[A-Za-z0-9]{20,}|VIN\s*[:=]', re.I)
@@ -108,6 +121,7 @@ def check(root=ROOT, assets=None, native_runtime=False):
             'validated_teachers': 64, 'prompt_augmented_rows': 192, 'mixed7b_rows': 342,
             'new_validated_teachers': 16, 'new_teacher_checks': 648,
             'targeted7b_rows': 224,
+            'seen_training_answers_exact': 6, 'seen_replay_qualification_credit': 0,
             'asset_hashes_checked': assets is not None, 'native_payload_hashes_checked': native_runtime,
             'mlx_imported': False, 'generated_code_executed': False,
             'qualified_adapter': False, 'manufacturing_authorized': False}

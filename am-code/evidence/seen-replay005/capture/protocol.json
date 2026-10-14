@@ -1,0 +1,30 @@
+{
+  "started_at": "2026-10-14T20:10:22.893109+00:00",
+  "tasks_sha256": "cee95ac7a32f5a8be2738d25418f3e3384e77fc5b49e1e32b9703bd65cb8ec30",
+  "adapter_sha256": "5ba36bede5a66c8da0b41329d919902cd251ecb0c7555dd883bbc350210a048d",
+  "adapter_config_sha256": "1dc723bf3997589d29977c1b8f2312f9e882d8584bf2146064f8c242fb274dc3",
+  "base_weights_sha256": "56a3d94706833f753e6c6b47ea57af8ef638cd8cc1d74eca1142ba640b26060e",
+  "max_tokens": 6144,
+  "temperature": 0,
+  "task_ids": [
+    "seen-gyroid-compact-02",
+    "seen-gyroid-full-02",
+    "seen-prompt-refusal-compact-03",
+    "seen-prompt-refusal-full-03",
+    "seen-schwarz-p-full-02",
+    "seen-xyz-reader-full-03"
+  ],
+  "selection_receipt_sha256": null,
+  "base_profile_sha256": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+  "model_files_sha256": {
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "config.json": "08762352ba9fded858f24bdd7b8d2fe61aabe7bce1dfdb663db242d574c3e678",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "model.safetensors": "56a3d94706833f753e6c6b47ea57af8ef638cd8cc1d74eca1142ba640b26060e",
+    "model.safetensors.index.json": "23cd562592dd96686d2e799eb02e4b578a4038b6045eaefe860d270cc060e24f",
+    "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "tokenizer.json": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf",
+    "tokenizer_config.json": "f7c61e32b7a17d19bf8e7037dcb74079a833e53ea9801f24008cac68458f03b7",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  }
+}

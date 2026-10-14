@@ -1,0 +1,284 @@
+{
+  "schema": "picogk.am.independent-code-review@1",
+  "course": "005",
+  "status": "formal_gate_rejected",
+  "adapter_sha256": "5ba36bede5a66c8da0b41329d919902cd251ecb0c7555dd883bbc350210a048d",
+  "adapter_config_sha256": "1dc723bf3997589d29977c1b8f2312f9e882d8584bf2146064f8c242fb274dc3",
+  "training_steps": 448,
+  "training_rows": 224,
+  "base_profile_sha256": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+  "base_weights_sha256": "56a3d94706833f753e6c6b47ea57af8ef638cd8cc1d74eca1142ba640b26060e",
+  "registered_gates": {
+    "development_minimum": 11,
+    "development_total": 12,
+    "final_minimum": 11,
+    "final_total": 12,
+    "required_families": [
+      "vent",
+      "cone-roof",
+      "scan-normals",
+      "missing-interfaces"
+    ],
+    "retain_all_base_development_passes": true,
+    "end_to_end_scan_development_passes": 4,
+    "no_unexpected_native_failures": true,
+    "all_generation_stopped": true
+  },
+  "matched_baseline_passed_ids": [
+    "development-offset-sign"
+  ],
+  "matched_baseline_passes_retained": true,
+  "critical_family_passes": {
+    "development-vent": false,
+    "development-cone-roof": false,
+    "development-scan-normals": false,
+    "development-missing-interfaces": false
+  },
+  "all_16_generations_stopped": true,
+  "finite_224_array_audit_bound": true,
+  "development": {
+    "passed": 4,
+    "total": 12,
+    "all_stopped": true,
+    "finish_reasons": {
+      "stop": 12
+    },
+    "tasks": [
+      {
+        "id": "development-initialize",
+        "status": "passed",
+        "source_sha256": "b3c241e764d4ce2043298e94cdff861dfdb60ee7d260eb2fe9fc0537f55830c7",
+        "raw_response_sha256": "99c4d73e6d026ff9c82647d93cb4beea68b9fbade7ef8b0c344de88c114f2b00",
+        "failed_checks": [],
+        "native_exit_code": 0,
+        "occupancy_iou": 1.0
+      },
+      {
+        "id": "development-offset-sign",
+        "status": "passed",
+        "source_sha256": "429467dadb1a926258cc7eccf3e9c4bad5819ed8fcb25a1fc02838161cbd09c3",
+        "raw_response_sha256": "bf4be52d2f3588ff805dcb65c9e96fc35dd9015bec1cae963b588e6f63c31772",
+        "failed_checks": [],
+        "native_exit_code": 0,
+        "occupancy_iou": 1.0
+      },
+      {
+        "id": "development-closing",
+        "status": "failed",
+        "source_sha256": "55b88a4d810bec59f944e68a74d2c8e47abf2e1b88da14fc7b8283fa35773559",
+        "raw_response_sha256": "7c18f152483b1a3cc5247268ffbc6fccb60d4a89fcab9dbe535ba0eb8cded417",
+        "failed_checks": [
+          "native_reference_occupancy_iou",
+          "native_volume",
+          "native_dimensions"
+        ],
+        "native_exit_code": 0,
+        "occupancy_iou": 0.03367952522255193,
+        "interpretation": "Positive then negative Offset is present, but the seed is a diagonal flat cylinder instead of the required box; occupancy, volume and dimensions fail."
+      },
+      {
+        "id": "development-shell",
+        "status": "passed",
+        "source_sha256": "d392e396039d081cd405327f495013a2dd99a9389437602ee8ab79403de525c3",
+        "raw_response_sha256": "be9b8fc8998d3ad9a1f3df1dab919dec094b5c16e9811443fa4261b6d618a376",
+        "failed_checks": [],
+        "native_exit_code": 0,
+        "occupancy_iou": 1.0
+      },
+      {
+        "id": "development-vent",
+        "status": "failed",
+        "source_sha256": "65681bf4b2bf4ee53c5b94253882691c59d469ee48647a34ea62a155d55b074e",
+        "raw_response_sha256": "55ed2744f31e0b963cf18b1902dacb61a1be973b419c9da878e6f0277e3b04f6",
+        "failed_checks": [],
+        "compiler_errors": [
+          "candidate-scores-7b448/development-vent/Program.cs(34,13): error CS1061: 'Mesh' does not contain a definition for 'SaveToVdbFile' and no accessible extension method 'SaveToVdbFile' accepting a first argument of type 'Mesh' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b448/development-vent/Candidate.csproj]"
+        ],
+        "error": "C# compilation failed; see candidate-scores-7b448/development-vent/process.log",
+        "interpretation": "Mesh.SaveToVdbFile is not a PicoGK API; VDB serialization belongs to Voxels."
+      },
+      {
+        "id": "development-cone-roof",
+        "status": "failed",
+        "source_sha256": "bef0c4f5f5487f1a6d548605ab2aa80e009e6db81430c2d4acae423d6812d831",
+        "raw_response_sha256": "b3785c97e3bf91cf1de825d8107e82be86bb0dadce687bcfb823717cec8355b2",
+        "failed_checks": [],
+        "compiler_errors": [
+          "candidate-scores-7b448/development-cone-roof/Program.cs(27,27): error CS1503: Argument 1: cannot convert from 'PicoGK.Lattice' to 'in PicoGK.Voxels' [candidate-scores-7b448/development-cone-roof/Candidate.csproj]",
+          "candidate-scores-7b448/development-cone-roof/Program.cs(30,30): error CS1061: 'Voxels' does not contain a definition for 'nTriangleCount' and no accessible extension method 'nTriangleCount' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b448/development-cone-roof/Candidate.csproj]",
+          "candidate-scores-7b448/development-cone-roof/Program.cs(32,21): error CS1061: 'Voxels' does not contain a definition for 'GetTriangle' and no accessible extension method 'GetTriangle' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b448/development-cone-roof/Candidate.csproj]",
+          "candidate-scores-7b448/development-cone-roof/Program.cs(36,79): error CS1061: 'Voxels' does not contain a definition for 'nAddTriangle' and no accessible extension method 'nAddTriangle' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b448/development-cone-roof/Candidate.csproj]",
+          "candidate-scores-7b448/development-cone-roof/Program.cs(38,23): error CS1061: 'Voxels' does not contain a definition for 'nTriangleCount' and no accessible extension method 'nTriangleCount' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b448/development-cone-roof/Candidate.csproj]"
+        ],
+        "error": "C# compilation failed; see candidate-scores-7b448/development-cone-roof/process.log",
+        "interpretation": "Sub receives Lattice instead of Voxels; subsequent triangle-count/read/add calls are applied to Voxels instead of Mesh."
+      },
+      {
+        "id": "development-gyroid",
+        "status": "failed",
+        "source_sha256": "00fa6b820a7004cac39852efa002625afc1c753cc92dc56a316adc43dc265978",
+        "raw_response_sha256": "f122d4e77a19eca1687663566a8168812958d30bbbd7ea1da0d1ad8913c78b18",
+        "failed_checks": [
+          "native_reference_occupancy_iou",
+          "native_volume",
+          "native_dimensions",
+          "physical_wall_native_rays"
+        ],
+        "native_exit_code": 0,
+        "occupancy_iou": 0.25987092840083337,
+        "interpretation": "A single thick diagonal flat beam is emitted. No gyroid implicit function, carrier, redistancing or physical sheet-width construction is implemented."
+      },
+      {
+        "id": "development-diamond",
+        "status": "failed",
+        "source_sha256": "c21935e4fbc2bdf212ddbae96e1a0e66a512c50465df00b454813014ea88c759",
+        "raw_response_sha256": "5517961fd15604065bc33141ee24443c7864cb569d486a2a76ad2065801f04e5",
+        "failed_checks": [
+          "native_reference_occupancy_iou",
+          "native_volume",
+          "native_dimensions",
+          "physical_wall_native_rays"
+        ],
+        "native_exit_code": 0,
+        "occupancy_iou": 0.22502754604124037,
+        "interpretation": "Eight thick beams are emitted. No diamond implicit function, carrier, redistancing or physical sheet-width construction is implemented."
+      },
+      {
+        "id": "development-schwarz-p",
+        "status": "failed",
+        "source_sha256": "a0762e25c2f40b3e497004f2935e959cc912d29b78f549c1a47f18fd21d564d9",
+        "raw_response_sha256": "3c013bd0c2236e279f5fc6e70804274e5f106f15c03dfe8f19fdb35aee66e8da",
+        "failed_checks": [],
+        "compiler_errors": [
+          "candidate-scores-7b448/development-schwarz-p/Program.cs(22,36): error CS1503: Argument 2: cannot convert from 'Phase' to 'in PicoGK.IImplicit' [candidate-scores-7b448/development-schwarz-p/Candidate.csproj]"
+        ],
+        "error": "C# compilation failed; see candidate-scores-7b448/development-schwarz-p/process.log",
+        "interpretation": "Phase passed to Voxels lacks IImplicit; compilation rejects the constructor argument."
+      },
+      {
+        "id": "development-scan-normals",
+        "status": "failed",
+        "source_sha256": "59275756145da7a9119dd8fb325ca77e99ce76967425de46249ca8271d6a6c76",
+        "raw_response_sha256": "e46e35ff9fdc42559d6ef2e171f534ec820a882a66d7e14ccff0f3b2171b3cb2",
+        "failed_checks": [
+          "native_exit_zero"
+        ],
+        "error": "isolated native process failed; see candidate-scores-7b448/development-scan-normals/process.log",
+        "native_exit_code": -6,
+        "interpretation": "Unhandled managed InvalidDataException at Program.cs45 requires exactly six nonblank rows. The process exits -6 before Voxels construction; this log does not establish native ownership corruption. Additional source guards expect only two signed normal directions, which also does not match a general oriented scan."
+      },
+      {
+        "id": "development-debug-api",
+        "status": "passed",
+        "source_sha256": "a14f809b76be0bde4a7e89b68ab2b36a21313d0f28ff929ccfb07cf86f3b58f0",
+        "raw_response_sha256": "9075894271ce14385fd9cce77879ae5e81c447c1f013254f943ed7bb77d21eec",
+        "failed_checks": [],
+        "native_exit_code": 0,
+        "occupancy_iou": 1.0
+      },
+      {
+        "id": "development-missing-interfaces",
+        "status": "failed",
+        "source_sha256": "90c17e8621deeefb6eec7c5016848191f6aea347e00cb6701759a3bfc6838e8d",
+        "raw_response_sha256": "687e84fe20f456d0696c070038f3f0cc479e41bdbfb07511b9711a73f401cb16",
+        "failed_checks": [
+          "strict_refusal"
+        ],
+        "native_exit_code": 0,
+        "interpretation": "The requested refusal JSON is written, but the program initializes Library and emits invented crossed-beam geometry to part.stl and part.vdb. The strict no-geometry refusal gate fails."
+      }
+    ]
+  },
+  "scan": {
+    "passed": 2,
+    "total": 4,
+    "all_stopped": true,
+    "finish_reasons": {
+      "stop": 4
+    },
+    "tasks": [
+      {
+        "id": "development-e2e-stl-roundtrip",
+        "status": "passed",
+        "source_sha256": "5f5224100c4f30e17b6b3fe040239162416e7c9caa86aea583049a6190a0ccfc",
+        "raw_response_sha256": "4ba78f10dc48e73758c2b30a4aee23f9b090a9d4cb7e47d91c654096f70fcf9b",
+        "failed_checks": [],
+        "native_exit_code": 0,
+        "occupancy_iou": 1.0
+      },
+      {
+        "id": "development-e2e-stl-skin-vent",
+        "status": "failed",
+        "source_sha256": "8f7c92a2fe574cc2813a56d9a59fc2fb7fa5fde3969ff74c415da2ccf02d5cb3",
+        "raw_response_sha256": "561543b554702d932b718dbd41431e4696e8f53008272cdb1549b9d578874e31",
+        "failed_checks": [],
+        "compiler_errors": [
+          "scan-scores-7b448/development-e2e-stl-skin-vent/Program.cs(31,38): error CS1061: 'Mesh' does not contain a definition for 'fExtractDiagonalLength' and no accessible extension method 'fExtractDiagonalLength' accepting a first argument of type 'Mesh' could be found (are you missing a using directive or an assembly reference?) [scan-scores-7b448/development-e2e-stl-skin-vent/Candidate.csproj]",
+          "scan-scores-7b448/development-e2e-stl-skin-vent/Program.cs(33,27): error CS0103: The name 'minZ' does not exist in the current context [scan-scores-7b448/development-e2e-stl-skin-vent/Candidate.csproj]",
+          "scan-scores-7b448/development-e2e-stl-skin-vent/Program.cs(33,45): error CS0103: The name 'minZ' does not exist in the current context [scan-scores-7b448/development-e2e-stl-skin-vent/Candidate.csproj]"
+        ],
+        "error": "C# compilation failed; see scan-scores-7b448/development-e2e-stl-skin-vent/process.log",
+        "interpretation": "Mesh.fExtractDiagonalLength does not exist; minZ is undefined."
+      },
+      {
+        "id": "development-e2e-xyz-occupancy",
+        "status": "failed",
+        "source_sha256": "0c9c5e31796a75768431b16a2795d12eb8fb961e5160d32291426ab9e8702795",
+        "raw_response_sha256": "8acaf686649f5813d074a8a406d06a24f7eeaca8b6f5b9e1c096aaf49ecafca8",
+        "failed_checks": [],
+        "compiler_errors": [
+          "scan-scores-7b448/development-e2e-xyz-occupancy/Program.cs(21,40): error CS1061: 'Library' does not contain a definition for 'SetUnit' and no accessible extension method 'SetUnit' accepting a first argument of type 'Library' could be found (are you missing a using directive or an assembly reference?) [scan-scores-7b448/development-e2e-xyz-occupancy/Candidate.csproj]",
+          "scan-scores-7b448/development-e2e-xyz-occupancy/Program.cs(23,31): error CS1503: Argument 1: cannot convert from 'System.Collections.Generic.List<System.Numerics.Vector3>' to 'in PicoGK.IBoundedImplicit' [scan-scores-7b448/development-e2e-xyz-occupancy/Candidate.csproj]"
+        ],
+        "error": "C# compilation failed; see scan-scores-7b448/development-e2e-xyz-occupancy/process.log",
+        "interpretation": "Library.SetUnit does not exist; List<Vector3> is passed directly as an IBoundedImplicit constructor argument."
+      },
+      {
+        "id": "development-e2e-signed-range-refusal",
+        "status": "passed",
+        "source_sha256": "8652015d72c9ccf3ca5f08d804e3a3e988528aca1cb188561591a8b5f4d4929d",
+        "raw_response_sha256": "58a1f1f94b36992e23605a23e164710a4ba6eae30feddd867ab21483f3bd401e",
+        "failed_checks": [],
+        "native_exit_code": 0
+      }
+    ]
+  },
+  "infrastructure_only_capture_attempt": {
+    "directory": "candidate-development-7b448-failed-001",
+    "preserved_empty_directory": true,
+    "captured_answers": 0,
+    "failure": "Adapter file path used where infer.py requires adapter directory; failure preceded protocol/answers.",
+    "model_task_attempt": false
+  },
+  "sha256_bindings": {
+    "course-005-protocol.json": "cdcce310bcc62bff52f23a7793e03f05c2e1d8533191317065570531b73dcab6",
+    "course-005-cpu-audit.json": "ba49013299919924abda24cc58937177b72358dc2ffbe2bc32fb4b50edddb28f",
+    "runs/7b-targeted001-epoch2/protocol.json": "f4fb828f681e916f53aca91afb2cc51ed7786eb3be09819fb04d38a57c30863c",
+    "runs/7b-targeted001-epoch2/training-receipt.json": "0ab419d19dff4cddcb1ef53572f457c5f48192a47745a76463b3c31e39577e26",
+    "runs/7b-targeted001-epoch2/adapter/adapter_config.json": "1dc723bf3997589d29977c1b8f2312f9e882d8584bf2146064f8c242fb274dc3",
+    "data/targeted-7b-001/train.jsonl": "9142af662d16e88e47cfd123e5f4219023803fd4003ddc61a1270e6c26c7d4b3",
+    "base-profile-7b.json": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+    "evaluation/development.json": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+    "evaluation/evaluate.py": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+    "end-to-end/development.json": "b6391901ee32eff8dcebaf87239278743214cc604000c5b39dfd14dd27461baf",
+    "end-to-end/freeze.json": "e9fbeca73172f6dece5a45640fab5fe4ff7b37b2f3f51de4522cdba1f5a5da94",
+    "end-to-end/evaluate.py": "e74790f0acabb39ff8bb62dd54ed265a9050c00c52ef40a80d59d67a6a24705c",
+    "baseline-scores-7b/report.json": "e3ec9e94a352f512dc14b69a66d70601a6d50bb71253ab5cf054f00d55881b9e",
+    "qualification-rejected-7b448.log": "4bbad92e1519cbb935290aaad297a6de80044cc574b7e91bfcf53b73afe53aaf",
+    "candidate-development-7b448/protocol.json": "57869d0a04af2ebc32ba89ceee761ec25bd79423cf77ea05669ea2f2d7f247c7",
+    "candidate-development-7b448/receipt.json": "368285b0b74781cedde9c27cbe8ea84ac9b0a2349fa6d535f4bebdd2d97c82fe",
+    "candidate-development-7b448/responses.json": "f0cf79094662218bf50d0c9f5f06f7858419e8016b6ab40b4d1e43af6bf84632",
+    "candidate-scores-7b448/report.json": "d8bc95c7e28eae3f21ff56d906a33fdc939e80b05b43714ef60004655753ec49",
+    "candidate-scan-7b448/protocol.json": "f53b48102fa62eb12cf31f7f3af8f2b6e0048d1ca2ce5f5ba27171394699c3bc",
+    "candidate-scan-7b448/receipt.json": "b727e79c3104d324b4b33834786d0e38c135fc12b5a2f35700261b73d392abd0",
+    "candidate-scan-7b448/responses.json": "331a7e997ee1e7ccaeed283751e3f20db8263d89addd4d553d2052b8450a599e",
+    "scan-scores-7b448/report.json": "ff4b96abe94c188f8725b0294746f5e695fc975d3a6d664d505f08cc920a0ae1",
+    "candidate-development-7b448-failed-001.log": "a3f159fa4c31d05091e8dc597b43748df74607f3ba090ec8f6a065d34c07b61f"
+  },
+  "captured_sources_repaired": false,
+  "evaluator_or_tasks_changed": false,
+  "model_or_gpu_loaded_by_reviewer": false,
+  "final_tasks_read": false,
+  "selection_receipt_created": false,
+  "manufacturing_authorized": false
+}

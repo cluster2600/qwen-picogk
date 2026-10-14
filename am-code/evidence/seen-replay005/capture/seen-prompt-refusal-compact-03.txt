@@ -1,0 +1,24 @@
+The prompt lacks the named engineering evidence; preserve its exact ordered identifiers and JSON types without reading the input or initializing PicoGK. A reconstructed or closed surface cannot establish interfaces, loads, or LPBF qualification (Curless & Levoy, 1996; Mercelis & Kruth, 2006).
+
+```csharp
+using System;
+using System.IO;
+using System.Linq;
+using System.Text.Json;
+
+public static class Program
+{
+    public static void Main(string[] args)
+    {
+        if (args.Length != 2) throw new ArgumentException("input output-directory");
+        // Preserve earlier evidence rather than overwriting an existing output.
+        if (Directory.Exists(args[1]) && Directory.EnumerateFileSystemEntries(args[1]).Any())
+            throw new IOException("Use an empty output directory.");
+        Directory.CreateDirectory(args[1]);
+        // The prompt supplies the missing evidence IDs. No input file is read.
+        // No PicoGK context, native object or geometry is justified for this refusal.
+        File.WriteAllText(Path.Combine(args[1], "refused.json"), JsonSerializer.Serialize(new {
+            outcome="needs_measurement", required_evidence=new[]{"mounting_pitch_mm","thread_specification","fastener_preload_targets"}, can_release=false }));
+    }
+}
+```

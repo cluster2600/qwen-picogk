@@ -247,15 +247,58 @@
       "independent_diagnostic_original_sha256": "ee65bbe280d0e43a97e0c3db14fcc81ff0256c20d2ca260b0e83b8a7c5c861ce",
       "hash_scope": "Original completed local artifacts; export-index binds the public redacted bytes.",
       "asset": "rejected-7b-course004-full-evidence.tar.gz"
+    },
+    {
+      "name": "7b-targeted224-448",
+      "base": "7B",
+      "run": "7b-targeted001-epoch2",
+      "training_rows": 224,
+      "training_steps": 448,
+      "development_passed": 4,
+      "development_total": 12,
+      "passing_tasks": [
+        "development-initialize",
+        "development-offset-sign",
+        "development-shell",
+        "development-debug-api"
+      ],
+      "stopped": 12,
+      "truncated": 0,
+      "captured_responses": 12,
+      "triple_backtick_counts": {
+        "2": 12
+      },
+      "score_sha256": "d8bc95c7e28eae3f21ff56d906a33fdc939e80b05b43714ef60004655753ec49",
+      "responses_sha256": "f0cf79094662218bf50d0c9f5f06f7858419e8016b6ab40b4d1e43af6bf84632",
+      "protocol_sha256": "57869d0a04af2ebc32ba89ceee761ec25bd79423cf77ea05669ea2f2d7f247c7",
+      "adapter_sha256": "5ba36bede5a66c8da0b41329d919902cd251ecb0c7555dd883bbc350210a048d",
+      "adapter_config_sha256": "1dc723bf3997589d29977c1b8f2312f9e882d8584bf2146064f8c242fb274dc3",
+      "base_weights_sha256": "56a3d94706833f753e6c6b47ea57af8ef638cd8cc1d74eca1142ba640b26060e",
+      "base_profile_sha256": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+      "task_sha256": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+      "status": "rejected",
+      "manufacturing_authorized": false,
+      "scan_passed": 2,
+      "scan_total": 4,
+      "scan_stopped": 4,
+      "scan_score_sha256": "ff4b96abe94c188f8725b0294746f5e695fc975d3a6d664d505f08cc920a0ae1",
+      "scan_responses_sha256": "331a7e997ee1e7ccaeed283751e3f20db8263d89addd4d553d2052b8450a599e",
+      "scan_protocol_sha256": "f53b48102fa62eb12cf31f7f3af8f2b6e0048d1ca2ce5f5ba27171394699c3bc",
+      "retains_matched_baseline_passes": true,
+      "critical_families_passed": false,
+      "cpu_audit_original_sha256": "ba49013299919924abda24cc58937177b72358dc2ffbe2bc32fb4b50edddb28f",
+      "formal_rejection_original_sha256": "4bbad92e1519cbb935290aaad297a6de80044cc574b7e91bfcf53b73afe53aaf",
+      "independent_diagnostic_original_sha256": "2dbf6ce2e2f4d6e8f4a81bcd291b8e1de7758fd33e5fea79fc8be88cbf84db88",
+      "hash_scope": "Original completed local artifacts; export-index binds the public redacted bytes.",
+      "asset": "rejected-7b-course005-full-evidence.tar.gz"
     }
   ],
   "current_training": {
     "course": "005",
     "run": "7b-targeted001-epoch2",
     "base": "7B",
-    "status": "registered_and_running",
+    "status": "completed_rejected",
     "training_rows": 224,
-    "planned_steps": 448,
     "epochs": 2,
     "parent_adapter_sha256": "666297e9aaf7639c539b90dc2ae9c8feb0fa1ba74a7621d627e86f6d6d8963e2",
     "base_profile_sha256": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
@@ -263,12 +306,17 @@
     "provenance_sha256": "a0d8a5525d426ad99498453ac9e0db0a73675898ab7c45774be0126467326617",
     "token_receipt_sha256": "35dc45a569ee6fbe65edc001d29dfc5f350c2d41c9cd41e41c8dc48c606bb336",
     "protocol_sha256": "cdcce310bcc62bff52f23a7793e03f05c2e1d8533191317065570531b73dcab6",
-    "model_qualification": "not_established",
-    "weights_and_live_log_exported": false
+    "model_qualification": "formal_gate_rejected",
+    "training_steps": 448,
+    "all_generations_stopped": true,
+    "development_passed": 4,
+    "scan_passed": 2,
+    "completed_weights_and_log_in_new_archive": true,
+    "active_training_weights_or_live_log_included": false
   },
   "final_set": "embargoed; no final model evaluation claimed",
   "manufacturing_authorized": false,
-  "completed_course_count": 4,
+  "completed_course_count": 5,
   "corrective003_teachers": {
     "distinct_teachers": 16,
     "message_rows": 32,
@@ -279,5 +327,15 @@
     "native_report_original_sha256": "9571bec50c8adac89ba50c660f158447d549f0b4fed2588b4a2cc3d065918706",
     "training_qualification": "not_established",
     "manufacturing_authorized": false
+  },
+  "seen_replay005": {
+    "seen_training": true,
+    "qualification_eligible": false,
+    "qualification_credit": 0,
+    "full_answers_byte_identical": 6,
+    "source_codes_byte_identical": 6,
+    "native_execution_repeated": false,
+    "comparison_original_sha256": "9b2294999d5673bd2f5ee78afcc88ace9a91afe7d73fd3c54ccfcddb7e4f5d2a",
+    "formal_scores_unchanged": true
   }
 }

@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Curated synthetic sources/data, accepted teaching receipts and redacted completed-course/registered-plan metadata. Final contents and active course005 weights/logs omitted. Initial source hashes retain historical identities.",
+  "scope": "Curated synthetic sources/data and accepted teaching receipts; redacted completed rejected courses and ineligible seen-training replay. Final contents and unaccepted corrective004 data omitted. Initial source hashes retain historical identities.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -2030,6 +2030,139 @@
       "public_path": "evidence/corrective003-assets.json",
       "source_sha256": "be5885016b0dcdd40351f6fa57faf2eb8a22d9dc5d689c561af027baf97ebcad",
       "public_sha256": "be5885016b0dcdd40351f6fa57faf2eb8a22d9dc5d689c561af027baf97ebcad",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course-005-cpu-audit.json",
+      "public_path": "evidence/course-005-cpu-audit.json",
+      "source_sha256": "ba49013299919924abda24cc58937177b72358dc2ffbe2bc32fb4b50edddb28f",
+      "public_sha256": "ba49013299919924abda24cc58937177b72358dc2ffbe2bc32fb4b50edddb28f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/qualification-rejected-7b448.log",
+      "public_path": "evidence/course-005-formal-rejection.json",
+      "source_sha256": "4bbad92e1519cbb935290aaad297a6de80044cc574b7e91bfcf53b73afe53aaf",
+      "public_sha256": "4bbad92e1519cbb935290aaad297a6de80044cc574b7e91bfcf53b73afe53aaf",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course005-7b448-independent-review.json",
+      "public_path": "evidence/course005-7b448-independent-review.json",
+      "source_sha256": "2dbf6ce2e2f4d6e8f4a81bcd291b8e1de7758fd33e5fea79fc8be88cbf84db88",
+      "public_sha256": "2dbf6ce2e2f4d6e8f4a81bcd291b8e1de7758fd33e5fea79fc8be88cbf84db88",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/capture/protocol.json",
+      "public_path": "evidence/seen-replay005/capture/protocol.json",
+      "source_sha256": "8f1ca33d2df1700124a0c1cfca0f66bbf41ac1ecf1a9e22e7bb3af2ab2920466",
+      "public_sha256": "8f1ca33d2df1700124a0c1cfca0f66bbf41ac1ecf1a9e22e7bb3af2ab2920466",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/capture/receipt.json",
+      "public_path": "evidence/seen-replay005/capture/receipt.json",
+      "source_sha256": "51d65195fd3cbe1ce26219a30154c4bdc93d5e54b5a5dc9842378de91296c616",
+      "public_sha256": "51d65195fd3cbe1ce26219a30154c4bdc93d5e54b5a5dc9842378de91296c616",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/capture/responses.json",
+      "public_path": "evidence/seen-replay005/capture/responses.json",
+      "source_sha256": "8f5fa76ee8db833009417719e15ea9ec270f8cd754a47377230e0e6f4351888b",
+      "public_sha256": "8f5fa76ee8db833009417719e15ea9ec270f8cd754a47377230e0e6f4351888b",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/capture/seen-gyroid-compact-02.txt",
+      "public_path": "evidence/seen-replay005/capture/seen-gyroid-compact-02.txt",
+      "source_sha256": "480996b026759fa0ea87632d9750f34371324c1177320ab216a926c6b2e70a4e",
+      "public_sha256": "480996b026759fa0ea87632d9750f34371324c1177320ab216a926c6b2e70a4e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/capture/seen-gyroid-full-02.txt",
+      "public_path": "evidence/seen-replay005/capture/seen-gyroid-full-02.txt",
+      "source_sha256": "480996b026759fa0ea87632d9750f34371324c1177320ab216a926c6b2e70a4e",
+      "public_sha256": "480996b026759fa0ea87632d9750f34371324c1177320ab216a926c6b2e70a4e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/capture/seen-prompt-refusal-compact-03.txt",
+      "public_path": "evidence/seen-replay005/capture/seen-prompt-refusal-compact-03.txt",
+      "source_sha256": "4ad5776baa95c6d0f1350e8fdb4bb605a09d44588932138b9a9958174ad71fe1",
+      "public_sha256": "4ad5776baa95c6d0f1350e8fdb4bb605a09d44588932138b9a9958174ad71fe1",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/capture/seen-prompt-refusal-full-03.txt",
+      "public_path": "evidence/seen-replay005/capture/seen-prompt-refusal-full-03.txt",
+      "source_sha256": "4ad5776baa95c6d0f1350e8fdb4bb605a09d44588932138b9a9958174ad71fe1",
+      "public_sha256": "4ad5776baa95c6d0f1350e8fdb4bb605a09d44588932138b9a9958174ad71fe1",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/capture/seen-schwarz-p-full-02.txt",
+      "public_path": "evidence/seen-replay005/capture/seen-schwarz-p-full-02.txt",
+      "source_sha256": "a5b5aabb824ad582c00b8b5d6309b0864e58b0ce8fe53085e574ca8c98a9f6f4",
+      "public_sha256": "a5b5aabb824ad582c00b8b5d6309b0864e58b0ce8fe53085e574ca8c98a9f6f4",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/capture/seen-xyz-reader-full-03.txt",
+      "public_path": "evidence/seen-replay005/capture/seen-xyz-reader-full-03.txt",
+      "source_sha256": "55001d301ed00064384238e1c9bf987e63e612a169e37823851763de471f3834",
+      "public_sha256": "55001d301ed00064384238e1c9bf987e63e612a169e37823851763de471f3834",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/capture.log",
+      "public_path": "evidence/seen-replay005/capture.log",
+      "source_sha256": "5f5fa59003ac0c70ee5b8f5531d870678d1b4c5bed2abd46961e9f4af05a4868",
+      "public_sha256": "5f5fa59003ac0c70ee5b8f5531d870678d1b4c5bed2abd46961e9f4af05a4868",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/comparison.json",
+      "public_path": "evidence/seen-replay005/comparison.json",
+      "source_sha256": "9b2294999d5673bd2f5ee78afcc88ace9a91afe7d73fd3c54ccfcddb7e4f5d2a",
+      "public_sha256": "9b2294999d5673bd2f5ee78afcc88ace9a91afe7d73fd3c54ccfcddb7e4f5d2a",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/registration.json",
+      "public_path": "evidence/seen-replay005/registration.json",
+      "source_sha256": "b83d9737e416e0993c9cd20adcb457cf192f90b837ee14872c1f16d5ea9ecbb9",
+      "public_sha256": "b83d9737e416e0993c9cd20adcb457cf192f90b837ee14872c1f16d5ea9ecbb9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/selected-rows.json",
+      "public_path": "evidence/seen-replay005/selected-rows.json",
+      "source_sha256": "d82fbdd6a72f811e114438ca0da1604dad1b1e1c51527408e310fdac05f71175",
+      "public_sha256": "d82fbdd6a72f811e114438ca0da1604dad1b1e1c51527408e310fdac05f71175",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/tasks.json",
+      "public_path": "evidence/seen-replay005/tasks.json",
+      "source_sha256": "cee95ac7a32f5a8be2738d25418f3e3384e77fc5b49e1e32b9703bd65cb8ec30",
+      "public_sha256": "cee95ac7a32f5a8be2738d25418f3e3384e77fc5b49e1e32b9703bd65cb8ec30",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/seen-replay005/token-prefix-audit.json",
+      "public_path": "evidence/seen-replay005/token-prefix-audit.json",
+      "source_sha256": "92c10207a1d02c933748456c1f004b609adca7070639fbc7230c8a7a7bb550ac",
+      "public_sha256": "92c10207a1d02c933748456c1f004b609adca7070639fbc7230c8a7a7bb550ac",
+      "transform": "none"
+    },
+    {
+      "source": "publication-staging/course005-assets.json",
+      "public_path": "evidence/course005-assets.json",
+      "source_sha256": "27b865e27dff8ad1d428fb75d8c684e832261dc15da7037e77cff5a57cfc6fef",
+      "public_sha256": "27b865e27dff8ad1d428fb75d8c684e832261dc15da7037e77cff5a57cfc6fef",
       "transform": "none"
     }
   ]

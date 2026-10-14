@@ -1,0 +1,90 @@
+{
+  "schema": "picogk.am.seen-prefix-audit@1",
+  "status": "passed",
+  "rows": [
+    {
+      "id": "seen-gyroid-compact-02",
+      "training_line_1based": 76,
+      "training_full_tokens": 1413,
+      "assistant_tokens": 1021,
+      "mask_offset": 392,
+      "inference_prefix_tokens": 392,
+      "prefix_exact": true,
+      "assistant_eos_exact": true,
+      "complete_single_csharp_fence": true,
+      "prefix_token_sha256": "a2b8093daaae83dc2cb6d3cbafbe0bb268d8c0c0c2b274d981f8bb2e05ffa48e"
+    },
+    {
+      "id": "seen-gyroid-full-02",
+      "training_line_1based": 77,
+      "training_full_tokens": 1573,
+      "assistant_tokens": 1021,
+      "mask_offset": 552,
+      "inference_prefix_tokens": 552,
+      "prefix_exact": true,
+      "assistant_eos_exact": true,
+      "complete_single_csharp_fence": true,
+      "prefix_token_sha256": "2b3bfb1db6ee21f560bbf77788f87822112c6e79616f0e77351e32978dbe29d7"
+    },
+    {
+      "id": "seen-prompt-refusal-compact-03",
+      "training_line_1based": 197,
+      "training_full_tokens": 795,
+      "assistant_tokens": 264,
+      "mask_offset": 531,
+      "inference_prefix_tokens": 531,
+      "prefix_exact": true,
+      "assistant_eos_exact": true,
+      "complete_single_csharp_fence": true,
+      "prefix_token_sha256": "88ff7ce5636910dcee7e3a74ac7626bdfb8ef4cf3675c2752e621537e6780a9a"
+    },
+    {
+      "id": "seen-prompt-refusal-full-03",
+      "training_line_1based": 198,
+      "training_full_tokens": 955,
+      "assistant_tokens": 264,
+      "mask_offset": 691,
+      "inference_prefix_tokens": 691,
+      "prefix_exact": true,
+      "assistant_eos_exact": true,
+      "complete_single_csharp_fence": true,
+      "prefix_token_sha256": "e776ab3a6e4cae11d97f07b4bd12f899db6a49cb5d74bfd96122be5d3f7107cd"
+    },
+    {
+      "id": "seen-schwarz-p-full-02",
+      "training_line_1based": 101,
+      "training_full_tokens": 1574,
+      "assistant_tokens": 1021,
+      "mask_offset": 553,
+      "inference_prefix_tokens": 553,
+      "prefix_exact": true,
+      "assistant_eos_exact": true,
+      "complete_single_csharp_fence": true,
+      "prefix_token_sha256": "c3af4e7fc5cfa93789f06a67e721634d6cdee25558da88fa2741bcd4a3d82635"
+    },
+    {
+      "id": "seen-xyz-reader-full-03",
+      "training_line_1based": 176,
+      "training_full_tokens": 1358,
+      "assistant_tokens": 822,
+      "mask_offset": 536,
+      "inference_prefix_tokens": 536,
+      "prefix_exact": true,
+      "assistant_eos_exact": true,
+      "complete_single_csharp_fence": true,
+      "prefix_token_sha256": "13ddaaa6846fdccb1b9a4e713aac820819262486a5525be69abaafab7d1d4db7"
+    }
+  ],
+  "all_training_inference_prefixes_exact": true,
+  "installed_dataset_source_sha256": "fa112840e6ea98a4ff18428792fe2ab023999c2da51ea64b3ebdf8657a152f17",
+  "method": "Installed ChatDataset.process(mask_prompt=True) compared to infer.py user-only apply_chat_template plus stream_generate BOS-dependent string tokenization, with the pinned local Qwen tokenizer.",
+  "mlx_imported": false,
+  "model_loaded": false,
+  "gpu_used": false,
+  "inference_executed": false,
+  "tokenizer_eos_token_id": 151645,
+  "packages": {
+    "transformers": "5.17.0",
+    "mlx-lm": "0.31.3"
+  }
+}

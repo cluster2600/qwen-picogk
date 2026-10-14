@@ -72,6 +72,16 @@
       "redacted_files": 37,
       "export_index_sha256": "4c16a9f07ac163c226f8ddcb77884a484065483717359eb2272f7a763a1798fe",
       "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-7b-course005-full-evidence.tar.gz",
+      "bytes": 349105830,
+      "sha256": "689bd2750a639648f329f448628324be6ef4356fb3fbc6557832db760981f260",
+      "files": 365,
+      "raw_payload_bytes": 391368926,
+      "redacted_files": 41,
+      "export_index_sha256": "b15de85a603b0c19df32b53fe627e6ce3a61887693a83c7fa831b0343787d3ff",
+      "qualified_adapter": false
     }
   ],
   "ongoing_training_weights_copied": false,
@@ -87,11 +97,11 @@
   "completed_baseline7b_included": true,
   "current_7b_training_weights_or_live_log_included": false,
   "extensionless_script_text_redaction_verified": true,
-  "updated_at": "2026-10-14T19:00:54.945143+00:00",
+  "updated_at": "2026-10-14T20:18:45.144666+00:00",
   "initial_five_assets_immutable": true,
   "new_assets": [
-    "rejected-7b-course004-full-evidence.tar.gz",
-    "corrective003-full-native-evidence.tar.gz"
+    "rejected-7b-course005-full-evidence.tar.gz"
   ],
-  "initial_uploaded_seven_assets_immutable": true
+  "initial_uploaded_seven_assets_immutable": true,
+  "existing_thirteen_remote_assets_immutable": true
 }
