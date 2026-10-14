@@ -13,6 +13,12 @@ general CAD assistant or a manufacturing qualification system.
 
 ![Actual geometry from our Qwen adapter and PicoGK](docs/visuals/generated/overview.png)
 
+![Actual Qwen C# spaceframe rendered from native PicoGK STL](docs/visuals/animations/spaceframe.gif)
+
+[Animated examples and a more complex C# probe](docs/SCAN_TO_PICOGK.md)
+show both an admitted nonplanar tapered truss and a rejected K16-study
+diffuser request. This text adapter does not accept or reconstruct raw scans.
+
 The [traceable gallery](docs/visuals/README.md) contains five real model calls,
 their raw responses, native PicoGK STL files and mesh renders. The diagrams
 in [architecture and evidence flow](docs/ARCHITECTURE.md) document the system.

@@ -1,0 +1,19 @@
+{
+  "schema": "qwen-picogk.turntable@1",
+  "title": "Qwen C# \u2192 PicoGK \u00b7 tapered spaceframe",
+  "mesh_sha256": "3287caffc87b0f1b93455a9b6814dbce21b74f1f988f4364994af6bb62aeaf1f",
+  "gif_sha256": "d8348ab91d43afe6ed1ed7c876c2c4492beac1060da26e0db0fb97ca5872ed28",
+  "source_sha256": "d8adffb3857e4a21b53f2dc24a274d731d5838a4d5a0fe484e4157e8bcc193af",
+  "mesh_renderer_sha256": "6bbeeadd8148a24cb512d0f5f7fe9fcc08a558dc0d05e226dc4d6bb1b8f3ca17",
+  "frames": 24,
+  "duration_ms": 120,
+  "loop": 0,
+  "size_px": [
+    640,
+    640
+  ],
+  "engine": "Matplotlib actual mesh turntable; Pillow GIF encoder",
+  "pillow": "11.3.0",
+  "geometry_changed": false,
+  "manufacturing_qualified": false
+}

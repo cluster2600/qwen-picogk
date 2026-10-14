@@ -1,0 +1,36 @@
+using System.Numerics;
+using System.Text.Json;
+using PicoGK;
+using Library lib = new(0.5f);
+Library.RegisterGlobalLibrary(lib);
+try
+{
+ using Lattice lattice = new(lib);
+lattice.AddBeam(new Vector3(-14f, -8f, 0f), 1.5f, new Vector3(-14f, 8f, 12f), 2.5f, true);
+lattice.AddBeam(new Vector3(-14f, -8f, 0f), 1.5f, new Vector3(14f, -8f, 12f), 2.5f, true);
+lattice.AddBeam(new Vector3(-14f, -8f, 0f), 1.5f, new Vector3(14f, 8f, 0f), 2.5f, true);
+lattice.AddBeam(new Vector3(-14f, 8f, 12f), 1.5f, new Vector3(14f, -8f, 12f), 2.5f, true);
+lattice.AddBeam(new Vector3(-14f, 8f, 12f), 1.5f, new Vector3(14f, 8f, 0f), 2.5f, true);
+lattice.AddBeam(new Vector3(14f, -8f, 12f), 1.5f, new Vector3(14f, 8f, 0f), 2.5f, true);
+ using Voxels solid = new(lattice);
+ using Mesh mesh = new(solid);
+ solid.CalculateProperties(out float volume, out BBox3 box);
+ mesh.SaveToStlFile(args[0], Mesh.EStlUnit.MM);
+ using Mesh roundtrip = Mesh.mshFromStlFile(args[0], Mesh.EStlUnit.MM, libSet: lib);
+ Vector3[] probes = new[] {
+new Vector3(-14f,0f,6f),
+new Vector3(0f,-8f,6f),
+new Vector3(0f,0f,0f),
+new Vector3(0f,0f,12f),
+new Vector3(0f,8f,6f),
+new Vector3(14f,0f,6f)
+ };
+ bool inside = probes.All(solid.bIsInside);
+ Console.WriteLine(JsonSerializer.Serialize(new {volume, triangles=mesh.nTriangleCount(),
+ roundtrip_triangles=roundtrip.nTriangleCount(), all_beam_midpoints_inside=inside,
+ min=new[]{box.vecMin.X,box.vecMin.Y,box.vecMin.Z},max=new[]{box.vecMax.X,box.vecMax.Y,box.vecMax.Z},
+ manufacturing_qualified=false}));
+ if (volume<=0 || mesh.nTriangleCount()<=0 || mesh.nTriangleCount()!=roundtrip.nTriangleCount() || !inside)
+ throw new Exception("Native spaceframe screen failed");
+}
+finally { Library.UnregisterGlobalLibrary(); }

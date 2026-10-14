@@ -1,5 +1,28 @@
 # Geometry gallery produced from our LLM's actual outputs
 
+## Animated native meshes
+
+![Qwen C# to native PicoGK: tapered nonplanar spaceframe](animations/spaceframe.gif)
+
+| Existing model-plan example | Turntable |
+|---|---|
+| BCC cell | ![Actual BCC mesh rotation](animations/bcc.gif) |
+| Synthetic thread cutter | ![Actual thread mesh rotation](animations/thread.gif) |
+
+Each GIF rotates the actual native STL: 24 frames, 640 × 640 pixels,
+120 ms per frame, continuous loop. Only the camera moves. The more complex
+spaceframe is generated from our adapter's actual restricted C# output.
+See [the successful code and failed catalogue-part probe](../SCAN_TO_PICOGK.md).
+
+Recreate an animation with the existing plotting/Pillow environment:
+
+```sh
+python3 scripts/animate_mesh.py docs/visuals/generated/bcc/raw.stl work/bcc.gif --title 'Qwen → PicoGK · BCC cell'
+```
+
+Each GIF has a neighbouring JSON receipt with source-mesh,
+renderer and output hashes, frame count and geometry-change status.
+
 ![Five actual Qwen-to-PicoGK geometries](generated/overview.png)
 
 Five exposed final cases were selected as demonstrations, one recipe and

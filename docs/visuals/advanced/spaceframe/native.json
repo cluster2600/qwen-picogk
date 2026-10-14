@@ -1,0 +1,17 @@
+{
+  "volume": 1960.0616,
+  "triangles": 22232,
+  "roundtrip_triangles": 22232,
+  "all_beam_midpoints_inside": true,
+  "min": [
+    -16.5,
+    -10.5,
+    -2.5
+  ],
+  "max": [
+    16.5,
+    10.5,
+    14.5
+  ],
+  "manufacturing_qualified": false
+}

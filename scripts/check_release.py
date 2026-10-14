@@ -72,6 +72,33 @@ def check(weights=False):
         for name, sha in receipt['source_sha256'].items():
             assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest() == sha
         assert hashlib.sha256((ROOT/'scripts/render_gallery.py').read_bytes()).hexdigest() == receipt['rendering']['source_sha256']
+    advanced = ROOT/'docs/visuals/advanced'
+    if (advanced/'manifest.json').exists():
+        bindings = json.loads((advanced/'manifest.json').read_text())
+        for name, sha in bindings['files_sha256'].items():
+            path=(ROOT/name).resolve()
+            assert path.is_relative_to(ROOT)
+            assert hashlib.sha256(path.read_bytes()).hexdigest()==sha
+        rejected=json.loads((advanced/'diffuser-rejected.json').read_text())
+        assert rejected['finish_reason']=='length' and not rejected['code_executed'] and not rejected['scan_input']
+        probe=json.loads((advanced/'spaceframe/llm.json').read_text())
+        from check_beam_code import admitted
+        assert len(admitted(probe['raw_response'],probe['finish_reason'],probe))==6
+        assert probe['code_executed'] and probe['native_compilation_passed'] and not probe['model_response_repaired']
+        assert probe['adapter_sha256']==manifest['adapters']['planner']['adapters.safetensors']
+        metrics=json.loads((advanced/'spaceframe/native.json').read_text())
+        assert metrics['volume']>0 and metrics['all_beam_midpoints_inside']
+        assert metrics['triangles']==metrics['roundtrip_triangles'] and not metrics['manufacturing_qualified']
+    for name in ['bcc','thread','spaceframe']:
+        gif=ROOT/'docs/visuals/animations'/(name+'.gif')
+        if not gif.exists():continue
+        receipt=json.loads(gif.with_suffix('.json').read_text())
+        mesh=(advanced/'spaceframe/raw.stl')if name=='spaceframe'else gallery/name/'raw.stl'
+        assert hashlib.sha256(mesh.read_bytes()).hexdigest()==receipt['mesh_sha256']
+        assert hashlib.sha256(gif.read_bytes()).hexdigest()==receipt['gif_sha256']
+        assert gif.read_bytes()[:6]in[b'GIF87a',b'GIF89a']
+        assert receipt['frames']==24 and receipt['loop']==0 and not receipt['geometry_changed']
+        assert hashlib.sha256((ROOT/'scripts/animate_mesh.py').read_bytes()).hexdigest()==receipt['source_sha256']
     print(json.dumps({'data_files_verified': len(manifest['data_files']), 'synthetic_cases': len(cases),
                       'training_rows': len(rows), 'weights_verified': weights, 'dataset_code_executed': False}))
 

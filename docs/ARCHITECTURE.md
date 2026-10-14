@@ -29,8 +29,11 @@ independent contract checks the result after inference. By contrast, the
 ordinary structured `infer.py` command canonicalises explicit fields before
 inference and refuses unknown interfaces before calling the model.
 
-Model output is never executable C#, package names, build commands or file
-paths. The renderer shades the actual native STL triangles; no image model
+In this standard JSON-planner pipeline, model output is never executable C#,
+package names, build commands or file paths. The separate
+[restricted C# probe](SCAN_TO_PICOGK.md) admits only independently verified
+literal beam statements before compiling a trusted wrapper. Rejected code
+is never executed. The renderer shades the actual native STL triangles; no image model
 creates or alters the shape. A render is separate from engineering validation.
 
 ## How the released checkpoint was selected

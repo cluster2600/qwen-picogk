@@ -21,6 +21,12 @@ retention passes; those old tasks are exposed, not fresh generalisation tests.
 [Raw model responses, native STL files and image provenance](https://github.com/cluster2600/qwen-picogk/blob/main/docs/visuals/README.md).
 These are exposed synthetic demonstrations, not a new benchmark.
 
+![Restricted actual Qwen C# beam program rendered by PicoGK](https://raw.githubusercontent.com/cluster2600/qwen-picogk/main/docs/visuals/animations/spaceframe.gif)
+
+[Restricted C# success and broader diffuser failure](https://github.com/cluster2600/qwen-picogk/blob/main/docs/SCAN_TO_PICOGK.md)
+are separate probes. This adapter has no mesh/point-cloud encoder and does
+not claim scan reconstruction or reliable arbitrary PicoGK program generation.
+
 ## Architecture and training
 
 MLX LoRA rank 8, scale 20, no dropout, 16 layers on the 4-bit MLX

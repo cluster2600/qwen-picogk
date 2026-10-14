@@ -1,0 +1,16 @@
+{
+  "schema": "qwen-picogk.advanced-probes@1",
+  "files_sha256": {
+    "docs/visuals/advanced/diffuser-rejected.json": "ccd9e6702711bae397021c46aed6ed8c471f1dd7b0bb07b2589c65c97bd01455",
+    "docs/visuals/advanced/spaceframe/llm.json": "e50ff31e48627eed0ad8b6dd67ab697c94b8b7fce7e75d6120cfbc247ee59ad2",
+    "docs/visuals/advanced/spaceframe/raw.stl": "3287caffc87b0f1b93455a9b6814dbce21b74f1f988f4364994af6bb62aeaf1f",
+    "docs/visuals/advanced/spaceframe/response.cs.txt": "7c99b4e6625fb4c706031cb3d87402ffe6b087879452fb5f98621162c37df6ae",
+    "docs/visuals/advanced/spaceframe/native.json": "52d2ba99015d8c09d3cd1b64fc3e409740b9fc68060b799e482d23efb3f8f801",
+    "docs/visuals/advanced/spaceframe/VerifiedHost.cs.txt": "1f9bba51573e17861abac8f685611a950c37cc208890b683b94b8d76bdae84ff"
+  },
+  "model_weights_changed": false,
+  "scan_reconstruction_performed": false,
+  "diffuser_code_executed": false,
+  "spaceframe_literal_code_compiled": true,
+  "manufacturing_qualified": false
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "qwen-picogk.csharp-probe@1",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Write only C# statements for an existing PicoGK.Lattice named lattice. Use lattice.AddBeam(new Vector3(xf, yf, zf), radiusf, new Vector3(xf, yf, zf), radiusf, true/false); with numeric literals. No declarations, loops, comments, Markdown or other APIs. Coordinates are designed millimeters, not measured engine dimensions. Return one statement per edge."
+    },
+    {
+      "role": "user",
+      "content": "Build a synthetic graph. Vertices in mm: {\"A\": [-14, -8, 0], \"B\": [-14, 8, 12], \"C\": [14, -8, 12], \"D\": [14, 8, 0]}. Directed edges: A->B, A->C, A->D, B->C, B->D, C->D. Each edge has start diameter 3 mm and end diameter 5 mm. Rounded caps: true. Convert diameters to radii. Emit every edge exactly once."
+    }
+  ],
+  "raw_response": "lattice.AddBeam(new Vector3(-14f, -8f, 0f), 1.5f, new Vector3(-14f, 8f, 12f), 2.5f, true);\nlattice.AddBeam(new Vector3(-14f, -8f, 0f), 1.5f, new Vector3(14f, -8f, 12f), 2.5f, true);\nlattice.AddBeam(new Vector3(-14f, -8f, 0f), 1.5f, new Vector3(14f, 8f, 0f), 2.5f, true);\nlattice.AddBeam(new Vector3(-14f, 8f, 12f), 1.5f, new Vector3(14f, -8f, 12f), 2.5f, true);\nlattice.AddBeam(new Vector3(-14f, 8f, 12f), 1.5f, new Vector3(14f, 8f, 0f), 2.5f, true);\nlattice.AddBeam(new Vector3(14f, -8f, 12f), 1.5f, new Vector3(14f, 8f, 0f), 2.5f, true);",
+  "finish_reason": "stop",
+  "input_tokens": 223,
+  "adapter_sha256": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
+  "code_executed": true,
+  "scan_input": false,
+  "vertices_mm": {
+    "A": [
+      -14,
+      -8,
+      0
+    ],
+    "B": [
+      -14,
+      8,
+      12
+    ],
+    "C": [
+      14,
+      -8,
+      12
+    ],
+    "D": [
+      14,
+      8,
+      0
+    ]
+  },
+  "edges": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "A",
+      "C"
+    ],
+    [
+      "A",
+      "D"
+    ],
+    [
+      "B",
+      "C"
+    ],
+    [
+      "B",
+      "D"
+    ],
+    [
+      "C",
+      "D"
+    ]
+  ],
+  "start_diameter_mm": 3,
+  "end_diameter_mm": 5,
+  "code_subset_verified": true,
+  "model_response_repaired": false,
+  "motivation": "Synthetic nonplanar tapered truss inspired by structural-carrier studies; not a reconstruction of 993-ENG-CARRIER-0001",
+  "source_part_link": "https://github.com/cluster2600/porscheparts/blob/main/catalog/parts/993-eng-carrier-0001.json",
+  "native_compilation_passed": true,
+  "geometry_screen_passed": true
+}
