@@ -123,8 +123,8 @@ def reconstruct(intake, plan, output):
     else:
         mesh = trimesh.Trimesh(vertices, faces, process=False)
     components = mesh.split(only_watertight=False)
-    # shortcut: discard only tiny reconstruction dust; check scan coverage before delivery.
-    threshold = max(100, len(mesh.faces)//1000)
+    # Only generated Poisson fragments are dust candidates; acquired closed meshes stay intact.
+    threshold = max(100, len(mesh.faces)//1000) if plan['method']=='screened_poisson' else 0
     kept = [m for m in components if len(m.faces) >= threshold]
     if not kept:
         raise ValueError('Reconstruction contains no retained surface')
@@ -153,6 +153,62 @@ def surface_distance(source, target, seed):
     return dict(samples=2000, seed=seed, rms_mm=float(np.sqrt(np.mean(d*d))),
                 p95_mm=float(np.quantile(d,.95)), sampled_max_mm=float(d.max()),
                 method='area_uniform_points_to_triangles; sampled extrema, not exact Hausdorff')
+
+
+def inspect_closed(source, output):
+    import numpy as np
+    import struct
+    import trimesh
+    with Path(source).open('rb') as stream:
+        header=stream.read(84)
+    if len(header)!=84 or Path(source).stat().st_size!=84+50*struct.unpack('<I',header[80:84])[0]:
+        raise ValueError('Exact binary STL required')
+    mesh=trimesh.load(source,force='mesh',process=True)
+    _,counts=np.unique(mesh.edges_sorted,axis=0,return_counts=True)
+    labels=trimesh.graph.connected_component_labels(mesh.face_adjacency,node_count=len(mesh.faces))
+    if not mesh.is_watertight or not mesh.is_winding_consistent or mesh.volume<=0:
+        raise ValueError('Closed positive oriented envelope required')
+    result=dict(input_sha256=digest(source),triangles=len(mesh.faces),boundary_edges=int((counts==1).sum()),
+                connected_surface_components=len(np.unique(labels)),nonmanifold_edges=int((counts>2).sum()))
+    if result['nonmanifold_edges']:
+        raise ValueError('Nonmanifold envelope')
+    output=fresh(output);save(output/'closed-intake.json',result)
+    return result
+
+
+def dominant_demo(intake, output):
+    """Isolate the dominant acquired surface for a demo; retain unregistered fragments."""
+    import numpy as np
+    import trimesh
+    intake=Path(intake)
+    metadata=json.loads((intake/'intake.json').read_text())
+    if digest(intake/'prepared.npz')!=metadata['prepared_npz_sha256']:
+        raise ValueError('Prepared coordinates hash mismatch')
+    data=np.load(intake/'prepared.npz')
+    mesh=trimesh.Trimesh(data['vertices'],data['faces'],process=False)
+    labels=trimesh.graph.connected_component_labels(mesh.face_adjacency,node_count=len(mesh.faces))
+    areas=np.bincount(labels,weights=mesh.area_faces)
+    selected=labels==int(areas.argmax())
+    fraction=float(areas.max()/areas.sum())
+    if fraction<.95:
+        raise ValueError('No 95-percent dominant surface; unregistered assembly cannot be simplified automatically')
+    output=fresh(output)
+    kept=trimesh.Trimesh(mesh.vertices,mesh.faces[selected],process=False)
+    kept.export(output/'prepared.stl')
+    np.savez_compressed(output/'prepared.npz',vertices=mesh.vertices,faces=mesh.faces[selected])
+    if np.any(~selected):
+        trimesh.Trimesh(mesh.vertices,mesh.faces[~selected],process=False).export(output/'unregistered-fragments.stl')
+    np.save(output/'retained_prepared_face_indices.npy',np.flatnonzero(selected))
+    _,counts=np.unique(kept.edges_sorted,axis=0,return_counts=True)
+    metadata.update(triangles=int(selected.sum()),prepared_triangles=int(selected.sum()),
+                    vertices=len(np.unique(kept.faces)),boundary_edges=int((counts==1).sum()),
+                    connected_surface_components=1,prepared_sha256=digest(output/'prepared.stl'),
+                    prepared_npz_sha256=digest(output/'prepared.npz'),
+                    reference_scope='dominant acquired surface; not the complete original OBJ',
+                    retained_surface_area_fraction=fraction,omitted_triangles=int((~selected).sum()),
+                    omitted_fragments_are_not_classified_as_dust=True,back_registration_verified=False)
+    save(output/'intake.json',metadata)
+    return metadata
 
 
 def assess(intake, native, output):
@@ -195,10 +251,10 @@ def assess(intake, native, output):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('stage', choices=['inspect','reconstruct','assess'])
+    parser.add_argument('stage', choices=['inspect','inspect_closed','dominant_demo','reconstruct','assess'])
     parser.add_argument('paths', nargs='+', type=Path)
     args = parser.parse_args()
-    if len(args.paths) != (2 if args.stage=='inspect' else 3):
+    if len(args.paths) != (2 if args.stage in ('inspect','inspect_closed','dominant_demo') else 3):
         parser.error('inspect OBJ NEW_DIR | reconstruct INTAKE PLAN NEW_DIR | assess INTAKE NATIVE NEW_DIR')
     result = globals()[args.stage](*args.paths)
     print(json.dumps(result, allow_nan=False))

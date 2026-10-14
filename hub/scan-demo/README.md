@@ -27,6 +27,13 @@ The owner explicitly allowed hypotheses for a demonstration. Missing surfaces,
 scale, material and process remain assumptions. See the
 [full English workflow and limitations](https://github.com/cluster2600/qwen-picogk/blob/main/docs/OBJ_TO_STL_DEMO.md).
 
+The adaptive demo retains a rejected first recipe, permits one declared
+scan-point envelope/closing operation, audits the closed result, then makes
+a second real model call before the final native export and quality screen.
+Unregistered minor input surfaces are retained separately; the main-body
+demo requires at least 95% of acquired surface area. This is an explicit
+scope assumption, not complete reconstruction or automatic assembly alignment.
+
 160 fixed steps continue from the original released planner, using rank 8,
 scale 20, 16 adapted layers, learning rate 1e-5 and batch two. The course has
 480 synthetic training, 24 development and 40 final cases. Exact-preset scores

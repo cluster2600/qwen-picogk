@@ -10,3 +10,5 @@ native/obj/
 !native/packages.lock.json
 scan-native/bin/
 scan-native/obj/
+envelope-native/bin/
+envelope-native/obj/

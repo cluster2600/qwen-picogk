@@ -1,0 +1,132 @@
+{
+  "status": "demo_geometry_passed",
+  "input_sha256": "5098149bf5a780127c50efa5df5aaf1b4887208c01ffc37df81d69546bf604d6",
+  "model_adapter_sha256": "f5835f5edca280da7451ef9becebfa4acf3acd434e0640f5dcc750a83ac68bc1",
+  "sources_sha256": {
+    "scan_demo.py": "c45070976726e6c298beb1763ed91032e488932b7da72f9855a6232645e1a752",
+    "scripts/scan_mesh.py": "998fd9d9738105ff5c1c307d7a6bce174bca5be19fb52b0ceaae82b7c1d24636",
+    "scripts/scan_policy.py": "e1667ed881c297e163f49d6f57c1bd07b825537b23d4a956028daa222fc062d1",
+    "scan-native/Program.cs": "09502cb21da03a35e46c09c0d7cb10066035cdf03a28354a97b2d96e3f281eb1",
+    "scan-native/ScanDemo.csproj": "6a178802213298f554bd2a840bb37b14cbe35e7a8819aa45e27f70f3b80755d3",
+    "scan-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f",
+    "envelope-native/Program.cs": "d698fa7f232686a2ddfdd39208edeff3be563835a0d12882dd1bf8834066ef36",
+    "envelope-native/EnvelopeDemo.csproj": "6a178802213298f554bd2a840bb37b14cbe35e7a8819aa45e27f70f3b80755d3",
+    "envelope-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f"
+  },
+  "quality": {
+    "status": "demo_geometry_passed",
+    "checks": {
+      "watertight": true,
+      "winding_consistent": true,
+      "one_component": true,
+      "positive_volume": true,
+      "no_zero_area_faces": true,
+      "topology_clean": true,
+      "scan_coverage": true,
+      "reconstructed_surface": true
+    },
+    "topology": {
+      "self_intersection_faces": 0,
+      "nonmanifold_edge_faces": 0,
+      "nonmanifold_vertices": 0
+    },
+    "components": 1,
+    "triangles": 572,
+    "volume_mm3_assumed": 24.000004023313522,
+    "scan_to_native": {
+      "samples": 2000,
+      "seed": 9931414,
+      "rms_mm": 9.230981916937841e-08,
+      "p95_mm": 1.1920928955078125e-07,
+      "sampled_max_mm": 1.1920928955078125e-07,
+      "method": "area_uniform_points_to_triangles; sampled extrema, not exact Hausdorff"
+    },
+    "native_to_open_scan": {
+      "samples": 2000,
+      "seed": 9931415,
+      "rms_mm": 9.320324458321509e-08,
+      "p95_mm": 1.1920928955078125e-07,
+      "sampled_max_mm": 1.1920928955078125e-07,
+      "method": "area_uniform_points_to_triangles; sampled extrema, not exact Hausdorff"
+    },
+    "native_sha256": "9bc3c1ee95b924d525d33472ed4bd19a54634d920cc487d9e9d56829ff534daf",
+    "source_sha256": "5098149bf5a780127c50efa5df5aaf1b4887208c01ffc37df81d69546bf604d6",
+    "manufacturing_qualified": false,
+    "supports_prepared": false,
+    "scale_verified": false,
+    "rotation_authorized": false
+  },
+  "first_quality": {
+    "status": "demo_geometry_passed",
+    "checks": {
+      "watertight": true,
+      "winding_consistent": true,
+      "one_component": true,
+      "positive_volume": true,
+      "no_zero_area_faces": true,
+      "topology_clean": true,
+      "scan_coverage": true,
+      "reconstructed_surface": true
+    },
+    "topology": {
+      "self_intersection_faces": 0,
+      "nonmanifold_edge_faces": 0,
+      "nonmanifold_vertices": 0
+    },
+    "components": 1,
+    "triangles": 572,
+    "volume_mm3_assumed": 24.000004023313522,
+    "scan_to_native": {
+      "samples": 2000,
+      "seed": 9931414,
+      "rms_mm": 9.230981916937841e-08,
+      "p95_mm": 1.1920928955078125e-07,
+      "sampled_max_mm": 1.1920928955078125e-07,
+      "method": "area_uniform_points_to_triangles; sampled extrema, not exact Hausdorff"
+    },
+    "native_to_open_scan": {
+      "samples": 2000,
+      "seed": 9931415,
+      "rms_mm": 9.320324458321509e-08,
+      "p95_mm": 1.1920928955078125e-07,
+      "sampled_max_mm": 1.1920928955078125e-07,
+      "method": "area_uniform_points_to_triangles; sampled extrema, not exact Hausdorff"
+    },
+    "native_sha256": "9bc3c1ee95b924d525d33472ed4bd19a54634d920cc487d9e9d56829ff534daf",
+    "source_sha256": "5098149bf5a780127c50efa5df5aaf1b4887208c01ffc37df81d69546bf604d6",
+    "manufacturing_qualified": false,
+    "supports_prepared": false,
+    "scale_verified": false,
+    "rotation_authorized": false
+  },
+  "repair_used": false,
+  "assumptions": {
+    "mm_per_source_unit": 1.0,
+    "voxel_mm": 0.5,
+    "material": "AlSi10Mg",
+    "process": "laser powder bed fusion"
+  },
+  "llm_role": "typed topology features to guarded tool plan; not a raw-mesh encoder or C# author",
+  "human_geometry_editing": false,
+  "manufacturing_qualified": false,
+  "delivered_stl_sha256": "9bc3c1ee95b924d525d33472ed4bd19a54634d920cc487d9e9d56829ff534daf",
+  "model_transcript": {
+    "request": {
+      "surface_topology": "closed",
+      "task": "end-to-end OBJ to PicoGK STL demo",
+      "triangles": 12,
+      "boundary_edges": 0,
+      "connected_surface_components": 1,
+      "units_confirmed": false,
+      "user_allows_demo_assumptions": true,
+      "mm_per_source_unit_assumed": 1.0,
+      "voxel_mm_assumed": 0.5
+    },
+    "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":1.0,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+    "finish_reason": "stop",
+    "adapter_sha256": "f5835f5edca280da7451ef9becebfa4acf3acd434e0640f5dcc750a83ac68bc1",
+    "model_called": true,
+    "geometry_encoder": false,
+    "model_response_repaired": false
+  }
+}

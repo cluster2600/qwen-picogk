@@ -1,0 +1,19 @@
+{
+  "request": {
+    "surface_topology": "open",
+    "task": "end-to-end OBJ to PicoGK STL demo",
+    "triangles": 1240465,
+    "boundary_edges": 8657,
+    "connected_surface_components": 2,
+    "units_confirmed": false,
+    "user_allows_demo_assumptions": true,
+    "mm_per_source_unit_assumed": 1.0,
+    "voxel_mm_assumed": 0.5
+  },
+  "raw_response": "{\"method\":\"screened_poisson\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":1.0,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+  "finish_reason": "stop",
+  "adapter_sha256": "f5835f5edca280da7451ef9becebfa4acf3acd434e0640f5dcc750a83ac68bc1",
+  "model_called": true,
+  "geometry_encoder": false,
+  "model_response_repaired": false
+}

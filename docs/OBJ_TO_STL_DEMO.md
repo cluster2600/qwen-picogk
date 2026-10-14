@@ -18,7 +18,11 @@ flowchart TD
     G --> H["Independent topology and bidirectional surface-distance screens"]
     H --> I{"Demo screens pass?"}
     I -->|Yes| J["Deliver private demo.stl and evidence"]
-    I -->|No| K["Retain rejected candidate and diagnostics; no delivered STL"]
+    I -->|No| K{"Repair already used?"}
+    K -->|No| L["Retain first rejection; one declared scan-envelope repair"]
+    L --> M["Independent closed-envelope audit; second actual Qwen plan"]
+    M --> G
+    K -->|Yes| N["Retain rejected candidates; no delivered STL"]
 ```
 
 ## Scope and assumptions
@@ -104,6 +108,65 @@ unsupported hub/rear closures and complete component reconstruction remain
 geometry work. Any alternative reconstruction is a new, separately screened
 candidate; thresholds and the failed result are not silently changed.
 
+## One bounded automatic repair for the demonstration
+
+The first full-scan envelope also exposes a semantic input problem: an
+unregistered subordinate scan surface crosses the fan's centre. Closure and
+surface-distance checks cannot establish correct assembly registration. The
+current demo therefore isolates the **dominant acquired surface**, requiring
+at least 95% of total acquired triangle area. Any subordinate surfaces are
+retained separately with face correspondence and are explicitly omitted from
+the delivered main-body demo. Two substantial unregistered parts are refused,
+rather than fused automatically. This is a declared scope assumption; it does
+not recover the complete original OBJ or reconstruct the missing rear.
+
+For the owner-selected input, this retains **98.6894% of acquired triangle
+area** and omits **16,755 prepared triangles** into a separate private fragment
+file. The retained surface has 1,223,684 triangles. The source OBJ stays
+unchanged. These fractions describe acquired surface area, not confidence,
+material mass or percentage of the original mechanical part reconstructed.
+
+The next workflow version preserves that first failure and permits exactly
+one further demonstration hypothesis. Its trusted C# recipe consumes the
+actual prepared STL's vertices, deduplicates identical positions, creates a
+PicoGK `Lattice` with 1 mm spheres, converts it to `Voxels` at 0.5 mm and applies
+`Offset(3)` followed by `Offset(-3)`. Those fixed radii are declared demo
+assumptions. The input points are real scan data, rather than the simulated
+sphere in the suggested screenshots.
+
+An independent backend witness finds a single closed, consistently oriented
+surface and no detected self-intersections/nonmanifold features. It passes
+the original distance thresholds: scan → envelope P95 1.0201 assumed mm and
+sampled maximum 2.0513 mm; envelope → scan P95 1.4705 mm and sampled maximum
+3.8572 mm. The unchanged thresholds and the rejected Poisson result remain
+recorded. This witness uses owned C# directly and is **not a Qwen-generated
+program or evidence of an end-to-end model run**.
+
+The automatic chain uses that same recipe only after the first geometry
+rejection, on that retained dominant surface. It independently inspects the resulting closed envelope and makes
+a second actual Qwen call with the newly audited topology and counts. Qwen
+must propose an admitted closed-mesh plan without changing units or voxel
+step; the trusted native host executes it and the final mesh is audited
+against the retained acquired surface. The receipt declares its retained area
+fraction and omitted face count, and preserves the full-OBJ first result.
+Both raw model responses and both quality records
+are kept. If the second geometry fails, no STL is delivered; there is no
+unbounded retry, manual edit or silent threshold change.
+
+The repair changes the object into a **closed, thickened surface envelope**.
+It can fill gaps, connect nearby acquired regions and change features smaller
+than the closing scale. It does not establish the historical solid, correct
+the rear registration or recover engineering intent. Any resulting STL is a
+nonfunctional demonstration geometry under those assumptions, rather than
+an impeccable recovered rotor or a metal-print release.
+
+The separate direct route also runs end-to-end on a known 2 × 3 × 4 mm closed
+synthetic box. A regression test ensures that the small acquired mesh survives
+unchanged: the dust threshold applies only to generated Poisson fragments.
+An acquired closed surface is not removed because it has fewer than 100 faces.
+The [direct-route receipt](../evidence/scan-demo/closed-cube-direct.json) records
+the actual model call, native result and independent geometry checks.
+
 The model emits JSON, not unrestricted executable C#. Its raw output is stored
 without repair and must reach EOS. Unsupported methods, changed scale/voxel
 step, additional fields, duplicate keys, invalid integer settings and any
@@ -164,6 +227,35 @@ actual raw Qwen response, reconstruction hypotheses, native metrics, independent
 quality results, logs and a final result record. `demo.stl` appears only after
 acceptance. Rejected intermediate files remain private for diagnosis.
 
+## Completed automatic main-body demonstration
+
+The complete command runs on the owner-selected OBJ without manual geometry
+editing. Its first raw Qwen proposal selects Poisson and preserves the declared
+units/step. The first geometry is rejected and kept. The automatic demo repair
+isolates the 98.6894% dominant surface, creates the declared envelope/closing,
+independently audits it and calls the **same actual adapter again**. That second
+raw response selects `direct_voxelization` for the now-closed envelope, preserves
+1 mm/unit and 0.5 mm voxels, and reaches EOS. Neither response is repaired.
+
+The final native STL has **3,487,584 triangles**, a single component, positive
+volume, consistent winding and no zero-area, detected self-intersecting or
+nonmanifold features. It passes the unchanged registered demonstration screens:
+
+| Comparison against the retained surface, under assumed scale | P95 | Sampled maximum |
+|---|---:|---:|
+| Acquired dominant surface → final native STL | 1.0231 mm | 2.0381 mm |
+| Final native STL → acquired dominant surface | 1.5557 mm | 3.7587 mm |
+
+The command exits zero and writes `demo.stl`, with SHA-256
+`bf5283aa0b55639109e122aeddce64ece955950398d6d91548b8b434be838572`.
+The [public scalar receipt](../evidence/scan-demo/automatic-main-demo.json)
+records scope, both quality outcomes, assumptions and source bindings. Its
+private source snapshot preserves the executed worker version before the
+small-closed-mesh regression fix; that fix affects the direct import branch,
+not this fan's geometry operations. Raw geometry, correspondence, PNG and GIF
+remain private. This single exposed development example is not a new geometry
+holdout, dimensional inspection, original CAD recovery or metal-process proof.
+
 ## About the suggested screenshot code
 
 The screenshots describe point spheres followed by dilation/erosion, and their
@@ -196,3 +288,37 @@ profiles, hub/bore axes and independently measured interfaces, followed by
 feature-to-PicoGK program training and held-out geometry families. End-to-end
 raw-scan learning would additionally require a dedicated 3D encoder and suitable
 licensed scan/program training pairs.
+
+## Training milestones beyond this tool planner
+
+1. **Recover geometric features and correspondence.** Establish which acquired
+   surfaces belong together, their alignment uncertainty, axes, hub/bore
+   profiles, individual blade sections and real interface datums. Keep observed
+   geometry, repairs and missing regions separate. A language model cannot
+   infer an original surface that was never acquired merely from this dataset.
+2. **Build licensed geometry/program pairs.** Start with owned PicoGK programs,
+   independently checked native meshes and simulated scans containing realistic
+   holes, noise and registration errors. Include refusal cases and preserve
+   invalid programs/API diagnostics. Synthetic metadata rows alone do not
+   teach geometric reconstruction. Do not add the private fan to public data.
+3. **Train feature-to-code within the real API.** Add guarded lofts, local frames,
+   bores, shells, implicit fields and boolean operations. Compile each accepted
+   C# proposal against the exact locked libraries and evaluate resulting geometry
+   independently. The earlier diffuser failure and screenshot API errors provide
+   concrete negative examples; passing `AddBeam` does not cover those families.
+4. **Evaluate unseen geometry, not just numbers.** Hold out complete rotor and
+   feature families, scan defects and acquisition variants. Measure interface
+   errors, bidirectional distances, missing/extra geometry, topology and critical
+   thickness. Preserve exposed development cases and single-seed limitations.
+   The owner's fan has been repeatedly inspected during development; it is not
+   an untouched geometry benchmark.
+5. **Add a 3D encoder only with a suitable corpus.** Raw point clouds need an
+   explicit spatial input representation and scan/program supervision. The text
+   adapter cannot acquire that ability through a different prompt or filename.
+   Compare this route against the simpler feature/tool pipeline before increasing
+   model size. Related research licensing must remain compatible with the intended
+   distribution; none is silently imported into the Apache-2.0 project.
+6. **Connect actual metal-process checks.** Choose the machine and qualified
+   material/process, then assess orientation, supports, escape paths, allowances,
+   distortion and inspection. Simulation and print/bench correlation are distinct
+   from successful code, a closed STL or a favourable tool-plan score.

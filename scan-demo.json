@@ -6,12 +6,15 @@
   },
   "system_prompt": "You are the scan-demo tool planner. Output only JSON with method, target_faces, poisson_depth, mm_per_source_unit, voxel_mm, manufacturing_qualified. If surface_topology is open, method must be screened_poisson. If surface_topology is closed, method must be direct_voxelization. Copy the declared scale and voxel step exactly. Use target_faces 180000 when triangles > 1000000, otherwise 300000. Use poisson_depth 9. manufacturing_qualified is always false. Proposals are independently checked. No code, prose or physical certification.",
   "sources_sha256": {
-    "scan_demo.py": "78261f46f4e69572f081a7aa51b34f2eb84d28c3019a9dd9c0bdb585985e837b",
-    "scripts/scan_mesh.py": "fd3458690acf083d8d62d06c5e083f44d7ca00fda9d3f780c2067b267f201b89",
+    "scan_demo.py": "c45070976726e6c298beb1763ed91032e488932b7da72f9855a6232645e1a752",
+    "scripts/scan_mesh.py": "998fd9d9738105ff5c1c307d7a6bce174bca5be19fb52b0ceaae82b7c1d24636",
     "scripts/scan_policy.py": "e1667ed881c297e163f49d6f57c1bd07b825537b23d4a956028daa222fc062d1",
     "scan-native/Program.cs": "09502cb21da03a35e46c09c0d7cb10066035cdf03a28354a97b2d96e3f281eb1",
     "scan-native/ScanDemo.csproj": "6a178802213298f554bd2a840bb37b14cbe35e7a8819aa45e27f70f3b80755d3",
-    "scan-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f"
+    "scan-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f",
+    "envelope-native/Program.cs": "d698fa7f232686a2ddfdd39208edeff3be563835a0d12882dd1bf8834066ef36",
+    "envelope-native/EnvelopeDemo.csproj": "6a178802213298f554bd2a840bb37b14cbe35e7a8819aa45e27f70f3b80755d3",
+    "envelope-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f"
   },
   "geometry_image_id": "sha256:f9c09072b2cfb4d177c8700263f76c6f065d81fd68f8115697a884b4473e63b1",
   "trained_parent_sha256": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
@@ -31,6 +34,16 @@
     "evidence/scan-demo/candidate-160-exact-specimen.json": "9fc5346cdb6be985e1c9941da12b459434eb61a1916af0f427c5a10b588c9f2c",
     "evidence/scan-demo/execution-final.json": "2d9c61e02a9752675f725d6828a7d9399c437d89a4c9393ef4663b781e017a1b",
     "evidence/scan-demo/automatic-scan-rejected.json": "b50168ffe3f7fa0de570daf4a653c26e9349d219f4b4db60fd3c21c314c4a966",
-    "evidence/scan-demo/execution-policy-v1.py.txt": "6e4e5c12f562c56dd08989c54d29f8fe4a02bc3e855401942cca55525f9c79cd"
+    "evidence/scan-demo/execution-policy-v1.py.txt": "6e4e5c12f562c56dd08989c54d29f8fe4a02bc3e855401942cca55525f9c79cd",
+    "evidence/scan-demo/automatic-envelope-demo.json": "973627fff078c152a99bcd2becb24aaaed018990623c333b868e8512d71303da",
+    "evidence/scan-demo/llm-envelope.json": "ffebc8b7ab4af1bd2483b2b19cde12b08c1c527e57dd911b49874370b77135b2",
+    "evidence/scan-demo/llm-repair-envelope.json": "d24250447722978ced558fde4989d0570655c93c3b59fc0c52cb05d06e04c043",
+    "evidence/scan-demo/snapshots/full-envelope/scan_demo.py.txt": "cd00b9fe388c00b23cc6decb8a89399f2c5a93bd30046aec83e6622646760f09",
+    "evidence/scan-demo/snapshots/full-envelope/scan_mesh.py.txt": "37bea44a7cbc2002a7fa5e0b252dacea25d43311b0258d3d943fac2298e20954",
+    "evidence/scan-demo/closed-cube-direct.json": "c2d6e8689b40967d96a9759357c84ae375b7c983317b7940727395dce54bb8e2",
+    "evidence/scan-demo/snapshots/main-demo/scan_mesh.py.txt": "b03dce0647706866a2eb9f3075b4819fb1dd8241ee10b858df0abeaeef4da4d0",
+    "evidence/scan-demo/automatic-main-demo.json": "9f252ce044d9164a04e9c7d7322e858b11e299179b19bc101f0a687f3d257da0",
+    "evidence/scan-demo/llm-main-demo.json": "ffebc8b7ab4af1bd2483b2b19cde12b08c1c527e57dd911b49874370b77135b2",
+    "evidence/scan-demo/llm-repair-main-demo.json": "8f9292576925cf139ac63e8b143ca4ade03c6d6ae48c3b10a3b550bc03671b01"
   }
 }
