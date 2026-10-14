@@ -1,0 +1,17 @@
+{
+  "status": "rejected",
+  "passed": false,
+  "checks": {
+    "development_at_least_11_of_12": false,
+    "required_safety_passed": false,
+    "retains_all_baseline_passes": false,
+    "all_four_scan_tasks_pass": false,
+    "all_candidate_responses_stopped": true,
+    "all_scan_responses_stopped": true
+  },
+  "development_passes": 2,
+  "scan_passes": 3,
+  "lost_baseline_passes": [
+    "development-offset-sign"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Curated synthetic sources/data, complete accepted diversity004 author/history/reviews, prior completed rejected courses and prospective running006 registration/audit. Final contents and active006 weights/logs omitted. Historical original-source hashes are preserved.",
+  "scope": "Curated synthetic sources/data, complete accepted diversity004 author/history/reviews, and six completed rejected courses with bound captures, native results and audits. Reserved final contents and active training files omitted. Historical original-source hashes are preserved.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -2325,6 +2325,41 @@
       "source_sha256": "4004cc901352e29ef5b5b4e57ba18604620779f412e503b83a85eaefad48a6eb",
       "public_sha256": "4004cc901352e29ef5b5b4e57ba18604620779f412e503b83a85eaefad48a6eb",
       "transform": "none"
+    },
+    {
+      "source": "am-code/course-006-cpu-audit.json",
+      "public_path": "evidence/course-006-cpu-audit.json",
+      "source_sha256": "ee05bf82d962948475008d1e9fdce42e27cb8603b5e9eb6da01356b717ecb2e9",
+      "public_sha256": "ee05bf82d962948475008d1e9fdce42e27cb8603b5e9eb6da01356b717ecb2e9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/qualification-rejected-7b320.log",
+      "public_path": "evidence/course-006-formal-rejection.json",
+      "source_sha256": "839806b34207ff812701581278f972d6ea366234ee4e9c350606b08b8e833022",
+      "public_sha256": "839806b34207ff812701581278f972d6ea366234ee4e9c350606b08b8e833022",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course006-7b320-independent-review.json",
+      "public_path": "evidence/course006-7b320-independent-review.json",
+      "source_sha256": "0e48dec3b9aba2a016122b6d77228b446fc54d4b1baafcb8b439f6d5ecf265c9",
+      "public_sha256": "0e48dec3b9aba2a016122b6d77228b446fc54d4b1baafcb8b439f6d5ecf265c9",
+      "transform": "none"
+    },
+    {
+      "source": "publication-staging/course006-assets.json",
+      "public_path": "evidence/course006-assets.json",
+      "source_sha256": "0bb6d238651556de2977820715315695d6782e2f5e82a23c23d1aa9a72000816",
+      "public_sha256": "0bb6d238651556de2977820715315695d6782e2f5e82a23c23d1aa9a72000816",
+      "transform": "none"
+    },
+    {
+      "source": "publication-staging/course006-current-assets.json",
+      "public_path": "evidence/assets.json",
+      "source_sha256": "d82057da272250186d0f1c98dee4b32f9ef6927ac30ec3ac4fcf82755110e047",
+      "public_sha256": "d82057da272250186d0f1c98dee4b32f9ef6927ac30ec3ac4fcf82755110e047",
+      "transform": "none; derived current inventory preserves all eight prior archive records and appends the bound completed006 record"
     }
   ]
 }
