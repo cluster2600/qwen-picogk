@@ -1,0 +1,52 @@
+{
+  "authored_manifest_sha256": "0ec16b8c3a3134af5642b5849119e238dac782c2b977345d43c18ad577ea534a",
+  "code_changes_requested": false,
+  "corpus_sha256": "9234d0176d132e735c7a51fe6fbc24f458a7ccfd8c8f9020143995b23abbafb9",
+  "created_at_utc": "2026-10-14T20:29:44.661879+00:00",
+  "final_contents_read": false,
+  "findings": [
+    {
+      "affected_prompt_rows": 16,
+      "family": "scan-normals",
+      "issue": "Input prose requires nonzero normals, while all frozen ReadPlanes teachers reject normal.LengthSquared()<.01f before normalization.",
+      "requested_change": "State the exact normal.LengthSquared() >= 0.01f eligibility guard in new prose. Preserve target/source/input/native proof bytes; do not rerun native geometry."
+    }
+  ],
+  "gpu_used": false,
+  "manufacturing_authorized": false,
+  "model_loaded": false,
+  "native_execution_repeated": false,
+  "review_scope": [
+    "TPMS selected Fourier family and phase origin; Mesh-to-Voxels re-distancing before nominal millimetre offsets",
+    "seven retained normal-plane lines, named-column mapping, six distinct normalized axis directions",
+    "bounded actual args0 XYZ parsing, input-dependent splats, no inferred closed interior",
+    "prompt-only ignored args0 versus dynamic measurement JSON and syntax-aware signed-range refusal",
+    "primitive task unused args0; literal radius/endpoints versus diameter/half-extents",
+    "all helpers defined and real PicoGK receiver ownership, final same-field VDB/STL export",
+    "exact JSON types/ordered missing IDs, task override and geometry-only qualification limits"
+  ],
+  "reviewed_families": [
+    "initialize",
+    "offset-sign",
+    "closing",
+    "shell",
+    "vent",
+    "cone-roof",
+    "gyroid",
+    "diamond",
+    "schwarz-p",
+    "scan-normals",
+    "debug-api",
+    "missing-interfaces",
+    "stl-roundtrip",
+    "stl-skin-vent",
+    "xyz-occupancy",
+    "signed-range-refusal",
+    "prompt-refusal",
+    "numeric-flat-beam"
+  ],
+  "rows": 320,
+  "schema": "picogk.am.task-body-semantic-review@1",
+  "status": "pending_one_prompt_precision_correction",
+  "teacher_cases": 80
+}

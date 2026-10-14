@@ -97,6 +97,38 @@ def check(root=ROOT, assets=None, native_runtime=False):
         answer = target_rows[row['training_line_1based']-1]['messages'][1]['content']
         assert seen_answers[row['id']] == answer
         assert hashlib.sha256(answer.encode()).hexdigest() == row['expected_answer_sha256']
+    diversity_root = root/'data/corrective-004'
+    diversity = [json.loads(line) for line in (diversity_root/'train.jsonl').read_text().splitlines()]
+    diversity_manifest = json.loads((diversity_root/'manifest.json').read_text())
+    assert len(diversity) == 320 and len(diversity_manifest['teacher_bindings']) == 80
+    assert len({teacher['source_sha256'] for teacher in diversity_manifest['teacher_bindings']}) == 71
+    assert digest(diversity_root/'train.jsonl') == diversity_manifest['train_sha256']
+    header = (diversity_root/'generic-header.txt').read_text()
+    assert digest(diversity_root/'generic-header.txt') == digest(root/'data/corrective-002/headers/development_generic.txt')
+    teachers = {teacher['original_teacher_id']: teacher for teacher in diversity_manifest['teacher_bindings']}
+    parents = {name: [json.loads(line) for line in (root/'data'/name/'train.jsonl').read_text().splitlines()]
+               for name in ['corrective-001', 'corrective-003']}
+    for teacher in teachers.values():
+        assert digest(root/teacher['source']) == teacher['source_sha256']
+        assert digest(root/teacher['input']) == teacher['input_sha256']
+    for row, binding in zip(diversity, diversity_manifest['row_bindings']):
+        teacher = teachers[binding['original_teacher_id']]
+        user, assistant = row['messages']
+        assert [user['role'], assistant['role']] == ['user', 'assistant']
+        assert user['content'].startswith(header+'\n')
+        assert hashlib.sha256(user['content'].encode()).hexdigest() == binding['prompt_sha256']
+        original = parents[teacher['original_dataset']][teacher['original_corpus_line_1based']-1]['messages'][1]
+        assert assistant == original
+        assert hashlib.sha256(assistant['content'].encode()).hexdigest() == binding['assistant_sha256']
+        assert assistant['content'].split('```csharp\n', 1)[1].rsplit('```', 1)[0] == (root/teacher['source']).read_text()
+    history = [json.loads(line) for line in (diversity_root/'history/attempt-001/train.jsonl').read_text().splitlines()]
+    correction = json.loads((diversity_root/'prose-correction-receipt.json').read_text())
+    changed = [index for index, (old, new) in enumerate(zip(history, diversity), 1)
+               if old['messages'][0] != new['messages'][0]]
+    assert len(history) == 320 and len(changed) == 16 and changed == correction['changed_prompt_lines_1based']
+    assert all(old['messages'][1] == new['messages'][1] for old, new in zip(history, diversity))
+    assert all(teachers[diversity_manifest['row_bindings'][index-1]['original_teacher_id']]['family'] == 'scan-normals'
+               for index in changed)
     results = json.loads((root/'evidence/results-summary.json').read_text())['results']
     assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0), (4, 2)]
     assert all(row['manufacturing_authorized'] is False for row in results)
@@ -122,6 +154,8 @@ def check(root=ROOT, assets=None, native_runtime=False):
             'new_validated_teachers': 16, 'new_teacher_checks': 648,
             'targeted7b_rows': 224,
             'seen_training_answers_exact': 6, 'seen_replay_qualification_credit': 0,
+            'task_body_augmented_rows': 320, 'existing_diversity_teachers': 80,
+            'existing_diversity_source_programs': 71, 'retained_prose_corrections': 16,
             'asset_hashes_checked': assets is not None, 'native_payload_hashes_checked': native_runtime,
             'mlx_imported': False, 'generated_code_executed': False,
             'qualified_adapter': False, 'manufacturing_authorized': False}

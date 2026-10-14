@@ -1,7 +1,7 @@
 {
   "schema": "picogk.am.release-assets-staged@1",
   "created_at": "2026-10-14T15:58:01.496883+00:00",
-  "status": "update_staged_not_uploaded",
+  "status": "existing_assets_unchanged_source_update_only",
   "assets": [
     {
       "asset": "original150-full-evidence.tar.gz",
@@ -97,11 +97,10 @@
   "completed_baseline7b_included": true,
   "current_7b_training_weights_or_live_log_included": false,
   "extensionless_script_text_redaction_verified": true,
-  "updated_at": "2026-10-14T20:18:45.144666+00:00",
+  "updated_at": "2026-10-14T20:43:27.014818+00:00",
   "initial_five_assets_immutable": true,
-  "new_assets": [
-    "rejected-7b-course005-full-evidence.tar.gz"
-  ],
+  "new_assets": [],
   "initial_uploaded_seven_assets_immutable": true,
-  "existing_thirteen_remote_assets_immutable": true
+  "existing_thirteen_remote_assets_immutable": true,
+  "existing_seventeen_remote_assets_immutable": true
 }

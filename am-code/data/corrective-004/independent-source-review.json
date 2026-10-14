@@ -1,0 +1,43 @@
+{
+  "schema": "picogk.am.independent-task-body-review@1",
+  "created_at": "2026-10-14T20:31:07.997687+00:00",
+  "status": "accepted_source_and_semantic_binding_pending_token_audit",
+  "corpus_sha256": "9234d0176d132e735c7a51fe6fbc24f458a7ccfd8c8f9020143995b23abbafb9",
+  "manifest_sha256": "0ec16b8c3a3134af5642b5849119e238dac782c2b977345d43c18ad577ea534a",
+  "author_sha256": "16e6023b06fe82c2692befac22728a3f06bf1782758689261f1d94913f2942d4",
+  "teachers": 80,
+  "rows": 320,
+  "unique_sources": 71,
+  "supersedes_review_sha256": "d49438f99033647daec4a88c0c5c08ae8d1ecbeb040a9c7c75e5d0fb2af17b85",
+  "changed_prompt_lines_1based": [
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160
+  ],
+  "checks": {
+    "exactly_16_normal_prompts_correct_only_squared_length_guard_and_rejection_prose": true,
+    "all_320_assistant_bytes_unchanged": true,
+    "all_80_source_input_native_oracle_bindings_unchanged": true,
+    "all_304_other_prompt_bytes_unchanged": true,
+    "original_80_specification_source_formula_parser_role_and_schema_review_retained": true
+  },
+  "evaluation_gold_used": false,
+  "final_contents_read": false,
+  "model_or_gpu_used": false,
+  "new_native_execution": false,
+  "manufacturing_authorized": false,
+  "limitation": "Preserved binding/semantic review establishes the authored corpus; learner generalization and physical qualification remain unproved."
+}

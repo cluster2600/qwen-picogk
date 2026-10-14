@@ -1,0 +1,643 @@
+{
+  "author_source_sha256": "b5ae779ada365ef3f3c3bb60832aa90bd602fbf10cb0e4e1ea67c218f8a5fdf8",
+  "authored_manifest_sha256": "7ebfb432d17ff50ed1d4544fc728b470dd958fab3d467b54cd7c10a4e7c16e7d",
+  "base_profile_sha256": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+  "checks": {
+    "320_distinct_prompts": true,
+    "320_strict_complete_messages": true,
+    "71_exact_assistant_targets": true,
+    "80_teachers_320_bindings_four_styles": true,
+    "actual_base_added_tokens.json": true,
+    "actual_base_config.json": true,
+    "actual_base_merges.txt": true,
+    "actual_base_model.safetensors": true,
+    "actual_base_model.safetensors.index.json": true,
+    "actual_base_special_tokens_map.json": true,
+    "actual_base_tokenizer.json": true,
+    "actual_base_tokenizer_config.json": true,
+    "actual_base_vocab.json": true,
+    "all320_actual_template_prefix_masks_eos_fences": true,
+    "all320_prompt_body_answer_bindings_and_obligations": false,
+    "all80_teacher_source_fixture_oracle_native_bindings": true,
+    "all_prompts_ascii": true,
+    "author_source_binding": true,
+    "authored_files_unchanged_during_audit": true,
+    "base_profile_identity": true,
+    "exact_prior_generic_header": true,
+    "frozen_authored_corpus_sha": true,
+    "no_mlx_or_mlx_lm_import": true,
+    "parent_cases_corrective-001": true,
+    "parent_cases_corrective-003": true,
+    "parent_corpus_corrective-001": true,
+    "parent_corpus_corrective-003": true,
+    "raw_jsonl_ascii": true
+  },
+  "corpus_sha256": "559d1f2681f68b012cd8eb5cd0212efc1d8f07f0d11ba35efecc4fc2e64fbf20",
+  "created_at_utc": "2026-10-14T20:26:24.069779+00:00",
+  "dataset_source_sha256": "fa112840e6ea98a4ff18428792fe2ab023999c2da51ea64b3ebdf8657a152f17",
+  "eos_token_id": 151645,
+  "exact_native_bindings": {
+    "corrective-001": 64,
+    "corrective-003": 16
+  },
+  "final_contents_read": false,
+  "generic_header_sha256": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7",
+  "gpu_used": false,
+  "issues": [
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 2,
+      "teacher": "compact-initialize-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 6,
+      "teacher": "compact-initialize-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 10,
+      "teacher": "compact-initialize-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 14,
+      "teacher": "compact-initialize-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 18,
+      "teacher": "compact-offset-sign-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 22,
+      "teacher": "compact-offset-sign-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 26,
+      "teacher": "compact-offset-sign-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 30,
+      "teacher": "compact-offset-sign-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 34,
+      "teacher": "compact-closing-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 38,
+      "teacher": "compact-closing-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 42,
+      "teacher": "compact-closing-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 46,
+      "teacher": "compact-closing-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 50,
+      "teacher": "compact-shell-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 54,
+      "teacher": "compact-shell-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 58,
+      "teacher": "compact-shell-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 62,
+      "teacher": "compact-shell-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 66,
+      "teacher": "compact-vent-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 70,
+      "teacher": "compact-vent-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 74,
+      "teacher": "compact-vent-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 78,
+      "teacher": "compact-vent-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 82,
+      "teacher": "compact-cone-roof-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 86,
+      "teacher": "compact-cone-roof-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 90,
+      "teacher": "compact-cone-roof-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 94,
+      "teacher": "compact-cone-roof-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 98,
+      "teacher": "compact-gyroid-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 102,
+      "teacher": "compact-gyroid-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 106,
+      "teacher": "compact-gyroid-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 110,
+      "teacher": "compact-gyroid-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 114,
+      "teacher": "compact-diamond-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 118,
+      "teacher": "compact-diamond-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 122,
+      "teacher": "compact-diamond-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 126,
+      "teacher": "compact-diamond-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 130,
+      "teacher": "compact-schwarz-p-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 134,
+      "teacher": "compact-schwarz-p-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 138,
+      "teacher": "compact-schwarz-p-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 142,
+      "teacher": "compact-schwarz-p-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 146,
+      "teacher": "compact-scan-normals-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 150,
+      "teacher": "compact-scan-normals-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 154,
+      "teacher": "compact-scan-normals-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 158,
+      "teacher": "compact-scan-normals-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 162,
+      "teacher": "compact-debug-api-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 166,
+      "teacher": "compact-debug-api-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 170,
+      "teacher": "compact-debug-api-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 174,
+      "teacher": "compact-debug-api-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 178,
+      "teacher": "compact-missing-interfaces-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 182,
+      "teacher": "compact-missing-interfaces-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 186,
+      "teacher": "compact-missing-interfaces-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 190,
+      "teacher": "compact-missing-interfaces-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 194,
+      "teacher": "compact-stl-roundtrip-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 198,
+      "teacher": "compact-stl-roundtrip-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 202,
+      "teacher": "compact-stl-roundtrip-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 206,
+      "teacher": "compact-stl-roundtrip-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 210,
+      "teacher": "compact-stl-skin-vent-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 214,
+      "teacher": "compact-stl-skin-vent-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 218,
+      "teacher": "compact-stl-skin-vent-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 222,
+      "teacher": "compact-stl-skin-vent-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 226,
+      "teacher": "compact-xyz-occupancy-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 230,
+      "teacher": "compact-xyz-occupancy-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 234,
+      "teacher": "compact-xyz-occupancy-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 238,
+      "teacher": "compact-xyz-occupancy-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 242,
+      "teacher": "compact-signed-range-refusal-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 246,
+      "teacher": "compact-signed-range-refusal-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 250,
+      "teacher": "compact-signed-range-refusal-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 254,
+      "teacher": "compact-signed-range-refusal-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 258,
+      "teacher": "fresh-prompt-refusal-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 262,
+      "teacher": "fresh-prompt-refusal-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 266,
+      "teacher": "fresh-prompt-refusal-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 270,
+      "teacher": "fresh-prompt-refusal-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 274,
+      "teacher": "fresh-prompt-refusal-05"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 278,
+      "teacher": "fresh-prompt-refusal-06"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 282,
+      "teacher": "fresh-prompt-refusal-07"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 286,
+      "teacher": "fresh-prompt-refusal-08"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 290,
+      "teacher": "fresh-numeric-flat-beam-01"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 294,
+      "teacher": "fresh-numeric-flat-beam-02"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 298,
+      "teacher": "fresh-numeric-flat-beam-03"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 302,
+      "teacher": "fresh-numeric-flat-beam-04"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 306,
+      "teacher": "fresh-numeric-flat-beam-05"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 310,
+      "teacher": "fresh-numeric-flat-beam-06"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 314,
+      "teacher": "fresh-numeric-flat-beam-07"
+    },
+    {
+      "failed_bindings": [
+        "all_declared_obligations_present"
+      ],
+      "line": 318,
+      "teacher": "fresh-numeric-flat-beam-08"
+    }
+  ],
+  "manufacturing_authorized": false,
+  "mask_prompt": true,
+  "max_assistant_tokens": 1069,
+  "max_full_tokens": 2181,
+  "max_seq_length": 6144,
+  "mlx_imported": false,
+  "model_files_sha256": {
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "config.json": "08762352ba9fded858f24bdd7b8d2fe61aabe7bce1dfdb663db242d574c3e678",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "model.safetensors": "56a3d94706833f753e6c6b47ea57af8ef638cd8cc1d74eca1142ba640b26060e",
+    "model.safetensors.index.json": "23cd562592dd96686d2e799eb02e4b578a4038b6045eaefe860d270cc060e24f",
+    "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "tokenizer.json": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf",
+    "tokenizer_config.json": "f7c61e32b7a17d19bf8e7037dcb74079a833e53ea9801f24008cac68458f03b7",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "model_loaded": false,
+  "native_execution_repeated": false,
+  "packages": {
+    "mlx-lm": "0.31.3",
+    "tokenizers": "0.23.2",
+    "transformers": "5.17.0"
+  },
+  "rows": 320,
+  "schema": "picogk.am.task-body-token-validation@1",
+  "scope": "Independent actual7B tokenizer and installed ChatDataset masked-prefix/EOS/no-truncation plus80 frozen source/fixture/oracle/native and320 answer/prompt bindings. Family semantic review is a separate receipt.",
+  "status": "failed",
+  "teacher_cases": 80,
+  "token_rows_sha256": "8c6cbc2c95a0fea020abd2dc87e31ecac4ed62c962b7b10fd851b35d59a44b08",
+  "tokenizer_class": "Qwen2Tokenizer",
+  "total_assistant_tokens": 226800,
+  "total_full_tokens": 535428,
+  "truncated_rows": 0,
+  "unique_assistant_targets": 71
+}

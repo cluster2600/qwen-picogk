@@ -1,6 +1,6 @@
 # AM C# training study — 14 October 2026
 
-This separate study trains Qwen to write complete C# programs with PicoGK 2.3 for synthetic scan ingestion, morphological repair, bionic infill and additive-manufacturing geometry. **No AM C# adapter is qualified yet.** Five completed courses are rejected: three 1.5B courses and two 7B courses. The repository's published multilingual JSON planner and its defaults are preserved.
+This separate study trains Qwen to write complete C# programs with PicoGK 2.3 for synthetic scan ingestion, morphological repair, bionic infill and additive-manufacturing geometry. **No AM C# adapter is qualified yet.** Five completed courses are rejected: three 1.5B courses and two 7B courses. Course 006 is registered and running. The repository's published multilingual JSON planner and its defaults are preserved.
 
 | Experiment | Development | File-to-geometry scans | Outcome |
 |---|---:|---:|---|
@@ -11,6 +11,7 @@ This separate study trains Qwen to write complete C# programs with PicoGK 2.3 fo
 | Matched untouched 7B base | 1/12 | — | Separate baseline |
 | Fresh 7B, 342 rows and steps | 3/12 | 0/4 | Rejected |
 | 7B continuation, course 005, 224 rows / 448 steps | 4/12 | 2/4 | Rejected |
+| Task-body diversity, course 006, 320 rows / 320 planned steps | Pending | Pending | Registered and running |
 
 The bases pass different tasks. Candidate selection must use the matched baseline for its own base identity. [Results](evidence/results-summary.json) bind reported scores, captured responses, protocols, weights and configurations by SHA-256. Training loss, EOS, compilation and a closed mesh are separate observations; none replaces independent geometry or model gates.
 
@@ -28,6 +29,9 @@ A separate [six-row seen-training replay](evidence/seen-replay005/comparison.jso
 - [Mixed 7B corpus](data/mixed-7b-001/train.jsonl) is the exact concatenation of original 150 messages and the 192 augmented rows. Actual 7B tokenizer and installed MLX dataset-mask checks cover all 342 rows; maximum sequence length is 5,416, under 6,144. No example is truncated.
 - [Corrective 003](data/corrective-003/README.md) adds 16 fresh programs in 32 rows: eight prompt-only refusals and eight beams with specified radii and flat caps. Its retained native receipt passes all 16 programs and 648 Boolean checks; two deliberately incorrect beam variants are rejected. The first validation attempt is preserved with the correction for changing VDB file identifiers. Teacher source bytes are unchanged.
 - [Targeted 224-row corpus](data/targeted-7b-001/train.jsonl) concatenates the 192 augmented rows and these 32 new rows exactly. Its actual 7B tokenizer receipt confirms complete assistant EOS, matching prompt prefixes and no truncation. [Course 005 registration](evidence/course-005-protocol.json) fixed a continuation from the rejected course 004 adapter for 448 steps over two epochs. The [completed CPU audit](evidence/course-005-cpu-audit.json) binds the finite arrays, exact parent/base/data/source/configuration identities and training receipt; it is not a model qualification.
+- [Task-body diversity 004](data/corrective-004/README.md) uses four newly worded requests for each of the existing 80 validated teacher cases: 320 rows backed by 71 source programs. Assistant answers, C# sources and synthetic fixtures are unchanged. Independent semantic/source reviews and actual 7B tokenization pass, with a maximum of 2,181 tokens and no truncation. The first prose attempt is retained: sixteen normal-reader prompts were corrected to state the existing teacher's six-plane input guards, while all 320 answers remain unchanged. Complete author, manifest, history and review files are in Git; existing native geometry remains in its original evidence archives.
+
+[Course 006 registration](evidence/course-006-protocol.json) fixes a one-epoch, 320-step continuation from course 005 using the accepted diversity corpus and learning rate 1e-5. Its [running-protocol audit](evidence/course006-running-protocol-audit.json) verifies the registration and configuration without reading active run weights or logs, loading a model, or using the GPU. Generalization improvement remains a hypothesis. This snapshot excludes active course 006 weights and logs and provides no course 006 score. Regenerating task-body prompts requires restoring the prior teacher result JSON files from their existing archives; the retained author refuses to overwrite a populated corpus.
 
 The real API types are `Voxels`, `Mesh`, `Lattice` and `System.Numerics.Vector3`; `VoxelMatrix` and `PolyMesh` are not PicoGK 2.3 types. The compact teachers produce one complete C# fence, own their headless Library lifetime, export the same solid to VDB/STL and remove exactly zero-area facets. Refusal programs do not initialize native geometry. Scans and dimensions are generated synthetic fixtures; no proprietary scan or measured vehicle interface is included.
 

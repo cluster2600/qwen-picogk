@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Curated synthetic sources/data and accepted teaching receipts; redacted completed rejected courses and ineligible seen-training replay. Final contents and unaccepted corrective004 data omitted. Initial source hashes retain historical identities.",
+  "scope": "Curated synthetic sources/data, complete accepted diversity004 author/history/reviews, prior completed rejected courses and prospective running006 registration/audit. Final contents and active006 weights/logs omitted. Historical original-source hashes are preserved.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -2163,6 +2163,167 @@
       "public_path": "evidence/course005-assets.json",
       "source_sha256": "27b865e27dff8ad1d428fb75d8c684e832261dc15da7037e77cff5a57cfc6fef",
       "public_sha256": "27b865e27dff8ad1d428fb75d8c684e832261dc15da7037e77cff5a57cfc6fef",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/README.md",
+      "public_path": "data/corrective-004/README.md",
+      "source_sha256": "15c4f37607a87ab84b3f341c0029b6605137ac4405a9fa4f56b3c4a06f5c740a",
+      "public_sha256": "15c4f37607a87ab84b3f341c0029b6605137ac4405a9fa4f56b3c4a06f5c740a",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/augment.py",
+      "public_path": "data/corrective-004/augment.py",
+      "source_sha256": "16e6023b06fe82c2692befac22728a3f06bf1782758689261f1d94913f2942d4",
+      "public_sha256": "16e6023b06fe82c2692befac22728a3f06bf1782758689261f1d94913f2942d4",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/generic-header.txt",
+      "public_path": "data/corrective-004/generic-header.txt",
+      "source_sha256": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7",
+      "public_sha256": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/history/attempt-001/README.md",
+      "public_path": "data/corrective-004/history/attempt-001/README.md",
+      "source_sha256": "15c4f37607a87ab84b3f341c0029b6605137ac4405a9fa4f56b3c4a06f5c740a",
+      "public_sha256": "15c4f37607a87ab84b3f341c0029b6605137ac4405a9fa4f56b3c4a06f5c740a",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/history/attempt-001/augment.py",
+      "public_path": "data/corrective-004/history/attempt-001/augment.py",
+      "source_sha256": "b5ae779ada365ef3f3c3bb60832aa90bd602fbf10cb0e4e1ea67c218f8a5fdf8",
+      "public_sha256": "b5ae779ada365ef3f3c3bb60832aa90bd602fbf10cb0e4e1ea67c218f8a5fdf8",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/history/attempt-001/generic-header.txt",
+      "public_path": "data/corrective-004/history/attempt-001/generic-header.txt",
+      "source_sha256": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7",
+      "public_sha256": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/history/attempt-001/independent-source-review.json",
+      "public_path": "data/corrective-004/history/attempt-001/independent-source-review.json",
+      "source_sha256": "d49438f99033647daec4a88c0c5c08ae8d1ecbeb040a9c7c75e5d0fb2af17b85",
+      "public_sha256": "d49438f99033647daec4a88c0c5c08ae8d1ecbeb040a9c7c75e5d0fb2af17b85",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/history/attempt-001/independent-token-rows.json",
+      "public_path": "data/corrective-004/history/attempt-001/independent-token-rows.json",
+      "source_sha256": "8c6cbc2c95a0fea020abd2dc87e31ecac4ed62c962b7b10fd851b35d59a44b08",
+      "public_sha256": "8c6cbc2c95a0fea020abd2dc87e31ecac4ed62c962b7b10fd851b35d59a44b08",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/history/attempt-001/manifest.json",
+      "public_path": "data/corrective-004/history/attempt-001/manifest.json",
+      "source_sha256": "7ebfb432d17ff50ed1d4544fc728b470dd958fab3d467b54cd7c10a4e7c16e7d",
+      "public_sha256": "7ebfb432d17ff50ed1d4544fc728b470dd958fab3d467b54cd7c10a4e7c16e7d",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/history/attempt-001/preservation.json",
+      "public_path": "data/corrective-004/history/attempt-001/preservation.json",
+      "source_sha256": "5abf359feb87115ada575711f0b2a8497b7d7c2810e213e7aec6767f6941f349",
+      "public_sha256": "5abf359feb87115ada575711f0b2a8497b7d7c2810e213e7aec6767f6941f349",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/history/attempt-001/tokenization-receipt.json",
+      "public_path": "data/corrective-004/history/attempt-001/tokenization-receipt.json",
+      "source_sha256": "cc171a6dd34bb75a744905dd51bdaae7d9f0678143e067ce33f51f00dfc76ce8",
+      "public_sha256": "cc171a6dd34bb75a744905dd51bdaae7d9f0678143e067ce33f51f00dfc76ce8",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/history/attempt-001/train.jsonl",
+      "public_path": "data/corrective-004/history/attempt-001/train.jsonl",
+      "source_sha256": "559d1f2681f68b012cd8eb5cd0212efc1d8f07f0d11ba35efecc4fc2e64fbf20",
+      "public_sha256": "559d1f2681f68b012cd8eb5cd0212efc1d8f07f0d11ba35efecc4fc2e64fbf20",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/independent-semantic-review-pending.json",
+      "public_path": "data/corrective-004/independent-semantic-review-pending.json",
+      "source_sha256": "3ef010e0fe6966d7a4f6ba2313357081b7ad2421755c2a0febf7329129bff604",
+      "public_sha256": "3ef010e0fe6966d7a4f6ba2313357081b7ad2421755c2a0febf7329129bff604",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/independent-semantic-review.json",
+      "public_path": "data/corrective-004/independent-semantic-review.json",
+      "source_sha256": "522b08416bb4cc1fa200c9169a88650ede0e7348217c5180119dddef73c9bfd9",
+      "public_sha256": "522b08416bb4cc1fa200c9169a88650ede0e7348217c5180119dddef73c9bfd9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/independent-semantic-rows.json",
+      "public_path": "data/corrective-004/independent-semantic-rows.json",
+      "source_sha256": "c6af9438aea68faf1eb524d36cb337db8c192e8f46915f37cbf0bf9f1609179f",
+      "public_sha256": "c6af9438aea68faf1eb524d36cb337db8c192e8f46915f37cbf0bf9f1609179f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/independent-source-review.json",
+      "public_path": "data/corrective-004/independent-source-review.json",
+      "source_sha256": "4e91b2f1f69de6f05579115ba084657d255d70cd5e644f429e051dfb9e7ea0a9",
+      "public_sha256": "4e91b2f1f69de6f05579115ba084657d255d70cd5e644f429e051dfb9e7ea0a9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/independent-token-rows.json",
+      "public_path": "data/corrective-004/independent-token-rows.json",
+      "source_sha256": "ca2d4b6e44436bbcbc4cb1e70d54dbab199a044cb5645f722b943e5d2794fe5d",
+      "public_sha256": "ca2d4b6e44436bbcbc4cb1e70d54dbab199a044cb5645f722b943e5d2794fe5d",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/manifest.json",
+      "public_path": "data/corrective-004/manifest.json",
+      "source_sha256": "0ec16b8c3a3134af5642b5849119e238dac782c2b977345d43c18ad577ea534a",
+      "public_sha256": "0ec16b8c3a3134af5642b5849119e238dac782c2b977345d43c18ad577ea534a",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/prose-correction-receipt.json",
+      "public_path": "data/corrective-004/prose-correction-receipt.json",
+      "source_sha256": "6b97e00c11d69e8597d3a9be379ae9d0bf4e9b0a0e6d55d4d54057c15b8f8181",
+      "public_sha256": "6b97e00c11d69e8597d3a9be379ae9d0bf4e9b0a0e6d55d4d54057c15b8f8181",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/tokenization-receipt.json",
+      "public_path": "data/corrective-004/tokenization-receipt.json",
+      "source_sha256": "5a13a5d64a76b8ba24242b0a40d354b137620d3387901dae6fa1ee1bd418f1e0",
+      "public_sha256": "5a13a5d64a76b8ba24242b0a40d354b137620d3387901dae6fa1ee1bd418f1e0",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-004/train.jsonl",
+      "public_path": "data/corrective-004/train.jsonl",
+      "source_sha256": "9234d0176d132e735c7a51fe6fbc24f458a7ccfd8c8f9020143995b23abbafb9",
+      "public_sha256": "9234d0176d132e735c7a51fe6fbc24f458a7ccfd8c8f9020143995b23abbafb9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course-006-protocol.json",
+      "public_path": "evidence/course-006-protocol.json",
+      "source_sha256": "f271b341e246b897f230ef0527fe4acb31ff363084ff57e367ee59ec0ba544b9",
+      "public_sha256": "f271b341e246b897f230ef0527fe4acb31ff363084ff57e367ee59ec0ba544b9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course006-running-protocol-audit.json",
+      "public_path": "evidence/course006-running-protocol-audit.json",
+      "source_sha256": "4004cc901352e29ef5b5b4e57ba18604620779f412e503b83a85eaefad48a6eb",
+      "public_sha256": "4004cc901352e29ef5b5b4e57ba18604620779f412e503b83a85eaefad48a6eb",
       "transform": "none"
     }
   ]
