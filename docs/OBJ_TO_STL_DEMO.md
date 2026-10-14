@@ -267,6 +267,27 @@ screenshots. The actual host uses `new Library(voxel)`,
 `Mesh.mshFromStlFile`, `new Voxels(mesh)`, `mshAsMesh` and `SaveToStlFile`.
 See the [official PicoGK source](https://github.com/leap71/PicoGK).
 
+The additional workflow screenshot describes a plausible architecture, not
+evidence that our adapter can generate a complete reconstruction program.
+PicoGK's `Voxels` represent discretised signed-distance fields; see the
+[official explanation of implicit geometry and offsets](https://picogk.org/coding-for-engineers/19-computational-geometry-part7.html).
+Importing samples, voxelising them and closing gaps is therefore a possible
+tool workflow. It does not establish recovery of the original part.
+
+In the current demonstration, Qwen proposes **bounded JSON tool plans from
+numerical metadata**. The geometry tools consume the actual scan, and the
+trusted C# hosts are project code. Qwen did not generate those hosts, and no
+model-written reconstruction program was executed. The earlier C# spaceframe
+example does not demonstrate scan-to-code capability.
+
+To demonstrate **OBJ → Qwen-generated PicoGK C# → faithful STL**, a separate
+experiment must retain the raw model-written program, compile it against the
+locked API, execute it in isolation and independently compare its output with
+the acquired geometry. Any diagnostic-driven retry must preserve the failed
+program and distinguish model corrections from human edits. Training needs
+licensed executable geometry/program pairs and real compiler/runtime
+diagnostics; the current metadata-only course does not supply those pairs.
+
 Adding spheres and closing gaps can alter bores, merge adjacent blades and
 change wall thickness. Neither that recipe nor Poisson reconstruction proves
 the missing material's shape. Our code retains the acquired scan and measures
