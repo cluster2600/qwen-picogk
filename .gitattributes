@@ -1,0 +1,3 @@
+native/vendor/** linguist-vendored
+data/**/*.json linguist-generated
+data/**/*.jsonl linguist-generated

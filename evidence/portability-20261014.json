@@ -1,0 +1,79 @@
+{
+  "schema": "qwen-picogk.portability@1",
+  "date": "2026-10-14",
+  "source_revision_tested": "f7c0a6f0a487c65bcae793c6502c1fb1e2f7c8fa",
+  "platform": "macOS Apple silicon; same physical source Mac",
+  "fresh_git_clone": true,
+  "fresh_python_venv": true,
+  "fresh_dependency_install": true,
+  "pip_check_passed": true,
+  "base_source": "Existing exact pinned base supplied explicitly; no archived project scripts loaded",
+  "focused_tests": 9,
+  "native_build": {
+    "package": "PicoGK 2.3.0 NuGet",
+    "sdk": "10.0.402",
+    "target": "net9.0",
+    "warnings": 44,
+    "errors": 0,
+    "historical_managed_wrapper_identical": false
+  },
+  "evaluations": {
+    "planner": {
+      "passed": 54,
+      "total": 60,
+      "by_language": {
+        "en": 11,
+        "fr": 11,
+        "de": 11,
+        "ja": 10,
+        "zh": 11
+      },
+      "native_checked": true,
+      "exposed_public_test": true,
+      "manufacturing_qualified": false,
+      "full_local_receipt_sha256": "9baca3c145b0ab835d3a681fc16217ba3120dad3e1205e734f162f843b7c492d"
+    },
+    "baseline": {
+      "passed": 12,
+      "total": 60,
+      "by_language": {
+        "en": 3,
+        "fr": 2,
+        "de": 2,
+        "ja": 3,
+        "zh": 2
+      },
+      "native_checked": true,
+      "exposed_public_test": true,
+      "manufacturing_qualified": false,
+      "full_local_receipt_sha256": "74fd5ceffc386e5974dd48e23cb01f52984019386da5d97c1b36cdb8237aa757"
+    },
+    "selector": {
+      "passed": 20,
+      "total": 20,
+      "by_language": {
+        "en": 4,
+        "fr": 4,
+        "de": 4,
+        "ja": 4,
+        "zh": 4
+      },
+      "native_checked": false,
+      "exposed_public_test": true,
+      "manufacturing_qualified": false,
+      "full_local_receipt_sha256": "9ccaaeb92085d05dd6f47311d4f26cc921cbb9f9cc3fe85d9fcebe6cc663c89d"
+    }
+  },
+  "fresh_inference": {
+    "mixed_unit_pipe": [
+      12,
+      8.5,
+      2
+    ],
+    "unverified_interface_model_called": false
+  },
+  "historical_retention_reexecuted": false,
+  "full_historical_retraining_executed": false,
+  "different_physical_machine_tested": false,
+  "hf_upload_performed": false
+}
