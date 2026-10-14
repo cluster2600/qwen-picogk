@@ -1,7 +1,7 @@
 {
   "schema": "picogk.am.release-assets-staged@1",
   "created_at": "2026-10-14T15:58:01.496883+00:00",
-  "status": "staged_not_uploaded",
+  "status": "update_staged_not_uploaded",
   "assets": [
     {
       "asset": "original150-full-evidence.tar.gz",
@@ -52,6 +52,26 @@
       "redacted_files": 85,
       "export_index_sha256": "9fbbb7605e4c92adcd59e1832afb121eba43ad6990c979aec1aefafa74782657",
       "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-7b-course004-full-evidence.tar.gz",
+      "bytes": 259079481,
+      "sha256": "1cabffe17406e749c3d4b5e407a54d95b8c99eee44ef493919c90462fa23c2ac",
+      "files": 319,
+      "raw_payload_bytes": 290590256,
+      "redacted_files": 44,
+      "export_index_sha256": "dfe017c694944cdfe716a43e853b219e745d0a7f08a8ec92bbbb14b4832306d5",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "corrective003-full-native-evidence.tar.gz",
+      "bytes": 7627612,
+      "sha256": "d3b52fb4d6e252f5613d9ce8ba35c10fd95b36ca6331f6db7b868728eea2ca9f",
+      "files": 1545,
+      "raw_payload_bytes": 30209395,
+      "redacted_files": 37,
+      "export_index_sha256": "4c16a9f07ac163c226f8ddcb77884a484065483717359eb2272f7a763a1798fe",
+      "qualified_adapter": false
     }
   ],
   "ongoing_training_weights_copied": false,
@@ -66,5 +86,12 @@
   ],
   "completed_baseline7b_included": true,
   "current_7b_training_weights_or_live_log_included": false,
-  "extensionless_script_text_redaction_verified": true
+  "extensionless_script_text_redaction_verified": true,
+  "updated_at": "2026-10-14T19:00:54.945143+00:00",
+  "initial_five_assets_immutable": true,
+  "new_assets": [
+    "rejected-7b-course004-full-evidence.tar.gz",
+    "corrective003-full-native-evidence.tar.gz"
+  ],
+  "initial_uploaded_seven_assets_immutable": true
 }

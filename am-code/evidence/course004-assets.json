@@ -1,0 +1,54 @@
+{
+  "schema": "picogk.am.release-assets-staged@1",
+  "created_at": "2026-10-14T18:36:25.648536+00:00",
+  "status": "staged_not_uploaded",
+  "course": "004",
+  "assets": [
+    {
+      "asset": "rejected-7b-course004-full-evidence.tar.gz",
+      "bytes": 259079481,
+      "sha256": "1cabffe17406e749c3d4b5e407a54d95b8c99eee44ef493919c90462fa23c2ac",
+      "files": 319,
+      "raw_payload_bytes": 290590256,
+      "redacted_files": 44,
+      "export_index_sha256": "dfe017c694944cdfe716a43e853b219e745d0a7f08a8ec92bbbb14b4832306d5",
+      "qualified_adapter": false
+    }
+  ],
+  "archive_roots": [
+    "runs/7b-mixed001-epoch1",
+    "data/mixed-7b-001",
+    "candidate-development-7b342",
+    "candidate-scan-7b342",
+    "candidate-scores-7b342",
+    "scan-scores-7b342",
+    "registration/course-004-protocol.json",
+    "registration/course-004-cpu-audit.json",
+    "registration/qualification-rejected-7b342.log",
+    "diagnostics/course004-7b342-independent-review.json",
+    "logs/course-004-training.log",
+    "logs/candidate-development-7b342.log",
+    "logs/candidate-scan-7b342.log",
+    "logs/candidate-scores-7b342.log",
+    "logs/scan-scores-7b342.log",
+    "source-snapshot/train.py",
+    "source-snapshot/infer.py",
+    "source-snapshot/base_runtime.py",
+    "source-snapshot/qualification.py",
+    "source-snapshot/base-profile-7b.json",
+    "source-snapshot/evaluation/evaluate.py",
+    "source-snapshot/evaluation/Inspector.cs",
+    "source-snapshot/end-to-end/evaluate.py"
+  ],
+  "previous_five_assets_immutable": true,
+  "initial_uploaded_metadata_sha256": {
+    "assets.json": "62c4ecf4f5269278ea0e97629e78f6139ab8d9c17f144e58e1db6af1573a5d27",
+    "AM-release.json": "c4bc8de84c62af4e9ce8b0c7886eaefc014ee50b34b2f312f3ac7637d25e9132"
+  },
+  "completed_rejected_course_only": true,
+  "current_training_weights_included": false,
+  "final_task_contents_included": false,
+  "upstream_base_or_native_binaries_included": false,
+  "all_adapter_assets_unqualified": true,
+  "manufacturing_authorized": false
+}

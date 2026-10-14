@@ -1,0 +1,661 @@
+{
+  "schema": "picogk.am.corrective-fault-check@1",
+  "rejected": 2,
+  "total": 2,
+  "train_sha256": "d93a6c6cc57e04c2943021f02337942d773a8ddadaf7ad1800ce8a648a85b952",
+  "cases_sha256": "039ffcf984444a4bc540be140e8a5a6f754e25b607f39b7e780b1986129c3c8d",
+  "checker_sha256": "af802087d1290d554180ccf2572d30f5f7d87bd0a16c30e67800fbd8dfba6519",
+  "fault_checker_sha256": "31736ee7ba42557766a63c17c366ec6e27e81336cfa05d77c182af1ad61e4329",
+  "cases": [
+    {
+      "fault": "halved-radius",
+      "rejected": true,
+      "native_exit_code": 0,
+      "teacher_source_sha256": "4bbe1ece3178f7ea128aab9810f8ae04de094e12010f14969805e81da2ffd93b",
+      "mutant_source_sha256": "ef4114c324e1878a899381a87f8d2b07ef4bfdd756f6e1aadf6c0b20bbb92fc3",
+      "failed_checks": [
+        "independent_flat_cylinder_volume",
+        "independent_vdb_world_bounds",
+        "independent_vdb_numeric_radius_endpoint_probes",
+        "independent_direct_stl_numeric_probes"
+      ],
+      "checks": {
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "bounded_geometry": true,
+        "independent_flat_cylinder_volume": false,
+        "independent_vdb_world_bounds": false,
+        "stl_vdb_volume_interval": true,
+        "independent_vdb_numeric_radius_endpoint_probes": false,
+        "independent_direct_stl_numeric_probes": false,
+        "same_solid_stl_vdb_probe_agreement": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true
+      },
+      "details": {
+        "analytic": {
+          "length_mm": 6.7,
+          "radius_mm": 0.55,
+          "volume_mm3": 6.367222910663115,
+          "low": [
+            -3.21,
+            -0.08000000000000007,
+            -1.68
+          ],
+          "high": [
+            3.49,
+            1.02,
+            -0.5799999999999998
+          ],
+          "probes": [
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -2.86,
+                0.47,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                3.14,
+                0.47,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -3.66,
+                0.47,
+                -1.13
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                3.9400000000000004,
+                0.47,
+                -1.13
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -1.48
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -2.03
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -0.7799999999999998
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -0.22999999999999987
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.8200000000000001,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                1.37,
+                -1.13
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.11999999999999994,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                -0.43000000000000005,
+                -1.13
+              ],
+              "inside": false
+            }
+          ]
+        },
+        "mesh": {
+          "triangles": 560,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 1.1582345306392556
+        },
+        "native": {
+          "volume_mm3": 1.056,
+          "library_volume_mm3": 1.3559601,
+          "volume_interval_mm3": [
+            0,
+            10.944
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -3.21,
+            0.21839915,
+            -1.3816009
+          ],
+          "high": [
+            3.489999,
+            0.72050244,
+            -0.8794976
+          ],
+          "triangles": 560,
+          "unsupported_triangles": 136,
+          "wall_rays_mm": [
+            0.45000005,
+            0.40000004,
+            0.45000005,
+            0.50000006,
+            0.40000004,
+            0.40000004,
+            0.40000004,
+            0.45000005,
+            0.40000004,
+            0.50000006,
+            0.45000005,
+            0.45000005,
+            0.40000004,
+            0.40000004,
+            0.45000005,
+            0.40000004,
+            0.45000005,
+            0.40000004,
+            0.45000005,
+            0.50000006,
+            0.40000004,
+            0.40000004,
+            0.40000004,
+            0.45000005,
+            0.40000004,
+            0.50000006,
+            0.45000005,
+            0.45000005,
+            0.40000004,
+            0.40000004,
+            0.45000005,
+            0.40000004,
+            0.45000005,
+            0.40000004,
+            0.45000005,
+            0.50000006,
+            0.40000004,
+            0.40000004,
+            0.40000004,
+            0.45000005,
+            0.40000004,
+            0.50000006,
+            0.45000005,
+            0.45000005,
+            0.40000004,
+            0.40000004,
+            0.45000005,
+            0.40000004,
+            0.45000005,
+            0.40000004,
+            0.45000005,
+            0.50000006,
+            0.40000004
+          ],
+          "inspected_rays": 53,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "vdb_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "direct_stl_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "probes_sha256": "d8e8965133ac4c249f7fc2c1eb62d72996189c7b82879eb59b5a0fcf5355d7d8"
+      }
+    },
+    {
+      "fault": "rounded-caps",
+      "rejected": true,
+      "native_exit_code": 0,
+      "teacher_source_sha256": "4bbe1ece3178f7ea128aab9810f8ae04de094e12010f14969805e81da2ffd93b",
+      "mutant_source_sha256": "5cf98c3653a3a0e76e8550e9b9b080311236b159f380c4e7f0eaeab3973ac163",
+      "failed_checks": [
+        "independent_vdb_world_bounds",
+        "independent_vdb_numeric_radius_endpoint_probes",
+        "independent_direct_stl_numeric_probes"
+      ],
+      "checks": {
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "bounded_geometry": true,
+        "independent_flat_cylinder_volume": true,
+        "independent_vdb_world_bounds": false,
+        "stl_vdb_volume_interval": true,
+        "independent_vdb_numeric_radius_endpoint_probes": false,
+        "independent_direct_stl_numeric_probes": false,
+        "same_solid_stl_vdb_probe_agreement": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true
+      },
+      "details": {
+        "analytic": {
+          "length_mm": 6.7,
+          "radius_mm": 0.55,
+          "volume_mm3": 6.367222910663115,
+          "low": [
+            -3.21,
+            -0.08000000000000007,
+            -1.68
+          ],
+          "high": [
+            3.49,
+            1.02,
+            -0.5799999999999998
+          ],
+          "probes": [
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -2.86,
+                0.47,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                3.14,
+                0.47,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -3.66,
+                0.47,
+                -1.13
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                3.9400000000000004,
+                0.47,
+                -1.13
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -1.48
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -2.03
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -0.7799999999999998
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -0.22999999999999987
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.8200000000000001,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                1.37,
+                -1.13
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.11999999999999994,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                -0.43000000000000005,
+                -1.13
+              ],
+              "inside": false
+            }
+          ]
+        },
+        "mesh": {
+          "triangles": 1904,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 6.681565047177356
+        },
+        "native": {
+          "volume_mm3": 6.632000000000001,
+          "library_volume_mm3": 6.954328,
+          "volume_interval_mm3": [
+            0,
+            29.696
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -3.739051,
+            -0.06969831,
+            -1.6696984
+          ],
+          "high": [
+            4.0195913,
+            1.0099384,
+            -0.5900617
+          ],
+          "triangles": 1904,
+          "unsupported_triangles": 384,
+          "wall_rays_mm": [
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.0500001,
+            1.0500001,
+            1.0000001,
+            1.0500001,
+            1.1,
+            1.1999999,
+            1.0000001,
+            1.1,
+            1.0000001,
+            1.15,
+            1.15,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.1,
+            1.1,
+            1.1999999,
+            1.15,
+            1.1,
+            1.0500001,
+            0.95000017,
+            1.15,
+            0.95000017,
+            1.1,
+            1.1,
+            0.95000017,
+            1.0000001,
+            0.95000017,
+            1.1,
+            1.0500001,
+            1.0500001,
+            1.0000001,
+            1.0500001,
+            1.1,
+            1.1999999,
+            1.0000001,
+            1.1,
+            1.0000001,
+            1.15,
+            1.15,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.1,
+            1.1,
+            1.1999999,
+            1.15,
+            1.1,
+            1.0500001,
+            0.95000017,
+            1.15,
+            0.95000017,
+            1.1,
+            1.1,
+            0.95000017,
+            1.0000001,
+            0.95000017,
+            1.1,
+            1.0500001,
+            1.0500001,
+            1.0000001,
+            1.0500001,
+            1.1,
+            1.1999999,
+            1.0000001,
+            1.1,
+            1.0000001,
+            1.15,
+            1.15,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.15,
+            1.15,
+            1.15,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.1,
+            1.1,
+            1.1999999,
+            1.15,
+            1.1,
+            1.0500001,
+            0.95000017,
+            1.15,
+            0.95000017,
+            1.1
+          ],
+          "inspected_rays": 158,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "vdb_hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "direct_stl_hits": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "probes_sha256": "d8e8965133ac4c249f7fc2c1eb62d72996189c7b82879eb59b5a0fcf5355d7d8"
+      }
+    }
+  ],
+  "training_data": false,
+  "manufacturing_authorized": false
+}

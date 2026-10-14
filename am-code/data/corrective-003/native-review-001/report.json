@@ -1,0 +1,3497 @@
+{
+  "schema": "picogk.am.corrective-validation@1",
+  "train_sha256": "d93a6c6cc57e04c2943021f02337942d773a8ddadaf7ad1800ce8a648a85b952",
+  "cases_sha256": "039ffcf984444a4bc540be140e8a5a6f754e25b607f39b7e780b1986129c3c8d",
+  "validator_sha256": "6a8414e2652017f56be9401780487dc52f3a60c4dd1a73d936ae037a2169cf0b",
+  "previous_checker_sha256": "ab10c0fdbf05406e6f3c53ef126514470929dda814c9212520df1eba98176768",
+  "trusted_core_sha256": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+  "passed": 8,
+  "total": 16,
+  "tasks": [
+    {
+      "id": "fresh-numeric-flat-beam-01",
+      "status": "failed",
+      "source_sha256": "4bbe1ece3178f7ea128aab9810f8ae04de094e12010f14969805e81da2ffd93b",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "bounded_geometry": true,
+        "independent_flat_cylinder_volume": true,
+        "independent_vdb_world_bounds": true,
+        "stl_vdb_volume_interval": true,
+        "independent_vdb_numeric_radius_endpoint_probes": true,
+        "independent_direct_stl_numeric_probes": true,
+        "same_solid_stl_vdb_probe_agreement": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "valid-xyz_identical_geometry_exports": false,
+        "empty_exit_and_exact_report": true,
+        "empty_identical_geometry_exports": false,
+        "numeric-overflow_exit_and_exact_report": true,
+        "numeric-overflow_identical_geometry_exports": false,
+        "nonexistent_exit_and_exact_report": true,
+        "nonexistent_identical_geometry_exports": false
+      },
+      "native_exit_code": 0,
+      "details": {
+        "analytic": {
+          "length_mm": 6.7,
+          "radius_mm": 0.55,
+          "volume_mm3": 6.367222910663115,
+          "low": [
+            -3.21,
+            -0.08000000000000007,
+            -1.68
+          ],
+          "high": [
+            3.49,
+            1.02,
+            -0.5799999999999998
+          ],
+          "probes": [
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -2.86,
+                0.47,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                3.14,
+                0.47,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -3.66,
+                0.47,
+                -1.13
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                3.9400000000000004,
+                0.47,
+                -1.13
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -1.48
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -2.03
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -0.7799999999999998
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.47,
+                -0.22999999999999987
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.8200000000000001,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                1.37,
+                -1.13
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                0.11999999999999994,
+                -1.13
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.14000000000000012,
+                -0.43000000000000005,
+                -1.13
+              ],
+              "inside": false
+            }
+          ]
+        },
+        "mesh": {
+          "triangles": 1736,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 6.033474947867928
+        },
+        "native": {
+          "volume_mm3": 6.072,
+          "library_volume_mm3": 6.2824483,
+          "volume_interval_mm3": [
+            0,
+            26.752
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -3.21,
+            -0.06970189,
+            -1.6697019
+          ],
+          "high": [
+            3.489999,
+            1.0099424,
+            -0.5900577
+          ],
+          "triangles": 1736,
+          "unsupported_triangles": 339,
+          "wall_rays_mm": [
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.0500001,
+            0.95000017,
+            1.15,
+            0.95000017,
+            1.1,
+            1.1,
+            0.95000017,
+            1.0000001,
+            0.95000017,
+            1.1,
+            1.0500001,
+            1.0500001,
+            1.0000001,
+            1.0500001,
+            1.1,
+            1.1999999,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.0500001,
+            1.0500001,
+            1.0000001,
+            1.0500001,
+            1.1,
+            1.1999999,
+            1.0000001,
+            1.1,
+            1.0000001,
+            1.15,
+            1.15,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.1,
+            1.1,
+            1.1999999,
+            1.15,
+            1.1,
+            1.0500001,
+            0.95000017,
+            1.15,
+            0.95000017,
+            1.1,
+            1.1,
+            0.95000017,
+            1.0000001,
+            0.95000017,
+            1.1,
+            1.0500001,
+            1.0500001,
+            1.0000001,
+            1.0500001,
+            1.1,
+            1.1999999,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.15,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.1,
+            1.1,
+            1.1999999,
+            1.15,
+            1.1,
+            1.0500001,
+            0.95000017,
+            1.15,
+            0.95000017,
+            1.1,
+            1.1,
+            0.95000017,
+            1.0000001,
+            0.95000017,
+            1.1,
+            1.0500001,
+            1.0500001,
+            1.0000001,
+            1.0500001,
+            1.1,
+            1.1999999,
+            1.0000001,
+            1.1,
+            1.0000001,
+            1.15,
+            1.15,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.15,
+            1.15,
+            1.15,
+            1.0000001,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.1,
+            1.1,
+            1.1999999,
+            1.15,
+            1.1,
+            1.0500001,
+            0.95000017,
+            1.15,
+            0.95000017,
+            1.1,
+            1.1,
+            0.95000017,
+            1.0000001,
+            0.95000017,
+            1.1
+          ],
+          "inspected_rays": 156,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "vdb_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "direct_stl_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "probes_sha256": "d8e8965133ac4c249f7fc2c1eb62d72996189c7b82879eb59b5a0fcf5355d7d8"
+      }
+    },
+    {
+      "id": "fresh-numeric-flat-beam-02",
+      "status": "failed",
+      "source_sha256": "fa08c05548018d6dfc0305f2bbcc098641c88c81769a0673da696581cf59e122",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "bounded_geometry": true,
+        "independent_flat_cylinder_volume": true,
+        "independent_vdb_world_bounds": true,
+        "stl_vdb_volume_interval": true,
+        "independent_vdb_numeric_radius_endpoint_probes": true,
+        "independent_direct_stl_numeric_probes": true,
+        "same_solid_stl_vdb_probe_agreement": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "valid-xyz_identical_geometry_exports": false,
+        "empty_exit_and_exact_report": true,
+        "empty_identical_geometry_exports": false,
+        "numeric-overflow_exit_and_exact_report": true,
+        "numeric-overflow_identical_geometry_exports": false,
+        "nonexistent_exit_and_exact_report": true,
+        "nonexistent_identical_geometry_exports": false
+      },
+      "native_exit_code": 0,
+      "details": {
+        "analytic": {
+          "length_mm": 6.5,
+          "radius_mm": 0.61,
+          "volume_mm3": 7.598413071604953,
+          "low": [
+            -0.21999999999999997,
+            -3.43,
+            0.30000000000000004
+          ],
+          "high": [
+            1.0,
+            3.07,
+            1.52
+          ],
+          "probes": [
+            {
+              "point": [
+                0.39,
+                -0.18000000000000016,
+                0.91
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.39,
+                -3.08,
+                0.91
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.39,
+                2.7199999999999998,
+                0.91
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.39,
+                -3.8800000000000003,
+                0.91
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.39,
+                3.52,
+                0.91
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.39,
+                -0.18000000000000016,
+                1.32
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.39,
+                -0.18000000000000016,
+                1.87
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.39,
+                -0.18000000000000016,
+                0.5
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.39,
+                -0.18000000000000016,
+                -0.04999999999999993
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.8,
+                -0.18000000000000016,
+                0.91
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                1.35,
+                -0.18000000000000016,
+                0.91
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.019999999999999962,
+                -0.18000000000000016,
+                0.91
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.57,
+                -0.18000000000000016,
+                0.91
+              ],
+              "inside": false
+            }
+          ]
+        },
+        "mesh": {
+          "triangles": 1696,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 7.2248204772563005
+        },
+        "native": {
+          "volume_mm3": 6.144,
+          "library_volume_mm3": 7.462249,
+          "volume_interval_mm3": [
+            0,
+            26.496000000000002
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -0.21162558,
+            -3.4299998,
+            0.3155664
+          ],
+          "high": [
+            0.9916094,
+            3.07,
+            1.5043757
+          ],
+          "triangles": 1696,
+          "unsupported_triangles": 330,
+          "wall_rays_mm": [
+            1.1,
+            1.15,
+            1.15,
+            1.15,
+            1.1,
+            1.1,
+            1.1,
+            1.1,
+            1.1,
+            1.15,
+            1.15,
+            1.15,
+            1.1999999,
+            1.1999999,
+            1.15,
+            1.15,
+            1.1,
+            1.15,
+            1.1,
+            1.1,
+            1.1,
+            1.1,
+            1.1,
+            1.15,
+            1.1,
+            1.15,
+            1.15,
+            1.15,
+            1.1999999,
+            1.1999999,
+            1.15,
+            1.15,
+            1.1,
+            1.1,
+            1.1999999,
+            1.1999999,
+            1.15,
+            1.15,
+            1.1,
+            1.2499999,
+            1.2499999,
+            1.2499999,
+            1.1999999,
+            1.1999999,
+            1.15,
+            1.15,
+            1.1,
+            1.1999999,
+            1.15,
+            1.2999998,
+            1.15,
+            1.2499999,
+            1.1,
+            1.1,
+            1.1999999,
+            1.15,
+            1.15,
+            1.1999999,
+            1.2499999,
+            1.2499999,
+            1.2499999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.15,
+            1.15,
+            1.1999999,
+            1.1,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1,
+            1.1999999,
+            1.15,
+            1.1,
+            1.1,
+            1.15,
+            1.15,
+            1.1999999,
+            1.2999998,
+            1.15,
+            1.2499999,
+            1.1,
+            1.1,
+            1.2499999,
+            1.1999999,
+            1.2499999,
+            1.1,
+            1.15,
+            1.15,
+            1.15,
+            1.1999999,
+            1.2499999,
+            1.2499999,
+            1.2499999,
+            1.1999999,
+            1.1999999,
+            1.15,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.15,
+            1.15,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.1,
+            1.1999999,
+            1.15,
+            1.1,
+            1.1999999,
+            1.15,
+            1.2499999,
+            1.1,
+            1.1,
+            1.2499999,
+            1.1999999,
+            1.2499999,
+            1.1,
+            1.15,
+            1.15,
+            1.1999999,
+            1.2999998,
+            1.15,
+            1.2499999,
+            1.15,
+            1.1999999,
+            1.2499999,
+            1.2499999,
+            1.2499999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.15,
+            1.15,
+            1.15,
+            1.1,
+            1.1999999,
+            1.1999999,
+            1.2499999,
+            1.2499999,
+            1.1999999,
+            1.2499999,
+            1.1,
+            1.15,
+            1.15,
+            1.1999999
+          ],
+          "inspected_rays": 158,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "vdb_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "direct_stl_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "probes_sha256": "e1d137b5ecca94108674a838a4ff5e6799aee51964a95ec01787d8bb075e16eb"
+      }
+    },
+    {
+      "id": "fresh-numeric-flat-beam-03",
+      "status": "failed",
+      "source_sha256": "ae4584cfac0f4a71ab640d49bad9e1997218c76deb3436d727273f836962b104",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "bounded_geometry": true,
+        "independent_flat_cylinder_volume": true,
+        "independent_vdb_world_bounds": true,
+        "stl_vdb_volume_interval": true,
+        "independent_vdb_numeric_radius_endpoint_probes": true,
+        "independent_direct_stl_numeric_probes": true,
+        "same_solid_stl_vdb_probe_agreement": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "valid-xyz_identical_geometry_exports": false,
+        "empty_exit_and_exact_report": true,
+        "empty_identical_geometry_exports": false,
+        "numeric-overflow_exit_and_exact_report": true,
+        "numeric-overflow_identical_geometry_exports": false,
+        "nonexistent_exit_and_exact_report": true,
+        "nonexistent_identical_geometry_exports": false
+      },
+      "native_exit_code": 0,
+      "details": {
+        "analytic": {
+          "length_mm": 6.4,
+          "radius_mm": 0.67,
+          "volume_mm3": 9.025670030057334,
+          "low": [
+            -1.34,
+            0.5199999999999999,
+            -3.57
+          ],
+          "high": [
+            0.0,
+            1.8599999999999999,
+            2.83
+          ],
+          "probes": [
+            {
+              "point": [
+                -0.67,
+                1.19,
+                -0.3699999999999999
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.67,
+                1.19,
+                -3.2199999999999998
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.67,
+                1.19,
+                2.48
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.67,
+                1.19,
+                -4.02
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.67,
+                1.19,
+                3.2800000000000002
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.67,
+                0.72,
+                -0.3699999999999999
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.67,
+                0.16999999999999993,
+                -0.3699999999999999
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.67,
+                1.66,
+                -0.3699999999999999
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.67,
+                2.21,
+                -0.3699999999999999
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.2,
+                1.19,
+                -0.3699999999999999
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.35,
+                1.19,
+                -0.3699999999999999
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -1.1400000000000001,
+                1.19,
+                -0.3699999999999999
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -1.69,
+                1.19,
+                -0.3699999999999999
+              ],
+              "inside": false
+            }
+          ]
+        },
+        "mesh": {
+          "triangles": 1804,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 8.620594677447466
+        },
+        "native": {
+          "volume_mm3": 8.68,
+          "library_volume_mm3": 8.825091,
+          "volume_interval_mm3": [
+            0,
+            27.648
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -1.3258845,
+            0.52835315,
+            -3.5699997
+          ],
+          "high": [
+            -0.013979704,
+            1.851682,
+            2.8299997
+          ],
+          "triangles": 1804,
+          "unsupported_triangles": 70,
+          "wall_rays_mm": [
+            1.2499999,
+            1.2499999,
+            1.1999999,
+            1.2499999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.2499999,
+            1.2999998,
+            1.2999998,
+            1.2499999,
+            1.2499999,
+            1.3499998,
+            1.3499998,
+            1.3999997,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.3999997,
+            1.3499998,
+            1.2999998,
+            1.2999998,
+            1.2999998,
+            1.2499999,
+            1.2999998,
+            1.1999999,
+            1.2999998,
+            1.2999998,
+            1.2499999,
+            1.2499999,
+            1.2999998,
+            1.2999998,
+            1.2999998,
+            1.2499999,
+            1.2499999,
+            1.2999998,
+            1.3999997,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.2999998,
+            1.3499998,
+            1.3499998,
+            1.2999998,
+            1.2499999,
+            1.3499998,
+            1.2499999,
+            1.3499998,
+            1.3499998,
+            1.1999999,
+            1.2499999,
+            1.2499999,
+            1.1999999,
+            1.1999999,
+            1.1999999,
+            1.2499999,
+            1.1999999,
+            1.2999998,
+            1.2999998,
+            1.2499999,
+            1.3499998,
+            1.3499998,
+            1.3999997,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.3999997,
+            1.2999998,
+            1.2999998,
+            1.2999998,
+            1.1999999,
+            1.2999998,
+            1.2999998,
+            1.2999998,
+            1.2499999,
+            1.2999998,
+            1.2999998,
+            1.2499999,
+            1.3499998,
+            1.2999998,
+            1.2999998,
+            1.2499999,
+            1.2499999,
+            1.2999998,
+            1.3499998,
+            1.3999997,
+            1.3499998,
+            1.2999998,
+            1.3499998,
+            1.2499999,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.1999999,
+            1.2499999,
+            1.3499998,
+            1.3499998
+          ],
+          "inspected_rays": 100,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "vdb_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "direct_stl_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "probes_sha256": "31ce4defcb5620ae3dd663ec9743e612830ae16bf0a2a9ea593136ea53fd0ec3"
+      }
+    },
+    {
+      "id": "fresh-numeric-flat-beam-04",
+      "status": "failed",
+      "source_sha256": "44a74a50454f60d6188a4362e04b7a4ecbd231b0b58c1165c721420721571866",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "bounded_geometry": true,
+        "independent_flat_cylinder_volume": true,
+        "independent_vdb_world_bounds": true,
+        "stl_vdb_volume_interval": true,
+        "independent_vdb_numeric_radius_endpoint_probes": true,
+        "independent_direct_stl_numeric_probes": true,
+        "same_solid_stl_vdb_probe_agreement": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "valid-xyz_identical_geometry_exports": false,
+        "empty_exit_and_exact_report": true,
+        "empty_identical_geometry_exports": false,
+        "numeric-overflow_exit_and_exact_report": true,
+        "numeric-overflow_identical_geometry_exports": false,
+        "nonexistent_exit_and_exact_report": true,
+        "nonexistent_identical_geometry_exports": false
+      },
+      "native_exit_code": 0,
+      "details": {
+        "analytic": {
+          "length_mm": 7.1693793315739685,
+          "radius_mm": 0.73,
+          "volume_mm3": 12.002650283974504,
+          "low": [
+            -3.2522435738533138,
+            -2.5063516679391036,
+            -1.8330163357554616
+          ],
+          "high": [
+            2.6322435738533136,
+            3.0463516679391036,
+            2.4930163357554616
+          ],
+          "probes": [
+            {
+              "point": [
+                -0.31000000000000005,
+                0.27000000000000013,
+                0.33000000000000007
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -2.475670091886298,
+                -1.7151975842291067,
+                -1.0235438074289365
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                1.8556700918862983,
+                2.2551975842291068,
+                1.6835438074289366
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -3.0112813104319023,
+                -2.206174534562577,
+                -1.3583008190199388
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                2.391281310431902,
+                2.746174534562577,
+                2.018300819019939
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.6681340531141936,
+                0.6606916943063931,
+                0.33000000000000007
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -1.039782598798734,
+                1.0661264714168008,
+                0.33000000000000007
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.0481340531141935,
+                -0.12069169430639282,
+                0.33000000000000007
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.4197825987987339,
+                -0.5261264714168006,
+                0.33000000000000007
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.47348348004929197,
+                0.12014014328814918,
+                0.811368024589582
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.6431361480249722,
+                -0.03537480235622448,
+                1.3109008802957518
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.14651651995070814,
+                0.4198598567118511,
+                -0.15136802458958182
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.02313614802497216,
+                0.5753748023562247,
+                -0.6509008802957517
+              ],
+              "inside": false
+            }
+          ]
+        },
+        "mesh": {
+          "triangles": 2812,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 11.568818203584803
+        },
+        "native": {
+          "volume_mm3": 10.336,
+          "library_volume_mm3": 11.801672,
+          "volume_interval_mm3": [
+            0.064,
+            44.800000000000004
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -3.2106466,
+            -2.4241543,
+            -1.805713
+          ],
+          "high": [
+            2.6014676,
+            3.0027635,
+            2.4170663
+          ],
+          "triangles": 2812,
+          "unsupported_triangles": 517,
+          "wall_rays_mm": [
+            1.6499995,
+            1.3499998,
+            1.4499997,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.4999996,
+            1.2999998,
+            1.3499998,
+            1.3999997,
+            1.3499998,
+            1.3999997,
+            1.4499997,
+            1.4499997,
+            1.4999996,
+            1.3999997,
+            1.3999997,
+            1.3999997,
+            1.3999997,
+            1.3499998,
+            1.2999998,
+            1.3999997,
+            1.3499998,
+            1.3999997,
+            1.3499998,
+            1.3999997,
+            1.3999997,
+            1.3999997,
+            1.4999996,
+            1.4499997,
+            1.4499997,
+            1.3499998,
+            1.4499997,
+            1.4499997,
+            1.4499997,
+            1.3999997,
+            1.4999996,
+            1.4499997,
+            1.4499997,
+            1.4499997,
+            1.5499996,
+            1.4499997,
+            1.5499996,
+            1.3499998,
+            1.4499997,
+            1.3499998,
+            1.3499998,
+            1.3999997,
+            1.4999996,
+            1.4999996,
+            1.4499997,
+            1.4499997,
+            1.3499998,
+            1.4499997,
+            1.5999995,
+            1.2999998,
+            1.4999996,
+            1.4999996,
+            1.5499996,
+            1.4499997,
+            1.4999996,
+            1.5499996,
+            1.4499997,
+            1.4499997,
+            1.3499998,
+            1.3999997,
+            1.5499996,
+            1.3499998,
+            1.3499998,
+            1.4999996,
+            1.4499997,
+            1.3499998,
+            1.4499997,
+            1.3999997,
+            1.3999997,
+            1.3499998,
+            1.3499998,
+            1.4499997,
+            1.3499998,
+            1.4499997,
+            1.4999996,
+            1.4999996,
+            1.4499997,
+            1.4499997,
+            1.4499997,
+            1.2999998,
+            1.4499997,
+            1.4499997,
+            1.3499998,
+            1.4499997,
+            1.3999997,
+            1.4999996,
+            1.3499998,
+            1.4999996,
+            1.3999997,
+            1.4499997,
+            1.4499997,
+            1.4999996,
+            1.3999997,
+            1.4499997,
+            1.4499997,
+            1.3499998,
+            1.3499998,
+            1.5499996,
+            1.4999996,
+            1.4999996,
+            1.3999997,
+            1.3499998,
+            1.4499997,
+            1.3499998,
+            1.4999996,
+            1.4499997,
+            1.5499996,
+            1.3999997,
+            1.3999997,
+            1.3999997,
+            1.4499997,
+            1.3999997,
+            1.4499997,
+            1.4499997,
+            1.3999997,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.3999997,
+            1.4999996,
+            1.5499996,
+            1.4999996,
+            1.4999996,
+            1.5499996,
+            1.3999997,
+            1.4499997,
+            1.3999997,
+            1.4499997,
+            1.4499997,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.3499998,
+            1.4999996,
+            1.2999998,
+            1.3999997,
+            1.4499997,
+            1.3999997,
+            1.2999998,
+            1.2999998,
+            1.3999997,
+            1.4499997,
+            1.4499997,
+            1.4499997,
+            1.4499997,
+            1.3999997,
+            1.4499997,
+            1.3999997,
+            1.4499997,
+            1.4499997,
+            1.3999997,
+            1.4499997,
+            1.4999996,
+            1.3999997,
+            1.4999996,
+            1.3999997,
+            1.4999996,
+            1.4499997,
+            1.4499997,
+            1.4499997,
+            1.5499996,
+            1.4999996,
+            1.3999997,
+            1.3999997,
+            1.4499997,
+            1.3999997,
+            1.4499997,
+            1.3999997,
+            1.4499997,
+            1.3999997,
+            1.4999996,
+            1.4499997,
+            1.3499998,
+            1.4999996,
+            1.3999997,
+            1.4499997,
+            1.3999997,
+            1.3999997,
+            1.4499997,
+            1.3999997,
+            1.4499997,
+            1.4499997,
+            1.4999996,
+            1.3999997,
+            1.4499997,
+            1.3499998,
+            1.2999998,
+            1.3999997,
+            1.4499997,
+            1.4499997,
+            1.4499997,
+            1.4499997,
+            1.3999997,
+            1.4499997,
+            1.4499997,
+            1.3999997,
+            1.4999996,
+            1.4999996,
+            1.4999996,
+            1.4499997,
+            1.3499998,
+            1.5499996
+          ],
+          "inspected_rays": 208,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "vdb_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "direct_stl_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "probes_sha256": "013ea1289b842df4927b066059723ef84ea935551c1a78ad583f59424c27b604"
+      }
+    },
+    {
+      "id": "fresh-numeric-flat-beam-05",
+      "status": "failed",
+      "source_sha256": "260b35479239f76f94391ac4cffd05619f231c33ace0b070de3f7fbaf8238c94",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "bounded_geometry": true,
+        "independent_flat_cylinder_volume": true,
+        "independent_vdb_world_bounds": true,
+        "stl_vdb_volume_interval": true,
+        "independent_vdb_numeric_radius_endpoint_probes": true,
+        "independent_direct_stl_numeric_probes": true,
+        "same_solid_stl_vdb_probe_agreement": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "valid-xyz_identical_geometry_exports": false,
+        "empty_exit_and_exact_report": true,
+        "empty_identical_geometry_exports": false,
+        "numeric-overflow_exit_and_exact_report": true,
+        "numeric-overflow_identical_geometry_exports": false,
+        "nonexistent_exit_and_exact_report": true,
+        "nonexistent_identical_geometry_exports": false
+      },
+      "native_exit_code": 0,
+      "details": {
+        "analytic": {
+          "length_mm": 6.636264009214823,
+          "radius_mm": 0.83,
+          "volume_mm3": 14.362489116371334,
+          "low": [
+            -3.4333398262513986,
+            -1.8225038435211331,
+            -0.21551533197414274
+          ],
+          "high": [
+            3.1733398262513988,
+            2.4825038435211333,
+            2.9955153319741425
+          ],
+          "probes": [
+            {
+              "point": [
+                -0.1299999999999999,
+                0.32999999999999996,
+                1.39
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -2.724104996850452,
+                1.5823265502036665,
+                0.6743848284550477
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                2.4641049968504523,
+                -0.9223265502036666,
+                2.1056151715449523
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -3.42329357547799,
+                1.9198658640238573,
+                0.48150522055779577
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                3.16329357547799,
+                -1.2598658640238574,
+                2.298494779442204
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.14389191147364078,
+                0.8973475309096843,
+                1.39
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.38300389768078746,
+                1.3926509309102024,
+                1.39
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.40389191147364056,
+                -0.2373475309096844,
+                1.39
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.6430038976807873,
+                -0.7326509309102026,
+                1.39
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.2667872116291673,
+                0.3960352056140808,
+                2.001415251980373
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.3862046186070119,
+                0.4536849882930402,
+                2.5351904719632388
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.006787211629167511,
+                0.26396479438591913,
+                0.7785847480196267
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.1262046186070121,
+                0.2063150117069597,
+                0.24480952803676104
+              ],
+              "inside": false
+            }
+          ]
+        },
+        "mesh": {
+          "triangles": 2884,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 13.935347346237844
+        },
+        "native": {
+          "volume_mm3": 12.752,
+          "library_volume_mm3": 14.161028,
+          "volume_interval_mm3": [
+            0.64,
+            46.336
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -3.3447738,
+            -1.8039855,
+            -0.15755609
+          ],
+          "high": [
+            3.0941188,
+            2.4163392,
+            2.939274
+          ],
+          "triangles": 2884,
+          "unsupported_triangles": 581,
+          "wall_rays_mm": [
+            1.6999995,
+            1.5499996,
+            1.5499996,
+            1.6999995,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.5499996,
+            1.5499996,
+            1.6499995,
+            1.6499995,
+            1.5999995,
+            1.5999995,
+            1.5499996,
+            1.4999996,
+            1.6999995,
+            1.6499995,
+            1.5499996,
+            1.6499995,
+            1.6499995,
+            1.5999995,
+            1.5999995,
+            1.6499995,
+            1.6999995,
+            1.5999995,
+            1.6999995,
+            1.5999995,
+            1.6999995,
+            1.4999996,
+            1.5999995,
+            1.6999995,
+            1.5999995,
+            1.5999995,
+            1.6499995,
+            1.7499994,
+            1.4999996,
+            1.5499996,
+            1.6499995,
+            1.5999995,
+            1.6499995,
+            1.6999995,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.6499995,
+            1.6999995,
+            1.6999995,
+            1.5999995,
+            1.6999995,
+            1.5999995,
+            1.4999996,
+            1.5999995,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.4999996,
+            1.7499994,
+            1.5999995,
+            1.5999995,
+            1.7499994,
+            1.5999995,
+            1.5999995,
+            1.5499996,
+            1.5499996,
+            1.6499995,
+            1.5499996,
+            1.5499996,
+            1.5499996,
+            1.5999995,
+            1.6499995,
+            1.5999995,
+            1.5999995,
+            1.6499995,
+            1.5999995,
+            1.7499994,
+            1.5999995,
+            1.5499996,
+            1.7499994,
+            1.6499995,
+            1.7499994,
+            1.6499995,
+            1.6999995,
+            1.6999995,
+            1.7499994,
+            1.6499995,
+            1.6499995,
+            1.5499996,
+            1.5499996,
+            1.4999996,
+            1.5999995,
+            1.6499995,
+            1.6499995,
+            1.6999995,
+            1.5999995,
+            1.6499995,
+            1.5499996,
+            1.5999995,
+            1.6499995,
+            1.5999995,
+            1.6499995,
+            1.6999995,
+            1.5999995,
+            1.4999996,
+            1.6499995,
+            1.7499994,
+            1.5499996,
+            1.5999995,
+            1.6499995,
+            1.5999995,
+            1.5999995,
+            1.6999995,
+            1.5499996,
+            1.5499996,
+            1.5999995,
+            1.4999996,
+            1.6999995,
+            1.5499996,
+            1.6499995,
+            1.6999995,
+            1.6999995,
+            1.5499996,
+            1.5999995,
+            1.6499995,
+            1.6999995,
+            1.5499996,
+            1.5999995,
+            1.5999995,
+            1.5999995,
+            1.5499996,
+            1.5499996,
+            1.5499996,
+            1.6499995,
+            1.5499996,
+            1.5999995,
+            1.6999995,
+            1.7499994,
+            1.6999995,
+            1.6999995,
+            1.6999995,
+            1.6999995,
+            1.6499995,
+            1.4999996,
+            1.5499996,
+            1.5999995,
+            1.5999995,
+            1.4999996,
+            1.5999995,
+            1.5499996,
+            1.6999995,
+            1.7499994,
+            1.5499996,
+            1.6499995,
+            1.6999995,
+            1.7499994,
+            1.4999996,
+            1.6999995,
+            1.6499995,
+            1.5999995,
+            1.6499995,
+            1.5499996,
+            1.5999995,
+            1.5999995,
+            1.6999995,
+            1.5499996,
+            1.5999995,
+            1.6499995,
+            1.6499995,
+            1.5999995,
+            1.4999996,
+            1.7499994,
+            1.5499996,
+            1.4999996
+          ],
+          "inspected_rays": 174,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "vdb_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "direct_stl_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "probes_sha256": "c6f765382d52be4c33e40ad9375885e6640c73ab298a24ac8265027fbdd0f64c"
+      }
+    },
+    {
+      "id": "fresh-numeric-flat-beam-06",
+      "status": "failed",
+      "source_sha256": "024d1ea200e5a41605c5ff36e24529fcfe39f9463b534d009773682e6dec37d6",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "bounded_geometry": true,
+        "independent_flat_cylinder_volume": true,
+        "independent_vdb_world_bounds": true,
+        "stl_vdb_volume_interval": true,
+        "independent_vdb_numeric_radius_endpoint_probes": true,
+        "independent_direct_stl_numeric_probes": true,
+        "same_solid_stl_vdb_probe_agreement": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "valid-xyz_identical_geometry_exports": false,
+        "empty_exit_and_exact_report": true,
+        "empty_identical_geometry_exports": false,
+        "numeric-overflow_exit_and_exact_report": true,
+        "numeric-overflow_identical_geometry_exports": false,
+        "nonexistent_exit_and_exact_report": true,
+        "nonexistent_identical_geometry_exports": false
+      },
+      "native_exit_code": 0,
+      "details": {
+        "analytic": {
+          "length_mm": 7.644605941446557,
+          "radius_mm": 0.91,
+          "volume_mm3": 19.88784657620308,
+          "low": [
+            -2.656437105195101,
+            -3.4970388249395445,
+            -2.6968156005342854
+          ],
+          "high": [
+            2.196437105195101,
+            3.0370388249395446,
+            3.356815600534285
+          ],
+          "probes": [
+            {
+              "point": [
+                -0.22999999999999998,
+                -0.22999999999999998,
+                0.32999999999999996
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                1.2234914672412707,
+                -2.591923634267065,
+                2.4193939841593264
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -1.6834914672412706,
+                2.131923634267065,
+                -1.7593939841593265
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                1.5583681135469378,
+                -3.136098184513774,
+                2.900779163223723
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -2.018368113546938,
+                2.676098184513774,
+                -2.240779163223723
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.22999999999999998,
+                0.24042745636415053,
+                0.8617875593681702
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.22999999999999998,
+                0.6048430915758165,
+                1.2737356687378796
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.22999999999999998,
+                -0.7004274563641505,
+                -0.20178755936817028
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.22999999999999998,
+                -1.0648430915758165,
+                -0.6137356687378798
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.4148025765807929,
+                -0.007395956964639072,
+                0.13308103885333458
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.9142975302701395,
+                0.1650437946824715,
+                -0.01946181837295552
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.8748025765807929,
+                -0.4526040430353609,
+                0.5269189611466654
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -1.3742975302701395,
+                -0.6250437946824714,
+                0.6794618183729555
+              ],
+              "inside": false
+            }
+          ]
+        },
+        "mesh": {
+          "triangles": 3800,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 19.40204500959817
+        },
+        "native": {
+          "volume_mm3": 17.288,
+          "library_volume_mm3": 19.66501,
+          "volume_interval_mm3": [
+            1.344,
+            61.568
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -2.611616,
+            -3.4182687,
+            -2.6209059
+          ],
+          "high": [
+            2.1137214,
+            3.0039523,
+            3.2658305
+          ],
+          "triangles": 3800,
+          "unsupported_triangles": 541,
+          "wall_rays_mm": [
+            1.7499994,
+            1.7499994,
+            1.8499993,
+            1.8499993,
+            1.7999994,
+            1.6999995,
+            1.7999994,
+            1.6499995,
+            1.8999993,
+            1.8999993,
+            1.7499994,
+            1.7499994,
+            1.7999994,
+            1.6499995,
+            1.7999994,
+            1.6999995,
+            1.7499994,
+            1.7999994,
+            1.8499993,
+            1.7999994,
+            1.6999995,
+            1.7999994,
+            1.7999994,
+            1.8499993,
+            1.6999995,
+            1.6999995,
+            1.7499994,
+            1.7999994,
+            1.8499993,
+            1.8499993,
+            1.7499994,
+            1.6499995,
+            1.6999995,
+            1.7999994,
+            1.7999994,
+            1.7999994,
+            1.7499994,
+            1.8999993,
+            1.8499993,
+            1.7499994,
+            1.6999995,
+            1.7999994,
+            1.8499993,
+            1.7499994,
+            1.6999995,
+            1.6999995,
+            1.7999994,
+            1.8499993,
+            1.8499993,
+            1.6999995,
+            1.8499993,
+            1.8999993,
+            1.6999995,
+            1.8499993,
+            1.6999995,
+            1.6999995,
+            1.6999995,
+            1.7999994,
+            1.8999993,
+            1.7999994,
+            1.6999995,
+            1.8499993,
+            1.7499994,
+            1.7999994,
+            1.8999993,
+            1.7999994,
+            1.8999993,
+            1.7499994,
+            1.7999994,
+            1.7499994,
+            1.7999994,
+            1.7499994,
+            1.7999994,
+            1.7999994,
+            1.7499994,
+            1.7999994,
+            1.7999994,
+            1.8499993,
+            1.8999993,
+            1.9499992,
+            1.7499994,
+            1.8499993,
+            1.7499994,
+            1.7999994,
+            1.7499994,
+            1.7999994,
+            1.7999994,
+            1.8499993,
+            1.7499994,
+            1.7999994,
+            1.8499993,
+            1.6999995,
+            1.7999994,
+            1.6999995,
+            1.8499993,
+            1.8999993,
+            1.7499994,
+            1.6999995,
+            1.7999994,
+            1.8999993,
+            1.8999993,
+            1.7499994,
+            1.8499993,
+            1.7999994,
+            1.8999993,
+            1.6999995,
+            1.8499993,
+            1.6999995,
+            1.6499995,
+            1.7499994,
+            1.7999994,
+            1.8499993,
+            1.7499994,
+            1.7499994,
+            1.8499993,
+            1.7999994,
+            1.6999995,
+            1.7499994,
+            1.6999995,
+            1.8499993,
+            1.7499994,
+            1.7999994,
+            1.7499994,
+            1.7499994,
+            1.7999994,
+            1.7999994,
+            1.7999994,
+            1.6999995,
+            1.6999995,
+            1.7499994,
+            1.7999994,
+            1.8499993,
+            1.7499994,
+            1.6999995,
+            1.7999994,
+            1.7499994,
+            1.8499993,
+            1.6999995,
+            1.7999994,
+            1.7499994,
+            1.7499994,
+            1.8499993,
+            1.8499993,
+            1.8999993,
+            1.8999993,
+            1.7999994,
+            1.7999994,
+            1.8499993,
+            1.7499994,
+            1.7999994,
+            1.7499994,
+            1.6999995,
+            1.7499994,
+            1.8499993,
+            1.7999994,
+            1.7499994,
+            1.7999994,
+            1.8499993,
+            1.7999994,
+            1.8499993,
+            1.7499994,
+            1.8499993,
+            1.7999994,
+            1.7999994,
+            1.7499994,
+            1.8499993,
+            1.7999994,
+            1.7499994,
+            1.7999994,
+            1.8499993,
+            1.6499995,
+            1.6999995,
+            1.7999994,
+            1.7499994,
+            1.8499993,
+            1.7999994,
+            1.7499994,
+            1.8499993,
+            1.7499994,
+            1.7499994,
+            1.6999995,
+            1.8999993,
+            1.6999995,
+            1.7999994,
+            1.7499994,
+            1.7499994,
+            1.7499994,
+            1.7999994,
+            1.8499993,
+            1.7999994,
+            1.7499994,
+            1.7499994,
+            1.7999994,
+            1.7499994,
+            1.6499995,
+            1.7999994,
+            1.8999993,
+            1.6999995,
+            1.6999995,
+            1.7999994,
+            1.7499994,
+            1.8999993,
+            1.6999995,
+            1.7499994,
+            1.8999993,
+            1.7499994,
+            1.7999994,
+            1.7499994,
+            1.6999995,
+            1.7999994,
+            1.7499994,
+            1.7999994,
+            1.6499995,
+            1.7499994,
+            1.7499994,
+            1.8499993,
+            1.7999994,
+            1.8499993,
+            1.6999995,
+            1.7499994,
+            1.7999994,
+            1.6999995,
+            1.8499993,
+            1.8999993,
+            1.6499995,
+            1.8499993,
+            1.7499994,
+            1.7499994,
+            1.7999994,
+            1.7999994,
+            1.6999995,
+            1.7999994,
+            1.7999994
+          ],
+          "inspected_rays": 233,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "vdb_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "direct_stl_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "probes_sha256": "6f18b618cb30efe569be6775f0d63ebdb3efc0a63868b60b4a3dd7becafdf1c1"
+      }
+    },
+    {
+      "id": "fresh-numeric-flat-beam-07",
+      "status": "failed",
+      "source_sha256": "52324af56f9fea656a411ea0da91a67d362af1601286436d6cf5f7553073d4b9",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "bounded_geometry": true,
+        "independent_flat_cylinder_volume": true,
+        "independent_vdb_world_bounds": true,
+        "stl_vdb_volume_interval": true,
+        "independent_vdb_numeric_radius_endpoint_probes": true,
+        "independent_direct_stl_numeric_probes": true,
+        "same_solid_stl_vdb_probe_agreement": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "valid-xyz_identical_geometry_exports": false,
+        "empty_exit_and_exact_report": true,
+        "empty_identical_geometry_exports": false,
+        "numeric-overflow_exit_and_exact_report": true,
+        "numeric-overflow_identical_geometry_exports": false,
+        "nonexistent_exit_and_exact_report": true,
+        "nonexistent_identical_geometry_exports": false
+      },
+      "native_exit_code": 0,
+      "details": {
+        "analytic": {
+          "length_mm": 7.477967638335967,
+          "radius_mm": 0.97,
+          "volume_mm3": 22.10430795997252,
+          "low": [
+            -3.0870866207261636,
+            -3.0054251142994737,
+            -3.225425114299474
+          ],
+          "high": [
+            3.5070866207261635,
+            2.4654251142994736,
+            2.245425114299474
+          ],
+          "probes": [
+            {
+              "point": [
+                0.20999999999999996,
+                -0.27,
+                -0.4900000000000001
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -2.146618363702227,
+                -1.9921441888593199,
+                1.2321441888593196
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                2.566618363702227,
+                1.4521441888593198,
+                -2.21214418885932
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -2.702919246668565,
+                -2.3986717571808747,
+                1.6386717571808744
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                3.122919246668565,
+                1.8586717571808744,
+                -2.6186717571808744
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.2443127737935788,
+                -0.27,
+                -1.1116911641385816
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.5688218979318492,
+                -0.27,
+                -1.5557562813804253
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.6643127737935788,
+                -0.27,
+                0.1316911641385814
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.9888218979318492,
+                -0.27,
+                0.5757562813804252
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.10591824650531761,
+                0.39317251341298454,
+                -0.25913666601534496
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.3315741368662587,
+                0.8668671658508305,
+                -0.0942342845977342
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.5259182465053176,
+                -0.9331725134129846,
+                -0.7208633339846553
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.7515741368662586,
+                -1.4068671658508305,
+                -0.885765715402266
+              ],
+              "inside": false
+            }
+          ]
+        },
+        "mesh": {
+          "triangles": 4008,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 21.607841569539588
+        },
+        "native": {
+          "volume_mm3": 19.192,
+          "library_volume_mm3": 21.875587,
+          "volume_interval_mm3": [
+            2.176,
+            65.664
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -3.017601,
+            -2.917563,
+            -3.1371567
+          ],
+          "high": [
+            3.4200094,
+            2.407312,
+            2.206064
+          ],
+          "triangles": 4008,
+          "unsupported_triangles": 646,
+          "wall_rays_mm": [
+            1.9999992,
+            1.9999992,
+            1.8999993,
+            1.9499992,
+            1.8499993,
+            1.9999992,
+            1.8499993,
+            1.8999993,
+            1.7499994,
+            1.8999993,
+            1.8999993,
+            1.9499992,
+            1.8999993,
+            1.9499992,
+            1.9999992,
+            1.7999994,
+            1.9999992,
+            1.9999992,
+            1.9499992,
+            1.9499992,
+            1.9999992,
+            1.8999993,
+            1.9999992,
+            2.0499992,
+            1.8499993,
+            1.8499993,
+            1.9499992,
+            1.9999992,
+            1.8999993,
+            1.9499992,
+            1.8999993,
+            1.9499992,
+            1.9999992,
+            1.7999994,
+            2.0499992,
+            2.0499992,
+            1.9499992,
+            1.8999993,
+            1.9999992,
+            1.9499992,
+            1.9999992,
+            1.8999993,
+            1.9499992,
+            1.8499993,
+            1.9499992,
+            1.8499993,
+            1.8499993,
+            1.8999993,
+            1.8999993,
+            1.8499993,
+            1.8499993,
+            1.8999993,
+            1.9499992,
+            1.8499993,
+            1.8499993,
+            1.8499993,
+            1.9999992,
+            1.9499992,
+            1.9499992,
+            1.9499992,
+            1.8499993,
+            1.7999994,
+            1.7999994,
+            1.9499992,
+            1.8499993,
+            1.7999994,
+            1.9499992,
+            1.9499992,
+            1.8999993,
+            1.8999993,
+            1.9999992,
+            1.8999993,
+            1.8499993,
+            1.9499992,
+            1.9999992,
+            1.9499992,
+            1.9499992,
+            1.8499993,
+            1.9499992,
+            1.8499993,
+            1.9499992,
+            1.9499992,
+            1.8999993,
+            1.8999993,
+            1.8999993,
+            1.9499992,
+            1.9999992,
+            1.8499993,
+            1.8499993,
+            1.9999992,
+            1.8499993,
+            1.9499992,
+            1.8499993,
+            1.8499993,
+            1.8999993,
+            1.8499993,
+            1.9999992,
+            1.8999993,
+            1.9499992,
+            1.9499992,
+            1.9499992,
+            1.9999992,
+            1.7999994,
+            1.8999993,
+            1.8999993,
+            1.9499992,
+            1.8499993,
+            1.8999993,
+            1.8499993,
+            1.8499993,
+            1.9999992,
+            1.7999994,
+            1.8499993,
+            1.9999992,
+            1.8499993,
+            1.9999992,
+            1.8999993,
+            1.8999993,
+            1.9499992,
+            1.7999994,
+            1.8499993,
+            1.7999994,
+            1.9999992,
+            1.8499993,
+            1.9999992,
+            1.8499993,
+            1.8499993,
+            1.8499993,
+            1.9499992,
+            1.8999993,
+            1.8499993,
+            1.8999993,
+            1.8499993,
+            1.8999993,
+            1.9499992,
+            1.7999994,
+            1.8499993,
+            1.8999993,
+            1.8499993,
+            2.0499992,
+            1.9999992,
+            1.8999993,
+            1.9999992,
+            1.8499993,
+            1.9499992,
+            1.8999993,
+            1.8999993,
+            1.8499993,
+            1.8499993,
+            1.9999992,
+            1.8499993,
+            1.9499992,
+            1.7999994,
+            1.8499993,
+            1.8999993,
+            1.8999993,
+            1.8999993,
+            1.9499992,
+            1.9999992,
+            1.9499992,
+            1.8499993,
+            1.7999994,
+            1.7999994,
+            1.8999993,
+            1.8499993,
+            1.9499992,
+            1.8999993,
+            1.9999992,
+            2.0499992,
+            1.9999992,
+            1.7999994,
+            1.7999994,
+            1.8499993,
+            1.9499992,
+            1.9999992,
+            1.8499993,
+            1.8999993,
+            1.8999993,
+            1.9499992,
+            1.9999992,
+            1.9499992,
+            2.0499992,
+            1.9999992,
+            1.9999992,
+            1.9999992,
+            1.8499993,
+            1.8999993,
+            1.9999992,
+            1.9499992,
+            1.7999994,
+            1.9999992,
+            1.8999993,
+            1.9999992,
+            1.8499993,
+            1.7999994,
+            1.9999992,
+            1.9499992,
+            1.9499992,
+            1.8999993,
+            1.7999994,
+            1.7999994,
+            1.9499992,
+            1.8999993,
+            1.8999993,
+            1.8999993,
+            1.9999992,
+            1.9499992,
+            1.8999993,
+            1.9499992,
+            1.8499993,
+            1.8499993,
+            1.9999992,
+            1.9999992,
+            1.7999994,
+            1.9499992,
+            1.9999992,
+            1.9499992,
+            1.8499993,
+            1.9499992,
+            1.8999993,
+            1.7999994,
+            1.9499992,
+            1.9999992,
+            1.9499992,
+            1.9499992,
+            1.8499993,
+            1.8999993,
+            1.9999992,
+            1.9499992,
+            1.8499993,
+            1.8499993,
+            1.9499992,
+            1.8999993,
+            1.8499993,
+            1.9499992,
+            1.9999992,
+            2.0499992,
+            1.9999992,
+            1.9499992,
+            1.9999992,
+            1.7999994,
+            1.9999992,
+            1.8999993,
+            1.8999993,
+            1.9499992,
+            1.8499993,
+            1.8999993,
+            1.8499993,
+            1.9499992,
+            2.0499992
+          ],
+          "inspected_rays": 251,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "vdb_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "direct_stl_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "probes_sha256": "dc644316002124d694519a35846db7cfcf25764426153ca5f0a456e13835c8a9"
+      }
+    },
+    {
+      "id": "fresh-numeric-flat-beam-08",
+      "status": "failed",
+      "source_sha256": "21953479b5741d7cf9997875a8efa6eca8d1ec19c52b260ee6a4af7d11500e8d",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "bounded_geometry": true,
+        "independent_flat_cylinder_volume": true,
+        "independent_vdb_world_bounds": true,
+        "stl_vdb_volume_interval": true,
+        "independent_vdb_numeric_radius_endpoint_probes": true,
+        "independent_direct_stl_numeric_probes": true,
+        "same_solid_stl_vdb_probe_agreement": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "valid-xyz_identical_geometry_exports": false,
+        "empty_exit_and_exact_report": true,
+        "empty_identical_geometry_exports": false,
+        "numeric-overflow_exit_and_exact_report": true,
+        "numeric-overflow_identical_geometry_exports": false,
+        "nonexistent_exit_and_exact_report": true,
+        "nonexistent_identical_geometry_exports": false
+      },
+      "native_exit_code": 0,
+      "details": {
+        "analytic": {
+          "length_mm": 7.987490219086343,
+          "radius_mm": 1.07,
+          "volume_mm3": 28.72948013481348,
+          "low": [
+            -3.0447461432021417,
+            -2.280136095097182,
+            -3.7044288306106354
+          ],
+          "high": [
+            3.304746143202142,
+            3.740136095097182,
+            2.9644288306106352
+          ],
+          "probes": [
+            {
+              "point": [
+                0.13000000000000012,
+                0.73,
+                -0.3700000000000001
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                2.228434807950956,
+                -1.1859622159552208,
+                -2.6509073999466914
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -1.968434807950956,
+                2.6459622159552207,
+                1.9109073999466912
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                2.6891552469202,
+                -1.6066200080575737,
+                -3.151690485782826
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -2.4291552469201996,
+                3.0666200080575736,
+                2.4116904857828256
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.7702599802327921,
+                0.73,
+                0.21903918181416837
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                1.1750220367017983,
+                0.73,
+                0.5914202737656541
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.5102599802327918,
+                0.73,
+                -0.9590391818141686
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.915022036701798,
+                0.73,
+                -1.3314202737656542
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                0.4397299021046558,
+                1.4700171988173347,
+                -0.706662937070278
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                0.6355361620558747,
+                1.937844163586914,
+                -0.9194958283216031
+              ],
+              "inside": false
+            },
+            {
+              "point": [
+                -0.17972990210465556,
+                -0.01001719881733476,
+                -0.03333706292972216
+              ],
+              "inside": true
+            },
+            {
+              "point": [
+                -0.3755361620558745,
+                -0.47784416358691395,
+                0.17949582832160293
+              ],
+              "inside": false
+            }
+          ]
+        },
+        "mesh": {
+          "triangles": 4736,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 28.188460974673525
+        },
+        "native": {
+          "volume_mm3": 25.192,
+          "library_volume_mm3": 28.474031,
+          "volume_interval_mm3": [
+            3.712,
+            79.232
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -2.9470353,
+            -2.2113822,
+            -3.6219494
+          ],
+          "high": [
+            3.2229047,
+            3.6499023,
+            2.8732684
+          ],
+          "triangles": 4736,
+          "unsupported_triangles": 584,
+          "wall_rays_mm": [
+            2.0499992,
+            1.9999992,
+            1.9999992,
+            2.0999992,
+            2.0999992,
+            2.0499992,
+            2.1499991,
+            2.1499991,
+            2.0999992,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.199999,
+            2.0999992,
+            2.199999,
+            2.199999,
+            2.0499992,
+            2.0999992,
+            2.0999992,
+            2.199999,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.199999,
+            2.0999992,
+            2.0999992,
+            2.0499992,
+            2.1499991,
+            2.1499991,
+            2.199999,
+            2.0999992,
+            2.0499992,
+            2.1499991,
+            2.0999992,
+            2.1499991,
+            1.9999992,
+            2.199999,
+            2.199999,
+            2.199999,
+            2.0499992,
+            2.249999,
+            2.1499991,
+            2.1499991,
+            2.0499992,
+            2.199999,
+            2.0499992,
+            2.0999992,
+            2.0499992,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.0999992,
+            2.199999,
+            2.0999992,
+            2.0999992,
+            2.0499992,
+            2.0999992,
+            2.0999992,
+            2.0999992,
+            2.0499992,
+            2.199999,
+            2.0999992,
+            2.0999992,
+            2.0499992,
+            1.9999992,
+            2.249999,
+            2.0499992,
+            2.1499991,
+            2.0999992,
+            2.0499992,
+            2.0999992,
+            2.0999992,
+            2.0499992,
+            2.1499991,
+            2.0999992,
+            2.0999992,
+            2.199999,
+            1.9999992,
+            2.1499991,
+            2.0999992,
+            2.0999992,
+            2.249999,
+            2.199999,
+            2.199999,
+            2.1499991,
+            2.199999,
+            2.0999992,
+            2.0499992,
+            2.1499991,
+            2.1499991,
+            2.0999992,
+            2.0499992,
+            2.199999,
+            2.1499991,
+            2.249999,
+            2.1499991,
+            2.0499992,
+            2.0499992,
+            2.0499992,
+            2.0999992,
+            1.9499992,
+            2.0999992,
+            2.0999992,
+            2.1499991,
+            2.199999,
+            2.0499992,
+            1.9999992,
+            1.9999992,
+            2.1499991,
+            2.0499992,
+            1.9999992,
+            2.0999992,
+            2.0499992,
+            1.9999992,
+            2.0999992,
+            1.9999992,
+            1.9999992,
+            2.0999992,
+            2.0999992,
+            1.9999992,
+            2.0999992,
+            2.0999992,
+            2.199999,
+            2.0499992,
+            2.0499992,
+            2.199999,
+            2.0499992,
+            2.0999992,
+            2.0499992,
+            1.9999992,
+            2.0499992,
+            2.1499991,
+            2.199999,
+            2.1499991,
+            2.0999992,
+            2.0999992,
+            2.0499992,
+            2.0499992,
+            2.0499992,
+            2.199999,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.0499992,
+            2.0999992,
+            2.0999992,
+            2.0499992,
+            2.0999992,
+            2.1499991,
+            2.199999,
+            2.249999,
+            2.0499992,
+            2.1499991,
+            2.1499991,
+            2.1499991,
+            2.199999,
+            2.199999,
+            1.9999992,
+            2.0499992,
+            2.0999992,
+            2.0999992,
+            2.0999992,
+            2.0999992,
+            2.0999992,
+            2.0499992,
+            2.0499992,
+            2.1499991,
+            2.0499992,
+            1.9999992,
+            2.0499992,
+            2.0499992,
+            2.1499991,
+            2.199999,
+            2.0999992,
+            2.0499992,
+            1.9999992,
+            2.199999,
+            2.1499991,
+            2.0999992,
+            2.1499991,
+            2.1499991,
+            2.0999992,
+            2.1499991,
+            2.0999992,
+            2.199999,
+            2.1499991,
+            2.1499991,
+            2.0999992,
+            2.0499992,
+            2.0499992,
+            2.0499992,
+            2.199999,
+            2.0499992,
+            2.249999,
+            2.0999992,
+            1.9999992,
+            2.0999992,
+            2.0499992,
+            2.0499992,
+            2.0999992,
+            2.0499992,
+            2.0999992,
+            2.0999992,
+            2.0499992,
+            2.1499991,
+            2.1499991,
+            2.0499992,
+            2.0999992,
+            2.0999992,
+            2.1499991,
+            2.0499992,
+            2.199999,
+            2.1499991,
+            2.0999992,
+            2.0999992,
+            2.199999,
+            2.1499991,
+            2.1499991,
+            2.0499992,
+            2.0499992,
+            2.1499991,
+            2.1499991,
+            2.0499992,
+            2.0999992,
+            2.1499991,
+            2.1499991,
+            2.0499992,
+            2.1499991,
+            1.9999992,
+            2.0499992,
+            2.1499991,
+            2.0499992,
+            2.0499992,
+            2.0999992,
+            2.0999992,
+            2.0999992,
+            2.1499991,
+            2.0999992,
+            2.0499992,
+            2.1499991,
+            2.0499992,
+            1.9499992,
+            2.0999992,
+            2.1499991,
+            2.1499991
+          ],
+          "inspected_rays": 251,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "vdb_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "direct_stl_hits": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          false
+        ],
+        "probes_sha256": "e93e9b3bbd090463c47524232296ce24694ef636f7c30b70ffb4e436acbdd526"
+      }
+    },
+    {
+      "id": "fresh-prompt-refusal-01",
+      "status": "passed",
+      "source_sha256": "b29937383b2e00b518ab7f206efc0e239eb01750d9ba231027aac9af1bc47e03",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "no_picogk_namespace_or_native_initialization": true,
+        "no_input_argument_access_or_fixture_parsing": true,
+        "native_exit_zero": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "empty_exit_and_exact_report": true,
+        "numeric-overflow_exit_and_exact_report": true,
+        "malformed_exit_and_exact_report": true,
+        "nonfinite-xyz_exit_and_exact_report": true,
+        "nonexistent_exit_and_exact_report": true
+      },
+      "native_exit_code": 0
+    },
+    {
+      "id": "fresh-prompt-refusal-02",
+      "status": "passed",
+      "source_sha256": "c8598d3c03766ba4b54c3f40c3030bbdce39c6e265bfb032b562d2b2a344bd9f",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "no_picogk_namespace_or_native_initialization": true,
+        "no_input_argument_access_or_fixture_parsing": true,
+        "native_exit_zero": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "empty_exit_and_exact_report": true,
+        "numeric-overflow_exit_and_exact_report": true,
+        "malformed_exit_and_exact_report": true,
+        "nonfinite-xyz_exit_and_exact_report": true,
+        "nonexistent_exit_and_exact_report": true
+      },
+      "native_exit_code": 0
+    },
+    {
+      "id": "fresh-prompt-refusal-03",
+      "status": "passed",
+      "source_sha256": "56ba084c3d52c71ed10b4ed94a2da81e7e32b526d049ed36970c56980e05d9c8",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "no_picogk_namespace_or_native_initialization": true,
+        "no_input_argument_access_or_fixture_parsing": true,
+        "native_exit_zero": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "empty_exit_and_exact_report": true,
+        "numeric-overflow_exit_and_exact_report": true,
+        "malformed_exit_and_exact_report": true,
+        "nonfinite-xyz_exit_and_exact_report": true,
+        "nonexistent_exit_and_exact_report": true
+      },
+      "native_exit_code": 0
+    },
+    {
+      "id": "fresh-prompt-refusal-04",
+      "status": "passed",
+      "source_sha256": "dbc21309b1133d698de6a6468aa831be40bfc2e1db288dc7dd71816d46c61947",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "no_picogk_namespace_or_native_initialization": true,
+        "no_input_argument_access_or_fixture_parsing": true,
+        "native_exit_zero": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "empty_exit_and_exact_report": true,
+        "numeric-overflow_exit_and_exact_report": true,
+        "malformed_exit_and_exact_report": true,
+        "nonfinite-xyz_exit_and_exact_report": true,
+        "nonexistent_exit_and_exact_report": true
+      },
+      "native_exit_code": 0
+    },
+    {
+      "id": "fresh-prompt-refusal-05",
+      "status": "passed",
+      "source_sha256": "438db0c760d9c2d532b8b1b26e13c0394edca0185ea2a16f5ded4fce6b7e682d",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "no_picogk_namespace_or_native_initialization": true,
+        "no_input_argument_access_or_fixture_parsing": true,
+        "native_exit_zero": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "empty_exit_and_exact_report": true,
+        "numeric-overflow_exit_and_exact_report": true,
+        "malformed_exit_and_exact_report": true,
+        "nonfinite-xyz_exit_and_exact_report": true,
+        "nonexistent_exit_and_exact_report": true
+      },
+      "native_exit_code": 0
+    },
+    {
+      "id": "fresh-prompt-refusal-06",
+      "status": "passed",
+      "source_sha256": "4716c3fdf6af4c3f05ba0fb5e7016bc326c95d8203a8e0003c70ca29a85b6561",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "no_picogk_namespace_or_native_initialization": true,
+        "no_input_argument_access_or_fixture_parsing": true,
+        "native_exit_zero": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "empty_exit_and_exact_report": true,
+        "numeric-overflow_exit_and_exact_report": true,
+        "malformed_exit_and_exact_report": true,
+        "nonfinite-xyz_exit_and_exact_report": true,
+        "nonexistent_exit_and_exact_report": true
+      },
+      "native_exit_code": 0
+    },
+    {
+      "id": "fresh-prompt-refusal-07",
+      "status": "passed",
+      "source_sha256": "8aabc32079fe90d70f30b50858ef21a24590a60d2288fef504edc0d1c3d9efc5",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "no_picogk_namespace_or_native_initialization": true,
+        "no_input_argument_access_or_fixture_parsing": true,
+        "native_exit_zero": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "empty_exit_and_exact_report": true,
+        "numeric-overflow_exit_and_exact_report": true,
+        "malformed_exit_and_exact_report": true,
+        "nonfinite-xyz_exit_and_exact_report": true,
+        "nonexistent_exit_and_exact_report": true
+      },
+      "native_exit_code": 0
+    },
+    {
+      "id": "fresh-prompt-refusal-08",
+      "status": "passed",
+      "source_sha256": "6d48227f2de90561ffba3d4b8d8612613e506f4fd391f682c0ee2c0d57987a4f",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "checks": {
+        "static_allowlist": true,
+        "no_picogk_namespace_or_native_initialization": true,
+        "no_input_argument_access_or_fixture_parsing": true,
+        "native_exit_zero": true,
+        "exact_report_keys_values_and_types": true,
+        "exact_output_files": true,
+        "valid-xyz_exit_and_exact_report": true,
+        "empty_exit_and_exact_report": true,
+        "numeric-overflow_exit_and_exact_report": true,
+        "malformed_exit_and_exact_report": true,
+        "nonfinite-xyz_exit_and_exact_report": true,
+        "nonexistent_exit_and_exact_report": true
+      },
+      "native_exit_code": 0
+    }
+  ],
+  "checks_scope": "Exact typed JSON, prompt-only refusal invariance, flat-cylinder analytic volume/bounds, VDB and direct STL probes.",
+  "qualification": "software and geometry only",
+  "manufacturing_authorized": false
+}
