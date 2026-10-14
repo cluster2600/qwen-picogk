@@ -1,0 +1,150 @@
+{
+  "schema": "qwen.picogk.qualification-publication@1",
+  "date": "2026-10-14",
+  "status": "completed_qualified_supported_syntax",
+  "source_revision": "e5c08ce597322fafa717d3767dfae0a678075bab",
+  "base_revision": "b3252a2f97102b1fb1571fec2c9b27219a8536be",
+  "predecessor": {
+    "results_sha256": "0fcb36b71f4f520ed0f38e0a8dbf3047348280d6c9719dcd31c4e484d4b21fe6",
+    "final_passed": 27,
+    "parent_adapter_sha256": "b714724b4fb500451b9fada523658775c99a324ef8d2e3d8336221c1af6cae46",
+    "reserved_final_reused": false
+  },
+  "adapter_sha256": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
+  "development": {
+    "paired": {
+      "passed": 34,
+      "total": 60,
+      "by_language": {
+        "en": 7,
+        "fr": 5,
+        "de": 7,
+        "ja": 8,
+        "zh": 7
+      },
+      "refusal_passes": 10,
+      "regressions": [],
+      "eligible": false
+    },
+    "baseline": {
+      "passed": 14,
+      "total": 60,
+      "by_language": {
+        "en": 3,
+        "fr": 2,
+        "de": 3,
+        "ja": 4,
+        "zh": 2
+      },
+      "refusal_passes": 10,
+      "regressions": [],
+      "eligible": false
+    },
+    "trained": {
+      "passed": 53,
+      "total": 60,
+      "by_language": {
+        "en": 10,
+        "fr": 12,
+        "de": 9,
+        "ja": 11,
+        "zh": 11
+      },
+      "refusal_passes": 10,
+      "regressions": [],
+      "eligible": true
+    }
+  },
+  "canonical_development": {
+    "paired": {
+      "passed": 60,
+      "total": 60,
+      "by_language": {
+        "en": 12,
+        "fr": 12,
+        "de": 12,
+        "ja": 12,
+        "zh": 12
+      },
+      "refusal_passes": 10,
+      "regressions": [],
+      "eligible": true
+    },
+    "baseline": {
+      "passed": 34,
+      "total": 60,
+      "by_language": {
+        "en": 6,
+        "fr": 6,
+        "de": 9,
+        "ja": 8,
+        "zh": 5
+      },
+      "refusal_passes": 10,
+      "regressions": [],
+      "eligible": false
+    },
+    "trained": {
+      "passed": 60,
+      "total": 60,
+      "by_language": {
+        "en": 12,
+        "fr": 12,
+        "de": 12,
+        "ja": 12,
+        "zh": 12
+      },
+      "refusal_passes": 10,
+      "regressions": [],
+      "eligible": true
+    }
+  },
+  "final_baseline_passed": 12,
+  "final": {
+    "passed": 54,
+    "total": 60,
+    "by_language": {
+      "en": 11,
+      "fr": 11,
+      "de": 11,
+      "ja": 10,
+      "zh": 11
+    },
+    "refusal_passes": 10,
+    "regressions": [],
+    "eligible": true
+  },
+  "old_plans_passed": 48,
+  "old_code_passed": 16,
+  "historical_regressions": [],
+  "training": {
+    "steps": 240,
+    "learning_rate": 2.5e-06,
+    "new_rows": 720,
+    "old_replay_rows": 1376,
+    "maximum_tokens": 547,
+    "peak_training_memory_gb": 5.0,
+    "final_validation_loss": 0.018
+  },
+  "eligible": true,
+  "test_opened": true,
+  "legacy_default_replaced": false,
+  "manufacturing_qualified": false,
+  "frozen_bindings_verified": 4937,
+  "private_receipt_sha256": {
+    "results.json": "e1bed5e84139ff46e110b4511e2fc5119d7ae92701e0f56a10a5a7601e53b16b",
+    "protocol.json": "81ca0a5a71aa34d662b5262fbb8dc21775d049e787526c9ff38a27c7cdba6bd7",
+    "FROZEN.json": "b3d7caa931351add8bc7887ffcd72f8c3e892edfcee629f7257bfd4992013d0c",
+    "training.log": "de33cec8143e417a33ac3a7d212ec28191eb46c5f8c0840600d6fc763ccfd669"
+  },
+  "scope": "Supported syntax families shared across splits, disjoint numeric intents and wrappers; synthetic six-recipe native course. No unseen-syntax or full-library mastery claim.",
+  "operational_checks": {
+    "qualified_command_installed": true,
+    "mixed_unit_pipe_smoke_passed": true,
+    "unverified_interface_refusal_passed_without_model": true,
+    "tampered_profile_rejected": true,
+    "legacy_launcher_unchanged": true,
+    "profile_sha256": "114a026a37375dd238f1b6d1cc2ff783d85e72a96696df52dfbdafafc7a2d15c",
+    "launcher_sha256": "f214b0b6d74e217f7925e5dd38ae82b0c78e4c807e55a360ca5cc688d4363695"
+  }
+}

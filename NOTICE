@@ -1,0 +1,23 @@
+Qwen PicoGK
+Copyright 2026 Maxime Grenu
+
+Original code, synthetic examples, documentation and project-owned adapter
+contributions exported into this repository are licensed under Apache-2.0.
+This is a scoped export; it does not change the licence of porscheparts.
+
+Base: Qwen/Qwen2.5-Coder-1.5B-Instruct, Apache-2.0.
+MLX conversion: mlx-community/Qwen2.5-Coder-1.5B-Instruct-4bit, Apache-2.0.
+MLX-LM: ml-explore/mlx-lm, MIT, installed separately.
+
+The native/vendor folders preserve upstream Apache-2.0 licences and source
+headers for LEAP71 ShapeKernel, LatticeLibrary, HelixHeatX and PicoGK-Fasteners.
+See native/sources.json for immutable revisions and per-file checksums.
+PicoGK 2.3.0 and its dependencies are obtained separately through NuGet and
+retain their own notices. No native binaries are redistributed in this Git repo.
+
+The selector's SimpleFluidSimulationInput scalar/vector API cards derive from
+four source files carrying CC0-1.0 notices in PicoGK_SimulationExample.
+QuasiCrystals and experimental PicoGK.Geometry carry Apache-2.0 notices.
+Their revisions and scope are recorded in evidence/results-library.json.
+No third-party research PDF, photograph, scan, vehicle identifier or measured
+Porsche geometry is included. References are provenance, not endorsements.

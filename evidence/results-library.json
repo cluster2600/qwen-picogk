@@ -1,0 +1,131 @@
+{
+  "schema": "qwen.picogk.library-publication@1",
+  "date": "2026-10-14",
+  "source_revision": "d0a5c0d8423d9d0fccb97065fe268b93eff16e32",
+  "current": {
+    "baseline_development_passed": 14,
+    "development_passed": 20,
+    "development_total": 20,
+    "test_opened": true,
+    "test_passed": 20,
+    "weights_updated": true,
+    "selector_adapter_sha256": "2929ca0490602ce3205b35a6e12b41a7682e98ee5ddc8f839788dcda7b0eebe2",
+    "geometry_adapter_unchanged": true,
+    "full_api_mastery_tested": false,
+    "model_code_executed": false,
+    "manufacturing_qualified": false
+  },
+  "libraries": {
+    "scalar_vdb": {
+      "repository": "leap71/PicoGK_SimulationExample",
+      "revision": "9e98c1acacad41ac26609cc873cdae35cb73c2d9",
+      "license": "CC0-1.0 file headers on four src files; Program.cs not admitted",
+      "card": "SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver."
+    },
+    "vector_vdb": {
+      "repository": "leap71/PicoGK_SimulationExample",
+      "revision": "9e98c1acacad41ac26609cc873cdae35cb73c2d9",
+      "license": "CC0-1.0 file headers on four src files; Program.cs not admitted",
+      "card": "SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver."
+    },
+    "quasicrystal": {
+      "repository": "leap71/LEAP71_QuasiCrystals",
+      "revision": "685e62a8bf4aa1b4da650a23b06532f41f91245b",
+      "license": "Apache-2.0",
+      "card": "PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip."
+    },
+    "geometry_frame": {
+      "repository": "leap71/PicoGK.Geometry",
+      "revision": "dd323c550aba61f7df4bc08e5303688ef033865c",
+      "license": "Apache-2.0",
+      "card": "Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement."
+    }
+  },
+  "training": {
+    "fixed_steps": 160,
+    "learning_rate": 5e-06,
+    "train_rows": 20,
+    "valid_rows": 20,
+    "reserved_final_rows": 20,
+    "geometry_adapter_unchanged": true
+  },
+  "native": {
+    "recipes": [
+      {
+        "recipe": "cylinder",
+        "volume_mm3": 1348.415,
+        "triangles": 6452,
+        "native_vdb_equal": true
+      },
+      {
+        "recipe": "pipe",
+        "volume_mm3": 1014.66846,
+        "triangles": 8408,
+        "native_vdb_equal": true
+      },
+      {
+        "recipe": "washer",
+        "volume_mm3": 165.12737,
+        "triangles": 2728,
+        "native_vdb_equal": true
+      },
+      {
+        "recipe": "bcc",
+        "volume_mm3": 159.7683,
+        "triangles": 3660,
+        "native_vdb_equal": true
+      },
+      {
+        "recipe": "thread",
+        "volume_mm3": 824.7302,
+        "triangles": 9652,
+        "native_vdb_equal": true
+      },
+      {
+        "recipe": "quasicrystal",
+        "volume_mm3": 1846.2491,
+        "triangles": 24396,
+        "native_vdb_equal": true
+      }
+    ],
+    "domains_equal": true,
+    "scalar_vector_probes": 61,
+    "geometry_tests": {
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0
+    },
+    "fluid_solver_executed": false,
+    "manufacturing_qualified": false
+  },
+  "earlier_trials": [
+    {
+      "phase": "vague_json_instruction",
+      "development_passed": 0,
+      "total": 20,
+      "test_opened": false
+    },
+    {
+      "phase": "explicit_json_instruction",
+      "development_passed": 14,
+      "total": 20,
+      "test_opened": false
+    },
+    {
+      "phase": "fixed_80_steps",
+      "development_passed": 19,
+      "total": 20,
+      "test_opened": false
+    }
+  ],
+  "private_receipt_sha256": {
+    "results.json": "35c8f2bc4dd4ebabc4a2eb1c02c38ee30e35349999e9482ba005ceca4c40a0b3",
+    "native-witnesses.json": "7e147a4f1caea305208aac620ccf1a9ccc4de6f4aebfd966821c534c0adb1da4",
+    "training-command.json": "c28d5798370af079d70943bfc4fde6ae199ae2db6880aa0b49a8782f4cb224cd",
+    "training.log": "8859d38876796007bedc8cf70b1e5b57fa28f2b32007833b965f8c46b5892b6a",
+    "scores.json": "2460fa1fa2c825f6e202698e10a7374bd8f902778d8754482421c80a9f5f85fa"
+  },
+  "input_manifest_sha256": "d81e313ab9c20a7584d29210acac207605cd2e0504e693325cff18bb84a46c49",
+  "input_bindings_verified": 10150,
+  "scope": "Source-grounded operation selection only; shared questions and distinct split wrappers. No new geometry generation, full API mastery or unseen-task generalisation claim."
+}

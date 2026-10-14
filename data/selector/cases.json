@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "train-a0f3601c5bbb193e",
+    "split": "train",
+    "language": "en",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Read density and viscosity scalar values from a simulation VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-bbf4d7e29300e25b",
+    "split": "train",
+    "language": "fr",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Lire la densité et la viscosité comme champs scalaires dans un VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-cf8d5503b9b7c7e8",
+    "split": "train",
+    "language": "de",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Dichte und Viskosität als Skalarfelder aus einer VDB lesen."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-8d2d43722e06637d",
+    "split": "train",
+    "language": "ja",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: VDBから密度と粘度のスカラー値を読み取る。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-320a8569604fa2f1",
+    "split": "train",
+    "language": "zh",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: 从VDB中读取密度和黏度标量值。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-0978ac69e0b40486",
+    "split": "train",
+    "language": "en",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Read three-component velocity values from a simulation VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-7c44331fecd11c34",
+    "split": "train",
+    "language": "fr",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Lire les vecteurs de vitesse à trois composantes dans un VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-828face5fb9489a9",
+    "split": "train",
+    "language": "de",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Dreikomponentige Geschwindigkeitsvektoren aus einer VDB lesen."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-433a64586a302c71",
+    "split": "train",
+    "language": "ja",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: VDBから三成分の速度ベクトルを読み取る。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-17f8365ed3726f87",
+    "split": "train",
+    "language": "zh",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: 从VDB中读取三分量速度向量。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-eedad3d0e7b9e69f",
+    "split": "train",
+    "language": "en",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Construct a quasicrystal wireframe and an aperiodic Penrose pattern."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-6e45958de351fbc4",
+    "split": "train",
+    "language": "fr",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Construire un réseau filaire quasi-cristallin et un pavage de Penrose apériodique."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-b7ea2cef22222710",
+    "split": "train",
+    "language": "de",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Ein quasikristallines Drahtmodell und ein aperiodisches Penrose-Muster erstellen."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-9d3e229f4bc2471b",
+    "split": "train",
+    "language": "ja",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: 準結晶のワイヤーフレームと非周期的なペンローズ模様を作成する。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-e9bfd658773609b5",
+    "split": "train",
+    "language": "zh",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: 构建准晶线框和非周期性彭罗斯图案。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-8c4792cf276b1271",
+    "split": "train",
+    "language": "en",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Use double-precision 2D/3D coordinate frames in the experimental geometry library."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-95a3c8edf0e577ff",
+    "split": "train",
+    "language": "fr",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: Utiliser des repères 2D/3D en double précision dans la bibliothèque géométrique expérimentale."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-f5505881ee72b6b0",
+    "split": "train",
+    "language": "de",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: 2D/3D-Koordinatenrahmen mit doppelter Genauigkeit in der experimentellen Geometriebibliothek verwenden."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-61c2e6fdbd66d51e",
+    "split": "train",
+    "language": "ja",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: 実験的な幾何ライブラリで倍精度の2D/3D座標フレームを使用する。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "train-dbfe8dbc43052694",
+    "split": "train",
+    "language": "zh",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Select an API for this requirement: 在实验性几何库中使用双精度2D/3D坐标框架。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-19cdaa973ed2cf1e",
+    "split": "valid",
+    "language": "en",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Read density and viscosity scalar values from a simulation VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-52d0970dacb2fc08",
+    "split": "valid",
+    "language": "fr",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Lire la densité et la viscosité comme champs scalaires dans un VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-ad8074a6f47f23f6",
+    "split": "valid",
+    "language": "de",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Dichte und Viskosität als Skalarfelder aus einer VDB lesen."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-e57c2a0afcb589c7",
+    "split": "valid",
+    "language": "ja",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? VDBから密度と粘度のスカラー値を読み取る。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-979f6926321ca195",
+    "split": "valid",
+    "language": "zh",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? 从VDB中读取密度和黏度标量值。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-9373d581b2ee080c",
+    "split": "valid",
+    "language": "en",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Read three-component velocity values from a simulation VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-bbaaf6f965e7c3c1",
+    "split": "valid",
+    "language": "fr",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Lire les vecteurs de vitesse à trois composantes dans un VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-1e4e26d81da300f0",
+    "split": "valid",
+    "language": "de",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Dreikomponentige Geschwindigkeitsvektoren aus einer VDB lesen."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-189223b057bf577f",
+    "split": "valid",
+    "language": "ja",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? VDBから三成分の速度ベクトルを読み取る。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-3b1bfb6820f4fb89",
+    "split": "valid",
+    "language": "zh",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? 从VDB中读取三分量速度向量。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-f40b94152729ae35",
+    "split": "valid",
+    "language": "en",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Construct a quasicrystal wireframe and an aperiodic Penrose pattern."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-2ce4183a99669929",
+    "split": "valid",
+    "language": "fr",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Construire un réseau filaire quasi-cristallin et un pavage de Penrose apériodique."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-edbe00cdd495f926",
+    "split": "valid",
+    "language": "de",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Ein quasikristallines Drahtmodell und ein aperiodisches Penrose-Muster erstellen."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-7bb0ef715cf79395",
+    "split": "valid",
+    "language": "ja",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? 準結晶のワイヤーフレームと非周期的なペンローズ模様を作成する。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-22b279a9dd3242f4",
+    "split": "valid",
+    "language": "zh",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? 构建准晶线框和非周期性彭罗斯图案。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-907faf695952044b",
+    "split": "valid",
+    "language": "en",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Use double-precision 2D/3D coordinate frames in the experimental geometry library."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-ca95f80698bc073a",
+    "split": "valid",
+    "language": "fr",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? Utiliser des repères 2D/3D en double précision dans la bibliothèque géométrique expérimentale."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-48edfca84d568077",
+    "split": "valid",
+    "language": "de",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? 2D/3D-Koordinatenrahmen mit doppelter Genauigkeit in der experimentellen Geometriebibliothek verwenden."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-1de6397b597e8f4c",
+    "split": "valid",
+    "language": "ja",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? 実験的な幾何ライブラリで倍精度の2D/3D座標フレームを使用する。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "valid-4d32f5e41b6c5e27",
+    "split": "valid",
+    "language": "zh",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Which documented operation addresses this request? 在实验性几何库中使用双精度2D/3D坐标框架。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-40bd8d155c84e619",
+    "split": "test",
+    "language": "en",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Read density and viscosity scalar values from a simulation VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-64698bd1ed8fd236",
+    "split": "test",
+    "language": "fr",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Lire la densité et la viscosité comme champs scalaires dans un VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-e910518add709db3",
+    "split": "test",
+    "language": "de",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Dichte und Viskosität als Skalarfelder aus einer VDB lesen."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-6f2528c3bf2d91c7",
+    "split": "test",
+    "language": "ja",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: VDBから密度と粘度のスカラー値を読み取る。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-efd936cc5b4f4784",
+    "split": "test",
+    "language": "zh",
+    "expected": "scalar_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: 从VDB中读取密度和黏度标量值。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"scalar_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-1eea80daaee70519",
+    "split": "test",
+    "language": "en",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Read three-component velocity values from a simulation VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-c428b407ea034b38",
+    "split": "test",
+    "language": "fr",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Lire les vecteurs de vitesse à trois composantes dans un VDB."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-e3e212149bad1fe8",
+    "split": "test",
+    "language": "de",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Dreikomponentige Geschwindigkeitsvektoren aus einer VDB lesen."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-caeb14dea95017f0",
+    "split": "test",
+    "language": "ja",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: VDBから三成分の速度ベクトルを読み取る。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-a72521f116a5844e",
+    "split": "test",
+    "language": "zh",
+    "expected": "vector_vdb",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: 从VDB中读取三分量速度向量。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"vector_vdb\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-c79b48e6b6d43640",
+    "split": "test",
+    "language": "en",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Construct a quasicrystal wireframe and an aperiodic Penrose pattern."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-6613e337f9c76be6",
+    "split": "test",
+    "language": "fr",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Construire un réseau filaire quasi-cristallin et un pavage de Penrose apériodique."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-2dde9b393450d861",
+    "split": "test",
+    "language": "de",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Ein quasikristallines Drahtmodell und ein aperiodisches Penrose-Muster erstellen."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-cb17c79f462924ec",
+    "split": "test",
+    "language": "ja",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: 準結晶のワイヤーフレームと非周期的なペンローズ模様を作成する。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-603b4b1036c9b08c",
+    "split": "test",
+    "language": "zh",
+    "expected": "quasicrystal",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: 构建准晶线框和非周期性彭罗斯图案。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"quasicrystal\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-377af14c2c3f54c8",
+    "split": "test",
+    "language": "en",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Use double-precision 2D/3D coordinate frames in the experimental geometry library."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-611e825b84324e61",
+    "split": "test",
+    "language": "fr",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: Utiliser des repères 2D/3D en double précision dans la bibliothèque géométrique expérimentale."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-aeb0081d7dcf797d",
+    "split": "test",
+    "language": "de",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: 2D/3D-Koordinatenrahmen mit doppelter Genauigkeit in der experimentellen Geometriebibliothek verwenden."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-87d4dab352a3d28e",
+    "split": "test",
+    "language": "ja",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: 実験的な幾何ライブラリで倍精度の2D/3D座標フレームを使用する。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  },
+  {
+    "id": "test-656eb4fa6fb53817",
+    "split": "test",
+    "language": "zh",
+    "expected": "geometry_frame",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Choose exactly one operation identifier: scalar_vdb, vector_vdb, quasicrystal, geometry_frame. Return exactly one JSON object shaped {\"operation\":\"scalar_vdb\"}, replacing the value with your chosen identifier. The only permitted key is operation. No identifier key, description key, explanation, code or other fields. Finish immediately after the closing brace. Source cards: {\"scalar_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetDensityField/oGetViscosityField; ScalarField.bGetValue; synthetic VDB field exchange, not a CFD solver.\"], \"vector_vdb\": [\"leap71/PicoGK_SimulationExample\", \"SimpleFluidSimulationInput.oGetVelocityField; VectorField.bGetValue; inspect velocity samples from a VDB, not a CFD solver.\"], \"quasicrystal\": [\"leap71/LEAP71_QuasiCrystals\", \"PenrosePattern and QuasiCrystal.voxGetWireframe; native wireframe and VDB roundtrip.\"], \"geometry_frame\": [\"leap71/PicoGK.Geometry\", \"Frame2d and Frame3d coordinate-frame arithmetic; experimental isolated net10.0 library, not a direct ShapeKernel replacement.\"]}"
+      },
+      {
+        "role": "user",
+        "content": "Resolve this library capability request: 在实验性几何库中使用双精度2D/3D坐标框架。"
+      },
+      {
+        "role": "assistant",
+        "content": "{\"operation\": \"geometry_frame\"}"
+      }
+    ]
+  }
+]

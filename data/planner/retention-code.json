@@ -1,0 +1,816 @@
+[
+  {
+    "id": "usd-valid-002",
+    "family_id": "usd-recipe-2",
+    "domain": "openusd",
+    "split": "valid",
+    "group": "parameter_holdout",
+    "recipe": 2,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only Python code using Pixar OpenUSD 25.5. stage is an empty in-memory Usd.Stage; UsdGeom, UsdShade, Sdf and Gf are available. Use literal values, assignments and API calls; variant edit-context with blocks are allowed. No loops, functions, files, external assets or shell commands. Set /World as default prim, Z up and metersPerUnit=0.001. All geometry is synthetic, not measured Porsche data."
+      },
+      {
+        "role": "user",
+        "content": "Create cube /World/Part102 of size 15 mm. Bind material /World/Material with shader /World/Material/Surface, UsdPreviewSurface, diffuseColor (0.2,0.4,0.6), roughness 0.4."
+      },
+      {
+        "role": "assistant",
+        "content": "root = UsdGeom.Xform.Define(stage, \"/World\")\nstage.SetDefaultPrim(root.GetPrim())\nUsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)\nUsdGeom.SetStageMetersPerUnit(stage, 0.001)\npart = UsdGeom.Cube.Define(stage, \"/World/Part102\")\npart.CreateSizeAttr(15)\nmaterial = UsdShade.Material.Define(stage, \"/World/Material\")\nshader = UsdShade.Shader.Define(stage, \"/World/Material/Surface\")\nshader.CreateIdAttr(\"UsdPreviewSurface\")\nshader.CreateInput(\"diffuseColor\", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(0.2,0.4,0.6))\nshader.CreateInput(\"roughness\", Sdf.ValueTypeNames.Float).Set(0.4)\nmaterial.CreateSurfaceOutput().ConnectToSource(shader.ConnectableAPI(), \"surface\")\nUsdShade.MaterialBindingAPI.Apply(part.GetPrim()).Bind(material)\n"
+      }
+    ],
+    "sources": [
+      {
+        "id": "openusd-authored-examples",
+        "uri": "repo:training/m64-engineer/openusd.py",
+        "revision_sha256": "dd6a5809db0f0dbdffe104e5c2e845242cea0d28eb3171889fe996c4406a5324",
+        "license": "Repository proprietary; owner-authorized local training",
+        "training_allowed": true
+      }
+    ],
+    "synthetic": true,
+    "validation": {
+      "status": "verified",
+      "method": "OpenUSD API, topology, composition, USDA/USDC roundtrip and compliance rules except shader registry",
+      "answer_sha256": "5d06a1edc6286362da523ac9973f3b3477c7f2c29646955522fdd48073582f4a",
+      "evidence": [
+        {
+          "path": "work/m64-engineer/usd-reviewed-003.evidence/usd-valid-002.json",
+          "sha256": "7373cf9c3845c211db14d639532a88be8bf1073df50adf4e54b0d3f7f327902b"
+        }
+      ]
+    }
+  },
+  {
+    "id": "usd2-valid-019",
+    "family_id": "usd-recipe-1",
+    "domain": "openusd",
+    "split": "valid",
+    "group": "composition_holdout",
+    "recipe": 1,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only Python code using Pixar OpenUSD 25.5. stage is an empty in-memory Usd.Stage; UsdGeom, UsdShade, Sdf and Gf are available. Use literal values, assignments and API calls; variant edit-context with blocks are allowed. No loops, functions, files, external assets or shell commands. Set /World as default prim, Z up and metersPerUnit=0.001. All geometry is synthetic, not measured Porsche data."
+      },
+      {
+        "role": "user",
+        "content": "Create a triangular mesh at /World/Part10019 with points (0,0,0), (14,0,0), (0,14,0); one face [0,1,2], subdivision none. Also create sphere /World/Probe of radius 5 mm and purpose guide. Also create cube /World/Block10019 of size 5 mm, purpose guide, translated (0,-2,0) mm."
+      },
+      {
+        "role": "assistant",
+        "content": "root = UsdGeom.Xform.Define(stage, \"/World\")\nstage.SetDefaultPrim(root.GetPrim())\nUsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)\nUsdGeom.SetStageMetersPerUnit(stage, 0.001)\npart = UsdGeom.Mesh.Define(stage, \"/World/Part10019\")\npart.CreatePointsAttr([Gf.Vec3f(0,0,0), Gf.Vec3f(14,0,0), Gf.Vec3f(0,14,0)])\npart.CreateFaceVertexCountsAttr([3])\npart.CreateFaceVertexIndicesAttr([0,1,2])\npart.CreateSubdivisionSchemeAttr(UsdGeom.Tokens.none)\nprobe = UsdGeom.Sphere.Define(stage, \"/World/Probe\")\nprobe.CreateRadiusAttr(5)\nprobe.CreatePurposeAttr(UsdGeom.Tokens.guide)\nblock = UsdGeom.Cube.Define(stage, \"/World/Block10019\")\nblock.CreateSizeAttr(5)\nblock.CreatePurposeAttr(UsdGeom.Tokens.guide)\nblock.AddTranslateOp().Set(Gf.Vec3d(0,-2,0))\n"
+      }
+    ],
+    "sources": [
+      {
+        "id": "openusd-authored-examples",
+        "uri": "repo:training/m64-engineer/openusd.py",
+        "revision_sha256": "f40d5ecf5ed4e414060cc647f5c38fab0654322643c589da4d76f2e6c34befe4",
+        "license": "Repository proprietary; owner-authorized local training",
+        "training_allowed": true
+      }
+    ],
+    "synthetic": true,
+    "validation": {
+      "status": "verified",
+      "method": "OpenUSD API, topology, composition, USDA/USDC roundtrip and compliance rules except shader registry",
+      "answer_sha256": "38dcbb8490c1cebd44f2f80894b5adf936efe319a1d93dff1408f4b3aa32d569",
+      "evidence": [
+        {
+          "path": "work/m64-qwen/coding-002-prep/usd-verified.evidence/usd2-valid-019.json",
+          "sha256": "d8e2ad717478e637b1886b7dbfb4968c79aad925df9858e51efc772dd4df44ce"
+        }
+      ]
+    }
+  },
+  {
+    "id": "usd2-valid-006",
+    "family_id": "usd-recipe-0",
+    "domain": "openusd",
+    "split": "valid",
+    "group": "parameter_holdout",
+    "recipe": 0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only Python code using Pixar OpenUSD 25.5. stage is an empty in-memory Usd.Stage; UsdGeom, UsdShade, Sdf and Gf are available. Use literal values, assignments and API calls; variant edit-context with blocks are allowed. No loops, functions, files, external assets or shell commands. Set /World as default prim, Z up and metersPerUnit=0.001. All geometry is synthetic, not measured Porsche data."
+      },
+      {
+        "role": "user",
+        "content": "Create cube /World/Element10006 of size 10 mm, translated by (2,0,0) mm."
+      },
+      {
+        "role": "assistant",
+        "content": "root = UsdGeom.Xform.Define(stage, \"/World\")\nstage.SetDefaultPrim(root.GetPrim())\nUsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)\nUsdGeom.SetStageMetersPerUnit(stage, 0.001)\npart = UsdGeom.Cube.Define(stage, \"/World/Element10006\")\npart.CreateSizeAttr(10)\npart.AddTranslateOp().Set(Gf.Vec3d(2, 0, 0))\n"
+      }
+    ],
+    "sources": [
+      {
+        "id": "openusd-authored-examples",
+        "uri": "repo:training/m64-engineer/openusd.py",
+        "revision_sha256": "f40d5ecf5ed4e414060cc647f5c38fab0654322643c589da4d76f2e6c34befe4",
+        "license": "Repository proprietary; owner-authorized local training",
+        "training_allowed": true
+      }
+    ],
+    "synthetic": true,
+    "validation": {
+      "status": "verified",
+      "method": "OpenUSD API, topology, composition, USDA/USDC roundtrip and compliance rules except shader registry",
+      "answer_sha256": "11829c42f67d31406e1bf2704ad3e3e983916db0afabe56ee398b40f13065383",
+      "evidence": [
+        {
+          "path": "work/m64-qwen/coding-002-prep/usd-verified.evidence/usd2-valid-006.json",
+          "sha256": "0e7cc4bef4782bc0dd19fada296e68c04a7dffa5516a198cabfe88f5f268d240"
+        }
+      ]
+    }
+  },
+  {
+    "id": "usd2-valid-002",
+    "family_id": "usd-recipe-2",
+    "domain": "openusd",
+    "split": "valid",
+    "group": "parameter_holdout",
+    "recipe": 2,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only Python code using Pixar OpenUSD 25.5. stage is an empty in-memory Usd.Stage; UsdGeom, UsdShade, Sdf and Gf are available. Use literal values, assignments and API calls; variant edit-context with blocks are allowed. No loops, functions, files, external assets or shell commands. Set /World as default prim, Z up and metersPerUnit=0.001. All geometry is synthetic, not measured Porsche data."
+      },
+      {
+        "role": "user",
+        "content": "Create cube /World/Element10002 of size 11 mm. Bind material /World/Material with shader /World/Material/Surface, UsdPreviewSurface, diffuseColor (0.2,0.4,0.6), roughness 0.4."
+      },
+      {
+        "role": "assistant",
+        "content": "root = UsdGeom.Xform.Define(stage, \"/World\")\nstage.SetDefaultPrim(root.GetPrim())\nUsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)\nUsdGeom.SetStageMetersPerUnit(stage, 0.001)\npart = UsdGeom.Cube.Define(stage, \"/World/Element10002\")\npart.CreateSizeAttr(11)\nmaterial = UsdShade.Material.Define(stage, \"/World/Material\")\nshader = UsdShade.Shader.Define(stage, \"/World/Material/Surface\")\nshader.CreateIdAttr(\"UsdPreviewSurface\")\nshader.CreateInput(\"diffuseColor\", Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(0.2,0.4,0.6))\nshader.CreateInput(\"roughness\", Sdf.ValueTypeNames.Float).Set(0.4)\nmaterial.CreateSurfaceOutput().ConnectToSource(shader.ConnectableAPI(), \"surface\")\nUsdShade.MaterialBindingAPI.Apply(part.GetPrim()).Bind(material)\n"
+      }
+    ],
+    "sources": [
+      {
+        "id": "openusd-authored-examples",
+        "uri": "repo:training/m64-engineer/openusd.py",
+        "revision_sha256": "f40d5ecf5ed4e414060cc647f5c38fab0654322643c589da4d76f2e6c34befe4",
+        "license": "Repository proprietary; owner-authorized local training",
+        "training_allowed": true
+      }
+    ],
+    "synthetic": true,
+    "validation": {
+      "status": "verified",
+      "method": "OpenUSD API, topology, composition, USDA/USDC roundtrip and compliance rules except shader registry",
+      "answer_sha256": "6a3a1505246156f3a7627e044688f55f634cecc645acbe24c4cf101036b2f31c",
+      "evidence": [
+        {
+          "path": "work/m64-qwen/coding-002-prep/usd-verified.evidence/usd2-valid-002.json",
+          "sha256": "2d384b50edb9324cfd229debd08741f5129c27b6730f824958394c84db6538c8"
+        }
+      ]
+    }
+  },
+  {
+    "id": "usd2-valid-017",
+    "family_id": "usd-recipe-5",
+    "domain": "openusd",
+    "split": "valid",
+    "group": "composition_holdout",
+    "recipe": 5,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only Python code using Pixar OpenUSD 25.5. stage is an empty in-memory Usd.Stage; UsdGeom, UsdShade, Sdf and Gf are available. Use literal values, assignments and API calls; variant edit-context with blocks are allowed. No loops, functions, files, external assets or shell commands. Set /World as default prim, Z up and metersPerUnit=0.001. All geometry is synthetic, not measured Porsche data."
+      },
+      {
+        "role": "user",
+        "content": "Create cube /World/Mount10017, size 29 mm. Animate translate from (0,0,0) at time code 1 to (29,0,0) at time code 24; start/end 1/24 and timeCodesPerSecond=24. No default translate value. Also create sphere /World/Probe of radius 3 mm and purpose guide. Also create cube /World/Block10017 of size 3 mm, purpose guide, translated (0,-4,0) mm."
+      },
+      {
+        "role": "assistant",
+        "content": "root = UsdGeom.Xform.Define(stage, \"/World\")\nstage.SetDefaultPrim(root.GetPrim())\nUsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)\nUsdGeom.SetStageMetersPerUnit(stage, 0.001)\npart = UsdGeom.Cube.Define(stage, \"/World/Mount10017\")\npart.CreateSizeAttr(29)\nstage.SetStartTimeCode(1)\nstage.SetEndTimeCode(24)\nstage.SetTimeCodesPerSecond(24)\nmove = part.AddTranslateOp()\nmove.Set(Gf.Vec3d(0,0,0), 1)\nmove.Set(Gf.Vec3d(29,0,0), 24)\nprobe = UsdGeom.Sphere.Define(stage, \"/World/Probe\")\nprobe.CreateRadiusAttr(3)\nprobe.CreatePurposeAttr(UsdGeom.Tokens.guide)\nblock = UsdGeom.Cube.Define(stage, \"/World/Block10017\")\nblock.CreateSizeAttr(3)\nblock.CreatePurposeAttr(UsdGeom.Tokens.guide)\nblock.AddTranslateOp().Set(Gf.Vec3d(0,-4,0))\n"
+      }
+    ],
+    "sources": [
+      {
+        "id": "openusd-authored-examples",
+        "uri": "repo:training/m64-engineer/openusd.py",
+        "revision_sha256": "f40d5ecf5ed4e414060cc647f5c38fab0654322643c589da4d76f2e6c34befe4",
+        "license": "Repository proprietary; owner-authorized local training",
+        "training_allowed": true
+      }
+    ],
+    "synthetic": true,
+    "validation": {
+      "status": "verified",
+      "method": "OpenUSD API, topology, composition, USDA/USDC roundtrip and compliance rules except shader registry",
+      "answer_sha256": "2a362fc9d35da26cacd989211c8cb424348a4dfccab2c7ef7ad1c67b62ba313f",
+      "evidence": [
+        {
+          "path": "work/m64-qwen/coding-002-prep/usd-verified.evidence/usd2-valid-017.json",
+          "sha256": "eda9f8224c620dc87d9fdde4e40615df65fb6e188844460a15e6f9d8fd04bb3e"
+        }
+      ]
+    }
+  },
+  {
+    "id": "usd-valid-000",
+    "family_id": "usd-recipe-0",
+    "domain": "openusd",
+    "split": "valid",
+    "group": "parameter_holdout",
+    "recipe": 0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only Python code using Pixar OpenUSD 25.5. stage is an empty in-memory Usd.Stage; UsdGeom, UsdShade, Sdf and Gf are available. Use literal values, assignments and API calls; variant edit-context with blocks are allowed. No loops, functions, files, external assets or shell commands. Set /World as default prim, Z up and metersPerUnit=0.001. All geometry is synthetic, not measured Porsche data."
+      },
+      {
+        "role": "user",
+        "content": "Create cube /World/Part100 of size 13 mm, translated by (-3,0,0) mm."
+      },
+      {
+        "role": "assistant",
+        "content": "root = UsdGeom.Xform.Define(stage, \"/World\")\nstage.SetDefaultPrim(root.GetPrim())\nUsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)\nUsdGeom.SetStageMetersPerUnit(stage, 0.001)\npart = UsdGeom.Cube.Define(stage, \"/World/Part100\")\npart.CreateSizeAttr(13)\npart.AddTranslateOp().Set(Gf.Vec3d(-3, 0, 0))\n"
+      }
+    ],
+    "sources": [
+      {
+        "id": "openusd-authored-examples",
+        "uri": "repo:training/m64-engineer/openusd.py",
+        "revision_sha256": "dd6a5809db0f0dbdffe104e5c2e845242cea0d28eb3171889fe996c4406a5324",
+        "license": "Repository proprietary; owner-authorized local training",
+        "training_allowed": true
+      }
+    ],
+    "synthetic": true,
+    "validation": {
+      "status": "verified",
+      "method": "OpenUSD API, topology, composition, USDA/USDC roundtrip and compliance rules except shader registry",
+      "answer_sha256": "017bc92d9d1be753373b064d1737341216e29927b0f264c3a8f1f8d6e06e22d0",
+      "evidence": [
+        {
+          "path": "work/m64-engineer/usd-reviewed-003.evidence/usd-valid-000.json",
+          "sha256": "17ff58c1e08dd795ef187d472b801b606f540e8792d383ffc083e0647d42c7d7"
+        }
+      ]
+    }
+  },
+  {
+    "id": "usd2-valid-012",
+    "family_id": "usd-recipe-0",
+    "domain": "openusd",
+    "split": "valid",
+    "group": "composition_holdout",
+    "recipe": 0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only Python code using Pixar OpenUSD 25.5. stage is an empty in-memory Usd.Stage; UsdGeom, UsdShade, Sdf and Gf are available. Use literal values, assignments and API calls; variant edit-context with blocks are allowed. No loops, functions, files, external assets or shell commands. Set /World as default prim, Z up and metersPerUnit=0.001. All geometry is synthetic, not measured Porsche data."
+      },
+      {
+        "role": "user",
+        "content": "Create cube /World/Core10012 of size 23 mm, translated by (8,0,0) mm. Also create sphere /World/Marker10012 of radius 2 mm and purpose guide. Also create cube /World/Block10012 of size 2 mm, purpose guide, translated (0,8,0) mm."
+      },
+      {
+        "role": "assistant",
+        "content": "root = UsdGeom.Xform.Define(stage, \"/World\")\nstage.SetDefaultPrim(root.GetPrim())\nUsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)\nUsdGeom.SetStageMetersPerUnit(stage, 0.001)\npart = UsdGeom.Cube.Define(stage, \"/World/Core10012\")\npart.CreateSizeAttr(23)\npart.AddTranslateOp().Set(Gf.Vec3d(8, 0, 0))\nprobe = UsdGeom.Sphere.Define(stage, \"/World/Marker10012\")\nprobe.CreateRadiusAttr(2)\nprobe.CreatePurposeAttr(UsdGeom.Tokens.guide)\nblock = UsdGeom.Cube.Define(stage, \"/World/Block10012\")\nblock.CreateSizeAttr(2)\nblock.CreatePurposeAttr(UsdGeom.Tokens.guide)\nblock.AddTranslateOp().Set(Gf.Vec3d(0,8,0))\n"
+      }
+    ],
+    "sources": [
+      {
+        "id": "openusd-authored-examples",
+        "uri": "repo:training/m64-engineer/openusd.py",
+        "revision_sha256": "f40d5ecf5ed4e414060cc647f5c38fab0654322643c589da4d76f2e6c34befe4",
+        "license": "Repository proprietary; owner-authorized local training",
+        "training_allowed": true
+      }
+    ],
+    "synthetic": true,
+    "validation": {
+      "status": "verified",
+      "method": "OpenUSD API, topology, composition, USDA/USDC roundtrip and compliance rules except shader registry",
+      "answer_sha256": "ca87bee2826064023af891b340622106d32fd5c0fd08c069928489cbb0cb79aa",
+      "evidence": [
+        {
+          "path": "work/m64-qwen/coding-002-prep/usd-verified.evidence/usd2-valid-012.json",
+          "sha256": "83fda450979edbbc5152201aa97c339f5b170f71985fbdb0bd998d9ff20b43b5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "usd-valid-001",
+    "family_id": "usd-recipe-1",
+    "domain": "openusd",
+    "split": "valid",
+    "group": "parameter_holdout",
+    "recipe": 1,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only Python code using Pixar OpenUSD 25.5. stage is an empty in-memory Usd.Stage; UsdGeom, UsdShade, Sdf and Gf are available. Use literal values, assignments and API calls; variant edit-context with blocks are allowed. No loops, functions, files, external assets or shell commands. Set /World as default prim, Z up and metersPerUnit=0.001. All geometry is synthetic, not measured Porsche data."
+      },
+      {
+        "role": "user",
+        "content": "Create a triangular mesh at /World/Part101 with points (0,0,0), (14,0,0), (0,14,0); one face [0,1,2], subdivision none."
+      },
+      {
+        "role": "assistant",
+        "content": "root = UsdGeom.Xform.Define(stage, \"/World\")\nstage.SetDefaultPrim(root.GetPrim())\nUsdGeom.SetStageUpAxis(stage, UsdGeom.Tokens.z)\nUsdGeom.SetStageMetersPerUnit(stage, 0.001)\npart = UsdGeom.Mesh.Define(stage, \"/World/Part101\")\npart.CreatePointsAttr([Gf.Vec3f(0,0,0), Gf.Vec3f(14,0,0), Gf.Vec3f(0,14,0)])\npart.CreateFaceVertexCountsAttr([3])\npart.CreateFaceVertexIndicesAttr([0,1,2])\npart.CreateSubdivisionSchemeAttr(UsdGeom.Tokens.none)\n"
+      }
+    ],
+    "sources": [
+      {
+        "id": "openusd-authored-examples",
+        "uri": "repo:training/m64-engineer/openusd.py",
+        "revision_sha256": "dd6a5809db0f0dbdffe104e5c2e845242cea0d28eb3171889fe996c4406a5324",
+        "license": "Repository proprietary; owner-authorized local training",
+        "training_allowed": true
+      }
+    ],
+    "synthetic": true,
+    "validation": {
+      "status": "verified",
+      "method": "OpenUSD API, topology, composition, USDA/USDC roundtrip and compliance rules except shader registry",
+      "answer_sha256": "31964fa538d592cf703ba661026574a2a25b970b3e1d2dfd2a84df324b542593",
+      "evidence": [
+        {
+          "path": "work/m64-engineer/usd-reviewed-003.evidence/usd-valid-001.json",
+          "sha256": "24bf637f2a73254811c7be33bec434f077355f019246d562a5ee4dc5b3ac748f"
+        }
+      ]
+    }
+  },
+  {
+    "id": "valid-004",
+    "split": "valid",
+    "group": "parameter_holdout",
+    "shape": "strut",
+    "expected": [
+      [
+        -9.5,
+        0,
+        2,
+        2.0,
+        9.5,
+        0,
+        2,
+        2.0,
+        true
+      ]
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only C# statements for an existing PicoGK.Lattice named lattice. Use lattice.AddBeam(new Vector3(xf, yf, zf), radiusf, new Vector3(xf, yf, zf), radiusf, true/false); with numeric literals. No declarations, loops, comments, Markdown or other APIs. Coordinates are designed millimeters, not measured engine dimensions. Return one statement per edge."
+      },
+      {
+        "role": "user",
+        "content": "Build a synthetic strut. Vertices in mm: {\"A\": [-9.5, 0, 2], \"B\": [9.5, 0, 2], \"C\": [9.5, 11, 2], \"D\": [-9.5, 11, 2]}. Directed edges: A->B. Each edge has start diameter 4 mm and end diameter 4 mm. Rounded caps: true. Convert diameters to radii. Emit every edge exactly once."
+      },
+      {
+        "role": "assistant",
+        "content": "lattice.AddBeam(new Vector3(-9.5f, 0f, 2f), 2f, new Vector3(9.5f, 0f, 2f), 2f, true);"
+      }
+    ],
+    "domain": "picogk"
+  },
+  {
+    "id": "valid-003",
+    "split": "valid",
+    "group": "parameter_holdout",
+    "shape": "brace",
+    "expected": [
+      [
+        -9.0,
+        0,
+        1,
+        1.5,
+        9.0,
+        10,
+        1,
+        1.5,
+        false
+      ],
+      [
+        9.0,
+        0,
+        1,
+        1.5,
+        -9.0,
+        10,
+        1,
+        1.5,
+        false
+      ]
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only C# statements for an existing PicoGK.Lattice named lattice. Use lattice.AddBeam(new Vector3(xf, yf, zf), radiusf, new Vector3(xf, yf, zf), radiusf, true/false); with numeric literals. No declarations, loops, comments, Markdown or other APIs. Coordinates are designed millimeters, not measured engine dimensions. Return one statement per edge."
+      },
+      {
+        "role": "user",
+        "content": "Build a synthetic brace. Vertices in mm: {\"A\": [-9.0, 0, 1], \"B\": [9.0, 0, 1], \"C\": [9.0, 10, 1], \"D\": [-9.0, 10, 1]}. Directed edges: A->C, B->D. Each edge has start diameter 3 mm and end diameter 3 mm. Rounded caps: false. Convert diameters to radii. Emit every edge exactly once."
+      },
+      {
+        "role": "assistant",
+        "content": "lattice.AddBeam(new Vector3(-9f, 0f, 1f), 1.5f, new Vector3(9f, 10f, 1f), 1.5f, false);\nlattice.AddBeam(new Vector3(9f, 0f, 1f), 1.5f, new Vector3(-9f, 10f, 1f), 1.5f, false);"
+      }
+    ],
+    "domain": "picogk"
+  },
+  {
+    "id": "pico3-valid-000",
+    "split": "valid",
+    "group": "fresh_graph_instances",
+    "shape": "graph",
+    "expected": [
+      [
+        -4,
+        -12,
+        0,
+        1.5,
+        8,
+        8,
+        8,
+        2.0,
+        false
+      ]
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only C# statements for an existing PicoGK.Lattice named lattice. Use lattice.AddBeam(new Vector3(xf, yf, zf), radiusf, new Vector3(xf, yf, zf), radiusf, true/false); with numeric literals. No declarations, loops, comments, Markdown or other APIs. Coordinates are designed millimeters, not measured engine dimensions. Return one statement per edge."
+      },
+      {
+        "role": "user",
+        "content": "Build a synthetic graph. Vertices in mm: {\"A\": [-4, -12, 0], \"B\": [-16, -12, -4], \"C\": [-8, -12, -8], \"D\": [8, 8, 8]}. Directed edges: A->D. Each edge has start diameter 3 mm and end diameter 4 mm. Rounded caps: false. Convert diameters to radii. Emit every edge exactly once."
+      },
+      {
+        "role": "assistant",
+        "content": "lattice.AddBeam(new Vector3(-4f, -12f, 0f), 1.5f, new Vector3(8f, 8f, 8f), 2f, false);"
+      }
+    ],
+    "domain": "picogk"
+  },
+  {
+    "id": "valid-005",
+    "split": "valid",
+    "group": "parameter_holdout",
+    "shape": "elbow",
+    "expected": [
+      [
+        -10.0,
+        0,
+        -2,
+        2.0,
+        10.0,
+        0,
+        -2,
+        2.5,
+        false
+      ],
+      [
+        10.0,
+        0,
+        -2,
+        2.0,
+        10.0,
+        12,
+        -2,
+        2.5,
+        false
+      ]
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only C# statements for an existing PicoGK.Lattice named lattice. Use lattice.AddBeam(new Vector3(xf, yf, zf), radiusf, new Vector3(xf, yf, zf), radiusf, true/false); with numeric literals. No declarations, loops, comments, Markdown or other APIs. Coordinates are designed millimeters, not measured engine dimensions. Return one statement per edge."
+      },
+      {
+        "role": "user",
+        "content": "Build a synthetic elbow. Vertices in mm: {\"A\": [-10.0, 0, -2], \"B\": [10.0, 0, -2], \"C\": [10.0, 12, -2], \"D\": [-10.0, 12, -2]}. Directed edges: A->B, B->C. Each edge has start diameter 4 mm and end diameter 5 mm. Rounded caps: false. Convert diameters to radii. Emit every edge exactly once."
+      },
+      {
+        "role": "assistant",
+        "content": "lattice.AddBeam(new Vector3(-10f, 0f, -2f), 2f, new Vector3(10f, 0f, -2f), 2.5f, false);\nlattice.AddBeam(new Vector3(10f, 0f, -2f), 2f, new Vector3(10f, 12f, -2f), 2.5f, false);"
+      }
+    ],
+    "domain": "picogk"
+  },
+  {
+    "id": "pico2-valid-003",
+    "split": "valid",
+    "group": "fresh_graph_instances",
+    "shape": "graph",
+    "expected": [
+      [
+        -16,
+        -4,
+        16,
+        2.0,
+        -8,
+        -4,
+        4,
+        2.5,
+        true
+      ],
+      [
+        -8,
+        -4,
+        4,
+        2.0,
+        12,
+        -16,
+        0,
+        2.5,
+        true
+      ],
+      [
+        8,
+        16,
+        0,
+        2.0,
+        12,
+        -16,
+        0,
+        2.5,
+        true
+      ],
+      [
+        8,
+        16,
+        0,
+        2.0,
+        -16,
+        -4,
+        16,
+        2.5,
+        true
+      ]
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only C# statements for an existing PicoGK.Lattice named lattice. Use lattice.AddBeam(new Vector3(xf, yf, zf), radiusf, new Vector3(xf, yf, zf), radiusf, true/false); with numeric literals. No declarations, loops, comments, Markdown or other APIs. Coordinates are designed millimeters, not measured engine dimensions. Return one statement per edge."
+      },
+      {
+        "role": "user",
+        "content": "Build a synthetic graph. Vertices in mm: {\"A\": [8, 16, 0], \"B\": [12, -16, 0], \"C\": [-16, -4, 16], \"D\": [-8, -4, 4]}. Directed edges: C->D, D->B, A->B, A->C. Each edge has start diameter 4 mm and end diameter 5 mm. Rounded caps: true. Convert diameters to radii. Emit every edge exactly once."
+      },
+      {
+        "role": "assistant",
+        "content": "lattice.AddBeam(new Vector3(-16f, -4f, 16f), 2f, new Vector3(-8f, -4f, 4f), 2.5f, true);\nlattice.AddBeam(new Vector3(-8f, -4f, 4f), 2f, new Vector3(12f, -16f, 0f), 2.5f, true);\nlattice.AddBeam(new Vector3(8f, 16f, 0f), 2f, new Vector3(12f, -16f, 0f), 2.5f, true);\nlattice.AddBeam(new Vector3(8f, 16f, 0f), 2f, new Vector3(-16f, -4f, 16f), 2.5f, true);"
+      }
+    ],
+    "domain": "picogk"
+  },
+  {
+    "id": "pico3-valid-011",
+    "split": "valid",
+    "group": "fresh_graph_instances",
+    "shape": "graph",
+    "expected": [
+      [
+        8,
+        12,
+        8,
+        2.5,
+        -4,
+        -12,
+        -4,
+        2.0,
+        true
+      ],
+      [
+        0,
+        -16,
+        16,
+        2.5,
+        -4,
+        -12,
+        -4,
+        2.0,
+        true
+      ],
+      [
+        8,
+        12,
+        8,
+        2.5,
+        -4,
+        -4,
+        12,
+        2.0,
+        true
+      ],
+      [
+        -4,
+        -4,
+        12,
+        2.5,
+        -4,
+        -12,
+        -4,
+        2.0,
+        true
+      ],
+      [
+        0,
+        -16,
+        16,
+        2.5,
+        -4,
+        -4,
+        12,
+        2.0,
+        true
+      ],
+      [
+        0,
+        -16,
+        16,
+        2.5,
+        8,
+        12,
+        8,
+        2.0,
+        true
+      ]
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only C# statements for an existing PicoGK.Lattice named lattice. Use lattice.AddBeam(new Vector3(xf, yf, zf), radiusf, new Vector3(xf, yf, zf), radiusf, true/false); with numeric literals. No declarations, loops, comments, Markdown or other APIs. Coordinates are designed millimeters, not measured engine dimensions. Return one statement per edge."
+      },
+      {
+        "role": "user",
+        "content": "Build a synthetic graph. Vertices in mm: {\"A\": [-4, -12, -4], \"B\": [-4, -4, 12], \"C\": [0, -16, 16], \"D\": [8, 12, 8]}. Directed edges: D->A, C->A, D->B, B->A, C->B, C->D. Each edge has start diameter 5 mm and end diameter 4 mm. Rounded caps: true. Convert diameters to radii. Emit every edge exactly once."
+      },
+      {
+        "role": "assistant",
+        "content": "lattice.AddBeam(new Vector3(8f, 12f, 8f), 2.5f, new Vector3(-4f, -12f, -4f), 2f, true);\nlattice.AddBeam(new Vector3(0f, -16f, 16f), 2.5f, new Vector3(-4f, -12f, -4f), 2f, true);\nlattice.AddBeam(new Vector3(8f, 12f, 8f), 2.5f, new Vector3(-4f, -4f, 12f), 2f, true);\nlattice.AddBeam(new Vector3(-4f, -4f, 12f), 2.5f, new Vector3(-4f, -12f, -4f), 2f, true);\nlattice.AddBeam(new Vector3(0f, -16f, 16f), 2.5f, new Vector3(-4f, -4f, 12f), 2f, true);\nlattice.AddBeam(new Vector3(0f, -16f, 16f), 2.5f, new Vector3(8f, 12f, 8f), 2f, true);"
+      }
+    ],
+    "domain": "picogk"
+  },
+  {
+    "id": "valid-002",
+    "split": "valid",
+    "group": "parameter_holdout",
+    "shape": "frame",
+    "expected": [
+      [
+        -8.5,
+        0,
+        0,
+        1.5,
+        8.5,
+        0,
+        0,
+        2.0,
+        true
+      ],
+      [
+        8.5,
+        0,
+        0,
+        1.5,
+        8.5,
+        9,
+        0,
+        2.0,
+        true
+      ],
+      [
+        8.5,
+        9,
+        0,
+        1.5,
+        -8.5,
+        9,
+        0,
+        2.0,
+        true
+      ],
+      [
+        -8.5,
+        9,
+        0,
+        1.5,
+        -8.5,
+        0,
+        0,
+        2.0,
+        true
+      ]
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only C# statements for an existing PicoGK.Lattice named lattice. Use lattice.AddBeam(new Vector3(xf, yf, zf), radiusf, new Vector3(xf, yf, zf), radiusf, true/false); with numeric literals. No declarations, loops, comments, Markdown or other APIs. Coordinates are designed millimeters, not measured engine dimensions. Return one statement per edge."
+      },
+      {
+        "role": "user",
+        "content": "Build a synthetic frame. Vertices in mm: {\"A\": [-8.5, 0, 0], \"B\": [8.5, 0, 0], \"C\": [8.5, 9, 0], \"D\": [-8.5, 9, 0]}. Directed edges: A->B, B->C, C->D, D->A. Each edge has start diameter 3 mm and end diameter 4 mm. Rounded caps: true. Convert diameters to radii. Emit every edge exactly once."
+      },
+      {
+        "role": "assistant",
+        "content": "lattice.AddBeam(new Vector3(-8.5f, 0f, 0f), 1.5f, new Vector3(8.5f, 0f, 0f), 2f, true);\nlattice.AddBeam(new Vector3(8.5f, 0f, 0f), 1.5f, new Vector3(8.5f, 9f, 0f), 2f, true);\nlattice.AddBeam(new Vector3(8.5f, 9f, 0f), 1.5f, new Vector3(-8.5f, 9f, 0f), 2f, true);\nlattice.AddBeam(new Vector3(-8.5f, 9f, 0f), 1.5f, new Vector3(-8.5f, 0f, 0f), 2f, true);"
+      }
+    ],
+    "domain": "picogk"
+  },
+  {
+    "id": "pico3-valid-005",
+    "split": "valid",
+    "group": "fresh_graph_instances",
+    "shape": "graph",
+    "expected": [
+      [
+        16,
+        -4,
+        4,
+        1.0,
+        -4,
+        16,
+        -16,
+        1.5,
+        true
+      ],
+      [
+        16,
+        -4,
+        4,
+        1.0,
+        0,
+        16,
+        16,
+        1.5,
+        true
+      ],
+      [
+        0,
+        -8,
+        12,
+        1.0,
+        -4,
+        16,
+        -16,
+        1.5,
+        true
+      ],
+      [
+        0,
+        16,
+        16,
+        1.0,
+        0,
+        -8,
+        12,
+        1.5,
+        true
+      ],
+      [
+        0,
+        16,
+        16,
+        1.0,
+        -4,
+        16,
+        -16,
+        1.5,
+        true
+      ],
+      [
+        0,
+        -8,
+        12,
+        1.0,
+        16,
+        -4,
+        4,
+        1.5,
+        true
+      ]
+    ],
+    "messages": [
+      {
+        "role": "system",
+        "content": "Write only C# statements for an existing PicoGK.Lattice named lattice. Use lattice.AddBeam(new Vector3(xf, yf, zf), radiusf, new Vector3(xf, yf, zf), radiusf, true/false); with numeric literals. No declarations, loops, comments, Markdown or other APIs. Coordinates are designed millimeters, not measured engine dimensions. Return one statement per edge."
+      },
+      {
+        "role": "user",
+        "content": "Build a synthetic graph. Vertices in mm: {\"A\": [0, -8, 12], \"B\": [0, 16, 16], \"C\": [-4, 16, -16], \"D\": [16, -4, 4]}. Directed edges: D->C, D->B, A->C, B->A, B->C, A->D. Each edge has start diameter 2 mm and end diameter 3 mm. Rounded caps: true. Convert diameters to radii. Emit every edge exactly once."
+      },
+      {
+        "role": "assistant",
+        "content": "lattice.AddBeam(new Vector3(16f, -4f, 4f), 1f, new Vector3(-4f, 16f, -16f), 1.5f, true);\nlattice.AddBeam(new Vector3(16f, -4f, 4f), 1f, new Vector3(0f, 16f, 16f), 1.5f, true);\nlattice.AddBeam(new Vector3(0f, -8f, 12f), 1f, new Vector3(-4f, 16f, -16f), 1.5f, true);\nlattice.AddBeam(new Vector3(0f, 16f, 16f), 1f, new Vector3(0f, -8f, 12f), 1.5f, true);\nlattice.AddBeam(new Vector3(0f, 16f, 16f), 1f, new Vector3(-4f, 16f, -16f), 1.5f, true);\nlattice.AddBeam(new Vector3(0f, -8f, 12f), 1f, new Vector3(16f, -4f, 4f), 1.5f, true);"
+      }
+    ],
+    "domain": "picogk"
+  }
+]

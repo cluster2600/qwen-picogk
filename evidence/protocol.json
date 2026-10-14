@@ -1,0 +1,51 @@
+{
+  "schema": "qwen.picogk.qualification-protocol@1",
+  "registered_at_utc": "2026-10-14T08:09:28.998991+00:00",
+  "gates": {
+    "minimum_raw_passes": 50,
+    "language_minimum": 8,
+    "refusals": 10,
+    "old_plans": 48,
+    "old_code": 16
+  },
+  "selection": "Paired candidate first; at most one fixed 240-step correction if raw development or retention fails. Select by raw development only; open fresh final once. Preserve historical gates.",
+  "training": {
+    "steps": 240,
+    "learning_rate": 2.5e-06,
+    "batch_size": 2,
+    "replay_repetitions": 2
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 9931312,
+    "plan_max_tokens": 192,
+    "code_max_tokens": 1024
+  },
+  "packages": {
+    "mlx": "0.32.3",
+    "mlx-lm": "0.31.3",
+    "transformers": "5.17.0"
+  },
+  "source_revision": "e5c08ce597322fafa717d3767dfae0a678075bab",
+  "prior_frozen_sha256": "ced60a0a50d45db7c8ebbd4f4057871b12cad095998ae88563feb7e47f258f23",
+  "prior_report_sha256": "c68e42090b83ea46840bf171239af0a412657a8096bd6d945921af0656f185fd",
+  "dataset": {
+    "train_new": 720,
+    "replay_rows": 1376,
+    "valid": 60,
+    "reserved_final": 60,
+    "excluded_numeric_intents": 1418,
+    "maximum_tokens": 547,
+    "phrase_families_disjoint": true,
+    "shared_field_syntax_families": true,
+    "original_reserved_final_inferred": false,
+    "synthetic_only": true
+  },
+  "predecessor": {
+    "results_sha256": "0fcb36b71f4f520ed0f38e0a8dbf3047348280d6c9719dcd31c4e484d4b21fe6",
+    "final_passed": 27,
+    "parent_adapter_sha256": "b714724b4fb500451b9fada523658775c99a324ef8d2e3d8336221c1af6cae46",
+    "reserved_final_reused": false
+  },
+  "system_prompt": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"} Read field names both before values and after values in parentheses. Field order is irrelevant. Read each quantity independently. A stated radius stays a radius; only stated diameters become radii. Multiply centimeters by 10 and meters by 1000. Do not round to familiar increments."
+}

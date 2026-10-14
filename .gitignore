@@ -1,0 +1,10 @@
+.venv/
+models/
+.release/
+work/
+__pycache__/
+*.pyc
+*.lock
+native/bin/
+native/obj/
+!native/packages.lock.json

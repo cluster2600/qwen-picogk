@@ -1,0 +1,1418 @@
+[
+  {
+    "id": "valid-cylinder-000",
+    "split": "valid",
+    "domain": "cylinder",
+    "expected": {
+      "recipe": "cylinder",
+      "parameters_mm": [
+        7.5,
+        5.25
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Cylindre plein ShapeKernel : longueur 7.5 mm, diamètre 10.5 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"cylinder\",\"parameters_mm\":[7.5,5.25],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-cylinder-001",
+    "split": "valid",
+    "domain": "cylinder",
+    "expected": {
+      "recipe": "cylinder",
+      "parameters_mm": [
+        14.5,
+        8.75
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Solid ShapeKernel cylinder: length 1.45 cm, diameter 1.75 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"cylinder\",\"parameters_mm\":[14.5,8.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-cylinder-002",
+    "split": "valid",
+    "domain": "cylinder",
+    "expected": {
+      "recipe": "cylinder",
+      "parameters_mm": [
+        17.5,
+        7.25
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Cylindre plein ShapeKernel : longueur 17.5 mm, diamètre 14.5 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"cylinder\",\"parameters_mm\":[17.5,7.25],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-cylinder-003",
+    "split": "valid",
+    "domain": "cylinder",
+    "expected": {
+      "recipe": "cylinder",
+      "parameters_mm": [
+        18.0,
+        6.5
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Solid ShapeKernel cylinder: length 18 mm, diameter 13 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"cylinder\",\"parameters_mm\":[18.0,6.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-cylinder-004",
+    "split": "valid",
+    "domain": "cylinder",
+    "expected": {
+      "recipe": "cylinder",
+      "parameters_mm": [
+        11.25,
+        5.5
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Cylindre plein ShapeKernel : longueur 1.125 cm, diamètre 1.1 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"cylinder\",\"parameters_mm\":[11.25,5.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-cylinder-005",
+    "split": "valid",
+    "domain": "cylinder",
+    "expected": {
+      "recipe": "cylinder",
+      "parameters_mm": [
+        6.75,
+        4.25
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Solid ShapeKernel cylinder: length 6.75 mm, diameter 8.5 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"cylinder\",\"parameters_mm\":[6.75,4.25],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-cylinder-006",
+    "split": "valid",
+    "domain": "cylinder",
+    "expected": {
+      "recipe": "cylinder",
+      "parameters_mm": [
+        16.75,
+        5.5
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Cylindre plein ShapeKernel : longueur 16.75 mm, diamètre 11 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"cylinder\",\"parameters_mm\":[16.75,5.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-cylinder-007",
+    "split": "valid",
+    "domain": "cylinder",
+    "expected": {
+      "recipe": "cylinder",
+      "parameters_mm": [
+        10.0,
+        10.5
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Solid ShapeKernel cylinder: length 1 cm, diameter 2.1 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"cylinder\",\"parameters_mm\":[10.0,10.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-pipe-000",
+    "split": "valid",
+    "domain": "pipe",
+    "expected": {
+      "recipe": "pipe",
+      "parameters_mm": [
+        17.0,
+        5.5,
+        4.0
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "tube ShapeKernel : longueur/épaisseur 17 mm, diamètre extérieur 11 mm, alésage 8 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"pipe\",\"parameters_mm\":[17.0,5.5,4.0],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-pipe-001",
+    "split": "valid",
+    "domain": "pipe",
+    "expected": {
+      "recipe": "pipe",
+      "parameters_mm": [
+        19.75,
+        10.5,
+        2.75
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "ShapeKernel pipe: length/thickness 1.975 cm, outer diameter 2.1 cm, bore diameter 0.55 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"pipe\",\"parameters_mm\":[19.75,10.5,2.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-pipe-002",
+    "split": "valid",
+    "domain": "pipe",
+    "expected": {
+      "recipe": "pipe",
+      "parameters_mm": [
+        18.5,
+        9.0,
+        2.75
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "tube ShapeKernel : longueur/épaisseur 18.5 mm, diamètre extérieur 18 mm, alésage 5.5 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"pipe\",\"parameters_mm\":[18.5,9.0,2.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-pipe-003",
+    "split": "valid",
+    "domain": "pipe",
+    "expected": {
+      "recipe": "pipe",
+      "parameters_mm": [
+        8.75,
+        8.25,
+        3.5
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "ShapeKernel pipe: length/thickness 8.75 mm, outer diameter 16.5 mm, bore diameter 7 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"pipe\",\"parameters_mm\":[8.75,8.25,3.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-pipe-004",
+    "split": "valid",
+    "domain": "pipe",
+    "expected": {
+      "recipe": "pipe",
+      "parameters_mm": [
+        13.25,
+        7.75,
+        3.5
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "tube ShapeKernel : longueur/épaisseur 1.325 cm, diamètre extérieur 1.55 cm, alésage 0.7 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"pipe\",\"parameters_mm\":[13.25,7.75,3.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-pipe-005",
+    "split": "valid",
+    "domain": "pipe",
+    "expected": {
+      "recipe": "pipe",
+      "parameters_mm": [
+        10.5,
+        5.0,
+        3.5
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "ShapeKernel pipe: length/thickness 10.5 mm, outer diameter 10 mm, bore diameter 7 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"pipe\",\"parameters_mm\":[10.5,5.0,3.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-pipe-006",
+    "split": "valid",
+    "domain": "pipe",
+    "expected": {
+      "recipe": "pipe",
+      "parameters_mm": [
+        12.5,
+        10.0,
+        2.25
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "tube ShapeKernel : longueur/épaisseur 12.5 mm, diamètre extérieur 20 mm, alésage 4.5 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"pipe\",\"parameters_mm\":[12.5,10.0,2.25],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-pipe-007",
+    "split": "valid",
+    "domain": "pipe",
+    "expected": {
+      "recipe": "pipe",
+      "parameters_mm": [
+        17.5,
+        9.75,
+        2.25
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "ShapeKernel pipe: length/thickness 1.75 cm, outer diameter 1.95 cm, bore diameter 0.45 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"pipe\",\"parameters_mm\":[17.5,9.75,2.25],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-washer-000",
+    "split": "valid",
+    "domain": "washer",
+    "expected": {
+      "recipe": "washer",
+      "parameters_mm": [
+        2.5,
+        8.75,
+        3.25
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "rondelle PicoGK-Fasteners : longueur/épaisseur 2.5 mm, diamètre extérieur 17.5 mm, alésage 6.5 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"washer\",\"parameters_mm\":[2.5,8.75,3.25],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-washer-001",
+    "split": "valid",
+    "domain": "washer",
+    "expected": {
+      "recipe": "washer",
+      "parameters_mm": [
+        2.75,
+        10.5,
+        2.75
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "PicoGK-Fasteners washer: length/thickness 0.275 cm, outer diameter 2.1 cm, bore diameter 0.55 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"washer\",\"parameters_mm\":[2.75,10.5,2.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-washer-002",
+    "split": "valid",
+    "domain": "washer",
+    "expected": {
+      "recipe": "washer",
+      "parameters_mm": [
+        3.75,
+        8.0,
+        4.75
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "rondelle PicoGK-Fasteners : longueur/épaisseur 3.75 mm, diamètre extérieur 16 mm, alésage 9.5 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"washer\",\"parameters_mm\":[3.75,8.0,4.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-washer-003",
+    "split": "valid",
+    "domain": "washer",
+    "expected": {
+      "recipe": "washer",
+      "parameters_mm": [
+        2.75,
+        5.75,
+        2.5
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "PicoGK-Fasteners washer: length/thickness 2.75 mm, outer diameter 11.5 mm, bore diameter 5 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"washer\",\"parameters_mm\":[2.75,5.75,2.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-washer-004",
+    "split": "valid",
+    "domain": "washer",
+    "expected": {
+      "recipe": "washer",
+      "parameters_mm": [
+        2.25,
+        8.0,
+        3.25
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "rondelle PicoGK-Fasteners : longueur/épaisseur 0.225 cm, diamètre extérieur 1.6 cm, alésage 0.65 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"washer\",\"parameters_mm\":[2.25,8.0,3.25],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-washer-005",
+    "split": "valid",
+    "domain": "washer",
+    "expected": {
+      "recipe": "washer",
+      "parameters_mm": [
+        3.25,
+        10.5,
+        4.75
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "PicoGK-Fasteners washer: length/thickness 3.25 mm, outer diameter 21 mm, bore diameter 9.5 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"washer\",\"parameters_mm\":[3.25,10.5,4.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-washer-006",
+    "split": "valid",
+    "domain": "washer",
+    "expected": {
+      "recipe": "washer",
+      "parameters_mm": [
+        2.75,
+        10.5,
+        3.75
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "rondelle PicoGK-Fasteners : longueur/épaisseur 2.75 mm, diamètre extérieur 21 mm, alésage 7.5 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"washer\",\"parameters_mm\":[2.75,10.5,3.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-washer-007",
+    "split": "valid",
+    "domain": "washer",
+    "expected": {
+      "recipe": "washer",
+      "parameters_mm": [
+        3.5,
+        6.0,
+        3.0
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "PicoGK-Fasteners washer: length/thickness 0.35 cm, outer diameter 1.2 cm, bore diameter 0.6 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"washer\",\"parameters_mm\":[3.5,6.0,3.0],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-bcc-000",
+    "split": "valid",
+    "domain": "bcc",
+    "expected": {
+      "recipe": "bcc",
+      "parameters_mm": [
+        13.5,
+        1.5
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Une cellule BCC LatticeLibrary, côté 13.5 mm, diamètre des barres 1.5 mm, bruit zéro."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"bcc\",\"parameters_mm\":[13.5,1.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-bcc-001",
+    "split": "valid",
+    "domain": "bcc",
+    "expected": {
+      "recipe": "bcc",
+      "parameters_mm": [
+        12.75,
+        2.25
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "One LatticeLibrary BCC cell, side 1.275 cm, beam diameter 0.225 cm, zero noise."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"bcc\",\"parameters_mm\":[12.75,2.25],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-bcc-002",
+    "split": "valid",
+    "domain": "bcc",
+    "expected": {
+      "recipe": "bcc",
+      "parameters_mm": [
+        8.25,
+        1.5
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Une cellule BCC LatticeLibrary, côté 8.25 mm, diamètre des barres 1.5 mm, bruit zéro."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"bcc\",\"parameters_mm\":[8.25,1.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-bcc-003",
+    "split": "valid",
+    "domain": "bcc",
+    "expected": {
+      "recipe": "bcc",
+      "parameters_mm": [
+        13.25,
+        2.0
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "One LatticeLibrary BCC cell, side 13.25 mm, beam diameter 2 mm, zero noise."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"bcc\",\"parameters_mm\":[13.25,2.0],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-bcc-004",
+    "split": "valid",
+    "domain": "bcc",
+    "expected": {
+      "recipe": "bcc",
+      "parameters_mm": [
+        9.5,
+        2.25
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Une cellule BCC LatticeLibrary, côté 0.95 cm, diamètre des barres 0.225 cm, bruit zéro."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"bcc\",\"parameters_mm\":[9.5,2.25],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-bcc-005",
+    "split": "valid",
+    "domain": "bcc",
+    "expected": {
+      "recipe": "bcc",
+      "parameters_mm": [
+        10.5,
+        1.75
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "One LatticeLibrary BCC cell, side 10.5 mm, beam diameter 1.75 mm, zero noise."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"bcc\",\"parameters_mm\":[10.5,1.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-bcc-006",
+    "split": "valid",
+    "domain": "bcc",
+    "expected": {
+      "recipe": "bcc",
+      "parameters_mm": [
+        13.75,
+        1.75
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Une cellule BCC LatticeLibrary, côté 13.75 mm, diamètre des barres 1.75 mm, bruit zéro."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"bcc\",\"parameters_mm\":[13.75,1.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-bcc-007",
+    "split": "valid",
+    "domain": "bcc",
+    "expected": {
+      "recipe": "bcc",
+      "parameters_mm": [
+        8.0,
+        1.75
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "One LatticeLibrary BCC cell, side 0.8 cm, beam diameter 0.175 cm, zero noise."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"bcc\",\"parameters_mm\":[8.0,1.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-thread-000",
+    "split": "valid",
+    "domain": "thread",
+    "expected": {
+      "recipe": "thread",
+      "parameters_mm": [
+        10.75,
+        7.5,
+        4.75,
+        2.25
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Outil ThreadCutter HelixHeatX : longueur 10.75 mm, diamètre maxi 15 mm, diamètre noyau 9.5 mm, pas 2.25 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"thread\",\"parameters_mm\":[10.75,7.5,4.75,2.25],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-thread-001",
+    "split": "valid",
+    "domain": "thread",
+    "expected": {
+      "recipe": "thread",
+      "parameters_mm": [
+        11.25,
+        4.75,
+        3.25,
+        3.0
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "HelixHeatX ThreadCutter: length 1.125 cm, maximum diameter 0.95 cm, core diameter 0.65 cm, pitch 0.3 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"thread\",\"parameters_mm\":[11.25,4.75,3.25,3.0],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-thread-002",
+    "split": "valid",
+    "domain": "thread",
+    "expected": {
+      "recipe": "thread",
+      "parameters_mm": [
+        7.25,
+        5.25,
+        1.75,
+        2.75
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Outil ThreadCutter HelixHeatX : longueur 7.25 mm, diamètre maxi 10.5 mm, diamètre noyau 3.5 mm, pas 2.75 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"thread\",\"parameters_mm\":[7.25,5.25,1.75,2.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-thread-003",
+    "split": "valid",
+    "domain": "thread",
+    "expected": {
+      "recipe": "thread",
+      "parameters_mm": [
+        9.5,
+        5.0,
+        1.75,
+        2.0
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "HelixHeatX ThreadCutter: length 9.5 mm, maximum diameter 10 mm, core diameter 3.5 mm, pitch 2 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"thread\",\"parameters_mm\":[9.5,5.0,1.75,2.0],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-thread-004",
+    "split": "valid",
+    "domain": "thread",
+    "expected": {
+      "recipe": "thread",
+      "parameters_mm": [
+        7.5,
+        10.0,
+        2.25,
+        2.5
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Outil ThreadCutter HelixHeatX : longueur 0.75 cm, diamètre maxi 2 cm, diamètre noyau 0.45 cm, pas 0.25 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"thread\",\"parameters_mm\":[7.5,10.0,2.25,2.5],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-thread-005",
+    "split": "valid",
+    "domain": "thread",
+    "expected": {
+      "recipe": "thread",
+      "parameters_mm": [
+        10.75,
+        7.25,
+        4.0,
+        2.75
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "HelixHeatX ThreadCutter: length 10.75 mm, maximum diameter 14.5 mm, core diameter 8 mm, pitch 2.75 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"thread\",\"parameters_mm\":[10.75,7.25,4.0,2.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-thread-006",
+    "split": "valid",
+    "domain": "thread",
+    "expected": {
+      "recipe": "thread",
+      "parameters_mm": [
+        8.25,
+        10.0,
+        3.0,
+        3.0
+      ],
+      "missing": []
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Outil ThreadCutter HelixHeatX : longueur 8.25 mm, diamètre maxi 20 mm, diamètre noyau 6 mm, pas 3 mm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"thread\",\"parameters_mm\":[8.25,10.0,3.0,3.0],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-thread-007",
+    "split": "valid",
+    "domain": "thread",
+    "expected": {
+      "recipe": "thread",
+      "parameters_mm": [
+        11.5,
+        9.5,
+        3.75,
+        2.75
+      ],
+      "missing": []
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "HelixHeatX ThreadCutter: length 1.15 cm, maximum diameter 1.9 cm, core diameter 0.75 cm, pitch 0.275 cm."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"thread\",\"parameters_mm\":[11.5,9.5,3.75,2.75],\"missing\":[]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-needs_measurement-000",
+    "split": "valid",
+    "domain": "needs_measurement",
+    "expected": {
+      "recipe": "needs_measurement",
+      "parameters_mm": [],
+      "missing": [
+        "measured_interfaces"
+      ]
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Reproduis les interfaces de fixation originales 993 Turbo pour dossier valid-needs_measurement-000. Aucune mesure des trous, axes ou faces n’est fournie."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"needs_measurement\",\"parameters_mm\":[],\"missing\":[\"measured_interfaces\"]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-needs_measurement-001",
+    "split": "valid",
+    "domain": "needs_measurement",
+    "expected": {
+      "recipe": "needs_measurement",
+      "parameters_mm": [],
+      "missing": [
+        "measured_interfaces"
+      ]
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Reproduce original 993 Turbo attachment interfaces for dossier valid-needs_measurement-001. No hole, axis or mating-face measurements are supplied."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"needs_measurement\",\"parameters_mm\":[],\"missing\":[\"measured_interfaces\"]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-needs_measurement-002",
+    "split": "valid",
+    "domain": "needs_measurement",
+    "expected": {
+      "recipe": "needs_measurement",
+      "parameters_mm": [],
+      "missing": [
+        "measured_interfaces"
+      ]
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Reproduis les interfaces de fixation originales 993 Turbo pour dossier valid-needs_measurement-002. Aucune mesure des trous, axes ou faces n’est fournie."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"needs_measurement\",\"parameters_mm\":[],\"missing\":[\"measured_interfaces\"]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-needs_measurement-003",
+    "split": "valid",
+    "domain": "needs_measurement",
+    "expected": {
+      "recipe": "needs_measurement",
+      "parameters_mm": [],
+      "missing": [
+        "measured_interfaces"
+      ]
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Reproduce original 993 Turbo attachment interfaces for dossier valid-needs_measurement-003. No hole, axis or mating-face measurements are supplied."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"needs_measurement\",\"parameters_mm\":[],\"missing\":[\"measured_interfaces\"]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-needs_measurement-004",
+    "split": "valid",
+    "domain": "needs_measurement",
+    "expected": {
+      "recipe": "needs_measurement",
+      "parameters_mm": [],
+      "missing": [
+        "measured_interfaces"
+      ]
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Reproduis les interfaces de fixation originales 993 Turbo pour dossier valid-needs_measurement-004. Aucune mesure des trous, axes ou faces n’est fournie."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"needs_measurement\",\"parameters_mm\":[],\"missing\":[\"measured_interfaces\"]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-needs_measurement-005",
+    "split": "valid",
+    "domain": "needs_measurement",
+    "expected": {
+      "recipe": "needs_measurement",
+      "parameters_mm": [],
+      "missing": [
+        "measured_interfaces"
+      ]
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Reproduce original 993 Turbo attachment interfaces for dossier valid-needs_measurement-005. No hole, axis or mating-face measurements are supplied."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"needs_measurement\",\"parameters_mm\":[],\"missing\":[\"measured_interfaces\"]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-needs_measurement-006",
+    "split": "valid",
+    "domain": "needs_measurement",
+    "expected": {
+      "recipe": "needs_measurement",
+      "parameters_mm": [],
+      "missing": [
+        "measured_interfaces"
+      ]
+    },
+    "language": "fr",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Reproduis les interfaces de fixation originales 993 Turbo pour dossier valid-needs_measurement-006. Aucune mesure des trous, axes ou faces n’est fournie."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"needs_measurement\",\"parameters_mm\":[],\"missing\":[\"measured_interfaces\"]}"
+      }
+    ]
+  },
+  {
+    "id": "valid-needs_measurement-007",
+    "split": "valid",
+    "domain": "needs_measurement",
+    "expected": {
+      "recipe": "needs_measurement",
+      "parameters_mm": [],
+      "missing": [
+        "measured_interfaces"
+      ]
+    },
+    "language": "en",
+    "synthetic": true,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"}"
+      },
+      {
+        "role": "user",
+        "content": "Reproduce original 993 Turbo attachment interfaces for dossier valid-needs_measurement-007. No hole, axis or mating-face measurements are supplied."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"recipe\":\"needs_measurement\",\"parameters_mm\":[],\"missing\":[\"measured_interfaces\"]}"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+{"recipe": "pipe", "language": "fr", "interface_status": "synthetic", "fields": {"outer": {"value": "0,85", "unit": "cm", "quantity": "radius"}, "inner": {"value": "0,4", "unit": "cm", "quantity": "diameter"}, "length": {"value": "0.012", "unit": "m", "quantity": "length"}}}

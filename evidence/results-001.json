@@ -1,0 +1,134 @@
+{
+  "schema": "qwen.picogk.qualification-publication@1",
+  "date": "2026-10-14",
+  "status": "completed_rejected_final",
+  "source_revision": "d170b30722bea61e002f0a2ad734bba1733f9b5d",
+  "base_revision": "b3252a2f97102b1fb1571fec2c9b27219a8536be",
+  "parent_adapter_sha256": "f51ea1acbfee302303cd617d87f515f747d569830f148a7dcee7a56092960260",
+  "adapter_sha256": "b714724b4fb500451b9fada523658775c99a324ef8d2e3d8336221c1af6cae46",
+  "development": {
+    "paired": {
+      "passed": 42,
+      "total": 60,
+      "by_language": {
+        "en": 9,
+        "fr": 9,
+        "de": 11,
+        "ja": 8,
+        "zh": 5
+      },
+      "refusal_passes": 10,
+      "regressions": [],
+      "eligible": false
+    },
+    "baseline": {
+      "passed": 18,
+      "total": 60,
+      "by_language": {
+        "en": 4,
+        "fr": 4,
+        "de": 3,
+        "ja": 3,
+        "zh": 4
+      },
+      "refusal_passes": 10,
+      "regressions": [],
+      "eligible": false
+    },
+    "trained": {
+      "passed": 58,
+      "total": 60,
+      "by_language": {
+        "en": 11,
+        "fr": 12,
+        "de": 11,
+        "ja": 12,
+        "zh": 12
+      },
+      "refusal_passes": 10,
+      "regressions": [],
+      "eligible": true
+    }
+  },
+  "canonical_development": {
+    "paired": {
+      "passed": 52,
+      "total": 60,
+      "by_language": {
+        "en": 11,
+        "fr": 10,
+        "de": 12,
+        "ja": 9,
+        "zh": 10
+      },
+      "refusal_passes": 10,
+      "eligible": false
+    },
+    "baseline": {
+      "passed": 37,
+      "total": 60,
+      "by_language": {
+        "en": 8,
+        "fr": 9,
+        "de": 5,
+        "ja": 7,
+        "zh": 8
+      },
+      "refusal_passes": 10,
+      "eligible": false
+    },
+    "trained": {
+      "passed": 60,
+      "total": 60,
+      "by_language": {
+        "en": 12,
+        "fr": 12,
+        "de": 12,
+        "ja": 12,
+        "zh": 12
+      },
+      "refusal_passes": 10,
+      "eligible": true
+    }
+  },
+  "final_baseline_passed": 15,
+  "final": {
+    "passed": 27,
+    "total": 60,
+    "by_language": {
+      "en": 6,
+      "fr": 3,
+      "de": 7,
+      "ja": 6,
+      "zh": 5
+    },
+    "refusal_passes": 10,
+    "regressions": [],
+    "eligible": false
+  },
+  "old_plans_passed": 48,
+  "old_code_passed": 16,
+  "historical_regressions": [],
+  "training": {
+    "steps": 240,
+    "learning_rate": 2.5e-06,
+    "new_rows": 720,
+    "old_replay_rows": 1376,
+    "maximum_tokens": 547,
+    "peak_training_memory_gb": 4.992,
+    "final_validation_loss": 0.008
+  },
+  "eligible": false,
+  "test_opened": true,
+  "default_replaced": false,
+  "manufacturing_qualified": false,
+  "frozen_bindings_verified": 4936,
+  "sdk_placeholders_relocated": 4111,
+  "private_receipt_sha256": {
+    "results.json": "0fcb36b71f4f520ed0f38e0a8dbf3047348280d6c9719dcd31c4e484d4b21fe6",
+    "protocol.json": "bf0fa39b6f2bde71c9ed38aeaeb744514519cde8d737c3c939151019ed81be28",
+    "FROZEN.json": "7a2f441239a4625f754997c719a3394a570e2f7ca372bfa37a19c1121a278385",
+    "training.log": "515782ea845426f744e6b7fd16de8a605c7f6de2cd5588a063c3ec01c380e6fe"
+  },
+  "scope": "Synthetic six-recipe course. Numerical intents and wrappers differ; final uses held-out field presentation. Original robustness final remains uninferred."
+}
