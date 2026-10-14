@@ -1,7 +1,7 @@
 {
   "schema": "picogk.am.release-assets-staged@1",
   "created_at": "2026-10-14T15:58:01.496883+00:00",
-  "status": "existing_assets_unchanged_completed_course006_staged",
+  "status": "existing_assets_unchanged_completed14b_baseline_staged",
   "assets": [
     {
       "asset": "original150-full-evidence.tar.gz",
@@ -92,6 +92,16 @@
       "redacted_files": 46,
       "export_index_sha256": "dacb17a706312bdecc2de9ac0875ade91e266895a956d46a3651c5f50a1818ac",
       "qualified_adapter": false
+    },
+    {
+      "asset": "untouched-14b-baseline-full-evidence.tar.gz",
+      "bytes": 4665243,
+      "sha256": "234fd0dd94fe266bf5d862a18c25cb1095dd2b43d59e78cb6b41cece45ed42bf",
+      "files": 234,
+      "raw_payload_bytes": 11676439,
+      "redacted_files": 30,
+      "export_index_sha256": "4a6ff6e2a127e7a2de19a8e93ca93f6d1d4750f4b3470ee01a6cf78e9b05a01e",
+      "qualified_adapter": false
     }
   ],
   "ongoing_training_weights_copied": false,
@@ -107,13 +117,14 @@
   "completed_baseline7b_included": true,
   "current_7b_training_weights_or_live_log_included": false,
   "extensionless_script_text_redaction_verified": true,
-  "updated_at": "2026-10-14T22:14:31.673125+00:00",
+  "updated_at": "2026-10-14T22:37:49.490635+00:00",
   "initial_five_assets_immutable": true,
   "new_assets": [
-    "rejected-7b-course006-full-evidence.tar.gz"
+    "untouched-14b-baseline-full-evidence.tar.gz"
   ],
   "initial_uploaded_seven_assets_immutable": true,
   "existing_thirteen_remote_assets_immutable": true,
   "existing_seventeen_remote_assets_immutable": true,
-  "existing_nineteen_remote_assets_immutable": true
+  "existing_nineteen_remote_assets_immutable": true,
+  "existing_twenty_three_remote_assets_immutable": true
 }

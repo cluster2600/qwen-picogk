@@ -129,6 +129,38 @@ def check(root=ROOT, assets=None, native_runtime=False):
     assert all(old['messages'][1] == new['messages'][1] for old, new in zip(history, diversity))
     assert all(teachers[diversity_manifest['row_bindings'][index-1]['original_teacher_id']]['family'] == 'scan-normals'
                for index in changed)
+    short_root = root/'data/corrective-005'
+    short = [json.loads(line) for line in (short_root/'train.jsonl').read_text().splitlines()]
+    short_manifest = json.loads((short_root/'manifest.json').read_text())
+    assert len(short) == 160 and len(short_manifest['teacher_bindings']) == 80
+    assert len({row['messages'][0]['content'] for row in short}) == 160
+    assert digest(short_root/'train.jsonl') == short_manifest['train_sha256']
+    for teacher in short_manifest['teacher_bindings']:
+        prior = {key:value for key,value in teachers[teacher['original_teacher_id']].items()
+                 if key != 'semantic_specification'}
+        assert teacher == prior
+    for row, binding in zip(short, short_manifest['row_bindings']):
+        teacher = teachers[binding['original_teacher_id']]
+        user, assistant = row['messages']
+        assert [user['role'], assistant['role']] == ['user', 'assistant']
+        assert user['content'].startswith(header+'\n')
+        body = user['content'][len(header)+1:]
+        assert len(body) == binding['task_body_chars'] and len(body) <= binding['task_body_limit']
+        assert hashlib.sha256(user['content'].encode()).hexdigest() == binding['prompt_sha256']
+        assert hashlib.sha256(body.encode()).hexdigest() == binding['task_body_sha256']
+        assert assistant == parents[teacher['original_dataset']][teacher['original_corpus_line_1based']-1]['messages'][1]
+        assert hashlib.sha256(assistant['content'].encode()).hexdigest() == binding['assistant_sha256']
+    short_tokens = json.loads((short_root/'tokenization-receipt.json').read_text())
+    assert short_tokens['rows'] == 160 and short_tokens['max_full_tokens'] == 1759
+    assert short_tokens['truncated_rows'] == 0 and all(value is True for value in short_tokens['checks'].values())
+    profile14b = json.loads((root/'base-profile-14b.json').read_text())
+    repack = json.loads((root/'diagnostics/model14b-preparation/repack-receipt.json').read_text())
+    assert short_tokens['base_profile_sha256'] == digest(root/'base-profile-14b.json') == repack['profile_sha256']
+    assert repack['output_files_sha256'] == profile14b['model_files_sha256']
+    assert len(profile14b['model_files_sha256']) == 9 and len(repack['tensor_records']) == repack['tensor_count'] == 1255
+    assert repack['repacker_source_sha256'] == digest(root/'repack_model14b.py')
+    baseline14b = json.loads((root/'evidence/baseline-14b-report.json').read_text())
+    assert baseline14b['passed'] == 4 and baseline14b['total'] == 12
     results = json.loads((root/'evidence/results-summary.json').read_text())['results']
     assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0), (4, 2), (2, 3)]
     assert all(row['manufacturing_authorized'] is False for row in results)
@@ -156,6 +188,8 @@ def check(root=ROOT, assets=None, native_runtime=False):
             'seen_training_answers_exact': 6, 'seen_replay_qualification_credit': 0,
             'task_body_augmented_rows': 320, 'existing_diversity_teachers': 80,
             'existing_diversity_source_programs': 71, 'retained_prose_corrections': 16,
+            'short_task_augmented_rows': 160, 'short_task_max14b_tokens': 1759,
+            'repacked_base_tensor_metadata': 1255, 'untouched14b_baseline_passes': 4,
             'asset_hashes_checked': assets is not None, 'native_payload_hashes_checked': native_runtime,
             'mlx_imported': False, 'generated_code_executed': False,
             'qualified_adapter': False, 'manufacturing_authorized': False}

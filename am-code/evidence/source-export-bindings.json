@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Curated synthetic sources/data, complete accepted diversity004 author/history/reviews, and six completed rejected courses with bound captures, native results and audits. Reserved final contents and active training files omitted. Historical original-source hashes are preserved.",
+  "scope": "Curated synthetic sources/data and six completed rejected courses; accepted short005 text/history/reviews, completed untouched14B baseline and lossless preparation metadata, prospective running007 registration/runtime/audit. Base payloads, final contents and active007 files omitted. Historical original-source hashes are preserved.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -2355,11 +2355,235 @@
       "transform": "none"
     },
     {
-      "source": "publication-staging/course006-current-assets.json",
+      "source": "publication-staging/accepted005-14b-current-assets.json",
       "public_path": "evidence/assets.json",
-      "source_sha256": "d82057da272250186d0f1c98dee4b32f9ef6927ac30ec3ac4fcf82755110e047",
-      "public_sha256": "d82057da272250186d0f1c98dee4b32f9ef6927ac30ec3ac4fcf82755110e047",
-      "transform": "none; derived current inventory preserves all eight prior archive records and appends the bound completed006 record"
+      "source_sha256": "68f560771bfdbabaada6ae44286921af9203d2dc78f2d2d02f72ac91018a7a3a",
+      "public_sha256": "68f560771bfdbabaada6ae44286921af9203d2dc78f2d2d02f72ac91018a7a3a",
+      "transform": "none; derived current inventory preserves all nine prior archive records and appends the bound untouched14B baseline record"
+    },
+    {
+      "source": "am-code/data/corrective-005/README.md",
+      "public_path": "data/corrective-005/README.md",
+      "source_sha256": "d0119ba4aba5b8066b0632d3098a6b639b1d8e0214b33277692978fa7141433b",
+      "public_sha256": "d0119ba4aba5b8066b0632d3098a6b639b1d8e0214b33277692978fa7141433b",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/augment.py",
+      "public_path": "data/corrective-005/augment.py",
+      "source_sha256": "2bf5410215b7229072ef34ee293a3dbeb8a9d96ebef10098e0ffdba07a166f42",
+      "public_sha256": "2bf5410215b7229072ef34ee293a3dbeb8a9d96ebef10098e0ffdba07a166f42",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/history/independent-audit-attempt-001/independent-semantic-review.json",
+      "public_path": "data/corrective-005/history/independent-audit-attempt-001/independent-semantic-review.json",
+      "source_sha256": "e4dd3f69496ac87ce1caaf86ad69274253d9d8552d5aee23731bc18d10ea2ae4",
+      "public_sha256": "e4dd3f69496ac87ce1caaf86ad69274253d9d8552d5aee23731bc18d10ea2ae4",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/history/independent-audit-attempt-001/independent-semantic-rows.json",
+      "public_path": "data/corrective-005/history/independent-audit-attempt-001/independent-semantic-rows.json",
+      "source_sha256": "5140b6f8ada132e7caca95778777ed059313cd99ca103ddcdb0b1ccea764e9da",
+      "public_sha256": "5140b6f8ada132e7caca95778777ed059313cd99ca103ddcdb0b1ccea764e9da",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/history/independent-audit-attempt-001/independent-token-rows.json",
+      "public_path": "data/corrective-005/history/independent-audit-attempt-001/independent-token-rows.json",
+      "source_sha256": "d600bbfa12c0f84ef4c590e8d3f57d68eabe0147c86b036c3961a3c0e00f03e1",
+      "public_sha256": "d600bbfa12c0f84ef4c590e8d3f57d68eabe0147c86b036c3961a3c0e00f03e1",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/history/independent-audit-attempt-001/tokenization-receipt.json",
+      "public_path": "data/corrective-005/history/independent-audit-attempt-001/tokenization-receipt.json",
+      "source_sha256": "0496909096e2048a48bd7668005cc37b2e2540a7f4ac3a7181a4430c96684ba9",
+      "public_sha256": "0496909096e2048a48bd7668005cc37b2e2540a7f4ac3a7181a4430c96684ba9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/independent-semantic-review.json",
+      "public_path": "data/corrective-005/independent-semantic-review.json",
+      "source_sha256": "80666eb546db2eb9a0c94b99c32f7d874e02b760ad1dae18431e931e485dbe12",
+      "public_sha256": "80666eb546db2eb9a0c94b99c32f7d874e02b760ad1dae18431e931e485dbe12",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/independent-semantic-rows.json",
+      "public_path": "data/corrective-005/independent-semantic-rows.json",
+      "source_sha256": "9b0db7e53dbb1b8fbbbbcebf217db8ec3c8d075a311cd66db25d4d541a58fdfa",
+      "public_sha256": "9b0db7e53dbb1b8fbbbbcebf217db8ec3c8d075a311cd66db25d4d541a58fdfa",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/independent-token-rows.json",
+      "public_path": "data/corrective-005/independent-token-rows.json",
+      "source_sha256": "d600bbfa12c0f84ef4c590e8d3f57d68eabe0147c86b036c3961a3c0e00f03e1",
+      "public_sha256": "d600bbfa12c0f84ef4c590e8d3f57d68eabe0147c86b036c3961a3c0e00f03e1",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/manifest.json",
+      "public_path": "data/corrective-005/manifest.json",
+      "source_sha256": "079d5db4a9584430255b8a715f49e6d8fe7239d37fcd4c091dd13100e734d9ea",
+      "public_sha256": "079d5db4a9584430255b8a715f49e6d8fe7239d37fcd4c091dd13100e734d9ea",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/tokenization-receipt.json",
+      "public_path": "data/corrective-005/tokenization-receipt.json",
+      "source_sha256": "0496909096e2048a48bd7668005cc37b2e2540a7f4ac3a7181a4430c96684ba9",
+      "public_sha256": "0496909096e2048a48bd7668005cc37b2e2540a7f4ac3a7181a4430c96684ba9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-005/train.jsonl",
+      "public_path": "data/corrective-005/train.jsonl",
+      "source_sha256": "b59755b51c94a559030863fc5ba164b28cdd338ea2c33704825995bc43f083c7",
+      "public_sha256": "b59755b51c94a559030863fc5ba164b28cdd338ea2c33704825995bc43f083c7",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/repack_model14b.py",
+      "public_path": "repack_model14b.py",
+      "source_sha256": "17e700c0ecf18b8fa6028aeed7df3aa033866bfda5bb2588c5d0042d460d98ca",
+      "public_sha256": "17e700c0ecf18b8fa6028aeed7df3aa033866bfda5bb2588c5d0042d460d98ca",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/base-profile-14b.json",
+      "public_path": "base-profile-14b.json",
+      "source_sha256": "ae1b81ddd239197ac4f470e6d01173dfc0132d05215ac09ea6a31946625cf89e",
+      "public_sha256": "ae1b81ddd239197ac4f470e6d01173dfc0132d05215ac09ea6a31946625cf89e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/corrective005-independent-semantic-source-review.json",
+      "public_path": "evidence/corrective005-independent-semantic-source-review.json",
+      "source_sha256": "f05bd358ead3c19901eea66239e87f4510716686a99cd78007c2ef637ab532f0",
+      "public_sha256": "f05bd358ead3c19901eea66239e87f4510716686a99cd78007c2ef637ab532f0",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/baseline-14b-protocol.json",
+      "public_path": "evidence/baseline-14b-protocol.json",
+      "source_sha256": "c7f6562c5e643c030f05bcff00ec6bc0673f5cb535ac138d20e286ef63dda137",
+      "public_sha256": "c7f6562c5e643c030f05bcff00ec6bc0673f5cb535ac138d20e286ef63dda137",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/baseline-development-14b/protocol.json",
+      "public_path": "evidence/baseline-14b-capture-protocol.json",
+      "source_sha256": "93f2e673650e38111ca4544b2676048f83f926dba5fd6efba654985905854173",
+      "public_sha256": "93f2e673650e38111ca4544b2676048f83f926dba5fd6efba654985905854173",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/baseline-development-14b/receipt.json",
+      "public_path": "evidence/baseline-14b-capture-receipt.json",
+      "source_sha256": "bd3af48120f2a7a019e07373548dbff92ca9c560288bc1b40f95aa1d4d911cb7",
+      "public_sha256": "bd3af48120f2a7a019e07373548dbff92ca9c560288bc1b40f95aa1d4d911cb7",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/baseline-scores-14b/report.json",
+      "public_path": "evidence/baseline-14b-report.json",
+      "source_sha256": "4364eae7cce8f7969028811b946395508d92ab483a62d6a56e2f9968324def50",
+      "public_sha256": "cf37f36c96d4dd9e922ce6783f8a1dc0b4eeb69b50697a01e5e6cf86b662a702",
+      "transform": "JSON/text view: local directory paths redacted; numeric/hash/status fields retained"
+    },
+    {
+      "source": "am-code/diagnostics/baseline-14b-independent-review.json",
+      "public_path": "evidence/baseline-14b-independent-review.json",
+      "source_sha256": "9fbe7a342d550a29c4f0a749102510fae0c029a51b1cdd90bc1d5b5e0eb52f7a",
+      "public_sha256": "9fbe7a342d550a29c4f0a749102510fae0c029a51b1cdd90bc1d5b5e0eb52f7a",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course-007-protocol.json",
+      "public_path": "evidence/course-007-protocol.json",
+      "source_sha256": "326a0e893283ccf3c274e52d729c49552ad7363f1b0ddbfec8925e5c78354c7d",
+      "public_sha256": "326a0e893283ccf3c274e52d729c49552ad7363f1b0ddbfec8925e5c78354c7d",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/runs/14b-short005-epoch1/protocol.json",
+      "public_path": "evidence/course007-runtime-protocol.json",
+      "source_sha256": "3c45a61fbbe18e8105e3bf66bf4352c32795c4ba952b039b51ef21b4694ebaf6",
+      "public_sha256": "e5bf5a5c0e712f609e4a8daa44b5b1f886354e9819739ec7ee90aa3fbb5fcafd",
+      "transform": "JSON/text view: local directory paths redacted; numeric/hash/status fields retained"
+    },
+    {
+      "source": "am-code/diagnostics/course007-running-protocol-audit.json",
+      "public_path": "evidence/course007-running-protocol-audit.json",
+      "source_sha256": "648705e1f0972b7b471117f5d627e352eed2bc5489e83c0445267214671535b8",
+      "public_sha256": "648705e1f0972b7b471117f5d627e352eed2bc5489e83c0445267214671535b8",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/model14b-upstream/model.safetensors.index.json",
+      "public_path": "evidence/model14b-preparation/upstream-index.json",
+      "source_sha256": "635d985ebf00b6a25daba71b7eba4d5ec8be7902c15104a79312fe947f44b121",
+      "public_sha256": "635d985ebf00b6a25daba71b7eba4d5ec8be7902c15104a79312fe947f44b121",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/model14b/model.safetensors.index.json",
+      "public_path": "evidence/model14b-preparation/runtime-index.json",
+      "source_sha256": "bfecf6d10afdbfb13f25862fc74da14f2f3f8e5d6d3b2c535f69189acb32481f",
+      "public_sha256": "bfecf6d10afdbfb13f25862fc74da14f2f3f8e5d6d3b2c535f69189acb32481f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model14b-preparation/download-receipt.json",
+      "public_path": "diagnostics/model14b-preparation/download-receipt.json",
+      "source_sha256": "5f3134f50d58964a81c66e912f3ec05bca63ab016e99b65d85499eba6937a247",
+      "public_sha256": "5f3134f50d58964a81c66e912f3ec05bca63ab016e99b65d85499eba6937a247",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model14b-preparation/download.log",
+      "public_path": "diagnostics/model14b-preparation/download.log",
+      "source_sha256": "805215f138656ad5806d28fe41be8e94d3b80c11619a52c1a5670aa4f5389907",
+      "public_sha256": "805215f138656ad5806d28fe41be8e94d3b80c11619a52c1a5670aa4f5389907",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model14b-preparation/independent-review.json",
+      "public_path": "diagnostics/model14b-preparation/independent-review.json",
+      "source_sha256": "d3e9b7cf9fc09f765a6089dd390c8683a59a34b4a182e5e7ee9ef94cc4c44af7",
+      "public_sha256": "d3e9b7cf9fc09f765a6089dd390c8683a59a34b4a182e5e7ee9ef94cc4c44af7",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model14b-preparation/repack-receipt.json",
+      "public_path": "diagnostics/model14b-preparation/repack-receipt.json",
+      "source_sha256": "29b857e3d03bf2747c9b56ebe0c71a37c2287632d832211582a01c8ff1f7e900",
+      "public_sha256": "29b857e3d03bf2747c9b56ebe0c71a37c2287632d832211582a01c8ff1f7e900",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model14b-preparation/repack.log",
+      "public_path": "diagnostics/model14b-preparation/repack.log",
+      "source_sha256": "8e8deaa335ffae44af0d20bb3c527aed5cb0b8d6fadd7c9faece31159161438f",
+      "public_sha256": "8e8deaa335ffae44af0d20bb3c527aed5cb0b8d6fadd7c9faece31159161438f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model14b-preparation/upstream-metadata.json",
+      "public_path": "diagnostics/model14b-preparation/upstream-metadata.json",
+      "source_sha256": "83f355dc7edcb9bec34bc607ad37ce07efdde99905ff80de351e2216e0e59c25",
+      "public_sha256": "83f355dc7edcb9bec34bc607ad37ce07efdde99905ff80de351e2216e0e59c25",
+      "transform": "none"
+    },
+    {
+      "source": "publication-staging/accepted005-14b-assets.json",
+      "public_path": "evidence/accepted005-14b-assets.json",
+      "source_sha256": "bb37357b32a16e28daf6c9670603594fbaf7f20b18fb3041c096578065b2fd3f",
+      "public_sha256": "bb37357b32a16e28daf6c9670603594fbaf7f20b18fb3041c096578065b2fd3f",
+      "transform": "none"
     }
   ]
 }

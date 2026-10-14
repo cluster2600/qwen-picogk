@@ -1,0 +1,209 @@
+{
+  "base_weights_sha256": "08457409e07a0f7774e5e9dbcfc86e289f89ccb4ba56608045ea500d5c55e315",
+  "bindings": {
+    "base_profile": "ae1b81ddd239197ac4f470e6d01173dfc0132d05215ac09ea6a31946625cf89e",
+    "capture_protocol": "93f2e673650e38111ca4544b2676048f83f926dba5fd6efba654985905854173",
+    "capture_receipt": "bd3af48120f2a7a019e07373548dbff92ca9c560288bc1b40f95aa1d4d911cb7",
+    "captured_responses": "9f23685115e7ac5bdacb329d6fa566b3fa88c98281929313605198b64a2b0b5b",
+    "development_tasks": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+    "evaluator": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+    "prospective_registration": "c7f6562c5e643c030f05bcff00ec6bc0673f5cb535ac138d20e286ef63dda137",
+    "report": "4364eae7cce8f7969028811b946395508d92ab483a62d6a56e2f9968324def50"
+  },
+  "captured_source_modified": false,
+  "checks": {
+    "all_bound_checks_pass": true,
+    "frozen_evaluator": true,
+    "raw_responses_and_all_compiled_sources_exact": true,
+    "receipt_binds_protocol": true,
+    "receipt_binds_responses": true,
+    "registered_base_runtime_source": true,
+    "registered_base_weights": true,
+    "registered_infer_source": true,
+    "registered_profile": true,
+    "registered_tasks": true,
+    "twelve_complete_eos_responses": true,
+    "untouched_base_no_adapter": true,
+    "vent_failure_is_zero_triangle_model_stl": true
+  },
+  "created_at_utc": "2026-10-14T22:24:07.814353+00:00",
+  "critical_failed": [
+    "development-vent",
+    "development-cone-roof",
+    "development-scan-normals",
+    "development-missing-interfaces"
+  ],
+  "critical_passed": [],
+  "diagnoses": {
+    "development-diamond": "Native execution succeeds but independent occupancy IoU is 0.10910387449488947; native volume, dimensions, and physical wall-ray checks also fail.",
+    "development-missing-interfaces": "Candidate exports refused.json together with part.vdb and part.stl; geometry creation violates strict refusal.",
+    "development-vent": "The outer-sphere lattice is reused for the vent beam; subtracting its sphere-plus-beam union empties the shell. Candidate exits 0 and exports an 84-byte STL with zero triangles; trusted inspection correctly refuses it."
+  },
+  "final_contents_accessed": false,
+  "gpu_used": false,
+  "manufacturing_authorized": false,
+  "model_files_sha256": {
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "config.json": "7a2e85de5e0e115e6aaea7cb71091c5833aa29786fc748ef1d7e607e3a3a18f2",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "model.safetensors": "08457409e07a0f7774e5e9dbcfc86e289f89ccb4ba56608045ea500d5c55e315",
+    "model.safetensors.index.json": "bfecf6d10afdbfb13f25862fc74da14f2f3f8e5d6d3b2c535f69189acb32481f",
+    "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "tokenizer.json": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf",
+    "tokenizer_config.json": "7e88129d9769a0b14b1587a7d5e829fe93ac0e1511636471fdfc0811951418e6",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "passed": 4,
+  "physical_qualification": false,
+  "schema": "picogk.am.baseline-independent-review@1",
+  "status": "complete_unqualified_baseline",
+  "tasks": [
+    {
+      "compiler_excerpts": [],
+      "failed_checks": [],
+      "id": "development-initialize",
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "response_sha256": "f42bdcfae101ea098b7ed688b79076f2b2f5b6463caf8e7eb5cfa998103a0217",
+      "source_sha256": "c3a035be03a035ccc196530443fe2df769a2574f73fdba8e61906ffa46ad2ad0",
+      "status": "passed"
+    },
+    {
+      "compiler_excerpts": [],
+      "failed_checks": [],
+      "id": "development-offset-sign",
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "response_sha256": "b30183eb05628e57d731fe1f8791f6ee19d9aace2c011d4e30fbe0a346e3555f",
+      "source_sha256": "faf82b4d68a6a7832fd99ded9293aeb7c932abf1d000c75d188713688272a8ba",
+      "status": "passed"
+    },
+    {
+      "compiler_excerpts": [
+        "am-code/baseline-scores-14b/development-closing/Program.cs(63,36): error CS0535: 'Program.BlockWithCrack' does not implement interface member 'IImplicit.fSignedDistance(in Vector3)' [am-code/baseline-scores-14b/development-closing/Candidate.csproj]"
+      ],
+      "error": "C# compilation failed; see am-code/baseline-scores-14b/development-closing/process.log",
+      "failed_checks": [],
+      "id": "development-closing",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "response_sha256": "8188065a35601ebe785103623a3d2fb9ec61d254772863e7737e781d121e793c",
+      "source_sha256": "ee7d6fd871e61c875363a140426890ff0c254aad708cfd1ab5e176e0968b1aa1",
+      "status": "failed"
+    },
+    {
+      "compiler_excerpts": [],
+      "failed_checks": [],
+      "id": "development-shell",
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "response_sha256": "e627a21c9214cd13eccdf29b3e7a04eef8f925d2a72c295e1dc084ae8a1b4d97",
+      "source_sha256": "9703f5906c4b384082dc2de05f2975f0961e23a2e39007f4c8440edc54d6f2e4",
+      "status": "passed"
+    },
+    {
+      "compiler_excerpts": [],
+      "error": "trusted native inspection failed",
+      "failed_checks": [],
+      "id": "development-vent",
+      "native_exit_code": 0,
+      "occupancy_iou": null,
+      "response_sha256": "2c1e9c2df3c434b2ef48b379e854bf8dc730c7af25659e45498d21863c88efeb",
+      "source_sha256": "ce0a4dc0192263fa8d356195ea8594bc0c20a4a11aa5749dd81bb1aac2413cbc",
+      "status": "failed"
+    },
+    {
+      "compiler_excerpts": [
+        "am-code/baseline-scores-14b/development-cone-roof/Program.cs(63,22): error CS0535: 'VentImplicit' does not implement interface member 'IImplicit.fSignedDistance(in Vector3)' [am-code/baseline-scores-14b/development-cone-roof/Candidate.csproj]"
+      ],
+      "error": "C# compilation failed; see am-code/baseline-scores-14b/development-cone-roof/process.log",
+      "failed_checks": [],
+      "id": "development-cone-roof",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "response_sha256": "8a80ab0a6356f6672cef2f6041bde0a95c5418009cdaf6ce68d45cf24b67a79c",
+      "source_sha256": "c73f13ccfb9a1f9deeb9eb3208f04afc6c022fb8950f94e345c9259c640af71b",
+      "status": "failed"
+    },
+    {
+      "compiler_excerpts": [
+        "am-code/baseline-scores-14b/development-gyroid/Program.cs(70,16): error CS0266: Cannot implicitly convert type 'double' to 'float'. An explicit conversion exists (are you missing a cast?) [am-code/baseline-scores-14b/development-gyroid/Candidate.csproj]"
+      ],
+      "error": "C# compilation failed; see am-code/baseline-scores-14b/development-gyroid/process.log",
+      "failed_checks": [],
+      "id": "development-gyroid",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "response_sha256": "1516fb6644461dc9530f794b91732fd38353df07f0f2d398503c72e846fdcfdb",
+      "source_sha256": "8da6654c95b0ce34eca0c2e7441a50b93d0c21bfee5db25f83dbbe317d25eb2f",
+      "status": "failed"
+    },
+    {
+      "compiler_excerpts": [],
+      "failed_checks": [
+        "native_reference_occupancy_iou",
+        "native_volume",
+        "native_dimensions",
+        "physical_wall_native_rays"
+      ],
+      "id": "development-diamond",
+      "native_exit_code": 0,
+      "occupancy_iou": 0.10910387449488947,
+      "response_sha256": "17e0f07ce7fec82ad14f1a91e999b366962ba2a68ae6c5a8ed5b0d988aca7e33",
+      "source_sha256": "108e2469f5e0ffa224eba6004a0888be19fa65ead96477c52d3c987a00b1d648",
+      "status": "failed"
+    },
+    {
+      "compiler_excerpts": [
+        "am-code/baseline-scores-14b/development-schwarz-p/Program.cs(88,47): error CS1660: Cannot convert lambda expression to type 'Library' because it is not a delegate type [am-code/baseline-scores-14b/development-schwarz-p/Candidate.csproj]"
+      ],
+      "error": "C# compilation failed; see am-code/baseline-scores-14b/development-schwarz-p/process.log",
+      "failed_checks": [],
+      "id": "development-schwarz-p",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "response_sha256": "d4c11a456559dcc12d107f45c3818ae2164ab2748a1daa109412a286101b0c2f",
+      "source_sha256": "39051db27558260c017ee4f332c69c648b6311f493bef60a0f0cbd3384ec6870",
+      "status": "failed"
+    },
+    {
+      "compiler_excerpts": [
+        "am-code/baseline-scores-14b/development-scan-normals/Program.cs(86,28): error CS7036: There is no argument given that corresponds to the required parameter 'value' of 'Vector3.Normalize(Vector3)' [am-code/baseline-scores-14b/development-scan-normals/Candidate.csproj]",
+        "am-code/baseline-scores-14b/development-scan-normals/Program.cs(116,40): error CS1061: 'Mesh' does not contain a definition for 'Library' and no accessible extension method 'Library' accepting a first argument of type 'Mesh' could be found (are you missing a using directive or an assembly reference?) [am-code/baseline-scores-14b/development-scan-normals/Candidate.csproj]",
+        "am-code/baseline-scores-14b/development-scan-normals/Program.cs(118,34): error CS1061: 'Mesh' does not contain a definition for 'TriangleCount' and no accessible extension method 'TriangleCount' accepting a first argument of type 'Mesh' could be found (are you missing a using directive or an assembly reference?) [am-code/baseline-scores-14b/development-scan-normals/Candidate.csproj]",
+        "am-code/baseline-scores-14b/development-scan-normals/Program.cs(125,27): error CS1061: 'Mesh' does not contain a definition for 'AddTriangle' and no accessible extension method 'AddTriangle' accepting a first argument of type 'Mesh' could be found (are you missing a using directive or an assembly reference?) [am-code/baseline-scores-14b/development-scan-normals/Candidate.csproj]"
+      ],
+      "error": "C# compilation failed; see am-code/baseline-scores-14b/development-scan-normals/process.log",
+      "failed_checks": [],
+      "id": "development-scan-normals",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "response_sha256": "018329497f0d74bb041b159196af91396e43e20a7ff11ab01b585b38f840949b",
+      "source_sha256": "51ee3df3f79bafd1327be1b070d3181c910eb544b636535dc714776237992170",
+      "status": "failed"
+    },
+    {
+      "compiler_excerpts": [],
+      "failed_checks": [],
+      "id": "development-debug-api",
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "response_sha256": "6cbd7b289204622aa651dd696efb79ac331e451e8b4c4f17d7238b91966a77f2",
+      "source_sha256": "b419940ffc8a2f884ce0410511ec3758b479cdd9ccbff42aa9eaa77d15997a0c",
+      "status": "passed"
+    },
+    {
+      "compiler_excerpts": [],
+      "failed_checks": [
+        "strict_refusal"
+      ],
+      "id": "development-missing-interfaces",
+      "native_exit_code": 0,
+      "occupancy_iou": null,
+      "response_sha256": "cee98fefc5222f0efa9b7568718e05b55feaea9c7d8bba580a7f05abed22fbe3",
+      "source_sha256": "30d4b268b1df653d3de57ec4540a811f958f6c7f7f766883b813bb9862c59fbd",
+      "status": "failed"
+    }
+  ],
+  "total": 12
+}

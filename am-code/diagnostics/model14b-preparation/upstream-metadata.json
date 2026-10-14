@@ -1,0 +1,63 @@
+{
+  "schema": "picogk.am.upstream-model-metadata@1",
+  "repository": "mlx-community/Qwen2.5-Coder-14B-Instruct-4bit",
+  "revision": "29efdbab55a161237ab1e432a3abaf6c7ae2b477",
+  "anonymous_token_false": true,
+  "license": "apache-2.0",
+  "base_model": "Qwen/Qwen2.5-Coder-14B-Instruct",
+  "files": {
+    "added_tokens.json": {
+      "bytes": 605,
+      "lfs_sha256": null,
+      "git_blob_id": "482ced4679301bf287ebb310bdd1790eb4514232"
+    },
+    "config.json": {
+      "bytes": 867,
+      "lfs_sha256": null,
+      "git_blob_id": "07a9c5242c43377760925ef4770a2da9435325dd"
+    },
+    "merges.txt": {
+      "bytes": 1671853,
+      "lfs_sha256": null,
+      "git_blob_id": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+    },
+    "model-00001-of-00002.safetensors": {
+      "bytes": 5353840273,
+      "lfs_sha256": "784b0c89d3e006f49cb8547aba1f2f4e99b365ab4380cf202655ca04c87d7ac3",
+      "git_blob_id": "7ecbec41fcc7f4674331da812e0032d43f9d29a6"
+    },
+    "model-00002-of-00002.safetensors": {
+      "bytes": 2955653960,
+      "lfs_sha256": "a1b7516f1926070177601698661494dfc68c2de1d98e7c43ba910a0d1d7dfbbe",
+      "git_blob_id": "4b11b53ae778ab24f4991906973b3f123d596913"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 107336,
+      "lfs_sha256": null,
+      "git_blob_id": "7b762296a5ee48da56f5585b9c0e23ecf5c42cb8"
+    },
+    "special_tokens_map.json": {
+      "bytes": 613,
+      "lfs_sha256": null,
+      "git_blob_id": "ac23c0aaa2434523c494330aeb79c58395378103"
+    },
+    "tokenizer.json": {
+      "bytes": 7031673,
+      "lfs_sha256": null,
+      "git_blob_id": "d24314ef7f0afd1b678c2e24c767e19f24f86b0e"
+    },
+    "tokenizer_config.json": {
+      "bytes": 7306,
+      "lfs_sha256": null,
+      "git_blob_id": "8adf747ccaf85ff9587338cee6ed6be027b98210"
+    },
+    "vocab.json": {
+      "bytes": 2776833,
+      "lfs_sha256": null,
+      "git_blob_id": "4783fe10ac3adce15ac8f358ef5462739852c569"
+    }
+  },
+  "weight_bytes": 8309494233,
+  "downloads_started_at_utc": "2026-10-14T22:02:45.554432+00:00",
+  "method": "hf_hub_download(token=False,local_dir=model14b-upstream), Xet cache disabled; no global model cache duplicate."
+}
