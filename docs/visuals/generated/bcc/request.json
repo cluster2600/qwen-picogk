@@ -1,0 +1,17 @@
+{
+  "recipe": "bcc",
+  "language": "ja",
+  "interface_status": "synthetic",
+  "fields": {
+    "cell_side": {
+      "value": "15.875",
+      "unit": "mm",
+      "quantity": "length"
+    },
+    "beam": {
+      "value": "0.275",
+      "unit": "cm",
+      "quantity": "diameter"
+    }
+  }
+}

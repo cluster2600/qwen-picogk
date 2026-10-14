@@ -11,6 +11,21 @@ and radial roles, strict JSON, independent numeric intent checks, native
 reference screens, failure records and uncertainty handling. It is not a
 general CAD assistant or a manufacturing qualification system.
 
+![Actual geometry from our Qwen adapter and PicoGK](docs/visuals/generated/overview.png)
+
+The [traceable gallery](docs/visuals/README.md) contains five real model calls,
+their raw responses, native PicoGK STL files and mesh renders. The diagrams
+in [architecture and evidence flow](docs/ARCHITECTURE.md) document the system.
+
+```mermaid
+flowchart LR
+    A["Raw multilingual request"] --> B["Our pinned Qwen adapter"]
+    B --> C["Strict JSON and intent check"]
+    C --> D["Trusted PicoGK recipe"]
+    D --> E["Native STL and geometry screen"]
+    E --> F["Traceable mesh render"]
+```
+
 ## Quick start on Apple silicon
 
 Python **3.12** and the pinned MLX runtime are required for inference. Linux CI

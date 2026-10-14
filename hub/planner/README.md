@@ -16,6 +16,11 @@ versus **12/60** for a retained earlier project adapter on the same requests.
 These scores do not compare against untouched Qwen. The original 64-task
 retention passes; those old tasks are exposed, not fresh generalisation tests.
 
+![Actual Qwen-to-PicoGK mesh gallery](https://raw.githubusercontent.com/cluster2600/qwen-picogk/main/docs/visuals/generated/overview.png)
+
+[Raw model responses, native STL files and image provenance](https://github.com/cluster2600/qwen-picogk/blob/main/docs/visuals/README.md).
+These are exposed synthetic demonstrations, not a new benchmark.
+
 ## Architecture and training
 
 MLX LoRA rank 8, scale 20, no dropout, 16 layers on the 4-bit MLX

@@ -1,0 +1,19 @@
+{
+  "case_id": "test-11878f970c6cfc9b",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"} Read field names both before values and after values in parentheses. Field order is irrelevant. Read each quantity independently. A stated radius stays a radius; only stated diameters become radii. Multiply centimeters by 10 and meters by 1000. Do not round to familiar increments."
+    },
+    {
+      "role": "user",
+      "content": "Engineering input note. A synthetic cylinder is defined by the following dimensional notes: radius: 0.7 cm; axial length = 9.375 mm. Return its parameter plan."
+    }
+  ],
+  "raw_response": "{\"recipe\":\"cylinder\",\"parameters_mm\":[9.375,7.0],\"missing\":[]}",
+  "finish_reason": "stop",
+  "adapter_sha256": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
+  "greedy_temperature": 0,
+  "seed": 9931312,
+  "canonical_input": false
+}

@@ -1,0 +1,20 @@
+{
+  "recipe": "bcc",
+  "volume": 629.1272,
+  "triangles": 11436,
+  "roundtrip_triangles": 11436,
+  "min": [
+    -9.244152,
+    -9.244152,
+    -1.2984232
+  ],
+  "max": [
+    9.244152,
+    9.244152,
+    17.174263
+  ],
+  "material_inside": true,
+  "axis_inside": true,
+  "distant_point_inside": false,
+  "voxel_mm": 0.5
+}

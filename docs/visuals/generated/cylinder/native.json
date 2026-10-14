@@ -1,0 +1,21 @@
+{
+  "recipe": "cylinder",
+  "volume": 1434.1151,
+  "triangles": 6620,
+  "roundtrip_triangles": 6620,
+  "min": [
+    -6.9907956,
+    -6.9908805,
+    -8.940697e-08
+  ],
+  "max": [
+    7,
+    6.9908805,
+    9.375
+  ],
+  "material_inside": true,
+  "axis_inside": true,
+  "distant_point_inside": false,
+  "voxel_mm": 0.5,
+  "relative_volume_error": 0.0062737104643142885
+}

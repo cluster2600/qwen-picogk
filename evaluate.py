@@ -11,9 +11,11 @@ import contracts
 import infer
 
 
-def native(plan, host):
+def native(plan, host, output_dir=None):
     with tempfile.TemporaryDirectory(prefix='qwen-picogk-native-') as tmp:
-        folder = Path(tmp)
+        folder = Path(tmp) if output_dir is None else output_dir
+        if output_dir is not None:
+            folder.mkdir(exist_ok=False)
         (folder/'plan.json').write_text(json.dumps(plan))
         run = subprocess.run(['dotnet', str(host.resolve()), str(folder/'plan.json'), str(folder/'raw.stl'), '0.5'],
                              capture_output=True, text=True, timeout=45, check=True)

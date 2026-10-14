@@ -1,0 +1,21 @@
+{
+  "recipe": "pipe",
+  "volume": 4186.4976,
+  "triangles": 16904,
+  "roundtrip_triangles": 16904,
+  "min": [
+    -9.4930525,
+    -9.493146,
+    -8.940697e-08
+  ],
+  "max": [
+    9.5,
+    9.493147,
+    16.25
+  ],
+  "material_inside": true,
+  "axis_inside": false,
+  "distant_point_inside": false,
+  "voxel_mm": 0.5,
+  "relative_volume_error": 0.0002683294148054307
+}

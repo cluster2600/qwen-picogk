@@ -1,0 +1,27 @@
+{
+  "recipe": "thread",
+  "language": "zh",
+  "interface_status": "synthetic",
+  "fields": {
+    "length": {
+      "value": "0.975",
+      "unit": "cm",
+      "quantity": "length"
+    },
+    "outer": {
+      "value": "0.006125",
+      "unit": "m",
+      "quantity": "radius"
+    },
+    "core": {
+      "value": "2.75",
+      "unit": "mm",
+      "quantity": "radius"
+    },
+    "pitch": {
+      "value": "0.25",
+      "unit": "cm",
+      "quantity": "length"
+    }
+  }
+}

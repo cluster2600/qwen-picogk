@@ -1,0 +1,17 @@
+{
+  "recipe": "cylinder",
+  "language": "en",
+  "interface_status": "synthetic",
+  "fields": {
+    "length": {
+      "value": "9.375",
+      "unit": "mm",
+      "quantity": "length"
+    },
+    "outer": {
+      "value": "0.7",
+      "unit": "cm",
+      "quantity": "radius"
+    }
+  }
+}

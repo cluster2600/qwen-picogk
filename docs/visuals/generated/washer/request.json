@@ -1,0 +1,22 @@
+{
+  "recipe": "washer",
+  "language": "de",
+  "interface_status": "synthetic",
+  "fields": {
+    "thickness": {
+      "value": "0,0035",
+      "unit": "m",
+      "quantity": "length"
+    },
+    "outer": {
+      "value": "7,875",
+      "unit": "mm",
+      "quantity": "radius"
+    },
+    "bore": {
+      "value": "0,2875",
+      "unit": "cm",
+      "quantity": "radius"
+    }
+  }
+}

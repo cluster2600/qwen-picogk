@@ -48,6 +48,30 @@ def check(weights=False):
     for relative in ['data/planner/README.md', 'hub/planner/README.md', 'hub/selector/README.md', 'hub/dataset/README.md']:
         text = (ROOT/relative).read_text()
         assert 'apache-2.0' in text and '/Users/' not in text
+    gallery = ROOT/'docs/visuals/generated'
+    if (gallery/'gallery.json').exists():
+        receipt = json.loads((gallery/'gallery.json').read_text())
+        assert receipt['adapter_sha256'] == manifest['adapters']['planner']['adapters.safetensors']
+        assert receipt['corpus_sha256'] == manifest['data_files']['data/planner/cases.json']
+        assert len(receipt['records']) == 5
+        for record in receipt['records']:
+            folder = gallery/record['recipe']
+            transcript = json.loads((folder/'llm.json').read_text())
+            request = json.loads((folder/'request.json').read_text())
+            plan = contracts.accepted(transcript['raw_response'], transcript['finish_reason'], request)
+            assert plan == json.loads((folder/'plan.json').read_text())
+            assert plan['parameters_mm'] == record['parameters_mm']
+            assert transcript['canonical_input'] is False and record['model_called'] is True
+            assert record['geometry_screen_passed'] and not record['manufacturing_qualified']
+            for name, sha in record['files_sha256'].items():
+                path = (gallery/name).resolve()
+                assert path.is_relative_to(gallery.resolve())
+                assert hashlib.sha256(path.read_bytes()).hexdigest() == sha
+            assert (folder/'render.png').read_bytes()[:8] == b'\x89PNG\r\n\x1a\n'
+        assert hashlib.sha256((gallery/'overview.png').read_bytes()).hexdigest() == receipt['overview_sha256']
+        for name, sha in receipt['source_sha256'].items():
+            assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest() == sha
+        assert hashlib.sha256((ROOT/'scripts/render_gallery.py').read_bytes()).hexdigest() == receipt['rendering']['source_sha256']
     print(json.dumps({'data_files_verified': len(manifest['data_files']), 'synthetic_cases': len(cases),
                       'training_rows': len(rows), 'weights_verified': weights, 'dataset_code_executed': False}))
 

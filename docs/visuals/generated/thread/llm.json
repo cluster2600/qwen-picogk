@@ -1,0 +1,19 @@
+{
+  "case_id": "test-56ead89b2fc16816",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Return one JSON object only, with exactly recipe, parameters_mm and missing. Use one supported recipe and its ordered numeric parameters in millimeters. Convert requested diameters to radii except BCC beam thickness, which is a diameter. Never infer unknown Porsche measurements or qualify a part. All complete geometry requests are synthetic. For unavailable measured interfaces use needs_measurement. No code, fences or explanations. Pinned recipe/API cards: {\"cylinder\": \"ShapeKernel BaseCylinder(LocalFrame, length, radius). parameters_mm=[length,radius].\", \"pipe\": \"ShapeKernel BasePipe(LocalFrame,length,innerRadius,outerRadius). parameters_mm=[length,outerRadius,innerRadius].\", \"washer\": \"PicoGK_Fasteners Fastener(fWasherThickness,fWasherDiameter,fCloseFit).Washer(LocalFrame). parameters_mm=[thickness,outerRadius,boreRadius]. Explicit dimensions; no nominal fit defaults.\", \"bcc\": \"LatticeLibrary RegularUnitCell(side,side,side,noise=0); BodyCentreLattice.AddCell; ConstantBeamThickness expects DIAMETER. parameters_mm=[cellSide,beamDiameter].\", \"thread\": \"HelixHeatX ThreadCutter(LocalFrame,length,maxRadius,coreRadius,slope). parameters_mm=[length,maxRadius,coreRadius,pitch]. Synthetic thread cutter; no manufactured thread standard.\", \"needs_measurement\": \"Unknown measured interfaces cannot be inferred. parameters_mm=[]; missing=[\\\"measured_interfaces\\\"].\"} Read field names both before values and after values in parentheses. Field order is irrelevant. Read each quantity independently. A stated radius stays a radius; only stated diameters become radii. Multiply centimeters by 10 and meters by 1000. Do not round to familiar increments."
+    },
+    {
+      "role": "user",
+      "content": "工程输入说明. 合成 thread 的尺寸说明如下：芯部半径 = 2.75 mm; 0.006125 m (外半径); 螺距: 0.25 cm; 轴向长度: 0.975 cm。请返回参数方案。"
+    }
+  ],
+  "raw_response": "{\"recipe\":\"thread\",\"parameters_mm\":[9.75,6.125,2.75,2.5],\"missing\":[]}",
+  "finish_reason": "stop",
+  "adapter_sha256": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
+  "greedy_temperature": 0,
+  "seed": 9931312,
+  "canonical_input": false
+}

@@ -1,0 +1,141 @@
+{
+  "schema": "qwen-picogk.gallery@1",
+  "records": [
+    {
+      "id": "test-11878f970c6cfc9b",
+      "recipe": "cylinder",
+      "language": "en",
+      "parameters_mm": [
+        9.375,
+        7.0
+      ],
+      "volume_mm3": 1434.1151,
+      "triangles": 6620,
+      "geometry_screen_passed": true,
+      "model_called": true,
+      "manufacturing_qualified": false,
+      "files_sha256": {
+        "cylinder/request.json": "ff6346529d84f75d9214248cdfd0163c6fcd58b25770ac16c93c19fb6ad89aa7",
+        "cylinder/plan.json": "91912b1fc7d3b470548fd4b61f1ab74858e512fdb4bf1c4e4cf2beb147cc2bbb",
+        "cylinder/llm.json": "033dc0d87c0d048c8a059e220b61052d2e05d3f4af70d0f1acbc875846ea91d2",
+        "cylinder/raw.stl": "c63f3591bb214423557f8cbad37a6ee6941b36b24d74e37412e2acc38fe67777",
+        "cylinder/native.json": "64f75052483ce570d137a13685bdd1dd426c85213573a73451719f2e1b3b6fce",
+        "cylinder/render.png": "d4f9205dd2bfe6a8d48f8cd7300b685c78d7ac36f29ff4fda808c4ee97af1497"
+      }
+    },
+    {
+      "id": "test-3f15818ed557f1a7",
+      "recipe": "pipe",
+      "language": "fr",
+      "parameters_mm": [
+        16.25,
+        9.5,
+        2.875
+      ],
+      "volume_mm3": 4186.4976,
+      "triangles": 16904,
+      "geometry_screen_passed": true,
+      "model_called": true,
+      "manufacturing_qualified": false,
+      "files_sha256": {
+        "pipe/request.json": "e1ea60b470fc60a6394fc25a7326f51a54b66537730ec0a54dab34ff59f54a5f",
+        "pipe/plan.json": "a1b8cd76238a94abf40e1a273ff08c09547fdb53b22a876a0743580939820dd8",
+        "pipe/llm.json": "20a4384f7d08dd7df3bf3225ff406092a29fa768b8531ea2caba48b4b362d830",
+        "pipe/raw.stl": "51eea7d9b7e1303d835f7b843508ad92bec9c81b8646888c4a8bcb27acfa8aec",
+        "pipe/native.json": "9bd7df449ad82d30300ca0cf39bda97be902209c48ce920a8ccdbb6cdff5c0f9",
+        "pipe/render.png": "aa3875106240e419bf402c4549ce2d6d0d14feaf9747ba5bafa88f9aca968de0"
+      }
+    },
+    {
+      "id": "test-7f859c1f696cb8c2",
+      "recipe": "washer",
+      "language": "de",
+      "parameters_mm": [
+        3.5,
+        7.875,
+        2.875
+      ],
+      "volume_mm3": 585.8872,
+      "triangles": 5392,
+      "geometry_screen_passed": true,
+      "model_called": true,
+      "manufacturing_qualified": false,
+      "files_sha256": {
+        "washer/request.json": "0ec928865a211c0f9fd0b86570babacb6ffd092bde0229dc000d331c8f61e5ad",
+        "washer/plan.json": "26f829e3e3c966b155299228bdd3df26cd520d320f290cbb10e0c305a5e169ce",
+        "washer/llm.json": "0d27469552c9445741f2515dedc007af9b3c472534b9748d92d9ec0a7501283f",
+        "washer/raw.stl": "d32b23d4bf8d64ea6560c1280b79518fdd5796a23c74a4644c22f984a5f59006",
+        "washer/native.json": "31f13c104a3ce899e551b263265e8c1af9c25453c968c1763951d792c12373df",
+        "washer/render.png": "4d0aab2cb0c4f79ae32ded1d89afffa1aa3b89d3fd36639ccca87c31859f9b2d"
+      }
+    },
+    {
+      "id": "test-860f7e58d386558e",
+      "recipe": "bcc",
+      "language": "ja",
+      "parameters_mm": [
+        15.875,
+        2.75
+      ],
+      "volume_mm3": 629.1272,
+      "triangles": 11436,
+      "geometry_screen_passed": true,
+      "model_called": true,
+      "manufacturing_qualified": false,
+      "files_sha256": {
+        "bcc/request.json": "409144b8a034299867f9c98d70832155b00e70218490f942ddd6854e25e59cd0",
+        "bcc/plan.json": "dfda477a7b7a0f100f704ba1101fe2dcc5f6d2fd952160e3779d113670e8e9e3",
+        "bcc/llm.json": "8270934af79a5b22bbdff4166aa7e69d372cf371dffc708f69d09319410cedb2",
+        "bcc/raw.stl": "b9b197309089cdee40da0af99aa865ae67e45f5c40b092dcd525f605e89db569",
+        "bcc/native.json": "f16c00331bcbf8dcc443c4ddae950f8e4b2b1ec15f3873557055845ccdafee2f",
+        "bcc/render.png": "a2fa2a2fc8031e417928604d75fdcb8909d0caa638a448a188dc63d9b8af42c0"
+      }
+    },
+    {
+      "id": "test-56ead89b2fc16816",
+      "recipe": "thread",
+      "language": "zh",
+      "parameters_mm": [
+        9.75,
+        6.125,
+        2.75,
+        2.5
+      ],
+      "volume_mm3": 682.41943,
+      "triangles": 8756,
+      "geometry_screen_passed": true,
+      "model_called": true,
+      "manufacturing_qualified": false,
+      "files_sha256": {
+        "thread/request.json": "43ba2dc27d1078e37142553a3ce2817f2c824951580d2632afe0def2dd8c6e1f",
+        "thread/plan.json": "01819a7e533d1b30d0b6c2029eb2326d3215d4962a981f525976dd70e57d87c8",
+        "thread/llm.json": "4b0c0caab901a854ff40c8f59b7e6cc7dfdf2ee836a86234bc8cec8f89c36cbd",
+        "thread/raw.stl": "4b92e621a202e8de83ec0f82c180f556fe0397aa162c10edbed43c9bf6be7d50",
+        "thread/native.json": "605c49a6a53513609953dae980214124b251be91ef50286666dbc8d55c8b6f3a",
+        "thread/render.png": "5d412d22811b0fcdd019308c114282eb0d69dd42d2fb7d802ef5ab8703c88a76"
+      }
+    }
+  ],
+  "corpus_sha256": "cff2f4db3a658804c9ba5060458ba2205b27c5254ae2059e5c09f01e430033c2",
+  "adapter_sha256": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
+  "base_revision": "b3252a2f97102b1fb1571fec2c9b27219a8536be",
+  "voxel_mm": 0.5,
+  "selection": "Five exposed passing final examples, one recipe/language each. Demonstrations, not a new benchmark.",
+  "source_sha256": {
+    "scripts/build_gallery.py": "27ba8d34dc29a66aa2a9a1b8d1df97a277aaf70d400e324b2a513d957c34afda",
+    "infer.py": "1914af0d4926ba017b381419a83581ab64d9591ca10d5a69c9e0f3be87d891df",
+    "contracts.py": "be96ad844a0af5d3d8cc56511a8ccb1c7847eb8e5f0861c4c8df0c8ec41ad7ba",
+    "evaluate.py": "32f1ca45870933f0e82f92ac2ae6488cf4a88e3abfc47ae71127503511fb358a",
+    "native/GeometryHost.cs": "66be3d3f9e687afc2e0ff18d23edb476187ce95130da571403b0d4e9d2ee5ea2"
+  },
+  "rendering": {
+    "engine": "Matplotlib triangle mesh rendering, not a PicoGK viewer screenshot",
+    "matplotlib": "3.10.8",
+    "numpy": "2.2.6",
+    "source_sha256": "6bbeeadd8148a24cb512d0f5f7fe9fcc08a558dc0d05e226dc4d6bb1b8f3ca17",
+    "shared_orthographic_span_mm": 22.791662979125977,
+    "smoothing_or_geometry_editing": false
+  },
+  "manufacturing_qualified": false,
+  "overview_sha256": "0f21597da770fd82baae2c9a67585707769d89711252b352bb069f67c88ba68f"
+}

@@ -1,0 +1,64 @@
+# Geometry gallery produced from our LLM's actual outputs
+
+![Five actual Qwen-to-PicoGK geometries](generated/overview.png)
+
+Five exposed final cases were selected as demonstrations, one recipe and
+one language each. The pinned **project-trained Qwen adapter** was called
+again on each raw multilingual request. Its exact JSON response reached EOS,
+passed independent unit/quantity checks and drove the trusted PicoGK host.
+The STL files below are that host's actual output at **0.5 mm voxel resolution**.
+
+These PNGs are orthographic Matplotlib renders of the native triangles,
+with one shared physical scale. They are not screenshots of PicoGK's viewer
+and are not illustrations invented by an image-generation model. The geometry
+is unchanged; camera centring and lighting are presentation only.
+
+| Example | Raw request language | Actual model parameters, mm | Evidence |
+|---|---|---|---|
+| Cylinder | English | `[9.375, 7]` | [Response](generated/cylinder/llm.json), [STL](generated/cylinder/raw.stl), [native metrics](generated/cylinder/native.json) |
+| Pipe | French | `[16.25, 9.5, 2.875]` | [Response](generated/pipe/llm.json), [STL](generated/pipe/raw.stl), [native metrics](generated/pipe/native.json) |
+| Washer | German | `[3.5, 7.875, 2.875]` | [Response](generated/washer/llm.json), [STL](generated/washer/raw.stl), [native metrics](generated/washer/native.json) |
+| BCC cell | Japanese | `[15.875, 2.75]` | [Response](generated/bcc/llm.json), [STL](generated/bcc/raw.stl), [native metrics](generated/bcc/native.json) |
+| Synthetic thread cutter | Chinese | `[9.75, 6.125, 2.75, 2.5]` | [Response](generated/thread/llm.json), [STL](generated/thread/raw.stl), [native metrics](generated/thread/native.json) |
+
+Ordered quantities are defined in the [recipe contract](../../README.md#what-is-supported).
+The BCC beam parameter is a **diameter**, unlike the stored radial parameters
+of pipe/washer/thread. The thread cutter is not a manufactured thread standard.
+
+## Individual views
+
+![Cylinder generated from the English model response](generated/cylinder/render.png)
+
+![Pipe generated from the French model response](generated/pipe/render.png)
+
+![Washer generated from the German model response](generated/washer/render.png)
+
+![BCC cell generated from the Japanese model response](generated/bcc/render.png)
+
+![Synthetic thread cutter generated from the Chinese model response](generated/thread/render.png)
+
+## Reproduce the gallery
+
+Use the pinned inference runtime and selected planner release asset, then
+build the native host as described in [training/reproduction](../TRAINING.md).
+
+```sh
+.venv/bin/python scripts/build_gallery.py --output work/new-gallery
+python3 scripts/render_gallery.py work/new-gallery
+```
+
+The renderer uses the existing scientific Python environment: Matplotlib
+3.10.8 and NumPy 2.2.6 for the published images. It is separate from the MLX
+runtime, so inference requirements do not gain plotting dependencies.
+An existing exact base can be passed to the builder with `--base /path/to/base`.
+Output directories are never reused; retain failed runs and their diagnostics.
+
+[gallery.json](generated/gallery.json) records selected IDs, the adapter/base
+pin, raw-input mode, native dimensions/volume/triangles and SHA-256 bindings
+for model responses, requests, plans, meshes and images. It also identifies
+the rendering engine and source files. The [Mermaid diagrams](../ARCHITECTURE.md)
+show the relationship between these records.
+
+The images show bounded synthetic recipes, not measured Porsche components,
+optimised engineering designs or manufacturing-qualified parts. A good-looking
+image adds no strength, fitment or process qualification evidence.

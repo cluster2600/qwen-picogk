@@ -1,0 +1,20 @@
+{
+  "recipe": "thread",
+  "volume": 682.41943,
+  "triangles": 8756,
+  "roundtrip_triangles": 8756,
+  "min": [
+    -5.674462,
+    -6.0225234,
+    -8.940697e-08
+  ],
+  "max": [
+    6.0557976,
+    6.02253,
+    9.75
+  ],
+  "material_inside": true,
+  "axis_inside": true,
+  "distant_point_inside": false,
+  "voxel_mm": 0.5
+}

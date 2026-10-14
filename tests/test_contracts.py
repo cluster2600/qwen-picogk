@@ -83,6 +83,17 @@ class ReleaseContracts(unittest.TestCase):
             with self.assertRaises(ValueError):
                 evaluate.native(contracts.normalize(self.request), Path('host.dll'))
 
+    def test_native_output_directory_is_preserved_and_never_reused(self):
+        metrics = dict(volume=2595.0, triangles=100, roundtrip_triangles=100,
+                       material_inside=True, distant_point_inside=False, axis_inside=False)
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)/'native'
+            with patch('evaluate.subprocess.run', return_value=SimpleNamespace(stdout=json.dumps(metrics))):
+                evaluate.native(contracts.normalize(self.request), Path('host.dll'), folder)
+            self.assertEqual(json.loads((folder/'plan.json').read_text()), contracts.normalize(self.request))
+            with self.assertRaises(FileExistsError):
+                evaluate.native(contracts.normalize(self.request), Path('host.dll'), folder)
+
 
 if __name__ == '__main__':
     unittest.main()

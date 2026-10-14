@@ -1,0 +1,21 @@
+{
+  "recipe": "washer",
+  "volume": 585.8872,
+  "triangles": 5392,
+  "roundtrip_triangles": 5392,
+  "min": [
+    -7.8668365,
+    -7.8668613,
+    -8.940697e-08
+  ],
+  "max": [
+    7.866913,
+    7.8668613,
+    3.5
+  ],
+  "material_inside": true,
+  "axis_inside": false,
+  "distant_point_inside": false,
+  "voxel_mm": 0.5,
+  "relative_volume_error": 0.008671426187163742
+}
