@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Curated synthetic sources/data and six completed rejected courses; accepted short005 text/history/reviews, completed untouched14B baseline and lossless preparation metadata, prospective running007 registration/runtime/audit. Base payloads, final contents and active007 files omitted. Historical original-source hashes are preserved.",
+  "scope": "Curated synthetic sources/data and seven completed rejected courses; exact310 original150+short160 mixture/text/token proofs and prospective running008 registration/runtime/audit. Base payloads, reserved final contents and active008 files omitted. Historical original-source hashes are preserved.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -2355,11 +2355,11 @@
       "transform": "none"
     },
     {
-      "source": "publication-staging/accepted005-14b-current-assets.json",
+      "source": "publication-staging/course007-current-assets.json",
       "public_path": "evidence/assets.json",
-      "source_sha256": "68f560771bfdbabaada6ae44286921af9203d2dc78f2d2d02f72ac91018a7a3a",
-      "public_sha256": "68f560771bfdbabaada6ae44286921af9203d2dc78f2d2d02f72ac91018a7a3a",
-      "transform": "none; derived current inventory preserves all nine prior archive records and appends the bound untouched14B baseline record"
+      "source_sha256": "f58350422e9cd20f8c705b1572b6f3e007c0d73255ed84397738aebdd683b7e1",
+      "public_sha256": "f58350422e9cd20f8c705b1572b6f3e007c0d73255ed84397738aebdd683b7e1",
+      "transform": "none; derived current inventory preserves all ten prior archive records and appends the bound rejected007 record"
     },
     {
       "source": "am-code/data/corrective-005/README.md",
@@ -2583,6 +2583,97 @@
       "public_path": "evidence/accepted005-14b-assets.json",
       "source_sha256": "bb37357b32a16e28daf6c9670603594fbaf7f20b18fb3041c096578065b2fd3f",
       "public_sha256": "bb37357b32a16e28daf6c9670603594fbaf7f20b18fb3041c096578065b2fd3f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/mixed-14b-001/README.md",
+      "public_path": "data/mixed-14b-001/README.md",
+      "source_sha256": "f8a847cb5d9e2ef0154bae5197abbb82e7beacde166b98690ca5d9617a04d16d",
+      "public_sha256": "f8a847cb5d9e2ef0154bae5197abbb82e7beacde166b98690ca5d9617a04d16d",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/mixed-14b-001/independent-token-rows.json",
+      "public_path": "data/mixed-14b-001/independent-token-rows.json",
+      "source_sha256": "93386708c8328410b85a4fcd5f6d0b6045e0273f1e53c689a9beb8bc173d7b0e",
+      "public_sha256": "93386708c8328410b85a4fcd5f6d0b6045e0273f1e53c689a9beb8bc173d7b0e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/mixed-14b-001/prepare.py",
+      "public_path": "data/mixed-14b-001/prepare.py",
+      "source_sha256": "e19ff522b1428949ea00e32626bd650b095e051f6512782afb98e08aa55c106c",
+      "public_sha256": "e19ff522b1428949ea00e32626bd650b095e051f6512782afb98e08aa55c106c",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/mixed-14b-001/provenance.json",
+      "public_path": "data/mixed-14b-001/provenance.json",
+      "source_sha256": "f9da9f3610a7c18461d38ca35bfe4bf3463e940c359d240f5ef6285bd4aa4f12",
+      "public_sha256": "f9da9f3610a7c18461d38ca35bfe4bf3463e940c359d240f5ef6285bd4aa4f12",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/mixed-14b-001/tokenization-receipt.json",
+      "public_path": "data/mixed-14b-001/tokenization-receipt.json",
+      "source_sha256": "83b3d2dec6acd038abee1817bed9c6afe9a76634d14a29279ddc70494fd54bc5",
+      "public_sha256": "83b3d2dec6acd038abee1817bed9c6afe9a76634d14a29279ddc70494fd54bc5",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/mixed-14b-001/train.jsonl",
+      "public_path": "data/mixed-14b-001/train.jsonl",
+      "source_sha256": "68db482a8b8a9ae16e07870f018598fa59a31c3d03745c52a7a0e78664051be0",
+      "public_sha256": "68db482a8b8a9ae16e07870f018598fa59a31c3d03745c52a7a0e78664051be0",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course-007-cpu-audit.json",
+      "public_path": "evidence/course-007-cpu-audit.json",
+      "source_sha256": "9ba4fd7a42a4162703a28b54887f1ae6358799c034bab6cac9dc50c8a5d27700",
+      "public_sha256": "9ba4fd7a42a4162703a28b54887f1ae6358799c034bab6cac9dc50c8a5d27700",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/qualification-rejected-14b160.log",
+      "public_path": "evidence/course-007-formal-rejection.json",
+      "source_sha256": "a84443ec7b50bd34961eb1bfb8c0e87e43008593ee6c2773e4a8a404ddddb2cc",
+      "public_sha256": "a84443ec7b50bd34961eb1bfb8c0e87e43008593ee6c2773e4a8a404ddddb2cc",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course007-14b160-independent-review.json",
+      "public_path": "evidence/course007-14b160-independent-review.json",
+      "source_sha256": "68d88019ac622aa255932fd0a8f8cbe2cdd64b66afbb1fda7e0a27bd64df5b5b",
+      "public_sha256": "68d88019ac622aa255932fd0a8f8cbe2cdd64b66afbb1fda7e0a27bd64df5b5b",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course-008-protocol.json",
+      "public_path": "evidence/course-008-protocol.json",
+      "source_sha256": "245348fa8b93613d2e53d311d25e745270cfeb2b201f7cb2011da87ba25caa18",
+      "public_sha256": "245348fa8b93613d2e53d311d25e745270cfeb2b201f7cb2011da87ba25caa18",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/runs/14b-mixed001-epoch1/protocol.json",
+      "public_path": "evidence/course008-runtime-protocol.json",
+      "source_sha256": "fde5601efcc71fbddd70476100b0f853bfb0ba6662304e126aed8a1ec948a7cc",
+      "public_sha256": "af6e126fdf622c7254b4c0be034161840326c9981c948a72525da786f71e860d",
+      "transform": "JSON/text view: local directory paths redacted; numeric/hash/status fields retained"
+    },
+    {
+      "source": "am-code/diagnostics/course008-running-protocol-audit.json",
+      "public_path": "evidence/course008-running-protocol-audit.json",
+      "source_sha256": "2c70217123d05b4e5d6875b4930e6a9d637b7b4f01e6684e70c5a6bca9f919f2",
+      "public_sha256": "2c70217123d05b4e5d6875b4930e6a9d637b7b4f01e6684e70c5a6bca9f919f2",
+      "transform": "none"
+    },
+    {
+      "source": "publication-staging/course007-assets.json",
+      "public_path": "evidence/course007-assets.json",
+      "source_sha256": "8be17457b159c728360f3d328895ca6eb2cbcb4309386930336398049b0caf91",
+      "public_sha256": "8be17457b159c728360f3d328895ca6eb2cbcb4309386930336398049b0caf91",
       "transform": "none"
     }
   ]
