@@ -1,4 +1,11 @@
+PYTHON ?= python3
 .PHONY: check
 check:
-	python3 -m unittest discover -s tests -v
-	python3 scripts/check_release.py
+	$(PYTHON) -m unittest discover -s tests -v
+	$(PYTHON) scripts/check_release.py
+	$(PYTHON) am-code/check_publication.py
+	$(PYTHON) am-code/test_base_runtime.py
+	$(PYTHON) am-code/test_prompt_cli.py
+	$(PYTHON) am-code/test_supplemental_corpus.py
+	$(PYTHON) am-code/qualification.py --self-check
+	$(PYTHON) am-code/final_qualification.py --self-check

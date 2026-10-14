@@ -1,0 +1,18 @@
+{
+  "registered_at": "2026-10-14T15:08:04.420474+00:00",
+  "phase": "before corrective course2 training/inference",
+  "change": "Native build dependencies now symlink to the same trusted PICO runtime files rather than hardlinks. This prevents parallel dyld loader-path aliasing across sandboxed sibling cases. All geometry/task gates and sandbox permissions unchanged.",
+  "checker_hashes": {
+    "evaluation/evaluate.py": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+    "end-to-end/evaluate.py": "e74790f0acabb39ff8bb62dd54ed265a9050c00c52ef40a80d59d67a6a24705c",
+    "evaluation/Inspector.cs": "d61a5aec3d4b86d5c7700f567d40725f24c74e3e7d08e1f7daafc5b09c8cb1ab",
+    "infer.py": "2f67b1c24b7b838e0afd62c0ca134147df5dafc9375d986fc52379dc250c02c3",
+    "qualification.py": "27c8588cf6b4db9b21ea415525df9e7cbec111622f5efb0007fc4253b07dfbae",
+    "final_qualification.py": "fe9bf6125bcfcb9478080a64c996265f32351a09aaf64a8d117116b3cdacae37",
+    "train.py": "98aa4b1122b24dda8215a815c973266fe3ccfe8a06b52c4e80d6b1258652abc8",
+    "qwen-picogk-am": "b97eaaaaf125d8356cf0205506c156d727aaada022a3aaa4deffc00b44ed2e95"
+  },
+  "focused_native_check": "diagnostics/native-symlink-001/receipt.json",
+  "focused_native_check_sha256": "12dd071bbe1fedb98efd18a85a48bfbf531df06208c5f01da67ecfb508c586bd",
+  "scan_freeze_sha256": "e9fbeca73172f6dece5a45640fab5fe4ff7b37b2f3f51de4522cdba1f5a5da94"
+}

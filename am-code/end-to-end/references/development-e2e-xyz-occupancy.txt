@@ -1,0 +1,58 @@
+These spheres are unsigned sample occupancy proxies and preserve the supplied translation. They neither infer a solid interior nor implement Curless and Levoy (1996) signed range integration; sensor poses, oriented observations and suitable coverage remain missing.
+
+```csharp
+using System;
+using System.IO;
+using System.Numerics;
+using System.Globalization;
+using System.Text.Json;
+using System.Collections.Generic;
+using PicoGK;
+
+public static class Program
+{
+    public static void Main(string[] args)
+    {
+        if (args.Length != 2) throw new ArgumentException("input output-directory");
+        Directory.CreateDirectory(args[1]);
+        using Library lib = new(0.2f);
+        var points = new List<Vector3>();
+        int lineNumber = 0;
+        foreach (string line in File.ReadLines(args[0]))
+        {
+            lineNumber++;
+            string row = line.Trim();
+            if (row.Length == 0 || row.StartsWith("#") || row.Equals("x,y,z", StringComparison.OrdinalIgnoreCase)) continue;
+            string[] fields = row.Split(new[] { ',', ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            if (fields.Length != 3) throw new FormatException("exactly three columns at line " + lineNumber);
+            float[] values = new float[3];
+            for (int i = 0; i < 3; i++)
+                if (!float.TryParse(fields[i], NumberStyles.Float, CultureInfo.InvariantCulture, out values[i]) ||
+                    !float.IsFinite(values[i])) throw new FormatException("finite invariant coordinate required");
+            points.Add(new Vector3(values[0], values[1], values[2]));
+        }
+        if (points.Count == 0) throw new FormatException("empty point cloud");
+        using Lattice samples = new(lib);
+        foreach (Vector3 point in points) samples.AddSphere(point, 0.8f);
+        using Voxels part = new(samples);
+        // Unsigned splats are occupancy proxies; do not invent a signed interior or bridge gaps.
+        part.SaveToVdbFile(Path.Combine(args[1], "part.vdb"));
+        using Mesh raw = new(part);
+        using Mesh output = new(lib);
+        // Boolean zero-set coincidences can create exactly zero-area facets.
+        for (int i = 0; i < raw.nTriangleCount(); i++)
+        {
+            raw.GetTriangle(i, out Vector3 a, out Vector3 b, out Vector3 c);
+            double ux = (double)b.X-a.X, uy = (double)b.Y-a.Y, uz = (double)b.Z-a.Z;
+            double vx = (double)c.X-a.X, vy = (double)c.Y-a.Y, vz = (double)c.Z-a.Z;
+            double x = uy*vz-uz*vy, y = uz*vx-ux*vz, z = ux*vy-uy*vx;
+            if (x*x+y*y+z*z > 0) output.nAddTriangle(a,b,c);
+        }
+        output.SaveToStlFile(Path.Combine(args[1], "part.stl"), Mesh.EStlUnit.MM);
+        File.WriteAllText(Path.Combine(args[1], "report.json"), JsonSerializer.Serialize(new {
+            status = "geometric_candidate", qualification = "geometry_only",
+            manufacturing_authorized = false
+        }));
+    }
+}
+```

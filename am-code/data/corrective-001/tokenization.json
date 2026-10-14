@@ -1,0 +1,469 @@
+{
+  "schema": "picogk.am.compact-tokenization@1",
+  "train_sha256": "932c110f8e384fce1d048e645c38f9bba7eae8eccace33d355f05166cf9586fe",
+  "tokenizer_json_sha256": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf",
+  "tokenizer_config_sha256": "dced901d401aa828f313a2baec70d0ce164653285812237b5285c7efd5b9e760",
+  "rows": 64,
+  "minimum_tokens": 838,
+  "median_tokens": 1091.5,
+  "maximum_tokens": 1465,
+  "total_tokens": 73391,
+  "maximum_assistant_content_tokens": 1067,
+  "max_seq_length": 6144,
+  "fits_without_truncation": true,
+  "every_response_single_complete_csharp_fence": true,
+  "every_response_normal_end_marker": true,
+  "weights_loaded": false,
+  "gpu_inference": false,
+  "tokenizer_method": "AutoTokenizer local only; Qwen chat template with no generation prompt, encode without additional special tokens.",
+  "per_row": [
+    {
+      "id": "compact-initialize-01",
+      "full_sequence_tokens": 932,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-initialize-02",
+      "full_sequence_tokens": 932,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-initialize-03",
+      "full_sequence_tokens": 932,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-initialize-04",
+      "full_sequence_tokens": 932,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-offset-sign-01",
+      "full_sequence_tokens": 961,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-offset-sign-02",
+      "full_sequence_tokens": 961,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-offset-sign-03",
+      "full_sequence_tokens": 961,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-offset-sign-04",
+      "full_sequence_tokens": 961,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-closing-01",
+      "full_sequence_tokens": 1095,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-closing-02",
+      "full_sequence_tokens": 1095,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-closing-03",
+      "full_sequence_tokens": 1095,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-closing-04",
+      "full_sequence_tokens": 1095,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-shell-01",
+      "full_sequence_tokens": 1002,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-shell-02",
+      "full_sequence_tokens": 1002,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-shell-03",
+      "full_sequence_tokens": 1002,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-shell-04",
+      "full_sequence_tokens": 1002,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-vent-01",
+      "full_sequence_tokens": 1224,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-vent-02",
+      "full_sequence_tokens": 1252,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-vent-03",
+      "full_sequence_tokens": 1223,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-vent-04",
+      "full_sequence_tokens": 1251,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-cone-roof-01",
+      "full_sequence_tokens": 1422,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-cone-roof-02",
+      "full_sequence_tokens": 1422,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-cone-roof-03",
+      "full_sequence_tokens": 1421,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-cone-roof-04",
+      "full_sequence_tokens": 1421,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-gyroid-01",
+      "full_sequence_tokens": 1403,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-gyroid-02",
+      "full_sequence_tokens": 1403,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-gyroid-03",
+      "full_sequence_tokens": 1417,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-gyroid-04",
+      "full_sequence_tokens": 1402,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-diamond-01",
+      "full_sequence_tokens": 1402,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-diamond-02",
+      "full_sequence_tokens": 1402,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-diamond-03",
+      "full_sequence_tokens": 1416,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-diamond-04",
+      "full_sequence_tokens": 1401,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-schwarz-p-01",
+      "full_sequence_tokens": 1404,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-schwarz-p-02",
+      "full_sequence_tokens": 1404,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-schwarz-p-03",
+      "full_sequence_tokens": 1418,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-schwarz-p-04",
+      "full_sequence_tokens": 1403,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-scan-normals-01",
+      "full_sequence_tokens": 1465,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-scan-normals-02",
+      "full_sequence_tokens": 1465,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-scan-normals-03",
+      "full_sequence_tokens": 1465,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-scan-normals-04",
+      "full_sequence_tokens": 1465,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-debug-api-01",
+      "full_sequence_tokens": 1021,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-debug-api-02",
+      "full_sequence_tokens": 1021,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-debug-api-03",
+      "full_sequence_tokens": 1021,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-debug-api-04",
+      "full_sequence_tokens": 1021,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-missing-interfaces-01",
+      "full_sequence_tokens": 838,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-missing-interfaces-02",
+      "full_sequence_tokens": 838,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-missing-interfaces-03",
+      "full_sequence_tokens": 838,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-missing-interfaces-04",
+      "full_sequence_tokens": 838,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-stl-roundtrip-01",
+      "full_sequence_tokens": 948,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-stl-roundtrip-02",
+      "full_sequence_tokens": 976,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-stl-roundtrip-03",
+      "full_sequence_tokens": 947,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-stl-roundtrip-04",
+      "full_sequence_tokens": 975,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-stl-skin-vent-01",
+      "full_sequence_tokens": 1088,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-stl-skin-vent-02",
+      "full_sequence_tokens": 1088,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-stl-skin-vent-03",
+      "full_sequence_tokens": 1088,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-stl-skin-vent-04",
+      "full_sequence_tokens": 1088,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-xyz-occupancy-01",
+      "full_sequence_tokens": 1188,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-xyz-occupancy-02",
+      "full_sequence_tokens": 1188,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-xyz-occupancy-03",
+      "full_sequence_tokens": 1188,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-xyz-occupancy-04",
+      "full_sequence_tokens": 1188,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-signed-range-refusal-01",
+      "full_sequence_tokens": 916,
+      "assistant_content_tokens": 537,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-signed-range-refusal-02",
+      "full_sequence_tokens": 922,
+      "assistant_content_tokens": 540,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-signed-range-refusal-03",
+      "full_sequence_tokens": 918,
+      "assistant_content_tokens": 538,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "id": "compact-signed-range-refusal-04",
+      "full_sequence_tokens": 918,
+      "assistant_content_tokens": 538,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    }
+  ]
+}

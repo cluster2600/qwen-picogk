@@ -1,0 +1,25 @@
+{
+  "schema": "picogk.am.native-dependencies@1",
+  "platform": "macOS arm64",
+  "dotnet_sdk_version": "9.0.317",
+  "dotnet_executable_sha256": "c1773b3c8958c647995739a7031ac4167e95868a2c1bc01e7d0646fb3b8e9ee4",
+  "dotnet_source": "https://dotnet.microsoft.com/en-us/download/dotnet/9.0",
+  "picogk_version": "2.3.0",
+  "native_version": "26.2",
+  "picogk_package": "https://www.nuget.org/packages/PicoGK/2.3.0",
+  "native_source": "https://github.com/leap71/PicoGKRuntime/tree/0f26321c18ed878a7820ef769c38fd5d49d39242",
+  "files_sha256": {
+    "PicoGK.dll": "710c4e0428efbe9c1cd1db1663247b45604f96d167a6726782ab8ddca350565a",
+    "PicoGK.deps.json": "8c547549e45c8e3f42ee79432e5c67b88ef2255eb5d60c7089336baf8905ff81",
+    "libboost_iostreams.dylib": "5f4e8b73a85daaa8d2866630f3f37476e64c8590b82600edee3a470355b0e449",
+    "libboost_random.dylib": "6a6ce2c099c98d6a9fe60a654524d0677e446eb1820b165a10746ea2bdd26585",
+    "libboost_regex.dylib": "25e6048289f545ffd748d75dba7021cb2d12e8766bcbbd3bb56539833769d324",
+    "libicudata.78.dylib": "1365b2038e25db51d48069a7bee9dfddbdfb6b79dfb2cba1a0d86b36af90a2d7",
+    "libicui18n.78.dylib": "a88883f3bd77961945902c7046bf2bbc6adf30d8373faf891364411b9b264511",
+    "libicuuc.78.dylib": "90b7fdd81b382bc7da3d28bfde5236aa65555a7a73141d7e5716b7e2a82b033e",
+    "liblzma.5.dylib": "0f90645217e5e963c34d45d0d8f93c69ef2faac06098376dbc0e9c1ee9d979a1",
+    "libzstd.1.dylib": "757bff8f0397a7e35f910d2c54656aa549d4bcd5c4917ca0d1131ec48f76eeab",
+    "picogk.26.2.dylib": "5c1cd3fc12766a85bc5c1441a95f065fb274338d1333c3ae2d3396b59d0e18e7"
+  },
+  "payloads_included": false
+}

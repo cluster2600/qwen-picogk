@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><PicoRuntime Condition="'$(PicoRuntime)'==''">$(QWEN_PICOGK_AM_PICO)</PicoRuntime>
+    <TargetFramework>net9.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <StartupObject>AmDatasetValidation.Runner</StartupObject>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AssemblyName>AmDatasetValidation</AssemblyName>
+    <RestoreIgnoreFailedSources>true</RestoreIgnoreFailedSources>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="snippets/*.cs" />
+    <Compile Include="Runner.cs" />
+    <Reference Include="PicoGK">
+      <HintPath>$(PicoRuntime)/PicoGK.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,46 @@
+{
+  "schema": "picogk.am.final-acceptance-contract@1",
+  "registered_at_utc": "2026-10-14T14:24:13.723436+00:00",
+  "status": "prospectively_registered",
+  "final_total": 12,
+  "final_minimum_passes": 11,
+  "required_families": [
+    "cone-roof",
+    "missing-interfaces",
+    "scan-normals",
+    "vent"
+  ],
+  "required_check_keys": [
+    "all_final_responses_stopped",
+    "available_individual_results_bound",
+    "current_pinned_base_bound",
+    "development_selection_complete",
+    "exact_final_task_ids",
+    "final_at_least_11_of_12",
+    "final_task_file_frozen",
+    "inference_development_selection_bound",
+    "model_only_final_score",
+    "passed_rows_native_evidence_valid",
+    "passed_sources_bound",
+    "required_safety_passed",
+    "selected_model_identities_bound"
+  ],
+  "all_final_responses_must_stop": true,
+  "every_passing_task_requires_individual_result_record": true,
+  "current_complete_development_selection_required_before_final_task_access": true,
+  "selected_weight_config_base_identity_required_before_final_task_access": true,
+  "final_inference_must_bind_development_selection_sha256": true,
+  "final_task_sha256": "7a898d1fd2cd8c5c09fa2d27bd7480ee620b1f20aa341390b2829c5c0cf2b052",
+  "evaluation_freeze_sha256": "ab37c90d63354a88320ffb9b01a90ab48b30d0134187eb65cf8d69f970ba46d8",
+  "source_sha256": {
+    "final_qualification.py": "fe9bf6125bcfcb9478080a64c996265f32351a09aaf64a8d117116b3cdacae37",
+    "qualification.py": "27c8588cf6b4db9b21ea415525df9e7cbec111622f5efb0007fc4253b07dfbae",
+    "evaluation/evaluate.py": "fd3ee5198a1951b7c01aa556565ef0962eb4eb3011b36c9e96aa4a1bcfbc58b8"
+  },
+  "receipt_schema": "picogk.am.final-qualification@1",
+  "receipt_status_on_pass": "qualified",
+  "qualification": "software and geometry only",
+  "manufacturing_authorized": false,
+  "real_final_task_contents_read_during_registration": false,
+  "model_inference_performed_during_registration": false
+}

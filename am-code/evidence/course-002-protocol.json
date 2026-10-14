@@ -1,0 +1,40 @@
+{
+  "registered_at": "2026-10-14T15:11:58.547271+00:00",
+  "course": "corrective001-epoch3",
+  "status": "registered_before_training",
+  "iterations": 192,
+  "expected_rows": 64,
+  "epochs": 3,
+  "learning_rate": 2e-05,
+  "max_seq_length": 6144,
+  "parent_adapter": "runs/original150-epoch2/adapter/adapters.safetensors",
+  "parent_adapter_sha256": "1a284b4783542433caaf342732bf77652b6587d38767138fdb0e334133f6428b",
+  "optimizer": "Fresh Adam state; resume LoRA tensors only.",
+  "corpus": "data/corrective-001/train.jsonl",
+  "corpus_sha256": "932c110f8e384fce1d048e645c38f9bba7eae8eccace33d355f05166cf9586fe",
+  "prerequisites": "Native validation of all64 independent teaching variants, read-only oracle review, exact corpus hash registration and token lengths before any training.",
+  "selection": "Evaluate fixed step192 only. Original final set remains sealed until unchanged development and scan gates pass. Any additional course must be registered separately.",
+  "gates": {
+    "development_minimum": 11,
+    "development_total": 12,
+    "final_minimum": 11,
+    "final_total": 12,
+    "required_families": [
+      "vent",
+      "cone-roof",
+      "scan-normals",
+      "missing-interfaces"
+    ],
+    "retain_all_base_development_passes": true,
+    "end_to_end_scan_development_passes": 4,
+    "no_unexpected_native_failures": true
+  },
+  "original_dataset_sha256": "ed3247fb4c8ecacc013eb95f16fb6ac6d822680e40d32ae95cafb130893108d7",
+  "existing_adapters_unchanged": true,
+  "manufacturing_authorized": false,
+  "native_teaching_report_sha256": "1939011370bdc831e7bbc857324212a25c6308831ca5ff080873e84a1727a280",
+  "native_teaching_validator_sha256": "ab10c0fdbf05406e6f3c53ef126514470929dda814c9212520df1eba98176768",
+  "trusted_native_core_sha256": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+  "trainer_sha256": "98aa4b1122b24dda8215a815c973266fe3ccfe8a06b52c4e80d6b1258652abc8",
+  "independent_review": "model_code_scoring: format/source/token alignment and semantic checks, 10 independent CPU STL probes; all64 source compilation by training_runtime_audit"
+}

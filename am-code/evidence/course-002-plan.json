@@ -1,0 +1,35 @@
+{
+  "registered_at": "2026-10-14T14:42:37.963338+00:00",
+  "course": "corrective001-epoch3",
+  "status": "planned_not_started",
+  "iterations": 192,
+  "expected_rows": 64,
+  "epochs": 3,
+  "learning_rate": 2e-05,
+  "max_seq_length": 6144,
+  "parent_adapter": "runs/original150-epoch2/adapter/adapters.safetensors",
+  "parent_adapter_sha256": "1a284b4783542433caaf342732bf77652b6587d38767138fdb0e334133f6428b",
+  "optimizer": "Fresh Adam state; resume LoRA tensors only.",
+  "corpus": "data/corrective-001/train.jsonl",
+  "corpus_sha256": null,
+  "prerequisites": "Native validation of all64 independent teaching variants, read-only oracle review, exact corpus hash registration and token lengths before any training.",
+  "selection": "Evaluate fixed step192 only. Original final set remains sealed until unchanged development and scan gates pass. Any additional course must be registered separately.",
+  "gates": {
+    "development_minimum": 11,
+    "development_total": 12,
+    "final_minimum": 11,
+    "final_total": 12,
+    "required_families": [
+      "vent",
+      "cone-roof",
+      "scan-normals",
+      "missing-interfaces"
+    ],
+    "retain_all_base_development_passes": true,
+    "end_to_end_scan_development_passes": 4,
+    "no_unexpected_native_failures": true
+  },
+  "original_dataset_sha256": "ed3247fb4c8ecacc013eb95f16fb6ac6d822680e40d32ae95cafb130893108d7",
+  "existing_adapters_unchanged": true,
+  "manufacturing_authorized": false
+}

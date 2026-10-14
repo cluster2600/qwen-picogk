@@ -1,0 +1,35 @@
+{
+  "registered_at": "2026-10-14T15:35:03.834315+00:00",
+  "course": "header002-epoch1",
+  "iterations": 192,
+  "training_rows": 192,
+  "underlying_native_validated_teachers": 64,
+  "epochs": 1,
+  "learning_rate": 1e-05,
+  "max_seq_length": 6144,
+  "parent_adapter": "runs/corrective001-epoch3/adapter/adapters.safetensors",
+  "parent_adapter_sha256": "7b989f1c20e9c8275a7fa387319813da5a5b88e0f426caebf8116dc56e56bfc3",
+  "corpus": "data/corrective-002/train.jsonl",
+  "corpus_sha256": "9966a99f998f544fdfe3d9370f53e131e5ae31061b3e89ae196d3f34e56d6a65",
+  "release_manifest_sha256": "942205bb94183f9fcea3974b07654d7fe1a4a3076d53f3ac13947e3d9bab4517",
+  "change": "Same64 independently validated target programs, three generic prompt-header styles. No exact development answers/task bodies or final contents used. Input-style hypothesis is unproven.",
+  "selection": "Evaluate fixed step192 only; unchanged native gates; final remains sealed. Furthercourse needs newprotocol.",
+  "gates": {
+    "development_minimum": 11,
+    "development_total": 12,
+    "final_minimum": 11,
+    "final_total": 12,
+    "required_families": [
+      "vent",
+      "cone-roof",
+      "scan-normals",
+      "missing-interfaces"
+    ],
+    "retain_all_base_development_passes": true,
+    "end_to_end_scan_development_passes": 4,
+    "no_unexpected_native_failures": true
+  },
+  "original150_preserved": true,
+  "existing_defaults_unchanged": true,
+  "manufacturing_authorized": false
+}

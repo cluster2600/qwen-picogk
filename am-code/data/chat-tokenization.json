@@ -1,0 +1,618 @@
+{
+  "schema": "picogk_am_chat_tokenization@1",
+  "train_chat_sha256": "1ac93688653ea7aa26b1e93b739eaac21717e11af4f9996972b6735bb20fe684",
+  "tokenizer_json_sha256": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf",
+  "tokenizer_config_sha256": "dced901d401aa828f313a2baec70d0ce164653285812237b5285c7efd5b9e760",
+  "count": 150,
+  "minimum_tokens": 3454,
+  "median_tokens": 4022.5,
+  "maximum_tokens": 5406,
+  "total_tokens": 602564,
+  "fits_max_seq_length_6144": true,
+  "template_adds_default_system_message": true,
+  "content_roundtrip_exact": true,
+  "note": "Messages preserve user/assistant contents exactly. Qwen template serialization may add its default system message and final newline; training token sequences are intentionally templated for assistant-only masking, not byte-identical source ChatML.",
+  "weights_loaded": false,
+  "rows": [
+    {
+      "source_line": 1,
+      "tokens_with_Qwen_chat_template": 4051
+    },
+    {
+      "source_line": 2,
+      "tokens_with_Qwen_chat_template": 4024
+    },
+    {
+      "source_line": 3,
+      "tokens_with_Qwen_chat_template": 4047
+    },
+    {
+      "source_line": 4,
+      "tokens_with_Qwen_chat_template": 3586
+    },
+    {
+      "source_line": 5,
+      "tokens_with_Qwen_chat_template": 3593
+    },
+    {
+      "source_line": 6,
+      "tokens_with_Qwen_chat_template": 3608
+    },
+    {
+      "source_line": 7,
+      "tokens_with_Qwen_chat_template": 4325
+    },
+    {
+      "source_line": 8,
+      "tokens_with_Qwen_chat_template": 4262
+    },
+    {
+      "source_line": 9,
+      "tokens_with_Qwen_chat_template": 4275
+    },
+    {
+      "source_line": 10,
+      "tokens_with_Qwen_chat_template": 3512
+    },
+    {
+      "source_line": 11,
+      "tokens_with_Qwen_chat_template": 3476
+    },
+    {
+      "source_line": 12,
+      "tokens_with_Qwen_chat_template": 3519
+    },
+    {
+      "source_line": 13,
+      "tokens_with_Qwen_chat_template": 4264
+    },
+    {
+      "source_line": 14,
+      "tokens_with_Qwen_chat_template": 4278
+    },
+    {
+      "source_line": 15,
+      "tokens_with_Qwen_chat_template": 4220
+    },
+    {
+      "source_line": 16,
+      "tokens_with_Qwen_chat_template": 4021
+    },
+    {
+      "source_line": 17,
+      "tokens_with_Qwen_chat_template": 4018
+    },
+    {
+      "source_line": 18,
+      "tokens_with_Qwen_chat_template": 4303
+    },
+    {
+      "source_line": 19,
+      "tokens_with_Qwen_chat_template": 3537
+    },
+    {
+      "source_line": 20,
+      "tokens_with_Qwen_chat_template": 4199
+    },
+    {
+      "source_line": 21,
+      "tokens_with_Qwen_chat_template": 3497
+    },
+    {
+      "source_line": 22,
+      "tokens_with_Qwen_chat_template": 4051
+    },
+    {
+      "source_line": 23,
+      "tokens_with_Qwen_chat_template": 4032
+    },
+    {
+      "source_line": 24,
+      "tokens_with_Qwen_chat_template": 4058
+    },
+    {
+      "source_line": 25,
+      "tokens_with_Qwen_chat_template": 4249
+    },
+    {
+      "source_line": 26,
+      "tokens_with_Qwen_chat_template": 4237
+    },
+    {
+      "source_line": 27,
+      "tokens_with_Qwen_chat_template": 4329
+    },
+    {
+      "source_line": 28,
+      "tokens_with_Qwen_chat_template": 4312
+    },
+    {
+      "source_line": 29,
+      "tokens_with_Qwen_chat_template": 4305
+    },
+    {
+      "source_line": 30,
+      "tokens_with_Qwen_chat_template": 4378
+    },
+    {
+      "source_line": 31,
+      "tokens_with_Qwen_chat_template": 3528
+    },
+    {
+      "source_line": 32,
+      "tokens_with_Qwen_chat_template": 3511
+    },
+    {
+      "source_line": 33,
+      "tokens_with_Qwen_chat_template": 3547
+    },
+    {
+      "source_line": 34,
+      "tokens_with_Qwen_chat_template": 3488
+    },
+    {
+      "source_line": 35,
+      "tokens_with_Qwen_chat_template": 3461
+    },
+    {
+      "source_line": 36,
+      "tokens_with_Qwen_chat_template": 3454
+    },
+    {
+      "source_line": 37,
+      "tokens_with_Qwen_chat_template": 4287
+    },
+    {
+      "source_line": 38,
+      "tokens_with_Qwen_chat_template": 4296
+    },
+    {
+      "source_line": 39,
+      "tokens_with_Qwen_chat_template": 4317
+    },
+    {
+      "source_line": 40,
+      "tokens_with_Qwen_chat_template": 3569
+    },
+    {
+      "source_line": 41,
+      "tokens_with_Qwen_chat_template": 4285
+    },
+    {
+      "source_line": 42,
+      "tokens_with_Qwen_chat_template": 4074
+    },
+    {
+      "source_line": 43,
+      "tokens_with_Qwen_chat_template": 4348
+    },
+    {
+      "source_line": 44,
+      "tokens_with_Qwen_chat_template": 4181
+    },
+    {
+      "source_line": 45,
+      "tokens_with_Qwen_chat_template": 4032
+    },
+    {
+      "source_line": 46,
+      "tokens_with_Qwen_chat_template": 4363
+    },
+    {
+      "source_line": 47,
+      "tokens_with_Qwen_chat_template": 4533
+    },
+    {
+      "source_line": 48,
+      "tokens_with_Qwen_chat_template": 4363
+    },
+    {
+      "source_line": 49,
+      "tokens_with_Qwen_chat_template": 4360
+    },
+    {
+      "source_line": 50,
+      "tokens_with_Qwen_chat_template": 4359
+    },
+    {
+      "source_line": 51,
+      "tokens_with_Qwen_chat_template": 4382
+    },
+    {
+      "source_line": 52,
+      "tokens_with_Qwen_chat_template": 4505
+    },
+    {
+      "source_line": 53,
+      "tokens_with_Qwen_chat_template": 4540
+    },
+    {
+      "source_line": 54,
+      "tokens_with_Qwen_chat_template": 4360
+    },
+    {
+      "source_line": 55,
+      "tokens_with_Qwen_chat_template": 4530
+    },
+    {
+      "source_line": 56,
+      "tokens_with_Qwen_chat_template": 4360
+    },
+    {
+      "source_line": 57,
+      "tokens_with_Qwen_chat_template": 4357
+    },
+    {
+      "source_line": 58,
+      "tokens_with_Qwen_chat_template": 4356
+    },
+    {
+      "source_line": 59,
+      "tokens_with_Qwen_chat_template": 4379
+    },
+    {
+      "source_line": 60,
+      "tokens_with_Qwen_chat_template": 4502
+    },
+    {
+      "source_line": 61,
+      "tokens_with_Qwen_chat_template": 4537
+    },
+    {
+      "source_line": 62,
+      "tokens_with_Qwen_chat_template": 4363
+    },
+    {
+      "source_line": 63,
+      "tokens_with_Qwen_chat_template": 4533
+    },
+    {
+      "source_line": 64,
+      "tokens_with_Qwen_chat_template": 4363
+    },
+    {
+      "source_line": 65,
+      "tokens_with_Qwen_chat_template": 4360
+    },
+    {
+      "source_line": 66,
+      "tokens_with_Qwen_chat_template": 4359
+    },
+    {
+      "source_line": 67,
+      "tokens_with_Qwen_chat_template": 4382
+    },
+    {
+      "source_line": 68,
+      "tokens_with_Qwen_chat_template": 4505
+    },
+    {
+      "source_line": 69,
+      "tokens_with_Qwen_chat_template": 4540
+    },
+    {
+      "source_line": 70,
+      "tokens_with_Qwen_chat_template": 3932
+    },
+    {
+      "source_line": 71,
+      "tokens_with_Qwen_chat_template": 3933
+    },
+    {
+      "source_line": 72,
+      "tokens_with_Qwen_chat_template": 3933
+    },
+    {
+      "source_line": 73,
+      "tokens_with_Qwen_chat_template": 3844
+    },
+    {
+      "source_line": 74,
+      "tokens_with_Qwen_chat_template": 3845
+    },
+    {
+      "source_line": 75,
+      "tokens_with_Qwen_chat_template": 3845
+    },
+    {
+      "source_line": 76,
+      "tokens_with_Qwen_chat_template": 3824
+    },
+    {
+      "source_line": 77,
+      "tokens_with_Qwen_chat_template": 3825
+    },
+    {
+      "source_line": 78,
+      "tokens_with_Qwen_chat_template": 3827
+    },
+    {
+      "source_line": 79,
+      "tokens_with_Qwen_chat_template": 3863
+    },
+    {
+      "source_line": 80,
+      "tokens_with_Qwen_chat_template": 3864
+    },
+    {
+      "source_line": 81,
+      "tokens_with_Qwen_chat_template": 3864
+    },
+    {
+      "source_line": 82,
+      "tokens_with_Qwen_chat_template": 3462
+    },
+    {
+      "source_line": 83,
+      "tokens_with_Qwen_chat_template": 3462
+    },
+    {
+      "source_line": 84,
+      "tokens_with_Qwen_chat_template": 3462
+    },
+    {
+      "source_line": 85,
+      "tokens_with_Qwen_chat_template": 3574
+    },
+    {
+      "source_line": 86,
+      "tokens_with_Qwen_chat_template": 3574
+    },
+    {
+      "source_line": 87,
+      "tokens_with_Qwen_chat_template": 3574
+    },
+    {
+      "source_line": 88,
+      "tokens_with_Qwen_chat_template": 3461
+    },
+    {
+      "source_line": 89,
+      "tokens_with_Qwen_chat_template": 3461
+    },
+    {
+      "source_line": 90,
+      "tokens_with_Qwen_chat_template": 3461
+    },
+    {
+      "source_line": 91,
+      "tokens_with_Qwen_chat_template": 4593
+    },
+    {
+      "source_line": 92,
+      "tokens_with_Qwen_chat_template": 4593
+    },
+    {
+      "source_line": 93,
+      "tokens_with_Qwen_chat_template": 4593
+    },
+    {
+      "source_line": 94,
+      "tokens_with_Qwen_chat_template": 4592
+    },
+    {
+      "source_line": 95,
+      "tokens_with_Qwen_chat_template": 4592
+    },
+    {
+      "source_line": 96,
+      "tokens_with_Qwen_chat_template": 4592
+    },
+    {
+      "source_line": 97,
+      "tokens_with_Qwen_chat_template": 4593
+    },
+    {
+      "source_line": 98,
+      "tokens_with_Qwen_chat_template": 4593
+    },
+    {
+      "source_line": 99,
+      "tokens_with_Qwen_chat_template": 4593
+    },
+    {
+      "source_line": 100,
+      "tokens_with_Qwen_chat_template": 4342
+    },
+    {
+      "source_line": 101,
+      "tokens_with_Qwen_chat_template": 4364
+    },
+    {
+      "source_line": 102,
+      "tokens_with_Qwen_chat_template": 4341
+    },
+    {
+      "source_line": 103,
+      "tokens_with_Qwen_chat_template": 4363
+    },
+    {
+      "source_line": 104,
+      "tokens_with_Qwen_chat_template": 4342
+    },
+    {
+      "source_line": 105,
+      "tokens_with_Qwen_chat_template": 4364
+    },
+    {
+      "source_line": 106,
+      "tokens_with_Qwen_chat_template": 3988
+    },
+    {
+      "source_line": 107,
+      "tokens_with_Qwen_chat_template": 4002
+    },
+    {
+      "source_line": 108,
+      "tokens_with_Qwen_chat_template": 3937
+    },
+    {
+      "source_line": 109,
+      "tokens_with_Qwen_chat_template": 3699
+    },
+    {
+      "source_line": 110,
+      "tokens_with_Qwen_chat_template": 3743
+    },
+    {
+      "source_line": 111,
+      "tokens_with_Qwen_chat_template": 3744
+    },
+    {
+      "source_line": 112,
+      "tokens_with_Qwen_chat_template": 3541
+    },
+    {
+      "source_line": 113,
+      "tokens_with_Qwen_chat_template": 3681
+    },
+    {
+      "source_line": 114,
+      "tokens_with_Qwen_chat_template": 3528
+    },
+    {
+      "source_line": 115,
+      "tokens_with_Qwen_chat_template": 3734
+    },
+    {
+      "source_line": 116,
+      "tokens_with_Qwen_chat_template": 3800
+    },
+    {
+      "source_line": 117,
+      "tokens_with_Qwen_chat_template": 3741
+    },
+    {
+      "source_line": 118,
+      "tokens_with_Qwen_chat_template": 3609
+    },
+    {
+      "source_line": 119,
+      "tokens_with_Qwen_chat_template": 3604
+    },
+    {
+      "source_line": 120,
+      "tokens_with_Qwen_chat_template": 3464
+    },
+    {
+      "source_line": 121,
+      "tokens_with_Qwen_chat_template": 3617
+    },
+    {
+      "source_line": 122,
+      "tokens_with_Qwen_chat_template": 4339
+    },
+    {
+      "source_line": 123,
+      "tokens_with_Qwen_chat_template": 3713
+    },
+    {
+      "source_line": 124,
+      "tokens_with_Qwen_chat_template": 3531
+    },
+    {
+      "source_line": 125,
+      "tokens_with_Qwen_chat_template": 4405
+    },
+    {
+      "source_line": 126,
+      "tokens_with_Qwen_chat_template": 3619
+    },
+    {
+      "source_line": 127,
+      "tokens_with_Qwen_chat_template": 3871
+    },
+    {
+      "source_line": 128,
+      "tokens_with_Qwen_chat_template": 3880
+    },
+    {
+      "source_line": 129,
+      "tokens_with_Qwen_chat_template": 3841
+    },
+    {
+      "source_line": 130,
+      "tokens_with_Qwen_chat_template": 3535
+    },
+    {
+      "source_line": 131,
+      "tokens_with_Qwen_chat_template": 3557
+    },
+    {
+      "source_line": 132,
+      "tokens_with_Qwen_chat_template": 3562
+    },
+    {
+      "source_line": 133,
+      "tokens_with_Qwen_chat_template": 4600
+    },
+    {
+      "source_line": 134,
+      "tokens_with_Qwen_chat_template": 4997
+    },
+    {
+      "source_line": 135,
+      "tokens_with_Qwen_chat_template": 5406
+    },
+    {
+      "source_line": 136,
+      "tokens_with_Qwen_chat_template": 3518
+    },
+    {
+      "source_line": 137,
+      "tokens_with_Qwen_chat_template": 3525
+    },
+    {
+      "source_line": 138,
+      "tokens_with_Qwen_chat_template": 3494
+    },
+    {
+      "source_line": 139,
+      "tokens_with_Qwen_chat_template": 4240
+    },
+    {
+      "source_line": 140,
+      "tokens_with_Qwen_chat_template": 3519
+    },
+    {
+      "source_line": 141,
+      "tokens_with_Qwen_chat_template": 3593
+    },
+    {
+      "source_line": 142,
+      "tokens_with_Qwen_chat_template": 3514
+    },
+    {
+      "source_line": 143,
+      "tokens_with_Qwen_chat_template": 3521
+    },
+    {
+      "source_line": 144,
+      "tokens_with_Qwen_chat_template": 3532
+    },
+    {
+      "source_line": 145,
+      "tokens_with_Qwen_chat_template": 4018
+    },
+    {
+      "source_line": 146,
+      "tokens_with_Qwen_chat_template": 3577
+    },
+    {
+      "source_line": 147,
+      "tokens_with_Qwen_chat_template": 4261
+    },
+    {
+      "source_line": 148,
+      "tokens_with_Qwen_chat_template": 3576
+    },
+    {
+      "source_line": 149,
+      "tokens_with_Qwen_chat_template": 3612
+    },
+    {
+      "source_line": 150,
+      "tokens_with_Qwen_chat_template": 4301
+    }
+  ]
+}

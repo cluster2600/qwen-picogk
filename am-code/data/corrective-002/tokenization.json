@@ -1,0 +1,1766 @@
+{
+  "schema": "picogk.am.prompt-augmentation-tokenization@1",
+  "train_sha256": "9966a99f998f544fdfe3d9370f53e131e5ae31061b3e89ae196d3f34e56d6a65",
+  "tokenizer_json_sha256": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf",
+  "tokenizer_config_sha256": "dced901d401aa828f313a2baec70d0ce164653285812237b5285c7efd5b9e760",
+  "rows": 192,
+  "minimum_tokens": 838,
+  "median_tokens": 1192.5,
+  "maximum_tokens": 1625,
+  "total_tokens": 237549,
+  "maximum_assistant_content_tokens": 1067,
+  "max_seq_length": 6144,
+  "fits_without_truncation": true,
+  "every_response_single_complete_csharp_fence": true,
+  "every_response_normal_end_marker": true,
+  "weights_loaded": false,
+  "gpu_inference": false,
+  "tokenizer_method": "AutoTokenizer local only; Qwen chat template with no generation prompt, encode without additional special tokens.",
+  "per_style": {
+    "compact": {
+      "rows": 64,
+      "minimum_tokens": 838,
+      "maximum_tokens": 1465
+    },
+    "development_generic": {
+      "rows": 64,
+      "minimum_tokens": 1008,
+      "maximum_tokens": 1625
+    },
+    "serving_generic": {
+      "rows": 64,
+      "minimum_tokens": 957,
+      "maximum_tokens": 1574
+    }
+  },
+  "per_row": [
+    {
+      "line": 1,
+      "teacher_id": "compact-initialize-01",
+      "style": "compact",
+      "full_sequence_tokens": 932,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 2,
+      "teacher_id": "compact-initialize-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1092,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 3,
+      "teacher_id": "compact-initialize-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1041,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 4,
+      "teacher_id": "compact-initialize-02",
+      "style": "compact",
+      "full_sequence_tokens": 932,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 5,
+      "teacher_id": "compact-initialize-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1092,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 6,
+      "teacher_id": "compact-initialize-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1041,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 7,
+      "teacher_id": "compact-initialize-03",
+      "style": "compact",
+      "full_sequence_tokens": 932,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 8,
+      "teacher_id": "compact-initialize-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1092,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 9,
+      "teacher_id": "compact-initialize-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1041,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 10,
+      "teacher_id": "compact-initialize-04",
+      "style": "compact",
+      "full_sequence_tokens": 932,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 11,
+      "teacher_id": "compact-initialize-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1092,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 12,
+      "teacher_id": "compact-initialize-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1041,
+      "assistant_content_tokens": 563,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 13,
+      "teacher_id": "compact-offset-sign-01",
+      "style": "compact",
+      "full_sequence_tokens": 961,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 14,
+      "teacher_id": "compact-offset-sign-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1121,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 15,
+      "teacher_id": "compact-offset-sign-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1070,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 16,
+      "teacher_id": "compact-offset-sign-02",
+      "style": "compact",
+      "full_sequence_tokens": 961,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 17,
+      "teacher_id": "compact-offset-sign-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1121,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 18,
+      "teacher_id": "compact-offset-sign-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1070,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 19,
+      "teacher_id": "compact-offset-sign-03",
+      "style": "compact",
+      "full_sequence_tokens": 961,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 20,
+      "teacher_id": "compact-offset-sign-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1121,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 21,
+      "teacher_id": "compact-offset-sign-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1070,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 22,
+      "teacher_id": "compact-offset-sign-04",
+      "style": "compact",
+      "full_sequence_tokens": 961,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 23,
+      "teacher_id": "compact-offset-sign-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1121,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 24,
+      "teacher_id": "compact-offset-sign-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1070,
+      "assistant_content_tokens": 585,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 25,
+      "teacher_id": "compact-closing-01",
+      "style": "compact",
+      "full_sequence_tokens": 1095,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 26,
+      "teacher_id": "compact-closing-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1255,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 27,
+      "teacher_id": "compact-closing-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1204,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 28,
+      "teacher_id": "compact-closing-02",
+      "style": "compact",
+      "full_sequence_tokens": 1095,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 29,
+      "teacher_id": "compact-closing-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1255,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 30,
+      "teacher_id": "compact-closing-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1204,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 31,
+      "teacher_id": "compact-closing-03",
+      "style": "compact",
+      "full_sequence_tokens": 1095,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 32,
+      "teacher_id": "compact-closing-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1255,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 33,
+      "teacher_id": "compact-closing-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1204,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 34,
+      "teacher_id": "compact-closing-04",
+      "style": "compact",
+      "full_sequence_tokens": 1095,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 35,
+      "teacher_id": "compact-closing-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1255,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 36,
+      "teacher_id": "compact-closing-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1204,
+      "assistant_content_tokens": 705,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 37,
+      "teacher_id": "compact-shell-01",
+      "style": "compact",
+      "full_sequence_tokens": 1002,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 38,
+      "teacher_id": "compact-shell-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1162,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 39,
+      "teacher_id": "compact-shell-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1111,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 40,
+      "teacher_id": "compact-shell-02",
+      "style": "compact",
+      "full_sequence_tokens": 1002,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 41,
+      "teacher_id": "compact-shell-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1162,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 42,
+      "teacher_id": "compact-shell-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1111,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 43,
+      "teacher_id": "compact-shell-03",
+      "style": "compact",
+      "full_sequence_tokens": 1002,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 44,
+      "teacher_id": "compact-shell-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1162,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 45,
+      "teacher_id": "compact-shell-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1111,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 46,
+      "teacher_id": "compact-shell-04",
+      "style": "compact",
+      "full_sequence_tokens": 1002,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 47,
+      "teacher_id": "compact-shell-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1162,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 48,
+      "teacher_id": "compact-shell-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1111,
+      "assistant_content_tokens": 624,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 49,
+      "teacher_id": "compact-vent-01",
+      "style": "compact",
+      "full_sequence_tokens": 1224,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 50,
+      "teacher_id": "compact-vent-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1384,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 51,
+      "teacher_id": "compact-vent-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1333,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 52,
+      "teacher_id": "compact-vent-02",
+      "style": "compact",
+      "full_sequence_tokens": 1252,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 53,
+      "teacher_id": "compact-vent-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1412,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 54,
+      "teacher_id": "compact-vent-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1361,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 55,
+      "teacher_id": "compact-vent-03",
+      "style": "compact",
+      "full_sequence_tokens": 1223,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 56,
+      "teacher_id": "compact-vent-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1383,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 57,
+      "teacher_id": "compact-vent-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1332,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 58,
+      "teacher_id": "compact-vent-04",
+      "style": "compact",
+      "full_sequence_tokens": 1251,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 59,
+      "teacher_id": "compact-vent-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1411,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 60,
+      "teacher_id": "compact-vent-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1360,
+      "assistant_content_tokens": 824,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 61,
+      "teacher_id": "compact-cone-roof-01",
+      "style": "compact",
+      "full_sequence_tokens": 1422,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 62,
+      "teacher_id": "compact-cone-roof-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1582,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 63,
+      "teacher_id": "compact-cone-roof-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1531,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 64,
+      "teacher_id": "compact-cone-roof-02",
+      "style": "compact",
+      "full_sequence_tokens": 1422,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 65,
+      "teacher_id": "compact-cone-roof-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1582,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 66,
+      "teacher_id": "compact-cone-roof-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1531,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 67,
+      "teacher_id": "compact-cone-roof-03",
+      "style": "compact",
+      "full_sequence_tokens": 1421,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 68,
+      "teacher_id": "compact-cone-roof-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1581,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 69,
+      "teacher_id": "compact-cone-roof-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1530,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 70,
+      "teacher_id": "compact-cone-roof-04",
+      "style": "compact",
+      "full_sequence_tokens": 1421,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 71,
+      "teacher_id": "compact-cone-roof-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1581,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 72,
+      "teacher_id": "compact-cone-roof-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1530,
+      "assistant_content_tokens": 1016,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 73,
+      "teacher_id": "compact-gyroid-01",
+      "style": "compact",
+      "full_sequence_tokens": 1403,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 74,
+      "teacher_id": "compact-gyroid-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1563,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 75,
+      "teacher_id": "compact-gyroid-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1512,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 76,
+      "teacher_id": "compact-gyroid-02",
+      "style": "compact",
+      "full_sequence_tokens": 1403,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 77,
+      "teacher_id": "compact-gyroid-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1563,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 78,
+      "teacher_id": "compact-gyroid-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1512,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 79,
+      "teacher_id": "compact-gyroid-03",
+      "style": "compact",
+      "full_sequence_tokens": 1417,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 80,
+      "teacher_id": "compact-gyroid-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1577,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 81,
+      "teacher_id": "compact-gyroid-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1526,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 82,
+      "teacher_id": "compact-gyroid-04",
+      "style": "compact",
+      "full_sequence_tokens": 1402,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 83,
+      "teacher_id": "compact-gyroid-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1562,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 84,
+      "teacher_id": "compact-gyroid-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1511,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 85,
+      "teacher_id": "compact-diamond-01",
+      "style": "compact",
+      "full_sequence_tokens": 1402,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 86,
+      "teacher_id": "compact-diamond-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1562,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 87,
+      "teacher_id": "compact-diamond-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1511,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 88,
+      "teacher_id": "compact-diamond-02",
+      "style": "compact",
+      "full_sequence_tokens": 1402,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 89,
+      "teacher_id": "compact-diamond-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1562,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 90,
+      "teacher_id": "compact-diamond-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1511,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 91,
+      "teacher_id": "compact-diamond-03",
+      "style": "compact",
+      "full_sequence_tokens": 1416,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 92,
+      "teacher_id": "compact-diamond-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1576,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 93,
+      "teacher_id": "compact-diamond-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1525,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 94,
+      "teacher_id": "compact-diamond-04",
+      "style": "compact",
+      "full_sequence_tokens": 1401,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 95,
+      "teacher_id": "compact-diamond-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1561,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 96,
+      "teacher_id": "compact-diamond-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1510,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 97,
+      "teacher_id": "compact-schwarz-p-01",
+      "style": "compact",
+      "full_sequence_tokens": 1404,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 98,
+      "teacher_id": "compact-schwarz-p-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1564,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 99,
+      "teacher_id": "compact-schwarz-p-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1513,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 100,
+      "teacher_id": "compact-schwarz-p-02",
+      "style": "compact",
+      "full_sequence_tokens": 1404,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 101,
+      "teacher_id": "compact-schwarz-p-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1564,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 102,
+      "teacher_id": "compact-schwarz-p-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1513,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 103,
+      "teacher_id": "compact-schwarz-p-03",
+      "style": "compact",
+      "full_sequence_tokens": 1418,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 104,
+      "teacher_id": "compact-schwarz-p-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1578,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 105,
+      "teacher_id": "compact-schwarz-p-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1527,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 106,
+      "teacher_id": "compact-schwarz-p-04",
+      "style": "compact",
+      "full_sequence_tokens": 1403,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 107,
+      "teacher_id": "compact-schwarz-p-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1563,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 108,
+      "teacher_id": "compact-schwarz-p-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1512,
+      "assistant_content_tokens": 1019,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 109,
+      "teacher_id": "compact-scan-normals-01",
+      "style": "compact",
+      "full_sequence_tokens": 1465,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 110,
+      "teacher_id": "compact-scan-normals-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1625,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 111,
+      "teacher_id": "compact-scan-normals-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1574,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 112,
+      "teacher_id": "compact-scan-normals-02",
+      "style": "compact",
+      "full_sequence_tokens": 1465,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 113,
+      "teacher_id": "compact-scan-normals-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1625,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 114,
+      "teacher_id": "compact-scan-normals-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1574,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 115,
+      "teacher_id": "compact-scan-normals-03",
+      "style": "compact",
+      "full_sequence_tokens": 1465,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 116,
+      "teacher_id": "compact-scan-normals-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1625,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 117,
+      "teacher_id": "compact-scan-normals-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1574,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 118,
+      "teacher_id": "compact-scan-normals-04",
+      "style": "compact",
+      "full_sequence_tokens": 1465,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 119,
+      "teacher_id": "compact-scan-normals-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1625,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 120,
+      "teacher_id": "compact-scan-normals-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1574,
+      "assistant_content_tokens": 1067,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 121,
+      "teacher_id": "compact-debug-api-01",
+      "style": "compact",
+      "full_sequence_tokens": 1021,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 122,
+      "teacher_id": "compact-debug-api-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1181,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 123,
+      "teacher_id": "compact-debug-api-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1130,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 124,
+      "teacher_id": "compact-debug-api-02",
+      "style": "compact",
+      "full_sequence_tokens": 1021,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 125,
+      "teacher_id": "compact-debug-api-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1181,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 126,
+      "teacher_id": "compact-debug-api-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1130,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 127,
+      "teacher_id": "compact-debug-api-03",
+      "style": "compact",
+      "full_sequence_tokens": 1021,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 128,
+      "teacher_id": "compact-debug-api-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1181,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 129,
+      "teacher_id": "compact-debug-api-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1130,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 130,
+      "teacher_id": "compact-debug-api-04",
+      "style": "compact",
+      "full_sequence_tokens": 1021,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 131,
+      "teacher_id": "compact-debug-api-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1181,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 132,
+      "teacher_id": "compact-debug-api-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1130,
+      "assistant_content_tokens": 626,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 133,
+      "teacher_id": "compact-missing-interfaces-01",
+      "style": "compact",
+      "full_sequence_tokens": 838,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 134,
+      "teacher_id": "compact-missing-interfaces-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1008,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 135,
+      "teacher_id": "compact-missing-interfaces-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 957,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 136,
+      "teacher_id": "compact-missing-interfaces-02",
+      "style": "compact",
+      "full_sequence_tokens": 838,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 137,
+      "teacher_id": "compact-missing-interfaces-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1008,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 138,
+      "teacher_id": "compact-missing-interfaces-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 957,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 139,
+      "teacher_id": "compact-missing-interfaces-03",
+      "style": "compact",
+      "full_sequence_tokens": 838,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 140,
+      "teacher_id": "compact-missing-interfaces-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1008,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 141,
+      "teacher_id": "compact-missing-interfaces-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 957,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 142,
+      "teacher_id": "compact-missing-interfaces-04",
+      "style": "compact",
+      "full_sequence_tokens": 838,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 143,
+      "teacher_id": "compact-missing-interfaces-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1008,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 144,
+      "teacher_id": "compact-missing-interfaces-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 957,
+      "assistant_content_tokens": 451,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 145,
+      "teacher_id": "compact-stl-roundtrip-01",
+      "style": "compact",
+      "full_sequence_tokens": 948,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 146,
+      "teacher_id": "compact-stl-roundtrip-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1108,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 147,
+      "teacher_id": "compact-stl-roundtrip-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1057,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 148,
+      "teacher_id": "compact-stl-roundtrip-02",
+      "style": "compact",
+      "full_sequence_tokens": 976,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 149,
+      "teacher_id": "compact-stl-roundtrip-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1136,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 150,
+      "teacher_id": "compact-stl-roundtrip-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1085,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 151,
+      "teacher_id": "compact-stl-roundtrip-03",
+      "style": "compact",
+      "full_sequence_tokens": 947,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 152,
+      "teacher_id": "compact-stl-roundtrip-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1107,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 153,
+      "teacher_id": "compact-stl-roundtrip-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1056,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 154,
+      "teacher_id": "compact-stl-roundtrip-04",
+      "style": "compact",
+      "full_sequence_tokens": 975,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 155,
+      "teacher_id": "compact-stl-roundtrip-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1135,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 156,
+      "teacher_id": "compact-stl-roundtrip-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1084,
+      "assistant_content_tokens": 571,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 157,
+      "teacher_id": "compact-stl-skin-vent-01",
+      "style": "compact",
+      "full_sequence_tokens": 1088,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 158,
+      "teacher_id": "compact-stl-skin-vent-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1248,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 159,
+      "teacher_id": "compact-stl-skin-vent-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1197,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 160,
+      "teacher_id": "compact-stl-skin-vent-02",
+      "style": "compact",
+      "full_sequence_tokens": 1088,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 161,
+      "teacher_id": "compact-stl-skin-vent-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1248,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 162,
+      "teacher_id": "compact-stl-skin-vent-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1197,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 163,
+      "teacher_id": "compact-stl-skin-vent-03",
+      "style": "compact",
+      "full_sequence_tokens": 1088,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 164,
+      "teacher_id": "compact-stl-skin-vent-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1248,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 165,
+      "teacher_id": "compact-stl-skin-vent-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1197,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 166,
+      "teacher_id": "compact-stl-skin-vent-04",
+      "style": "compact",
+      "full_sequence_tokens": 1088,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 167,
+      "teacher_id": "compact-stl-skin-vent-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1248,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 168,
+      "teacher_id": "compact-stl-skin-vent-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1197,
+      "assistant_content_tokens": 725,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 169,
+      "teacher_id": "compact-xyz-occupancy-01",
+      "style": "compact",
+      "full_sequence_tokens": 1188,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 170,
+      "teacher_id": "compact-xyz-occupancy-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1348,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 171,
+      "teacher_id": "compact-xyz-occupancy-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1297,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 172,
+      "teacher_id": "compact-xyz-occupancy-02",
+      "style": "compact",
+      "full_sequence_tokens": 1188,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 173,
+      "teacher_id": "compact-xyz-occupancy-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1348,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 174,
+      "teacher_id": "compact-xyz-occupancy-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1297,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 175,
+      "teacher_id": "compact-xyz-occupancy-03",
+      "style": "compact",
+      "full_sequence_tokens": 1188,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 176,
+      "teacher_id": "compact-xyz-occupancy-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1348,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 177,
+      "teacher_id": "compact-xyz-occupancy-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1297,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 178,
+      "teacher_id": "compact-xyz-occupancy-04",
+      "style": "compact",
+      "full_sequence_tokens": 1188,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 179,
+      "teacher_id": "compact-xyz-occupancy-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1348,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 180,
+      "teacher_id": "compact-xyz-occupancy-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1297,
+      "assistant_content_tokens": 820,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 181,
+      "teacher_id": "compact-signed-range-refusal-01",
+      "style": "compact",
+      "full_sequence_tokens": 916,
+      "assistant_content_tokens": 537,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 182,
+      "teacher_id": "compact-signed-range-refusal-01",
+      "style": "development_generic",
+      "full_sequence_tokens": 1086,
+      "assistant_content_tokens": 537,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 183,
+      "teacher_id": "compact-signed-range-refusal-01",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1035,
+      "assistant_content_tokens": 537,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 184,
+      "teacher_id": "compact-signed-range-refusal-02",
+      "style": "compact",
+      "full_sequence_tokens": 922,
+      "assistant_content_tokens": 540,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 185,
+      "teacher_id": "compact-signed-range-refusal-02",
+      "style": "development_generic",
+      "full_sequence_tokens": 1092,
+      "assistant_content_tokens": 540,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 186,
+      "teacher_id": "compact-signed-range-refusal-02",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1041,
+      "assistant_content_tokens": 540,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 187,
+      "teacher_id": "compact-signed-range-refusal-03",
+      "style": "compact",
+      "full_sequence_tokens": 918,
+      "assistant_content_tokens": 538,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 188,
+      "teacher_id": "compact-signed-range-refusal-03",
+      "style": "development_generic",
+      "full_sequence_tokens": 1088,
+      "assistant_content_tokens": 538,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 189,
+      "teacher_id": "compact-signed-range-refusal-03",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1037,
+      "assistant_content_tokens": 538,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 190,
+      "teacher_id": "compact-signed-range-refusal-04",
+      "style": "compact",
+      "full_sequence_tokens": 918,
+      "assistant_content_tokens": 538,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 191,
+      "teacher_id": "compact-signed-range-refusal-04",
+      "style": "development_generic",
+      "full_sequence_tokens": 1088,
+      "assistant_content_tokens": 538,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    },
+    {
+      "line": 192,
+      "teacher_id": "compact-signed-range-refusal-04",
+      "style": "serving_generic",
+      "full_sequence_tokens": 1037,
+      "assistant_content_tokens": 538,
+      "normal_end_marker": true,
+      "exact_one_complete_csharp_fence": true
+    }
+  ]
+}

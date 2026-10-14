@@ -12,3 +12,12 @@ scan-native/bin/
 scan-native/obj/
 envelope-native/bin/
 envelope-native/obj/
+/model/
+am-code/model7b/
+am-code/runs/
+am-code/work/
+am-code/qualified-profile.json
+am-code/**/reference-validation/
+am-code/**/inspector-build/
+am-code/**/bin/
+am-code/**/obj/

@@ -1,0 +1,1 @@
+{"required_measurements": ["datum_height_mm", "bolt_pitch_x_mm", "register_radius_mm"], "measurements": {"datum_height_mm": 2.14, "bolt_pitch_x_mm": null}}

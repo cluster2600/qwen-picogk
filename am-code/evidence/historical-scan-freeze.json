@@ -1,0 +1,34 @@
+{
+  "schema": "qwen.picogk.am.scan-freeze@1",
+  "registered_at_utc": "2026-10-14T13:52:18.633876+00:00",
+  "development_only": true,
+  "files": {
+    "development.json": "b6391901ee32eff8dcebaf87239278743214cc604000c5b39dfd14dd27461baf",
+    "author.py": "f272e2e16148f0ffa97011f6538aa31e199537fb41c0d39d6e948df339da20cf",
+    "evaluate.py": "e74790f0acabb39ff8bb62dd54ed265a9050c00c52ef40a80d59d67a6a24705c",
+    "inputs/sparse.xyz": "dbcee01f82bfadbd895d4e8fdbdb90846bce4942ca007cdd6f6f68f812e8e104",
+    "inputs/alternate-box.stl": "a12d739b7f2f58a4b2bc2b2ffc69d9e44d8152b1fa64c1a68cd69d90045ff77a",
+    "inputs/malformed-unoriented.xyz": "5e06da9f963745f03db9fe2cd77b2bce9a188779f4d0e6cfbd4fada868f42e49",
+    "inputs/sparse-empty.xyz": "de5c33886d5b9deb48c19fd457de094353ac2b70008ae37ed4090840e1e65273",
+    "inputs/alternate-sparse.xyz": "7bf238f4754bddff30190d82196145b51c285837998108708eff56542d9a3356",
+    "inputs/sparse-column-count.xyz": "7bc7c818ca71381cdef845cec7014cdd901cd679d8a216e02a96f78fc570d99c",
+    "inputs/sparse-nonfinite.xyz": "917b1389aa8560d9097ce86a2a146787b44c8f777974d568c5bc2e834d72aeda",
+    "inputs/translated-box.stl": "a3c3b709abae9b2e790ba1db5eb991da3327ca12493fa9182c2c0beb67a7c420",
+    "references/development-e2e-xyz-occupancy.cs": "0560f2d51f099d244e304a3ba76a1abbd3b5024aca4edd5dce4a1ece8ff90900",
+    "references/development-e2e-stl-roundtrip.cs": "e6780637ed722f109c65aba42d1f01ad3e760bd0a055947010ad62740d9eff78",
+    "references/development-e2e-signed-range-refusal.txt": "5c79c368561ce5b01916570a7c188c2410c472713506023f5cf5b166832eccf6",
+    "references/development-e2e-signed-range-refusal.cs": "876fe02e8b5a0d0ddbc4de93de686c1b84b81f667627fa9e9413dc9be8327637",
+    "references/development-e2e-stl-roundtrip.txt": "de7cc7419679ca0c093c2364740a633ba97d5d431c4e48a8d438c9f6f0f234b9",
+    "references/development-e2e-stl-skin-vent.txt": "3eedfe6b9a18b474d25b49fd5cd40885eacd960d60b769e9424ce514a60499c6",
+    "references/development-e2e-stl-skin-vent.cs": "daa2d00af681a446fb9ee2a66ff7c3192ce1c25534cbc516af8a1a65201b17da",
+    "references/development-e2e-xyz-occupancy.txt": "b6fc5d88991a0a998de22b9cd7ed92c07777281b3ce09377af936c8b9f0a3431"
+  },
+  "retained_profiles_launchers_adapters": {
+    "retained-local/bin/qwen-picogk": "ed849f25553c85b621cf9222e8d9258ffd56cb673cd7d6bded06b39ac88cf66a",
+    "retained-local/bin/qwen-picogk-qualified": "f214b0b6d74e217f7925e5dd38ae82b0c78e4c807e55a360ca5cc688d4363695",
+    "runtime/qualified-20261014-r3/qualified-profile.json": "114a026a37375dd238f1b6d1cc2ff783d85e72a96696df52dfbdafafc7a2d15c",
+    "runtime/qualified-20261014-r3/run-001/trained-adapter/adapters.safetensors": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
+    "runtime/library-courses-20261014-r6/run-001/selector-adapter/adapters.safetensors": "2929ca0490602ce3205b35a6e12b41a7682e98ee5ddc8f839788dcda7b0eebe2"
+  },
+  "revision_reason": "Pre-inference audit adds per-result generated C# source hash; task prompts, fixtures and geometry checks unchanged."
+}

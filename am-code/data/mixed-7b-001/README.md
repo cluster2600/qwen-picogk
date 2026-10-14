@@ -1,0 +1,3 @@
+This 342-row corpus is the byte-exact concatenation of original 150 messages and corrective-002's 192 prompt variants. It introduces no new teacher code. SHA-256 is 47309799be9d3f078118027a9bbc3a78e9c64b96e390dda197139967380fcc67. Actual 7B tokenizer and installed dataset-mask checks cover all 342 rows, with maximum 5416 full tokens and 5147 assistant tokens, below 6144 without truncation.
+
+Preparation receipts are frozen pre-training snapshots. Course 004 is a separate registered training run; its live weights/log are omitted from this publication snapshot. Native teacher validation and tokenizer checks do not qualify the trained model.

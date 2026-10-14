@@ -1,0 +1,47 @@
+{
+  "created_at_utc": "2026-10-14T15:55:49.258171+00:00",
+  "download_manifest_sha256": "e8684e5874274fd613e9927f8cc755841fa3c8ec3678f0141f01ca6446d3a5e4",
+  "generation_settings_changed": false,
+  "gpu_used": false,
+  "legacy_defaults_preserved": true,
+  "model_loaded": false,
+  "python": "runtime/venv/bin/python",
+  "real_final_tasks_read": false,
+  "schema": "picogk.am.optional-base-support-tests@1",
+  "source_sha256": {
+    "BASE_PROFILES.md": "5e963e0903c7fb8dc16a10e71e1427095a36c34ab1ec8008ac89222f0262ff83",
+    "base-profile-7b.json": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+    "base_runtime.py": "7e88e9b02d91499bc089abe4ffc0320f2f949f8641c786640cd73a251fdb6f07",
+    "final_qualification.py": "67bcf3e739c3dc0ee540137fbc93b134117b3d5f0dbd5f40de222bf20cf9e1fe",
+    "infer.py": "cd9eaa33502eb9cf9e9d3e6581be92dd79477dc64c1a1186a39271e6e88cc8fa",
+    "qualification.py": "cc8441df0f2f117690a1196bbfd9b58540ee07de84bb0f83c7bd791fd955d4f7",
+    "qwen-picogk-am": "0d7cc77d8e0c45b9a60ad00b84d4ab1ff611e06d7cbed206220398b61e6f66f2",
+    "test_base_runtime.py": "aacf8572bb0186c91f45ea5e45fd9dd76bfd763bca1f9dab5d592cdfc7eab6af",
+    "test_prompt_cli.py": "74d9238cebbc7604d1d8b5a01da296ae0d679873ba7fe1e46995595d26e1e72f",
+    "test_supplemental_corpus.py": "3a0c46197908d18a7f9e47d6aaa07db1f78a618a08fada362e3fc3afe96e9a42",
+    "train.py": "a2c0bf1c25fff30a89f129b92e27248ff20f94ceed8a00c36e92b4f26cc19335"
+  },
+  "status": "passed",
+  "tests": {
+    "final_qualification.py --self-check": {
+      "checks": 16,
+      "status": "passed"
+    },
+    "qualification.py --self-check": {
+      "checks": 31,
+      "status": "passed"
+    },
+    "test_base_runtime.py": {
+      "checks": 36,
+      "status": "passed"
+    },
+    "test_prompt_cli.py": {
+      "checks": 30,
+      "status": "passed"
+    },
+    "test_supplemental_corpus.py": {
+      "checks": 24,
+      "status": "passed"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+Import the supplied closed synthetic mesh in millimetres. Voxelisation and remeshing preserve its world coordinates with resolution uncertainty; they do not establish scan accuracy or manufacturing qualification.
+
+```csharp
+using System;
+using System.IO;
+using System.Numerics;
+using System.Globalization;
+using System.Text.Json;
+using System.Collections.Generic;
+using PicoGK;
+
+public static class Program
+{
+    public static void Main(string[] args)
+    {
+        if (args.Length != 2) throw new ArgumentException("input output-directory");
+        Directory.CreateDirectory(args[1]);
+        using Library lib = new(0.2f);
+        // The fixture is an independently checked, closed outward STL in millimetres.
+        using Mesh scan = Mesh.mshFromStlFile(args[0], Mesh.EStlUnit.MM, libSet: lib);
+        if (scan.nTriangleCount() == 0) throw new ArgumentException("empty STL");
+        using Voxels part = new(scan);
+        part.CalculateProperties(out float volume, out BBox3 bounds);
+        if (!float.IsFinite(volume) || volume <= 0) throw new ArgumentException("empty solid");
+        part.SaveToVdbFile(Path.Combine(args[1], "part.vdb"));
+        using Mesh raw = new(part);
+        using Mesh output = new(lib);
+        // Boolean zero-set coincidences can create exactly zero-area facets.
+        for (int i = 0; i < raw.nTriangleCount(); i++)
+        {
+            raw.GetTriangle(i, out Vector3 a, out Vector3 b, out Vector3 c);
+            double ux = (double)b.X-a.X, uy = (double)b.Y-a.Y, uz = (double)b.Z-a.Z;
+            double vx = (double)c.X-a.X, vy = (double)c.Y-a.Y, vz = (double)c.Z-a.Z;
+            double x = uy*vz-uz*vy, y = uz*vx-ux*vz, z = ux*vy-uy*vx;
+            if (x*x+y*y+z*z > 0) output.nAddTriangle(a,b,c);
+        }
+        output.SaveToStlFile(Path.Combine(args[1], "part.stl"), Mesh.EStlUnit.MM);
+        File.WriteAllText(Path.Combine(args[1], "report.json"), JsonSerializer.Serialize(new {
+            status = "geometric_candidate", qualification = "geometry_only",
+            manufacturing_authorized = false
+        }));
+    }
+}
+```

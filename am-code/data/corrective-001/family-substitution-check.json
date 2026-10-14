@@ -1,0 +1,494 @@
+{
+  "schema": "picogk.am.tpms-family-substitution-check@1",
+  "scope": "CPU reclassification of actual already validated same-parameter native teacher outputs; no new source, native run, model or GPU work.",
+  "validator_sha256": "ab10c0fdbf05406e6f3c53ef126514470929dda814c9212520df1eba98176768",
+  "native_report_sha256": "1939011370bdc831e7bbc857324212a25c6308831ca5ff080873e84a1727a280",
+  "cases_sha256": "8947c50c29ad00270e58d47b2fe5e1b8c438419f7b09bdaeb9c2326a78301ec9",
+  "tested_swaps": 24,
+  "rejected_swaps": 24,
+  "checks_all_passed": true,
+  "bound_probe_sha256": {
+    "native-review-002/compact-gyroid-01/probes.csv": "b33cdb7887604f371c5752812bc63cb64df9f27e0b198c97b777e4176888a309",
+    "native-review-002/compact-gyroid-01/probe-output/hits.json": "13fde8b3fa6d3b1b9b867c084c0dc847ccdb15c3a9394b4263082aa02db51b90",
+    "native-review-002/compact-gyroid-02/probes.csv": "33a9e3243dbf5f87e9d01cb2b4563c1184be7d211fa292bcab88c82f4ab78a3f",
+    "native-review-002/compact-gyroid-02/probe-output/hits.json": "13fde8b3fa6d3b1b9b867c084c0dc847ccdb15c3a9394b4263082aa02db51b90",
+    "native-review-002/compact-gyroid-03/probes.csv": "2881ce6fcbd5eaae02fd2961f6d128b799554a569f8905f65964f14ffd332866",
+    "native-review-002/compact-gyroid-03/probe-output/hits.json": "13fde8b3fa6d3b1b9b867c084c0dc847ccdb15c3a9394b4263082aa02db51b90",
+    "native-review-002/compact-gyroid-04/probes.csv": "f9833e493ea21ad3729673e9ed1ecacd568f3b3cfdee9024d10320e747ba386c",
+    "native-review-002/compact-gyroid-04/probe-output/hits.json": "13fde8b3fa6d3b1b9b867c084c0dc847ccdb15c3a9394b4263082aa02db51b90",
+    "native-review-002/compact-diamond-01/probes.csv": "b33cdb7887604f371c5752812bc63cb64df9f27e0b198c97b777e4176888a309",
+    "native-review-002/compact-diamond-01/probe-output/hits.json": "3255914a881f971e6f4dd6d92cc1a31d61ce4f3bf01ce92b6b41673458b77377",
+    "native-review-002/compact-diamond-02/probes.csv": "33a9e3243dbf5f87e9d01cb2b4563c1184be7d211fa292bcab88c82f4ab78a3f",
+    "native-review-002/compact-diamond-02/probe-output/hits.json": "3255914a881f971e6f4dd6d92cc1a31d61ce4f3bf01ce92b6b41673458b77377",
+    "native-review-002/compact-diamond-03/probes.csv": "2881ce6fcbd5eaae02fd2961f6d128b799554a569f8905f65964f14ffd332866",
+    "native-review-002/compact-diamond-03/probe-output/hits.json": "3255914a881f971e6f4dd6d92cc1a31d61ce4f3bf01ce92b6b41673458b77377",
+    "native-review-002/compact-diamond-04/probes.csv": "f9833e493ea21ad3729673e9ed1ecacd568f3b3cfdee9024d10320e747ba386c",
+    "native-review-002/compact-diamond-04/probe-output/hits.json": "3255914a881f971e6f4dd6d92cc1a31d61ce4f3bf01ce92b6b41673458b77377",
+    "native-review-002/compact-schwarz-p-01/probes.csv": "7e10193e78dc7245fe065973da505c7b6690afd22b5d4ad40fb31ea510cbafe7",
+    "native-review-002/compact-schwarz-p-01/probe-output/hits.json": "9ccac4204571a69d4d1624962109d742dd0e2daf64e15edd9bb91296d21ffe21",
+    "native-review-002/compact-schwarz-p-02/probes.csv": "2701f54ced26c223b4a61714ff994a4260e252a9f930fd5c2f824196e4cfe9c1",
+    "native-review-002/compact-schwarz-p-02/probe-output/hits.json": "9ccac4204571a69d4d1624962109d742dd0e2daf64e15edd9bb91296d21ffe21",
+    "native-review-002/compact-schwarz-p-03/probes.csv": "c8785ca4b97774c1c598f7622f52fd3250983c29e50c6545797a991b2d844e69",
+    "native-review-002/compact-schwarz-p-03/probe-output/hits.json": "9ccac4204571a69d4d1624962109d742dd0e2daf64e15edd9bb91296d21ffe21",
+    "native-review-002/compact-schwarz-p-04/probes.csv": "0d79e2dfb761d13e6abb867470d5dd44baec143e6d6308becbf041e268d8102f",
+    "native-review-002/compact-schwarz-p-04/probe-output/hits.json": "9ccac4204571a69d4d1624962109d742dd0e2daf64e15edd9bb91296d21ffe21"
+  },
+  "tests": [
+    {
+      "wanted_case": "compact-gyroid-01",
+      "substitute_case": "compact-diamond-01",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.2350000000000001,
+            2.2350000000000003,
+            1.835
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        },
+        {
+          "point": [
+            0.2350000000000001,
+            1.5175,
+            -0.3175
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-gyroid-01",
+      "substitute_case": "compact-schwarz-p-01",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.2350000000000001,
+            2.2350000000000003,
+            1.835
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-diamond-01",
+      "substitute_case": "compact-gyroid-01",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.2350000000000001,
+            2.2350000000000003,
+            1.835
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        },
+        {
+          "point": [
+            0.2350000000000001,
+            1.5175,
+            -0.3175
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-diamond-01",
+      "substitute_case": "compact-schwarz-p-01",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.2350000000000001,
+            1.5175,
+            -0.3175
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-schwarz-p-01",
+      "substitute_case": "compact-gyroid-01",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.2350000000000001,
+            2.2350000000000003,
+            1.835
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-schwarz-p-01",
+      "substitute_case": "compact-diamond-01",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.2350000000000001,
+            1.5175,
+            -0.3175
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-gyroid-02",
+      "substitute_case": "compact-diamond-02",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.7149999999999999,
+            0.31499999999999995,
+            2.315
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        },
+        {
+          "point": [
+            0.7149999999999999,
+            -0.4425,
+            0.04250000000000009
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-gyroid-02",
+      "substitute_case": "compact-schwarz-p-02",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.7149999999999999,
+            0.31499999999999995,
+            2.315
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-diamond-02",
+      "substitute_case": "compact-gyroid-02",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.7149999999999999,
+            0.31499999999999995,
+            2.315
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        },
+        {
+          "point": [
+            0.7149999999999999,
+            -0.4425,
+            0.04250000000000009
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-diamond-02",
+      "substitute_case": "compact-schwarz-p-02",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.7149999999999999,
+            -0.4425,
+            0.04250000000000009
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-schwarz-p-02",
+      "substitute_case": "compact-gyroid-02",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.7149999999999999,
+            0.31499999999999995,
+            2.315
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-schwarz-p-02",
+      "substitute_case": "compact-diamond-02",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            0.7149999999999999,
+            -0.4425,
+            0.04250000000000009
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-gyroid-03",
+      "substitute_case": "compact-diamond-03",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.4050000000000002,
+            2.005,
+            0.8049999999999999
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        },
+        {
+          "point": [
+            2.4050000000000002,
+            1.2025000000000001,
+            -1.6025
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-gyroid-03",
+      "substitute_case": "compact-schwarz-p-03",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.4050000000000002,
+            2.005,
+            0.8049999999999999
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-diamond-03",
+      "substitute_case": "compact-gyroid-03",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.4050000000000002,
+            2.005,
+            0.8049999999999999
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        },
+        {
+          "point": [
+            2.4050000000000002,
+            1.2025000000000001,
+            -1.6025
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-diamond-03",
+      "substitute_case": "compact-schwarz-p-03",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.4050000000000002,
+            1.2025000000000001,
+            -1.6025
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-schwarz-p-03",
+      "substitute_case": "compact-gyroid-03",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.4050000000000002,
+            2.005,
+            0.8049999999999999
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-schwarz-p-03",
+      "substitute_case": "compact-diamond-03",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.4050000000000002,
+            1.2025000000000001,
+            -1.6025
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-gyroid-04",
+      "substitute_case": "compact-diamond-04",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.915,
+            0.915,
+            2.115
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        },
+        {
+          "point": [
+            2.915,
+            0.057499999999999996,
+            -0.4575
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-gyroid-04",
+      "substitute_case": "compact-schwarz-p-04",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.915,
+            0.915,
+            2.115
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-diamond-04",
+      "substitute_case": "compact-gyroid-04",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.915,
+            0.915,
+            2.115
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        },
+        {
+          "point": [
+            2.915,
+            0.057499999999999996,
+            -0.4575
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-diamond-04",
+      "substitute_case": "compact-schwarz-p-04",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.915,
+            0.057499999999999996,
+            -0.4575
+          ],
+          "wanted_inside": true,
+          "substituted_inside": false
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-schwarz-p-04",
+      "substitute_case": "compact-gyroid-04",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.915,
+            0.915,
+            2.115
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    },
+    {
+      "wanted_case": "compact-schwarz-p-04",
+      "substitute_case": "compact-diamond-04",
+      "wrong_family_rejected": true,
+      "mismatching_independent_probes": [
+        {
+          "point": [
+            2.915,
+            0.057499999999999996,
+            -0.4575
+          ],
+          "wanted_inside": false,
+          "substituted_inside": true
+        }
+      ]
+    }
+  ]
+}

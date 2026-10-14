@@ -1,0 +1,2327 @@
+{
+  "schema": "picogk_am_template_audit@1",
+  "source_dataset_sha256": "ed3247fb4c8ecacc013eb95f16fb6ac6d822680e40d32ae95cafb130893108d7",
+  "tokenizer_sha256": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf",
+  "method": "Tokenize shared HEADER fragments and exact SCREEN separately; namespace and load-mode placeholders are fixed for counting, fragment boundaries can differ by a few tokens. Normalize namespace only for exact nonblank-code-line overlap.",
+  "all_150_shared_header_and_screen_estimated_tokens": 2625,
+  "shared_screen_tokens": 2064,
+  "median_common_infrastructure_share_of_code": 0.76054,
+  "median_common_infrastructure_share_of_text": 0.65437,
+  "median_nearest_exact_line_jaccard": 0.9327650000000001,
+  "total_text_tokens": 600914,
+  "maximum_text_tokens": 5395,
+  "categories": {
+    "scan": {
+      "count": 45,
+      "load_modes": {
+        "splats": 11,
+        "mesh": 15,
+        "oriented": 16,
+        "range": 3
+      },
+      "median_text_tokens": 4040,
+      "median_code_tokens": 3466,
+      "median_common_infrastructure_share_of_code": 0.75736
+    },
+    "infill": {
+      "count": 60,
+      "load_modes": {
+        "mesh": 60
+      },
+      "median_text_tokens": 4349.0,
+      "median_code_tokens": 3830.0,
+      "median_common_infrastructure_share_of_code": 0.68538
+    },
+    "dfam": {
+      "count": 30,
+      "load_modes": {
+        "mesh": 27,
+        "oriented": 3
+      },
+      "median_text_tokens": 3726.5,
+      "median_code_tokens": 3231.0,
+      "median_common_infrastructure_share_of_code": 0.81245
+    },
+    "debug": {
+      "count": 15,
+      "load_modes": {
+        "mesh": 11,
+        "oriented": 3,
+        "splats": 1
+      },
+      "median_text_tokens": 3565,
+      "median_code_tokens": 2981,
+      "median_common_infrastructure_share_of_code": 0.88058
+    }
+  },
+  "ordering": {
+    "original_train_byte_order_preserved": true,
+    "original_order": "45 scan,60 infill,30 DfAM,15 debug",
+    "recommended": "Use seeded shuffled minibatches in MLX. Optional supplied indices mix exact proportions in blocks of 10; do not use ordering for a train/test split.",
+    "optional_stratified_index_seed": 14,
+    "optional_stratified_source_line_order": [
+      35,
+      150,
+      107,
+      45,
+      65,
+      68,
+      14,
+      125,
+      93,
+      73,
+      142,
+      75,
+      66,
+      126,
+      36,
+      71,
+      55,
+      27,
+      116,
+      38,
+      115,
+      135,
+      15,
+      23,
+      3,
+      56,
+      146,
+      79,
+      102,
+      47,
+      60,
+      88,
+      113,
+      50,
+      137,
+      41,
+      13,
+      10,
+      81,
+      112,
+      70,
+      1,
+      2,
+      48,
+      129,
+      32,
+      143,
+      122,
+      61,
+      72,
+      147,
+      6,
+      44,
+      130,
+      109,
+      24,
+      82,
+      95,
+      67,
+      80,
+      104,
+      46,
+      94,
+      131,
+      111,
+      39,
+      97,
+      37,
+      138,
+      22,
+      31,
+      49,
+      132,
+      54,
+      51,
+      21,
+      28,
+      141,
+      76,
+      133,
+      8,
+      92,
+      99,
+      62,
+      123,
+      12,
+      117,
+      149,
+      90,
+      11,
+      127,
+      119,
+      59,
+      64,
+      144,
+      4,
+      91,
+      85,
+      43,
+      9,
+      118,
+      100,
+      74,
+      58,
+      33,
+      26,
+      145,
+      63,
+      25,
+      106,
+      77,
+      57,
+      20,
+      148,
+      105,
+      120,
+      29,
+      30,
+      78,
+      134,
+      98,
+      136,
+      69,
+      114,
+      19,
+      17,
+      5,
+      128,
+      86,
+      96,
+      53,
+      34,
+      16,
+      140,
+      87,
+      89,
+      18,
+      121,
+      110,
+      83,
+      108,
+      7,
+      124,
+      42,
+      40,
+      101,
+      84,
+      52,
+      103,
+      139
+    ]
+  },
+  "leakage_contract": {
+    "random_source_holdout_used": false,
+    "source_examples_all_training": true,
+    "validation": "Independent authored development tasks only; no source prompt or near-template random holdout",
+    "references": "Gold outputs independently compiled before validation loss use",
+    "retention": "Compare frozen 16 code +48 plan tasks against retained specialized adapters through their existing inference contracts; assess fresh C# adapter separately and do not replace defaults",
+    "qualification": "Learning repeated scaffold or reducing training loss does not establish unseen-family accuracy or physical qualification"
+  },
+  "rows": [
+    {
+      "id": 1,
+      "category": "scan",
+      "code_tokens": 3449,
+      "text_tokens": 4040,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.76109,
+      "common_infrastructure_share_of_text": 0.64975
+    },
+    {
+      "id": 2,
+      "category": "scan",
+      "code_tokens": 3441,
+      "text_tokens": 4013,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.76286,
+      "common_infrastructure_share_of_text": 0.65412
+    },
+    {
+      "id": 3,
+      "category": "scan",
+      "code_tokens": 3460,
+      "text_tokens": 4036,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.75867,
+      "common_infrastructure_share_of_text": 0.6504
+    },
+    {
+      "id": 4,
+      "category": "scan",
+      "code_tokens": 3013,
+      "text_tokens": 3575,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.87122,
+      "common_infrastructure_share_of_text": 0.73427
+    },
+    {
+      "id": 5,
+      "category": "scan",
+      "code_tokens": 3025,
+      "text_tokens": 3582,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.86777,
+      "common_infrastructure_share_of_text": 0.73283
+    },
+    {
+      "id": 6,
+      "category": "scan",
+      "code_tokens": 3038,
+      "text_tokens": 3597,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.86406,
+      "common_infrastructure_share_of_text": 0.72977
+    },
+    {
+      "id": 7,
+      "category": "scan",
+      "code_tokens": 3737,
+      "text_tokens": 4314,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.70244,
+      "common_infrastructure_share_of_text": 0.60848
+    },
+    {
+      "id": 8,
+      "category": "scan",
+      "code_tokens": 3656,
+      "text_tokens": 4251,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.718,
+      "common_infrastructure_share_of_text": 0.6175
+    },
+    {
+      "id": 9,
+      "category": "scan",
+      "code_tokens": 3681,
+      "text_tokens": 4264,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.71312,
+      "common_infrastructure_share_of_text": 0.61562
+    },
+    {
+      "id": 10,
+      "category": "scan",
+      "code_tokens": 2924,
+      "text_tokens": 3501,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.89774,
+      "common_infrastructure_share_of_text": 0.74979
+    },
+    {
+      "id": 11,
+      "category": "scan",
+      "code_tokens": 2900,
+      "text_tokens": 3465,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.90517,
+      "common_infrastructure_share_of_text": 0.75758
+    },
+    {
+      "id": 12,
+      "category": "scan",
+      "code_tokens": 2942,
+      "text_tokens": 3508,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.89225,
+      "common_infrastructure_share_of_text": 0.74829
+    },
+    {
+      "id": 13,
+      "category": "scan",
+      "code_tokens": 3666,
+      "text_tokens": 4253,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.71604,
+      "common_infrastructure_share_of_text": 0.61721
+    },
+    {
+      "id": 14,
+      "category": "scan",
+      "code_tokens": 3682,
+      "text_tokens": 4267,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.71293,
+      "common_infrastructure_share_of_text": 0.61519
+    },
+    {
+      "id": 15,
+      "category": "scan",
+      "code_tokens": 3635,
+      "text_tokens": 4209,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.72215,
+      "common_infrastructure_share_of_text": 0.62366
+    },
+    {
+      "id": 16,
+      "category": "scan",
+      "code_tokens": 3448,
+      "text_tokens": 4010,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.76131,
+      "common_infrastructure_share_of_text": 0.65461
+    },
+    {
+      "id": 17,
+      "category": "scan",
+      "code_tokens": 3454,
+      "text_tokens": 4007,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.75999,
+      "common_infrastructure_share_of_text": 0.6551
+    },
+    {
+      "id": 18,
+      "category": "scan",
+      "code_tokens": 3709,
+      "text_tokens": 4292,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.70774,
+      "common_infrastructure_share_of_text": 0.6116
+    },
+    {
+      "id": 19,
+      "category": "scan",
+      "code_tokens": 2908,
+      "text_tokens": 3526,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.90268,
+      "common_infrastructure_share_of_text": 0.74447
+    },
+    {
+      "id": 20,
+      "category": "scan",
+      "code_tokens": 3612,
+      "text_tokens": 4188,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.72674,
+      "common_infrastructure_share_of_text": 0.62679
+    },
+    {
+      "id": 21,
+      "category": "scan",
+      "code_tokens": 2920,
+      "text_tokens": 3486,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.89897,
+      "common_infrastructure_share_of_text": 0.75301
+    },
+    {
+      "id": 22,
+      "category": "scan",
+      "code_tokens": 3466,
+      "text_tokens": 4040,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.75736,
+      "common_infrastructure_share_of_text": 0.64975
+    },
+    {
+      "id": 23,
+      "category": "scan",
+      "code_tokens": 3455,
+      "text_tokens": 4021,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.75977,
+      "common_infrastructure_share_of_text": 0.65282
+    },
+    {
+      "id": 24,
+      "category": "scan",
+      "code_tokens": 3476,
+      "text_tokens": 4047,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.75518,
+      "common_infrastructure_share_of_text": 0.64863
+    },
+    {
+      "id": 25,
+      "category": "scan",
+      "code_tokens": 3640,
+      "text_tokens": 4238,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.72115,
+      "common_infrastructure_share_of_text": 0.6194
+    },
+    {
+      "id": 26,
+      "category": "scan",
+      "code_tokens": 3650,
+      "text_tokens": 4226,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.71918,
+      "common_infrastructure_share_of_text": 0.62115
+    },
+    {
+      "id": 27,
+      "category": "scan",
+      "code_tokens": 3699,
+      "text_tokens": 4318,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.70965,
+      "common_infrastructure_share_of_text": 0.60792
+    },
+    {
+      "id": 28,
+      "category": "scan",
+      "code_tokens": 3717,
+      "text_tokens": 4301,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.70621,
+      "common_infrastructure_share_of_text": 0.61032
+    },
+    {
+      "id": 29,
+      "category": "scan",
+      "code_tokens": 3699,
+      "text_tokens": 4294,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.70965,
+      "common_infrastructure_share_of_text": 0.61132
+    },
+    {
+      "id": 30,
+      "category": "scan",
+      "code_tokens": 3758,
+      "text_tokens": 4367,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.69851,
+      "common_infrastructure_share_of_text": 0.6011
+    },
+    {
+      "id": 31,
+      "category": "scan",
+      "code_tokens": 2947,
+      "text_tokens": 3517,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.89074,
+      "common_infrastructure_share_of_text": 0.74637
+    },
+    {
+      "id": 32,
+      "category": "scan",
+      "code_tokens": 2937,
+      "text_tokens": 3500,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.89377,
+      "common_infrastructure_share_of_text": 0.75
+    },
+    {
+      "id": 33,
+      "category": "scan",
+      "code_tokens": 2977,
+      "text_tokens": 3536,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.88176,
+      "common_infrastructure_share_of_text": 0.74236
+    },
+    {
+      "id": 34,
+      "category": "scan",
+      "code_tokens": 2908,
+      "text_tokens": 3477,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.90268,
+      "common_infrastructure_share_of_text": 0.75496
+    },
+    {
+      "id": 35,
+      "category": "scan",
+      "code_tokens": 2894,
+      "text_tokens": 3450,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.90705,
+      "common_infrastructure_share_of_text": 0.76087
+    },
+    {
+      "id": 36,
+      "category": "scan",
+      "code_tokens": 2889,
+      "text_tokens": 3443,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.90862,
+      "common_infrastructure_share_of_text": 0.76242
+    },
+    {
+      "id": 37,
+      "category": "scan",
+      "code_tokens": 3696,
+      "text_tokens": 4276,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.71023,
+      "common_infrastructure_share_of_text": 0.61389
+    },
+    {
+      "id": 38,
+      "category": "scan",
+      "code_tokens": 3712,
+      "text_tokens": 4285,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.70717,
+      "common_infrastructure_share_of_text": 0.6126
+    },
+    {
+      "id": 39,
+      "category": "scan",
+      "code_tokens": 3722,
+      "text_tokens": 4306,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.70527,
+      "common_infrastructure_share_of_text": 0.60961
+    },
+    {
+      "id": 40,
+      "category": "scan",
+      "code_tokens": 2989,
+      "text_tokens": 3558,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.87822,
+      "common_infrastructure_share_of_text": 0.73777
+    },
+    {
+      "id": 41,
+      "category": "scan",
+      "code_tokens": 3685,
+      "text_tokens": 4274,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.71235,
+      "common_infrastructure_share_of_text": 0.61418
+    },
+    {
+      "id": 42,
+      "category": "scan",
+      "code_tokens": 3496,
+      "text_tokens": 4063,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.75086,
+      "common_infrastructure_share_of_text": 0.64607
+    },
+    {
+      "id": 43,
+      "category": "scan",
+      "code_tokens": 3756,
+      "text_tokens": 4337,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.69888,
+      "common_infrastructure_share_of_text": 0.60526
+    },
+    {
+      "id": 44,
+      "category": "scan",
+      "code_tokens": 3596,
+      "text_tokens": 4170,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.72998,
+      "common_infrastructure_share_of_text": 0.6295
+    },
+    {
+      "id": 45,
+      "category": "scan",
+      "code_tokens": 3455,
+      "text_tokens": 4021,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.75977,
+      "common_infrastructure_share_of_text": 0.65282
+    },
+    {
+      "id": 46,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4352,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60317
+    },
+    {
+      "id": 47,
+      "category": "infill",
+      "code_tokens": 4007,
+      "text_tokens": 4522,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.6551,
+      "common_infrastructure_share_of_text": 0.5805
+    },
+    {
+      "id": 48,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4352,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60317
+    },
+    {
+      "id": 49,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4349,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60359
+    },
+    {
+      "id": 50,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4348,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60373
+    },
+    {
+      "id": 51,
+      "category": "infill",
+      "code_tokens": 3849,
+      "text_tokens": 4371,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.682,
+      "common_infrastructure_share_of_text": 0.60055
+    },
+    {
+      "id": 52,
+      "category": "infill",
+      "code_tokens": 3972,
+      "text_tokens": 4494,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.66088,
+      "common_infrastructure_share_of_text": 0.58411
+    },
+    {
+      "id": 53,
+      "category": "infill",
+      "code_tokens": 3988,
+      "text_tokens": 4529,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.65822,
+      "common_infrastructure_share_of_text": 0.5796
+    },
+    {
+      "id": 54,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4349,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60359
+    },
+    {
+      "id": 55,
+      "category": "infill",
+      "code_tokens": 4007,
+      "text_tokens": 4519,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.6551,
+      "common_infrastructure_share_of_text": 0.58088
+    },
+    {
+      "id": 56,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4349,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60359
+    },
+    {
+      "id": 57,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4346,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.604
+    },
+    {
+      "id": 58,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4345,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60414
+    },
+    {
+      "id": 59,
+      "category": "infill",
+      "code_tokens": 3849,
+      "text_tokens": 4368,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.682,
+      "common_infrastructure_share_of_text": 0.60096
+    },
+    {
+      "id": 60,
+      "category": "infill",
+      "code_tokens": 3972,
+      "text_tokens": 4491,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.66088,
+      "common_infrastructure_share_of_text": 0.5845
+    },
+    {
+      "id": 61,
+      "category": "infill",
+      "code_tokens": 3988,
+      "text_tokens": 4526,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.65822,
+      "common_infrastructure_share_of_text": 0.57998
+    },
+    {
+      "id": 62,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4352,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60317
+    },
+    {
+      "id": 63,
+      "category": "infill",
+      "code_tokens": 4007,
+      "text_tokens": 4522,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.6551,
+      "common_infrastructure_share_of_text": 0.5805
+    },
+    {
+      "id": 64,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4352,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60317
+    },
+    {
+      "id": 65,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4349,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60359
+    },
+    {
+      "id": 66,
+      "category": "infill",
+      "code_tokens": 3830,
+      "text_tokens": 4348,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68538,
+      "common_infrastructure_share_of_text": 0.60373
+    },
+    {
+      "id": 67,
+      "category": "infill",
+      "code_tokens": 3849,
+      "text_tokens": 4371,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.682,
+      "common_infrastructure_share_of_text": 0.60055
+    },
+    {
+      "id": 68,
+      "category": "infill",
+      "code_tokens": 3972,
+      "text_tokens": 4494,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.66088,
+      "common_infrastructure_share_of_text": 0.58411
+    },
+    {
+      "id": 69,
+      "category": "infill",
+      "code_tokens": 3988,
+      "text_tokens": 4529,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.65822,
+      "common_infrastructure_share_of_text": 0.5796
+    },
+    {
+      "id": 70,
+      "category": "infill",
+      "code_tokens": 3408,
+      "text_tokens": 3921,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.77025,
+      "common_infrastructure_share_of_text": 0.66947
+    },
+    {
+      "id": 71,
+      "category": "infill",
+      "code_tokens": 3408,
+      "text_tokens": 3922,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.77025,
+      "common_infrastructure_share_of_text": 0.6693
+    },
+    {
+      "id": 72,
+      "category": "infill",
+      "code_tokens": 3408,
+      "text_tokens": 3922,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.77025,
+      "common_infrastructure_share_of_text": 0.6693
+    },
+    {
+      "id": 73,
+      "category": "infill",
+      "code_tokens": 3322,
+      "text_tokens": 3833,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.79019,
+      "common_infrastructure_share_of_text": 0.68484
+    },
+    {
+      "id": 74,
+      "category": "infill",
+      "code_tokens": 3322,
+      "text_tokens": 3834,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.79019,
+      "common_infrastructure_share_of_text": 0.68466
+    },
+    {
+      "id": 75,
+      "category": "infill",
+      "code_tokens": 3322,
+      "text_tokens": 3834,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.79019,
+      "common_infrastructure_share_of_text": 0.68466
+    },
+    {
+      "id": 76,
+      "category": "infill",
+      "code_tokens": 3302,
+      "text_tokens": 3813,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.79497,
+      "common_infrastructure_share_of_text": 0.68843
+    },
+    {
+      "id": 77,
+      "category": "infill",
+      "code_tokens": 3302,
+      "text_tokens": 3814,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.79497,
+      "common_infrastructure_share_of_text": 0.68825
+    },
+    {
+      "id": 78,
+      "category": "infill",
+      "code_tokens": 3304,
+      "text_tokens": 3816,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.79449,
+      "common_infrastructure_share_of_text": 0.68789
+    },
+    {
+      "id": 79,
+      "category": "infill",
+      "code_tokens": 3339,
+      "text_tokens": 3852,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.78616,
+      "common_infrastructure_share_of_text": 0.68146
+    },
+    {
+      "id": 80,
+      "category": "infill",
+      "code_tokens": 3339,
+      "text_tokens": 3853,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.78616,
+      "common_infrastructure_share_of_text": 0.68129
+    },
+    {
+      "id": 81,
+      "category": "infill",
+      "code_tokens": 3339,
+      "text_tokens": 3853,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.78616,
+      "common_infrastructure_share_of_text": 0.68129
+    },
+    {
+      "id": 82,
+      "category": "infill",
+      "code_tokens": 2972,
+      "text_tokens": 3451,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.88324,
+      "common_infrastructure_share_of_text": 0.76065
+    },
+    {
+      "id": 83,
+      "category": "infill",
+      "code_tokens": 2972,
+      "text_tokens": 3451,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.88324,
+      "common_infrastructure_share_of_text": 0.76065
+    },
+    {
+      "id": 84,
+      "category": "infill",
+      "code_tokens": 2972,
+      "text_tokens": 3451,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.88324,
+      "common_infrastructure_share_of_text": 0.76065
+    },
+    {
+      "id": 85,
+      "category": "infill",
+      "code_tokens": 3083,
+      "text_tokens": 3563,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.85144,
+      "common_infrastructure_share_of_text": 0.73674
+    },
+    {
+      "id": 86,
+      "category": "infill",
+      "code_tokens": 3083,
+      "text_tokens": 3563,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.85144,
+      "common_infrastructure_share_of_text": 0.73674
+    },
+    {
+      "id": 87,
+      "category": "infill",
+      "code_tokens": 3083,
+      "text_tokens": 3563,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.85144,
+      "common_infrastructure_share_of_text": 0.73674
+    },
+    {
+      "id": 88,
+      "category": "infill",
+      "code_tokens": 2970,
+      "text_tokens": 3450,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.88384,
+      "common_infrastructure_share_of_text": 0.76087
+    },
+    {
+      "id": 89,
+      "category": "infill",
+      "code_tokens": 2970,
+      "text_tokens": 3450,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.88384,
+      "common_infrastructure_share_of_text": 0.76087
+    },
+    {
+      "id": 90,
+      "category": "infill",
+      "code_tokens": 2970,
+      "text_tokens": 3450,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.88384,
+      "common_infrastructure_share_of_text": 0.76087
+    },
+    {
+      "id": 91,
+      "category": "infill",
+      "code_tokens": 4088,
+      "text_tokens": 4582,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.64212,
+      "common_infrastructure_share_of_text": 0.57289
+    },
+    {
+      "id": 92,
+      "category": "infill",
+      "code_tokens": 4088,
+      "text_tokens": 4582,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.64212,
+      "common_infrastructure_share_of_text": 0.57289
+    },
+    {
+      "id": 93,
+      "category": "infill",
+      "code_tokens": 4088,
+      "text_tokens": 4582,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.64212,
+      "common_infrastructure_share_of_text": 0.57289
+    },
+    {
+      "id": 94,
+      "category": "infill",
+      "code_tokens": 4088,
+      "text_tokens": 4581,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.64212,
+      "common_infrastructure_share_of_text": 0.57302
+    },
+    {
+      "id": 95,
+      "category": "infill",
+      "code_tokens": 4088,
+      "text_tokens": 4581,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.64212,
+      "common_infrastructure_share_of_text": 0.57302
+    },
+    {
+      "id": 96,
+      "category": "infill",
+      "code_tokens": 4088,
+      "text_tokens": 4581,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.64212,
+      "common_infrastructure_share_of_text": 0.57302
+    },
+    {
+      "id": 97,
+      "category": "infill",
+      "code_tokens": 4088,
+      "text_tokens": 4582,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.64212,
+      "common_infrastructure_share_of_text": 0.57289
+    },
+    {
+      "id": 98,
+      "category": "infill",
+      "code_tokens": 4088,
+      "text_tokens": 4582,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.64212,
+      "common_infrastructure_share_of_text": 0.57289
+    },
+    {
+      "id": 99,
+      "category": "infill",
+      "code_tokens": 4088,
+      "text_tokens": 4582,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.64212,
+      "common_infrastructure_share_of_text": 0.57289
+    },
+    {
+      "id": 100,
+      "category": "infill",
+      "code_tokens": 3821,
+      "text_tokens": 4331,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68699,
+      "common_infrastructure_share_of_text": 0.6061
+    },
+    {
+      "id": 101,
+      "category": "infill",
+      "code_tokens": 3843,
+      "text_tokens": 4353,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68306,
+      "common_infrastructure_share_of_text": 0.60303
+    },
+    {
+      "id": 102,
+      "category": "infill",
+      "code_tokens": 3821,
+      "text_tokens": 4330,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68699,
+      "common_infrastructure_share_of_text": 0.60624
+    },
+    {
+      "id": 103,
+      "category": "infill",
+      "code_tokens": 3843,
+      "text_tokens": 4352,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68306,
+      "common_infrastructure_share_of_text": 0.60317
+    },
+    {
+      "id": 104,
+      "category": "infill",
+      "code_tokens": 3821,
+      "text_tokens": 4331,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68699,
+      "common_infrastructure_share_of_text": 0.6061
+    },
+    {
+      "id": 105,
+      "category": "infill",
+      "code_tokens": 3843,
+      "text_tokens": 4353,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68306,
+      "common_infrastructure_share_of_text": 0.60303
+    },
+    {
+      "id": 106,
+      "category": "dfam",
+      "code_tokens": 3387,
+      "text_tokens": 3977,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.77502,
+      "common_infrastructure_share_of_text": 0.66005
+    },
+    {
+      "id": 107,
+      "category": "dfam",
+      "code_tokens": 3454,
+      "text_tokens": 3991,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.75999,
+      "common_infrastructure_share_of_text": 0.65773
+    },
+    {
+      "id": 108,
+      "category": "dfam",
+      "code_tokens": 3385,
+      "text_tokens": 3926,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.77548,
+      "common_infrastructure_share_of_text": 0.66862
+    },
+    {
+      "id": 109,
+      "category": "dfam",
+      "code_tokens": 3161,
+      "text_tokens": 3688,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.83043,
+      "common_infrastructure_share_of_text": 0.71177
+    },
+    {
+      "id": 110,
+      "category": "dfam",
+      "code_tokens": 3239,
+      "text_tokens": 3732,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.81044,
+      "common_infrastructure_share_of_text": 0.70338
+    },
+    {
+      "id": 111,
+      "category": "dfam",
+      "code_tokens": 3223,
+      "text_tokens": 3733,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.81446,
+      "common_infrastructure_share_of_text": 0.70319
+    },
+    {
+      "id": 112,
+      "category": "dfam",
+      "code_tokens": 2978,
+      "text_tokens": 3530,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.88146,
+      "common_infrastructure_share_of_text": 0.74363
+    },
+    {
+      "id": 113,
+      "category": "dfam",
+      "code_tokens": 3172,
+      "text_tokens": 3670,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.82755,
+      "common_infrastructure_share_of_text": 0.71526
+    },
+    {
+      "id": 114,
+      "category": "dfam",
+      "code_tokens": 3021,
+      "text_tokens": 3517,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.86892,
+      "common_infrastructure_share_of_text": 0.74637
+    },
+    {
+      "id": 115,
+      "category": "dfam",
+      "code_tokens": 3245,
+      "text_tokens": 3723,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.80894,
+      "common_infrastructure_share_of_text": 0.70508
+    },
+    {
+      "id": 116,
+      "category": "dfam",
+      "code_tokens": 3295,
+      "text_tokens": 3789,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.79666,
+      "common_infrastructure_share_of_text": 0.69279
+    },
+    {
+      "id": 117,
+      "category": "dfam",
+      "code_tokens": 3253,
+      "text_tokens": 3730,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.80695,
+      "common_infrastructure_share_of_text": 0.70375
+    },
+    {
+      "id": 118,
+      "category": "dfam",
+      "code_tokens": 3037,
+      "text_tokens": 3598,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.86434,
+      "common_infrastructure_share_of_text": 0.72957
+    },
+    {
+      "id": 119,
+      "category": "dfam",
+      "code_tokens": 3085,
+      "text_tokens": 3593,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.85089,
+      "common_infrastructure_share_of_text": 0.73059
+    },
+    {
+      "id": 120,
+      "category": "dfam",
+      "code_tokens": 2948,
+      "text_tokens": 3453,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.89043,
+      "common_infrastructure_share_of_text": 0.76021
+    },
+    {
+      "id": 121,
+      "category": "dfam",
+      "code_tokens": 3101,
+      "text_tokens": 3606,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.8465,
+      "common_infrastructure_share_of_text": 0.72795
+    },
+    {
+      "id": 122,
+      "category": "dfam",
+      "code_tokens": 3795,
+      "text_tokens": 4328,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.6917,
+      "common_infrastructure_share_of_text": 0.60652
+    },
+    {
+      "id": 123,
+      "category": "dfam",
+      "code_tokens": 3186,
+      "text_tokens": 3702,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.82392,
+      "common_infrastructure_share_of_text": 0.70908
+    },
+    {
+      "id": 124,
+      "category": "dfam",
+      "code_tokens": 3010,
+      "text_tokens": 3520,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.87209,
+      "common_infrastructure_share_of_text": 0.74574
+    },
+    {
+      "id": 125,
+      "category": "dfam",
+      "code_tokens": 3839,
+      "text_tokens": 4394,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.68377,
+      "common_infrastructure_share_of_text": 0.59741
+    },
+    {
+      "id": 126,
+      "category": "dfam",
+      "code_tokens": 3104,
+      "text_tokens": 3608,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.84568,
+      "common_infrastructure_share_of_text": 0.72755
+    },
+    {
+      "id": 127,
+      "category": "dfam",
+      "code_tokens": 3329,
+      "text_tokens": 3860,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.78853,
+      "common_infrastructure_share_of_text": 0.68005
+    },
+    {
+      "id": 128,
+      "category": "dfam",
+      "code_tokens": 3366,
+      "text_tokens": 3869,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.77986,
+      "common_infrastructure_share_of_text": 0.67847
+    },
+    {
+      "id": 129,
+      "category": "dfam",
+      "code_tokens": 3328,
+      "text_tokens": 3830,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.78876,
+      "common_infrastructure_share_of_text": 0.68538
+    },
+    {
+      "id": 130,
+      "category": "dfam",
+      "code_tokens": 3001,
+      "text_tokens": 3524,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.87471,
+      "common_infrastructure_share_of_text": 0.74489
+    },
+    {
+      "id": 131,
+      "category": "dfam",
+      "code_tokens": 3009,
+      "text_tokens": 3546,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.87238,
+      "common_infrastructure_share_of_text": 0.74027
+    },
+    {
+      "id": 132,
+      "category": "dfam",
+      "code_tokens": 3040,
+      "text_tokens": 3551,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.86349,
+      "common_infrastructure_share_of_text": 0.73923
+    },
+    {
+      "id": 133,
+      "category": "dfam",
+      "code_tokens": 4030,
+      "text_tokens": 4589,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.65136,
+      "common_infrastructure_share_of_text": 0.57202
+    },
+    {
+      "id": 134,
+      "category": "dfam",
+      "code_tokens": 4421,
+      "text_tokens": 4986,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.59376,
+      "common_infrastructure_share_of_text": 0.52647
+    },
+    {
+      "id": 135,
+      "category": "dfam",
+      "code_tokens": 4808,
+      "text_tokens": 5395,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.54597,
+      "common_infrastructure_share_of_text": 0.48656
+    },
+    {
+      "id": 136,
+      "category": "debug",
+      "code_tokens": 2894,
+      "text_tokens": 3507,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.90705,
+      "common_infrastructure_share_of_text": 0.7485
+    },
+    {
+      "id": 137,
+      "category": "debug",
+      "code_tokens": 2922,
+      "text_tokens": 3514,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.89836,
+      "common_infrastructure_share_of_text": 0.74701
+    },
+    {
+      "id": 138,
+      "category": "debug",
+      "code_tokens": 2901,
+      "text_tokens": 3483,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.90486,
+      "common_infrastructure_share_of_text": 0.75366
+    },
+    {
+      "id": 139,
+      "category": "debug",
+      "code_tokens": 3627,
+      "text_tokens": 4229,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.72374,
+      "common_infrastructure_share_of_text": 0.62071
+    },
+    {
+      "id": 140,
+      "category": "debug",
+      "code_tokens": 2902,
+      "text_tokens": 3508,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.90455,
+      "common_infrastructure_share_of_text": 0.74829
+    },
+    {
+      "id": 141,
+      "category": "debug",
+      "code_tokens": 2998,
+      "text_tokens": 3582,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.87558,
+      "common_infrastructure_share_of_text": 0.73283
+    },
+    {
+      "id": 142,
+      "category": "debug",
+      "code_tokens": 2913,
+      "text_tokens": 3503,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.90113,
+      "common_infrastructure_share_of_text": 0.74936
+    },
+    {
+      "id": 143,
+      "category": "debug",
+      "code_tokens": 2915,
+      "text_tokens": 3510,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.90051,
+      "common_infrastructure_share_of_text": 0.74786
+    },
+    {
+      "id": 144,
+      "category": "debug",
+      "code_tokens": 2931,
+      "text_tokens": 3521,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.8956,
+      "common_infrastructure_share_of_text": 0.74553
+    },
+    {
+      "id": 145,
+      "category": "debug",
+      "code_tokens": 3432,
+      "text_tokens": 4007,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.76486,
+      "common_infrastructure_share_of_text": 0.6551
+    },
+    {
+      "id": 146,
+      "category": "debug",
+      "code_tokens": 2995,
+      "text_tokens": 3566,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.87646,
+      "common_infrastructure_share_of_text": 0.73612
+    },
+    {
+      "id": 147,
+      "category": "debug",
+      "code_tokens": 3641,
+      "text_tokens": 4250,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.72096,
+      "common_infrastructure_share_of_text": 0.61765
+    },
+    {
+      "id": 148,
+      "category": "debug",
+      "code_tokens": 2981,
+      "text_tokens": 3565,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.88058,
+      "common_infrastructure_share_of_text": 0.73633
+    },
+    {
+      "id": 149,
+      "category": "debug",
+      "code_tokens": 2997,
+      "text_tokens": 3601,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.87588,
+      "common_infrastructure_share_of_text": 0.72896
+    },
+    {
+      "id": 150,
+      "category": "debug",
+      "code_tokens": 3677,
+      "text_tokens": 4290,
+      "common_infrastructure_estimated_tokens": 2625,
+      "common_infrastructure_share_of_code": 0.7139,
+      "common_infrastructure_share_of_text": 0.61189
+    }
+  ],
+  "nearest_line_overlap": [
+    {
+      "id": 1,
+      "nearest_id": 3,
+      "exact_nonblank_line_jaccard": 0.93478
+    },
+    {
+      "id": 2,
+      "nearest_id": 16,
+      "exact_nonblank_line_jaccard": 0.94536
+    },
+    {
+      "id": 3,
+      "nearest_id": 1,
+      "exact_nonblank_line_jaccard": 0.93478
+    },
+    {
+      "id": 4,
+      "nearest_id": 146,
+      "exact_nonblank_line_jaccard": 0.91463
+    },
+    {
+      "id": 5,
+      "nearest_id": 6,
+      "exact_nonblank_line_jaccard": 0.89881
+    },
+    {
+      "id": 6,
+      "nearest_id": 146,
+      "exact_nonblank_line_jaccard": 0.91515
+    },
+    {
+      "id": 7,
+      "nearest_id": 43,
+      "exact_nonblank_line_jaccard": 0.90291
+    },
+    {
+      "id": 8,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.91
+    },
+    {
+      "id": 9,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.91
+    },
+    {
+      "id": 10,
+      "nearest_id": 11,
+      "exact_nonblank_line_jaccard": 0.91195
+    },
+    {
+      "id": 11,
+      "nearest_id": 10,
+      "exact_nonblank_line_jaccard": 0.91195
+    },
+    {
+      "id": 12,
+      "nearest_id": 35,
+      "exact_nonblank_line_jaccard": 0.9125
+    },
+    {
+      "id": 13,
+      "nearest_id": 26,
+      "exact_nonblank_line_jaccard": 0.915
+    },
+    {
+      "id": 14,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.90955
+    },
+    {
+      "id": 15,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.92857
+    },
+    {
+      "id": 16,
+      "nearest_id": 2,
+      "exact_nonblank_line_jaccard": 0.94536
+    },
+    {
+      "id": 17,
+      "nearest_id": 16,
+      "exact_nonblank_line_jaccard": 0.92973
+    },
+    {
+      "id": 18,
+      "nearest_id": 26,
+      "exact_nonblank_line_jaccard": 0.91045
+    },
+    {
+      "id": 19,
+      "nearest_id": 138,
+      "exact_nonblank_line_jaccard": 0.91824
+    },
+    {
+      "id": 20,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.92857
+    },
+    {
+      "id": 21,
+      "nearest_id": 35,
+      "exact_nonblank_line_jaccard": 0.90683
+    },
+    {
+      "id": 22,
+      "nearest_id": 145,
+      "exact_nonblank_line_jaccard": 0.91892
+    },
+    {
+      "id": 23,
+      "nearest_id": 145,
+      "exact_nonblank_line_jaccard": 0.93478
+    },
+    {
+      "id": 24,
+      "nearest_id": 145,
+      "exact_nonblank_line_jaccard": 0.91892
+    },
+    {
+      "id": 25,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.93846
+    },
+    {
+      "id": 26,
+      "nearest_id": 25,
+      "exact_nonblank_line_jaccard": 0.92893
+    },
+    {
+      "id": 27,
+      "nearest_id": 18,
+      "exact_nonblank_line_jaccard": 0.88889
+    },
+    {
+      "id": 28,
+      "nearest_id": 29,
+      "exact_nonblank_line_jaccard": 0.92537
+    },
+    {
+      "id": 29,
+      "nearest_id": 28,
+      "exact_nonblank_line_jaccard": 0.92537
+    },
+    {
+      "id": 30,
+      "nearest_id": 28,
+      "exact_nonblank_line_jaccard": 0.90686
+    },
+    {
+      "id": 31,
+      "nearest_id": 32,
+      "exact_nonblank_line_jaccard": 0.92453
+    },
+    {
+      "id": 32,
+      "nearest_id": 31,
+      "exact_nonblank_line_jaccard": 0.92453
+    },
+    {
+      "id": 33,
+      "nearest_id": 32,
+      "exact_nonblank_line_jaccard": 0.89634
+    },
+    {
+      "id": 34,
+      "nearest_id": 143,
+      "exact_nonblank_line_jaccard": 0.91195
+    },
+    {
+      "id": 35,
+      "nearest_id": 12,
+      "exact_nonblank_line_jaccard": 0.9125
+    },
+    {
+      "id": 36,
+      "nearest_id": 143,
+      "exact_nonblank_line_jaccard": 0.91195
+    },
+    {
+      "id": 37,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.91457
+    },
+    {
+      "id": 38,
+      "nearest_id": 39,
+      "exact_nonblank_line_jaccard": 0.90244
+    },
+    {
+      "id": 39,
+      "nearest_id": 26,
+      "exact_nonblank_line_jaccard": 0.91045
+    },
+    {
+      "id": 40,
+      "nearest_id": 36,
+      "exact_nonblank_line_jaccard": 0.87349
+    },
+    {
+      "id": 41,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.9005
+    },
+    {
+      "id": 42,
+      "nearest_id": 23,
+      "exact_nonblank_line_jaccard": 0.9
+    },
+    {
+      "id": 43,
+      "nearest_id": 7,
+      "exact_nonblank_line_jaccard": 0.90291
+    },
+    {
+      "id": 44,
+      "nearest_id": 145,
+      "exact_nonblank_line_jaccard": 0.89947
+    },
+    {
+      "id": 45,
+      "nearest_id": 16,
+      "exact_nonblank_line_jaccard": 0.92432
+    },
+    {
+      "id": 46,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 47,
+      "nearest_id": 63,
+      "exact_nonblank_line_jaccard": 0.98
+    },
+    {
+      "id": 48,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 49,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 50,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 51,
+      "nearest_id": 67,
+      "exact_nonblank_line_jaccard": 0.98969
+    },
+    {
+      "id": 52,
+      "nearest_id": 68,
+      "exact_nonblank_line_jaccard": 0.9899
+    },
+    {
+      "id": 53,
+      "nearest_id": 69,
+      "exact_nonblank_line_jaccard": 0.98995
+    },
+    {
+      "id": 54,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 55,
+      "nearest_id": 63,
+      "exact_nonblank_line_jaccard": 0.98
+    },
+    {
+      "id": 56,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 57,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 58,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 59,
+      "nearest_id": 67,
+      "exact_nonblank_line_jaccard": 0.98969
+    },
+    {
+      "id": 60,
+      "nearest_id": 68,
+      "exact_nonblank_line_jaccard": 0.9899
+    },
+    {
+      "id": 61,
+      "nearest_id": 69,
+      "exact_nonblank_line_jaccard": 0.98995
+    },
+    {
+      "id": 62,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 63,
+      "nearest_id": 55,
+      "exact_nonblank_line_jaccard": 0.98
+    },
+    {
+      "id": 64,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 65,
+      "nearest_id": 66,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 66,
+      "nearest_id": 65,
+      "exact_nonblank_line_jaccard": 0.98964
+    },
+    {
+      "id": 67,
+      "nearest_id": 59,
+      "exact_nonblank_line_jaccard": 0.98969
+    },
+    {
+      "id": 68,
+      "nearest_id": 60,
+      "exact_nonblank_line_jaccard": 0.9899
+    },
+    {
+      "id": 69,
+      "nearest_id": 61,
+      "exact_nonblank_line_jaccard": 0.98995
+    },
+    {
+      "id": 70,
+      "nearest_id": 72,
+      "exact_nonblank_line_jaccard": 0.97688
+    },
+    {
+      "id": 71,
+      "nearest_id": 72,
+      "exact_nonblank_line_jaccard": 0.97688
+    },
+    {
+      "id": 72,
+      "nearest_id": 71,
+      "exact_nonblank_line_jaccard": 0.97688
+    },
+    {
+      "id": 73,
+      "nearest_id": 75,
+      "exact_nonblank_line_jaccard": 0.97647
+    },
+    {
+      "id": 74,
+      "nearest_id": 75,
+      "exact_nonblank_line_jaccard": 0.97647
+    },
+    {
+      "id": 75,
+      "nearest_id": 74,
+      "exact_nonblank_line_jaccard": 0.97647
+    },
+    {
+      "id": 76,
+      "nearest_id": 78,
+      "exact_nonblank_line_jaccard": 0.96512
+    },
+    {
+      "id": 77,
+      "nearest_id": 78,
+      "exact_nonblank_line_jaccard": 0.96512
+    },
+    {
+      "id": 78,
+      "nearest_id": 77,
+      "exact_nonblank_line_jaccard": 0.96512
+    },
+    {
+      "id": 79,
+      "nearest_id": 81,
+      "exact_nonblank_line_jaccard": 0.96552
+    },
+    {
+      "id": 80,
+      "nearest_id": 81,
+      "exact_nonblank_line_jaccard": 0.96552
+    },
+    {
+      "id": 81,
+      "nearest_id": 80,
+      "exact_nonblank_line_jaccard": 0.96552
+    },
+    {
+      "id": 82,
+      "nearest_id": 84,
+      "exact_nonblank_line_jaccard": 0.97419
+    },
+    {
+      "id": 83,
+      "nearest_id": 84,
+      "exact_nonblank_line_jaccard": 0.97419
+    },
+    {
+      "id": 84,
+      "nearest_id": 83,
+      "exact_nonblank_line_jaccard": 0.97419
+    },
+    {
+      "id": 85,
+      "nearest_id": 87,
+      "exact_nonblank_line_jaccard": 0.98742
+    },
+    {
+      "id": 86,
+      "nearest_id": 87,
+      "exact_nonblank_line_jaccard": 0.98742
+    },
+    {
+      "id": 87,
+      "nearest_id": 86,
+      "exact_nonblank_line_jaccard": 0.98742
+    },
+    {
+      "id": 88,
+      "nearest_id": 90,
+      "exact_nonblank_line_jaccard": 0.97419
+    },
+    {
+      "id": 89,
+      "nearest_id": 90,
+      "exact_nonblank_line_jaccard": 0.97419
+    },
+    {
+      "id": 90,
+      "nearest_id": 89,
+      "exact_nonblank_line_jaccard": 0.97419
+    },
+    {
+      "id": 91,
+      "nearest_id": 97,
+      "exact_nonblank_line_jaccard": 0.99034
+    },
+    {
+      "id": 92,
+      "nearest_id": 98,
+      "exact_nonblank_line_jaccard": 0.99034
+    },
+    {
+      "id": 93,
+      "nearest_id": 99,
+      "exact_nonblank_line_jaccard": 0.99034
+    },
+    {
+      "id": 94,
+      "nearest_id": 97,
+      "exact_nonblank_line_jaccard": 0.99034
+    },
+    {
+      "id": 95,
+      "nearest_id": 98,
+      "exact_nonblank_line_jaccard": 0.99034
+    },
+    {
+      "id": 96,
+      "nearest_id": 99,
+      "exact_nonblank_line_jaccard": 0.99034
+    },
+    {
+      "id": 97,
+      "nearest_id": 99,
+      "exact_nonblank_line_jaccard": 0.99034
+    },
+    {
+      "id": 98,
+      "nearest_id": 99,
+      "exact_nonblank_line_jaccard": 0.99034
+    },
+    {
+      "id": 99,
+      "nearest_id": 98,
+      "exact_nonblank_line_jaccard": 0.99034
+    },
+    {
+      "id": 100,
+      "nearest_id": 104,
+      "exact_nonblank_line_jaccard": 0.98958
+    },
+    {
+      "id": 101,
+      "nearest_id": 105,
+      "exact_nonblank_line_jaccard": 0.98958
+    },
+    {
+      "id": 102,
+      "nearest_id": 104,
+      "exact_nonblank_line_jaccard": 0.98958
+    },
+    {
+      "id": 103,
+      "nearest_id": 105,
+      "exact_nonblank_line_jaccard": 0.98958
+    },
+    {
+      "id": 104,
+      "nearest_id": 105,
+      "exact_nonblank_line_jaccard": 0.98958
+    },
+    {
+      "id": 105,
+      "nearest_id": 104,
+      "exact_nonblank_line_jaccard": 0.98958
+    },
+    {
+      "id": 106,
+      "nearest_id": 108,
+      "exact_nonblank_line_jaccard": 0.90909
+    },
+    {
+      "id": 107,
+      "nearest_id": 108,
+      "exact_nonblank_line_jaccard": 0.86154
+    },
+    {
+      "id": 108,
+      "nearest_id": 106,
+      "exact_nonblank_line_jaccard": 0.90909
+    },
+    {
+      "id": 109,
+      "nearest_id": 87,
+      "exact_nonblank_line_jaccard": 0.91071
+    },
+    {
+      "id": 110,
+      "nearest_id": 87,
+      "exact_nonblank_line_jaccard": 0.9
+    },
+    {
+      "id": 111,
+      "nearest_id": 87,
+      "exact_nonblank_line_jaccard": 0.9
+    },
+    {
+      "id": 112,
+      "nearest_id": 114,
+      "exact_nonblank_line_jaccard": 0.91463
+    },
+    {
+      "id": 113,
+      "nearest_id": 87,
+      "exact_nonblank_line_jaccard": 0.90533
+    },
+    {
+      "id": 114,
+      "nearest_id": 112,
+      "exact_nonblank_line_jaccard": 0.91463
+    },
+    {
+      "id": 115,
+      "nearest_id": 116,
+      "exact_nonblank_line_jaccard": 0.91525
+    },
+    {
+      "id": 116,
+      "nearest_id": 115,
+      "exact_nonblank_line_jaccard": 0.91525
+    },
+    {
+      "id": 117,
+      "nearest_id": 116,
+      "exact_nonblank_line_jaccard": 0.89385
+    },
+    {
+      "id": 118,
+      "nearest_id": 121,
+      "exact_nonblank_line_jaccard": 0.93865
+    },
+    {
+      "id": 119,
+      "nearest_id": 118,
+      "exact_nonblank_line_jaccard": 0.92121
+    },
+    {
+      "id": 120,
+      "nearest_id": 114,
+      "exact_nonblank_line_jaccard": 0.90854
+    },
+    {
+      "id": 121,
+      "nearest_id": 118,
+      "exact_nonblank_line_jaccard": 0.93865
+    },
+    {
+      "id": 122,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.8835
+    },
+    {
+      "id": 123,
+      "nearest_id": 121,
+      "exact_nonblank_line_jaccard": 0.87791
+    },
+    {
+      "id": 124,
+      "nearest_id": 138,
+      "exact_nonblank_line_jaccard": 0.90184
+    },
+    {
+      "id": 125,
+      "nearest_id": 43,
+      "exact_nonblank_line_jaccard": 0.88995
+    },
+    {
+      "id": 126,
+      "nearest_id": 143,
+      "exact_nonblank_line_jaccard": 0.85799
+    },
+    {
+      "id": 127,
+      "nearest_id": 129,
+      "exact_nonblank_line_jaccard": 0.9375
+    },
+    {
+      "id": 128,
+      "nearest_id": 127,
+      "exact_nonblank_line_jaccard": 0.9322
+    },
+    {
+      "id": 129,
+      "nearest_id": 127,
+      "exact_nonblank_line_jaccard": 0.9375
+    },
+    {
+      "id": 130,
+      "nearest_id": 131,
+      "exact_nonblank_line_jaccard": 0.89634
+    },
+    {
+      "id": 131,
+      "nearest_id": 130,
+      "exact_nonblank_line_jaccard": 0.89634
+    },
+    {
+      "id": 132,
+      "nearest_id": 120,
+      "exact_nonblank_line_jaccard": 0.86982
+    },
+    {
+      "id": 133,
+      "nearest_id": 134,
+      "exact_nonblank_line_jaccard": 0.8625
+    },
+    {
+      "id": 134,
+      "nearest_id": 133,
+      "exact_nonblank_line_jaccard": 0.8625
+    },
+    {
+      "id": 135,
+      "nearest_id": 133,
+      "exact_nonblank_line_jaccard": 0.74906
+    },
+    {
+      "id": 136,
+      "nearest_id": 144,
+      "exact_nonblank_line_jaccard": 0.94904
+    },
+    {
+      "id": 137,
+      "nearest_id": 142,
+      "exact_nonblank_line_jaccard": 0.93038
+    },
+    {
+      "id": 138,
+      "nearest_id": 19,
+      "exact_nonblank_line_jaccard": 0.91824
+    },
+    {
+      "id": 139,
+      "nearest_id": 25,
+      "exact_nonblank_line_jaccard": 0.93846
+    },
+    {
+      "id": 140,
+      "nearest_id": 32,
+      "exact_nonblank_line_jaccard": 0.91195
+    },
+    {
+      "id": 141,
+      "nearest_id": 146,
+      "exact_nonblank_line_jaccard": 0.91411
+    },
+    {
+      "id": 142,
+      "nearest_id": 137,
+      "exact_nonblank_line_jaccard": 0.93038
+    },
+    {
+      "id": 143,
+      "nearest_id": 142,
+      "exact_nonblank_line_jaccard": 0.91195
+    },
+    {
+      "id": 144,
+      "nearest_id": 136,
+      "exact_nonblank_line_jaccard": 0.94904
+    },
+    {
+      "id": 145,
+      "nearest_id": 23,
+      "exact_nonblank_line_jaccard": 0.93478
+    },
+    {
+      "id": 146,
+      "nearest_id": 6,
+      "exact_nonblank_line_jaccard": 0.91515
+    },
+    {
+      "id": 147,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.93333
+    },
+    {
+      "id": 148,
+      "nearest_id": 149,
+      "exact_nonblank_line_jaccard": 0.925
+    },
+    {
+      "id": 149,
+      "nearest_id": 148,
+      "exact_nonblank_line_jaccard": 0.925
+    },
+    {
+      "id": 150,
+      "nearest_id": 139,
+      "exact_nonblank_line_jaccard": 0.91919
+    }
+  ]
+}

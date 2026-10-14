@@ -1,0 +1,53 @@
+using System;
+using System.IO;
+using System.Numerics;
+using System.Globalization;
+using System.Text.Json;
+using System.Collections.Generic;
+using PicoGK;
+
+public static class Program
+{
+    public static void Main(string[] args)
+    {
+        if (args.Length != 2) throw new ArgumentException("input output-directory");
+        Directory.CreateDirectory(args[1]);
+        using Library lib = new(0.2f);
+        // Import the supplied translated envelope; do not replace it with a centred box.
+        using Mesh scan = Mesh.mshFromStlFile(args[0], Mesh.EStlUnit.MM, libSet: lib);
+        using Voxels part = new(scan);
+        part.CalculateProperties(out float volume, out BBox3 bounds);
+        if (!float.IsFinite(volume) || volume <= 0) throw new ArgumentException("empty solid");
+        const float wall = 1.4f;
+        using Voxels cavity = new(part);
+        cavity.Offset(-wall); // Negative offset forms the inward cavity in millimetres.
+        cavity.CalculateProperties(out float cavityVolume, out BBox3 cavityBounds);
+        if (cavityVolume <= 0) throw new ArgumentException("skin consumes the chamber");
+        part.BoolSubtract(cavity);
+        float cx = (bounds.vecMin.X + bounds.vecMax.X) / 2;
+        float cy = (bounds.vecMin.Y + bounds.vecMax.Y) / 2;
+        using Lattice drain = new(lib);
+        // Flat-ended cutter crosses the bottom skin and overlaps the computed cavity.
+        drain.AddBeam(new Vector3(cx, cy, bounds.vecMin.Z - 0.8f), 1.0f,
+                      new Vector3(cx, cy, bounds.vecMin.Z + wall + 0.6f), 1.0f, false);
+        using Voxels vent = new(drain);
+        part.BoolSubtract(vent);
+        part.SaveToVdbFile(Path.Combine(args[1], "part.vdb"));
+        using Mesh raw = new(part);
+        using Mesh output = new(lib);
+        // Boolean zero-set coincidences can create exactly zero-area facets.
+        for (int i = 0; i < raw.nTriangleCount(); i++)
+        {
+            raw.GetTriangle(i, out Vector3 a, out Vector3 b, out Vector3 c);
+            double ux = (double)b.X-a.X, uy = (double)b.Y-a.Y, uz = (double)b.Z-a.Z;
+            double vx = (double)c.X-a.X, vy = (double)c.Y-a.Y, vz = (double)c.Z-a.Z;
+            double x = uy*vz-uz*vy, y = uz*vx-ux*vz, z = ux*vy-uy*vx;
+            if (x*x+y*y+z*z > 0) output.nAddTriangle(a,b,c);
+        }
+        output.SaveToStlFile(Path.Combine(args[1], "part.stl"), Mesh.EStlUnit.MM);
+        File.WriteAllText(Path.Combine(args[1], "report.json"), JsonSerializer.Serialize(new {
+            status = "geometric_candidate", qualification = "geometry_only",
+            manufacturing_authorized = false
+        }));
+    }
+}
