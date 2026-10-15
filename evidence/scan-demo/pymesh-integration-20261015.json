@@ -1,0 +1,153 @@
+{
+  "schema": "picogk.pymesh.scan-integration@1",
+  "runtime": {
+    "image_id": "sha256:ecf699d33793efe612b66c36b2a7d3954085af55999cc3f631748fcf1671eb4e",
+    "image": "pymesh/pymesh@sha256:ecf699d33793efe612b66c36b2a7d3954085af55999cc3f631748fcf1671eb4e",
+    "version": "0.3",
+    "python": "3.6.11",
+    "source": "https://github.com/PyMesh/PyMesh",
+    "redistribution_license": "not established; external image is not vendored or relicensed"
+  },
+  "sources_sha256": {
+    "scan_demo.py": "0f16922b53166a3d6128203ad75b650f2f5b0eb0fe65feebfe8e61b5dd440b08",
+    "scripts/scan_mesh.py": "6a9f88f00af1d83b4a3bbdfcae6fd13de0505626cce26f535f96a2598fda782f",
+    "scripts/scan_policy.py": "e1667ed881c297e163f49d6f57c1bd07b825537b23d4a956028daa222fc062d1",
+    "scan-native/Program.cs": "09502cb21da03a35e46c09c0d7cb10066035cdf03a28354a97b2d96e3f281eb1",
+    "scan-native/ScanDemo.csproj": "6a178802213298f554bd2a840bb37b14cbe35e7a8819aa45e27f70f3b80755d3",
+    "scan-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f",
+    "envelope-native/Program.cs": "d698fa7f232686a2ddfdd39208edeff3be563835a0d12882dd1bf8834066ef36",
+    "envelope-native/EnvelopeDemo.csproj": "6a178802213298f554bd2a840bb37b14cbe35e7a8819aa45e27f70f3b80755d3",
+    "envelope-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f",
+    "scripts/scan_pymesh.py": "98534c852b7cc51f6d46eda00ea683f7bfe4ff68d587958c07c145f6a772480a"
+  },
+  "fixture": "Owned synthetic 2 x 3 x 4 mm box with an exact duplicate vertex and face, then the existing rigid intake pose.",
+  "input_sha256": "71f26e566cba22031d5c7c96b773f7f46e3261c2b3834ec9db88a17d98deecd8",
+  "result_sha256": "5b8b9267410e882f7d80d7bb6ce9e29c96f93ec105b0551ceb881e82a062c209",
+  "status": "demo_geometry_passed",
+  "model_called": true,
+  "raw_model_response_sha256": "a761fc988ea9cfd4950b4e7e76b890f5cd353039ef3dc7780922bfb7fbccad14",
+  "adapter_sha256": "f5835f5edca280da7451ef9becebfa4acf3acd434e0640f5dcc750a83ac68bc1",
+  "pymesh_cleanup": {
+    "stage": "exact_mesh_cleanup",
+    "input_npz_sha256": "5dd1077ed6946a7ae0498c764b7fd4a699547205c4bc7515e9bb4c3f301918ee",
+    "output_npz_sha256": "86ef73c51ecc85fa579d4f79e27a491217402944bcc01adc0fef8ee5ba1b3448",
+    "pymesh_version": "0.3",
+    "python_version": "3.6.11",
+    "numpy_version": "1.19.0",
+    "duplicate_vertex_tolerance": 0.0,
+    "input_vertices": 9,
+    "input_faces": 13,
+    "output_vertices": 8,
+    "output_faces": 12,
+    "merged_vertices": 1,
+    "removed_isolated_vertices": 0,
+    "manufacturing_qualified": false
+  },
+  "pymesh_audit": {
+    "stage": "native_intersection_audit",
+    "input_sha256": "9b9dd925795f20bf004ea7c8e67362bff5ab0942461867ec6daa52c85b2041ef",
+    "pymesh_version": "0.3",
+    "python_version": "3.6.11",
+    "self_intersection_pairs": 0,
+    "repair_performed": false,
+    "manufacturing_qualified": false
+  },
+  "checks": {
+    "watertight": true,
+    "winding_consistent": true,
+    "one_component": true,
+    "positive_volume": true,
+    "no_zero_area_faces": true,
+    "topology_clean": true,
+    "scan_coverage": true,
+    "reconstructed_surface": true,
+    "pymesh_no_self_intersections": true
+  },
+  "repair_used": false,
+  "delivered_stl_sha256": "9b9dd925795f20bf004ea7c8e67362bff5ab0942461867ec6daa52c85b2041ef",
+  "unit_tests": {
+    "actual_pymesh_engine": 4,
+    "independent_geometry_checks": 2
+  },
+  "earlier_runs": [
+    {
+      "status": "invalidated",
+      "scope": "Private fan exploratory run",
+      "reason": "Source changed during development; its own processes stopped and no result accepted."
+    },
+    {
+      "status": "failed_closed",
+      "scope": "Synthetic end-to-end smoke",
+      "reason": "Prepared NPZ hash mismatch. No STL delivered. Not reproduced by isolated stage/stability diagnostics or the clean rerun; cause not established."
+    }
+  ],
+  "manufacturing_qualified": false,
+  "training_performed": false,
+  "model_transcript": {
+    "request": {
+      "surface_topology": "closed",
+      "task": "end-to-end OBJ to PicoGK STL demo",
+      "triangles": 12,
+      "boundary_edges": 0,
+      "connected_surface_components": 1,
+      "units_confirmed": false,
+      "user_allows_demo_assumptions": true,
+      "mm_per_source_unit_assumed": 1.0,
+      "voxel_mm_assumed": 0.5
+    },
+    "raw_response": "{\"method\":\"direct_voxelization\",\"target_faces\":300000,\"poisson_depth\":9,\"mm_per_source_unit\":1.0,\"voxel_mm\":0.5,\"manufacturing_qualified\":false}",
+    "finish_reason": "stop",
+    "adapter_sha256": "f5835f5edca280da7451ef9becebfa4acf3acd434e0640f5dcc750a83ac68bc1",
+    "model_called": true,
+    "geometry_encoder": false,
+    "model_response_repaired": false
+  },
+  "private_fan_verification": {
+    "status": "demo_geometry_passed",
+    "input_sha256": "244d4caeb2c4ac4a692b650ec9d766bee2a8124335a0236a55a1d30c1b2b98ba",
+    "delivered_stl_sha256": "bf5283aa0b55639109e122aeddce64ece955950398d6d91548b8b434be838572",
+    "repair_used": true,
+    "retained_surface_area_fraction": 0.9868936876182818,
+    "omitted_triangles": 16755,
+    "manufacturing_qualified": false,
+    "result_sha256": "efb6884c1dcd87da95de51f65d272a0b2743e37a3f98fc77c7656065f8b3b66e",
+    "checks": {
+      "watertight": true,
+      "winding_consistent": true,
+      "one_component": true,
+      "positive_volume": true,
+      "no_zero_area_faces": true,
+      "topology_clean": true,
+      "scan_coverage": true,
+      "reconstructed_surface": true,
+      "pymesh_no_self_intersections": true
+    },
+    "pymesh_cleanup": {
+      "stage": "exact_mesh_cleanup",
+      "input_npz_sha256": "ef2e866c3d11e3bb0597b3f350e503350ac4126175615c345aa8da58a3daec5e",
+      "output_npz_sha256": "2a3f7a7f0c43de6cc2991dd431874f7076fd9b6a0e78987aa508a1a734ecc144",
+      "pymesh_version": "0.3",
+      "python_version": "3.6.11",
+      "numpy_version": "1.19.0",
+      "duplicate_vertex_tolerance": 0.0,
+      "input_vertices": 624492,
+      "input_faces": 1240439,
+      "output_vertices": 624479,
+      "output_faces": 1240439,
+      "merged_vertices": 13,
+      "removed_isolated_vertices": 0,
+      "manufacturing_qualified": false
+    },
+    "pymesh_audit": {
+      "stage": "native_intersection_audit",
+      "input_sha256": "bf5283aa0b55639109e122aeddce64ece955950398d6d91548b8b434be838572",
+      "pymesh_version": "0.3",
+      "python_version": "3.6.11",
+      "self_intersection_pairs": 0,
+      "repair_performed": false,
+      "manufacturing_qualified": false
+    },
+    "source_hashes_verified": true,
+    "scope": "Dominant front surface demo envelope; unregistered rear fragment omitted; added connections are hypotheses; raw geometry and correspondence arrays remain private."
+  }
+}

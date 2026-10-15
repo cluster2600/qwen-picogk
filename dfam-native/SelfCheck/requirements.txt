@@ -1,0 +1,6 @@
+# Trusted self-intersection sidecar for the DfAM checker. Install with:
+#   python3 -m venv VENV && VENV/bin/pip install --require-hashes --only-binary=:all: -r requirements.txt
+# Linux x86_64, CPython 3.12 wheels. Upstream libigl is MPL-2.0; it is installed, never vendored.
+libigl==2.6.3 --hash=sha256:4a1d28aebfeb8b232a58943b1af318ec61a1fff7650a9d25a1396ba8fa1ef6d6
+numpy==2.2.6 --hash=sha256:fd83c01228a688733f1ded5201c678f0c53ecc1006ffbc404db9f7a899ac6249
+scipy==1.15.3 --hash=sha256:271e3713e645149ea5ea3e97b57fdab61ce61333f97cfae392c28ba786f9bb49

@@ -1,10 +1,29 @@
 # PicoGK DfAM corpus: authoring, verification and training gates
 
 This is a work-in-progress teaching corpus, separate from the released
-parameter planner and the AM C# study. It has **one historical example**,
-not 150 completed examples and not a newly trained model. Its source and old
-verification receipt remain unchanged. Under `dfam-strict-v2`, that example
-is blocked by 86 degenerate triangles. No training partitions are published.
+parameter planner and the AM C# study. It has **four examples**, not 150
+completed examples and not a newly trained model. Under the current
+`dfam-strict-v3` policy, `scan-001`, `dfam-001` and `debug-001` pass isolated
+native verification on Linux ([receipt](../evidence/dfam-code/strict-v3-20261015.json)).
+The historical `infill-001` source and receipts remain unchanged; it is
+blocked by 86 degenerate triangles, the same 86 as needle triangles, and a
+detached zero-volume sheet that the self-intersection check reports. The
+earlier [strict-v2 receipt](../evidence/dfam-code/strict-v2-20261015.json) is
+kept as history. No training partitions are published. The wider plan for
+physics evidence is in [PHYSICS_EVIDENCE_PLAN.md](PHYSICS_EVIDENCE_PLAN.md).
+
+```mermaid
+flowchart LR
+    A["cases.jsonl"] --> B["lint<br/>schema, citations,<br/>API mistakes, duplicates"]
+    B --> C["build against<br/>PicoGK 2.3.0"]
+    C --> D["run in bubblewrap<br/>3 GiB, 2 CPUs, no network"]
+    D --> E["output STL"]
+    E --> F["C# checker<br/>topology, voids, overhang,<br/>thickness, needles"]
+    E --> G["libigl sidecar<br/>exact self-intersections"]
+    F --> H["evaluate against<br/>dfam-strict-v3"]
+    G --> H
+    H --> I["receipt<br/>policy, sources, case and STL hashes"]
+```
 
 ## Acceptance gates
 
@@ -13,25 +32,70 @@ is blocked by 86 degenerate triangles. No training partitions are published.
 2. `verify` runs lint before compilation, restores locked NuGet dependencies,
    and runs candidate C# only in the isolated Linux process described below.
 3. The separate checker measures the actual STL. Zero detected boundary edges,
-   non-manifold edges, inconsistent orientation edges and degenerate triangles
-   are required, together with one raster-connected solid. All required
-   metrics must be present, finite and in their valid domains.
+   non-manifold edges, inconsistent orientation edges, degenerate triangles,
+   needle triangles and self-intersecting triangle pairs are required,
+   together with one raster-connected solid. All required metrics must be
+   present, finite and in their valid domains.
 4. Enclosed-void tolerances remain 2 mm³ total and 0.25 mm³ for the largest
    pocket. These account for raster artefacts at 0.3 mm and must not be
    described as proof that no powder remains. Declared volume, thin-feature
    and overhang limits are enforced. Infill/DfAM examples must declare wall,
-   thin-feature and overhang assumptions before assembly; no universal
-   machine-specific printability threshold is invented for them.
+   thin-feature, thin-wall-area and overhang assumptions before assembly; no
+   universal machine-specific printability threshold is invented for them.
 5. A new receipt binds the current verifier, checker sources, exact case
    content and output STL hashes. Assembly recomputes the verdict from the
    recorded metrics, rejecting legacy, modified, incomplete or stale evidence.
    Receipts are owner-controlled provenance records, not signed attestations.
 
-The checker does not establish self-intersection freedom, actual minimum wall
-thickness everywhere, strength, fatigue, dimensional accuracy or successful
-depowdering. The morphological thin-feature fraction is a screen, not a
-certified wall-thickness measurement. A bounded ray grid can miss small
-features and cannot establish physical powder-flow behaviour.
+### What strict-v3 adds
+
+| Measurement | Method | Gate |
+|---|---|---|
+| Self-intersecting triangle pairs | libigl `find_self_intersections`: AABB tree with exact predicates, on vertices welded on the checker's 0.0001 mm grid; hash-pinned wheels in a separate environment | 0 required |
+| Needle triangles | Distinct vertices, but height below 1e-3 of the longest edge | 0 required |
+| Wall thickness | A ray from every triangle's centroid along the inward normal to the first other triangle, on the mesh itself, so a 1.0 mm wall is not quantised to 0.3 mm cells; capped at max(4 x min wall, 3 mm) | Area-weighted 1st and 5th percentiles reported; `thin_wall_area_fraction` (area below the minimum wall) gated when a case declares `thin_wall_area_fraction_max` |
+
+Both new tools are trusted code. They read only the output STL, and the
+receipt's `checker_source_sha256` binds the C# checker and the sidecar
+sources. Each rebuild runs known-answer self-tests: plates of 0.6 and 2.0 mm,
+a needle triangle, a closed cube, separate cubes and overlapping cubes.
+
+![Round roof versus teardrop roof at x = 0](visuals/dfam/channel-section.png)
+
+The overhang screen separates the two channel designs.
+[`dfam-001`](../data/dfam-code/cases.jsonl) passes with an overhang share of
+0.0218; the same channel with a round roof is kept as a
+[negative control](../evidence/dfam-code/negative-controls/) and fails the
+declared 0.035 limit at 0.0483.
+
+![Detached zero-volume sheet in infill-001](visuals/dfam/selfintersection-fold.png)
+
+The self-intersection check found a defect the earlier checks could not
+see. In `infill-001`, four triangles form two 0.10 x 0.09 mm quads back to
+back on the same four vertices: a detached sheet with no volume. Every edge
+is used exactly twice, so the edge checks pass. It has no volume, so the
+voxel component count does not see it. The numerical vertex weld proposed
+for this case in #6 removes the degenerate triangles, but not this sheet.
+
+![Wall thickness of the graded gyroid](visuals/dfam/infill-thickness.png)
+
+On the gyroid, the ray thickness gives a 1st percentile of 1.05 mm and a
+5th percentile of 1.20 mm, with 0.37 % of the surface area below the
+assumed 1.0 mm minimum. That matches the design, which grades the sheets
+down to 1.0 mm at the top. The [turntable](visuals/dfam/infill-thickness-turntable.gif)
+shows the whole cut part.
+
+### Limits of the checks
+
+The checker still does not establish strength, fatigue, dimensional
+accuracy, printability or successful depowdering. A ray cast along a wall
+overestimates its thickness, so a thin wall is detected from its broad faces;
+percentiles and area shares are therefore more reliable than a single
+minimum value. Values above the cap are reported as the cap. The
+morphological thin-feature fraction remains a voxel screen. A bounded ray
+grid can miss small features and cannot establish physical powder-flow
+behaviour. Self-intersection freedom is established only for the exact
+output STL, after welding on the 0.0001 mm grid.
 
 ## Native verification environment
 
@@ -49,7 +113,13 @@ Candidate execution has:
 - only the selected input fixture, mounted read-only;
 - one writable case output directory and a private temporary filesystem;
 - a 3 GiB memory limit, no swap, 128 tasks, two declared .NET processors,
-  a 300-second CPU limit, a 256 MiB per-file limit and a wall timeout.
+  a 300-second CPU limit, a 256 MiB per-file limit and a wall timeout;
+- a two-CPU cgroup quota (`CPUQuota=200%`). The CPU limit counts every
+  thread, including PicoGK's native OpenVDB threads, which ignore the .NET
+  processor count and otherwise use all host cores.
+- .NET write-xor-execute double mapping disabled
+  (`DOTNET_EnableWriteXorExecute=0`). With it enabled, the runtime is killed
+  by the per-file limit (SIGXFSZ, exit 153) before any case code runs.
 
 The checker and fixture generator use 4 GiB scopes. Missing limit/isolation
 facilities refuse the operation before native fixture generation. A failing
@@ -69,9 +139,16 @@ export PATH="$DOTNET_ROOT:$PATH"
 export PICOGK_NATIVE=/path/to/matching/picogk/native
 python3.12 scripts/dfam_corpus.py lint data/dfam-code/cases.jsonl
 python3.12 scripts/dfam_corpus.py verify data/dfam-code/cases.jsonl \
-  --tag strict-v2-review --jobs 1 \
-  --receipt work/dfam-strict-v2.json
+  --tag strict-v3-review --jobs 1 \
+  --receipt work/dfam-strict-v3.json
 ```
+
+The first `verify` builds the C# checker and runs its self-test. It also
+creates `work/dfam-selfcheck/`, a Python virtual environment installed with
+`pip --require-hashes --only-binary=:all:` from
+`dfam-native/SelfCheck/requirements.txt` (libigl 2.6.3, numpy 2.2.6 and
+scipy 1.15.3; Linux x86_64, CPython 3.12), and runs the sidecar's self-test.
+Like NuGet, this preparation needs network access; candidate code never does.
 
 The first case is expected to fail the strict geometry gate until its author
 repairs the mesh and reruns verification. Do not alter the historical receipt
@@ -118,9 +195,9 @@ Only the tokenizer is loaded; no weights are trained by this command.
 
 ```sh
 python3.12 scripts/dfam_corpus.py assemble \
-  --receipt work/dfam-strict-v2.json --base /path/to/exact/base
+  --receipt work/dfam-strict-v3.json --base /path/to/exact/base
 python3.12 scripts/dfam_corpus.py assemble --check \
-  --receipt work/dfam-strict-v2.json --base /path/to/exact/base
+  --receipt work/dfam-strict-v3.json --base /path/to/exact/base
 ```
 
 Both commands currently refuse the incomplete one-case corpus with an explicit

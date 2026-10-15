@@ -32,7 +32,17 @@ class DfamCorpusTest(unittest.TestCase):
         record = receipt['cases']['infill-001']
         self.assertTrue(record['passed'])
         metrics = record['run']['outputs']['part.stl']
-        self.assertIn('degenerate_triangles = 86, required 0', dfam_corpus.evaluate(metrics, {'min_wall_mm': 1.0}))
+        # The legacy record lacks the v3 measurements, and its mesh had 86 degenerate triangles.
+        self.assertIn('missing, nonfinite or invalid metric self_intersecting_pairs',
+                      dfam_corpus.evaluate(metrics, {'min_wall_mm': 1.0}))
+        self.assertIn('degenerate_triangles = 86, required 0',
+                      dfam_corpus.evaluate(dict(self.v3_fields(), **metrics), {'min_wall_mm': 1.0}))
+        with self.assertRaisesRegex(ValueError, 'current strict-policy'):
+            dfam_corpus.receipt_check(self.cases, receipt)
+
+    def test_strict_v2_receipt_is_historical_under_v3(self):
+        receipt = json.loads((ROOT / 'evidence/dfam-code/strict-v2-20261015.json').read_text())
+        self.assertEqual(receipt['policy'], 'dfam-strict-v2')
         with self.assertRaisesRegex(ValueError, 'current strict-policy'):
             dfam_corpus.receipt_check(self.cases, receipt)
 
@@ -48,17 +58,22 @@ class DfamCorpusTest(unittest.TestCase):
         self.assertIn(self.cases[0]['code'].strip(), row['messages'][1]['content'])
         self.assertNotIn('<|im_start|>', row['messages'][0]['content'])
 
+    @staticmethod
+    def v3_fields():
+        # Values measured on infill-001 by the v3 checker and the libigl sidecar.
+        return dict(needle_triangles=0, self_intersecting_pairs=0, self_intersecting_coplanar_pairs=0,
+                    self_intersecting_triangles=0, wall_thickness_p01_mm=1.0495, wall_thickness_p05_mm=1.2039,
+                    wall_thickness_cap_mm=4.0, thin_wall_area_fraction=0.00371)
+
     def metrics(self):
         receipt = json.loads((ROOT / 'evidence/dfam-code/verification.json').read_text())
-        return dict(receipt['cases']['infill-001']['run']['outputs']['part.stl'],
+        return dict(receipt['cases']['infill-001']['run']['outputs']['part.stl'], **self.v3_fields(),
                     degenerate_triangles=0, stl_sha256='a' * 64)
 
     def receipt(self):
-        src = ROOT / 'dfam-native/Checker'
         return dict(policy=dfam_corpus.POLICY, isolation='linux-bubblewrap-systemd',
                     policy_source_sha256=dfam_corpus.sha(Path(dfam_corpus.__file__).read_bytes()),
-                    checker_source_sha256=dfam_corpus.sha(b''.join((src / n).read_bytes() for n in
-                        ('Program.cs', 'Checker.csproj', 'packages.lock.json'))),
+                    checker_source_sha256=dfam_corpus.checker_stamp(),
                     picogk_package='2.3.0', voxel_mm=0.3,
                     cases={'infill-001': dict(passed=True, case_sha256=dfam_corpus.case_sha(self.cases[0]),
                         run=dict(exit=0, failed=[], outputs={'part.stl': self.metrics()}))})
@@ -77,8 +92,39 @@ class DfamCorpusTest(unittest.TestCase):
         self.assertTrue(dfam_corpus.evaluate(metrics, self.cases[0]['expect']))
 
     def test_declared_overhang_and_thin_limits_are_enforced(self):
-        expect = dict(self.cases[0]['expect'], overhang_fraction_max=0, thin_fraction_max=0)
-        self.assertEqual(len(dfam_corpus.evaluate(self.metrics(), expect)), 2)
+        expect = dict(self.cases[0]['expect'], overhang_fraction_max=0, thin_fraction_max=0,
+                      thin_wall_area_fraction_max=0.001)
+        self.assertEqual(len(dfam_corpus.evaluate(self.metrics(), expect)), 3)
+
+    def test_v3_gates_self_intersections_needles_and_thickness_metrics(self):
+        expect = self.cases[0]['expect']
+        for key, value in [('self_intersecting_pairs', 4), ('needle_triangles', 2)]:
+            with self.subTest(key=key):
+                self.assertIn(f'{key} = {value}, required 0',
+                              dfam_corpus.evaluate(dict(self.metrics(), **{key: value}), expect))
+        for key, value in [('thin_wall_area_fraction', 1.5), ('wall_thickness_p01_mm', float('nan')),
+                           ('self_intersecting_triangles', 2.5)]:
+            with self.subTest(key=key):
+                self.assertTrue(dfam_corpus.evaluate(dict(self.metrics(), **{key: value}), expect))
+        metrics = self.metrics(); del metrics['wall_thickness_p05_mm']
+        self.assertTrue(dfam_corpus.evaluate(metrics, expect))
+
+    def test_checker_stamp_binds_the_selfcheck_sidecar(self):
+        self.assertIn('SelfCheck/selfcheck.py', dfam_corpus.CHECKER_FILES)
+        self.assertIn('SelfCheck/requirements.txt', dfam_corpus.CHECKER_FILES)
+        for line in (ROOT / 'dfam-native/SelfCheck/requirements.txt').read_text().splitlines():
+            if line and not line.startswith('#'):
+                self.assertRegex(line, r'^[a-z]+==[0-9.]+ --hash=sha256:[0-9a-f]{64}$')
+
+    def test_selfcheck_known_answers(self):
+        try:
+            import numpy  # noqa: F401
+            import igl  # noqa: F401
+        except ImportError:
+            self.skipTest('numpy/libigl not installed; the native verifier installs the pinned sidecar')
+        sys.path.insert(0, str(ROOT / 'dfam-native/SelfCheck'))
+        import selfcheck
+        self.assertFalse(selfcheck.self_test()['closed_cube']['found'])
 
     def test_schema_rejects_invalid_expectations_and_paths(self):
         for key, value in [('volume_ratio', [0.7, 0.5]), ('volume_ratio', [True, 0.7]),
@@ -92,6 +138,16 @@ class DfamCorpusTest(unittest.TestCase):
         for bad in [[], {}, {'id': 42}, dict(self.cases[0], code=None)]:
             self.assertTrue(dfam_corpus.lint([bad]))
         self.assertTrue(dfam_corpus.lint([]))
+
+    def test_only_scan_cases_may_declare_volume_above_reference(self):
+        infill = copy.deepcopy(self.cases[0]); infill['expect']['volume_ratio'] = [0.5, 1.1]
+        self.assertTrue(any('volume_ratio' in p for p in dfam_corpus.lint_case(infill, self.bib)))
+        scan = copy.deepcopy(self.cases[0]); scan.update(id='scan-900', category='scan_repair')
+        for interval, ok in [([0.9, 1.15], True), ([0.9, 1.6], False), ([1.2, 1.1], False)]:
+            scan['expect'] = {'volume_ratio': interval}
+            with self.subTest(interval=interval):
+                problems = [p for p in dfam_corpus.lint_case(scan, self.bib) if 'volume_ratio' in p]
+                self.assertEqual(not problems, ok)
 
     def test_unassigned_corpus_is_refused_before_assembly(self):
         with self.assertRaisesRegex(ValueError, 'Corpus not ready'):
@@ -108,17 +164,19 @@ class DfamCorpusTest(unittest.TestCase):
         self.assertIn('family gyroid-sheet crosses partitions', problems['corpus'])
 
     def test_receipt_requires_current_bindings_and_recomputed_metrics(self):
+        # The receipt fixture covers infill-001 only; bind it to that case.
+        cases = [c for c in self.cases if c['id'] == 'infill-001']
         receipt = self.receipt()
-        dfam_corpus.receipt_check(self.cases, receipt)
+        dfam_corpus.receipt_check(cases, receipt)
         for key, value in [('policy_source_sha256', '0' * 64), ('checker_source_sha256', '0' * 64),
                            ('voxel_mm', 0.5), ('isolation', 'host')]:
             with self.subTest(key=key), self.assertRaises(ValueError):
-                dfam_corpus.receipt_check(self.cases, dict(receipt, **{key: value}))
+                dfam_corpus.receipt_check(cases, dict(receipt, **{key: value}))
         for key, value in [('degenerate_triangles', 86), ('stl_sha256', ''), ('thin_fraction', float('nan'))]:
             changed = copy.deepcopy(receipt)
             changed['cases']['infill-001']['run']['outputs']['part.stl'][key] = value
             with self.subTest(key=key), self.assertRaises(ValueError):
-                dfam_corpus.receipt_check(self.cases, changed)
+                dfam_corpus.receipt_check(cases, changed)
         changed = copy.deepcopy(self.cases)
         changed[0]['user'] += ' changed'
         with self.assertRaises(ValueError):
@@ -153,6 +211,14 @@ class DfamCorpusTest(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 dfam_corpus.capped(['true'], '3G')
 
+    def test_candidate_scope_requests_two_cpu_quota(self):
+        with patch.object(dfam_corpus.sys, 'platform', 'linux'), patch.object(dfam_corpus.shutil, 'which', return_value='/usr/bin/systemd-run'), patch.object(dfam_corpus.subprocess, 'run', return_value=Mock(returncode=0)) as run:
+            cmd = dfam_corpus.capped(['true'], '3G', dfam_corpus.CANDIDATE_CPU_QUOTA)
+            self.assertIn('CPUQuota=200%', run.call_args[0][0])   # the probe tests the quota too
+            checker = dfam_corpus.capped(['true'], '4G')             # trusted checker: no quota
+        self.assertEqual(cmd[cmd.index('CPUQuota=200%') - 1], '-p')
+        self.assertNotIn('CPUQuota=200%', checker)
+
     def test_sandbox_exposes_only_runtime_selected_input_and_output(self):
         with tempfile.TemporaryDirectory() as tmp:
             base = Path(tmp); runtime = base/'dotnet'; runtime.mkdir()
@@ -161,13 +227,16 @@ class DfamCorpusTest(unittest.TestCase):
             app = base/'app'; app.mkdir()
             source = base/'selected.stl'; source.touch()
             env = {'PATH': str(runtime), 'DOTNET_ROOT': str(runtime), 'PICOGK_NATIVE': str(runtime)}
-            with patch.object(dfam_corpus.sys, 'platform', 'linux'), patch.object(dfam_corpus.shutil, 'which', side_effect=lambda name, **kw: str(binary) if name == 'dotnet' else '/usr/bin/bwrap'), patch.object(dfam_corpus, 'capped', side_effect=lambda cmd, mem: cmd), patch.object(Path, 'is_file', return_value=True):
+            with patch.object(dfam_corpus.sys, 'platform', 'linux'), patch.object(dfam_corpus.shutil, 'which', side_effect=lambda name, **kw: str(binary) if name == 'dotnet' else '/usr/bin/bwrap'), patch.object(dfam_corpus, 'capped', side_effect=lambda cmd, mem, *quota: cmd), patch.object(Path, 'is_file', return_value=True):
                 cmd = dfam_corpus.sandbox_command(app/'Runner.dll', str(source), out, 'Case', env)
             self.assertIn('--unshare-all', cmd)
             self.assertIn('--clearenv', cmd)
             self.assertEqual(cmd[cmd.index('--bind') + 1:cmd.index('--bind') + 3], [str(out.resolve()), '/output'])
             self.assertIn('/input/selected.stl', cmd)
             self.assertIn('--fsize=268435456:268435456', cmd)
+            # The runtime cannot start under that file limit with W^X double mapping.
+            i = cmd.index('DOTNET_EnableWriteXorExecute')
+            self.assertEqual((cmd[i - 1], cmd[i + 1]), ('--setenv', '0'))
             self.assertNotIn(str(ROOT), cmd)
 
     def test_escaping_candidate_output_is_not_sent_to_checker(self):

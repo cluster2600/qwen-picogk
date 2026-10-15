@@ -1,0 +1,22 @@
+{
+ "detector": "libigl find_self_intersections reports 4 coplanar pairs; highlighted here by opposite normals across a shared edge",
+ "evidence": "evidence/dfam-code/strict-v3-20261015.json",
+ "highlighted_triangles": 4,
+ "image": "selfintersection-fold.png",
+ "image_sha256": "f82f7152256de47e7194464ba01a86a0930cb6ac8cf16db4b20aa9a37bc4b6b4",
+ "manufacturing_qualified": false,
+ "native_geometry_edited_for_render": false,
+ "render_source_sha256": "5eff5b443194e452c72fe2ea1c01ecd2773f989b65ac0f4b89a4eb84459781eb",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "infill-001.bin": "6c10d987d785987a2fd04d67ea63a742531207ab9c4d837b31074aad62e7e5e5"
+ },
+ "window": {
+  "centre_mm": [
+   15.585,
+   -4.82,
+   28.5
+  ],
+  "radius_mm": 1.2
+ }
+}

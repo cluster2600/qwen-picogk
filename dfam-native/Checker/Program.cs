@@ -10,14 +10,17 @@ using PicoGK;
 // loads or executes corpus code, so a corpus example cannot grade itself.
 //
 //   fixtures NEW_DIR VOXEL_MM
-//   check    OUTPUT.stl FIXTURES.json VOXEL_MM MIN_WALL_MM
+//   check    OUTPUT.stl FIXTURES.json VOXEL_MM MIN_WALL_MM [THICKNESS.bin]
+//   selftest
 CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
 CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 if (args.Length == 3 && args[0] == "fixtures")
     return Fixtures.Write(Path.GetFullPath(args[1]), float.Parse(args[2]));
-if (args.Length == 5 && args[0] == "check")
-    return Checks.Run(args[1], args[2], float.Parse(args[3]), float.Parse(args[4]));
-Console.Error.WriteLine("Usage: fixtures NEW_DIR VOXEL_MM | check OUTPUT.stl FIXTURES.json VOXEL_MM MIN_WALL_MM");
+if ((args.Length == 5 || args.Length == 6) && args[0] == "check")
+    return Checks.Run(args[1], args[2], float.Parse(args[3]), float.Parse(args[4]), args.Length == 6 ? args[5] : null);
+if (args.Length == 1 && args[0] == "selftest")
+    return WallThickness.SelfTest();
+Console.Error.WriteLine("Usage: fixtures NEW_DIR VOXEL_MM | check OUTPUT.stl FIXTURES.json VOXEL_MM MIN_WALL_MM [THICKNESS.bin] | selftest");
 return 2;
 
 /// <summary>
@@ -168,7 +171,7 @@ static class Checks
         return (float)v;
     }
 
-    public static int Run(string stl, string fixturesJson, float voxel, float minWall)
+    public static int Run(string stl, string fixturesJson, float voxel, float minWall, string? dumpPath = null)
     {
         using JsonDocument fx = JsonDocument.Parse(File.ReadAllText(fixturesJson));
         float fixtureVolume = fx.RootElement.GetProperty("volume_mm3").GetSingle();
@@ -289,6 +292,22 @@ static class Checks
         opened.CalculateProperties(out float openedVolume, out _);
         result["min_wall_mm"] = minWall;
         result["thin_fraction"] = volume <= 0 ? 1 : Math.Round(Math.Max(0, volume - openedVolume) / volume, 4);
+
+        // Wall thickness on the mesh itself, independent of the voxel size:
+        // from every triangle's centroid, cast a ray along the inward normal
+        // to the first other triangle. Distances are capped, because only
+        // walls near the minimum matter.
+        var tris = new (Vector3 a, Vector3 b, Vector3 c)[n];
+        for (int i = 0; i < n; i++)
+        {
+            msh.GetTriangle(i, out Vector3 a, out Vector3 b, out Vector3 c);
+            tris[i] = (a, b, c);
+        }
+        float cap = WallThickness.CapMM(minWall);
+        float[] thickness = WallThickness.Measure(tris, sign, cap, out double[] areas);
+        WallThickness.Summarise(thickness, areas, minWall, cap, result);
+        result["needle_triangles"] = WallThickness.Needles(tris);
+        if (dumpPath != null) WallThickness.Dump(dumpPath, tris, thickness);
         Emit(result);
         return 0;
     }
@@ -349,4 +368,208 @@ static class Checks
     }
 
     static void Emit(object o) => Console.WriteLine(JsonSerializer.Serialize(o));
+}
+
+/// <summary>
+/// Wall thickness by inward ray casting on the output mesh. The ray from a
+/// triangle's centroid along its inward normal leaves the solid on the other
+/// side of the wall, so the first hit distance is the local wall thickness.
+/// This needs no voxels: a 1.0 mm wall is not quantised to 0.3 mm cells.
+/// Rays that run along a wall overestimate it, so a thin wall is detected
+/// from its broad faces, whose normals cross it.
+/// </summary>
+static class WallThickness
+{
+    const float CellMM = 0.6f;         // acceleration grid, about two output voxels
+    const double HitEpsilonMM = 1e-5;  // ignore hits at the ray origin
+
+    // Walls well above the minimum do not need exact values.
+    public static float CapMM(float minWall) => MathF.Max(4f * minWall, 3f);
+
+    public static float[] Measure((Vector3 a, Vector3 b, Vector3 c)[] tris, float sign, float cap, out double[] areas)
+    {
+        int n = tris.Length;
+        double[] area = new double[n];
+        Vector3 lo = new(float.MaxValue), hi = new(float.MinValue);
+        foreach (var t in tris)
+        {
+            lo = Vector3.Min(lo, Vector3.Min(t.a, Vector3.Min(t.b, t.c)));
+            hi = Vector3.Max(hi, Vector3.Max(t.a, Vector3.Max(t.b, t.c)));
+        }
+        lo -= new Vector3(CellMM); hi += new Vector3(CellMM);
+        int X = (int)MathF.Ceiling((hi.X - lo.X) / CellMM), Y = (int)MathF.Ceiling((hi.Y - lo.Y) / CellMM);
+        int Z = (int)MathF.Ceiling((hi.Z - lo.Z) / CellMM);
+        int Cell(float v, float o, int count) => Math.Clamp((int)MathF.Floor((v - o) / CellMM), 0, count - 1);
+
+        // Compressed cell -> triangle lists, filled from each triangle's bounding box.
+        long cells = (long)X * Y * Z;
+        if (cells > int.MaxValue - 1) throw new InvalidOperationException("Mesh too large for the thickness grid");
+        int[] start = new int[cells + 1];
+        void Boxes(Action<int, int> visit)
+        {
+            for (int t = 0; t < n; t++)
+            {
+                var (a, b, c) = tris[t];
+                Vector3 mn = Vector3.Min(a, Vector3.Min(b, c)), mx = Vector3.Max(a, Vector3.Max(b, c));
+                for (int z = Cell(mn.Z, lo.Z, Z); z <= Cell(mx.Z, lo.Z, Z); z++)
+                    for (int y = Cell(mn.Y, lo.Y, Y); y <= Cell(mx.Y, lo.Y, Y); y++)
+                        for (int x = Cell(mn.X, lo.X, X); x <= Cell(mx.X, lo.X, X); x++)
+                            visit(x + X * (y + Y * z), t);
+            }
+        }
+        Boxes((cell, _) => start[cell + 1]++);
+        for (long i = 0; i < cells; i++) start[i + 1] += start[i];
+        int[] fill = (int[])start.Clone();
+        int[] items = new int[start[cells]];
+        Boxes((cell, t) => items[fill[cell]++] = t);
+
+        float[] result = new float[n];
+        Parallel.For(0, n, i =>
+        {
+            var (a, b, c) = tris[i];
+            Vector3 cr = Vector3.Cross(b - a, c - a) * sign;
+            float len = cr.Length();
+            area[i] = 0.5 * len;
+            if (!(len > 0)) { result[i] = float.NaN; return; }
+            Vector3 dir = -cr / len, o = (a + b + c) / 3f;
+            result[i] = Cast(o, dir, i, cap);
+        });
+        areas = area;
+        return result;
+
+        float Cast(Vector3 o, Vector3 d, int self, float limit)
+        {
+            int ix = Cell(o.X, lo.X, X), iy = Cell(o.Y, lo.Y, Y), iz = Cell(o.Z, lo.Z, Z);
+            // Amanatides-Woo traversal: tMax is the ray parameter at the next cell wall per axis.
+            (int step, float tMax, float tDelta) Axis(float oc, float dc, float origin, int idx)
+            {
+                if (dc > 0) return (1, (origin + (idx + 1) * CellMM - oc) / dc, CellMM / dc);
+                if (dc < 0) return (-1, (origin + idx * CellMM - oc) / dc, -CellMM / dc);
+                return (0, float.PositiveInfinity, float.PositiveInfinity);
+            }
+            var (sx, tx, dx) = Axis(o.X, d.X, lo.X, ix);
+            var (sy, ty, dy) = Axis(o.Y, d.Y, lo.Y, iy);
+            var (sz, tz, dz) = Axis(o.Z, d.Z, lo.Z, iz);
+            double best = limit;
+            while (true)
+            {
+                int cell = ix + X * (iy + Y * iz);
+                for (int k = start[cell]; k < start[cell + 1]; k++)
+                {
+                    int t = items[k];
+                    if (t == self) continue;
+                    double hit = Intersect(o, d, tris[t]);
+                    if (hit > HitEpsilonMM && hit < best) best = hit;
+                }
+                float exit = MathF.Min(tx, MathF.Min(ty, tz));
+                if (best <= exit || exit > limit) break;
+                if (tx <= ty && tx <= tz) { ix += sx; tx += dx; if (ix < 0 || ix >= X) break; }
+                else if (ty <= tz) { iy += sy; ty += dy; if (iy < 0 || iy >= Y) break; }
+                else { iz += sz; tz += dz; if (iz < 0 || iz >= Z) break; }
+            }
+            return (float)best;
+        }
+    }
+
+    /// <summary>Moller-Trumbore in double precision; returns the ray parameter or -1.</summary>
+    static double Intersect(Vector3 o, Vector3 d, (Vector3 a, Vector3 b, Vector3 c) t)
+    {
+        double e1x = t.b.X - t.a.X, e1y = t.b.Y - t.a.Y, e1z = t.b.Z - t.a.Z;
+        double e2x = t.c.X - t.a.X, e2y = t.c.Y - t.a.Y, e2z = t.c.Z - t.a.Z;
+        double px = d.Y * e2z - d.Z * e2y, py = d.Z * e2x - d.X * e2z, pz = d.X * e2y - d.Y * e2x;
+        double det = e1x * px + e1y * py + e1z * pz;
+        if (Math.Abs(det) < 1e-18) return -1;
+        double inv = 1 / det;
+        double sx = o.X - t.a.X, sy = o.Y - t.a.Y, sz = o.Z - t.a.Z;
+        double u = (sx * px + sy * py + sz * pz) * inv;
+        if (u < 0 || u > 1) return -1;
+        double qx = sy * e1z - sz * e1y, qy = sz * e1x - sx * e1z, qz = sx * e1y - sy * e1x;
+        double v = (d.X * qx + d.Y * qy + d.Z * qz) * inv;
+        if (v < 0 || u + v > 1) return -1;
+        return (e2x * qx + e2y * qy + e2z * qz) * inv;
+    }
+
+    /// <summary>Area-weighted percentiles and the area share below the minimum wall.</summary>
+    public static void Summarise(float[] thickness, double[] areas, float minWall, float cap, IDictionary<string, object> result)
+    {
+        int[] order = Enumerable.Range(0, thickness.Length).Where(i => !float.IsNaN(thickness[i]) && areas[i] > 0)
+                                .OrderBy(i => thickness[i]).ToArray();
+        double total = order.Sum(i => areas[i]);
+        double Percentile(double q)
+        {
+            double target = q * total, sum = 0;
+            foreach (int i in order) { sum += areas[i]; if (sum >= target) return thickness[i]; }
+            return cap;
+        }
+        double thin = order.Where(i => thickness[i] < minWall).Sum(i => areas[i]);
+        result["wall_thickness_cap_mm"] = cap;
+        result["wall_thickness_p01_mm"] = total > 0 ? Math.Round(Percentile(0.01), 4) : 0;
+        result["wall_thickness_p05_mm"] = total > 0 ? Math.Round(Percentile(0.05), 4) : 0;
+        result["thin_wall_area_fraction"] = total > 0 ? Math.Round(thin / total, 5) : 1;
+    }
+
+    /// <summary>
+    /// Needle or cap triangles: distinct vertices but a height below 1e-3 of
+    /// the longest edge. They survive vertex welding and make normals,
+    /// overhang and thickness measurements unreliable.
+    /// </summary>
+    public static int Needles((Vector3 a, Vector3 b, Vector3 c)[] tris)
+    {
+        int count = 0;
+        foreach (var (a, b, c) in tris)
+        {
+            float l = MathF.Max((b - a).LengthSquared(), MathF.Max((c - b).LengthSquared(), (a - c).LengthSquared()));
+            if (l <= 0) continue;
+            float twiceArea = Vector3.Cross(b - a, c - a).Length();
+            if (twiceArea / l < 1e-3f) count++;
+        }
+        return count;
+    }
+
+    /// <summary>Per-triangle dump for figures: int32 count, then 9 vertex floats and the thickness.</summary>
+    public static void Dump(string path, (Vector3 a, Vector3 b, Vector3 c)[] tris, float[] thickness)
+    {
+        using var w = new BinaryWriter(File.Create(path));
+        w.Write(tris.Length);
+        for (int i = 0; i < tris.Length; i++)
+        {
+            foreach (Vector3 v in new[] { tris[i].a, tris[i].b, tris[i].c }) { w.Write(v.X); w.Write(v.Y); w.Write(v.Z); }
+            w.Write(thickness[i]);
+        }
+    }
+
+    // Closed axis-aligned box as 12 outward-wound triangles.
+    static (Vector3, Vector3, Vector3)[] Box(Vector3 size)
+    {
+        Vector3 P(int i) => new((i & 1) * size.X, ((i >> 1) & 1) * size.Y, ((i >> 2) & 1) * size.Z);
+        int[][] quads = { new[] { 0, 2, 3, 1 }, new[] { 4, 5, 7, 6 }, new[] { 0, 1, 5, 4 }, new[] { 2, 6, 7, 3 }, new[] { 0, 4, 6, 2 }, new[] { 1, 3, 7, 5 } };
+        return quads.SelectMany(q => new[] { (P(q[0]), P(q[1]), P(q[2])), (P(q[0]), P(q[2]), P(q[3])) }).ToArray();
+    }
+
+    /// <summary>Known answers without PicoGK: plates of 0.6 and 2.0 mm, and a needle.</summary>
+    public static int SelfTest()
+    {
+        var report = new SortedDictionary<string, object>();
+        bool ok = true;
+        foreach (var (name, z, expectThin) in new[] { ("plate_0p6", 0.6f, true), ("plate_2p0", 2.0f, false) })
+        {
+            var tris = Box(new Vector3(10, 10, z)).Select(t => (t.Item1, t.Item2, t.Item3)).ToArray();
+            float sign = 1;
+            float[] th = Measure(tris, sign, CapMM(1f), out double[] areas);
+            var r = new SortedDictionary<string, object>();
+            Summarise(th, areas, 1f, CapMM(1f), r);
+            float top = th[2];   // a triangle of the 10 x 10 face measures the plate
+            r["top_face_thickness_mm"] = top;
+            ok &= Math.Abs(top - z) < 1e-4 && ((double)r["thin_wall_area_fraction"] > 0.5) == expectThin;
+            report[name] = r;
+        }
+        var needle = new[] { (new Vector3(0, 0, 0), new Vector3(1, 0, 0), new Vector3(0.5f, 1e-5f, 0)),
+                             (new Vector3(0, 0, 0), new Vector3(1, 0, 0), new Vector3(0.5f, 0.5f, 0)) };
+        int needles = Needles(needle);
+        report["needles_of_two"] = needles;
+        ok &= needles == 1;
+        report["passed"] = ok;
+        Console.WriteLine(JsonSerializer.Serialize(report));
+        return ok ? 0 : 1;
+    }
 }

@@ -6,15 +6,16 @@
   },
   "system_prompt": "You are the scan-demo tool planner. Output only JSON with method, target_faces, poisson_depth, mm_per_source_unit, voxel_mm, manufacturing_qualified. If surface_topology is open, method must be screened_poisson. If surface_topology is closed, method must be direct_voxelization. Copy the declared scale and voxel step exactly. Use target_faces 180000 when triangles > 1000000, otherwise 300000. Use poisson_depth 9. manufacturing_qualified is always false. Proposals are independently checked. No code, prose or physical certification.",
   "sources_sha256": {
-    "scan_demo.py": "76c764d1c713e060c58aa87402247d9d992c50a9e21e17a933af8cca02842490",
-    "scripts/scan_mesh.py": "998fd9d9738105ff5c1c307d7a6bce174bca5be19fb52b0ceaae82b7c1d24636",
+    "scan_demo.py": "0f16922b53166a3d6128203ad75b650f2f5b0eb0fe65feebfe8e61b5dd440b08",
+    "scripts/scan_mesh.py": "6a9f88f00af1d83b4a3bbdfcae6fd13de0505626cce26f535f96a2598fda782f",
     "scripts/scan_policy.py": "e1667ed881c297e163f49d6f57c1bd07b825537b23d4a956028daa222fc062d1",
     "scan-native/Program.cs": "09502cb21da03a35e46c09c0d7cb10066035cdf03a28354a97b2d96e3f281eb1",
     "scan-native/ScanDemo.csproj": "6a178802213298f554bd2a840bb37b14cbe35e7a8819aa45e27f70f3b80755d3",
     "scan-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f",
     "envelope-native/Program.cs": "d698fa7f232686a2ddfdd39208edeff3be563835a0d12882dd1bf8834066ef36",
     "envelope-native/EnvelopeDemo.csproj": "6a178802213298f554bd2a840bb37b14cbe35e7a8819aa45e27f70f3b80755d3",
-    "envelope-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f"
+    "envelope-native/packages.lock.json": "b1e0623af7453a7d4cfb6a2d09fc6535fdb11fb28d27fecbc8700ab3afd28b9f",
+    "scripts/scan_pymesh.py": "98534c852b7cc51f6d46eda00ea683f7bfe4ff68d587958c07c145f6a772480a"
   },
   "geometry_image_id": "sha256:f9c09072b2cfb4d177c8700263f76c6f065d81fd68f8115697a884b4473e63b1",
   "trained_parent_sha256": "70eaea998f78a84b6fc3bf17f155b941353c0c5510cca5640ebca187a53bf1ba",
@@ -44,6 +45,16 @@
     "evidence/scan-demo/automatic-main-demo.json": "9f252ce044d9164a04e9c7d7322e858b11e299179b19bc101f0a687f3d257da0",
     "evidence/scan-demo/llm-main-demo.json": "ffebc8b7ab4af1bd2483b2b19cde12b08c1c527e57dd911b49874370b77135b2",
     "evidence/scan-demo/llm-repair-main-demo.json": "8f9292576925cf139ac63e8b143ca4ade03c6d6ae48c3b10a3b550bc03671b01",
-    "training/configs/scan-demo.yaml": "9360311295bc2b6cddb99fdb424b0810018976cdf79db4fa700144dea1231622"
+    "training/configs/scan-demo.yaml": "9360311295bc2b6cddb99fdb424b0810018976cdf79db4fa700144dea1231622",
+    "evidence/scan-demo/snapshots/pre-pymesh/scan_demo.py.txt": "76c764d1c713e060c58aa87402247d9d992c50a9e21e17a933af8cca02842490",
+    "evidence/scan-demo/snapshots/pre-pymesh/scan_mesh.py.txt": "998fd9d9738105ff5c1c307d7a6bce174bca5be19fb52b0ceaae82b7c1d24636"
+  },
+  "pymesh_runtime": {
+    "image_id": "sha256:ecf699d33793efe612b66c36b2a7d3954085af55999cc3f631748fcf1671eb4e",
+    "image": "pymesh/pymesh@sha256:ecf699d33793efe612b66c36b2a7d3954085af55999cc3f631748fcf1671eb4e",
+    "version": "0.3",
+    "python": "3.6.11",
+    "source": "https://github.com/PyMesh/PyMesh",
+    "redistribution_license": "not established; external image is not vendored or relicensed"
   }
 }

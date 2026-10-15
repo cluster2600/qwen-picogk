@@ -21,11 +21,22 @@ This is a nonfunctional demonstration, without metal-print or rotation qualifica
 
 A separate [AM C# training study](am-code/README.md) publishes the requested
 150-pair corpus, 64 native-validated corrective teachers, prompt-style
-augmentation, portable guards and full rejected-course evidence. Its completed
-1.5B candidates remain rejected; a fresh 7B course is running at the snapshot.
+augmentation, portable guards and full rejected-course evidence. All nine
+completed 1.5B, 7B, 14B and 32B courses remain rejected; a fresh 32B course
+(010) is registered and running, with no result recorded at the snapshot.
 No AM C# adapter is qualified or made the default. Large experiment artifacts
 are inventoried as release assets, with local-path redaction and original/public
 hash bindings.
+
+A separate [PicoGK DfAM code corpus](docs/DFAM_CODE_CORPUS.md) is in progress:
+4 of 150 planned examples. Three pass strict isolated native verification,
+which now also measures wall thickness on the mesh and checks
+self-intersections with exact predicates; training assembly still requires
+the complete corpus. A [physics evidence plan](docs/PHYSICS_EVIDENCE_PLAN.md)
+reviews seven open-source AM simulation and geometry projects and schedules
+process and part-scale studies.
+
+![Round roof versus teardrop roof: the overhang screen separates them](docs/visuals/dfam/channel-section.png)
 
 ![Actual geometry from our Qwen adapter and PicoGK](docs/visuals/generated/overview.png)
 
@@ -41,6 +52,10 @@ algorithms and a trusted PicoGK host. The model proposes a bounded plan from
 typed features; geometry checks control STL delivery. This addition does not
 replace the original planner or its benchmark, and it does not qualify a
 metal part for manufacture.
+
+The current scan chain adds [PyMesh exact cleanup and native intersection
+auditing](docs/PYMESH_SCAN_RECONSTRUCTION.md), with source correspondence,
+surface-preservation checks and a separately pinned offline runtime.
 
 The [traceable gallery](docs/visuals/README.md) contains five real model calls,
 their raw responses, native PicoGK STL files and mesh renders. The diagrams
