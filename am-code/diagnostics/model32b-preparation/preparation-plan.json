@@ -1,0 +1,166 @@
+{
+  "schema": "picogk.am.prospective-base-preparation@1",
+  "registered_at_utc": "2026-10-15T02:42:11.764956+00:00",
+  "repository": "mlx-community/Qwen2.5-Coder-32B-Instruct-4bit",
+  "revision": "d1e3b690c8e225d7795bccddf971ca6be68b2012",
+  "license": "apache-2.0",
+  "private": false,
+  "gated": false,
+  "metadata_url": "https://huggingface.co/api/models/mlx-community/Qwen2.5-Coder-32B-Instruct-4bit/revision/d1e3b690c8e225d7795bccddf971ca6be68b2012?blobs=true",
+  "download_method": "Anonymous direct pinned-revision HTTP; no Authorization header, HF client, implicit token or third cache copy. Stream to one partial file then rename only after exact remote identity verification.",
+  "token": false,
+  "HF_DISABLE_IMPLICIT_TOKEN": true,
+  "source_directory": "model32b-upstream",
+  "runtime_directory": "model32b",
+  "base_profile": "base-profile-32b.json",
+  "expected_upstream_files": {
+    "added_tokens.json": {
+      "rfilename": "added_tokens.json",
+      "blobId": "482ced4679301bf287ebb310bdd1790eb4514232",
+      "size": 605
+    },
+    "config.json": {
+      "rfilename": "config.json",
+      "blobId": "9d799bce71e48ee62d2b3e48e4131b3ea463ff99",
+      "size": 867
+    },
+    "merges.txt": {
+      "rfilename": "merges.txt",
+      "blobId": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853
+    },
+    "special_tokens_map.json": {
+      "rfilename": "special_tokens_map.json",
+      "blobId": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "size": 613
+    },
+    "tokenizer.json": {
+      "rfilename": "tokenizer.json",
+      "blobId": "d24314ef7f0afd1b678c2e24c767e19f24f86b0e",
+      "size": 7031673
+    },
+    "tokenizer_config.json": {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "8adf747ccaf85ff9587338cee6ed6be027b98210",
+      "size": 7306
+    },
+    "vocab.json": {
+      "rfilename": "vocab.json",
+      "blobId": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "size": 2776833
+    },
+    "model.safetensors.index.json": {
+      "rfilename": "model.safetensors.index.json",
+      "blobId": "7949fa6067e06f908f1c2ec24cc73fc3c74bd9c7",
+      "size": 143017
+    },
+    "model-00001-of-00004.safetensors": {
+      "rfilename": "model-00001-of-00004.safetensors",
+      "blobId": "6532849b774ee67f3643d5ed8d0fe8bad07d1aaf",
+      "size": 5366582717,
+      "lfs": {
+        "sha256": "1b35365ad06cde22ea1bba74b0b746817c61c92db686fbc0fec64c02629e0821",
+        "size": 5366582717,
+        "pointerSize": 135
+      }
+    },
+    "model-00002-of-00004.safetensors": {
+      "rfilename": "model-00002-of-00004.safetensors",
+      "blobId": "85e27230b33d3380ff86906da13428607d5116b7",
+      "size": 5335712920,
+      "lfs": {
+        "sha256": "434c73dc8841a16be740f2fc50cd246822a009a547037c19d3ad7aaa590f8b10",
+        "size": 5335712920,
+        "pointerSize": 135
+      }
+    },
+    "model-00003-of-00004.safetensors": {
+      "rfilename": "model-00003-of-00004.safetensors",
+      "blobId": "cd26775293c33ff8819bb38d70127d2a0985bad8",
+      "size": 5366641934,
+      "lfs": {
+        "sha256": "6bae5f14badf37ba02af86b66761e94dd3f4f144e9cd3bf5eff9654ff1369d66",
+        "size": 5366641934,
+        "pointerSize": 135
+      }
+    },
+    "model-00004-of-00004.safetensors": {
+      "rfilename": "model-00004-of-00004.safetensors",
+      "blobId": "1b34fe4594757ae49d02af08c3ae94016e0988fb",
+      "size": 2362540888,
+      "lfs": {
+        "sha256": "0a0676a0509f81121f390e088791dd4420ecfbf9ffcf07609261facc8ed324ee",
+        "size": 2362540888,
+        "pointerSize": 135
+      }
+    }
+  },
+  "expected_upstream_count": 12,
+  "expected_runtime_files": [
+    "added_tokens.json",
+    "config.json",
+    "merges.txt",
+    "model.safetensors",
+    "model.safetensors.index.json",
+    "special_tokens_map.json",
+    "tokenizer.json",
+    "tokenizer_config.json",
+    "vocab.json"
+  ],
+  "expected_runtime_count": 9,
+  "architecture": {
+    "model_type": "qwen2",
+    "hidden_size": 5120,
+    "intermediate_size": 27648,
+    "num_hidden_layers": 64,
+    "num_attention_heads": 40,
+    "num_key_value_heads": 8,
+    "vocab_size": 152064
+  },
+  "quantization": {
+    "group_size": 64,
+    "bits": 4
+  },
+  "expected_index_tensor_count": 1671,
+  "expected_last16_layer_indices": [
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63
+  ],
+  "expected_lora_rank": 8,
+  "expected_lora_scale": 20,
+  "expected_lora_arrays": 224,
+  "expected_lora_parameters": 16777216,
+  "source_repacker": "repack_model14b.py",
+  "source_repacker_sha256": "17e700c0ecf18b8fa6028aeed7df3aa033866bfda5bb2588c5d0042d460d98ca",
+  "new_repacker": "repack_model32b.py",
+  "repacker_changes": "Only repository/revision, four pinned shard identities, and 32B directory/profile/receipt paths; arbitrary-N byte-copy/validation/self-check logic unchanged. Architecture and 1671-index identity are prospectively pinned here and validated against source config/index.",
+  "disk_free_before_bytes": 47151693824,
+  "approx_upstream_and_runtime_bytes": 36886033337,
+  "disk_reserve_bytes": 8589934592,
+  "runtime_memory_limit_bytes": 38654705664,
+  "runtime_memory_fit_proven": false,
+  "preserve_all_upstream_shards": true,
+  "cleanup_authorized": false,
+  "existing_models_sources_and_defaults_modified": false,
+  "model_loaded": false,
+  "mlx_imported": false,
+  "gpu_used": false,
+  "native_execution": false,
+  "final_contents_read": false,
+  "baseline_or_training_started": false,
+  "manufacturing_authorized": false
+}

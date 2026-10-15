@@ -1,0 +1,25 @@
+{
+  "schema": "picogk.am.independent-task-body-review@1",
+  "created_at": "2026-10-14T20:27:54.239092+00:00",
+  "status": "accepted_source_and_semantic_binding_pending_token_audit",
+  "corpus_sha256": "559d1f2681f68b012cd8eb5cd0212efc1d8f07f0d11ba35efecc4fc2e64fbf20",
+  "manifest_sha256": "7ebfb432d17ff50ed1d4544fc728b470dd958fab3d467b54cd7c10a4e7c16e7d",
+  "author_sha256": "b5ae779ada365ef3f3c3bb60832aa90bd602fbf10cb0e4e1ea67c218f8a5fdf8",
+  "teachers": 80,
+  "rows": 320,
+  "unique_sources": 71,
+  "preserved_native_check_bindings": 1548,
+  "checks": {
+    "all_source_input_native_receipt_hashes_bound": true,
+    "all_320_answers_code_unchanged": true,
+    "all_four_bodies_include_full_spec_operations_parser_and_schema": true,
+    "generator_family_formulas_parameter_roles_and_conditional_reports_reviewed": true,
+    "all_full_generic_headers_exact": true,
+    "no_new_native_program_or_execution": true
+  },
+  "evaluation_gold_used": false,
+  "final_contents_read": false,
+  "model_or_gpu_used": false,
+  "manufacturing_authorized": false,
+  "limitation": "Bindings and source-derived specification review do not demonstrate learner generalization or physical qualification."
+}

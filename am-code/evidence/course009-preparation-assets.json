@@ -1,0 +1,332 @@
+{
+  "schema": "picogk.am.release-assets-staged@1",
+  "status": "staged_not_uploaded",
+  "assets": [
+    {
+      "asset": "untouched-32b-baseline-and-memory-smoke-full-evidence.tar.gz",
+      "bytes": 61219435,
+      "sha256": "fe3aea94582032690b80e2713984a4858f4e034222b784b45c201ae5f1d13604",
+      "files": 436,
+      "raw_payload_bytes": 79054332,
+      "redacted_files": 46,
+      "export_index_sha256": "7b2d867b80499501c29d3645dddf08e01dbc6035667df3a5b8937ab97ae8b2f4",
+      "qualified_adapter": false
+    }
+  ],
+  "completed_untouched32b_baseline": {
+    "v1_passed": 5,
+    "v2_passed": 5,
+    "total": 12,
+    "same_pass_set": true,
+    "same12_raw_responses": true,
+    "all12_eos": true,
+    "new_model_queries_for_regrade": 0,
+    "historical_v1_report_original_sha256": "6a84e3de296fee17a9984651af025c07dec418f28d85ec4f4345956c3aa630a1",
+    "v2_report_original_sha256": "6bba43bb33c9ad382ba264fb360cd0142b06d24d491791450690a9dd1fc70423",
+    "frozen_profile_independent_review_original_sha256": "613e16cdee410642a1811d6d6db5ea7221db111776ee52c1332d21d85fe5cdc3"
+  },
+  "completed_memory_smoke": {
+    "qualification_eligible": false,
+    "future_full_course_may_resume_smoke": false,
+    "steps": 1,
+    "rows": 1,
+    "actual_tokens": 5416,
+    "maximum_sequence_limit": 6144,
+    "reported_mlx_peak_bytes": 31790475366,
+    "runtime_memory_cap_bytes": 38654705664,
+    "full_course_fit_proven": false,
+    "adapter_sha256": "928e84c301ac5b3b12ac528e215b4ef80ab18f6ba8e184d99b458ef4aca028cc",
+    "adapter_files": [
+      {
+        "archive_path": "runs/32b-memory-longest001/adapter/adapters.safetensors",
+        "sha256": "928e84c301ac5b3b12ac528e215b4ef80ab18f6ba8e184d99b458ef4aca028cc"
+      }
+    ],
+    "intermediate_checkpoints": [],
+    "adapter_config_original_sha256": "0b2ad2686de506d1e1d043ea2e153ba1a44cc3a260a1f94809a6143842c2e290",
+    "adapter_config_public_sha256": "c6fc185d181323dd59504624236e880ebe67ed72c3f58e2db46e719a72996656",
+    "training_receipt_original_sha256": "3ad189a5d6a72abb381821013410b938d781d82257abe470bfca1f4179ca6f47",
+    "training_receipt_public_sha256": "3ad189a5d6a72abb381821013410b938d781d82257abe470bfca1f4179ca6f47",
+    "cpu_audit_original_sha256": "85764f685733d4fe28d3e51f1cff500c8ab6328bcb4fd98cb287514850a4d49f",
+    "arrays": 224,
+    "parameters": 16777216,
+    "finite": true
+  },
+  "checker_v2": {
+    "checker_profile_original_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "public_profile_sha256": "834974c4f77a65c03a0c657fc0595bc06eea83d0c45f6cb89fd2b05c498f94bc",
+    "original_anchor_sha256": "5bdb615caefb594b3eb55054525fd2021a008d5005e3f919864bed4cadda2a8e",
+    "public_profile_is_historical_provenance_only": true,
+    "profile_reanchored": false,
+    "local_dependency_count": 40,
+    "installed_dependency_count": 14,
+    "actual_final_contents_included": false,
+    "sealed_manifest_is_hash_metadata_only": true
+  },
+  "course009": {
+    "status": "registered_running_no_candidate_result",
+    "prospective_original_sha256": "5116e312f4d5e5cb9d429b99dec50e4d2335d9566500c9840143c3d3e690f3d3",
+    "runtime_protocol_original_sha256": "54c1c08b48fb8017ed827f18a6a73b904d4e1379ca39d063a2eb4b9dd0c528b4",
+    "training_rows": 310,
+    "planned_steps": 310,
+    "learning_rate": 5e-07,
+    "fresh_untouched_base": true,
+    "smoke_adapter_resumed": false,
+    "active_weights_logs_captures_or_scores_included": false,
+    "launch_review_original_sha256": "382bda85b64882899369147c967c4954eefe520e2268b5323554e5dd81010106",
+    "launch_review_public_sha256": "bb09f2291b51113024e8f1150097f61a507fe59d0540f4b0af284c7c189c372c",
+    "latest_launch_review_outside_frozen_archive": true
+  },
+  "preserved_existing_remote_assets": [
+    {
+      "id": 641641502,
+      "name": "accepted004-AM-release.json",
+      "size": 63924,
+      "digest": "sha256:6a24f4f9857ed2f246a371974ae07474310e47e490f19f83f211dad52339519b",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/accepted004-AM-release.json"
+    },
+    {
+      "id": 641641503,
+      "name": "accepted004-source-update-provenance.json",
+      "size": 1643,
+      "digest": "sha256:9a506ae8c99ed131e85f359b1446c01ed793a3efa8dbed6adf4bb2c9f80b5b70",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/accepted004-source-update-provenance.json"
+    },
+    {
+      "id": 641911921,
+      "name": "accepted005-14b-AM-release.json",
+      "size": 73046,
+      "digest": "sha256:58a012c8f9f764d1876c4213f803836d1d8cf27716124e35a1d25831344900ff",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/accepted005-14b-AM-release.json"
+    },
+    {
+      "id": 641911922,
+      "name": "accepted005-14b-assets.json",
+      "size": 9986,
+      "digest": "sha256:bb37357b32a16e28daf6c9670603594fbaf7f20b18fb3041c096578065b2fd3f",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/accepted005-14b-assets.json"
+    },
+    {
+      "id": 641911924,
+      "name": "accepted005-14b-source-update-provenance.json",
+      "size": 2131,
+      "digest": "sha256:374063a0184188b27add92f1de38e9a7b802e2fa3c5bb158e8814f007763a7a8",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/accepted005-14b-source-update-provenance.json"
+    },
+    {
+      "id": 640967588,
+      "name": "AM-release.json",
+      "size": 40671,
+      "digest": "sha256:c4bc8de84c62af4e9ce8b0c7886eaefc014ee50b34b2f312f3ac7637d25e9132",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/AM-release.json"
+    },
+    {
+      "id": 640967550,
+      "name": "assets.json",
+      "size": 2769,
+      "digest": "sha256:62c4ecf4f5269278ea0e97629e78f6139ab8d9c17f144e58e1db6af1573a5d27",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/assets.json"
+    },
+    {
+      "id": 640967417,
+      "name": "completed-header-and-7b-baseline-evidence.tar.gz",
+      "size": 4448043,
+      "digest": "sha256:716bc6169ccf66481074af3f816a1239c00b61bc1a26eb8be65123aebf1ddc64",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/completed-header-and-7b-baseline-evidence.tar.gz"
+    },
+    {
+      "id": 640967418,
+      "name": "corrective-teachers-full-evidence.tar.gz",
+      "size": 46717778,
+      "digest": "sha256:9b1fcde5db26c92dc474962892fe5caa845459dd7d0f55901333e5ad4d6436ff",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/corrective-teachers-full-evidence.tar.gz"
+    },
+    {
+      "id": 641364402,
+      "name": "corrective003-assets.json",
+      "size": 1093,
+      "digest": "sha256:be5885016b0dcdd40351f6fa57faf2eb8a22d9dc5d689c561af027baf97ebcad",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/corrective003-assets.json"
+    },
+    {
+      "id": 641364403,
+      "name": "corrective003-full-native-evidence.tar.gz",
+      "size": 7627612,
+      "digest": "sha256:d3b52fb4d6e252f5613d9ce8ba35c10fd95b36ca6331f6db7b868728eea2ca9f",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/corrective003-full-native-evidence.tar.gz"
+    },
+    {
+      "id": 641364398,
+      "name": "course004-AM-release.json",
+      "size": 53437,
+      "digest": "sha256:817c1c632118c2109c1cb03640604bf43b7859b3a01d559bf681d12631883057",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course004-AM-release.json"
+    },
+    {
+      "id": 641364404,
+      "name": "course004-assets.json",
+      "size": 2020,
+      "digest": "sha256:c320efcb95f4a70ae30690b4104c81f42d3a0107502da252ebcb6bb8f3fb7902",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course004-assets.json"
+    },
+    {
+      "id": 641364441,
+      "name": "course004-source-update-provenance.json",
+      "size": 1543,
+      "digest": "sha256:4b81a31bace25d7f0d23a64938f879ffc60dab64d182bf0c8c251790cf1d0c93",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course004-source-update-provenance.json"
+    },
+    {
+      "id": 641562626,
+      "name": "course005-AM-release.json",
+      "size": 59672,
+      "digest": "sha256:cddf3468fde66abb49f13f2d8d859d9547f1bd62e3d2bbe7b33e9b4aa49ca0d8",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course005-AM-release.json"
+    },
+    {
+      "id": 641562623,
+      "name": "course005-assets.json",
+      "size": 6386,
+      "digest": "sha256:27b865e27dff8ad1d428fb75d8c684e832261dc15da7037e77cff5a57cfc6fef",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course005-assets.json"
+    },
+    {
+      "id": 641562625,
+      "name": "course005-source-update-provenance.json",
+      "size": 1385,
+      "digest": "sha256:383ab1ddbf33653b0ed3192d6ffb086a64454369880fc4d4bf7e144b8296d314",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course005-source-update-provenance.json"
+    },
+    {
+      "id": 641878655,
+      "name": "course006-AM-release.json",
+      "size": 67183,
+      "digest": "sha256:363fa77df99ff6131a9ebb399784dfb3a8320a471a5845dbbe686aa4ed662a22",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course006-AM-release.json"
+    },
+    {
+      "id": 641878658,
+      "name": "course006-assets.json",
+      "size": 8614,
+      "digest": "sha256:0bb6d238651556de2977820715315695d6782e2f5e82a23c23d1aa9a72000816",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course006-assets.json"
+    },
+    {
+      "id": 641878668,
+      "name": "course006-source-update-provenance.json",
+      "size": 1909,
+      "digest": "sha256:54100970531e1458f7ab5ce625e5ff4da861a9a9b9619bd17c776787137d203f",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course006-source-update-provenance.json"
+    },
+    {
+      "id": 642052472,
+      "name": "course007-AM-release.json",
+      "size": 76703,
+      "digest": "sha256:d9f894956d021ff8d6923e71203cffa97c6bea7b530921eea5f62dcc39a98848",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course007-AM-release.json"
+    },
+    {
+      "id": 642052469,
+      "name": "course007-assets.json",
+      "size": 11324,
+      "digest": "sha256:8be17457b159c728360f3d328895ca6eb2cbcb4309386930336398049b0caf91",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course007-assets.json"
+    },
+    {
+      "id": 642052474,
+      "name": "course007-source-update-provenance.json",
+      "size": 1918,
+      "digest": "sha256:a1ae9802d9090ab22bbea1079b584107da5b827d790e9374b0b5c5237caee57c",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course007-source-update-provenance.json"
+    },
+    {
+      "id": 642561921,
+      "name": "course008-AM-release.json",
+      "size": 84493,
+      "digest": "sha256:063c7b1c2dd5679e68cbabec8155311642347600ba2fc1c6e302cbc4a8bce5b0",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course008-AM-release.json"
+    },
+    {
+      "id": 642561919,
+      "name": "course008-assets.json",
+      "size": 12458,
+      "digest": "sha256:0bdaa1deadc1378518eea403b2f4c05bd2830bacd2520d27c403466234de05be",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course008-assets.json"
+    },
+    {
+      "id": 642561920,
+      "name": "course008-source-update-provenance.json",
+      "size": 2013,
+      "digest": "sha256:cb991e54f9865db17c2d321440f39ef636186a80d9ba0e253bdbdc18bbdaf761",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/course008-source-update-provenance.json"
+    },
+    {
+      "id": 640967413,
+      "name": "development-reference-full-evidence.tar.gz",
+      "size": 9011063,
+      "digest": "sha256:12d6a533e09f991a6f8e9c8070a1120433fa65de4e15363f6581637972c9c489",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/development-reference-full-evidence.tar.gz"
+    },
+    {
+      "id": 640967433,
+      "name": "original150-full-evidence.tar.gz",
+      "size": 180412627,
+      "digest": "sha256:5c5f337c8a3b7c3d6880d28e38cf56480dacad63453d466cb49ba404c1dbe0df",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/original150-full-evidence.tar.gz"
+    },
+    {
+      "id": 642052471,
+      "name": "rejected-14b-course007-full-evidence.tar.gz",
+      "size": 129358176,
+      "digest": "sha256:0998fa0a5d1112567e7987cb5a5e49b25a681fef2889d0c5cbd3357b54e05b7a",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/rejected-14b-course007-full-evidence.tar.gz"
+    },
+    {
+      "id": 642561922,
+      "name": "rejected-14b-course008-full-evidence.tar.gz",
+      "size": 256893739,
+      "digest": "sha256:77bda61a4225113422fbd467d9c897e66d9cd6490027ea6f348d202d297971e5",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/rejected-14b-course008-full-evidence.tar.gz"
+    },
+    {
+      "id": 641364406,
+      "name": "rejected-7b-course004-full-evidence.tar.gz",
+      "size": 259079481,
+      "digest": "sha256:1cabffe17406e749c3d4b5e407a54d95b8c99eee44ef493919c90462fa23c2ac",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/rejected-7b-course004-full-evidence.tar.gz"
+    },
+    {
+      "id": 641562624,
+      "name": "rejected-7b-course005-full-evidence.tar.gz",
+      "size": 349105830,
+      "digest": "sha256:689bd2750a639648f329f448628324be6ef4356fb3fbc6557832db760981f260",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/rejected-7b-course005-full-evidence.tar.gz"
+    },
+    {
+      "id": 641878669,
+      "name": "rejected-7b-course006-full-evidence.tar.gz",
+      "size": 265846264,
+      "digest": "sha256:2f25adcb89e0d18acfcfd905fa10b1554141a85f30f4cdac957df24b63a17f7a",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/rejected-7b-course006-full-evidence.tar.gz"
+    },
+    {
+      "id": 640967414,
+      "name": "rejected-completed-courses-full-evidence.tar.gz",
+      "size": 313161793,
+      "digest": "sha256:c8aadbce86cd12e2d4b9f88df4fc458dbf6220f4f1ec502c3b884d4e64e1dca1",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/rejected-completed-courses-full-evidence.tar.gz"
+    },
+    {
+      "id": 641911923,
+      "name": "untouched-14b-baseline-full-evidence.tar.gz",
+      "size": 4665243,
+      "digest": "sha256:234fd0dd94fe266bf5d862a18c25cb1095dd2b43d59e78cb6b41cece45ed42bf",
+      "browser_download_url": "https://github.com/cluster2600/qwen-picogk/releases/download/am-code-20261014-study/untouched-14b-baseline-full-evidence.tar.gz"
+    }
+  ],
+  "existing35_remote_assets_immutable": true,
+  "upstream_base_native_or_compiler_payloads_included": false,
+  "actual_final_task_reference_or_gold_contents_included": false,
+  "qualified_adapter": false,
+  "manufacturing_authorized": false
+}

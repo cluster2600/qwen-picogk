@@ -1,0 +1,37 @@
+{
+  "all_old_run_and_original_teacher_hashes_preserved": true,
+  "base_profile_sha256": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+  "bytes": 1124043,
+  "corpus_sha256": "9142af662d16e88e47cfd123e5f4219023803fd4003ddc61a1270e6c26c7d4b3",
+  "created_at_utc": "2026-10-14T18:40:24.642231+00:00",
+  "gpu_used": false,
+  "manufacturing_authorized": false,
+  "model_loaded": false,
+  "native_new16_report_sha256": "9571bec50c8adac89ba50c660f158447d549f0b4fed2588b4a2cc3d065918706",
+  "new_cases_sha256": "039ffcf984444a4bc540be140e8a5a6f754e25b607f39b7e780b1986129c3c8d",
+  "new_native_boolean_checks": 648,
+  "new_native_programs": 16,
+  "operation": "Exact byte concatenation; no reserialization or teacher edits.",
+  "preservation_snapshot_sha256": "92c0586496a5874b65ad2571938e56e7ac4cdaf4e8ee2b04e35598539ecc60fb",
+  "rows": 224,
+  "schema": "picogk.am.targeted-corpus@1",
+  "sources": [
+    {
+      "bytes": 970353,
+      "path": "data/corrective-002/train.jsonl",
+      "rows": 192,
+      "sha256": "9966a99f998f544fdfe3d9370f53e131e5ae31061b3e89ae196d3f34e56d6a65"
+    },
+    {
+      "bytes": 153690,
+      "path": "data/corrective-003/train.jsonl",
+      "rows": 32,
+      "sha256": "d93a6c6cc57e04c2943021f02337942d773a8ddadaf7ad1800ce8a648a85b952"
+    }
+  ],
+  "status": "frozen_for_prospective_registration",
+  "token_receipt_sha256": "35dc45a569ee6fbe65edc001d29dfc5f350c2d41c9cd41e41c8dc48c606bb336",
+  "training_started": false,
+  "unique_assistant_answers": 71,
+  "unique_user_prompts": 224
+}

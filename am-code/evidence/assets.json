@@ -1,0 +1,162 @@
+{
+  "schema": "picogk.am.release-assets-staged@1",
+  "created_at": "2026-10-14T15:58:01.496883+00:00",
+  "status": "existing_assets_unchanged_completed32b_baseline_smoke_v2_source_update",
+  "assets": [
+    {
+      "asset": "original150-full-evidence.tar.gz",
+      "bytes": 180412627,
+      "sha256": "5c5f337c8a3b7c3d6880d28e38cf56480dacad63453d466cb49ba404c1dbe0df",
+      "files": 1437,
+      "raw_payload_bytes": 679120357,
+      "redacted_files": 44,
+      "export_index_sha256": "73840560a57f2c830cac2996b2631e32c46ee66a4822a3163f55bdd3c694a330",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "corrective-teachers-full-evidence.tar.gz",
+      "bytes": 46717778,
+      "sha256": "9b1fcde5db26c92dc474962892fe5caa845459dd7d0f55901333e5ad4d6436ff",
+      "files": 4550,
+      "raw_payload_bytes": 168607614,
+      "redacted_files": 335,
+      "export_index_sha256": "b9b7abadb05cd91a754199194a9b4e655e0660b52a0f723adcfde3f399b57131",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "development-reference-full-evidence.tar.gz",
+      "bytes": 9011063,
+      "sha256": "12d6a533e09f991a6f8e9c8070a1120433fa65de4e15363f6581637972c9c489",
+      "files": 708,
+      "raw_payload_bytes": 34414398,
+      "redacted_files": 50,
+      "export_index_sha256": "3eeecf0f6ccbe6ef3974044c2911c930c1b40499441e63987f210c36e194d405",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-completed-courses-full-evidence.tar.gz",
+      "bytes": 313161793,
+      "sha256": "c8aadbce86cd12e2d4b9f88df4fc458dbf6220f4f1ec502c3b884d4e64e1dca1",
+      "files": 426,
+      "raw_payload_bytes": 342326880,
+      "redacted_files": 62,
+      "export_index_sha256": "af8aa59ab75fc51169de381e16d5adefc291e1e7a4b08074a69bb8f6ee93b3c6",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "completed-header-and-7b-baseline-evidence.tar.gz",
+      "bytes": 4448043,
+      "sha256": "716bc6169ccf66481074af3f816a1239c00b61bc1a26eb8be65123aebf1ddc64",
+      "files": 525,
+      "raw_payload_bytes": 15884885,
+      "redacted_files": 85,
+      "export_index_sha256": "9fbbb7605e4c92adcd59e1832afb121eba43ad6990c979aec1aefafa74782657",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-7b-course004-full-evidence.tar.gz",
+      "bytes": 259079481,
+      "sha256": "1cabffe17406e749c3d4b5e407a54d95b8c99eee44ef493919c90462fa23c2ac",
+      "files": 319,
+      "raw_payload_bytes": 290590256,
+      "redacted_files": 44,
+      "export_index_sha256": "dfe017c694944cdfe716a43e853b219e745d0a7f08a8ec92bbbb14b4832306d5",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "corrective003-full-native-evidence.tar.gz",
+      "bytes": 7627612,
+      "sha256": "d3b52fb4d6e252f5613d9ce8ba35c10fd95b36ca6331f6db7b868728eea2ca9f",
+      "files": 1545,
+      "raw_payload_bytes": 30209395,
+      "redacted_files": 37,
+      "export_index_sha256": "4c16a9f07ac163c226f8ddcb77884a484065483717359eb2272f7a763a1798fe",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-7b-course005-full-evidence.tar.gz",
+      "bytes": 349105830,
+      "sha256": "689bd2750a639648f329f448628324be6ef4356fb3fbc6557832db760981f260",
+      "files": 365,
+      "raw_payload_bytes": 391368926,
+      "redacted_files": 41,
+      "export_index_sha256": "b15de85a603b0c19df32b53fe627e6ce3a61887693a83c7fa831b0343787d3ff",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-7b-course006-full-evidence.tar.gz",
+      "bytes": 265846264,
+      "sha256": "2f25adcb89e0d18acfcfd905fa10b1554141a85f30f4cdac957df24b63a17f7a",
+      "files": 361,
+      "raw_payload_bytes": 307263769,
+      "redacted_files": 46,
+      "export_index_sha256": "dacb17a706312bdecc2de9ac0875ade91e266895a956d46a3651c5f50a1818ac",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "untouched-14b-baseline-full-evidence.tar.gz",
+      "bytes": 4665243,
+      "sha256": "234fd0dd94fe266bf5d862a18c25cb1095dd2b43d59e78cb6b41cece45ed42bf",
+      "files": 234,
+      "raw_payload_bytes": 11676439,
+      "redacted_files": 30,
+      "export_index_sha256": "4a6ff6e2a127e7a2de19a8e93ca93f6d1d4750f4b3470ee01a6cf78e9b05a01e",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-14b-course007-full-evidence.tar.gz",
+      "bytes": 129358176,
+      "sha256": "0998fa0a5d1112567e7987cb5a5e49b25a681fef2889d0c5cbd3357b54e05b7a",
+      "files": 278,
+      "raw_payload_bytes": 147709447,
+      "redacted_files": 36,
+      "export_index_sha256": "d21b36a33bcd9f0ec3193477de0dee5c483e2a524620e4950355998b842981be",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-14b-course008-full-evidence.tar.gz",
+      "bytes": 256893739,
+      "sha256": "77bda61a4225113422fbd467d9c897e66d9cd6490027ea6f348d202d297971e5",
+      "files": 199,
+      "raw_payload_bytes": 285174210,
+      "redacted_files": 28,
+      "export_index_sha256": "dcd5f32d4a3010b2165dd494219cddb8d169f1380087b94218336334e0eb69a0",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "untouched-32b-baseline-and-memory-smoke-full-evidence.tar.gz",
+      "bytes": 61219435,
+      "sha256": "fe3aea94582032690b80e2713984a4858f4e034222b784b45c201ae5f1d13604",
+      "files": 436,
+      "raw_payload_bytes": 79054332,
+      "redacted_files": 46,
+      "export_index_sha256": "7b2d867b80499501c29d3645dddf08e01dbc6035667df3a5b8937ab97ae8b2f4",
+      "qualified_adapter": false
+    }
+  ],
+  "ongoing_training_weights_copied": false,
+  "final_task_contents_included": false,
+  "upstream_base_or_native_binaries_included": false,
+  "all_adapter_assets_unqualified": true,
+  "manufacturing_authorized": false,
+  "omitted": [
+    "Upstream model payloads and binaries/SDK/packages/caches/compiler products.",
+    "Sealed final prompts, references, gold results and their author module.",
+    "Incomplete training course weights and its live log."
+  ],
+  "completed_baseline7b_included": true,
+  "current_7b_training_weights_or_live_log_included": false,
+  "extensionless_script_text_redaction_verified": true,
+  "updated_at": "2026-10-15T03:32:44.486592+00:00",
+  "initial_five_assets_immutable": true,
+  "new_assets": [
+    "untouched-32b-baseline-and-memory-smoke-full-evidence.tar.gz"
+  ],
+  "initial_uploaded_seven_assets_immutable": true,
+  "existing_thirteen_remote_assets_immutable": true,
+  "existing_seventeen_remote_assets_immutable": true,
+  "existing_nineteen_remote_assets_immutable": true,
+  "existing_twenty_three_remote_assets_immutable": true,
+  "existing_twenty_seven_remote_assets_immutable": true,
+  "existing_thirty_one_remote_assets_immutable": true
+}

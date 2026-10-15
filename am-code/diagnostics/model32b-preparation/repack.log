@@ -1,0 +1,9 @@
+{
+  "status": "verified",
+  "tensor_count": 1671,
+  "canonical_tensor_semantic_sha256": "455462982cd767d0df8751084b42f32d52f61746cad96291e3f69d11479058c0",
+  "merged_weights_sha256": "b4e7ce0334ced489f80446c79b91f8d9b30dd3f3a0f08a16ffad01cf0e62bb5a",
+  "receipt_sha256": "e9271088ffa4e346a79eb8a8236d9dc3258003a11e25bf1b2798685dcc121952",
+  "profile_sha256": "a83dbe6460c70da82d9c3220a9930b229d516dfcc390c7403f660e1f55b85c09",
+  "model_gpu_used": false
+}

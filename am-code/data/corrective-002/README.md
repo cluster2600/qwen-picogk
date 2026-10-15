@@ -1,0 +1,3 @@
+This 192-row prompt-style augmentation uses the exact 64 validated targets from corrective-001. It presents each teacher under the original compact card, a common generic development prefix stopped before its task suffix, and the isolated CLI's API_GUIDANCE constant. Original teacher bodies and exact refusal no-initialization directives are preserved; no frozen development task-specific content or final content was copied.
+
+Targets are unchanged; no additional native execution is claimed. Maximum sequence length is 1625 tokens. Independent review verified 192/192 prompt/target/provenance bindings. The input-style hypothesis remains unproven, and the corresponding model course failed independent qualification.

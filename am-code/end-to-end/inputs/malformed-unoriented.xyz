@@ -1,0 +1,5 @@
+# no sensor poses or oriented observations
+x,y,z
+1.6,-2,1.2
+NaN,0,0
+3.6,0,1.2,42

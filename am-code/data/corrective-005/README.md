@@ -1,0 +1,7 @@
+# Short task-first augmentation
+
+This corpus has 160 new prompt formulations around 80 previously validated teacher cases (71 distinct C# programs). Each case appears twice, under the unchanged generic PicoGK 2.3 API header. The assistant answers, C# sources, synthetic fixtures, geometry or refusal oracles, and native result files remain byte-identical to corrective-001 and corrective-003. This is prompt augmentation, not 160 new programs or independent native validations.
+
+Task bodies name the intended shape, numeric roles, input grammar and exact report contract. Ordinary bodies are at most 650 characters; TPMS and syntax-aware signed-range refusals may use up to 1,000. The generator reads only existing teacher metadata/source/fixtures. It does not use development or final task bodies, gold code, captured model answers or new geometry dimensions. `augment.py --self-check` checks 160 distinct strict message rows, all 80 frozen source/answer/fixture/native bindings, complete code fences and body limits without native execution or model loading. Generation refuses to overwrite an existing corpus or manifest.
+
+The earlier native proofs remain software geometry or bounded refusal checks. They establish neither physical reconstruction accuracy nor LPBF support elimination, powder removal, residual-stress control or manufacturing qualification. Existing teacher explanations retain their scientific attributions and those limits. Independent semantic and actual-tokenizer reviews are required before training; no training or inference is performed here.

@@ -1,0 +1,26 @@
+{
+  "schema": "picogk.am.evaluation-freeze@1",
+  "files": {
+    "development.json": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+    "final.json": "7a898d1fd2cd8c5c09fa2d27bd7480ee620b1f20aa341390b2829c5c0cf2b052"
+  },
+  "tasks_per_split": 12,
+  "reference_validation_required": true,
+  "final_model_inference_allowed_only_after_selection": true,
+  "qualification": "software and geometry only",
+  "promotion": {
+    "development_minimum_passes": 11,
+    "final_minimum_passes": 11,
+    "must_retain_all_baseline_passing_tasks": true,
+    "required_families": [
+      "vent",
+      "cone-roof",
+      "scan-normals",
+      "missing-interfaces"
+    ],
+    "all_negative_parser_inputs_rejected": true,
+    "retention_required": true,
+    "root_end_to_end_scan_tasks_required": true,
+    "loss_is_not_a_gate": true
+  }
+}

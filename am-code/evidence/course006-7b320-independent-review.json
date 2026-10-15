@@ -1,0 +1,310 @@
+{
+  "schema": "picogk.am.independent-code-review@1",
+  "course": "006",
+  "status": "formal_gate_rejected",
+  "adapter_sha256": "5a55aa18ea105760cca0be630afc83c470daa4f9a1e3ae7b8a583c79c036688f",
+  "adapter_config_sha256": "f7301a96ae790f7ae7e6e68daa8a3e2c55831e5d57c6244bc3cb794f5ab7d4d4",
+  "training_steps": 320,
+  "training_rows": 320,
+  "base_profile_sha256": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+  "base_weights_sha256": "56a3d94706833f753e6c6b47ea57af8ef638cd8cc1d74eca1142ba640b26060e",
+  "registered_gates": {
+    "development_minimum": 11,
+    "development_total": 12,
+    "final_minimum": 11,
+    "final_total": 12,
+    "required_families": [
+      "vent",
+      "cone-roof",
+      "scan-normals",
+      "missing-interfaces"
+    ],
+    "retain_all_base_development_passes": true,
+    "end_to_end_scan_development_passes": 4,
+    "no_unexpected_native_failures": true,
+    "all_generation_stopped": true
+  },
+  "matched_baseline_passed_ids": [
+    "development-offset-sign"
+  ],
+  "matched_baseline_passes_retained": false,
+  "matched_baseline_passes_lost": [
+    "development-offset-sign"
+  ],
+  "critical_family_passes": {
+    "development-vent": true,
+    "development-cone-roof": false,
+    "development-scan-normals": false,
+    "development-missing-interfaces": false
+  },
+  "all_16_generations_stopped": true,
+  "finite_224_array_audit_bound": true,
+  "development": {
+    "passed": 2,
+    "total": 12,
+    "all_stopped": true,
+    "finish_reasons": {
+      "stop": 12
+    },
+    "tasks": [
+      {
+        "id": "development-initialize",
+        "status": "failed",
+        "source_sha256": "2b57b4788d1d39b4894ca9598569acaf131d8ae5e619bf4f5f846b5ada2e00a7",
+        "raw_response_sha256": "927aaeac3310aa902c195eba28f3a1cba8f5f193b44399171e1782e2b165bb65",
+        "failed_checks": [
+          "native_exit_zero"
+        ],
+        "native_exit_code": -6,
+        "error": "isolated native process failed; see candidate-scores-7b320/development-initialize/process.log",
+        "interpretation": "Uses flat AddBeam with identical endpoints at (10,10,10), yielding zero axial length instead of the requested sphere. Its own managed Empty solid guard at line26 exits -6.",
+        "managed_exception_excerpt": [
+          "Unhandled exception. System.IO.InvalidDataException: Empty solid.",
+          "   at Program.Main(String[] args) in candidate-scores-7b320/development-initialize/Program.cs:line 26"
+        ]
+      },
+      {
+        "id": "development-offset-sign",
+        "status": "failed",
+        "source_sha256": "a377dd78277b3017346e04923c04016c5b9c7db4f25302f4d6da3de2b00ac9fd",
+        "raw_response_sha256": "33005f5bd323dd833699dd8f4a1f0773130727b718636269fe1bc96200289af3",
+        "failed_checks": [
+          "native_exit_zero"
+        ],
+        "native_exit_code": -6,
+        "error": "isolated native process failed; see candidate-scores-7b320/development-offset-sign/process.log",
+        "interpretation": "Applies the negative offset then BoolSubtract(new(part)), subtracting the eroded solid from itself. Its managed Empty solid guard at line27 exits -6; matched baseline pass is lost.",
+        "managed_exception_excerpt": [
+          "Unhandled exception. System.IO.InvalidDataException: Empty solid.",
+          "   at Program.Main(String[] args) in candidate-scores-7b320/development-offset-sign/Program.cs:line 27"
+        ]
+      },
+      {
+        "id": "development-closing",
+        "status": "failed",
+        "source_sha256": "64ea4d3ffa1726e271f07e0d624e9309459143644e4dd3790e7423e0499cac22",
+        "raw_response_sha256": "93104f998eb62f8023e4b49fa33f42eaf88a74418fd93f301a32eeffba3e2f46",
+        "failed_checks": [],
+        "error": "C# compilation failed; see candidate-scores-7b320/development-closing/process.log",
+        "interpretation": "Uses a parameterless CalculateProperties return value despite required out parameters/void result, nonexistent Directory.PurgeDirectory and lowercase Vector3 fields.",
+        "compiler_errors": [
+          "candidate-scores-7b320/development-closing/Program.cs(29,23): error CS7036: There is no argument given that corresponds to the required parameter 'fVolumeCubicMM' of 'Voxels.CalculateProperties(out float, out BBox3)' [candidate-scores-7b320/development-closing/Candidate.csproj]",
+          "candidate-scores-7b320/development-closing/Program.cs(29,44): error CS0023: Operator '.' cannot be applied to operand of type 'void' [candidate-scores-7b320/development-closing/Candidate.csproj]",
+          "candidate-scores-7b320/development-closing/Program.cs(30,19): error CS0117: 'Directory' does not contain a definition for 'PurgeDirectory' [candidate-scores-7b320/development-closing/Candidate.csproj]",
+          "candidate-scores-7b320/development-closing/Program.cs(43,38): error CS1061: 'Vector3' does not contain a definition for 'x' and no accessible extension method 'x' accepting a first argument of type 'Vector3' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b320/development-closing/Candidate.csproj]",
+          "candidate-scores-7b320/development-closing/Program.cs(43,52): error CS1061: 'Vector3' does not contain a definition for 'y' and no accessible extension method 'y' accepting a first argument of type 'Vector3' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b320/development-closing/Candidate.csproj]",
+          "candidate-scores-7b320/development-closing/Program.cs(43,56): error CS1061: 'Vector3' does not contain a definition for 'z' and no accessible extension method 'z' accepting a first argument of type 'Vector3' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b320/development-closing/Candidate.csproj]"
+        ]
+      },
+      {
+        "id": "development-shell",
+        "status": "passed",
+        "source_sha256": "134e7b7b3c8138c03c13325677b657f6ea70c858ed4c012f39ebeefcde037abc",
+        "raw_response_sha256": "2f81c51d997d61086292cfd6559dde6989d5680f1811b33a4c9dcc319a4b4a46",
+        "failed_checks": [],
+        "native_exit_code": 0,
+        "occupancy_iou": 1.0
+      },
+      {
+        "id": "development-vent",
+        "status": "passed",
+        "source_sha256": "2a70ad23fa0be5a409369a373796369618f4fb12410fe89a767ba0b78e5953e2",
+        "raw_response_sha256": "831650c15c7ead4d889118e01984fde45d6cb78e960a5751b616c105a9f9ac50",
+        "failed_checks": [],
+        "native_exit_code": 0,
+        "occupancy_iou": 1.0
+      },
+      {
+        "id": "development-cone-roof",
+        "status": "failed",
+        "source_sha256": "305e03e62a230d2e3d14b97892f432d3c49d2cf7def4c59077a36d4d7889c7b5",
+        "raw_response_sha256": "833cac2c85a77ea423a946a4ae49e85fa261a144668c18f3b355bf23c5f7eebd",
+        "failed_checks": [
+          "closed_oriented_positive_mesh",
+          "native_reference_occupancy_iou",
+          "native_volume",
+          "native_dimensions"
+        ],
+        "native_exit_code": 0,
+        "occupancy_iou": 0.5865072745806691,
+        "mesh_topology_counts": {
+          "degenerate": 0,
+          "boundary": 228,
+          "nonmanifold": 228,
+          "inconsistent": 228
+        },
+        "interpretation": "Constructs a hollow/trimmed box, not the required conical roof. Unioning the vent-subtracted copy into the original cancels that proposed cut. Exported STL has228 boundary/nonmanifold/inconsistent counts; geometry screens fail."
+      },
+      {
+        "id": "development-gyroid",
+        "status": "failed",
+        "source_sha256": "9411ce8c1f7f88bf0fd429b109bdf7b006f8559e3c455cfc076d2ff325e802c7",
+        "raw_response_sha256": "790ddc08663f1ce0aa01eafb6985bbfe0a30083d8d9c9e0197100002877ec5d5",
+        "failed_checks": [
+          "native_reference_occupancy_iou",
+          "native_volume",
+          "native_dimensions"
+        ],
+        "native_exit_code": 0,
+        "occupancy_iou": 0.01927818874691773,
+        "interpretation": "Implements the gyroid nodal carrier and re-meshes it, but subtracts an expanded carrier from the original instead of forming a symmetric offset sheet. Requested clipping is absent; IoU0.019278."
+      },
+      {
+        "id": "development-diamond",
+        "status": "failed",
+        "source_sha256": "254308cdc3979229ff46801a6e4771c65682084082804c0fdf5dab718a08e1ce",
+        "raw_response_sha256": "e662942ac919d314581461cf2759e89cb63a182aa4fa57d08abdef093994e710",
+        "failed_checks": [
+          "native_reference_occupancy_iou",
+          "native_volume",
+          "native_dimensions",
+          "physical_wall_native_rays"
+        ],
+        "native_exit_code": 0,
+        "occupancy_iou": 0.0,
+        "interpretation": "Selects Phase kind0 (Gyroid) while a Diamond branch exists. Exports a remeshed carrier without symmetric sheet offsets or requested clipping; IoU0.0."
+      },
+      {
+        "id": "development-schwarz-p",
+        "status": "failed",
+        "source_sha256": "41bc671cd484f3b1dce778fec7d195b374b350ec8d667da48a7b2a8f65173bf3",
+        "raw_response_sha256": "df5b334e342fb9c87e2c0bdd00c584596daf5161cda030f441b5e1d014d5edaf",
+        "failed_checks": [],
+        "error": "C# compilation failed; see candidate-scores-7b320/development-schwarz-p/process.log",
+        "interpretation": "Voxels.ToVdb is nonexistent; compilation fails before geometry can be assessed.",
+        "compiler_errors": [
+          "candidate-scores-7b320/development-schwarz-p/Program.cs(27,73): error CS1061: 'Voxels' does not contain a definition for 'ToVdb' and no accessible extension method 'ToVdb' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b320/development-schwarz-p/Candidate.csproj]"
+        ]
+      },
+      {
+        "id": "development-scan-normals",
+        "status": "failed",
+        "source_sha256": "49d73cc06dcb4d2edbeda743ae8ac761971cd2110f2060faa96237475a7c3fc0",
+        "raw_response_sha256": "c70fec04d247bb5838406a04e78251a6ce3ba3faa6b5abc07b5cfa59fb723b21",
+        "failed_checks": [],
+        "error": "C# compilation failed; see candidate-scores-7b320/development-scan-normals/process.log",
+        "interpretation": "Helper code mixes scalar float values with Vector3 variables and compares Vector3 to float; compilation fails.",
+        "compiler_errors": [
+          "candidate-scores-7b320/development-scan-normals/Program.cs(55,33): error CS0029: Cannot implicitly convert type 'float' to 'System.Numerics.Vector3' [candidate-scores-7b320/development-scan-normals/Candidate.csproj]",
+          "candidate-scores-7b320/development-scan-normals/Program.cs(55,41): error CS0029: Cannot implicitly convert type 'float' to 'System.Numerics.Vector3' [candidate-scores-7b320/development-scan-normals/Candidate.csproj]",
+          "candidate-scores-7b320/development-scan-normals/Program.cs(55,51): error CS0019: Operator '>' cannot be applied to operands of type 'Vector3' and 'float' [candidate-scores-7b320/development-scan-normals/Candidate.csproj]",
+          "candidate-scores-7b320/development-scan-normals/Program.cs(55,61): error CS0029: Cannot implicitly convert type 'float' to 'System.Numerics.Vector3' [candidate-scores-7b320/development-scan-normals/Candidate.csproj]"
+        ]
+      },
+      {
+        "id": "development-debug-api",
+        "status": "failed",
+        "source_sha256": "1b289951c445f7a307745b7be6a595880837e6dd64537ec6063e30659a884766",
+        "raw_response_sha256": "4d91819155288527a16dbacb6abe12f1bd01cc45003563c87a67a9751d300f44",
+        "failed_checks": [
+          "native_exit_zero"
+        ],
+        "native_exit_code": -6,
+        "error": "isolated native process failed; see candidate-scores-7b320/development-debug-api/process.log",
+        "interpretation": "Flat AddBeam receives identical endpoints (0,0,0) and different radii, producing a zero-length field; its own managed Empty solid guard at line26 exits -6.",
+        "managed_exception_excerpt": [
+          "Unhandled exception. System.IO.InvalidDataException: Empty solid.",
+          "   at Program.Main(String[] args) in candidate-scores-7b320/development-debug-api/Program.cs:line 26"
+        ]
+      },
+      {
+        "id": "development-missing-interfaces",
+        "status": "failed",
+        "source_sha256": "dbb76349fb90a72c16ab937a1fc9d173e5ab5d53f49da8f7984de790f35e7705",
+        "raw_response_sha256": "3638d377fdbf6f644f937907e8efae34f41b4f4b7f87b50d6f875947bf02bd54",
+        "failed_checks": [],
+        "error": "C# compilation failed; see candidate-scores-7b320/development-missing-interfaces/process.log",
+        "interpretation": "Attempts native geometry in a prompt-only refusal and invokes nonexistent Voxels.oGetNodes and Vector3.Radius. Compilation fails; no successful refusal artifact exists.",
+        "compiler_errors": [
+          "candidate-scores-7b320/development-missing-interfaces/Program.cs(46,69): error CS1061: 'Vector3' does not contain a definition for 'Radius' and no accessible extension method 'Radius' accepting a first argument of type 'Vector3' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b320/development-missing-interfaces/Candidate.csproj]",
+          "candidate-scores-7b320/development-missing-interfaces/Program.cs(23,92): error CS1061: 'Voxels' does not contain a definition for 'oGetNodes' and no accessible extension method 'oGetNodes' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b320/development-missing-interfaces/Candidate.csproj]"
+        ]
+      }
+    ]
+  },
+  "scan": {
+    "passed": 3,
+    "total": 4,
+    "all_stopped": true,
+    "finish_reasons": {
+      "stop": 4
+    },
+    "tasks": [
+      {
+        "id": "development-e2e-stl-roundtrip",
+        "status": "passed",
+        "source_sha256": "100d780f41c74f7a4be47064548f1b696802cfd9a8a231cf8b4d9156c6333957",
+        "raw_response_sha256": "d8610bad93af7e8068306fa13d0e00c1305860749aedc98adea269abe31e24cc",
+        "failed_checks": [],
+        "native_exit_code": 0,
+        "occupancy_iou": 1.0
+      },
+      {
+        "id": "development-e2e-stl-skin-vent",
+        "status": "passed",
+        "source_sha256": "c75c0e06131a8e57dcfcd425a9c58d383b527d5d370417a022d228f33de600b9",
+        "raw_response_sha256": "6d6575b0026949bcba1f37f3730c65810c7d1368f1572d9421b90827a884fdfe",
+        "failed_checks": [],
+        "native_exit_code": 0,
+        "occupancy_iou": 1.0
+      },
+      {
+        "id": "development-e2e-xyz-occupancy",
+        "status": "failed",
+        "source_sha256": "f1a44531e6a77ff92e03a22b5c63adc0ac58e4ff6a789d484d1c0b049f782328",
+        "raw_response_sha256": "49ffdfcf5ac864697fdf054f368b27601f814f217ba5ee9566a0dc7c407f3db4",
+        "failed_checks": [],
+        "error": "C# compilation failed; see scan-scores-7b320/development-e2e-xyz-occupancy/process.log",
+        "interpretation": "Passes Vector3[] as IBoundedImplicit and Mesh as Library, then calls nonexistent Mesh.CalculateProperties and Voxels.VacuumSmallZeros/WriteVdb; compilation fails.",
+        "compiler_errors": [
+          "scan-scores-7b320/development-e2e-xyz-occupancy/Program.cs(23,31): error CS1503: Argument 1: cannot convert from 'System.Numerics.Vector3[]' to 'in PicoGK.IBoundedImplicit' [scan-scores-7b320/development-e2e-xyz-occupancy/Candidate.csproj]",
+          "scan-scores-7b320/development-e2e-xyz-occupancy/Program.cs(26,33): error CS1503: Argument 1: cannot convert from 'PicoGK.Mesh' to 'PicoGK.Library' [scan-scores-7b320/development-e2e-xyz-occupancy/Candidate.csproj]",
+          "scan-scores-7b320/development-e2e-xyz-occupancy/Program.cs(27,18): error CS1061: 'Mesh' does not contain a definition for 'CalculateProperties' and no accessible extension method 'CalculateProperties' accepting a first argument of type 'Mesh' could be found (are you missing a using directive or an assembly reference?) [scan-scores-7b320/development-e2e-xyz-occupancy/Candidate.csproj]",
+          "scan-scores-7b320/development-e2e-xyz-occupancy/Program.cs(30,14): error CS1061: 'Voxels' does not contain a definition for 'VacuumSmallZeros' and no accessible extension method 'VacuumSmallZeros' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?) [scan-scores-7b320/development-e2e-xyz-occupancy/Candidate.csproj]",
+          "scan-scores-7b320/development-e2e-xyz-occupancy/Program.cs(39,14): error CS1061: 'Voxels' does not contain a definition for 'WriteVdb' and no accessible extension method 'WriteVdb' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?) [scan-scores-7b320/development-e2e-xyz-occupancy/Candidate.csproj]"
+        ]
+      },
+      {
+        "id": "development-e2e-signed-range-refusal",
+        "status": "passed",
+        "source_sha256": "041212cf0d3669c44bf5ccccbc1f8f411196beb196c0c780b826a61c3ac95e3f",
+        "raw_response_sha256": "286b981312e23411291590cc970a298b5b551445956c391b6167b68c7d3133fb",
+        "failed_checks": [],
+        "native_exit_code": 0
+      }
+    ]
+  },
+  "nonzero_process_interpretation": "Three -6 development exits follow captured-source managed Empty solid exceptions. Logs do not establish a native ownership crash.",
+  "infrastructure_only_capture_failures_observed": [],
+  "sha256_bindings": {
+    "course-006-protocol.json": "f271b341e246b897f230ef0527fe4acb31ff363084ff57e367ee59ec0ba544b9",
+    "course-006-cpu-audit.json": "ee05bf82d962948475008d1e9fdce42e27cb8603b5e9eb6da01356b717ecb2e9",
+    "runs/7b-diversity004-epoch1/protocol.json": "f87d78cb9fe53c10e752ef87e86485518558131b926b1910733f137ac3395ccf",
+    "runs/7b-diversity004-epoch1/training-receipt.json": "714c3fcd3d2ba6636770d051a8ae923c034947d20f7aee8a2426fb6a702c080d",
+    "runs/7b-diversity004-epoch1/adapter/adapter_config.json": "f7301a96ae790f7ae7e6e68daa8a3e2c55831e5d57c6244bc3cb794f5ab7d4d4",
+    "data/corrective-004/train.jsonl": "9234d0176d132e735c7a51fe6fbc24f458a7ccfd8c8f9020143995b23abbafb9",
+    "data/corrective-004/manifest.json": "0ec16b8c3a3134af5642b5849119e238dac782c2b977345d43c18ad577ea534a",
+    "base-profile-7b.json": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+    "evaluation/development.json": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+    "evaluation/evaluate.py": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+    "end-to-end/development.json": "b6391901ee32eff8dcebaf87239278743214cc604000c5b39dfd14dd27461baf",
+    "end-to-end/freeze.json": "e9fbeca73172f6dece5a45640fab5fe4ff7b37b2f3f51de4522cdba1f5a5da94",
+    "end-to-end/evaluate.py": "e74790f0acabb39ff8bb62dd54ed265a9050c00c52ef40a80d59d67a6a24705c",
+    "baseline-scores-7b/report.json": "e3ec9e94a352f512dc14b69a66d70601a6d50bb71253ab5cf054f00d55881b9e",
+    "qualification-rejected-7b320.log": "839806b34207ff812701581278f972d6ea366234ee4e9c350606b08b8e833022",
+    "candidate-development-7b320/protocol.json": "6cd7bf17a8b8e75d2dcc345dfc3df16e85cdca09b2e8ca648d4c372ca25640df",
+    "candidate-development-7b320/receipt.json": "22579ee7132187cc1380dc4835b3a77bee0d3e69108f94ecb1ff3be36c46ef74",
+    "candidate-development-7b320/responses.json": "a1eb19f901fd506c1bf539118fad72a456ce674110fb1e2294a1f88f7c837832",
+    "candidate-scores-7b320/report.json": "144b06605cb2533a5626bffaaaa0eee2357616fb3db6b651d16f3ab9d1443e3b",
+    "candidate-scan-7b320/protocol.json": "1e490d8e504f09d47f0a95877b41f00b8cac61d41ba33fb733f14c0baf58f4a7",
+    "candidate-scan-7b320/receipt.json": "e56c3b7a3f4707e5a0961db31a5b036d474144a63c9175e0aebf286f374f80b2",
+    "candidate-scan-7b320/responses.json": "56bca916a2e8d466620070f5ebfefe0ee3ad19b34e6f15f2ca8ba20cadbc42b2",
+    "scan-scores-7b320/report.json": "c27ceaecde0d3cbcce17ebc7831772f8edc2e2947b59328df1463dfe0cc25c7a"
+  },
+  "captured_sources_repaired": false,
+  "evaluator_or_tasks_changed": false,
+  "model_or_gpu_loaded_by_reviewer": false,
+  "final_tasks_read": false,
+  "selection_receipt_created": false,
+  "manufacturing_authorized": false
+}

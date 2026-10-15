@@ -1,0 +1,17 @@
+{
+  "schema": "picogk.am.independent-source-review@1",
+  "status": "passed",
+  "reviewed_at": "2026-10-14T18:44:44.154904+00:00",
+  "programs": 16,
+  "rows": 32,
+  "native_checks": 648,
+  "corpus_sha256": "d93a6c6cc57e04c2943021f02337942d773a8ddadaf7ad1800ce8a648a85b952",
+  "cases_sha256": "039ffcf984444a4bc540be140e8a5a6f754e25b607f39b7e780b1986129c3c8d",
+  "native_report_sha256": "9571bec50c8adac89ba50c660f158447d549f0b4fed2588b4a2cc3d065918706",
+  "exact_source_fence_fixture_bindings": true,
+  "prompt_refusals_no_native_or_input_read": true,
+  "beam_single_flat_lattice_operation": true,
+  "json_type_and_analytic_oracle_reviewed": true,
+  "model_loaded": false,
+  "manufacturing_authorized": false
+}

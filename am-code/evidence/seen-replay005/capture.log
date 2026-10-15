@@ -1,0 +1,6 @@
+{"id": "seen-gyroid-compact-02", "finish_reason": "stop", "tokens": 1020, "elapsed_seconds": 28.63651708397083}
+{"id": "seen-gyroid-full-02", "finish_reason": "stop", "tokens": 1020, "elapsed_seconds": 29.048235499998555}
+{"id": "seen-prompt-refusal-compact-03", "finish_reason": "stop", "tokens": 263, "elapsed_seconds": 8.503616500180215}
+{"id": "seen-prompt-refusal-full-03", "finish_reason": "stop", "tokens": 263, "elapsed_seconds": 9.030683249933645}
+{"id": "seen-schwarz-p-full-02", "finish_reason": "stop", "tokens": 1020, "elapsed_seconds": 30.414024292025715}
+{"id": "seen-xyz-reader-full-03", "finish_reason": "stop", "tokens": 821, "elapsed_seconds": 24.898030708078295}

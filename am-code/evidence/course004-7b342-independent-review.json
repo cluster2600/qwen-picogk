@@ -1,0 +1,272 @@
+{
+  "schema": "picogk.am.independent-course-diagnostic@1",
+  "created_at": "2026-10-14T18:25:48.481956+00:00",
+  "course": "004",
+  "status": "fails_registered_development_gates",
+  "baseline_score_path": "baseline-scores-7b/report.json",
+  "baseline_score_sha256": "e3ec9e94a352f512dc14b69a66d70601a6d50bb71253ab5cf054f00d55881b9e",
+  "matched_baseline_passes": [
+    "development-offset-sign"
+  ],
+  "retains_all_baseline_passes": true,
+  "adapter_sha256": "666297e9aaf7639c539b90dc2ae9c8feb0fa1ba74a7621d627e86f6d6d8963e2",
+  "adapter_config_sha256": "24a8774567c628676a0646bc7cb7570974b620ff2522b01931757fdf15e9153b",
+  "base_profile_sha256": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+  "base_weights_sha256": "56a3d94706833f753e6c6b47ea57af8ef638cd8cc1d74eca1142ba640b26060e",
+  "model_files_sha256": {
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "config.json": "08762352ba9fded858f24bdd7b8d2fe61aabe7bce1dfdb663db242d574c3e678",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "model.safetensors": "56a3d94706833f753e6c6b47ea57af8ef638cd8cc1d74eca1142ba640b26060e",
+    "model.safetensors.index.json": "23cd562592dd96686d2e799eb02e4b578a4038b6045eaefe860d270cc060e24f",
+    "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "tokenizer.json": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf",
+    "tokenizer_config.json": "f7c61e32b7a17d19bf8e7037dcb74079a833e53ea9801f24008cac68458f03b7",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "development": {
+    "passed": 3,
+    "total": 12,
+    "passing_tasks": [
+      "development-initialize",
+      "development-offset-sign",
+      "development-shell"
+    ],
+    "score_path": "candidate-scores-7b342/report.json",
+    "score_sha256": "c86576be7c951acdf2dc192be702c94d8fc67a02a9e80ba9336012e2cd893b99",
+    "responses_path": "candidate-development-7b342/responses.json",
+    "responses_sha256": "21a179105f1a16784b13291a1a543329999517e956c42441ecc45f91c55dc556",
+    "protocol_sha256": "429c547bd2ae7bea89025ae8fec645bbd049b5bcd7f645d585913167ac48a68d",
+    "receipt_sha256": "6b6735be41a947fe7ca20acdb0594965786ad8ca26ec1889c3a5c4126af8b003",
+    "all_responses_stopped": true,
+    "tasks": [
+      {
+        "id": "development-initialize",
+        "status": "passed",
+        "failed_checks": [],
+        "error": null,
+        "native_exit_code": 0,
+        "compiled_source_sha256": "f20a8c630ab8c88d33a275ccbe537c0dcf79e1cef2e64367eb40055c88af61ec",
+        "compiler_or_process_excerpt": []
+      },
+      {
+        "id": "development-offset-sign",
+        "status": "passed",
+        "failed_checks": [],
+        "error": null,
+        "native_exit_code": 0,
+        "compiled_source_sha256": "b66eacbfb9047c02374060ae133868c09fed5c43b35102dd04e1b304c31cad67",
+        "compiler_or_process_excerpt": []
+      },
+      {
+        "id": "development-closing",
+        "status": "failed",
+        "failed_checks": [],
+        "error": "C# compilation failed; see candidate-scores-7b342/development-closing/process.log",
+        "native_exit_code": null,
+        "compiled_source_sha256": "8c8df280f5824580743d69d80fab9d2809e65b53e9db2fa931ba5e6e9c4490c3",
+        "compiler_or_process_excerpt": [
+          "candidate-scores-7b342/development-closing/Program.cs(24,38): error CS0246: The type or namespace name 'BooleanSub' could not be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b342/development-closing/Candidate.csproj]",
+          "candidate-scores-7b342/development-closing/Program.cs(24,53): error CS0246: The type or namespace name 'Box' could not be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b342/development-closing/Candidate.csproj]",
+          "candidate-scores-7b342/development-closing/Program.cs(24,145): error CS0246: The type or namespace name 'Borderless' could not be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b342/development-closing/Candidate.csproj]",
+          "candidate-scores-7b342/development-closing/Program.cs(25,40): error CS0246: The type or namespace name 'BooleanSub' could not be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b342/development-closing/Candidate.csproj]"
+        ],
+        "diagnosis": "Defines Crack, but references undefined BooleanSub, Box, Borderless; also exports part rather than the post-closing final volume."
+      },
+      {
+        "id": "development-shell",
+        "status": "passed",
+        "failed_checks": [],
+        "error": null,
+        "native_exit_code": 0,
+        "compiled_source_sha256": "9bc268daf87a6425faded057e996dd86319d2385966e2a78a07c691b81506fb6",
+        "compiler_or_process_excerpt": []
+      },
+      {
+        "id": "development-vent",
+        "status": "failed",
+        "failed_checks": [],
+        "error": "C# compilation failed; see candidate-scores-7b342/development-vent/process.log",
+        "native_exit_code": null,
+        "compiled_source_sha256": "b3287145d524d60f2f9d3cc8e67faf4c87435f7d43439786541e6eca0a78a2a1",
+        "compiler_or_process_excerpt": [
+          "candidate-scores-7b342/development-vent/Program.cs(32,62): error CS1002: ; expected [candidate-scores-7b342/development-vent/Candidate.csproj]",
+          "candidate-scores-7b342/development-vent/Program.cs(32,62): error CS1513: } expected [candidate-scores-7b342/development-vent/Candidate.csproj]",
+          "candidate-scores-7b342/development-vent/Program.cs(54,68): error CS1002: ; expected [candidate-scores-7b342/development-vent/Candidate.csproj]",
+          "candidate-scores-7b342/development-vent/Program.cs(54,68): error CS1513: } expected [candidate-scores-7b342/development-vent/Candidate.csproj]"
+        ],
+        "diagnosis": "Extra closing parenthesis in Trim; also assigns part as Lattice then calls Voxels boolean/Trim methods and uses a sphere instead of the requested box."
+      },
+      {
+        "id": "development-cone-roof",
+        "status": "failed",
+        "failed_checks": [],
+        "error": "C# compilation failed; see candidate-scores-7b342/development-cone-roof/process.log",
+        "native_exit_code": null,
+        "compiled_source_sha256": "01bc8872fe7bd3bdc74e85776414ca0bf051136443b012de35643d78162cfa48",
+        "compiler_or_process_excerpt": [
+          "candidate-scores-7b342/development-cone-roof/Program.cs(21,39): error CS0246: The type or namespace name 'Box' could not be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b342/development-cone-roof/Candidate.csproj]",
+          "candidate-scores-7b342/development-cone-roof/Program.cs(22,41): error CS0246: The type or namespace name 'Cylinder' could not be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b342/development-cone-roof/Candidate.csproj]",
+          "candidate-scores-7b342/development-cone-roof/Program.cs(24,41): error CS0246: The type or namespace name 'Cylinder' could not be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b342/development-cone-roof/Candidate.csproj]",
+          "candidate-scores-7b342/development-cone-roof/Program.cs(30,48): error CS0246: The type or namespace name 'Cylinder' could not be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b342/development-cone-roof/Candidate.csproj]"
+        ],
+        "diagnosis": "References undefined Box/Cylinder and nonexistent Voxels.bGetValue; constructs sampled/additive roof rather than requested conical cavity."
+      },
+      {
+        "id": "development-gyroid",
+        "status": "failed",
+        "failed_checks": [
+          "native_reference_occupancy_iou",
+          "native_volume",
+          "native_dimensions",
+          "physical_wall_native_rays"
+        ],
+        "error": null,
+        "native_exit_code": 0,
+        "compiled_source_sha256": "9d107c18fc59de6eb1d7086318a631f3d229d5b439d782aff7e539093bf681ea",
+        "compiler_or_process_excerpt": [],
+        "diagnosis": "Exports an unrelated flat beam rather than a Fourier TPMS sheet."
+      },
+      {
+        "id": "development-diamond",
+        "status": "failed",
+        "failed_checks": [],
+        "error": "C# compilation failed; see candidate-scores-7b342/development-diamond/process.log",
+        "native_exit_code": null,
+        "compiled_source_sha256": "7ddf7c5441f2a3c2f71b125f77fe3dfddd8851b48020e921a9b4a7e52976165b",
+        "compiler_or_process_excerpt": [
+          "candidate-scores-7b342/development-diamond/Program.cs(45,123): error CS1003: Syntax error, ',' expected [candidate-scores-7b342/development-diamond/Candidate.csproj]"
+        ],
+        "diagnosis": "Syntax failure; geometry never executed."
+      },
+      {
+        "id": "development-schwarz-p",
+        "status": "failed",
+        "failed_checks": [],
+        "error": "fully qualified System type outside static allowlist",
+        "native_exit_code": null,
+        "compiled_source_sha256": null,
+        "compiler_or_process_excerpt": [],
+        "diagnosis": "Frozen static boundary rejects fully qualified System.Func; this is a contract-boundary failure, not a claim that Func is an invalid C# API."
+      },
+      {
+        "id": "development-scan-normals",
+        "status": "failed",
+        "failed_checks": [],
+        "error": "C# compilation failed; see candidate-scores-7b342/development-scan-normals/process.log",
+        "native_exit_code": null,
+        "compiled_source_sha256": "b5cd11aec848cfd84e971b250be694acb72c71838e1e2f02eaca168ca8e628c8",
+        "compiler_or_process_excerpt": [
+          "candidate-scores-7b342/development-scan-normals/Program.cs(22,39): error CS0246: The type or namespace name 'Hull' could not be found (are you missing a using directive or an assembly reference?) [candidate-scores-7b342/development-scan-normals/Candidate.csproj]",
+          "candidate-scores-7b342/development-scan-normals/Program.cs(59,25): error CS0103: The name 'n' does not exist in the current context [candidate-scores-7b342/development-scan-normals/Candidate.csproj]",
+          "candidate-scores-7b342/development-scan-normals/Program.cs(60,25): error CS0103: The name 'k' does not exist in the current context [candidate-scores-7b342/development-scan-normals/Candidate.csproj]"
+        ],
+        "diagnosis": "Undefined Hull,n,k; parser also confuses header/column counts and never produces valid six-plane observations."
+      },
+      {
+        "id": "development-debug-api",
+        "status": "failed",
+        "failed_checks": [
+          "native_reference_occupancy_iou",
+          "native_volume",
+          "native_dimensions",
+          "analytic_volume"
+        ],
+        "error": null,
+        "native_exit_code": 0,
+        "compiled_source_sha256": "dafb3d3bc045817fe3c0e7b53a6f6b17aaed05c785efcc4f12b3e0cdc3c04068",
+        "compiler_or_process_excerpt": [],
+        "diagnosis": "Correct flat beam endpoints, but generated radius3.5 instead of requested0.8."
+      },
+      {
+        "id": "development-missing-interfaces",
+        "status": "failed",
+        "failed_checks": [
+          "strict_refusal"
+        ],
+        "error": null,
+        "native_exit_code": 0,
+        "compiled_source_sha256": "88b67e7ed34a6b91511e771c19821222493db5ed206e5b8b92c835da795bc2c5",
+        "compiler_or_process_excerpt": [],
+        "diagnosis": "Correct exact refusal JSON, but also exports invented part.stl and part.vdb; strict no-geometry refusal fails."
+      }
+    ]
+  },
+  "scan": {
+    "passed": 0,
+    "total": 4,
+    "passing_tasks": [],
+    "score_path": "scan-scores-7b342/report.json",
+    "score_sha256": "8374cab09664bda4a2cebe554f60b641392b659c04c36ee51ef832731996a389",
+    "responses_path": "candidate-scan-7b342/responses.json",
+    "responses_sha256": "7d948a83f3c362942f3c867987b57bbee2ca9fa2e7a18021d278d3bb42243cd7",
+    "protocol_sha256": "6c9a160170f7e312dbef822c56d6153c61313b32e85805868e5f708cf2c8c5c7",
+    "receipt_sha256": "8059886f645722b6360a3e32cc7f4fc08192ace836577b6731268f035fba87f8",
+    "all_responses_stopped": true,
+    "tasks": [
+      {
+        "id": "development-e2e-stl-roundtrip",
+        "status": "failed",
+        "failed_checks": [
+          "bounded_geometric_candidate",
+          "alternate-box_bounded_geometric_candidate"
+        ],
+        "error": null,
+        "native_exit_code": 0,
+        "compiled_source_sha256": "4790f2d57ffae992772cebd547a626d7c5863e73091e1786417d728489c5ccf5",
+        "compiler_or_process_excerpt": [],
+        "diagnosis": "Native geometry, alternate input and topology checks pass; metadata contract fails: qualification is an object with string-valued fields instead of geometry_only, with extra process_status."
+      },
+      {
+        "id": "development-e2e-stl-skin-vent",
+        "status": "failed",
+        "failed_checks": [],
+        "error": "C# compilation failed; see scan-scores-7b342/development-e2e-stl-skin-vent/process.log",
+        "native_exit_code": null,
+        "compiled_source_sha256": "2c0a9b0bb5a5cf4e25617d0ead835281d66821163eb7b81fa40a2216b23e9a95",
+        "compiler_or_process_excerpt": [
+          "scan-scores-7b342/development-e2e-stl-skin-vent/Program.cs(24,15): error CS1061: 'Voxels' does not contain a definition for 'AddBeam' and no accessible extension method 'AddBeam' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?) [scan-scores-7b342/development-e2e-stl-skin-vent/Candidate.csproj]",
+          "scan-scores-7b342/development-e2e-stl-skin-vent/Program.cs(52,15): error CS1061: 'Voxels' does not contain a definition for 'm_count' and no accessible extension method 'm_count' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?) [scan-scores-7b342/development-e2e-stl-skin-vent/Candidate.csproj]"
+        ],
+        "diagnosis": "Nonexistent Voxels.AddBeam and Voxels.m_count prevent compilation."
+      },
+      {
+        "id": "development-e2e-xyz-occupancy",
+        "status": "failed",
+        "failed_checks": [],
+        "error": "C# compilation failed; see scan-scores-7b342/development-e2e-xyz-occupancy/process.log",
+        "native_exit_code": null,
+        "compiled_source_sha256": "7fa74b322cad70f0548899c5ff8bbb63671b22c66ad32f1de8171949b12fa348",
+        "compiler_or_process_excerpt": [
+          "scan-scores-7b342/development-e2e-xyz-occupancy/Program.cs(23,58): error CS1061: 'Library' does not contain a definition for 'SetUnit' and no accessible extension method 'SetUnit' accepting a first argument of type 'Library' could be found (are you missing a using directive or an assembly reference?) [scan-scores-7b342/development-e2e-xyz-occupancy/Candidate.csproj]",
+          "scan-scores-7b342/development-e2e-xyz-occupancy/Program.cs(23,33): error CS0117: 'Voxels' does not contain a definition for 'mshFromStlFile' [scan-scores-7b342/development-e2e-xyz-occupancy/Candidate.csproj]",
+          "scan-scores-7b342/development-e2e-xyz-occupancy/Program.cs(30,14): error CS1061: 'Lattice' does not contain a definition for 'CalculateProperties' and no accessible extension method 'CalculateProperties' accepting a first argument of type 'Lattice' could be found (are you missing a using directive or an assembly reference?) [scan-scores-7b342/development-e2e-xyz-occupancy/Candidate.csproj]",
+          "scan-scores-7b342/development-e2e-xyz-occupancy/Program.cs(33,26): error CS1503: Argument 1: cannot convert from 'PicoGK.Lattice' to 'in PicoGK.Voxels' [scan-scores-7b342/development-e2e-xyz-occupancy/Candidate.csproj]"
+        ],
+        "diagnosis": "Nonexistent Library.SetUnit, Voxels.mshFromStlFile and Lattice.CalculateProperties; wrong input/library type composition."
+      },
+      {
+        "id": "development-e2e-signed-range-refusal",
+        "status": "failed",
+        "failed_checks": [
+          "strict_refusal",
+          "sparse_strict_refusal",
+          "sparse-empty_strict_refusal"
+        ],
+        "error": null,
+        "native_exit_code": 0,
+        "compiled_source_sha256": "85137a63a4553fa3721beb5da4014ac258d07041239393afd91534aad121c620",
+        "compiler_or_process_excerpt": [],
+        "diagnosis": "No geometry export; actual valid/malformed/empty input_valid behavior is correct. Missing identifiers differ from the explicitly required set, so exact refusal contract fails."
+      }
+    ]
+  },
+  "live_evaluator_sha256": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+  "scan_evaluator_sha256": "e74790f0acabb39ff8bb62dd54ed265a9050c00c52ef40a80d59d67a6a24705c",
+  "captured_sources_repaired": false,
+  "evaluators_modified": false,
+  "model_or_gpu_loaded_by_reviewer": false,
+  "final_task_contents_read": false,
+  "qualification": "software/geometry diagnostic only",
+  "manufacturing_authorized": false
+}

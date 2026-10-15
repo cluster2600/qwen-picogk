@@ -1,0 +1,36 @@
+{
+  "registered_at": "2026-10-14T13:28:46.971866+00:00",
+  "course": "original150-epoch2",
+  "iterations": 300,
+  "training_rows": 150,
+  "batch_size": 1,
+  "epochs": 2,
+  "learning_rate": 1e-05,
+  "max_seq_length": 6144,
+  "initialization": "verified pinned base; fresh adapter; smoke is not a parent",
+  "gates": {
+    "development_minimum": 11,
+    "development_total": 12,
+    "final_minimum": 11,
+    "final_total": 12,
+    "required_families": [
+      "vent",
+      "cone-roof",
+      "scan-normals",
+      "missing-interfaces"
+    ],
+    "retain_all_base_development_passes": true,
+    "end_to_end_scan_development_passes": 4,
+    "no_unexpected_native_failures": true
+  },
+  "selection": "Evaluate fixed step300 only. Final opens once only after development/retention/scan gates. Additional courses need separately registered protocol and preserved prior results.",
+  "evaluation_files": {
+    "development.json": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+    "final.json": "7a898d1fd2cd8c5c09fa2d27bd7480ee620b1f20aa341390b2829c5c0cf2b052",
+    "freeze.json": "ab37c90d63354a88320ffb9b01a90ab48b30d0134187eb65cf8d69f970ba46d8"
+  },
+  "source_dataset_sha256": "ed3247fb4c8ecacc013eb95f16fb6ac6d822680e40d32ae95cafb130893108d7",
+  "native_reference_validation": "pending; no candidate outputs inspected during reference corrections",
+  "existing_adapters_unchanged": true,
+  "physical_qualification": false
+}

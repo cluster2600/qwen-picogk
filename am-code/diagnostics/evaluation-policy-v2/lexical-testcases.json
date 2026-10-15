@@ -1,0 +1,204 @@
+{
+  "schema": "picogk.am.lexical-guard-fixtures@1",
+  "status": "prospective_design_not_yet_run_against_v2",
+  "target": "Prospective v2 complete CSharp source policy; every expected rejection preserves existing API/namespace/identifier restrictions.",
+  "training_independent": true,
+  "model_generated_sources_used": false,
+  "v1_sources_or_policies_modified": false,
+  "expected_result_scope": "Complete policy acceptance, not just a substring search. Literal/comment words are inert, interpolation expressions remain executable, and identifier canonical ValueText cannot bypass existing bans.",
+  "execution_policy": "Defensive validator fixtures only. Never compile-and-run these programs; lexical/syntax policy inspection does not execute them.",
+  "csharp_language": "CSharp 11 or later for raw and UTF8 literals. All sources are intended as complete syntactically valid programs with Main(string[] args).",
+  "implementation_verified": false,
+  "native_execution": false,
+  "model_loaded": false,
+  "gpu_used": false,
+  "final_contents_read": false,
+  "case_count": 18,
+  "expected_accept_count": 7,
+  "cases": [
+    {
+      "id": "ordinary-literal-words",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        Console.WriteLine(\"Process complete.\"); Console.WriteLine(\"System.Func StreamReader\");\n    }\n}\n",
+      "expected_policy_acceptance": true,
+      "criterion": "API names inside ordinary string text are not executable identifiers.",
+      "coverage": [
+        "ordinary_string",
+        "known_false_positive"
+      ]
+    },
+    {
+      "id": "actual-process-start",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        System.Diagnostics.Process.Start(\"defensive-fixture-never-executed\");\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "Reject an actual fully qualified Process.Start call.",
+      "coverage": [
+        "actual_api",
+        "Process.Start"
+      ]
+    },
+    {
+      "id": "actual-process-construction",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        using var process = new System.Diagnostics.Process(); Console.WriteLine(process.Id);\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "Reject construction of an actual Process object.",
+      "coverage": [
+        "actual_api",
+        "new_Process"
+      ]
+    },
+    {
+      "id": "global-process-alias",
+      "source": "using System;\nusing Proc = global::System.Diagnostics.Process;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        using var process = new Proc(); Console.WriteLine(process.Id);\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "Preserve both alias/global:: restrictions and the underlying Process ban.",
+      "coverage": [
+        "alias",
+        "global_qualifier",
+        "actual_api"
+      ]
+    },
+    {
+      "id": "verbatim-literal-words",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        Console.WriteLine(@\"Process \"\"complete\"\" System.Func StreamReader\");\n    }\n}\n",
+      "expected_policy_acceptance": true,
+      "criterion": "Verbatim string quoting must hide only literal text, including doubled quotes.",
+      "coverage": [
+        "verbatim_string"
+      ]
+    },
+    {
+      "id": "raw-literal-words",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        Console.WriteLine(\"\"\"Process \"complete\" System.Func StreamReader\"\"\");\n    }\n}\n",
+      "expected_policy_acceptance": true,
+      "criterion": "Raw string content containing quotes and API words remains inert text.",
+      "coverage": [
+        "raw_string"
+      ]
+    },
+    {
+      "id": "utf8-literal-words",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        ReadOnlySpan<byte> text = \"Process StreamReader System.Func\"u8; Console.WriteLine(text.Length);\n    }\n}\n",
+      "expected_policy_acceptance": true,
+      "criterion": "The UTF8 literal suffix does not turn API words into identifiers.",
+      "coverage": [
+        "utf8_string"
+      ]
+    },
+    {
+      "id": "interpolated-text-safe-expression",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        Console.WriteLine($\"Process complete {args.Length}; StreamReader System.Func\");\n    }\n}\n",
+      "expected_policy_acceptance": true,
+      "criterion": "Ignore interpolated text while retaining the safe args.Length expression.",
+      "coverage": [
+        "interpolation",
+        "safe_expression"
+      ]
+    },
+    {
+      "id": "interpolation-real-environment-call",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        Console.WriteLine($\"{Environment.GetEnvironmentVariable(\"TOKEN\")}\");\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "An interpolation expression is executable code; do not erase its Environment call with the enclosing string.",
+      "coverage": [
+        "interpolation",
+        "actual_api",
+        "known_erased_expression"
+      ]
+    },
+    {
+      "id": "raw-interpolation-real-process",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        Console.WriteLine($$\"\"\"Process is text; id={{System.Diagnostics.Process.GetCurrentProcess().Id}}\"\"\");\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "Double-dollar raw interpolation expressions retain actual API identifiers.",
+      "coverage": [
+        "raw_interpolation",
+        "actual_api"
+      ]
+    },
+    {
+      "id": "nested-raw-interpolation-real-process",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        Console.WriteLine($$\"\"\"outer {{ $$\"\"\"inner {{System.Diagnostics.Process.GetCurrentProcess().Id}}\"\"\" }}\"\"\");\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "Recursively retain an API expression inside a raw interpolated string nested in another raw interpolation.",
+      "coverage": [
+        "raw_interpolation",
+        "nested_interpolation",
+        "actual_api"
+      ]
+    },
+    {
+      "id": "astral-before-literal-safe",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        Console.WriteLine(\"\ud83d\udee0\"); Console.WriteLine(\"Process complete.\");\n    }\n}\n",
+      "expected_policy_acceptance": true,
+      "criterion": "UTF16 span conversion must still mask a harmless literal after an astral character.",
+      "coverage": [
+        "astral_unicode",
+        "utf16_span",
+        "literal"
+      ]
+    },
+    {
+      "id": "astral-before-literal-and-api",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        Console.WriteLine(\"\ud83d\udee0\"); Console.WriteLine(\"Process complete.\"); System.Diagnostics.Process.Start(\"defensive-fixture-never-executed\");\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "An astral character before a masked literal must not shift masking over a subsequent real API call.",
+      "coverage": [
+        "astral_unicode",
+        "utf16_span",
+        "actual_api"
+      ]
+    },
+    {
+      "id": "escaped-process-identifier",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        System.Diagnostics.Pr\\u006fcess.Start(\"defensive-fixture-never-executed\");\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "CSharp identifier ValueText is Process; preserve escaped-identifier and actual API restrictions.",
+      "coverage": [
+        "escaped_identifier",
+        "canonical_ValueText",
+        "actual_api"
+      ]
+    },
+    {
+      "id": "verbatim-process-identifier",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        using var process = new System.Diagnostics.@Process(); Console.WriteLine(process.Id);\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "The @ prefix does not hide canonical Process; preserve verbatim-identifier restrictions.",
+      "coverage": [
+        "verbatim_identifier",
+        "canonical_ValueText",
+        "actual_api"
+      ]
+    },
+    {
+      "id": "qualified-func-actual",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        System.Func<int> compute = () => 1; Console.WriteLine(compute());\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "Preserve the current qualified System.Func restriction outside literal text.",
+      "coverage": [
+        "qualified_System_Func",
+        "existing_policy"
+      ]
+    },
+    {
+      "id": "streamreader-actual",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        using var reader = new System.IO.StreamReader(args[0]); Console.WriteLine(reader.EndOfStream);\n    }\n}\n",
+      "expected_policy_acceptance": false,
+      "criterion": "Preserve the actual StreamReader restriction outside literal text.",
+      "coverage": [
+        "StreamReader",
+        "existing_policy"
+      ]
+    },
+    {
+      "id": "comment-api-words",
+      "source": "using System;\npublic static class Program\n{\n    public static void Main(string[] args)\n    {\n        // Process.Start Environment.GetEnvironmentVariable StreamReader\n        /* new Process(); System.Func<int>; global::System.Diagnostics.Process */\n        Console.WriteLine(\"ok\");\n    }\n}\n",
+      "expected_policy_acceptance": true,
+      "criterion": "Line and block comments containing forbidden API words are inert and must not cause API rejection.",
+      "coverage": [
+        "line_comment",
+        "block_comment"
+      ]
+    }
+  ]
+}

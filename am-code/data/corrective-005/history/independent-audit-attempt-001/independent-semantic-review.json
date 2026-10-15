@@ -1,0 +1,281 @@
+{
+  "schema": "picogk.am.short-task-independent-semantic-review@1",
+  "status": "review_issues",
+  "created_at_utc": "2026-10-14T22:19:31.158490+00:00",
+  "corpus_sha256": "b59755b51c94a559030863fc5ba164b28cdd338ea2c33704825995bc43f083c7",
+  "authored_manifest_sha256": "079d5db4a9584430255b8a715f49e6d8fe7239d37fcd4c091dd13100e734d9ea",
+  "author_source_sha256": "2bf5410215b7229072ef34ee293a3dbeb8a9d96ebef10098e0ffdba07a166f42",
+  "teacher_metadata_sha256": "0ec16b8c3a3134af5642b5849119e238dac782c2b977345d43c18ad577ea534a",
+  "generic_header_sha256": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7",
+  "rows": 160,
+  "teacher_cases": 80,
+  "distinct_sources": 71,
+  "distinct_assistant_targets": 71,
+  "all_80_existing_native_proofs_bound": true,
+  "all_source_input_answers_oracles_unchanged": true,
+  "all_160_body_obligations_pass": false,
+  "semantic_rows_sha256": "5140b6f8ada132e7caca95778777ed059313cd99ca103ddcdb0b1ccea764e9da",
+  "native_proof_files_sha256": {
+    "data/corrective-001/cases.json": "8947c50c29ad00270e58d47b2fe5e1b8c438419f7b09bdaeb9c2326a78301ec9",
+    "data/corrective-001/validate.py": "ab10c0fdbf05406e6f3c53ef126514470929dda814c9212520df1eba98176768",
+    "data/corrective-001/native-review-002/report.json": "1939011370bdc831e7bbc857324212a25c6308831ca5ff080873e84a1727a280",
+    "data/corrective-003/cases.json": "039ffcf984444a4bc540be140e8a5a6f754e25b607f39b7e780b1986129c3c8d",
+    "data/corrective-003/validate.py": "af802087d1290d554180ccf2572d30f5f7d87bd0a16c30e67800fbd8dfba6519",
+    "data/corrective-003/native-review-002/report.json": "9571bec50c8adac89ba50c660f158447d549f0b4fed2588b4a2cc3d065918706"
+  },
+  "issues": [
+    {
+      "line": 25,
+      "id": "compact-shell-01",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 26,
+      "id": "compact-shell-01",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 27,
+      "id": "compact-shell-02",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 28,
+      "id": "compact-shell-02",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 29,
+      "id": "compact-shell-03",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 30,
+      "id": "compact-shell-03",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 31,
+      "id": "compact-shell-04",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 32,
+      "id": "compact-shell-04",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 121,
+      "id": "compact-signed-range-refusal-01",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "args[0]"
+      ]
+    },
+    {
+      "line": 123,
+      "id": "compact-signed-range-refusal-02",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "args[0]"
+      ]
+    },
+    {
+      "line": 125,
+      "id": "compact-signed-range-refusal-03",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "args[0]"
+      ]
+    },
+    {
+      "line": 127,
+      "id": "compact-signed-range-refusal-04",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "args[0]"
+      ]
+    },
+    {
+      "line": 129,
+      "id": "fresh-prompt-refusal-01",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "no input reading"
+      ]
+    },
+    {
+      "line": 131,
+      "id": "fresh-prompt-refusal-02",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "no input reading"
+      ]
+    },
+    {
+      "line": 133,
+      "id": "fresh-prompt-refusal-03",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "no input reading"
+      ]
+    },
+    {
+      "line": 135,
+      "id": "fresh-prompt-refusal-04",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "no input reading"
+      ]
+    },
+    {
+      "line": 137,
+      "id": "fresh-prompt-refusal-05",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "no input reading"
+      ]
+    },
+    {
+      "line": 139,
+      "id": "fresh-prompt-refusal-06",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "no input reading"
+      ]
+    },
+    {
+      "line": 141,
+      "id": "fresh-prompt-refusal-07",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "no input reading"
+      ]
+    },
+    {
+      "line": 143,
+      "id": "fresh-prompt-refusal-08",
+      "check": "literal_parameter_function_parser_obligations",
+      "absent_fragments": [
+        "no input reading"
+      ]
+    },
+    {
+      "line": 147,
+      "id": "fresh-numeric-flat-beam-02",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 148,
+      "id": "fresh-numeric-flat-beam-02",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 149,
+      "id": "fresh-numeric-flat-beam-03",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 150,
+      "id": "fresh-numeric-flat-beam-03",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 151,
+      "id": "fresh-numeric-flat-beam-04",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 152,
+      "id": "fresh-numeric-flat-beam-04",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 153,
+      "id": "fresh-numeric-flat-beam-05",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 154,
+      "id": "fresh-numeric-flat-beam-05",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 155,
+      "id": "fresh-numeric-flat-beam-06",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 156,
+      "id": "fresh-numeric-flat-beam-06",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 157,
+      "id": "fresh-numeric-flat-beam-07",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 158,
+      "id": "fresh-numeric-flat-beam-07",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 159,
+      "id": "fresh-numeric-flat-beam-08",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    },
+    {
+      "line": 160,
+      "id": "fresh-numeric-flat-beam-08",
+      "check": "all_teacher_checks",
+      "absent_fragments": []
+    }
+  ],
+  "manual_family_review": [
+    "sphere/negative erosion/inner-copy shell",
+    "split-cube implicit and ordered closing",
+    "actual STL roundtrip and bounds-relative flat voxel vent",
+    "conical chamber field and port",
+    "Gyroid/Diamond/Schwarz P exact family/origin/redistance/signed sheet band/clip",
+    "six named outward axis planes with raw normal length-squared >=0.01f",
+    "numeric beam endpoint/radius/flat-cap ownership",
+    "actual bounded XYZ occupancy union",
+    "dynamic measurement JSON finite-number/missing-name order",
+    "signed syntax validity plus missing signed evidence",
+    "prompt-only typed key/Boolean/array refusal ignores args0"
+  ],
+  "limits": [
+    "Existing synthetic native screens are reused because all teacher C# and fixture bytes remain exact; native execution was not repeated.",
+    "These prompt variants are teaching-data validation, not generalization, unseen-task, final-model or manufacturing qualification.",
+    "Sphere splats and surveyed convex planes do not reproduce calibrated range fusion. TPMS nodal sheets and finite-resolution wall/vent screens do not establish global wall thickness, support-free LPBF, strength or powder removal."
+  ],
+  "model_loaded": false,
+  "gpu_used": false,
+  "mlx_imported": false,
+  "native_execution_repeated": false,
+  "final_contents_read": false,
+  "evaluation_gold_used": false,
+  "manufacturing_authorized": false
+}

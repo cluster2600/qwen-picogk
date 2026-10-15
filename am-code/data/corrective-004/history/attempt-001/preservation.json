@@ -1,0 +1,18 @@
+{
+  "schema": "picogk.am.authored-attempt-preservation@1",
+  "attempt": 1,
+  "status": "superseded_prose_precision_issue",
+  "issue": "scan-normal task prose omitted exact raw normal LengthSquared >=0.01f pre-normalization guard",
+  "file_sha256": {
+    "train.jsonl": "559d1f2681f68b012cd8eb5cd0212efc1d8f07f0d11ba35efecc4fc2e64fbf20",
+    "generic-header.txt": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7",
+    "augment.py": "b5ae779ada365ef3f3c3bb60832aa90bd602fbf10cb0e4e1ea67c218f8a5fdf8",
+    "README.md": "15c4f37607a87ab84b3f341c0029b6605137ac4405a9fa4f56b3c4a06f5c740a",
+    "tokenization-receipt.json": "cc171a6dd34bb75a744905dd51bdaae7d9f0678143e067ce33f51f00dfc76ce8",
+    "manifest.json": "7ebfb432d17ff50ed1d4544fc728b470dd958fab3d467b54cd7c10a4e7c16e7d",
+    "independent-token-rows.json": "8c6cbc2c95a0fea020abd2dc87e31ecac4ed62c962b7b10fd851b35d59a44b08",
+    "independent-source-review.json": "d49438f99033647daec4a88c0c5c08ae8d1ecbeb040a9c7c75e5d0fb2af17b85"
+  },
+  "teacher_source_answer_fixture_changes": false,
+  "old_reviews_are_historical_not_current_acceptance": true
+}

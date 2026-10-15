@@ -1,0 +1,143 @@
+{
+  "schema": "picogk.am.seen-replay-comparison@1",
+  "checked_at": "2026-10-14T20:15:20.021070+00:00",
+  "status": "all_six_seen_targets_reproduced_exactly",
+  "seen_training": true,
+  "qualification_eligible": false,
+  "qualification_credit": 0,
+  "source_comparisons": 6,
+  "answer_comparisons": 6,
+  "all_code_and_answer_bytes_exact": true,
+  "paired_header_answers_identical": {
+    "gyroid": true,
+    "prompt_only_refusal": true
+  },
+  "native_execution_repeated": false,
+  "native_evidence_scope": "Retained synthetic teacher results bind byte-identical source; no fresh native run or generalization/manufacturing proof.",
+  "model_inference_performed_by": "root using unchanged infer.py",
+  "comparison_used_model_or_gpu": false,
+  "evaluation_gold_used": false,
+  "final_contents_read": false,
+  "manufacturing_authorized": false,
+  "registration_sha256": "b83d9737e416e0993c9cd20adcb457cf192f90b837ee14872c1f16d5ea9ecbb9",
+  "taskfile_sha256": "cee95ac7a32f5a8be2738d25418f3e3384e77fc5b49e1e32b9703bd65cb8ec30",
+  "selection_sha256": "d82fbdd6a72f811e114438ca0da1604dad1b1e1c51527408e310fdac05f71175",
+  "token_prefix_audit_sha256": "92c10207a1d02c933748456c1f004b609adca7070639fbc7230c8a7a7bb550ac",
+  "capture_protocol_sha256": "8f1ca33d2df1700124a0c1cfca0f66bbf41ac1ecf1a9e22e7bb3af2ab2920466",
+  "capture_receipt_sha256": "51d65195fd3cbe1ce26219a30154c4bdc93d5e54b5a5dc9842378de91296c616",
+  "capture_responses_sha256": "8f5fa76ee8db833009417719e15ea9ec270f8cd754a47377230e0e6f4351888b",
+  "adapter_sha256": "5ba36bede5a66c8da0b41329d919902cd251ecb0c7555dd883bbc350210a048d",
+  "adapter_config_sha256": "1dc723bf3997589d29977c1b8f2312f9e882d8584bf2146064f8c242fb274dc3",
+  "base_profile_sha256": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+  "results": [
+    {
+      "id": "seen-gyroid-compact-02",
+      "training_line_1based": 76,
+      "header_style": "compact",
+      "family": "gyroid",
+      "response_sha256": "480996b026759fa0ea87632d9750f34371324c1177320ab216a926c6b2e70a4e",
+      "source_sha256": "16e5708334351ca54a45fc90d43969b15f515f796bb229155fbcd87db05929e6",
+      "expected_answer_sha256": "480996b026759fa0ea87632d9750f34371324c1177320ab216a926c6b2e70a4e",
+      "expected_source_sha256": "16e5708334351ca54a45fc90d43969b15f515f796bb229155fbcd87db05929e6",
+      "native_teacher_result_sha256": "d5d63ecf8485a71905f7b27d083b44f8db7772ac6d93e8247f0370a880b36bb4",
+      "checks": {
+        "stopped": true,
+        "single_complete_csharp_fence": true,
+        "answer_byte_exact": true,
+        "code_byte_exact": true,
+        "retained_native_teacher_binding": true
+      }
+    },
+    {
+      "id": "seen-gyroid-full-02",
+      "training_line_1based": 77,
+      "header_style": "development_generic",
+      "family": "gyroid",
+      "response_sha256": "480996b026759fa0ea87632d9750f34371324c1177320ab216a926c6b2e70a4e",
+      "source_sha256": "16e5708334351ca54a45fc90d43969b15f515f796bb229155fbcd87db05929e6",
+      "expected_answer_sha256": "480996b026759fa0ea87632d9750f34371324c1177320ab216a926c6b2e70a4e",
+      "expected_source_sha256": "16e5708334351ca54a45fc90d43969b15f515f796bb229155fbcd87db05929e6",
+      "native_teacher_result_sha256": "d5d63ecf8485a71905f7b27d083b44f8db7772ac6d93e8247f0370a880b36bb4",
+      "checks": {
+        "stopped": true,
+        "single_complete_csharp_fence": true,
+        "answer_byte_exact": true,
+        "code_byte_exact": true,
+        "retained_native_teacher_binding": true
+      }
+    },
+    {
+      "id": "seen-prompt-refusal-compact-03",
+      "training_line_1based": 197,
+      "header_style": "compact",
+      "family": "prompt-refusal",
+      "response_sha256": "4ad5776baa95c6d0f1350e8fdb4bb605a09d44588932138b9a9958174ad71fe1",
+      "source_sha256": "56ba084c3d52c71ed10b4ed94a2da81e7e32b526d049ed36970c56980e05d9c8",
+      "expected_answer_sha256": "4ad5776baa95c6d0f1350e8fdb4bb605a09d44588932138b9a9958174ad71fe1",
+      "expected_source_sha256": "56ba084c3d52c71ed10b4ed94a2da81e7e32b526d049ed36970c56980e05d9c8",
+      "native_teacher_result_sha256": "d0efac40a192297c988dffbc0495421f29e3c91596858e42eb14ac1ec30dbbe9",
+      "checks": {
+        "stopped": true,
+        "single_complete_csharp_fence": true,
+        "answer_byte_exact": true,
+        "code_byte_exact": true,
+        "retained_native_teacher_binding": true
+      }
+    },
+    {
+      "id": "seen-prompt-refusal-full-03",
+      "training_line_1based": 198,
+      "header_style": "development_generic",
+      "family": "prompt-refusal",
+      "response_sha256": "4ad5776baa95c6d0f1350e8fdb4bb605a09d44588932138b9a9958174ad71fe1",
+      "source_sha256": "56ba084c3d52c71ed10b4ed94a2da81e7e32b526d049ed36970c56980e05d9c8",
+      "expected_answer_sha256": "4ad5776baa95c6d0f1350e8fdb4bb605a09d44588932138b9a9958174ad71fe1",
+      "expected_source_sha256": "56ba084c3d52c71ed10b4ed94a2da81e7e32b526d049ed36970c56980e05d9c8",
+      "native_teacher_result_sha256": "d0efac40a192297c988dffbc0495421f29e3c91596858e42eb14ac1ec30dbbe9",
+      "checks": {
+        "stopped": true,
+        "single_complete_csharp_fence": true,
+        "answer_byte_exact": true,
+        "code_byte_exact": true,
+        "retained_native_teacher_binding": true
+      }
+    },
+    {
+      "id": "seen-schwarz-p-full-02",
+      "training_line_1based": 101,
+      "header_style": "development_generic",
+      "family": "schwarz-p",
+      "response_sha256": "a5b5aabb824ad582c00b8b5d6309b0864e58b0ce8fe53085e574ca8c98a9f6f4",
+      "source_sha256": "7f1e54998ab16205642f32cf8dde17dd70f6214f057549fde285698f3ee4f547",
+      "expected_answer_sha256": "a5b5aabb824ad582c00b8b5d6309b0864e58b0ce8fe53085e574ca8c98a9f6f4",
+      "expected_source_sha256": "7f1e54998ab16205642f32cf8dde17dd70f6214f057549fde285698f3ee4f547",
+      "native_teacher_result_sha256": "20ec96f87fabacb8d8236ff7129b0e08a35711c738e1205bb17c448cb74a32ae",
+      "checks": {
+        "stopped": true,
+        "single_complete_csharp_fence": true,
+        "answer_byte_exact": true,
+        "code_byte_exact": true,
+        "retained_native_teacher_binding": true
+      }
+    },
+    {
+      "id": "seen-xyz-reader-full-03",
+      "training_line_1based": 176,
+      "header_style": "development_generic",
+      "family": "xyz-occupancy",
+      "response_sha256": "55001d301ed00064384238e1c9bf987e63e612a169e37823851763de471f3834",
+      "source_sha256": "3be283cff0418cf55f8b39b7f0ed8b1142ec267d1d6bd7c30ebba99bb91cfc4e",
+      "expected_answer_sha256": "55001d301ed00064384238e1c9bf987e63e612a169e37823851763de471f3834",
+      "expected_source_sha256": "3be283cff0418cf55f8b39b7f0ed8b1142ec267d1d6bd7c30ebba99bb91cfc4e",
+      "native_teacher_result_sha256": "0a1d59bca26a398ee36aa15125ccf5a91758ed492bebe0520dd72cdb83d9e815",
+      "checks": {
+        "stopped": true,
+        "single_complete_csharp_fence": true,
+        "answer_byte_exact": true,
+        "code_byte_exact": true,
+        "retained_native_teacher_binding": true
+      }
+    }
+  ],
+  "interpretation": "Exact seen targets reproduce under both selected header styles while development tasks fail. This supports a task-wording/parameter generalization gap, not a simple chat-prefix/mask mismatch. It does not identify a unique causal mechanism or qualify the model."
+}

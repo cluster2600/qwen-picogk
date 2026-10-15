@@ -1,0 +1,445 @@
+{
+  "adapter_sha256": "4a735fb12a763761cc0261224fa2e2f2fbd4b8f0adc94492cec6a256b8a73862",
+  "all_generations_stopped": false,
+  "bindings": {
+    "adapter_config": "8811bcd1b3724aca87b481b7fcd1a0b33cac8e7b4451982f7b7774ec18bb61c6",
+    "base_profile": "ae1b81ddd239197ac4f470e6d01173dfc0132d05215ac09ea6a31946625cf89e",
+    "baseline_report": "4364eae7cce8f7969028811b946395508d92ab483a62d6a56e2f9968324def50",
+    "corpus": "b59755b51c94a559030863fc5ba164b28cdd338ea2c33704825995bc43f083c7",
+    "development_capture_protocol": "a925d307bbe436b62448e6d0b4b3d3a8f543212272f5ab4a1270a410143cdd6f",
+    "development_capture_receipt": "a4b593340d7cb09b43fb0595be3d6ed9bd3dbaad07ac27a262330eb0bc27a3eb",
+    "development_evaluator": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+    "development_report": "d8fad4ffaa7a69d3a49615caf792eebf1d0005fc9dd15475c06520ac12fe96f7",
+    "development_responses": "25271ef527cfd940a4b314394e8f0a965269f919cd607dc9811b8f7e7e4315d5",
+    "development_tasks": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+    "finite_cpu_audit": "9ba4fd7a42a4162703a28b54887f1ae6358799c034bab6cac9dc50c8a5d27700",
+    "registered_course": "326a0e893283ccf3c274e52d729c49552ad7363f1b0ddbfec8925e5c78354c7d",
+    "runtime_protocol": "3c45a61fbbe18e8105e3bf66bf4352c32795c4ba952b039b51ef21b4694ebaf6",
+    "scan_capture_protocol": "d53e08b8ad6643bdbd85bc5a2114e85876c9179557650bdb59c3b757cf103e71",
+    "scan_capture_receipt": "042656f2419cf45a1d211aa909692e1d91c6ab1c53c311720994b7bcd68aac4f",
+    "scan_evaluator": "e74790f0acabb39ff8bb62dd54ed265a9050c00c52ef40a80d59d67a6a24705c",
+    "scan_report": "747fbb741216f97a70a8910146578b041a11b8e7af9aa2e78b35d19422e9c0bd",
+    "scan_responses": "8a11702f7be4d1b218bab2ac40870927fd29ae4fbc5f8388c5b779e372cde406",
+    "training_receipt": "685cce01fa873e49679842f99f6e3600f2fe7d78623c77a35f0706bc2e13ad28"
+  },
+  "captured_source_modified": false,
+  "checks": {
+    "all16_raw_answers_and13_existing_program_sources_exact": true,
+    "all_fixed_capture_identities_match_finite_completed_adapter": true,
+    "closing_repetition_94lines_7unique_three30repeats": true,
+    "development_capture_response_receipt_and_profile_bindings": true,
+    "exact4of12_and1of4_scored": true,
+    "frozen_development_and_scan_evaluator_sources": true,
+    "frozen_development_tasks_and_scan_freeze": true,
+    "matched_shell_loss_and_only_refusal_critical_pass_recorded": true,
+    "one_truncated_closing_three_no_code_outputs_preserved": true,
+    "scan_capture_response_receipt_and_profile_bindings": true,
+    "short160_corpus_and_matched14b_baseline_bound": true
+  },
+  "closing_repetition": {
+    "characters": 30565,
+    "code_fence_markers": 0,
+    "finish_reason": "length",
+    "nonempty_lines": 94,
+    "three_most_frequent_line_counts": [
+      30,
+      30,
+      30
+    ],
+    "tokens": 6144,
+    "unique_lines": 7
+  },
+  "course": "007",
+  "created_at_utc": "2026-10-14T23:31:07.100986+00:00",
+  "critical_failed": [
+    "development-cone-roof",
+    "development-scan-normals",
+    "development-vent"
+  ],
+  "critical_passed": [
+    "development-missing-interfaces"
+  ],
+  "development_passed": 4,
+  "development_total": 12,
+  "diagnoses": {
+    "development-closing": "30,565-character prose loop: 94 nonempty lines, seven unique lines, three stock paragraphs repeated 30 times, no C# fence; stopped at 6144-token limit.",
+    "development-cone-roof": "Stops with no code and an invented named Cloots process account instead of implementing the specified conical chamber and port.",
+    "development-diamond": "Uses an unrelated piecewise sum-of-trigonometric expression and single expansion with no physical-distance reconstruction or symmetric band. Explicit managed Empty solid guard throws; native exit -6 has no evidence of an ownership crash.",
+    "development-e2e-signed-range-refusal": "Comma-only split and unparenthesized mixed &&/|| condition access a[1]/a[2] without a guarding row length. Primary input causes managed IndexOutOfRangeException before refused.json. It checks string spellings rather than parsing finite XYZ and does not skip comments or blanks.",
+    "development-e2e-stl-skin-vent": "Invented BBox3.XYCentre/MinZ, Voxels.SaveToStlFile and Mesh.SaveToVdbFile; List<Vector3> incorrectly declared using. Compiler rejects source. No geometry credit is inferred from intended copy-erosion.",
+    "development-e2e-xyz-occupancy": "Missing parenthesis at line24 causes CS1026. Source then imports the XYZ input as STL via Mesh.mshFromStlFile rather than building point spheres; incorrect Vector3.Any predicate is also present. No repairs or second compilation were made.",
+    "development-gyroid": "MathF.Sin/Cos method groups assigned to float cause CS0428/CS0149. Also uses kind=1, q divided by cell without 2pi, positivity/Infinity logic and a single carrier expansion; no redistance or symmetric sheet band.",
+    "development-scan-normals": "Passes a Planes object in the Voxels constructor BBox3 position, causing CS1503. Defines a nonnegative box distance and reads plane columns by position rather than the header-derived mapping.",
+    "development-schwarz-p": "Uses a degree-six polynomial instead of cos(X)+cos(Y)+cos(Z). Unions expanded carriers trimmed to full-height translated boxes, instead of independently clipped symmetric sheets in four z slices. IoU 0.19660792116732992 and mesh/volume/dimension/wall-ray failures.",
+    "development-shell": "Stops with prose claiming cavity Boolean operations and exports, but supplies no code. Adds an unsupported vent discussion to a task asking for a sealed teaching shell with printability refused.",
+    "development-vent": "Builds a sphere, directly erodes the carrier rather than subtracting a copied cavity, and cuts along -Y. Requested cubic hollow chamber and lowest -Z drain are absent; IoU 0.0 and centre-void check fails."
+  },
+  "eos_responses": 15,
+  "evaluator_or_gate_modified": false,
+  "existing_compiled_source_files": 13,
+  "final_contents_accessed": false,
+  "formal_gate_execution_by_root": "pending_at_review_write",
+  "gpu_used": false,
+  "interpretation": "Observed task-following and algorithm/API generalization failures persist. Equal aggregate baseline score hides a lost shell pass. Completed teacher native proofs and finite training arrays do not establish model generalization; these observations alone do not establish the causal mechanism.",
+  "lost_baseline_passes": [
+    "development-shell"
+  ],
+  "manufacturing_authorized": false,
+  "matched_baseline_passes_retained": false,
+  "model_or_tensors_loaded": false,
+  "native_reexecution_or_handrepair": false,
+  "new_vs_baseline_passes": [
+    "development-missing-interfaces"
+  ],
+  "no_complete_csharp_fence_ids": [
+    "development-closing",
+    "development-shell",
+    "development-cone-roof"
+  ],
+  "passing_development_ids": [
+    "development-debug-api",
+    "development-initialize",
+    "development-missing-interfaces",
+    "development-offset-sign"
+  ],
+  "passing_scan_ids": [
+    "development-e2e-stl-roundtrip"
+  ],
+  "responses": 16,
+  "run": "14b-short005-epoch1",
+  "scan_passed": 1,
+  "scan_total": 4,
+  "schema": "picogk.am.model-code-independent-review@1",
+  "selection_receipt_created": false,
+  "status": "frozen_gates_failed_unqualified",
+  "tasks": [
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-initialize",
+      "mesh_failure_scalars": {},
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "3a89fe5e5a26fb2f7094cc2b71c73660e7ab0e088060b0d2d6002d066e43b99a",
+      "response_sha256": "4703eff08dcc880e4fff33bcf85f8cbd0685c045cbefb430aa8817a0c4bb7604",
+      "split": "development",
+      "status": "passed",
+      "tokens": 659
+    },
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-offset-sign",
+      "mesh_failure_scalars": {},
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "99c1648845a2f057febbca0f0f58ab768fbd372c109f6045ba6e376e556f3598",
+      "response_sha256": "e02b8b7b2865ac457d0db25bf4833e51e201b09c06cb14336b8864f837af5f24",
+      "split": "development",
+      "status": "passed",
+      "tokens": 567
+    },
+    {
+      "complete_csharp_fences": 0,
+      "error": "exactly one complete C# code fence required",
+      "failed_checks": [],
+      "finish_reason": "length",
+      "id": "development-closing",
+      "mesh_failure_scalars": {},
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "program_sha256": null,
+      "response_sha256": "58800b452fbd3c8c7f9ac2f2b3cc9a38bfcd92275d42023298a5975314936ee3",
+      "split": "development",
+      "status": "failed",
+      "tokens": 6144
+    },
+    {
+      "complete_csharp_fences": 0,
+      "error": "exactly one complete C# code fence required",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-shell",
+      "mesh_failure_scalars": {},
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "program_sha256": null,
+      "response_sha256": "554890f58111f4d3d7c736a8a29afd0bb52c5714d4900cdd09bc6d68ccd2d2fa",
+      "split": "development",
+      "status": "failed",
+      "tokens": 195
+    },
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [
+        "native_reference_occupancy_iou",
+        "native_volume",
+        "native_dimensions",
+        "chamber_centre_void"
+      ],
+      "finish_reason": "stop",
+      "id": "development-vent",
+      "mesh_failure_scalars": {},
+      "native_exit_code": 0,
+      "occupancy_iou": 0.0,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "b38ee5a7813e0235afc60f82ed96badb94ea52904495f0b7b2cb3c528ae1a6c1",
+      "response_sha256": "df02b8d1d86c6e299e9479ce0b65b2031aa4a6c57193d8e4e4dd6c003369fd41",
+      "split": "development",
+      "status": "failed",
+      "tokens": 621
+    },
+    {
+      "complete_csharp_fences": 0,
+      "error": "exactly one complete C# code fence required",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-cone-roof",
+      "mesh_failure_scalars": {},
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "program_sha256": null,
+      "response_sha256": "c75322d8c0c871fe02568404a3bd9f91f7054b2b39361af5a129618f9b5b7d2e",
+      "split": "development",
+      "status": "failed",
+      "tokens": 614
+    },
+    {
+      "compiler_excerpts": [
+        {
+          "code": "CS0428",
+          "line": 50,
+          "message": "Cannot convert method group 'Sin' to non-delegate type 'float'. Did you intend to invoke the method?"
+        },
+        {
+          "code": "CS0428",
+          "line": 50,
+          "message": "Cannot convert method group 'Cos' to non-delegate type 'float'. Did you intend to invoke the method?"
+        },
+        {
+          "code": "CS0149",
+          "line": 51,
+          "message": "Method name expected"
+        },
+        {
+          "code": "CS0149",
+          "line": 52,
+          "message": "Method name expected"
+        }
+      ],
+      "complete_csharp_fences": 1,
+      "error": "C# compilation failed; see am-code/candidate-scores-14b160/development-gyroid/process.log",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-gyroid",
+      "mesh_failure_scalars": {},
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "process_log_sha256": "afb3240c83c13f548b299cd9fde146c0d367f5f42c65d9294ef761cfc9f4523e",
+      "program_sha256": "671a26e588c958016b5e45873c1b2240b65819dd90eaff76ef97bdf222eb3309",
+      "response_sha256": "98adcfa50dfb3d38141e340733b2f51fccde2ff8b5542255161fa81ba389a377",
+      "split": "development",
+      "status": "failed",
+      "tokens": 1013
+    },
+    {
+      "complete_csharp_fences": 1,
+      "error": "isolated native process failed; see am-code/candidate-scores-14b160/development-diamond/process.log",
+      "failed_checks": [
+        "native_exit_zero"
+      ],
+      "finish_reason": "stop",
+      "id": "development-diamond",
+      "managed_exception_excerpt": "Unhandled exception. System.IO.InvalidDataException: Empty solid.",
+      "mesh_failure_scalars": {},
+      "native_exit_code": -6,
+      "occupancy_iou": null,
+      "process_log_sha256": "6553306d4da8e42c4c524d4dbec6ff7c0a52d8cb93ca8055d6d9c79aa0f1e3c6",
+      "program_sha256": "d33438cc49a55ca83b5a1680ada5ebdbb462f63eb325bb31c2719dc5ece60a8f",
+      "response_sha256": "b4a249811822eccdd31b244e24a8796db86eeb7001fd4e70676c1ad018923789",
+      "split": "development",
+      "status": "failed",
+      "tokens": 896
+    },
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [
+        "closed_oriented_positive_mesh",
+        "native_reference_occupancy_iou",
+        "native_volume",
+        "native_stl_volume_agreement",
+        "native_dimensions",
+        "physical_wall_native_rays"
+      ],
+      "finish_reason": "stop",
+      "id": "development-schwarz-p",
+      "mesh_failure_scalars": {},
+      "native_exit_code": 0,
+      "occupancy_iou": 0.19660792116732992,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "ac1a43630b8752d0e16faa4ca0e484828de81aabf91881c677898b9c95037d62",
+      "response_sha256": "a72fbea9a727e60789376629bbcb62621bbebfe362ca5e4db9bf5902198d2af0",
+      "split": "development",
+      "status": "failed",
+      "tokens": 1360
+    },
+    {
+      "compiler_excerpts": [
+        {
+          "code": "CS1503",
+          "line": 22,
+          "message": "Argument 3: cannot convert from 'Planes' to 'in PicoGK.BBox3'"
+        }
+      ],
+      "complete_csharp_fences": 1,
+      "error": "C# compilation failed; see am-code/candidate-scores-14b160/development-scan-normals/process.log",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-scan-normals",
+      "mesh_failure_scalars": {},
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "process_log_sha256": "f93f7366d66603b47764395e20bc46d88be95ad5d043e719a2b6b45f5e103810",
+      "program_sha256": "dff654b0fbf2c1ce1e0bb62cc23e5140167b7de41e90528945903506e5f446f3",
+      "response_sha256": "2659b89a07dee33a922303084c1cc0b36c07343564d04c5cdc7e553e27feab96",
+      "split": "development",
+      "status": "failed",
+      "tokens": 1172
+    },
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-debug-api",
+      "mesh_failure_scalars": {},
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "cd638bcacaa16c3877262eeac26ce2a9d1a1a08d56468e142fdbaedee25c518e",
+      "response_sha256": "c954a08267d6e3f15249f23b9ba49275ea321809b79fb182c1b3c13a73864e17",
+      "split": "development",
+      "status": "passed",
+      "tokens": 625
+    },
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-missing-interfaces",
+      "mesh_failure_scalars": {},
+      "native_exit_code": 0,
+      "occupancy_iou": null,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "57633f6e22852b0ae0b4acc2dc35f1042d4ee3076c42d66569092cc40b6e379f",
+      "response_sha256": "fd5eef77afd3a8f69935ac8459db16e6afd0a3f76fa4e86aaca4da4d08f7920c",
+      "split": "development",
+      "status": "passed",
+      "tokens": 409
+    },
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-e2e-stl-roundtrip",
+      "mesh_failure_scalars": {},
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "dd53f43906ac16287664a9c3fecfaa735066eecaa54e8a9b5027ccf5af2a6356",
+      "response_sha256": "54ebed440b0dafc329bc9ea44ddd040fad19c71ddfdfa0a92c06cb250d4556fd",
+      "split": "scan",
+      "status": "passed",
+      "tokens": 623
+    },
+    {
+      "compiler_excerpts": [
+        {
+          "code": "CS1061",
+          "line": 33,
+          "message": "'BBox3' does not contain a definition for 'XYCentre' and no accessible extension method 'XYCentre' accepting a first argument of type 'BBox3' could be found (are you missing a using directive or an assembly reference?)"
+        },
+        {
+          "code": "CS1061",
+          "line": 33,
+          "message": "'BBox3' does not contain a definition for 'MinZ' and no accessible extension method 'MinZ' accepting a first argument of type 'BBox3' could be found (are you missing a using directive or an assembly reference?)"
+        },
+        {
+          "code": "CS1061",
+          "line": 39,
+          "message": "'Voxels' does not contain a definition for 'SaveToStlFile' and no accessible extension method 'SaveToStlFile' accepting a first argument of type 'Voxels' could be found (are you missing a using directive or an assembly reference?)"
+        },
+        {
+          "code": "CS1674",
+          "line": 43,
+          "message": "'List<Vector3>': type used in a using statement must implement 'System.IDisposable'."
+        },
+        {
+          "code": "CS1061",
+          "line": 55,
+          "message": "'Mesh' does not contain a definition for 'SaveToVdbFile' and no accessible extension method 'SaveToVdbFile' accepting a first argument of type 'Mesh' could be found (are you missing a using directive or an assembly reference?)"
+        }
+      ],
+      "complete_csharp_fences": 1,
+      "error": "C# compilation failed; see am-code/scan-scores-14b160/development-e2e-stl-skin-vent/process.log",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-e2e-stl-skin-vent",
+      "mesh_failure_scalars": {},
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "process_log_sha256": "c50a32205bfbcd360b99337060d267a07844ae38136041145bee2fc6db936084",
+      "program_sha256": "0d4f6daff4d956b825daa964f54f9f45e0eaf3300f239a0692f6e11d01cb7476",
+      "response_sha256": "22cd7120179be4b5574c2b8a9ac5bcf3a597bbb49a82a3dab5c449e3c6041327",
+      "split": "scan",
+      "status": "failed",
+      "tokens": 1129
+    },
+    {
+      "compiler_excerpts": [
+        {
+          "code": "CS1026",
+          "line": 24,
+          "message": ") expected"
+        }
+      ],
+      "complete_csharp_fences": 1,
+      "error": "C# compilation failed; see am-code/scan-scores-14b160/development-e2e-xyz-occupancy/process.log",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-e2e-xyz-occupancy",
+      "mesh_failure_scalars": {},
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "process_log_sha256": "f39ee94ab9d8f6798466bc5a5fef9784c21acf3ca1a198c855e39207740a186d",
+      "program_sha256": "3abd25a16c8c3b587e966fa1112be77999074d34045b8a5597a312f3f0346908",
+      "response_sha256": "9f23d8db380d22c7fc85e255503ed3eba618fb2d971702e615ba2b895201b486",
+      "split": "scan",
+      "status": "failed",
+      "tokens": 1182
+    },
+    {
+      "complete_csharp_fences": 1,
+      "error": "Isolated native execution failed; see process.log",
+      "failed_checks": [
+        "native_exit_zero"
+      ],
+      "finish_reason": "stop",
+      "id": "development-e2e-signed-range-refusal",
+      "managed_exception_excerpt": "Unhandled exception. System.IndexOutOfRangeException: Index was outside the bounds of the array.",
+      "mesh_failure_scalars": {},
+      "native_exit_code": -6,
+      "occupancy_iou": null,
+      "process_log_sha256": "a7582c237d24628ffb1b4aefba9b290094e49b0cf341abc237bd98a29ae9b5da",
+      "program_sha256": "daf2c10bb5efdcb039497312caadc82d766ff3e7186065b0a51011126116de23",
+      "response_sha256": "5b38baa6e703eba403dd962d23f440bf8972e0230e1e2cda981c7ec0b8b912ae",
+      "split": "scan",
+      "status": "failed",
+      "tokens": 499
+    }
+  ],
+  "truncated_responses": 1
+}

@@ -1,0 +1,62 @@
+--- repack_model14b.py
++++ repack_model32b.py
+@@ -11,11 +11,13 @@
+ import tempfile
+ 
+ ROOT = Path(__file__).resolve().parent
+-REPOSITORY = 'mlx-community/Qwen2.5-Coder-14B-Instruct-4bit'
+-REVISION = '29efdbab55a161237ab1e432a3abaf6c7ae2b477'
++REPOSITORY = 'mlx-community/Qwen2.5-Coder-32B-Instruct-4bit'
++REVISION = 'd1e3b690c8e225d7795bccddf971ca6be68b2012'
+ SHARDS = {
+-    'model-00001-of-00002.safetensors': (5353840273, '784b0c89d3e006f49cb8547aba1f2f4e99b365ab4380cf202655ca04c87d7ac3'),
+-    'model-00002-of-00002.safetensors': (2955653960, 'a1b7516f1926070177601698661494dfc68c2de1d98e7c43ba910a0d1d7dfbbe'),
++    'model-00001-of-00004.safetensors': (5366582717, '1b35365ad06cde22ea1bba74b0b746817c61c92db686fbc0fec64c02629e0821'),
++    'model-00002-of-00004.safetensors': (5335712920, '434c73dc8841a16be740f2fc50cd246822a009a547037c19d3ad7aaa590f8b10'),
++    'model-00003-of-00004.safetensors': (5366641934, '6bae5f14badf37ba02af86b66761e94dd3f4f144e9cd3bf5eff9654ff1369d66'),
++    'model-00004-of-00004.safetensors': (2362540888, '0a0676a0509f81121f390e088791dd4420ecfbf9ffcf07609261facc8ed324ee'),
+ }
+ SMALL = ('added_tokens.json', 'config.json', 'merges.txt', 'special_tokens_map.json',
+          'tokenizer.json', 'tokenizer_config.json', 'vocab.json')
+@@ -190,15 +192,15 @@
+ 
+ def main():
+     parser=argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument('--source',type=Path,default=ROOT/'model14b-upstream')
+-    parser.add_argument('--output',type=Path,default=ROOT/'model14b')
+-    parser.add_argument('--receipt',type=Path,default=ROOT/'diagnostics/model14b-preparation/repack-receipt.json')
++    parser.add_argument('--source',type=Path,default=ROOT/'model32b-upstream')
++    parser.add_argument('--output',type=Path,default=ROOT/'model32b')
++    parser.add_argument('--receipt',type=Path,default=ROOT/'diagnostics/model32b-preparation/repack-receipt.json')
+     parser.add_argument('--self-check',action='store_true')
+     args=parser.parse_args()
+     if args.self_check:
+         self_check();return
+     source=args.source.resolve();output=args.output.resolve();receipt=args.receipt.resolve()
+-    download_path=ROOT/'diagnostics/model14b-preparation/download-receipt.json'
++    download_path=ROOT/'diagnostics/model32b-preparation/download-receipt.json'
+     downloaded=load_json(download_path.read_bytes())
+     if downloaded['status']!='verified' or downloaded['repository']!=REPOSITORY or downloaded['revision']!=REVISION or downloaded['license']!='apache-2.0':
+         raise ValueError('Pinned upstream download metadata mismatch.')
+@@ -225,7 +227,7 @@
+             tensors[tensor]=name
+     if set(index['weight_map'])!=set(tensors):
+         raise ValueError('Index has missing/extra tensors.')
+-    if output.exists() or receipt.exists() or (ROOT/'base-profile-14b.json').exists():
++    if output.exists() or receipt.exists() or (ROOT/'base-profile-32b.json').exists():
+         raise FileExistsError('Preserve prior output, receipt and profile.')
+     output.mkdir(parents=True)
+     records,canonical=merge([source/name for name in SHARDS],output/'model.safetensors')
+@@ -249,10 +251,10 @@
+             'model_loaded':False,'mlx_imported':False,'gpu_used':False,'dtype_conversion':False,'dequantization':False,
+             'manufacturing_authorized':False,'upstream_preserved':True}
+     with receipt.open('x') as handle:handle.write(json.dumps(result,indent=2)+'\n')
+-    with (ROOT/'base-profile-14b.json').open('x') as handle:handle.write(json.dumps(profile,indent=2)+'\n')
++    with (ROOT/'base-profile-32b.json').open('x') as handle:handle.write(json.dumps(profile,indent=2)+'\n')
+     print(json.dumps({'status':'verified','tensor_count':len(records),'canonical_tensor_semantic_sha256':canonical,
+                       'merged_weights_sha256':hashes['model.safetensors'],'receipt_sha256':digest(receipt),
+-                      'profile_sha256':digest(ROOT/'base-profile-14b.json'),'model_gpu_used':False},indent=2))
++                      'profile_sha256':digest(ROOT/'base-profile-32b.json'),'model_gpu_used':False},indent=2))
+ 
+ 
+ if __name__=='__main__':

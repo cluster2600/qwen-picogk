@@ -1,0 +1,27 @@
+{
+  "schema": "picogk.am.generic-header-provenance@1",
+  "compact": {
+    "source": "../corrective-001/author.py",
+    "source_sha256": "0fb7eb7977f3821d51c3df80412d4094c5c5a5b188103921a9caaf93ce221f71",
+    "extraction": "AST literal CARD; original refusal replacement preserved",
+    "header_sha256": "0deee2bcd6233883c822672a65cfe19988407995b016693bf5d00db9d3dc935e"
+  },
+  "development_generic": {
+    "source": "../../evaluation/development.json",
+    "source_sha256": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+    "extraction": "Exact common prefix strictly before marker",
+    "marker": "Prefer a compact complete program.",
+    "same_generic_prefix_in_all12": true,
+    "header_sha256": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7",
+    "task_specific_text_copied": false
+  },
+  "serving_generic": {
+    "source": "../../qwen-picogk-am",
+    "source_sha256": "b97eaaaaf125d8356cf0205506c156d727aaada022a3aaa4deffc00b44ed2e95",
+    "extraction": "AST literal API_GUIDANCE; no CLI import or execution",
+    "header_sha256": "4ac10c7ae03ca941b44174d83d97d9dadb958688ad66038f7cfe6ca86be6c65b"
+  },
+  "refusal_override": "Do not initialize PicoGK for this refusal; no geometry is justified. ",
+  "refusal_override_source": "Exact original compact refusal card sentence",
+  "final_task_contents_read": false
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "picogk.am.repacker-preflight@1",
+  "created_at_utc": "2026-10-15T02:43:48.231970+00:00",
+  "status": "passed",
+  "helper_sha256": "f3b3943d9d5c0fe93893c173895316ca0c7164638212addbf1dcae08ce301586",
+  "source14b_sha256": "17e700c0ecf18b8fa6028aeed7df3aa033866bfda5bb2588c5d0042d460d98ca",
+  "preparation_plan_sha256": "830ef53b751125c690f57b0c21b8109519506e3db3a6df2876eb11ba4f4e7b1f",
+  "self_check_command": [
+    "runtime/venv/bin/python",
+    "repack_model32b.py",
+    "--self-check"
+  ],
+  "self_check_exit_code": 0,
+  "self_check_stdout": "11 lossless-copy and malformed-header assertions passed; no model/MLX/GPU used.",
+  "checks": {
+    "only_registered_identity_and_path_constants_differ": true,
+    "frozen14b_helper_exact": true,
+    "new_helper_syntax_valid": true,
+    "eleven_unchanged_self_checks_passed": true
+  },
+  "model_loaded": false,
+  "mlx_imported": false,
+  "gpu_used": false,
+  "native_execution": false,
+  "final_contents_read": false
+}

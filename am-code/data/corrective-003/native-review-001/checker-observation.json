@@ -1,0 +1,94 @@
+{
+  "schema": "picogk.am.checker-observation@1",
+  "attempt": "native-review-001",
+  "report_sha256": "86449d7aaf154af281d18359383625141b6437a68f2e2502975b7ee35c8aef13",
+  "corpus_sha256": "d93a6c6cc57e04c2943021f02337942d773a8ddadaf7ad1800ce8a648a85b952",
+  "teacher_oracles_passed": 16,
+  "formal_passes": 8,
+  "cause": "Only repeated VDB byte-identity checks failed; serialized file identifiers differ while STL bytes and all original native geometry/report checks pass.",
+  "teacher_changes": false,
+  "checks_unchanged": [
+    "exact typed JSON",
+    "native exit zero",
+    "flat-cylinder analytic volume",
+    "world bounds",
+    "VDB flat-cap/radius occupancy",
+    "direct STL parity",
+    "STL topology"
+  ],
+  "correction": "Repeated VDB geometry is checked natively for volume, bounds and occupancy; repeated STL bytes remain exact.",
+  "samples": [
+    {
+      "id": "fresh-numeric-flat-beam-01",
+      "vdb_size_equal": true,
+      "vdb_differing_bytes": 31,
+      "vdb_first_difference": 21,
+      "vdb_last_difference": 56,
+      "stl_bytes_equal": true,
+      "all_other_checks_passed": true
+    },
+    {
+      "id": "fresh-numeric-flat-beam-02",
+      "vdb_size_equal": true,
+      "vdb_differing_bytes": 28,
+      "vdb_first_difference": 21,
+      "vdb_last_difference": 56,
+      "stl_bytes_equal": true,
+      "all_other_checks_passed": true
+    },
+    {
+      "id": "fresh-numeric-flat-beam-03",
+      "vdb_size_equal": true,
+      "vdb_differing_bytes": 29,
+      "vdb_first_difference": 21,
+      "vdb_last_difference": 56,
+      "stl_bytes_equal": true,
+      "all_other_checks_passed": true
+    },
+    {
+      "id": "fresh-numeric-flat-beam-04",
+      "vdb_size_equal": true,
+      "vdb_differing_bytes": 28,
+      "vdb_first_difference": 21,
+      "vdb_last_difference": 56,
+      "stl_bytes_equal": true,
+      "all_other_checks_passed": true
+    },
+    {
+      "id": "fresh-numeric-flat-beam-05",
+      "vdb_size_equal": true,
+      "vdb_differing_bytes": 31,
+      "vdb_first_difference": 21,
+      "vdb_last_difference": 56,
+      "stl_bytes_equal": true,
+      "all_other_checks_passed": true
+    },
+    {
+      "id": "fresh-numeric-flat-beam-06",
+      "vdb_size_equal": true,
+      "vdb_differing_bytes": 29,
+      "vdb_first_difference": 21,
+      "vdb_last_difference": 56,
+      "stl_bytes_equal": true,
+      "all_other_checks_passed": true
+    },
+    {
+      "id": "fresh-numeric-flat-beam-07",
+      "vdb_size_equal": true,
+      "vdb_differing_bytes": 29,
+      "vdb_first_difference": 21,
+      "vdb_last_difference": 56,
+      "stl_bytes_equal": true,
+      "all_other_checks_passed": true
+    },
+    {
+      "id": "fresh-numeric-flat-beam-08",
+      "vdb_size_equal": true,
+      "vdb_differing_bytes": 31,
+      "vdb_first_difference": 21,
+      "vdb_last_difference": 56,
+      "stl_bytes_equal": true,
+      "all_other_checks_passed": true
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "schema": "picogk.am.development-teacher-policy-check@2",
+  "policy_source_sha256": "34637f85ec9ae86e0d4acff485989a0b89eb0b3536c8baeced449777ac88e852",
+  "lexer_binary_sha256": "940e230dd24ae3b562a21690badc0d2b6c27af1bca568fcf88913c50a7e2e9ec",
+  "reference_manifest_sha256": "da8694851a053a570691df180888dd63531d9c6fa6ccfbd756039756270327a7",
+  "rows": [
+    {
+      "module": "evaluation",
+      "id": "development-initialize",
+      "source_sha256": "a648fb3e5509efb3932b905a61730d03352ff835a6fed14e94a650e03756be5e",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-offset-sign",
+      "source_sha256": "8d67a8c856e42ddb08b79b4360af1dd5c5160a2b151a7fd93387ef33fb41dbc1",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-closing",
+      "source_sha256": "6ece03915499d4848ea0d84565d597a2fa7a9f3a99c348a85e6ded111f344050",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-shell",
+      "source_sha256": "a63e97c753dd408ba972c69b881bd2f3341041d3ac927c557cb1e91317d36c03",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-vent",
+      "source_sha256": "7dab2727812104488c7023b907b9d834f135898008cd51ffdf667eb66ed9af98",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-cone-roof",
+      "source_sha256": "fb6affa7b768cd1ce56826148d70bf893de14ea9ab00ddf64f0618e9e26096dc",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-gyroid",
+      "source_sha256": "8e89319051c07c8878e746dd156886108862fca5654b6362f45ad76bc1dba90b",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-diamond",
+      "source_sha256": "0a87c6b7e40c62b9428d7bf7949ff4f0c74998dc666eef71e2e66da19c26fcf4",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-schwarz-p",
+      "source_sha256": "56e7d00d5f92f93f3deb2cc849517edd36d3fa4ca8c4d0596709355a90838a83",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-scan-normals",
+      "source_sha256": "44f2f2bd7866faa99f674d1245cd12f34f3b79a54732c772447e245bbc9ee9c4",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-debug-api",
+      "source_sha256": "85ea918b89733a904166c909af8e01ff2e4d4a6b503fc5cfed94bba2a45d5962",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "evaluation",
+      "id": "development-missing-interfaces",
+      "source_sha256": "364775744521f11bc43af4e57123eb6202f94abdcdc35ece224af9205b1bb1b7",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "end-to-end",
+      "id": "development-e2e-stl-roundtrip",
+      "source_sha256": "e6780637ed722f109c65aba42d1f01ad3e760bd0a055947010ad62740d9eff78",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "end-to-end",
+      "id": "development-e2e-stl-skin-vent",
+      "source_sha256": "daa2d00af681a446fb9ee2a66ff7c3192ce1c25534cbc516af8a1a65201b17da",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "end-to-end",
+      "id": "development-e2e-xyz-occupancy",
+      "source_sha256": "0560f2d51f099d244e304a3ba76a1abbd3b5024aca4edd5dce4a1ece8ff90900",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    },
+    {
+      "module": "end-to-end",
+      "id": "development-e2e-signed-range-refusal",
+      "source_sha256": "876fe02e8b5a0d0ddbc4de93de686c1b84b81f667627fa9e9413dc9be8327637",
+      "syntax_error_count": 0,
+      "policy_passed": true,
+      "native_reference_hashes_verified": true,
+      "error": null
+    }
+  ],
+  "passed": 16,
+  "total": 16,
+  "native_geometry_executed": false,
+  "final_teacher_sources_accessed": false,
+  "model_or_gpu_accessed": false
+}

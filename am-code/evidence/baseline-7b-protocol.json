@@ -1,0 +1,22 @@
+{
+  "schema": "picogk.am.prospective-baseline@1",
+  "registered_at": "2026-10-14T15:59:20.097521+00:00",
+  "model": "mlx-community/Qwen2.5-Coder-7B-Instruct-4bit",
+  "revision": "019cc73c45c770444708a6dd8690c66243cc5c80",
+  "base_profile": "base-profile-7b.json",
+  "base_profile_sha256": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
+  "base_weights_sha256": "56a3d94706833f753e6c6b47ea57af8ef638cd8cc1d74eca1142ba640b26060e",
+  "tasks": "evaluation/development.json",
+  "tasks_sha256": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+  "infer_source_sha256": "cd9eaa33502eb9cf9e9d3e6581be92dd79477dc64c1a1186a39271e6e88cc8fa",
+  "base_runtime_source_sha256": "7e88e9b02d91499bc089abe4ffc0320f2f949f8641c786640cd73a251fdb6f07",
+  "adapter": null,
+  "temperature": 0,
+  "max_tokens": 6144,
+  "seed": 9931414,
+  "memory_limit_bytes": 38654705664,
+  "cache_limit_bytes": 536870912,
+  "output": "baseline-development-7b",
+  "selection": "Matched 7B development baseline before fresh 7B adaptation. Original 1.5B scores cannot substitute. Final tasks remain sealed.",
+  "manufacturing_authorized": false
+}

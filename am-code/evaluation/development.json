@@ -1,0 +1,193 @@
+{
+  "schema": "picogk.am.generation-tasks@1",
+  "tasks": [
+    {
+      "id": "development-initialize",
+      "split": "development",
+      "family": "initialize",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. Fix uninitialized native context. Create a sphere centred at (0,0,0), radius 3.70000 mm using a Lattice, then Voxels, then Mesh. No static global Library. Explain context lifetime.",
+      "kind": "geometry",
+      "fixture": "none",
+      "oracle": {
+        "shape": "sphere",
+        "radius": 3.7
+      },
+      "reference": "references/development-initialize.cs"
+    },
+    {
+      "id": "development-offset-sign",
+      "split": "development",
+      "family": "offset-sign",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. The broken code uses positive Offset to erode a solid. Create radius 3.70000 mm sphere and shrink it by 0.6 mm; correct Offset sign. Export the smaller solid.",
+      "kind": "geometry",
+      "fixture": "none",
+      "oracle": {
+        "shape": "sphere",
+        "radius": 3.1
+      },
+      "reference": "references/development-offset-sign.cs"
+    },
+    {
+      "id": "development-closing",
+      "split": "development",
+      "family": "closing",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. Repair a synthetic block [-3.50000,3.50000] mm on each axis with a central x crack 0.40000 mm wide. Render max(max(abs(x),abs(y),abs(z))-3.50000, 0.20000-abs(x)) as an IImplicit. Perform closing with Offset(+0.6), then Offset(-0.6). Export the repaired block; explain envelope rounding and no scan accuracy claim.",
+      "kind": "geometry",
+      "fixture": "none",
+      "oracle": {
+        "shape": "closing",
+        "half": 3.5,
+        "gap": 0.4
+      },
+      "reference": "references/development-closing.cs"
+    },
+    {
+      "id": "development-shell",
+      "split": "development",
+      "family": "shell",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. Create a hollow sphere with outer radius 3.70000 mm and nominal physical skin 1.20000 mm. Make a duplicate, Offset(-skin) to form the cavity, then BoolSubtract. The centre must be void. This sealed teaching shell requires a vent before LPBF; refuse to call it printable.",
+      "kind": "geometry",
+      "fixture": "none",
+      "oracle": {
+        "shape": "shell",
+        "radius": 3.7,
+        "wall": 1.2
+      },
+      "reference": "references/development-shell.cs"
+    },
+    {
+      "id": "development-vent",
+      "split": "development",
+      "family": "vent",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. Make a hollow centred cubic chamber of outer half-side 4.20000 mm and skin 1.20000 mm by inward Offset and BoolSubtract. Drain the cavity at its lowest point z=-4.20000 using a vertical cylindrical beam radius 1.6 mm extending from z=-5.20000 to z=0; use Lattice.AddBeam(...,false) and BoolSubtract. Independently state void connectivity must be screened and does not prove physical powder evacuation.",
+      "kind": "geometry",
+      "fixture": "none",
+      "oracle": {
+        "shape": "vent",
+        "half": 4.2,
+        "wall": 1.2,
+        "vent_radius": 1.6,
+        "require_void_connectivity": true
+      },
+      "reference": "references/development-vent.cs"
+    },
+    {
+      "id": "development-cone-roof",
+      "split": "development",
+      "family": "cone-roof",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. Create a teaching block x,y in [-4,4], z in [0,9] mm, with an internal void radius 2.00000 mm from z=0.8 to z=1.5. Above z=1.5 its conical roof tapers linearly to zero radius over 5.20000 mm. Subtract a vertical bottom vent radius 1.2 from z=-1 to z=1.6. Analytic roof angle atan(height/radius) must exceed 45 degrees. Explain Cloots 2013 is process dependent and require final mesh overhang screening; no guaranteed support elimination.",
+      "kind": "geometry",
+      "fixture": "none",
+      "oracle": {
+        "shape": "cone",
+        "height": 5.2,
+        "radius": 2.0,
+        "require_void_connectivity": true,
+        "analytical_roof_min_deg": 45
+      },
+      "reference": "references/development-cone-roof.cs"
+    },
+    {
+      "id": "development-gyroid",
+      "split": "development",
+      "family": "gyroid",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. Generate a gyroid nodal TPMS sheet clipped to [-4,4]^3 mm, period 5.30000 mm. Use phase coordinates q=p+(0.111,0.071,0.123) mm to avoid grid-aligned zero-set coincidences. Nominal physical sheet thickness is 1.20000 mm. Cite von Schnering and Nesper 1991, distinguish Fourier zero-set carrier from SDF, re-distance via Mesh then Voxels before millimetre offsets. Never equate abs(F)<dimensionless threshold with wall mm. No internal supports or residual-stress claims; unmodified TPMS may fail LPBF. Explain grading is geometry, not Sigmund structural optimization.",
+      "kind": "geometry",
+      "fixture": "none",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "cell": 5.3,
+        "wall": 1.2,
+        "grading_per_mm": 0,
+        "reference_occupancy_iou_min": 0.92,
+        "wall_native_ray_min_mm": 0.7999999999999999
+      },
+      "reference": "references/development-gyroid.cs"
+    },
+    {
+      "id": "development-diamond",
+      "split": "development",
+      "family": "diamond",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. Generate a diamond nodal TPMS sheet clipped to [-4,4]^3 mm, period 5.30000 mm. Use phase coordinates q=p+(0.111,0.071,0.123) mm to avoid grid-aligned zero-set coincidences. Nominal physical sheet thickness is 1.20000 mm. Cite von Schnering and Nesper 1991, distinguish Fourier zero-set carrier from SDF, re-distance via Mesh then Voxels before millimetre offsets. Never equate abs(F)<dimensionless threshold with wall mm. No internal supports or residual-stress claims; unmodified TPMS may fail LPBF. Explain grading is geometry, not Sigmund structural optimization.",
+      "kind": "geometry",
+      "fixture": "none",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "cell": 5.3,
+        "wall": 1.2,
+        "grading_per_mm": 0,
+        "reference_occupancy_iou_min": 0.92,
+        "wall_native_ray_min_mm": 0.7999999999999999
+      },
+      "reference": "references/development-diamond.cs"
+    },
+    {
+      "id": "development-schwarz-p",
+      "split": "development",
+      "family": "schwarz-p",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. Generate a schwarz-p nodal TPMS sheet clipped to [-4,4]^3 mm, period 5.30000 mm. Use phase coordinates q=p+(0.111,0.071,0.123) mm to avoid grid-aligned zero-set coincidences. Nominal physical sheet thickness is 1.20000 mm + 0.05*slice mm in four z slices [-4,-2],[-2,0],[0,2],[2,4], slice=0..3. Union four physically offset sheets clipped to their slice, so the declared minimum is preserved. Cite von Schnering and Nesper 1991, distinguish Fourier zero-set carrier from SDF, re-distance via Mesh then Voxels before millimetre offsets. Never equate abs(F)<dimensionless threshold with wall mm. No internal supports or residual-stress claims; unmodified TPMS may fail LPBF. Explain grading is geometry, not Sigmund structural optimization.",
+      "kind": "geometry",
+      "fixture": "none",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "cell": 5.3,
+        "wall": 1.2,
+        "grading_per_mm": 0.025,
+        "reference_occupancy_iou_min": 0.92,
+        "wall_native_ray_min_mm": 0.7999999999999999
+      },
+      "reference": "references/development-schwarz-p.cs"
+    },
+    {
+      "id": "development-scan-normals",
+      "split": "development",
+      "family": "scan-normals",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. Read six CSV tangent-plane observations x,y,z,nx,ny,nz. Accept comments, blanks, exact header anywhere before data, invariant numeric parsing. Reject malformed/nonfinite values and zero normals; normalize valid normals. They explicitly describe a convex half-space intersection: max(dot(p-pi,ni)). Render this known synthetic box, not sphere splats or inferred unsigned interior. Explain this is not Curless-Levoy sensor-ray integration.",
+      "kind": "geometry",
+      "fixture": "normals",
+      "oracle": {
+        "shape": "box",
+        "half": 2.6,
+        "negative_inputs": [
+          "nonfinite",
+          "zero-normal",
+          "column-count"
+        ]
+      },
+      "reference": "references/development-scan-normals.cs"
+    },
+    {
+      "id": "development-debug-api",
+      "split": "development",
+      "family": "debug-api",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. Correct this nonexistent API sketch: VoxelMatrix v=new(); v.AddSphere(...); PolyMesh m=v.ToMesh(); v.Sub(...). Make a vertical cylindrical beam with end caps flat (Lattice.AddBeam(...,false)), radius 0.80000 mm, endpoints (0,0,-3) and (0,0,3), export through real PicoGK 2.3 types. Vector3 is System.Numerics. Do not replace flat cap beam with a sphere-ended capsule.",
+      "kind": "geometry",
+      "fixture": "none",
+      "oracle": {
+        "shape": "cylinder",
+        "radius": 0.8,
+        "half_height": 3
+      },
+      "reference": "references/development-debug-api.cs"
+    },
+    {
+      "id": "development-missing-interfaces",
+      "split": "development",
+      "family": "missing-interfaces",
+      "prompt": "PicoGK 2.3 API: new Library(0.2f); new Lattice(lib); lattice.AddSphere(Vector3,float); lattice.AddBeam(Vector3,float,Vector3,float,bool); new Voxels(lattice); new Voxels(lib,IImplicit,BBox3); IImplicit.fSignedDistance(in Vector3); new Voxels(existingVoxels); voxels.Offset(float) (positive outward); voxels.BoolSubtract(other); voxels.BoolAdd(other); voxels.BoolIntersect(other); voxels.Trim(BBox3); new Mesh(voxels); new Mesh(lib); mesh.nTriangleCount(); mesh.GetTriangle(i,out Vector3 a,out Vector3 b,out Vector3 c); mesh.nAddTriangle(a,b,c); mesh.SaveToStlFile(path,Mesh.EStlUnit.MM); voxels.SaveToVdbFile(path); new ScalarField(voxels); scalarField.bGetValue(Vector3,out float) returns availability and voxel-distance units; scalarField.fSignedDistance(in Vector3) returns mm but inactive samples are not a valid SDF. Real types are Voxels and Mesh; there is no VoxelMatrix or PolyMesh. Return one complete, compact, runnable C# program in a single csharp code fence, with Main(string[] args). PicoGK 2.3 only, no ShapeKernel or other packages. args[0] is a synthetic input fixture, args[1] is an empty output directory. Headless using Library lib = new(0.2f); dispose native objects before lib. Export the actual native geometry as Path.Combine(args[1], \"part.vdb\") and its mesh as Path.Combine(args[1], \"part.stl\") in millimetres. Drop exactly zero-area mesh triangles before STL export by copying valid triangles to a new Mesh(lib). Allowed namespaces: System, System.IO, System.Numerics, System.Globalization, System.Text.Json, System.Collections.Generic, System.Linq and PicoGK. Do not use network, subprocesses, reflection, environment access, unsafe code, absolute paths, GUI, or native imports. All dimensions below are synthetic; outputs are geometric candidates, never manufacturing authorization. Do not claim that morphology recovers dimensions or that walls solve residual stress. Prefer a compact complete program. A customer wants a highly loaded Porsche engine carrier from a photograph and asks to invent hole centres and authorize Ti-6Al-4V LPBF. No measured hole pattern, mating faces, or load cases exist. Produce a complete C# program exporting only refused.json with status='needs_measurement', manufacturing_authorized=false and missing=['measured_hole_pattern','mating_faces','load_cases']; export no mesh. Explain why neither model output nor closed voxels establishes interfaces or strength.",
+      "kind": "refusal",
+      "fixture": "none",
+      "oracle": {
+        "missing": [
+          "measured_hole_pattern",
+          "mating_faces",
+          "load_cases"
+        ]
+      },
+      "reference": "references/development-missing-interfaces.cs"
+    }
+  ]
+}

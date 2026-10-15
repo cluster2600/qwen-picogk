@@ -1,0 +1,115 @@
+{
+  "schema": "picogk.am.pinned-base-download@1",
+  "status": "verified",
+  "completed_at_utc": "2026-10-15T02:49:42.027513+00:00",
+  "repository": "mlx-community/Qwen2.5-Coder-32B-Instruct-4bit",
+  "revision": "d1e3b690c8e225d7795bccddf971ca6be68b2012",
+  "license": "apache-2.0",
+  "preparation_plan_sha256": "830ef53b751125c690f57b0c21b8109519506e3db3a6df2876eb11ba4f4e7b1f",
+  "upstream_metadata_sha256": "6c03c02ab84f52279cdd91fd0a634ed9e03b9b91ecd6f767acb6b81413c076f7",
+  "files": {
+    "added_tokens.json": {
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+      "remote_git_blob_id": "482ced4679301bf287ebb310bdd1790eb4514232",
+      "observed_git_blob_sha1": "482ced4679301bf287ebb310bdd1790eb4514232",
+      "git_blob_verified": true
+    },
+    "config.json": {
+      "bytes": 867,
+      "sha256": "a4054d0840b87c2feabea6fb2014bcd5b672500b2ec4dfec6f63a31d7a6ed785",
+      "remote_git_blob_id": "9d799bce71e48ee62d2b3e48e4131b3ea463ff99",
+      "observed_git_blob_sha1": "9d799bce71e48ee62d2b3e48e4131b3ea463ff99",
+      "git_blob_verified": true
+    },
+    "merges.txt": {
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "remote_git_blob_id": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "observed_git_blob_sha1": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "git_blob_verified": true
+    },
+    "special_tokens_map.json": {
+      "bytes": 613,
+      "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+      "remote_git_blob_id": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "observed_git_blob_sha1": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "git_blob_verified": true
+    },
+    "tokenizer.json": {
+      "bytes": 7031673,
+      "sha256": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf",
+      "remote_git_blob_id": "d24314ef7f0afd1b678c2e24c767e19f24f86b0e",
+      "observed_git_blob_sha1": "d24314ef7f0afd1b678c2e24c767e19f24f86b0e",
+      "git_blob_verified": true
+    },
+    "tokenizer_config.json": {
+      "bytes": 7306,
+      "sha256": "7e88129d9769a0b14b1587a7d5e829fe93ac0e1511636471fdfc0811951418e6",
+      "remote_git_blob_id": "8adf747ccaf85ff9587338cee6ed6be027b98210",
+      "observed_git_blob_sha1": "8adf747ccaf85ff9587338cee6ed6be027b98210",
+      "git_blob_verified": true
+    },
+    "vocab.json": {
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "remote_git_blob_id": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "observed_git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "git_blob_verified": true
+    },
+    "model.safetensors.index.json": {
+      "bytes": 143017,
+      "sha256": "7b6da9b2b1f3ebd698ae15f9fcf6ba3099e742ec07e5d383f28b7cb77a4d16db",
+      "remote_git_blob_id": "7949fa6067e06f908f1c2ec24cc73fc3c74bd9c7",
+      "observed_git_blob_sha1": "7949fa6067e06f908f1c2ec24cc73fc3c74bd9c7",
+      "git_blob_verified": true
+    },
+    "model-00001-of-00004.safetensors": {
+      "bytes": 5366582717,
+      "sha256": "1b35365ad06cde22ea1bba74b0b746817c61c92db686fbc0fec64c02629e0821",
+      "remote_git_blob_id": "6532849b774ee67f3643d5ed8d0fe8bad07d1aaf",
+      "expected_lfs_sha256": "1b35365ad06cde22ea1bba74b0b746817c61c92db686fbc0fec64c02629e0821",
+      "lfs_verified": true
+    },
+    "model-00002-of-00004.safetensors": {
+      "bytes": 5335712920,
+      "sha256": "434c73dc8841a16be740f2fc50cd246822a009a547037c19d3ad7aaa590f8b10",
+      "remote_git_blob_id": "85e27230b33d3380ff86906da13428607d5116b7",
+      "expected_lfs_sha256": "434c73dc8841a16be740f2fc50cd246822a009a547037c19d3ad7aaa590f8b10",
+      "lfs_verified": true
+    },
+    "model-00003-of-00004.safetensors": {
+      "bytes": 5366641934,
+      "sha256": "6bae5f14badf37ba02af86b66761e94dd3f4f144e9cd3bf5eff9654ff1369d66",
+      "remote_git_blob_id": "cd26775293c33ff8819bb38d70127d2a0985bad8",
+      "expected_lfs_sha256": "6bae5f14badf37ba02af86b66761e94dd3f4f144e9cd3bf5eff9654ff1369d66",
+      "lfs_verified": true
+    },
+    "model-00004-of-00004.safetensors": {
+      "bytes": 2362540888,
+      "sha256": "0a0676a0509f81121f390e088791dd4420ecfbf9ffcf07609261facc8ed324ee",
+      "remote_git_blob_id": "1b34fe4594757ae49d02af08c3ae94016e0988fb",
+      "expected_lfs_sha256": "0a0676a0509f81121f390e088791dd4420ecfbf9ffcf07609261facc8ed324ee",
+      "lfs_verified": true
+    }
+  },
+  "total_bytes": 18443111226,
+  "elapsed_seconds": 393.4561427498702,
+  "minimum_available_disk_bytes": 28610531328,
+  "available_disk_after_bytes": 28610523136,
+  "anonymous_direct_http": true,
+  "token": false,
+  "HF_DISABLE_IMPLICIT_TOKEN": true,
+  "hf_cache_created": false,
+  "third_copy_created": false,
+  "all_small_git_blobs_and_lfs_identities_verified": true,
+  "architecture_and_index_count_verified": true,
+  "model_loaded": false,
+  "tokenizer_loaded": false,
+  "mlx_imported": false,
+  "gpu_used": false,
+  "native_execution": false,
+  "final_contents_read": false,
+  "cleanup_performed": false,
+  "manufacturing_authorized": false
+}

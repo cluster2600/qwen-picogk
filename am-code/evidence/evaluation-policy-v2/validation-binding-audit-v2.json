@@ -1,0 +1,13 @@
+{
+  "registered_at": "2026-10-14T14:08:31.613591+00:00",
+  "no_authoritative_model_inference_yet": true,
+  "change": "Require the complete 15-key development selection evidence before reserved final inference or scoring; source metadata binding retained; task prompts and geometry checks unchanged.",
+  "checker_hashes": {
+    "evaluation/evaluate.py": "fd3ee5198a1951b7c01aa556565ef0962eb4eb3011b36c9e96aa4a1bcfbc58b8",
+    "end-to-end/evaluate.py": "e74790f0acabb39ff8bb62dd54ed265a9050c00c52ef40a80d59d67a6a24705c",
+    "evaluation/Inspector.cs": "d61a5aec3d4b86d5c7700f567d40725f24c74e3e7d08e1f7daafc5b09c8cb1ab",
+    "infer.py": "a543411ac26cdacafe519f12a897845bad749ca3c4dd6a1933276f8adf50c395",
+    "qualification.py": "27c8588cf6b4db9b21ea415525df9e7cbec111622f5efb0007fc4253b07dfbae"
+  },
+  "scan_freeze_sha256": "e9fbeca73172f6dece5a45640fab5fe4ff7b37b2f3f51de4522cdba1f5a5da94"
+}

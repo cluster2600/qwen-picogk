@@ -1,0 +1,1056 @@
+{
+  "format": "ChatML single text field",
+  "language": "en",
+  "examples": [
+    {
+      "id": 1,
+      "category": "scan",
+      "title": "Close sub-resolution scan fissures",
+      "load_mode": "splats",
+      "code_sha256": "89253d94847846888e72d9875282ba648fdc11dda707e6abc9315e4c5646634a"
+    },
+    {
+      "id": 2,
+      "category": "scan",
+      "title": "Remove convex splat spikes",
+      "load_mode": "splats",
+      "code_sha256": "9958c640fe47fed01c7167d02fe36e6c4d59e1aabf769450eb4c37123122edfa"
+    },
+    {
+      "id": 3,
+      "category": "scan",
+      "title": "Balance crack closure and spike removal",
+      "load_mode": "splats",
+      "code_sha256": "1a120fc697e741a72c065bd60d5286fe18fef5dafa40fd2f10f9fadfc5f486ff"
+    },
+    {
+      "id": 4,
+      "category": "scan",
+      "title": "Preserve a bottom datum during smoothing",
+      "load_mode": "mesh",
+      "code_sha256": "5bb89281e1209a4d4e7d2b9bb543b1e0a8e7235fbe2a078d9877e32651b8c0b8"
+    },
+    {
+      "id": 5,
+      "category": "scan",
+      "title": "Protect two opposed mating faces",
+      "load_mode": "mesh",
+      "code_sha256": "4c7be77a566101f256065452b14536f7c9863eb80baf0c48618bf60ac5234030"
+    },
+    {
+      "id": 6,
+      "category": "scan",
+      "title": "Exclude a central attachment zone from opening",
+      "load_mode": "mesh",
+      "code_sha256": "c335afa741fcefbfca0a0a0a8dcce366429f6506832b56994508c28a09ecfbcb"
+    },
+    {
+      "id": 7,
+      "category": "scan",
+      "title": "Repair only a nominated half-space",
+      "load_mode": "oriented",
+      "code_sha256": "7ed99fe4368379fe2da649a8d7aec8c08a5a793fc435f6959af7bae0e0b6b7f9"
+    },
+    {
+      "id": 8,
+      "category": "scan",
+      "title": "Spherical region of interest repair",
+      "load_mode": "oriented",
+      "code_sha256": "23c77f11ebae39953d649726b859d63b321eef56a739283e1666433a58cdf60d"
+    },
+    {
+      "id": 9,
+      "category": "scan",
+      "title": "Cylindrical seam region repair",
+      "load_mode": "oriented",
+      "code_sha256": "5bc59080eb561fd8c32d58f7b0ef5d05bcd25cbd5e6dd6ee01122fe692782034"
+    },
+    {
+      "id": 10,
+      "category": "scan",
+      "title": "Voxelize and remesh a closed STL",
+      "load_mode": "mesh",
+      "code_sha256": "be00597bee7e9b306c38df0ff726be2d685716e851890f3d36e5e1596224ab78"
+    },
+    {
+      "id": 11,
+      "category": "scan",
+      "title": "Smooth before remeshing",
+      "load_mode": "mesh",
+      "code_sha256": "3c006c29b4a58c9f669a39b58b8772084330a8cea90e82ca493e68c07c6f864c"
+    },
+    {
+      "id": 12,
+      "category": "scan",
+      "title": "Diagnose degenerate remeshed facets",
+      "load_mode": "mesh",
+      "code_sha256": "c28320084418c40f4c14c38022b13f07ae0c0daa011fbab0d4086c83ff71ea67"
+    },
+    {
+      "id": 13,
+      "category": "scan",
+      "title": "Set a volume-drift repair budget",
+      "load_mode": "oriented",
+      "code_sha256": "bb136b270073697d9fe37ec598dd335979d8877fef324eb8e994884e39f1406a"
+    },
+    {
+      "id": 14,
+      "category": "scan",
+      "title": "Compare closing and opening volume costs",
+      "load_mode": "oriented",
+      "code_sha256": "f05a9ab7018b5b40509e1dd05329e1c7ec9761ceb5a129c981b47d37d796fbbc"
+    },
+    {
+      "id": 15,
+      "category": "scan",
+      "title": "Bound repair by original spatial extent",
+      "load_mode": "oriented",
+      "code_sha256": "80acb55b3a4eaaf4e3a27fec058453bc3485796f100786cdc29128121b099f69"
+    },
+    {
+      "id": 16,
+      "category": "scan",
+      "title": "Measure additive repair residual",
+      "load_mode": "splats",
+      "code_sha256": "59381e41b10045d065ee6087b72f7810e690385e18348caea5726189d5024d88"
+    },
+    {
+      "id": 17,
+      "category": "scan",
+      "title": "Measure symmetric morphological disagreement",
+      "load_mode": "splats",
+      "code_sha256": "8ffdbdf5d37f146bf3bf6717183fd0f8e9c3288803a03daea04646100b160d6a"
+    },
+    {
+      "id": 18,
+      "category": "scan",
+      "title": "Reject repairs that move too much occupancy",
+      "load_mode": "oriented",
+      "code_sha256": "36cc821acf52f1f4eb9c984e5686ed8bed32055b65305927f1a31fc1623ede71"
+    },
+    {
+      "id": 19,
+      "category": "scan",
+      "title": "Create a conservative inward-offset skin",
+      "load_mode": "mesh",
+      "code_sha256": "695bf1e806738e668d3897f759cd63a520a3f6341b5d4660f836d0798fd62aa1"
+    },
+    {
+      "id": 20,
+      "category": "scan",
+      "title": "Protect thin geometry from global erosion",
+      "load_mode": "oriented",
+      "code_sha256": "ff5ecebc49e68657f9dd6d61cb1e65be6f162e40bc1eeadf8af483dfa355e93e"
+    },
+    {
+      "id": 21,
+      "category": "scan",
+      "title": "Audit a candidate exterior skin before hollowing",
+      "load_mode": "mesh",
+      "code_sha256": "8e031e73440698bd0095f68f44afe40d359246da96aa0a6487f3399029e198f5"
+    },
+    {
+      "id": 22,
+      "category": "scan",
+      "title": "Detect sparse splat reconstruction",
+      "load_mode": "splats",
+      "code_sha256": "bba6703d9019c9ef71640946e672cb9e65a0400de0550d03615cabd461cd54a8"
+    },
+    {
+      "id": 23,
+      "category": "scan",
+      "title": "Keep additions within a sampling envelope",
+      "load_mode": "splats",
+      "code_sha256": "0a347f42b1b933c5b2ebfb36e5c6bdb45efc9066592e14f7313ee6f22a8681b7"
+    },
+    {
+      "id": 24,
+      "category": "scan",
+      "title": "Attach a nominated calibration witness",
+      "load_mode": "splats",
+      "code_sha256": "ed9e9578162a73e153ff04a61c7f0cd1dcfcfcaf1a3c78a96ec6ecb223d28e92"
+    },
+    {
+      "id": 25,
+      "category": "scan",
+      "title": "Retain the oriented SDF sign convention",
+      "load_mode": "oriented",
+      "code_sha256": "e9df721da201bc7abd001fd49e8572f42788af8b4602d58cc113ac01ce4a8770"
+    },
+    {
+      "id": 26,
+      "category": "scan",
+      "title": "Report oriented-scan bounding drift",
+      "load_mode": "oriented",
+      "code_sha256": "7832eece64ec1cbb4298015d27da4d6976a8c87113ae6573a454d7cfee312655"
+    },
+    {
+      "id": 27,
+      "category": "scan",
+      "title": "Limit oriented repair to an uncertainty band",
+      "load_mode": "oriented",
+      "code_sha256": "62faa191644694bbda8623ff9cc7136f21949974373b33b08eceded65553aa2b"
+    },
+    {
+      "id": 28,
+      "category": "scan",
+      "title": "Repair fused range data conservatively",
+      "load_mode": "range",
+      "code_sha256": "de73066121b9e42cc64be0aedcd469e5cb16d062e816c48cbd70730066c06f2b"
+    },
+    {
+      "id": 29,
+      "category": "scan",
+      "title": "Protect range-fused surface occupancy",
+      "load_mode": "range",
+      "code_sha256": "777cbd17622f16b05b971a0bc46e0ac033beab2754f4cf2b277fc465f07af139"
+    },
+    {
+      "id": 30,
+      "category": "scan",
+      "title": "Expose morphology removal after range fusion",
+      "load_mode": "range",
+      "code_sha256": "4af03fafe56cc2837e607b25b39b44821d305b707dfaf49b6c6ed69e458a66b4"
+    },
+    {
+      "id": 31,
+      "category": "scan",
+      "title": "Anisotropic closing for directional cracks",
+      "load_mode": "mesh",
+      "code_sha256": "0d5fdc4b48758b92dbb19f07390b8ee0912de98144d7c38efd652c5c08961334"
+    },
+    {
+      "id": 32,
+      "category": "scan",
+      "title": "Suppress Z-direction scan chatter",
+      "load_mode": "mesh",
+      "code_sha256": "cdacf5f5ba49004f3263608fbb6aab77d87cad8bc28c6edde953789394ae6d0f"
+    },
+    {
+      "id": 33,
+      "category": "scan",
+      "title": "Directional smoothing with explicit resampling audit",
+      "load_mode": "mesh",
+      "code_sha256": "b511bd683869dac69d4b33d9a84293445ad07a55e9e566b6d6170fb3bc5d031c"
+    },
+    {
+      "id": 34,
+      "category": "scan",
+      "title": "Round concave scan notches explicitly",
+      "load_mode": "mesh",
+      "code_sha256": "db317e4e4d8ba6e889eeaefe64213b02fb7e5240c27e594649554a23b188b2c0"
+    },
+    {
+      "id": 35,
+      "category": "scan",
+      "title": "Limit closing to concave changes",
+      "load_mode": "mesh",
+      "code_sha256": "54ca74d4b42910b26ab727f4a319db4bbe7999c0215f49e2d0ff0635103b49ad"
+    },
+    {
+      "id": 36,
+      "category": "scan",
+      "title": "Limit opening to removal changes",
+      "load_mode": "mesh",
+      "code_sha256": "08719110f393907942142bb90f1f97af842a772ca6906fdd7834683fd72c419e"
+    },
+    {
+      "id": 37,
+      "category": "scan",
+      "title": "Audit forward surface displacement",
+      "load_mode": "oriented",
+      "code_sha256": "acba6e9fdc35fb38a0386c644ef39cdd3f4dc6b04d56a59986bb432eb1ed93da"
+    },
+    {
+      "id": 38,
+      "category": "scan",
+      "title": "Audit reverse surface displacement",
+      "load_mode": "oriented",
+      "code_sha256": "16e268a7965ff71b079db3809a0a6b62628651d7c2d22d955aec0aa9024ec48d"
+    },
+    {
+      "id": 39,
+      "category": "scan",
+      "title": "Gate repair on sampled bidirectional deviation",
+      "load_mode": "oriented",
+      "code_sha256": "e6d62ee243ee0260cccf8ae0fe3819052b11103dc2b3ecedb5966aedc5c9de36"
+    },
+    {
+      "id": 40,
+      "category": "scan",
+      "title": "Choose among documented repair scales",
+      "load_mode": "mesh",
+      "code_sha256": "43f8619daa2c03b806d2680d041cc202ec7c3117ad10be5b7b7467b6c8d0170c"
+    },
+    {
+      "id": 41,
+      "category": "scan",
+      "title": "Choose opening only when it preserves a thick core",
+      "load_mode": "oriented",
+      "code_sha256": "919102aecacceb25f79931d541f37bd1bcac0fe68d5f4ea154b262a0b807a06a"
+    },
+    {
+      "id": 42,
+      "category": "scan",
+      "title": "Compare operation ordering explicitly",
+      "load_mode": "splats",
+      "code_sha256": "58581831be32d6a2fea94e53c5cdb6b456bd7bc8c7261d0274f23f8762792959"
+    },
+    {
+      "id": 43,
+      "category": "scan",
+      "title": "Preserve a nominated small feature mask",
+      "load_mode": "oriented",
+      "code_sha256": "e62c4716ce7d53a12d0cf9d31d25767ea08fef8888096316610fa992f7aa590e"
+    },
+    {
+      "id": 44,
+      "category": "scan",
+      "title": "Separate solidification proposal from scan evidence",
+      "load_mode": "splats",
+      "code_sha256": "00346264df39341bbfd1e16b8f39f7ba523c3f436c97027b25cb8c1344080931"
+    },
+    {
+      "id": 45,
+      "category": "scan",
+      "title": "Diagnose residual islands without deleting them",
+      "load_mode": "splats",
+      "code_sha256": "25f3556972c2c419bda6bdddbff138856270a80a020de5e402227fc0f355c208"
+    },
+    {
+      "id": 46,
+      "category": "infill",
+      "title": "Gyroid: constant-wall baseline",
+      "load_mode": "mesh",
+      "code_sha256": "57f7f57bad0f47851f8e73e0c44c88a1899efdfcce32ae8c945d32a9018f8b6c"
+    },
+    {
+      "id": 47,
+      "category": "infill",
+      "title": "Gyroid: two-zone porosity",
+      "load_mode": "mesh",
+      "code_sha256": "54bbe30d6a76553e57ae11e1d382e8beb88dc2149a7732762d1d8f31d5a3670d"
+    },
+    {
+      "id": 48,
+      "category": "infill",
+      "title": "Gyroid: integrated axial period",
+      "load_mode": "mesh",
+      "code_sha256": "ffa3d1eb72fd71adb7ebf488506f38679bff14b9e1c8d6f683763ec808dc480b"
+    },
+    {
+      "id": 49,
+      "category": "infill",
+      "title": "Gyroid: rotated phase",
+      "load_mode": "mesh",
+      "code_sha256": "4bbfd9d4b3474a79b6e650ed3e38ed4ec240cddd75fa846e4e58ff088b800384"
+    },
+    {
+      "id": 50,
+      "category": "infill",
+      "title": "Gyroid: elongated cells",
+      "load_mode": "mesh",
+      "code_sha256": "65378dcbf2532e6e449818f0e77214b3c56386f1fe679d0ddfe6f779ee1705ae"
+    },
+    {
+      "id": 51,
+      "category": "infill",
+      "title": "Gyroid: opposed labyrinth access",
+      "load_mode": "mesh",
+      "code_sha256": "4eef9b2bdab99fe40da20771a584a2df7af333f251f1558424673f9d2df10549"
+    },
+    {
+      "id": 52,
+      "category": "infill",
+      "title": "Gyroid: solid attachment band",
+      "load_mode": "mesh",
+      "code_sha256": "b9219c35bd87660c612b74165f341bcd1d7c2e2b42c5c3de019b351fba54edee"
+    },
+    {
+      "id": 53,
+      "category": "infill",
+      "title": "Gyroid: central flow keepout",
+      "load_mode": "mesh",
+      "code_sha256": "88ad41a5b9771c0c20c04cb54bc83999a6655ad22684f8e1227df3a07e02e740"
+    },
+    {
+      "id": 54,
+      "category": "infill",
+      "title": "Diamond: constant-wall baseline",
+      "load_mode": "mesh",
+      "code_sha256": "b0b7c1d2dc047c1a2acdb8700cb26f78dc49264a5a6331c41a5dbc051285ae34"
+    },
+    {
+      "id": 55,
+      "category": "infill",
+      "title": "Diamond: two-zone porosity",
+      "load_mode": "mesh",
+      "code_sha256": "bb3b2470b981396208b97a14944b417d31d37b034f17bc707d66bff7b03a9de6"
+    },
+    {
+      "id": 56,
+      "category": "infill",
+      "title": "Diamond: integrated axial period",
+      "load_mode": "mesh",
+      "code_sha256": "f5dc0179e2a6f828bfa4558f0fa033fb9e2137b617972bf4d53b62e91d0a0d9e"
+    },
+    {
+      "id": 57,
+      "category": "infill",
+      "title": "Diamond: rotated phase",
+      "load_mode": "mesh",
+      "code_sha256": "39eee2b9b43956c9e42ea6ecda59a4edc5079825fc11cd66cc80a9810692559a"
+    },
+    {
+      "id": 58,
+      "category": "infill",
+      "title": "Diamond: elongated cells",
+      "load_mode": "mesh",
+      "code_sha256": "ec7087ac677478df42b944717a276b09f10f6b3ff5acb5eb9149724cb91d3007"
+    },
+    {
+      "id": 59,
+      "category": "infill",
+      "title": "Diamond: opposed labyrinth access",
+      "load_mode": "mesh",
+      "code_sha256": "79be446a0fd4d0dab90f3340fe44063d153b333a3b0794426647406a1b79ab02"
+    },
+    {
+      "id": 60,
+      "category": "infill",
+      "title": "Diamond: solid attachment band",
+      "load_mode": "mesh",
+      "code_sha256": "6bbbf45606ae1dbc785e6a2d983ef4c1f9c40d9e70d55c0513ae3e41d98df82a"
+    },
+    {
+      "id": 61,
+      "category": "infill",
+      "title": "Diamond: central flow keepout",
+      "load_mode": "mesh",
+      "code_sha256": "435f81a53764ccc266276ffde0ebd1ca890446633d58edd8d75009548c84afbe"
+    },
+    {
+      "id": 62,
+      "category": "infill",
+      "title": "Schwarz P: constant-wall baseline",
+      "load_mode": "mesh",
+      "code_sha256": "2221915f07c492c4cd29e110ec3ee81ca36a82cb146d985c0b3da4c9aa04d6de"
+    },
+    {
+      "id": 63,
+      "category": "infill",
+      "title": "Schwarz P: two-zone porosity",
+      "load_mode": "mesh",
+      "code_sha256": "1bbb97bfb93a369864706acd6af59073cc58560c223f0a212c456de554a7379b"
+    },
+    {
+      "id": 64,
+      "category": "infill",
+      "title": "Schwarz P: integrated axial period",
+      "load_mode": "mesh",
+      "code_sha256": "f9bedc228928654a1904f90d7da6677ce7cb5afc329c6c5cdfb36619daa20af6"
+    },
+    {
+      "id": 65,
+      "category": "infill",
+      "title": "Schwarz P: rotated phase",
+      "load_mode": "mesh",
+      "code_sha256": "29910282cb7407c76c51b3d77fdcd9fb5737801f90ed0b2dd69bf75ea3b3b443"
+    },
+    {
+      "id": 66,
+      "category": "infill",
+      "title": "Schwarz P: elongated cells",
+      "load_mode": "mesh",
+      "code_sha256": "2454b4ea1151ea468656e0089c99a6eb1c2795ff14d118647e52390ab5664a7e"
+    },
+    {
+      "id": 67,
+      "category": "infill",
+      "title": "Schwarz P: opposed labyrinth access",
+      "load_mode": "mesh",
+      "code_sha256": "6e443a76456b22736da89ca9a63ca276717b70addf578d5aa3517f3b1974b37b"
+    },
+    {
+      "id": 68,
+      "category": "infill",
+      "title": "Schwarz P: solid attachment band",
+      "load_mode": "mesh",
+      "code_sha256": "e49a271f33037d197f755471a4b8f0f6c51cd6083c05f75ec087f4916f2823c5"
+    },
+    {
+      "id": 69,
+      "category": "infill",
+      "title": "Schwarz P: central flow keepout",
+      "load_mode": "mesh",
+      "code_sha256": "b942f78792f369a04f53c22cca6c7d096c257a662da0ad5170de53b686c56ed3"
+    },
+    {
+      "id": 70,
+      "category": "infill",
+      "title": "steep cross-braced cells: design 1",
+      "load_mode": "mesh",
+      "code_sha256": "811989ba3460dc2708e22ad35ba9b4c651f210a197f57d25f137ea300b88dac0"
+    },
+    {
+      "id": 71,
+      "category": "infill",
+      "title": "steep cross-braced cells: design 2",
+      "load_mode": "mesh",
+      "code_sha256": "fd9a6a9cc222b8add0eabd4c157ff58839a9c9f5509efcd921af934250f762cd"
+    },
+    {
+      "id": 72,
+      "category": "infill",
+      "title": "steep cross-braced cells: design 3",
+      "load_mode": "mesh",
+      "code_sha256": "b197937ae2fc849ad708658678c5d69488b2601de112b7d4f932fc7162f2808c"
+    },
+    {
+      "id": 73,
+      "category": "infill",
+      "title": "load-axis trunks: design 1",
+      "load_mode": "mesh",
+      "code_sha256": "7265c83d6d3dae3d4b9b7860f618a98762f2b052a16f9e89d5ad65281aa7b026"
+    },
+    {
+      "id": 74,
+      "category": "infill",
+      "title": "load-axis trunks: design 2",
+      "load_mode": "mesh",
+      "code_sha256": "92477794f999542055e6a629ca607fb8bed7827a8789d53c847469d8ca419646"
+    },
+    {
+      "id": 75,
+      "category": "infill",
+      "title": "load-axis trunks: design 3",
+      "load_mode": "mesh",
+      "code_sha256": "c2ccbd9504ce37c055784c0a16344c0c2b40ea96602b6c4c4d9c5ccf84ae7a87"
+    },
+    {
+      "id": 76,
+      "category": "infill",
+      "title": "conformal column rings: design 1",
+      "load_mode": "mesh",
+      "code_sha256": "b31af6d3018a7e9722df6dff68197d6f1f16fbcd95581f4fc4425eabbcc445a4"
+    },
+    {
+      "id": 77,
+      "category": "infill",
+      "title": "conformal column rings: design 2",
+      "load_mode": "mesh",
+      "code_sha256": "dd822440ac31434c5ed0df0c28806c2128730b797e1e6e898e2aaf6666a986c7"
+    },
+    {
+      "id": 78,
+      "category": "infill",
+      "title": "conformal column rings: design 3",
+      "load_mode": "mesh",
+      "code_sha256": "cc5e72b8adb65176213b4d0deb7387ad7da2132212acbccd1379a34dd6ebd1db"
+    },
+    {
+      "id": 79,
+      "category": "infill",
+      "title": "seeded stochastic foam struts: design 1",
+      "load_mode": "mesh",
+      "code_sha256": "86ea5dcef3adb66fc19955ba41f4d0bd86f9d50baaf5bab4652e71a6f6d4a655"
+    },
+    {
+      "id": 80,
+      "category": "infill",
+      "title": "seeded stochastic foam struts: design 2",
+      "load_mode": "mesh",
+      "code_sha256": "304137b807049746bac02c5c763c958e31d9f81306e742e88c2f583092339fce"
+    },
+    {
+      "id": 81,
+      "category": "infill",
+      "title": "seeded stochastic foam struts: design 3",
+      "load_mode": "mesh",
+      "code_sha256": "75b3db567798040df92198b1b877e05f34f1428159fdf6ec009ec1576af41e03"
+    },
+    {
+      "id": 82,
+      "category": "infill",
+      "title": "Open foam: conical pores 1",
+      "load_mode": "mesh",
+      "code_sha256": "89bec158e54750e709fba4a2e0c2edec2defda76f5b2bc628f36323f1aabb357"
+    },
+    {
+      "id": 83,
+      "category": "infill",
+      "title": "Open foam: conical pores 2",
+      "load_mode": "mesh",
+      "code_sha256": "b616332629267cddec48c4a46576c2a58706ecaa6147464de4ccaf4e6b1688a8"
+    },
+    {
+      "id": 84,
+      "category": "infill",
+      "title": "Open foam: conical pores 3",
+      "load_mode": "mesh",
+      "code_sha256": "600d5aef59b380826e166ad954782d8e270784e06112a2e4941108059d574f40"
+    },
+    {
+      "id": 85,
+      "category": "infill",
+      "title": "Open foam: roofed slot pores 1",
+      "load_mode": "mesh",
+      "code_sha256": "754c929753621c5f599a9bccee75700e953f8d0437545b6cb0395d8c3f346386"
+    },
+    {
+      "id": 86,
+      "category": "infill",
+      "title": "Open foam: roofed slot pores 2",
+      "load_mode": "mesh",
+      "code_sha256": "a4c82a001750c0e16d2abf090f8ecfadaae9eaa72a021204669b0ee8eb2da35f"
+    },
+    {
+      "id": 87,
+      "category": "infill",
+      "title": "Open foam: roofed slot pores 3",
+      "load_mode": "mesh",
+      "code_sha256": "cc53588c77197e38fa3cbc268a44f7f6b23a4953a97e2d993d867a25f8297a75"
+    },
+    {
+      "id": 88,
+      "category": "infill",
+      "title": "Open foam: seeded conical pores 1",
+      "load_mode": "mesh",
+      "code_sha256": "e8bcd98f41fa0d84ae9f2ccacbe4773d2d0a07dc27be128441f6befeab9c557e"
+    },
+    {
+      "id": 89,
+      "category": "infill",
+      "title": "Open foam: seeded conical pores 2",
+      "load_mode": "mesh",
+      "code_sha256": "8b7f4b22d51e93edeee9a7750aa85bb446e17047b66a68614f8197c2cc6d1264"
+    },
+    {
+      "id": 90,
+      "category": "infill",
+      "title": "Open foam: seeded conical pores 3",
+      "load_mode": "mesh",
+      "code_sha256": "40ece5451c621c03ed206d24dac9cffa6e2099df0c44d256cf30ad6f8c8412ea"
+    },
+    {
+      "id": 91,
+      "category": "infill",
+      "title": "Gyroid: finite density objective 1",
+      "load_mode": "mesh",
+      "code_sha256": "ab17db5efd9592d190ed1172c4b177cfb035a6bbb9f82dad7c936eb403fa20d4"
+    },
+    {
+      "id": 92,
+      "category": "infill",
+      "title": "Gyroid: finite density objective 2",
+      "load_mode": "mesh",
+      "code_sha256": "d0531d09d0742925501be5867920cbc83f7a627ba954dde19490eb80891cd3df"
+    },
+    {
+      "id": 93,
+      "category": "infill",
+      "title": "Gyroid: finite density objective 3",
+      "load_mode": "mesh",
+      "code_sha256": "8717205f43cef89c807c7b72a500f268fca7e11d5e84a9509e90ef266c0e3d14"
+    },
+    {
+      "id": 94,
+      "category": "infill",
+      "title": "Diamond: finite density objective 1",
+      "load_mode": "mesh",
+      "code_sha256": "3a99e4150b673d641f0e8141bc73d21dd3d706d3442f2783682af5da590e4ae0"
+    },
+    {
+      "id": 95,
+      "category": "infill",
+      "title": "Diamond: finite density objective 2",
+      "load_mode": "mesh",
+      "code_sha256": "f96412457805df0bd35568836b518da88e49e54b5d7fddd63ff48c092cf0d785"
+    },
+    {
+      "id": 96,
+      "category": "infill",
+      "title": "Diamond: finite density objective 3",
+      "load_mode": "mesh",
+      "code_sha256": "1837d5089bd648c567aa837ba262ca8a3f5ebfdc49274e4c5b3e622b54cc5b4c"
+    },
+    {
+      "id": 97,
+      "category": "infill",
+      "title": "Schwarz P: finite density objective 1",
+      "load_mode": "mesh",
+      "code_sha256": "265a49c18f0b20aea0d52eb5a38871104be1c23b6a57e53bacb63deea878ed8f"
+    },
+    {
+      "id": 98,
+      "category": "infill",
+      "title": "Schwarz P: finite density objective 2",
+      "load_mode": "mesh",
+      "code_sha256": "80bb43e096007524968a14f8ea40d712c4a07ad89abc028818a189d524d130ca"
+    },
+    {
+      "id": 99,
+      "category": "infill",
+      "title": "Schwarz P: finite density objective 3",
+      "load_mode": "mesh",
+      "code_sha256": "b66a31d96e9830003394a9fae71632deb965ba9f61e4537304ce2a70b9ed592a"
+    },
+    {
+      "id": 100,
+      "category": "infill",
+      "title": "Gyroid: smooth axial wall grading",
+      "load_mode": "mesh",
+      "code_sha256": "134b80b3755335c23c2ffb2101f4a038629565b2f0ce0ea3881ec757111afa70"
+    },
+    {
+      "id": 101,
+      "category": "infill",
+      "title": "Gyroid: smooth radial wall grading",
+      "load_mode": "mesh",
+      "code_sha256": "64cdd314adbe7ee8f228f31aae5234ff5ec60ccd003efb8cd82bd4a8e9f36c5a"
+    },
+    {
+      "id": 102,
+      "category": "infill",
+      "title": "Diamond: smooth axial wall grading",
+      "load_mode": "mesh",
+      "code_sha256": "5bb1e0709529ef86c854a49a11ce5b19f9d96e5e69b9129563497f391cc70e10"
+    },
+    {
+      "id": 103,
+      "category": "infill",
+      "title": "Diamond: smooth radial wall grading",
+      "load_mode": "mesh",
+      "code_sha256": "94f71931a338560c1fe1551d3e203f74462133535c8dee5e1b39cfc434b764ca"
+    },
+    {
+      "id": 104,
+      "category": "infill",
+      "title": "Schwarz P: smooth axial wall grading",
+      "load_mode": "mesh",
+      "code_sha256": "4139f6d1327e6d24e79a712e69de486df7297f96eb1275f98a0414b8b10d2515"
+    },
+    {
+      "id": 105,
+      "category": "infill",
+      "title": "Schwarz P: smooth radial wall grading",
+      "load_mode": "mesh",
+      "code_sha256": "1aaf539181177474e028b000dbc16a9de38ec4cfe3a26d10e6b107c78738fe3b"
+    },
+    {
+      "id": 106,
+      "category": "dfam",
+      "title": "Pointed conical chamber with one build-down drain",
+      "load_mode": "mesh",
+      "code_sha256": "34ed755702265888e2d0191173163555913da6f4622b3503560ee4c628790f71"
+    },
+    {
+      "id": 107,
+      "category": "dfam",
+      "title": "Conical chamber preserves a measured central attachment axis",
+      "load_mode": "mesh",
+      "code_sha256": "9ff1ace7973e21b111fbef02258936e6c1f8c3cdadecd55a05c60dbb13ab68d2"
+    },
+    {
+      "id": 108,
+      "category": "dfam",
+      "title": "Two pointed chambers receive independent powder ports",
+      "load_mode": "mesh",
+      "code_sha256": "954f7dd02a840d425149f6c3f83d215b93e1939ef468a3aa5b50f6aab5f3195d"
+    },
+    {
+      "id": 109,
+      "category": "dfam",
+      "title": "A 55 degree roof channel replaces a circular horizontal bore",
+      "load_mode": "mesh",
+      "code_sha256": "59457554e9a2c57c5ff28d5c9af756c5a3edd7e4dd045605330fed4b69ae0cfd"
+    },
+    {
+      "id": 110,
+      "category": "dfam",
+      "title": "A low roof channel slopes its floor toward an evacuation face",
+      "load_mode": "mesh",
+      "code_sha256": "75f79b75a86c9efab8ee340ec8cbf79f310051a266c515d0ed6c441bfe6e7462"
+    },
+    {
+      "id": 111,
+      "category": "dfam",
+      "title": "Independent parallel roof channels avoid a shared sealed plenum",
+      "load_mode": "mesh",
+      "code_sha256": "79ced726fc59df1bbac6dc6acda2173858174e5744900206b2f2a3e0afad2cee"
+    },
+    {
+      "id": 112,
+      "category": "dfam",
+      "title": "One bottom drain opens a scan-following hollow",
+      "load_mode": "mesh",
+      "code_sha256": "d2cfb42be745e2873cd517e24ed5cfa47787fcc0d9430b8c99eb569f437b91ec"
+    },
+    {
+      "id": 113,
+      "category": "dfam",
+      "title": "A rotated evacuation pose uses the X-lowest outlet",
+      "load_mode": "mesh",
+      "code_sha256": "42bd415a3b962b4bfbb1cdc9c39bea91c51f5916b504d02dc380a3fd2b1f53b2"
+    },
+    {
+      "id": 114,
+      "category": "dfam",
+      "title": "Bottom drain and upper purge port provide two accessible routes",
+      "load_mode": "mesh",
+      "code_sha256": "bd501e91c99416b4e3d16049b1f70bf70ea25ca3cfa520b9629262bc5c0f462d"
+    },
+    {
+      "id": 115,
+      "category": "dfam",
+      "title": "Separated roof chambers each expose a drain",
+      "load_mode": "mesh",
+      "code_sha256": "e4f6e16ee4e977f4683e678f3fb24d75f1a1fd22ecc62e96593263922ee5d757"
+    },
+    {
+      "id": 116,
+      "category": "dfam",
+      "title": "Fore and aft sealed chambers receive their own low-point ports",
+      "load_mode": "mesh",
+      "code_sha256": "08d3dda4598bbc747d5936f80351f1ecaca02d3d48c5b7f2fe84bf5808daea5c"
+    },
+    {
+      "id": 117,
+      "category": "dfam",
+      "title": "Long chamber gets accessible ports at both gravitational ends",
+      "load_mode": "mesh",
+      "code_sha256": "0c2a7f62e1995b07e423f03e5c1f5229b49a41609eaee4d39b5c29517d934920"
+    },
+    {
+      "id": 118,
+      "category": "dfam",
+      "title": "A protected build-down attachment foot stays solid",
+      "load_mode": "mesh",
+      "code_sha256": "b3bc711c2c20480f216b889de427a0127c6eec7b568abed63deb26e2dc21d42f"
+    },
+    {
+      "id": 119,
+      "category": "dfam",
+      "title": "Opposed full-height attachment lands survive hollowing",
+      "load_mode": "mesh",
+      "code_sha256": "bc24450b1669ccded59f0fefa893e941d9bccc28a191063a4d1dfb191fc3cf8e"
+    },
+    {
+      "id": 120,
+      "category": "dfam",
+      "title": "Vertical cylindrical attachment collar remains solid",
+      "load_mode": "mesh",
+      "code_sha256": "3f83ce31e9e97d1603c0b09d7ebe00408f14cdc49e6dd600efd400103a00d3ba"
+    },
+    {
+      "id": 121,
+      "category": "dfam",
+      "title": "Attachment union precedes the through-hole subtraction",
+      "load_mode": "mesh",
+      "code_sha256": "eae0876f0f8df40bd29d94e472b60f862c92dcdad1e9bae6a253c0dd44990db9"
+    },
+    {
+      "id": 122,
+      "category": "dfam",
+      "title": "Protected boss is hollowed before the finish hole is drilled",
+      "load_mode": "oriented",
+      "code_sha256": "9c7a53d59eb8505480fdf1abcc8ce9c656f5f87e2a3167edf7f9d802a8af79a6"
+    },
+    {
+      "id": 123,
+      "category": "dfam",
+      "title": "Two flange apertures stay open after adding machining stock",
+      "load_mode": "mesh",
+      "code_sha256": "48f1ee27ae99adb2f37f27a88b9eb5cf522b9c572249e44824c3397e1a653b26"
+    },
+    {
+      "id": 124,
+      "category": "dfam",
+      "title": "Uniform machining allowance remains separate from final skin",
+      "load_mode": "mesh",
+      "code_sha256": "0b10169836af18e7833ff0f07da8b4de5d19ec8894505b624f2d6a0854b01829"
+    },
+    {
+      "id": 125,
+      "category": "dfam",
+      "title": "Local upper-face stock protects the scan datum elsewhere",
+      "load_mode": "oriented",
+      "code_sha256": "662d3a2706c8572af33fecf8cdceeb7f2b93c7511a0beab37602385ad54e3163"
+    },
+    {
+      "id": 126,
+      "category": "dfam",
+      "title": "A pilot bore leaves radial finishing allowance",
+      "load_mode": "mesh",
+      "code_sha256": "a8a74afd176c40744d5a6930e8808e30b8b5c4a5f90eb8f8a3d2642c5e972470"
+    },
+    {
+      "id": 127,
+      "category": "dfam",
+      "title": "A roof opening communicates through a protected structural web",
+      "load_mode": "mesh",
+      "code_sha256": "668fe6ffe197e553277ce7563b61d38545e7161234e0ec5529d8070eab08f28e"
+    },
+    {
+      "id": 128,
+      "category": "dfam",
+      "title": "Offset twin web openings preserve a central ligament",
+      "load_mode": "mesh",
+      "code_sha256": "f71c819f5f1f8f4f20f4e9d9a635b6ea025b08d1c89992152c6c47bc11af2fc2"
+    },
+    {
+      "id": 129,
+      "category": "dfam",
+      "title": "A low roof aperture keeps an upper web strap",
+      "load_mode": "mesh",
+      "code_sha256": "3d83e9b05c331c5a9a17b5ab2c10f95b2de163a003c615648255f49cc0f632e9"
+    },
+    {
+      "id": 130,
+      "category": "dfam",
+      "title": "A rising tapered buttress avoids a floating attachment tab",
+      "load_mode": "mesh",
+      "code_sha256": "56857a04a61654b56270632b6f72dbc3e9eeebad439423254f5e19ca7d86d445"
+    },
+    {
+      "id": 131,
+      "category": "dfam",
+      "title": "Opposed tapered buttresses distribute attachment geometry",
+      "load_mode": "mesh",
+      "code_sha256": "0c83658f7b8e491d92f129dc2e365bd89c8d306980a8af660a7003935d0b8620"
+    },
+    {
+      "id": 132,
+      "category": "dfam",
+      "title": "Four corner pillars use a bounded reinforcement pitch",
+      "load_mode": "mesh",
+      "code_sha256": "43bc4ce537b665a22e541e5e510971431151bcbf8a87a7d9d2e2a1c26f630385"
+    },
+    {
+      "id": 133,
+      "category": "dfam",
+      "title": "Actual enclosed-void components get sampled low-point drains",
+      "load_mode": "mesh",
+      "code_sha256": "db3a1328bfd7d2d6f0394f30a455f658971afcfcaed9b85cced7b3c67cf34f12"
+    },
+    {
+      "id": 134,
+      "category": "dfam",
+      "title": "Clipped pointed cavities are vented by detected topology",
+      "load_mode": "mesh",
+      "code_sha256": "ed96a6fd3913d64b49395f5232aeb7d16cbf45d5cc6acde6114aeb18c96aff44"
+    },
+    {
+      "id": 135,
+      "category": "dfam",
+      "title": "Reserved central collar does not imply one connected labyrinth",
+      "load_mode": "oriented",
+      "code_sha256": "8d111591c7d4286296181625c0122b1b3cbd5bd4d5f0059e15755d086abe42ca"
+    },
+    {
+      "id": 136,
+      "category": "debug",
+      "title": "Fix uninitialized PicoGK objects",
+      "load_mode": "mesh",
+      "code_sha256": "cfc9722707d8f56420bacf3be4ad087b6def8df941294fd05689767ecaf7eb59"
+    },
+    {
+      "id": 137,
+      "category": "debug",
+      "title": "Fix the invented subtraction method",
+      "load_mode": "mesh",
+      "code_sha256": "944b2d563a47a256e48ef91733df29917f8bdaafb8a9008084a5f360035ce417"
+    },
+    {
+      "id": 138,
+      "category": "debug",
+      "title": "Fix inverted shell offsets",
+      "load_mode": "mesh",
+      "code_sha256": "88ca1da86d1f97436a6424a304b55d4f4c4e793f6b9cbd3e2dbb261bfe4e50e4"
+    },
+    {
+      "id": 139,
+      "category": "debug",
+      "title": "Fix SDF voxel-unit confusion",
+      "load_mode": "oriented",
+      "code_sha256": "e7043147ebe68e312c514da9649d9416e031737f4648c7736ffe7d6827528710"
+    },
+    {
+      "id": 140,
+      "category": "debug",
+      "title": "Fix invented mesh and matrix types",
+      "load_mode": "mesh",
+      "code_sha256": "19e2f3293b8ee9b9de3e705c9b19262496dd5c07c2ca53651b41c392b133cfc1"
+    },
+    {
+      "id": 141,
+      "category": "debug",
+      "title": "Fix implicit rendering that overwrites the scan",
+      "load_mode": "mesh",
+      "code_sha256": "da3bc65fc65d75b37c127864d717cd6a7df34895ce160072526f5316a51bf1af"
+    },
+    {
+      "id": 142,
+      "category": "debug",
+      "title": "Fix mismatched native libraries",
+      "load_mode": "mesh",
+      "code_sha256": "2ce725736690aaf2ce8c4414dc917e10084f4255efba12210a851c6b5c99f0ec"
+    },
+    {
+      "id": 143,
+      "category": "debug",
+      "title": "Fix inconsistent physical units",
+      "load_mode": "mesh",
+      "code_sha256": "a7851300da721268480987db59d3dacf7f706dd3b853107598d5803e40459a43"
+    },
+    {
+      "id": 144,
+      "category": "debug",
+      "title": "Fix beam radius versus diameter",
+      "load_mode": "mesh",
+      "code_sha256": "875b3ff292241889bc8bbd29ca9a4ebedb917742bf2f6834ada5d6f88f7629f2"
+    },
+    {
+      "id": 145,
+      "category": "debug",
+      "title": "Fix an opening described as crack closure",
+      "load_mode": "splats",
+      "code_sha256": "3b0c918be62a87266bd9c015b77ca030c56a202830f8503a569d8c403a2656e8"
+    },
+    {
+      "id": 146,
+      "category": "debug",
+      "title": "Fix arbitrary detail removal near attachments",
+      "load_mode": "mesh",
+      "code_sha256": "d4f06a995fde65a27b5153fef67c7b4492e5929bca1ba146601904e13e565437"
+    },
+    {
+      "id": 147,
+      "category": "debug",
+      "title": "Fix absent SDF samples interpreted as material",
+      "load_mode": "oriented",
+      "code_sha256": "f04465eaba9f92590579b6957e2a534b40f59c81d2da1258c62cb39513787b84"
+    },
+    {
+      "id": 148,
+      "category": "debug",
+      "title": "Fix degenerate-triangle normal evaluation",
+      "load_mode": "mesh",
+      "code_sha256": "c00668a93af862d4156244026833f3017a912ba3b26b25d75ec0f113fdb9b602"
+    },
+    {
+      "id": 149,
+      "category": "debug",
+      "title": "Fix an incorrect overhang normal threshold",
+      "load_mode": "mesh",
+      "code_sha256": "384016217a745ec7db4d7db236105eb6497906fd1ebe94cdc68bd24ca98b57a0"
+    },
+    {
+      "id": 150,
+      "category": "debug",
+      "title": "Fix incorrect scalar-field distance scaling",
+      "load_mode": "oriented",
+      "code_sha256": "a5a1ada17ab12e688c27b213b4f926a696c8668a736080a4e80de4b899db8672"
+    }
+  ]
+}

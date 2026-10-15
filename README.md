@@ -11,6 +11,14 @@ and radial roles, strict JSON, independent numeric intent checks, native
 reference screens, failure records and uncertainty handling. It is not a
 general CAD assistant or a manufacturing qualification system.
 
+A separate [AM C# training study](am-code/README.md) publishes the requested
+150-pair corpus, 64 native-validated corrective teachers, prompt-style
+augmentation, portable guards and full rejected-course evidence. Its completed
+1.5B candidates remain rejected; a fresh 7B course is running at the snapshot.
+No AM C# adapter is qualified or made the default. Large experiment artifacts
+are inventoried as release assets, with local-path redaction and original/public
+hash bindings.
+
 ![Actual geometry from our Qwen adapter and PicoGK](docs/visuals/generated/overview.png)
 
 ![Actual Qwen C# spaceframe rendered from native PicoGK STL](docs/visuals/animations/spaceframe.gif)

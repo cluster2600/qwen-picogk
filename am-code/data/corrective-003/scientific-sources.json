@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-14",
+  "verification_method": "Primary publisher, author-university, proceedings and manufacturer pages inspected with web browsing.",
+  "sources": [
+    {
+      "id": "von_schnering_nesper_1991",
+      "authors": ["H. G. von Schnering", "R. Nesper"],
+      "year": 1991,
+      "title": "Nodal surfaces of Fourier series: Fundamental invariants of structured matter",
+      "venue": "Zeitschrift für Physik B Condensed Matter",
+      "volume": "83",
+      "pages": "407-412",
+      "doi": "10.1007/BF01313411",
+      "url": "https://link.springer.com/article/10.1007/BF01313411",
+      "inspected": "Publisher bibliographic record and abstract; original full text requires subscription.",
+      "scope": "Foundation for periodic Fourier nodal surfaces and their relationship to minimal surfaces. Short trigonometric formulas are nodal approximations, not exact minimal surfaces or signed distance functions."
+    },
+    {
+      "id": "michielsen_stavenga_2008",
+      "authors": ["K. Michielsen", "D. G. Stavenga"],
+      "year": 2008,
+      "title": "Gyroid cuticular structures in butterfly wing scales: biological photonic crystals",
+      "venue": "Journal of the Royal Society Interface",
+      "volume": "5",
+      "issue": "18",
+      "pages": "85-94",
+      "doi": "10.1098/rsif.2007.1065",
+      "url": "https://pure.rug.nl/ws/files/6711766/2008JRSocInterfaceMichielsen.pdf",
+      "inspected": "University-hosted publisher PDF, especially section 2 and equations 2.2-2.4.",
+      "scope": "Inspectable primary G/P/D nodal equations explicitly referencing von Schnering and Nesper. Let X=2*pi*x/a and likewise Y,Z. G=sin(X)*cos(Y)+sin(Y)*cos(Z)+sin(Z)*cos(X); P=cos(X)+cos(Y)+cos(Z); D=cos(Z)*sin(X+Y)+sin(Z)*cos(X-Y). Level thresholds are dimensionless; offsetting a voxelized phase boundary provides millimetre geometric operations at finite sampling resolution."
+    },
+    {
+      "id": "sigmund_1994",
+      "authors": ["O. Sigmund"],
+      "year": 1994,
+      "title": "Materials with prescribed constitutive parameters: An inverse homogenization problem",
+      "venue": "International Journal of Solids and Structures",
+      "volume": "31",
+      "issue": "17",
+      "pages": "2313-2329",
+      "doi": "10.1016/0020-7683(94)90154-6",
+      "url": "https://www.sciencedirect.com/science/article/pii/0020768394901546",
+      "inspected": "Publisher bibliographic record and abstract.",
+      "scope": "Constrained topology optimization of a periodic material cell with FE homogenization. Hand-picked TPMS grading is a geometric candidate, not a solved structural optimization. An analytic compliance proxy or supplied homogenization table is a surrogate whose material, units and provenance must remain explicit."
+    },
+    {
+      "id": "luo_sigmund_li_liu_2020",
+      "authors": ["Yunfeng Luo", "Ole Sigmund", "Quhao Li", "Shutian Liu"],
+      "year": 2020,
+      "title": "Additive manufacturing oriented topology optimization of structures with self-supported enclosed voids",
+      "venue": "Computer Methods in Applied Mechanics and Engineering",
+      "volume": "372",
+      "article_number": "113385",
+      "doi": "10.1016/j.cma.2020.113385",
+      "url": "https://orbit.dtu.dk/en/publications/additive-manufacturing-oriented-topology-optimization-of-structur/",
+      "inspected": "Author-university record, abstract and manuscript availability.",
+      "scope": "Uses nonlinear virtual temperature to identify enclosed voids, filtered-density gradients to evaluate angles, and constrained optimization. A mesh normal screen is inspired by the geometric issue, not an implementation of their optimizer."
+    },
+    {
+      "id": "cloots_spierings_wegener_2013",
+      "authors": ["M. Cloots", "A. B. Spierings", "K. Wegener"],
+      "year": 2013,
+      "title": "Assessing new support minimizing strategies for the additive manufacturing technology SLM",
+      "venue": "Solid Freeform Fabrication Symposium proceedings",
+      "doi": null,
+      "url": "https://utw10945.utweb.utexas.edu/Manuscripts/2013/2013-50-Cloots.pdf",
+      "inspected": "Original proceedings PDF including setup, abstract and conclusions; no DOI verified.",
+      "scope": "Investigates support and heat-dissipation strategies on Concept Laser M2 with 316L and selected exposure conditions. Reports support-free angles below 35 degrees to horizontal in its conditions; it does not establish a universal 45-degree guarantee. Geometry screening cannot replace machine-specific process qualification."
+    },
+    {
+      "id": "curless_levoy_1996",
+      "authors": ["Brian Curless", "Marc Levoy"],
+      "year": 1996,
+      "title": "A Volumetric Method for Building Complex Models from Range Images",
+      "venue": "SIGGRAPH 1996 proceedings",
+      "pages": "303-312",
+      "doi": "10.1145/237170.237269",
+      "url": "https://lightfield.stanford.edu/papers/volrange/",
+      "inspected": "Authors' paper page, abstract and primary paper text.",
+      "scope": "Weighted signed-distance fusion from registered range observations, using sensor-ray information and weights. Dnew=(Wold*Dold+w*d)/(Wold+w); Wnew=Wold+w. Unoriented XYZ sphere splats are unsigned occupancy proxies, not this reconstruction. Morphological repair can change inferred shape and cannot establish recovered dimensions."
+    },
+    {
+      "id": "mercelis_kruth_2006",
+      "authors": ["Peter Mercelis", "Jean-Pierre Kruth"],
+      "year": 2006,
+      "title": "Residual stresses in selective laser sintering and selective laser melting",
+      "venue": "Rapid Prototyping Journal",
+      "volume": "12",
+      "issue": "5",
+      "pages": "254-265",
+      "doi": "10.1108/13552540610707013",
+      "url": "https://doi.org/10.1108/13552540610707013",
+      "inspected": "Publisher bibliographic record; original full paper not obtained.",
+      "scope": "Residual stress foundation. A minimum wall rule is not a residual stress solution and does not guarantee freedom from distortion; require material/process-specific thermo-mechanical analysis, build and postprocess validation. The examples do not implement a residual stress solver."
+    },
+    {
+      "id": "materialise_c465_design",
+      "authors": ["Materialise"],
+      "year": null,
+      "title": "Design Guidelines for Stainless Steel (C465)",
+      "venue": "Manufacturer service design guidance",
+      "doi": null,
+      "url": "https://www.materialise.com/en/academy/industrial/design-am/stainless-steel-c465",
+      "inspected": "Manufacturer wall thickness, support, powder removal and holes sections.",
+      "scope": "Service-specific guidance: surfaces below 45 degrees to platform typically require support; recommends at least one 3 mm powder-removal opening and larger or multiple holes for complex cavities, preferably 7 mm. These values are not universal standards. Minimum walls vary with service grade and geometry. Dataset walls of 1 mm and ports of 3 mm are tutorial screening assumptions, not manufacturing approval."
+    }
+  ],
+  "curriculum_guardrails": [
+    "A dimensionless TPMS threshold must never be called a millimetre wall thickness.",
+    "Integrated phase controls one-axis cell grading; multiplying position by a spatial frequency does not directly impose the intended local period.",
+    "Positive then negative offsets give morphological closing; reverse order gives opening, assuming the library's positive offset dilation convention.",
+    "Scan repair and watertightness do not establish dimensional fidelity, physical leak-tightness or recovered mating interfaces.",
+    "Forty-five degrees is a conservative screening assumption, not universal support elimination; reject final down-facing geometry that fails the configured screen.",
+    "Powder void connectivity at finite voxel resolution is not proof of complete physical powder evacuation.",
+    "Minimum wall, overhang and clearance screens do not predict residual stresses, fatigue, fitment or process release.",
+    "Synthetic fixtures and native execution establish software and geometric behavior only; retain failed candidates and explicit qualification gaps."
+  ]
+}

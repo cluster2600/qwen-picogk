@@ -1,0 +1,58 @@
+{
+  "schema": "picogk.am.prompt-style-release@1",
+  "created_at": "2026-10-14T15:30:39.549481+00:00",
+  "status": "prepared_not_trained",
+  "rows": 192,
+  "independent_teachers": 64,
+  "distinct_source_programs": 55,
+  "header_styles": 3,
+  "train_sha256": "9966a99f998f544fdfe3d9370f53e131e5ae31061b3e89ae196d3f34e56d6a65",
+  "file_sha256": {
+    "train.jsonl": "9966a99f998f544fdfe3d9370f53e131e5ae31061b3e89ae196d3f34e56d6a65",
+    "manifest.json": "31c99282d8dfb02f58c161587c859cd30a65eea5716de78d423dfaca3ec35bd4",
+    "tokenization.json": "361ff28e81d1755defbd083aa05dafda31dc7a6392dbe669b48273c2f4d4623a",
+    "header-provenance.json": "dc7e9cd0f0dded7febc6b3ba3fd07a67a0084db6ddfc4ec1b44dd30a161c5843",
+    "augment.py": "d0e6b96caac3fc0ea45da2124eb1a6cfa169ba06dfae566c2c32998a9982ec49",
+    "README.md": "71153b0bfb1fe3398a614dd70548ff07661c9a1ea64c10e06524bb7733014b34",
+    "headers/compact.txt": "0deee2bcd6233883c822672a65cfe19988407995b016693bf5d00db9d3dc935e",
+    "headers/development_generic.txt": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7",
+    "headers/serving_generic.txt": "4ac10c7ae03ca941b44174d83d97d9dadb958688ad66038f7cfe6ca86be6c65b"
+  },
+  "parent": {
+    "parent_train_sha256": "932c110f8e384fce1d048e645c38f9bba7eae8eccace33d355f05166cf9586fe",
+    "parent_cases_sha256": "8947c50c29ad00270e58d47b2fe5e1b8c438419f7b09bdaeb9c2326a78301ec9",
+    "parent_native_report_sha256": "1939011370bdc831e7bbc857324212a25c6308831ca5ff080873e84a1727a280",
+    "parent_compile_receipt_sha256": "ac54f97418fea82fbf5247b6c3434c601ae15b9daecda47b9665f66675c00c71",
+    "parent_release_manifest_sha256": "b8e18fb863bcc92054b980660415c24b6c99c75e1a02ae9f37b326190692d74e"
+  },
+  "checks": {
+    "all192_targets_match_validated_teachers": true,
+    "all192_target_source_input_native_result_hashes_bound": true,
+    "all64_original_compact_prompts_unchanged": true,
+    "all3_generic_header_provenances_verified": true,
+    "development_header_boundary_and_common_prefix_verified": true,
+    "no_development_task_suffix_or_id_copied": true,
+    "all_refusal_no_native_initialization_directives_retained": true,
+    "all192_targets_single_complete_csharp_fence": true,
+    "all192_normal_chat_end_markers": true,
+    "all192_sequences_below6144_without_truncation": true,
+    "original64_sources_fixtures_corpus_unchanged": true
+  },
+  "maximum_tokens": 1625,
+  "maximum_assistant_content_tokens": 1067,
+  "independent_review": {
+    "reviewer": "model_code_scoring",
+    "result": "192/192 prompt/target/provenance and parent native result SHA bindings reviewed read-only; acceptance sent to root",
+    "files_changed": false,
+    "final_or_model_or_gpu_reads": false
+  },
+  "hypothesis": "Different generic header styles may contribute to output-format transfer failure; current missing fences and truncations do not establish that cause. Independent model evaluation remains required.",
+  "native_execution_repeated": false,
+  "final_task_contents_read": false,
+  "captured_model_answers_used": false,
+  "model_loading": false,
+  "gpu_inference": false,
+  "training": false,
+  "manufacturing_authorized": false,
+  "qualification": "Prompt-style augmentation of64 previously validated software/geometry teachers; no model or manufacturing qualification."
+}

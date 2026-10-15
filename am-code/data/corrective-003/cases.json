@@ -1,0 +1,527 @@
+{
+  "schema": "picogk.am.corrective-teachers@1",
+  "programs": 16,
+  "message_rows": 32,
+  "train_sha256": "d93a6c6cc57e04c2943021f02337942d773a8ddadaf7ad1800ce8a648a85b952",
+  "author_sha256": "0345757923bc01b0855e5d9bcf26de6fd6dcf949355147e491c665a5449af373",
+  "reused_boilerplate_sha256": "0fb7eb7977f3821d51c3df80412d4094c5c5a5b188103921a9caaf93ce221f71",
+  "headers": {
+    "compact": {
+      "source": "corrective-002/headers/compact.txt",
+      "sha256": "0deee2bcd6233883c822672a65cfe19988407995b016693bf5d00db9d3dc935e"
+    },
+    "development_generic": {
+      "source": "corrective-002/headers/development_generic.txt",
+      "sha256": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7"
+    }
+  },
+  "cases": [
+    {
+      "id": "fresh-prompt-refusal-01",
+      "family": "prompt-refusal",
+      "kind": "refusal",
+      "source": "cases/fresh-prompt-refusal-01/Program.cs",
+      "input": "cases/fresh-prompt-refusal-01/ignored-input.dat",
+      "source_sha256": "b29937383b2e00b518ab7f206efc0e239eb01750d9ba231027aac9af1bc47e03",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "96466f5e196e588614d5955fe55b3ce6a29350cf08faeba09cf76125b9f542b8",
+      "task_body": "A flange is sketched from a silhouette; no contact survey or operating load record exists. Treat the listed evidence as absent, not as quantities to infer from a fixture. Write a prompt-only needs_measurement refusal with the missing IDs copied exactly in the listed order. Do not initialize Library or any native object, create geometry, open or parse the input path, or validate its contents. The result must be identical even if the unused input argument names junk, valid XYZ, an empty file, or a nonexistent file. Write only refused.json in the empty output directory. The task-specific report overrides the generic header report. Write exactly {\"status\":\"needs_measurement\",\"missing\":[\"contact_plane_pose\",\"fastener_seat_normals\",\"service_load_envelope\"],\"manufacturing_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "prompt-refusal",
+        "expected_report": {
+          "status": "needs_measurement",
+          "missing": [
+            "contact_plane_pose",
+            "fastener_seat_normals",
+            "service_load_envelope"
+          ],
+          "manufacturing_authorized": false
+        },
+        "report_name": "refused.json"
+      },
+      "row_indices": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "fresh-prompt-refusal-02",
+      "family": "prompt-refusal",
+      "kind": "refusal",
+      "source": "cases/fresh-prompt-refusal-02/Program.cs",
+      "input": "cases/fresh-prompt-refusal-02/ignored-input.dat",
+      "source_sha256": "c8598d3c03766ba4b54c3f40c3030bbdce39c6e265bfb032b562d2b2a344bd9f",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "a2111237cbc820ed4680e33aa78575fe10080473a7c20fdbe6bf954a2cf3e9e6",
+      "task_body": "A heater mount is proposed from an oblique photograph with no registered dimensions. Treat the listed evidence as absent, not as quantities to infer from a fixture. Write a prompt-only needs_measurement refusal with the missing IDs copied exactly in the listed order. Do not initialize Library or any native object, create geometry, open or parse the input path, or validate its contents. The result must be identical even if the unused input argument names junk, valid XYZ, an empty file, or a nonexistent file. Write only refused.json in the empty output directory. The task-specific report overrides the generic header report. Write exactly {\"decision\":\"needs_measurement\",\"missing_measurements\":[\"datum_reference_frame\",\"hole_axis_locations\",\"mating_stack_limits\"],\"fabrication_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "prompt-refusal",
+        "expected_report": {
+          "decision": "needs_measurement",
+          "missing_measurements": [
+            "datum_reference_frame",
+            "hole_axis_locations",
+            "mating_stack_limits"
+          ],
+          "fabrication_authorized": false
+        },
+        "report_name": "refused.json"
+      },
+      "row_indices": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "fresh-prompt-refusal-03",
+      "family": "prompt-refusal",
+      "kind": "refusal",
+      "source": "cases/fresh-prompt-refusal-03/Program.cs",
+      "input": "cases/fresh-prompt-refusal-03/ignored-input.dat",
+      "source_sha256": "56ba084c3d52c71ed10b4ed94a2da81e7e32b526d049ed36970c56980e05d9c8",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "4ad5776baa95c6d0f1350e8fdb4bb605a09d44588932138b9a9958174ad71fe1",
+      "task_body": "A robot guard bracket has only an estimated mass and an unscaled concept drawing. Treat the listed evidence as absent, not as quantities to infer from a fixture. Write a prompt-only needs_measurement refusal with the missing IDs copied exactly in the listed order. Do not initialize Library or any native object, create geometry, open or parse the input path, or validate its contents. The result must be identical even if the unused input argument names junk, valid XYZ, an empty file, or a nonexistent file. Write only refused.json in the empty output directory. The task-specific report overrides the generic header report. Write exactly {\"outcome\":\"needs_measurement\",\"required_evidence\":[\"mounting_pitch_mm\",\"thread_specification\",\"fastener_preload_targets\"],\"can_release\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "prompt-refusal",
+        "expected_report": {
+          "outcome": "needs_measurement",
+          "required_evidence": [
+            "mounting_pitch_mm",
+            "thread_specification",
+            "fastener_preload_targets"
+          ],
+          "can_release": false
+        },
+        "report_name": "refused.json"
+      },
+      "row_indices": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "fresh-prompt-refusal-04",
+      "family": "prompt-refusal",
+      "kind": "refusal",
+      "source": "cases/fresh-prompt-refusal-04/Program.cs",
+      "input": "cases/fresh-prompt-refusal-04/ignored-input.dat",
+      "source_sha256": "dbc21309b1133d698de6a6468aa831be40bfc2e1db288dc7dd71816d46c61947",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "6e25780163986460507e0dd73869b87be73ec62bf618338f6d6c3c99b74070ea",
+      "task_body": "A cooling duct socket has unordered unsigned XYZ samples and no seal or pressure specification. Treat the listed evidence as absent, not as quantities to infer from a fixture. Write a prompt-only needs_measurement refusal with the missing IDs copied exactly in the listed order. Do not initialize Library or any native object, create geometry, open or parse the input path, or validate its contents. The result must be identical even if the unused input argument names junk, valid XYZ, an empty file, or a nonexistent file. Write only refused.json in the empty output directory. The task-specific report overrides the generic header report. Write exactly {\"assessment\":\"needs_measurement\",\"unverified_inputs\":[\"seal_land_profile\",\"port_axis_alignment\",\"pressure_test_conditions\"],\"print_release_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "prompt-refusal",
+        "expected_report": {
+          "assessment": "needs_measurement",
+          "unverified_inputs": [
+            "seal_land_profile",
+            "port_axis_alignment",
+            "pressure_test_conditions"
+          ],
+          "print_release_authorized": false
+        },
+        "report_name": "refused.json"
+      },
+      "row_indices": [
+        6,
+        7
+      ]
+    },
+    {
+      "id": "fresh-prompt-refusal-05",
+      "family": "prompt-refusal",
+      "kind": "refusal",
+      "source": "cases/fresh-prompt-refusal-05/Program.cs",
+      "input": "cases/fresh-prompt-refusal-05/ignored-input.dat",
+      "source_sha256": "438db0c760d9c2d532b8b1b26e13c0394edca0185ea2a16f5ded4fce6b7e682d",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "b0f6cc84ceec5e8a0ee0a04ab2e290f0e750da0df51807d406dd1c95651e677f",
+      "task_body": "A replacement lug has a visual envelope but no inspected pin interface or fatigue loading. Treat the listed evidence as absent, not as quantities to infer from a fixture. Write a prompt-only needs_measurement refusal with the missing IDs copied exactly in the listed order. Do not initialize Library or any native object, create geometry, open or parse the input path, or validate its contents. The result must be identical even if the unused input argument names junk, valid XYZ, an empty file, or a nonexistent file. Write only refused.json in the empty output directory. The task-specific report overrides the generic header report. Write exactly {\"status\":\"needs_measurement\",\"measurement_gaps\":[\"pin_bore_tolerance\",\"bearing_contact_width_mm\",\"cyclic_load_spectrum\"],\"fabrication_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "prompt-refusal",
+        "expected_report": {
+          "status": "needs_measurement",
+          "measurement_gaps": [
+            "pin_bore_tolerance",
+            "bearing_contact_width_mm",
+            "cyclic_load_spectrum"
+          ],
+          "fabrication_authorized": false
+        },
+        "report_name": "refused.json"
+      },
+      "row_indices": [
+        8,
+        9
+      ]
+    },
+    {
+      "id": "fresh-prompt-refusal-06",
+      "family": "prompt-refusal",
+      "kind": "refusal",
+      "source": "cases/fresh-prompt-refusal-06/Program.cs",
+      "input": "cases/fresh-prompt-refusal-06/ignored-input.dat",
+      "source_sha256": "4716c3fdf6af4c3f05ba0fb5e7016bc326c95d8203a8e0003c70ca29a85b6561",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "a9e8188b0aa7339ecb5c10729ec9d66eca7ab02869fbc49b1f7ef0dfed147679",
+      "task_body": "A titanium LPBF tab is a concept only; alloy certification, orientation and acceptance criteria are absent. Treat the listed evidence as absent, not as quantities to infer from a fixture. Write a prompt-only needs_measurement refusal with the missing IDs copied exactly in the listed order. Do not initialize Library or any native object, create geometry, open or parse the input path, or validate its contents. The result must be identical even if the unused input argument names junk, valid XYZ, an empty file, or a nonexistent file. Write only refused.json in the empty output directory. The task-specific report overrides the generic header report. Write exactly {\"decision\":\"needs_measurement\",\"missing_ids\":[\"alloy_certificate\",\"build_orientation_datum\",\"inspection_acceptance_limits\"],\"manufacturing_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "prompt-refusal",
+        "expected_report": {
+          "decision": "needs_measurement",
+          "missing_ids": [
+            "alloy_certificate",
+            "build_orientation_datum",
+            "inspection_acceptance_limits"
+          ],
+          "manufacturing_authorized": false
+        },
+        "report_name": "refused.json"
+      },
+      "row_indices": [
+        10,
+        11
+      ]
+    },
+    {
+      "id": "fresh-prompt-refusal-07",
+      "family": "prompt-refusal",
+      "kind": "refusal",
+      "source": "cases/fresh-prompt-refusal-07/Program.cs",
+      "input": "cases/fresh-prompt-refusal-07/ignored-input.dat",
+      "source_sha256": "8aabc32079fe90d70f30b50858ef21a24590a60d2288fef504edc0d1c3d9efc5",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "a0e6837d3dbaa2bc5d991ff5516e35be0179733e0cec9b30c332f4a677aa1cdc",
+      "task_body": "A carrier has a closed envelope mesh but no registered mounting interfaces or temperature limits. Treat the listed evidence as absent, not as quantities to infer from a fixture. Write a prompt-only needs_measurement refusal with the missing IDs copied exactly in the listed order. Do not initialize Library or any native object, create geometry, open or parse the input path, or validate its contents. The result must be identical even if the unused input argument names junk, valid XYZ, an empty file, or a nonexistent file. Write only refused.json in the empty output directory. The task-specific report overrides the generic header report. Write exactly {\"outcome\":\"needs_measurement\",\"measurement_gaps\":[\"mount_datum_transform\",\"bolt_clearance_stack\",\"thermal_mismatch_limits\"],\"print_release_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "prompt-refusal",
+        "expected_report": {
+          "outcome": "needs_measurement",
+          "measurement_gaps": [
+            "mount_datum_transform",
+            "bolt_clearance_stack",
+            "thermal_mismatch_limits"
+          ],
+          "print_release_authorized": false
+        },
+        "report_name": "refused.json"
+      },
+      "row_indices": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "fresh-prompt-refusal-08",
+      "family": "prompt-refusal",
+      "kind": "refusal",
+      "source": "cases/fresh-prompt-refusal-08/Program.cs",
+      "input": "cases/fresh-prompt-refusal-08/ignored-input.dat",
+      "source_sha256": "6d48227f2de90561ffba3d4b8d8612613e506f4fd391f682c0ee2c0d57987a4f",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "b9614e902dd60092c15043e2e953478a7b2a1f9e59880d213a51bcdea67bdf6d",
+      "task_body": "An orphan point cloud is labelled as a connector without a mating datum or clocking reference. Treat the listed evidence as absent, not as quantities to infer from a fixture. Write a prompt-only needs_measurement refusal with the missing IDs copied exactly in the listed order. Do not initialize Library or any native object, create geometry, open or parse the input path, or validate its contents. The result must be identical even if the unused input argument names junk, valid XYZ, an empty file, or a nonexistent file. Write only refused.json in the empty output directory. The task-specific report overrides the generic header report. Write exactly {\"assessment\":\"needs_measurement\",\"required_evidence\":[\"connector_mating_frame\",\"keyway_clock_angle\",\"assembly_clearance_band\"],\"can_release\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "prompt-refusal",
+        "expected_report": {
+          "assessment": "needs_measurement",
+          "required_evidence": [
+            "connector_mating_frame",
+            "keyway_clock_angle",
+            "assembly_clearance_band"
+          ],
+          "can_release": false
+        },
+        "report_name": "refused.json"
+      },
+      "row_indices": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "fresh-numeric-flat-beam-01",
+      "family": "numeric-flat-beam",
+      "kind": "geometry",
+      "source": "cases/fresh-numeric-flat-beam-01/Program.cs",
+      "input": "cases/fresh-numeric-flat-beam-01/ignored-input.dat",
+      "source_sha256": "4bbe1ece3178f7ea128aab9810f8ae04de094e12010f14969805e81da2ffd93b",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "526232e487d34971a123b836115aeb02d5ddc7712bc2b140a0b1e14a84b82c6d",
+      "task_body": "Construct one calibration beam from the given numeric endpoints and radius. Endpoint A=[-3.21, 0.47, -1.13], endpoint B=[3.49, 0.47, -1.13], radius=0.55 mm at both ends. These vectors are the cap-centre endpoints; the solid is a finite circular cylinder with flat ends. Pass false to Lattice.AddBeam, keep the stated radius unchanged, and add no other geometry. The unused input argument is not a scan to parse. Export part.vdb and part.stl from that same Voxels object, remove exactly zero-area triangles, and write only those two exports plus report.json. The task-specific report overrides the generic header report. Write exactly {\"status\":\"geometric_candidate\",\"qualification\":\"geometry_only\",\"manufacturing_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "flat-cylinder",
+        "a": [
+          -3.21,
+          0.47,
+          -1.13
+        ],
+        "b": [
+          3.49,
+          0.47,
+          -1.13
+        ],
+        "radius": 0.55,
+        "expected_report": {
+          "status": "geometric_candidate",
+          "qualification": "geometry_only",
+          "manufacturing_authorized": false
+        },
+        "report_name": "report.json"
+      },
+      "row_indices": [
+        16,
+        17
+      ]
+    },
+    {
+      "id": "fresh-numeric-flat-beam-02",
+      "family": "numeric-flat-beam",
+      "kind": "geometry",
+      "source": "cases/fresh-numeric-flat-beam-02/Program.cs",
+      "input": "cases/fresh-numeric-flat-beam-02/ignored-input.dat",
+      "source_sha256": "fa08c05548018d6dfc0305f2bbcc098641c88c81769a0673da696581cf59e122",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "5a095f788e5f94a3033096a13f0ebf0ca2bb270c231aeb55006ee93aa30a4067",
+      "task_body": "Debug code that treated the specified radius as a diameter: use the number directly as both end radii. Endpoint A=[0.39, -3.43, 0.91], endpoint B=[0.39, 3.07, 0.91], radius=0.61 mm at both ends. These vectors are the cap-centre endpoints; the solid is a finite circular cylinder with flat ends. Pass false to Lattice.AddBeam, keep the stated radius unchanged, and add no other geometry. The unused input argument is not a scan to parse. Export part.vdb and part.stl from that same Voxels object, remove exactly zero-area triangles, and write only those two exports plus report.json. The task-specific report overrides the generic header report. Write exactly {\"result_kind\":\"geometric_candidate\",\"scope\":\"geometry_only\",\"fabrication_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "flat-cylinder",
+        "a": [
+          0.39,
+          -3.43,
+          0.91
+        ],
+        "b": [
+          0.39,
+          3.07,
+          0.91
+        ],
+        "radius": 0.61,
+        "expected_report": {
+          "result_kind": "geometric_candidate",
+          "scope": "geometry_only",
+          "fabrication_authorized": false
+        },
+        "report_name": "report.json"
+      },
+      "row_indices": [
+        18,
+        19
+      ]
+    },
+    {
+      "id": "fresh-numeric-flat-beam-03",
+      "family": "numeric-flat-beam",
+      "kind": "geometry",
+      "source": "cases/fresh-numeric-flat-beam-03/Program.cs",
+      "input": "cases/fresh-numeric-flat-beam-03/ignored-input.dat",
+      "source_sha256": "ae4584cfac0f4a71ab640d49bad9e1997218c76deb3436d727273f836962b104",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "810ccdcd19fb67664df489f050ebadd5f0daa559cf56c681209741eb132d1611",
+      "task_body": "Repair code that invoked AddBeam on Voxels: add it to an owned Lattice before voxelization. Endpoint A=[-0.67, 1.19, -3.57], endpoint B=[-0.67, 1.19, 2.83], radius=0.67 mm at both ends. These vectors are the cap-centre endpoints; the solid is a finite circular cylinder with flat ends. Pass false to Lattice.AddBeam, keep the stated radius unchanged, and add no other geometry. The unused input argument is not a scan to parse. Export part.vdb and part.stl from that same Voxels object, remove exactly zero-area triangles, and write only those two exports plus report.json. The task-specific report overrides the generic header report. Write exactly {\"decision\":\"geometric_candidate\",\"evidence_scope\":\"geometry_only\",\"print_release_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "flat-cylinder",
+        "a": [
+          -0.67,
+          1.19,
+          -3.57
+        ],
+        "b": [
+          -0.67,
+          1.19,
+          2.83
+        ],
+        "radius": 0.67,
+        "expected_report": {
+          "decision": "geometric_candidate",
+          "evidence_scope": "geometry_only",
+          "print_release_authorized": false
+        },
+        "report_name": "report.json"
+      },
+      "row_indices": [
+        20,
+        21
+      ]
+    },
+    {
+      "id": "fresh-numeric-flat-beam-04",
+      "family": "numeric-flat-beam",
+      "kind": "geometry",
+      "source": "cases/fresh-numeric-flat-beam-04/Program.cs",
+      "input": "cases/fresh-numeric-flat-beam-04/ignored-input.dat",
+      "source_sha256": "44a74a50454f60d6188a4362e04b7a4ecbd231b0b58c1165c721420721571866",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "1dd20372fdbe8c0b34884b1bef3c2186833b519bc76ec429e8888a28553b0db2",
+      "task_body": "Correct an oblique beam whose draft passed true and consequently added rounded end caps. Endpoint A=[-2.71, -1.93, -1.17], endpoint B=[2.09, 2.47, 1.83], radius=0.73 mm at both ends. These vectors are the cap-centre endpoints; the solid is a finite circular cylinder with flat ends. Pass false to Lattice.AddBeam, keep the stated radius unchanged, and add no other geometry. The unused input argument is not a scan to parse. Export part.vdb and part.stl from that same Voxels object, remove exactly zero-area triangles, and write only those two exports plus report.json. The task-specific report overrides the generic header report. Write exactly {\"outcome\":\"geometric_candidate\",\"qualification\":\"geometry_only\",\"can_release\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "flat-cylinder",
+        "a": [
+          -2.71,
+          -1.93,
+          -1.17
+        ],
+        "b": [
+          2.09,
+          2.47,
+          1.83
+        ],
+        "radius": 0.73,
+        "expected_report": {
+          "outcome": "geometric_candidate",
+          "qualification": "geometry_only",
+          "can_release": false
+        },
+        "report_name": "report.json"
+      },
+      "row_indices": [
+        22,
+        23
+      ]
+    },
+    {
+      "id": "fresh-numeric-flat-beam-05",
+      "family": "numeric-flat-beam",
+      "kind": "geometry",
+      "source": "cases/fresh-numeric-flat-beam-05/Program.cs",
+      "input": "cases/fresh-numeric-flat-beam-05/ignored-input.dat",
+      "source_sha256": "260b35479239f76f94391ac4cffd05619f231c33ace0b070de3f7fbaf8238c94",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "5ac6e4321ee4232d40ee6cdbe6a6ab9814a1d48c8d40f140008226552cb7b929",
+      "task_body": "Preserve the literal radius and endpoint coordinates rather than rounding them to nominal catalogue sizes. Endpoint A=[-3.03, 1.73, 0.59], endpoint B=[2.77, -1.07, 2.19], radius=0.83 mm at both ends. These vectors are the cap-centre endpoints; the solid is a finite circular cylinder with flat ends. Pass false to Lattice.AddBeam, keep the stated radius unchanged, and add no other geometry. The unused input argument is not a scan to parse. Export part.vdb and part.stl from that same Voxels object, remove exactly zero-area triangles, and write only those two exports plus report.json. The task-specific report overrides the generic header report. Write exactly {\"status\":\"geometric_candidate\",\"scope\":\"geometry_only\",\"fabrication_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "flat-cylinder",
+        "a": [
+          -3.03,
+          1.73,
+          0.59
+        ],
+        "b": [
+          2.77,
+          -1.07,
+          2.19
+        ],
+        "radius": 0.83,
+        "expected_report": {
+          "status": "geometric_candidate",
+          "scope": "geometry_only",
+          "fabrication_authorized": false
+        },
+        "report_name": "report.json"
+      },
+      "row_indices": [
+        24,
+        25
+      ]
+    },
+    {
+      "id": "fresh-numeric-flat-beam-06",
+      "family": "numeric-flat-beam",
+      "kind": "geometry",
+      "source": "cases/fresh-numeric-flat-beam-06/Program.cs",
+      "input": "cases/fresh-numeric-flat-beam-06/ignored-input.dat",
+      "source_sha256": "024d1ea200e5a41605c5ff36e24529fcfe39f9463b534d009773682e6dec37d6",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "60af0c87535b0221eeab8669f404830f882b5ab7eac5d538ee15e7e3b9cf9ba8",
+      "task_body": "Repair a draft that halved the radius before AddBeam and invented an attachment flange. Endpoint A=[1.37, -2.83, 2.63], endpoint B=[-1.83, 2.37, -1.97], radius=0.91 mm at both ends. These vectors are the cap-centre endpoints; the solid is a finite circular cylinder with flat ends. Pass false to Lattice.AddBeam, keep the stated radius unchanged, and add no other geometry. The unused input argument is not a scan to parse. Export part.vdb and part.stl from that same Voxels object, remove exactly zero-area triangles, and write only those two exports plus report.json. The task-specific report overrides the generic header report. Write exactly {\"result_kind\":\"geometric_candidate\",\"evidence_scope\":\"geometry_only\",\"manufacturing_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "flat-cylinder",
+        "a": [
+          1.37,
+          -2.83,
+          2.63
+        ],
+        "b": [
+          -1.83,
+          2.37,
+          -1.97
+        ],
+        "radius": 0.91,
+        "expected_report": {
+          "result_kind": "geometric_candidate",
+          "evidence_scope": "geometry_only",
+          "manufacturing_authorized": false
+        },
+        "report_name": "report.json"
+      },
+      "row_indices": [
+        26,
+        27
+      ]
+    },
+    {
+      "id": "fresh-numeric-flat-beam-07",
+      "family": "numeric-flat-beam",
+      "kind": "geometry",
+      "source": "cases/fresh-numeric-flat-beam-07/Program.cs",
+      "input": "cases/fresh-numeric-flat-beam-07/ignored-input.dat",
+      "source_sha256": "52324af56f9fea656a411ea0da91a67d362af1601286436d6cf5f7553073d4b9",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "12a653e670f7978b552b049de2ce85884f653e1fcff44fac9459a822997de8b6",
+      "task_body": "Make the requested flat beam alone; an extra sphere at either endpoint would change the numeric intent. Endpoint A=[-2.39, -2.17, 1.41], endpoint B=[2.81, 1.63, -2.39], radius=0.97 mm at both ends. These vectors are the cap-centre endpoints; the solid is a finite circular cylinder with flat ends. Pass false to Lattice.AddBeam, keep the stated radius unchanged, and add no other geometry. The unused input argument is not a scan to parse. Export part.vdb and part.stl from that same Voxels object, remove exactly zero-area triangles, and write only those two exports plus report.json. The task-specific report overrides the generic header report. Write exactly {\"decision\":\"geometric_candidate\",\"qualification\":\"geometry_only\",\"can_release\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "flat-cylinder",
+        "a": [
+          -2.39,
+          -2.17,
+          1.41
+        ],
+        "b": [
+          2.81,
+          1.63,
+          -2.39
+        ],
+        "radius": 0.97,
+        "expected_report": {
+          "decision": "geometric_candidate",
+          "qualification": "geometry_only",
+          "can_release": false
+        },
+        "report_name": "report.json"
+      },
+      "row_indices": [
+        28,
+        29
+      ]
+    },
+    {
+      "id": "fresh-numeric-flat-beam-08",
+      "family": "numeric-flat-beam",
+      "kind": "geometry",
+      "source": "cases/fresh-numeric-flat-beam-08/Program.cs",
+      "input": "cases/fresh-numeric-flat-beam-08/ignored-input.dat",
+      "source_sha256": "21953479b5741d7cf9997875a8efa6eca8d1ec19c52b260ee6a4af7d11500e8d",
+      "input_sha256": "3112837a1c7d84b72d8aabc91bce33cfe4d334d47bdab36ea067670d0735dcef",
+      "assistant_sha256": "e4d41f361d7d6561b7170c2caac56588183f08643d59a7569c2f9c174242b831",
+      "task_body": "Correct a draft that reconstructed the endpoints from a guessed centre and length instead of using these vectors. Endpoint A=[2.43, -1.37, -2.87], endpoint B=[-2.17, 2.83, 2.13], radius=1.07 mm at both ends. These vectors are the cap-centre endpoints; the solid is a finite circular cylinder with flat ends. Pass false to Lattice.AddBeam, keep the stated radius unchanged, and add no other geometry. The unused input argument is not a scan to parse. Export part.vdb and part.stl from that same Voxels object, remove exactly zero-area triangles, and write only those two exports plus report.json. The task-specific report overrides the generic header report. Write exactly {\"outcome\":\"geometric_candidate\",\"scope\":\"geometry_only\",\"print_release_authorized\":false}. Use exactly these keys and literal values: strings remain strings, the authorization flag is a JSON Boolean, and any missing-ID list is an ordered array of strings. No extra keys, nested evidence object, or process_status field. ",
+      "oracle": {
+        "shape": "flat-cylinder",
+        "a": [
+          2.43,
+          -1.37,
+          -2.87
+        ],
+        "b": [
+          -2.17,
+          2.83,
+          2.13
+        ],
+        "radius": 1.07,
+        "expected_report": {
+          "outcome": "geometric_candidate",
+          "scope": "geometry_only",
+          "print_release_authorized": false
+        },
+        "report_name": "report.json"
+      },
+      "row_indices": [
+        30,
+        31
+      ]
+    }
+  ],
+  "training_started": false,
+  "manufacturing_authorized": false,
+  "scope": "16 new programs, each presented with two previously verified generic prompt headers; no frozen task bodies or captured answers."
+}
