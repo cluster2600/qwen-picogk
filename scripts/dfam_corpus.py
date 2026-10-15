@@ -57,6 +57,11 @@ UNIVERSAL = {'boundary_edges': 0, 'nonmanifold_edges': 0, 'solid_components': 1,
              'inconsistent_orientation_edges': 0, 'degenerate_triangles': 0}
 POLICY = 'dfam-strict-v2'
 MAX_SEQ_LENGTH = 8192
+# DOTNET_PROCESSOR_COUNT only limits managed threads. PicoGK's native OpenVDB
+# code uses every host core, and RLIMIT_CPU counts all of them, so a 16-core
+# host spent the 300 s CPU budget in about 25 s of wall time. A two-CPU cgroup
+# quota makes the declared two processors real and host-independent.
+CANDIDATE_CPU_QUOTA = '200%'
 # Parity rasterisation leaves sub-voxel pockets between near-touching sheets;
 # a genuinely trapped lattice cell is hundreds of mm3.
 MAX_ENCLOSED_VOID_MM3 = 2.0
@@ -286,11 +291,13 @@ def dotnet_env():
     return env
 
 
-def capped(cmd, mem):
+def capped(cmd, mem, cpu_quota=None):
     if sys.platform != 'linux' or not shutil.which('systemd-run'):
         raise RuntimeError('Native verification requires Linux with a working systemd user memory controller; no uncapped fallback')
     probe = ['systemd-run', '--user', '--scope', '--quiet', '-p', f'MemoryMax={mem}',
              '-p', 'MemorySwapMax=0', '-p', 'TasksMax=128']
+    if cpu_quota:
+        probe += ['-p', f'CPUQuota={cpu_quota}']
     if subprocess.run(probe + ['true'], capture_output=True, timeout=15).returncode != 0:
         raise RuntimeError('Cannot enforce native verification resource limits')
     return probe + cmd
@@ -331,7 +338,7 @@ def sandbox_command(runner, source, out, namespace, env):
     cmd += ['--', '/usr/bin/prlimit', '--cpu=300:300', '--fsize=268435456:268435456', '--',
             str(dotnet), '/app/' + runner.name, namespace, input_path,
             '/output', str(VOXEL_MM)]
-    return capped(cmd, '3G')
+    return capped(cmd, '3G', CANDIDATE_CPU_QUOTA)
 
 
 def build(project_dir, files, env):
@@ -474,7 +481,7 @@ def verify(cases, tag, jobs, timeout):
         raise ValueError('Use a plain tag, 1..4 jobs and a positive timeout')
     env = dotnet_env()
     # Fail before builds or fixture generation if isolation is unavailable.
-    capped(['true'], '3G')
+    capped(['true'], '3G', CANDIDATE_CPU_QUOTA)
     if not shutil.which('bwrap') or not Path('/usr/bin/prlimit').is_file():
         raise RuntimeError('Corpus execution requires bubblewrap and prlimit')
     WORK.mkdir(exist_ok=True)
