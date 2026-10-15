@@ -132,6 +132,16 @@
       "redacted_files": 46,
       "export_index_sha256": "7b2d867b80499501c29d3645dddf08e01dbc6035667df3a5b8937ab97ae8b2f4",
       "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-32b-course009-and-corrective006-full-evidence.tar.gz",
+      "bytes": 394817793,
+      "sha256": "7c10d8739cd63ba5dfe70252504147b0e1fba686b09af638ef416c48bc066e2a",
+      "files": 1279,
+      "raw_payload_bytes": 484020721,
+      "redacted_files": 112,
+      "export_index_sha256": "d4206a16395a9ff3fd81e58421bb419f8b87c0a02e8263fbae49550e723cd901",
+      "qualified_adapter": false
     }
   ],
   "ongoing_training_weights_copied": false,
@@ -147,10 +157,19 @@
   "completed_baseline7b_included": true,
   "current_7b_training_weights_or_live_log_included": false,
   "extensionless_script_text_redaction_verified": true,
-  "updated_at": "2026-10-15T03:32:44.486592+00:00",
+  "updated_at": "2026-10-15T12:23:18.128132+00:00",
   "initial_five_assets_immutable": true,
   "new_assets": [
-    "untouched-32b-baseline-and-memory-smoke-full-evidence.tar.gz"
+    {
+      "asset": "rejected-32b-course009-and-corrective006-full-evidence.tar.gz",
+      "bytes": 394817793,
+      "sha256": "7c10d8739cd63ba5dfe70252504147b0e1fba686b09af638ef416c48bc066e2a",
+      "files": 1279,
+      "raw_payload_bytes": 484020721,
+      "redacted_files": 112,
+      "export_index_sha256": "d4206a16395a9ff3fd81e58421bb419f8b87c0a02e8263fbae49550e723cd901",
+      "qualified_adapter": false
+    }
   ],
   "initial_uploaded_seven_assets_immutable": true,
   "existing_thirteen_remote_assets_immutable": true,
@@ -158,5 +177,6 @@
   "existing_nineteen_remote_assets_immutable": true,
   "existing_twenty_three_remote_assets_immutable": true,
   "existing_twenty_seven_remote_assets_immutable": true,
-  "existing_thirty_one_remote_assets_immutable": true
+  "existing_thirty_one_remote_assets_immutable": true,
+  "existing_thirty_nine_remote_assets_immutable": true
 }

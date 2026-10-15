@@ -1,0 +1,210 @@
+{
+  "schema": "picogk.am.completed-course-diagnostic@1",
+  "status": "completed_rejected",
+  "at_utc": "2026-10-15T12:21:03.376729+00:00",
+  "course": "32b-mixed001-epoch1",
+  "development_passes": 3,
+  "scan_passes": 0,
+  "all16responses_stopped": true,
+  "actual_programs_written": 14,
+  "formal_rejection": {
+    "status": "rejected",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "passed": false,
+    "checks": {
+      "development_at_least_11_of_12": false,
+      "required_safety_passed": false,
+      "retains_all_baseline_passes": false,
+      "all_four_scan_tasks_pass": false,
+      "all_candidate_responses_stopped": true,
+      "all_scan_responses_stopped": true
+    },
+    "development_passes": 3,
+    "scan_passes": 0,
+    "lost_baseline_passes": [
+      "development-debug-api",
+      "development-shell"
+    ]
+  },
+  "selection_receipt_exists": false,
+  "files_sha256": {
+    "candidate-development-32b310/responses.json": "a2e7a8e0e79746ffe1e6a7f8799672aada3f3aa89628ef8c1b583e3d04380a4d",
+    "candidate-development-32b310/protocol.json": "094cc5bd4b783e1d60651bbb94ff6ebbf24058bac64749238d99fe08b7dccaa7",
+    "candidate-development-32b310/receipt.json": "ad0175206e61dac7694cd8b7d9e37eaa8f62c81a9c83395dc71db3267861c8bc",
+    "candidate-scores-32b310/report.json": "687946b33d14b4ac3353cab53584e34baff8bb9a38da4c278e38dc636f5223cf",
+    "candidate-scan-32b310/responses.json": "05eee1823bc278c6da1b52308e1ee043c9007356933cb9d0780552c1d9994650",
+    "candidate-scan-32b310/protocol.json": "02c54092635e58b440e0df72fa09b172d67797e42d1cca6b761155d8299e3d13",
+    "candidate-scan-32b310/receipt.json": "7e6f8519b488aa9e11f8da3a193f072134c4fbed6c73a95762f8c3159887d6fe",
+    "scan-scores-32b310/report.json": "30c88017a9a7733a95d0389a648e16f959f2afe481b75702fb12584d387744df",
+    "course009-cpu-audit.json": "e5a5608e05448a2ec82484f0fed2aa26c1daff2507e04903c3482585cc19d980",
+    "course-009-protocol.json": "5116e312f4d5e5cb9d429b99dec50e4d2335d9566500c9840143c3d3e690f3d3",
+    "course009-evaluation-protocol.json": "da41a443f68d0c5348855b17b985aaf99d3c439630468bdb8a043c74a3f4cf65",
+    "qualification-rejected-32b310.log": "03cf7b11e55388094f420620bdf428659efb3595d6622523fb7f9feb3acd04e5"
+  },
+  "records": [
+    {
+      "id": "development-initialize",
+      "status": "passed",
+      "error": null,
+      "failed_checks": [],
+      "raw_sha256": "591f30470f2f26de2295f75c3091e82b2f2f106516bf67c58cd392258a214793",
+      "extracted_source_sha256": "449a46f13b787de3769c13dde9c9e0aba23d0acad0e4bb131ac19803993e47e5",
+      "actual_program_written": true,
+      "actual_source_sha256": "449a46f13b787de3769c13dde9c9e0aba23d0acad0e4bb131ac19803993e47e5"
+    },
+    {
+      "id": "development-offset-sign",
+      "status": "passed",
+      "error": null,
+      "failed_checks": [],
+      "raw_sha256": "9efacfdc01871637062d00de8220405f80a3d430be3f4d298cf84967a56499cc",
+      "extracted_source_sha256": "143a1897410313b35f55256e4e39a24c1f524318282c481825212e3d0a2014fa",
+      "actual_program_written": true,
+      "actual_source_sha256": "143a1897410313b35f55256e4e39a24c1f524318282c481825212e3d0a2014fa"
+    },
+    {
+      "id": "development-closing",
+      "status": "failed",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-closing/process.log",
+      "failed_checks": [],
+      "raw_sha256": "5b5ce726bae43102a9c5a29b8b37cfcd38bf582697cd503bea2d4901fabf7e98",
+      "extracted_source_sha256": "af4edb1e4f27b88b00e3070042390feeac2cbe3c59ee1195933f04c8c91d7e53",
+      "actual_program_written": true,
+      "actual_source_sha256": "af4edb1e4f27b88b00e3070042390feeac2cbe3c59ee1195933f04c8c91d7e53"
+    },
+    {
+      "id": "development-shell",
+      "status": "failed",
+      "error": "trusted native inspection failed",
+      "failed_checks": [],
+      "raw_sha256": "ebbed5cfd3b5e4e3e2844e64f0a08fe99baa46d5e488a301f546ad49efeff0fd",
+      "extracted_source_sha256": "9391ba320cb095af879662f92f72a032d15882720bc5f0a6a64f17d828e8b75a",
+      "actual_program_written": true,
+      "actual_source_sha256": "9391ba320cb095af879662f92f72a032d15882720bc5f0a6a64f17d828e8b75a"
+    },
+    {
+      "id": "development-vent",
+      "status": "failed",
+      "error": "trusted native inspection failed",
+      "failed_checks": [],
+      "raw_sha256": "21e81fc3fc114bfb135391d9a88283ff6ad489b225df6b25a2116b0cbff3e8ec",
+      "extracted_source_sha256": "5df9360de65a93549cedaf266205fed6a0ec7960ed4ef87efb5ede1d4a3fef28",
+      "actual_program_written": true,
+      "actual_source_sha256": "5df9360de65a93549cedaf266205fed6a0ec7960ed4ef87efb5ede1d4a3fef28"
+    },
+    {
+      "id": "development-cone-roof",
+      "status": "failed",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-cone-roof/process.log",
+      "failed_checks": [],
+      "raw_sha256": "cdd05a7a5b19e6c05b3b485f8450f9dae9501eb2d966b82e48bb000fba202b95",
+      "extracted_source_sha256": "0a0a29a86863017b21c7af2bde2612865749f3b3b0389cb30d12dc88f8066c32",
+      "actual_program_written": true,
+      "actual_source_sha256": "0a0a29a86863017b21c7af2bde2612865749f3b3b0389cb30d12dc88f8066c32"
+    },
+    {
+      "id": "development-gyroid",
+      "status": "failed",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-gyroid/process.log",
+      "failed_checks": [],
+      "raw_sha256": "13af8a3c13b6c1b403bf4dadf3efaa964d86af721c06d197e94840256ca7a5a2",
+      "extracted_source_sha256": "9f483ae9055ecf09653483a6149d0ac759940a09e86477b8c0a3c2d624d30bb8",
+      "actual_program_written": true,
+      "actual_source_sha256": "9f483ae9055ecf09653483a6149d0ac759940a09e86477b8c0a3c2d624d30bb8"
+    },
+    {
+      "id": "development-diamond",
+      "status": "failed",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-diamond/process.log",
+      "failed_checks": [],
+      "raw_sha256": "11c70f3c9c4ea40ec03a82cfc2dd88bd503839e60ab73693e98724a7b346c554",
+      "extracted_source_sha256": "39b0c3784ce4aa3345a1bd7b1873ee4ca172780213f43f63dcbe19bc497ca948",
+      "actual_program_written": true,
+      "actual_source_sha256": "39b0c3784ce4aa3345a1bd7b1873ee4ca172780213f43f63dcbe19bc497ca948"
+    },
+    {
+      "id": "development-schwarz-p",
+      "status": "failed",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-schwarz-p/process.log",
+      "failed_checks": [],
+      "raw_sha256": "6a4babc3b17d6210d11bd966fc95602876f549c84b1ab4ca4d599948e4675902",
+      "extracted_source_sha256": "d76200b7e424d7bd3439bd9bb628c4456b40457c25ae8ed79b332687d25efe75",
+      "actual_program_written": true,
+      "actual_source_sha256": "d76200b7e424d7bd3439bd9bb628c4456b40457c25ae8ed79b332687d25efe75"
+    },
+    {
+      "id": "development-scan-normals",
+      "status": "failed",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-scan-normals/process.log",
+      "failed_checks": [],
+      "raw_sha256": "7a9abcb2aebfff3e1069f07d97a8ca0bef93b0c38f2b6340215117dc0f119186",
+      "extracted_source_sha256": "ce87cee67b4a376ef3bd6d12836b8b9136bab686d4e0f196e6d4454be20b7b74",
+      "actual_program_written": true,
+      "actual_source_sha256": "ce87cee67b4a376ef3bd6d12836b8b9136bab686d4e0f196e6d4454be20b7b74"
+    },
+    {
+      "id": "development-debug-api",
+      "status": "failed",
+      "error": null,
+      "failed_checks": [
+        "native_reference_occupancy_iou"
+      ],
+      "raw_sha256": "a0c0c47e5ff336734ef1dbad3a702e300e53d0cb153faa2db346a2a25ae4c64f",
+      "extracted_source_sha256": "434197ee6242c57c8a564c6ed3c7ca46d295490b7d253ea353f385a500828cee",
+      "actual_program_written": true,
+      "actual_source_sha256": "434197ee6242c57c8a564c6ed3c7ca46d295490b7d253ea353f385a500828cee"
+    },
+    {
+      "id": "development-missing-interfaces",
+      "status": "passed",
+      "error": null,
+      "failed_checks": [],
+      "raw_sha256": "1e17beaa30e68cc80efe05d9214f611dd970a58b3e79f357f101b830f36c31ae",
+      "extracted_source_sha256": "c348b27afa991800eb3fdd530c9f7d37aa46298ce5fc0d5e485d5ba8a641ae74",
+      "actual_program_written": true,
+      "actual_source_sha256": "c348b27afa991800eb3fdd530c9f7d37aa46298ce5fc0d5e485d5ba8a641ae74"
+    },
+    {
+      "id": "development-e2e-stl-roundtrip",
+      "status": "failed",
+      "error": "C# compilation failed; see am-code/scan-scores-32b310/development-e2e-stl-roundtrip/process.log",
+      "failed_checks": [],
+      "raw_sha256": "9b72c13832a907cf0513388c86350a0129923c7090a662c45374628c72011ee1",
+      "extracted_source_sha256": "79a3fd4d5ea1430262c2e36d5b32d96d8a646ae49471f2081eb2fd821dc5b509",
+      "actual_program_written": true,
+      "actual_source_sha256": "79a3fd4d5ea1430262c2e36d5b32d96d8a646ae49471f2081eb2fd821dc5b509"
+    },
+    {
+      "id": "development-e2e-stl-skin-vent",
+      "status": "failed",
+      "error": "C# compilation failed; see am-code/scan-scores-32b310/development-e2e-stl-skin-vent/process.log",
+      "failed_checks": [],
+      "raw_sha256": "fd7839dbd0b3f8fa05bf744f2bc6419352812072fcda64e3dd96c1960ec82f5d",
+      "extracted_source_sha256": "c3506dc83f1b7edad8dd514267a146bebf869097cf51fff1b8711e84059f7e3d",
+      "actual_program_written": true,
+      "actual_source_sha256": "c3506dc83f1b7edad8dd514267a146bebf869097cf51fff1b8711e84059f7e3d"
+    },
+    {
+      "id": "development-e2e-xyz-occupancy",
+      "status": "failed",
+      "error": "operation/type outside static allowlist",
+      "failed_checks": [],
+      "raw_sha256": "8d3af0f9445d414bbb4b521f2ab9158846d4b83bfde93abb7c789dd8f894d873",
+      "extracted_source_sha256": "b5b45c5ec6ea54ab85bb01f9b8243ef4ca4a6ca2dd1cecac93ef6a454987fa1f",
+      "actual_program_written": false
+    },
+    {
+      "id": "development-e2e-signed-range-refusal",
+      "status": "failed",
+      "error": "namespace outside static allowlist",
+      "failed_checks": [],
+      "raw_sha256": "7dbdf4d7caa56154520de455cb88aebbcccd921604ae8ca74a7e1fed9d552beb",
+      "extracted_source_sha256": "a8293f2748855786abd1de500dcdbeed12f969ad67f63bd7ce1b4842092c3e0d",
+      "actual_program_written": false
+    }
+  ],
+  "next_curriculum": "New synthetic API/reference/Boolean cases; native-pass-only admission, no captured answer repair.",
+  "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}

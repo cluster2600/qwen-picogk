@@ -1,0 +1,69 @@
+{
+  "registered_at": "2026-10-15T04:16:29.615653+00:00",
+  "config": {
+    "model": "am-code/model32b",
+    "train": true,
+    "fine_tune_type": "lora",
+    "optimizer": "adam",
+    "optimizer_config": {
+      "adam": {},
+      "adamw": {},
+      "muon": {},
+      "sgd": {},
+      "adafactor": {}
+    },
+    "data": "am-code/runs/32b-mixed001-epoch1/data",
+    "seed": 9931414,
+    "num_layers": 16,
+    "batch_size": 1,
+    "iters": 310,
+    "val_batches": -1,
+    "learning_rate": 5e-07,
+    "steps_per_report": 10,
+    "steps_per_eval": 60,
+    "resume_adapter_file": null,
+    "adapter_path": "am-code/runs/32b-mixed001-epoch1/adapter",
+    "save_every": 60,
+    "test": false,
+    "test_batches": 500,
+    "max_seq_length": 6144,
+    "config": null,
+    "grad_checkpoint": true,
+    "grad_accumulation_steps": 1,
+    "clear_cache_threshold": 0,
+    "lr_schedule": null,
+    "lora_parameters": {
+      "rank": 8,
+      "dropout": 0.0,
+      "scale": 20.0
+    },
+    "mask_prompt": true,
+    "report_to": null,
+    "project_name": null
+  },
+  "corpus_sha256": "68db482a8b8a9ae16e07870f018598fa59a31c3d03745c52a7a0e78664051be0",
+  "source_corpus_sha256": "ed3247fb4c8ecacc013eb95f16fb6ac6d822680e40d32ae95cafb130893108d7",
+  "base_weights_sha256": "b4e7ce0334ced489f80446c79b91f8d9b30dd3f3a0f08a16ffad01cf0e62bb5a",
+  "memory_limit_bytes": 38654705664,
+  "packages": {
+    "mlx": "0.32.3",
+    "mlx-lm": "0.31.3",
+    "transformers": "5.17.0"
+  },
+  "selection": "Smoke is ineligible. Code qualification requires independent native development/final gates. No existing adapter replacement.",
+  "base_profile_sha256": "a83dbe6460c70da82d9c3220a9930b229d516dfcc390c7403f660e1f55b85c09",
+  "model_files_sha256": {
+    "added_tokens.json": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b",
+    "config.json": "a4054d0840b87c2feabea6fb2014bcd5b672500b2ec4dfec6f63a31d7a6ed785",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+    "tokenizer.json": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf",
+    "tokenizer_config.json": "7e88129d9769a0b14b1587a7d5e829fe93ac0e1511636471fdfc0811951418e6",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "model.safetensors.index.json": "71f757f9e6a349e8078a5b4613853ec815f9ad494944574cde5db06292bb9a17",
+    "model.safetensors": "b4e7ce0334ced489f80446c79b91f8d9b30dd3f3a0f08a16ffad01cf0e62bb5a"
+  },
+  "supplemental_corpus_sha256": "68db482a8b8a9ae16e07870f018598fa59a31c3d03745c52a7a0e78664051be0",
+  "supplemental_rows": 310,
+  "original_training_corpus_sha256": "1ac93688653ea7aa26b1e93b739eaac21717e11af4f9996972b6735bb20fe684"
+}

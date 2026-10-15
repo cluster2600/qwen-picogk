@@ -1,0 +1,454 @@
+{
+  "schema": "picogk.am.native-score@2",
+  "split": "development",
+  "reference_only": false,
+  "passed": 3,
+  "total": 12,
+  "tasks": [
+    {
+      "id": "development-initialize",
+      "status": "passed",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "449a46f13b787de3769c13dde9c9e0aba23d0acad0e4bb131ac19803993e47e5",
+      "native_exit_code": 0,
+      "details": {
+        "occupancy_iou": 1.0,
+        "native": {
+          "volume_mm3": 188.8,
+          "library_volume_mm3": 211.84102,
+          "volume_interval_mm3": [
+            121.152,
+            331.84000000000003
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -3.6945848,
+            -3.6945848,
+            -3.6945848
+          ],
+          "high": [
+            3.6945848,
+            3.6945848,
+            3.6945848
+          ],
+          "triangles": 13020,
+          "unsupported_triangles": 1870,
+          "wall_rays_mm": [],
+          "inspected_rays": 0,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "mesh": {
+          "triangles": 13020,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 211.46881471182502
+        },
+        "trapped_void_cells": null
+      },
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-offset-sign",
+      "status": "passed",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "143a1897410313b35f55256e4e39a24c1f524318282c481825212e3d0a2014fa",
+      "native_exit_code": 0,
+      "details": {
+        "occupancy_iou": 1.0,
+        "native": {
+          "volume_mm3": 106.88,
+          "library_volume_mm3": 124.60161,
+          "volume_interval_mm3": [
+            63.808,
+            206.912
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -3.0935163,
+            -3.0935163,
+            -3.0935163
+          ],
+          "high": [
+            3.0935163,
+            3.0935163,
+            3.0935163
+          ],
+          "triangles": 8988,
+          "unsupported_triangles": 1272,
+          "wall_rays_mm": [],
+          "inspected_rays": 111,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "mesh": {
+          "triangles": 8988,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 124.2078300414878
+        },
+        "trapped_void_cells": null
+      },
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-closing",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "af4edb1e4f27b88b00e3070042390feeac2cbe3c59ee1195933f04c8c91d7e53",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-closing/process.log",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-shell",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "9391ba320cb095af879662f92f72a032d15882720bc5f0a6a64f17d828e8b75a",
+      "native_exit_code": 0,
+      "error": "trusted native inspection failed",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-vent",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "5df9360de65a93549cedaf266205fed6a0ec7960ed4ef87efb5ede1d4a3fef28",
+      "native_exit_code": 0,
+      "error": "trusted native inspection failed",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-cone-roof",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "0a0a29a86863017b21c7af2bde2612865749f3b3b0389cb30d12dc88f8066c32",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-cone-roof/process.log",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-gyroid",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "9f483ae9055ecf09653483a6149d0ac759940a09e86477b8c0a3c2d624d30bb8",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-gyroid/process.log",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-diamond",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "39b0c3784ce4aa3345a1bd7b1873ee4ca172780213f43f63dcbe19bc497ca948",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-diamond/process.log",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-schwarz-p",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "d76200b7e424d7bd3439bd9bb628c4456b40457c25ae8ed79b332687d25efe75",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-schwarz-p/process.log",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-scan-normals",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "ce87cee67b4a376ef3bd6d12836b8b9136bab686d4e0f196e6d4454be20b7b74",
+      "error": "C# compilation failed; see am-code/candidate-scores-32b310/development-scan-normals/process.log",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-debug-api",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": false,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "434197ee6242c57c8a564c6ed3c7ca46d295490b7d253ea353f385a500828cee",
+      "native_exit_code": 0,
+      "details": {
+        "occupancy_iou": 0.8564102564102564,
+        "native": {
+          "volume_mm3": 7.68,
+          "library_volume_mm3": 12.23424,
+          "volume_interval_mm3": [
+            0.8320000000000001,
+            40.256
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -0.8050005,
+            -0.8050005,
+            -3.0100012
+          ],
+          "high": [
+            0.8050005,
+            0.8050005,
+            3.0100012
+          ],
+          "triangles": 2428,
+          "unsupported_triangles": 98,
+          "wall_rays_mm": [
+            1.5999995,
+            1.5499996,
+            1.4999996,
+            1.6499995,
+            1.4999996,
+            1.4999996,
+            1.5999995,
+            1.5999995,
+            1.5499996,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.4999996,
+            1.4999996,
+            1.4999996,
+            1.6499995,
+            1.5499996,
+            1.4999996,
+            1.4999996,
+            1.6499995,
+            1.4999996,
+            1.5499996,
+            1.5999995,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.4999996,
+            1.4999996,
+            1.4999996,
+            1.5999995,
+            1.5999995,
+            1.5499996,
+            1.4999996,
+            1.6999995,
+            1.6999995,
+            1.4999996,
+            1.6499995,
+            1.4999996,
+            1.4999996,
+            1.5999995,
+            1.5499996,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.5999995,
+            1.5499996,
+            1.4999996,
+            1.4999996,
+            1.6499995,
+            1.4999996,
+            1.6999995,
+            1.6999995,
+            1.6499995,
+            1.4999996,
+            1.4999996,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.5499996,
+            1.5999995,
+            1.4999996,
+            1.4999996,
+            1.4999996,
+            1.6999995,
+            1.4999996,
+            1.5499996,
+            1.6999995,
+            1.6999995,
+            1.4999996,
+            1.6499995,
+            1.4999996,
+            1.4999996,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.5499996,
+            1.5999995,
+            1.4999996,
+            1.4999996,
+            1.4999996,
+            1.6499995,
+            1.6999995,
+            1.6999995,
+            1.6499995,
+            1.4999996,
+            1.4999996,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.5999995,
+            1.4999996,
+            1.4999996,
+            1.6499995,
+            1.4999996,
+            1.6499995,
+            1.5999995,
+            1.6499995,
+            1.6999995,
+            1.6999995,
+            1.4999996,
+            1.4999996,
+            1.4999996,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.4999996,
+            1.4999996,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.6499995,
+            1.6999995,
+            1.6999995,
+            1.4999996,
+            1.6499995,
+            1.6999995,
+            1.6999995,
+            1.4999996,
+            1.4999996,
+            1.5499996,
+            1.5999995,
+            1.5499996,
+            1.4999996,
+            1.5999995,
+            1.5499996,
+            1.5999995,
+            1.6499995,
+            1.6999995,
+            1.6999995,
+            1.4999996,
+            1.4999996,
+            1.6999995
+          ],
+          "inspected_rays": 143,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "mesh": {
+          "triangles": 2428,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 12.029740435855363
+        },
+        "trapped_void_cells": null
+      },
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-missing-interfaces",
+      "status": "passed",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "strict_refusal": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "c348b27afa991800eb3fdd530c9f7d37aa46298ce5fc0d5e485d5ba8a641ae74",
+      "native_exit_code": 0,
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    }
+  ],
+  "physical_qualification": false,
+  "task_sha256": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+  "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+  "checker_policy": "roslyn-static-allowlist@2"
+}
