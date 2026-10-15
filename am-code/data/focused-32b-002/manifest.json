@@ -1,0 +1,1309 @@
+{
+  "schema": "picogk.am.focused-mixture@2",
+  "status": "native_and_token_checks_passed",
+  "rows": 384,
+  "prior_rows_preserved_exactly": 256,
+  "new_rows": 128,
+  "new_teacher_cases": 64,
+  "train_sha256": "f706b243a241286995bc7a0680bbdf85051a5bd2dae4fd61263df00f1ffb2c98",
+  "author_sha256": "c40eebc95f9bb61769d62f496eced18e51eec3c482cb9e45795a48d6af9793bd",
+  "reused_formulation_source_sha256": "2bf5410215b7229072ef34ee293a3dbeb8a9d96ebef10098e0ffdba07a166f42",
+  "prior_manifest_sha256": "4d5139d33fec69a801e2b0dc6101d5c660983e66ded36d6ab5b4767e9e4050cc",
+  "prior_corpus_sha256": "ca8e13ad659c55e93192c1c5a7c1029f3228753beceee7873c54a4f81c8519f2",
+  "new_cases_sha256": "dd0df24fd5e4b7f2d86aa05facc6660c3ae7feb63c5756d657874954778a2a3c",
+  "new_native_report_sha256": "1f6650e448f4fbc21926dfc117919b66424c76613125e38a0c5a0e6f9009cbda",
+  "token_rows_sha256": "4786d2bd018dcea6f9a9bb31d916019f6f818106b9f7c3622c37db8737b66838",
+  "maximum_tokens": 1784,
+  "total_assistant_tokens": 286702,
+  "new_row_bindings": [
+    {
+      "line_1based": 257,
+      "teacher_row_1based": 1,
+      "id": "rehearsal-initialize-01",
+      "style": "task_first",
+      "source_sha256": "a2f9180a85bc7e1a76db251b12dbeb2a16789b4b58e16984967457dd200ed11d",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "20c2d9c157a14065b3039b326a5b93a090a4ddcc9329f4dfacd2431488f1a0a8",
+      "assistant_sha256": "3508347290d922f8ba5df8511efbe3799070e0216afcf46bc440bc4407855d03"
+    },
+    {
+      "line_1based": 258,
+      "teacher_row_1based": 1,
+      "id": "rehearsal-initialize-01",
+      "style": "rephrased",
+      "source_sha256": "a2f9180a85bc7e1a76db251b12dbeb2a16789b4b58e16984967457dd200ed11d",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "20c2d9c157a14065b3039b326a5b93a090a4ddcc9329f4dfacd2431488f1a0a8",
+      "assistant_sha256": "3508347290d922f8ba5df8511efbe3799070e0216afcf46bc440bc4407855d03"
+    },
+    {
+      "line_1based": 259,
+      "teacher_row_1based": 2,
+      "id": "rehearsal-initialize-02",
+      "style": "task_first",
+      "source_sha256": "265f9202a0482873115e96aefac5dd44c51db6928e0ea6878e84f0febbda5ed8",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "8c5b95fde03fc654caa03c0a7a78e7c7520325db4327ff6160d4136b53385c33",
+      "assistant_sha256": "da987d8008b5033882d11c089f533ba2f3be3c6b7315d49ddf6bce9a80a92930"
+    },
+    {
+      "line_1based": 260,
+      "teacher_row_1based": 2,
+      "id": "rehearsal-initialize-02",
+      "style": "rephrased",
+      "source_sha256": "265f9202a0482873115e96aefac5dd44c51db6928e0ea6878e84f0febbda5ed8",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "8c5b95fde03fc654caa03c0a7a78e7c7520325db4327ff6160d4136b53385c33",
+      "assistant_sha256": "da987d8008b5033882d11c089f533ba2f3be3c6b7315d49ddf6bce9a80a92930"
+    },
+    {
+      "line_1based": 261,
+      "teacher_row_1based": 3,
+      "id": "rehearsal-initialize-03",
+      "style": "task_first",
+      "source_sha256": "8fb587416e99e60c9a9b67821fa8f78bc2e34004c05e9509cb3a5743e8a46d10",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "00ac6664ce5b4d9e922b058a0fc59196c69873c96c885e58c0f7a30439f3a79b",
+      "assistant_sha256": "73a73e323606b638537dd59919a674d327ca5d3f67ce431b910466855110f839"
+    },
+    {
+      "line_1based": 262,
+      "teacher_row_1based": 3,
+      "id": "rehearsal-initialize-03",
+      "style": "rephrased",
+      "source_sha256": "8fb587416e99e60c9a9b67821fa8f78bc2e34004c05e9509cb3a5743e8a46d10",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "00ac6664ce5b4d9e922b058a0fc59196c69873c96c885e58c0f7a30439f3a79b",
+      "assistant_sha256": "73a73e323606b638537dd59919a674d327ca5d3f67ce431b910466855110f839"
+    },
+    {
+      "line_1based": 263,
+      "teacher_row_1based": 4,
+      "id": "rehearsal-initialize-04",
+      "style": "task_first",
+      "source_sha256": "bb0ca81eba4619106bd0bbd745111d5b30508ef2462da7be193788f2d1bce72b",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "f851f875f0dcaa925792c9973036bc4011a97913de1c7d36a8c88ec3675b1e2e",
+      "assistant_sha256": "5b1d5fccb423aa9c427e55e934a68a4f52816c1efad9f02fa6ab5f2ea83f9237"
+    },
+    {
+      "line_1based": 264,
+      "teacher_row_1based": 4,
+      "id": "rehearsal-initialize-04",
+      "style": "rephrased",
+      "source_sha256": "bb0ca81eba4619106bd0bbd745111d5b30508ef2462da7be193788f2d1bce72b",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "f851f875f0dcaa925792c9973036bc4011a97913de1c7d36a8c88ec3675b1e2e",
+      "assistant_sha256": "5b1d5fccb423aa9c427e55e934a68a4f52816c1efad9f02fa6ab5f2ea83f9237"
+    },
+    {
+      "line_1based": 265,
+      "teacher_row_1based": 5,
+      "id": "rehearsal-offset-sign-01",
+      "style": "task_first",
+      "source_sha256": "d04bec0e35e6a2506303a27370d5011e1317d8762079ed2618358289104d1a7e",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "4b138fc579171b54aadde5a3b036bd480b624fe2a06a3768cea1406751d984d0",
+      "assistant_sha256": "9c244c7e9e536143cc9732a93bb9466482b1fdcc54252e4a560d73f35925d531"
+    },
+    {
+      "line_1based": 266,
+      "teacher_row_1based": 5,
+      "id": "rehearsal-offset-sign-01",
+      "style": "rephrased",
+      "source_sha256": "d04bec0e35e6a2506303a27370d5011e1317d8762079ed2618358289104d1a7e",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "4b138fc579171b54aadde5a3b036bd480b624fe2a06a3768cea1406751d984d0",
+      "assistant_sha256": "9c244c7e9e536143cc9732a93bb9466482b1fdcc54252e4a560d73f35925d531"
+    },
+    {
+      "line_1based": 267,
+      "teacher_row_1based": 6,
+      "id": "rehearsal-offset-sign-02",
+      "style": "task_first",
+      "source_sha256": "c541ed2e5750cb8fb4131b82f188085b7d40ac21212cc9fad93c306b25e8b62f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "acd42e3a7d14cce4b12ab7488e99fc95b0d9ac2560430fe8d3b791b9c798c512",
+      "assistant_sha256": "54030f6aad50183c325d4ad12a5950de4dccb085534044069605f7c58bf114a2"
+    },
+    {
+      "line_1based": 268,
+      "teacher_row_1based": 6,
+      "id": "rehearsal-offset-sign-02",
+      "style": "rephrased",
+      "source_sha256": "c541ed2e5750cb8fb4131b82f188085b7d40ac21212cc9fad93c306b25e8b62f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "acd42e3a7d14cce4b12ab7488e99fc95b0d9ac2560430fe8d3b791b9c798c512",
+      "assistant_sha256": "54030f6aad50183c325d4ad12a5950de4dccb085534044069605f7c58bf114a2"
+    },
+    {
+      "line_1based": 269,
+      "teacher_row_1based": 7,
+      "id": "rehearsal-offset-sign-03",
+      "style": "task_first",
+      "source_sha256": "f2a056e8eda9adcbda37083a6df31b7facff4ecb40c7c09ebf8babff92a90ee2",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "579fae07596e29d4076fa0697a865330abc682d43045b5466ff37a4e26d0b08c",
+      "assistant_sha256": "b00692c491b0c222ac6fb8b1a52855d74e1a02ec648f7f719cd0a11df6389697"
+    },
+    {
+      "line_1based": 270,
+      "teacher_row_1based": 7,
+      "id": "rehearsal-offset-sign-03",
+      "style": "rephrased",
+      "source_sha256": "f2a056e8eda9adcbda37083a6df31b7facff4ecb40c7c09ebf8babff92a90ee2",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "579fae07596e29d4076fa0697a865330abc682d43045b5466ff37a4e26d0b08c",
+      "assistant_sha256": "b00692c491b0c222ac6fb8b1a52855d74e1a02ec648f7f719cd0a11df6389697"
+    },
+    {
+      "line_1based": 271,
+      "teacher_row_1based": 8,
+      "id": "rehearsal-offset-sign-04",
+      "style": "task_first",
+      "source_sha256": "eb65aee9149457ceaf15c8d9366752bccf0f9942576bda4ec4d4144c881d7794",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "cec8ba503939ecb77758d38942dcacc9f49ec4f20765947bc0c251ea1b44b9b4",
+      "assistant_sha256": "165f110e672f3ee05b00479c9b4dc9f28b2cbf46a2a8dc54fe2468d50279a30c"
+    },
+    {
+      "line_1based": 272,
+      "teacher_row_1based": 8,
+      "id": "rehearsal-offset-sign-04",
+      "style": "rephrased",
+      "source_sha256": "eb65aee9149457ceaf15c8d9366752bccf0f9942576bda4ec4d4144c881d7794",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "cec8ba503939ecb77758d38942dcacc9f49ec4f20765947bc0c251ea1b44b9b4",
+      "assistant_sha256": "165f110e672f3ee05b00479c9b4dc9f28b2cbf46a2a8dc54fe2468d50279a30c"
+    },
+    {
+      "line_1based": 273,
+      "teacher_row_1based": 9,
+      "id": "rehearsal-closing-01",
+      "style": "task_first",
+      "source_sha256": "48a21cb785815f70b0c0aedcae7fc062587b6ead6e2c1c30ee063284177715b3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "678ab5d39217a61ee7b8ee9d05527cc0bd87256260be6d53a35ea6b1f4361a0a",
+      "assistant_sha256": "94da70d574234b550ea09ce6560095264fe4c951e4cf32b8a7924adaee7d34b3"
+    },
+    {
+      "line_1based": 274,
+      "teacher_row_1based": 9,
+      "id": "rehearsal-closing-01",
+      "style": "rephrased",
+      "source_sha256": "48a21cb785815f70b0c0aedcae7fc062587b6ead6e2c1c30ee063284177715b3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "678ab5d39217a61ee7b8ee9d05527cc0bd87256260be6d53a35ea6b1f4361a0a",
+      "assistant_sha256": "94da70d574234b550ea09ce6560095264fe4c951e4cf32b8a7924adaee7d34b3"
+    },
+    {
+      "line_1based": 275,
+      "teacher_row_1based": 10,
+      "id": "rehearsal-closing-02",
+      "style": "task_first",
+      "source_sha256": "10367b370e1cd26b8ab0185496f2ca7c1c444299acd816b0620a9f14760c4276",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "c49d346f5de7894baa882d734375fe024b6a56036ecc07e383a24d5afe356063",
+      "assistant_sha256": "b67299c5af220218da8529434c329acba6ce123a1116b486577e161e12106560"
+    },
+    {
+      "line_1based": 276,
+      "teacher_row_1based": 10,
+      "id": "rehearsal-closing-02",
+      "style": "rephrased",
+      "source_sha256": "10367b370e1cd26b8ab0185496f2ca7c1c444299acd816b0620a9f14760c4276",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "c49d346f5de7894baa882d734375fe024b6a56036ecc07e383a24d5afe356063",
+      "assistant_sha256": "b67299c5af220218da8529434c329acba6ce123a1116b486577e161e12106560"
+    },
+    {
+      "line_1based": 277,
+      "teacher_row_1based": 11,
+      "id": "rehearsal-closing-03",
+      "style": "task_first",
+      "source_sha256": "7d59a88bdf6861109c9f0ae1696bc87f2d80b635aaea9d3acdfefc9fe94389b5",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "60059c8ff6d255c4ba5a63f7da177366d8077e9e31e432ef9706b803bdd1629a",
+      "assistant_sha256": "01305dcff0150d66cda4eaa3c30553dca361777e146d28adb8555d33347fe1ee"
+    },
+    {
+      "line_1based": 278,
+      "teacher_row_1based": 11,
+      "id": "rehearsal-closing-03",
+      "style": "rephrased",
+      "source_sha256": "7d59a88bdf6861109c9f0ae1696bc87f2d80b635aaea9d3acdfefc9fe94389b5",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "60059c8ff6d255c4ba5a63f7da177366d8077e9e31e432ef9706b803bdd1629a",
+      "assistant_sha256": "01305dcff0150d66cda4eaa3c30553dca361777e146d28adb8555d33347fe1ee"
+    },
+    {
+      "line_1based": 279,
+      "teacher_row_1based": 12,
+      "id": "rehearsal-closing-04",
+      "style": "task_first",
+      "source_sha256": "9ac4056ba4bc12f14f34fd8c65125f2aac9411ac281e4a4a9156e37f36d3f2b0",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "04384b3ecb210c924f3ad25551af7ea9bba682088f741ad2b12dbac68b2e885c",
+      "assistant_sha256": "b10d70ca1c15c52037b29373d3fb621fef600951178d7f6a4d08ab655ff93efe"
+    },
+    {
+      "line_1based": 280,
+      "teacher_row_1based": 12,
+      "id": "rehearsal-closing-04",
+      "style": "rephrased",
+      "source_sha256": "9ac4056ba4bc12f14f34fd8c65125f2aac9411ac281e4a4a9156e37f36d3f2b0",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "04384b3ecb210c924f3ad25551af7ea9bba682088f741ad2b12dbac68b2e885c",
+      "assistant_sha256": "b10d70ca1c15c52037b29373d3fb621fef600951178d7f6a4d08ab655ff93efe"
+    },
+    {
+      "line_1based": 281,
+      "teacher_row_1based": 13,
+      "id": "rehearsal-shell-01",
+      "style": "task_first",
+      "source_sha256": "e7f1513a492e99aac6ceff7ab10c35ca3dcf9aeefeb8a19457a0ddb8487d04f3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "49aefb1c27c6b786679e61b7e7ba33bf493563ee00c33fccdfa10b8ab7fce4e0",
+      "assistant_sha256": "dbaaf38e0c98a34ed0c9eb3d15489afa8fb29c0eee46b9cabe09c36f6cbc649d"
+    },
+    {
+      "line_1based": 282,
+      "teacher_row_1based": 13,
+      "id": "rehearsal-shell-01",
+      "style": "rephrased",
+      "source_sha256": "e7f1513a492e99aac6ceff7ab10c35ca3dcf9aeefeb8a19457a0ddb8487d04f3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "49aefb1c27c6b786679e61b7e7ba33bf493563ee00c33fccdfa10b8ab7fce4e0",
+      "assistant_sha256": "dbaaf38e0c98a34ed0c9eb3d15489afa8fb29c0eee46b9cabe09c36f6cbc649d"
+    },
+    {
+      "line_1based": 283,
+      "teacher_row_1based": 14,
+      "id": "rehearsal-shell-02",
+      "style": "task_first",
+      "source_sha256": "27f95e56c238c9f8ee0efacd5cd0316643df52aa7ff4ed7587d797258c2523b8",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "c9e93c626e449451432a44336e92f704c1a494995676f4e05951b95582f40816",
+      "assistant_sha256": "aaf1eb6fd37cb018009dce6e3234a3434fde1f43e3e5a63dca5a86355a8495ee"
+    },
+    {
+      "line_1based": 284,
+      "teacher_row_1based": 14,
+      "id": "rehearsal-shell-02",
+      "style": "rephrased",
+      "source_sha256": "27f95e56c238c9f8ee0efacd5cd0316643df52aa7ff4ed7587d797258c2523b8",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "c9e93c626e449451432a44336e92f704c1a494995676f4e05951b95582f40816",
+      "assistant_sha256": "aaf1eb6fd37cb018009dce6e3234a3434fde1f43e3e5a63dca5a86355a8495ee"
+    },
+    {
+      "line_1based": 285,
+      "teacher_row_1based": 15,
+      "id": "rehearsal-shell-03",
+      "style": "task_first",
+      "source_sha256": "01790743220ffdccdb0a119b6348c39b08846bdf3625aae2bcd916bdd6a9b638",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "52f297a8d944b6c2cfe96043d7e786be1df991f6acfdba9ffdbac3a9bd69996f",
+      "assistant_sha256": "a537bc48de36c3d68c13fe3b1f98cef5058c885a0f276cefa506aef2e1bd42b0"
+    },
+    {
+      "line_1based": 286,
+      "teacher_row_1based": 15,
+      "id": "rehearsal-shell-03",
+      "style": "rephrased",
+      "source_sha256": "01790743220ffdccdb0a119b6348c39b08846bdf3625aae2bcd916bdd6a9b638",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "52f297a8d944b6c2cfe96043d7e786be1df991f6acfdba9ffdbac3a9bd69996f",
+      "assistant_sha256": "a537bc48de36c3d68c13fe3b1f98cef5058c885a0f276cefa506aef2e1bd42b0"
+    },
+    {
+      "line_1based": 287,
+      "teacher_row_1based": 16,
+      "id": "rehearsal-shell-04",
+      "style": "task_first",
+      "source_sha256": "01ea8b83c1ad43c3b80e9f5df711a34cd306883ce01cb074ec417e143d5a53d4",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "43b6dab6ac6a5942f5ddacf17aeff629cb03b5490d4a4d2e65d7d860e6efd151",
+      "assistant_sha256": "f2275ab7de80c0785f8f7a7c4bbd2487925370fd27a4ea327bbc8b1cca67b46f"
+    },
+    {
+      "line_1based": 288,
+      "teacher_row_1based": 16,
+      "id": "rehearsal-shell-04",
+      "style": "rephrased",
+      "source_sha256": "01ea8b83c1ad43c3b80e9f5df711a34cd306883ce01cb074ec417e143d5a53d4",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "43b6dab6ac6a5942f5ddacf17aeff629cb03b5490d4a4d2e65d7d860e6efd151",
+      "assistant_sha256": "f2275ab7de80c0785f8f7a7c4bbd2487925370fd27a4ea327bbc8b1cca67b46f"
+    },
+    {
+      "line_1based": 289,
+      "teacher_row_1based": 17,
+      "id": "rehearsal-vent-01",
+      "style": "task_first",
+      "source_sha256": "eaf2baf2e15f4989ea39cd9ed18ec94c1c4e44a2449703ac6f3ff3fdb0d2d87a",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "d4afe9a06bec8d70d911a549330c2ac0d97d81d311199832b014ef4b46466e41",
+      "assistant_sha256": "a7d4c408322ff4912c26f8f20f8d18ddbd0eb7daf66559efb70221f32299e3d0"
+    },
+    {
+      "line_1based": 290,
+      "teacher_row_1based": 17,
+      "id": "rehearsal-vent-01",
+      "style": "rephrased",
+      "source_sha256": "eaf2baf2e15f4989ea39cd9ed18ec94c1c4e44a2449703ac6f3ff3fdb0d2d87a",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "d4afe9a06bec8d70d911a549330c2ac0d97d81d311199832b014ef4b46466e41",
+      "assistant_sha256": "a7d4c408322ff4912c26f8f20f8d18ddbd0eb7daf66559efb70221f32299e3d0"
+    },
+    {
+      "line_1based": 291,
+      "teacher_row_1based": 18,
+      "id": "rehearsal-vent-02",
+      "style": "task_first",
+      "source_sha256": "7d3e2ea7b55923a0e47089c76b9d3c4fcd29d806b3da5447462061fc85e791e7",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "443f583caa69b12e5b31cb05bd9c6e74104798e11b5e385a6d4d3fc20599828b",
+      "assistant_sha256": "272d9a2b66743848e9a482014c8e860e0f9ee27dfabdddadfc69b2a79168f22f"
+    },
+    {
+      "line_1based": 292,
+      "teacher_row_1based": 18,
+      "id": "rehearsal-vent-02",
+      "style": "rephrased",
+      "source_sha256": "7d3e2ea7b55923a0e47089c76b9d3c4fcd29d806b3da5447462061fc85e791e7",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "443f583caa69b12e5b31cb05bd9c6e74104798e11b5e385a6d4d3fc20599828b",
+      "assistant_sha256": "272d9a2b66743848e9a482014c8e860e0f9ee27dfabdddadfc69b2a79168f22f"
+    },
+    {
+      "line_1based": 293,
+      "teacher_row_1based": 19,
+      "id": "rehearsal-vent-03",
+      "style": "task_first",
+      "source_sha256": "b91d63a586e8290986cc8a951a75485cfdcbef5543038357255f183dc03ba3eb",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "d1a4a856cbdeef5937ef94e696b9e67f4d3def162ae24957baf61b1c89b87f5b",
+      "assistant_sha256": "afe22a9caf4761fac45072fa9c3d792b34c7e5584aa027e9bca806954cb91246"
+    },
+    {
+      "line_1based": 294,
+      "teacher_row_1based": 19,
+      "id": "rehearsal-vent-03",
+      "style": "rephrased",
+      "source_sha256": "b91d63a586e8290986cc8a951a75485cfdcbef5543038357255f183dc03ba3eb",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "d1a4a856cbdeef5937ef94e696b9e67f4d3def162ae24957baf61b1c89b87f5b",
+      "assistant_sha256": "afe22a9caf4761fac45072fa9c3d792b34c7e5584aa027e9bca806954cb91246"
+    },
+    {
+      "line_1based": 295,
+      "teacher_row_1based": 20,
+      "id": "rehearsal-vent-04",
+      "style": "task_first",
+      "source_sha256": "393e68f49a87d564cd327f5b48a9752159fd0c42baa938d44fa84fa3bab38d6d",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "3134b8f8d722d197a41149645be290a2568253c80a5232d461740575249e5d10",
+      "assistant_sha256": "e33e59769523f8854f1ae90cd8f7a78e857670ba485224842f0f7aebc42f9ea8"
+    },
+    {
+      "line_1based": 296,
+      "teacher_row_1based": 20,
+      "id": "rehearsal-vent-04",
+      "style": "rephrased",
+      "source_sha256": "393e68f49a87d564cd327f5b48a9752159fd0c42baa938d44fa84fa3bab38d6d",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "3134b8f8d722d197a41149645be290a2568253c80a5232d461740575249e5d10",
+      "assistant_sha256": "e33e59769523f8854f1ae90cd8f7a78e857670ba485224842f0f7aebc42f9ea8"
+    },
+    {
+      "line_1based": 297,
+      "teacher_row_1based": 21,
+      "id": "rehearsal-cone-roof-01",
+      "style": "task_first",
+      "source_sha256": "c3391fb3eafa0578894d00635a1c3389a7daf08d1c565758e6da3df857b6bff0",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "1281063ab7be2ad4d05e0d3827f55056b5f2f65b27018756ae9720cf7e4ac939",
+      "assistant_sha256": "a2dc765233ded269baa991a8443143981b7639aab5203384a2da67e1e4f23f49"
+    },
+    {
+      "line_1based": 298,
+      "teacher_row_1based": 21,
+      "id": "rehearsal-cone-roof-01",
+      "style": "rephrased",
+      "source_sha256": "c3391fb3eafa0578894d00635a1c3389a7daf08d1c565758e6da3df857b6bff0",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "1281063ab7be2ad4d05e0d3827f55056b5f2f65b27018756ae9720cf7e4ac939",
+      "assistant_sha256": "a2dc765233ded269baa991a8443143981b7639aab5203384a2da67e1e4f23f49"
+    },
+    {
+      "line_1based": 299,
+      "teacher_row_1based": 22,
+      "id": "rehearsal-cone-roof-02",
+      "style": "task_first",
+      "source_sha256": "73732c55a325a298860eb853223191165d46a1f3f7eb78da7ac8b9745c35e70f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "d7c4a99d2995f178c97b1fa4179bc55d79ffe5103aace6203fe9c7626857bf00",
+      "assistant_sha256": "95db4ce04ece3d74de83d1e783c7cc61d3fad56476841766e559d9fcc5e41281"
+    },
+    {
+      "line_1based": 300,
+      "teacher_row_1based": 22,
+      "id": "rehearsal-cone-roof-02",
+      "style": "rephrased",
+      "source_sha256": "73732c55a325a298860eb853223191165d46a1f3f7eb78da7ac8b9745c35e70f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "d7c4a99d2995f178c97b1fa4179bc55d79ffe5103aace6203fe9c7626857bf00",
+      "assistant_sha256": "95db4ce04ece3d74de83d1e783c7cc61d3fad56476841766e559d9fcc5e41281"
+    },
+    {
+      "line_1based": 301,
+      "teacher_row_1based": 23,
+      "id": "rehearsal-cone-roof-03",
+      "style": "task_first",
+      "source_sha256": "fdf0b1ac69b32f8a49073323f0e40cd7f6deedec64e07f3eb251782ef5f7ec95",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "bb86909af6a20df6f1b5520045fcb02140fbc071096ec58ba7cf2c06fb0bae0c",
+      "assistant_sha256": "199df84fdf29baac829e08331d28eacc8e4967775ab8dc158bec9444a13188b4"
+    },
+    {
+      "line_1based": 302,
+      "teacher_row_1based": 23,
+      "id": "rehearsal-cone-roof-03",
+      "style": "rephrased",
+      "source_sha256": "fdf0b1ac69b32f8a49073323f0e40cd7f6deedec64e07f3eb251782ef5f7ec95",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "bb86909af6a20df6f1b5520045fcb02140fbc071096ec58ba7cf2c06fb0bae0c",
+      "assistant_sha256": "199df84fdf29baac829e08331d28eacc8e4967775ab8dc158bec9444a13188b4"
+    },
+    {
+      "line_1based": 303,
+      "teacher_row_1based": 24,
+      "id": "rehearsal-cone-roof-04",
+      "style": "task_first",
+      "source_sha256": "fc2dc8c021d2432294a56c9566e16187cc637be18fc7bae6fa669be98a87146b",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "6e8281fce259c4aa2b7591f7331a8e61d4360e93f06b1db793661f7b335e1b2a",
+      "assistant_sha256": "4fe0103ef7e9e62c304caab6c8b87c7363363d06daf5bae898dd1999761730d8"
+    },
+    {
+      "line_1based": 304,
+      "teacher_row_1based": 24,
+      "id": "rehearsal-cone-roof-04",
+      "style": "rephrased",
+      "source_sha256": "fc2dc8c021d2432294a56c9566e16187cc637be18fc7bae6fa669be98a87146b",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "6e8281fce259c4aa2b7591f7331a8e61d4360e93f06b1db793661f7b335e1b2a",
+      "assistant_sha256": "4fe0103ef7e9e62c304caab6c8b87c7363363d06daf5bae898dd1999761730d8"
+    },
+    {
+      "line_1based": 305,
+      "teacher_row_1based": 25,
+      "id": "rehearsal-gyroid-01",
+      "style": "task_first",
+      "source_sha256": "d5ef76a6628872f7a88ba80049ad57a1ca448b443f4411ed6c0ab5c5f9d47849",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "8a2f1d881eed58c1fc4acb055d9471156c553cfad030c294f84a308a18ec7ea8",
+      "assistant_sha256": "782d5ae490a50dd6a0886301d36a486e4a6d3aca3407932b89d26acb3ec55cec"
+    },
+    {
+      "line_1based": 306,
+      "teacher_row_1based": 25,
+      "id": "rehearsal-gyroid-01",
+      "style": "rephrased",
+      "source_sha256": "d5ef76a6628872f7a88ba80049ad57a1ca448b443f4411ed6c0ab5c5f9d47849",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "8a2f1d881eed58c1fc4acb055d9471156c553cfad030c294f84a308a18ec7ea8",
+      "assistant_sha256": "782d5ae490a50dd6a0886301d36a486e4a6d3aca3407932b89d26acb3ec55cec"
+    },
+    {
+      "line_1based": 307,
+      "teacher_row_1based": 26,
+      "id": "rehearsal-gyroid-02",
+      "style": "task_first",
+      "source_sha256": "1e251ff4ac47b8132087a9beb00dcdfdbb8f393797b251fe9cffc4dcf8c46931",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "fd06487bb1a61c27a1e61e6ce86559fa9873b679e7b87b6a4801a095bebec817",
+      "assistant_sha256": "0e01cc186b5064ad2de3c0a5bb409226896a4723f66695fbb032dfc52b103be3"
+    },
+    {
+      "line_1based": 308,
+      "teacher_row_1based": 26,
+      "id": "rehearsal-gyroid-02",
+      "style": "rephrased",
+      "source_sha256": "1e251ff4ac47b8132087a9beb00dcdfdbb8f393797b251fe9cffc4dcf8c46931",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "fd06487bb1a61c27a1e61e6ce86559fa9873b679e7b87b6a4801a095bebec817",
+      "assistant_sha256": "0e01cc186b5064ad2de3c0a5bb409226896a4723f66695fbb032dfc52b103be3"
+    },
+    {
+      "line_1based": 309,
+      "teacher_row_1based": 27,
+      "id": "rehearsal-gyroid-03",
+      "style": "task_first",
+      "source_sha256": "ab9e56190d5ab66810d1aadd2f8dba4f9bd253e6d98ad3c1261d8433c94ef7d3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "a924992abea76b0c9fcff6bd0d99acd1376c4757a106d903fa3327245601558f",
+      "assistant_sha256": "a055726681a07b00d2916de6b05223b5050624d66d920f569c2dcff0ac460bee"
+    },
+    {
+      "line_1based": 310,
+      "teacher_row_1based": 27,
+      "id": "rehearsal-gyroid-03",
+      "style": "rephrased",
+      "source_sha256": "ab9e56190d5ab66810d1aadd2f8dba4f9bd253e6d98ad3c1261d8433c94ef7d3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "a924992abea76b0c9fcff6bd0d99acd1376c4757a106d903fa3327245601558f",
+      "assistant_sha256": "a055726681a07b00d2916de6b05223b5050624d66d920f569c2dcff0ac460bee"
+    },
+    {
+      "line_1based": 311,
+      "teacher_row_1based": 28,
+      "id": "rehearsal-gyroid-04",
+      "style": "task_first",
+      "source_sha256": "03375ba1dd1481e4c7b73aae7183f4597e85cfac0c99cc70d761fe818a6ec678",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "791623da812978d377d1f1e6bc5336bfdd0c1736ec5c7dbc590a85824ea9c9aa",
+      "assistant_sha256": "50d157f904590dfdcf0fb59a8d13f45bb2812a35a63bd5701e5ebc72f3abe5ef"
+    },
+    {
+      "line_1based": 312,
+      "teacher_row_1based": 28,
+      "id": "rehearsal-gyroid-04",
+      "style": "rephrased",
+      "source_sha256": "03375ba1dd1481e4c7b73aae7183f4597e85cfac0c99cc70d761fe818a6ec678",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "791623da812978d377d1f1e6bc5336bfdd0c1736ec5c7dbc590a85824ea9c9aa",
+      "assistant_sha256": "50d157f904590dfdcf0fb59a8d13f45bb2812a35a63bd5701e5ebc72f3abe5ef"
+    },
+    {
+      "line_1based": 313,
+      "teacher_row_1based": 29,
+      "id": "rehearsal-diamond-01",
+      "style": "task_first",
+      "source_sha256": "c4b54a657663fcc94a0634f07b784dba36197ce116b47e8f34cc986ea61f803e",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "20a1a982ec5909fde57a2699161c762dc4e95f5445bb4c1189eaf5482d4fbf56",
+      "assistant_sha256": "77b7f3523e51e4838f20a88460e29895fa7add6162a2ca3e2b9ff0741c3fc6a6"
+    },
+    {
+      "line_1based": 314,
+      "teacher_row_1based": 29,
+      "id": "rehearsal-diamond-01",
+      "style": "rephrased",
+      "source_sha256": "c4b54a657663fcc94a0634f07b784dba36197ce116b47e8f34cc986ea61f803e",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "20a1a982ec5909fde57a2699161c762dc4e95f5445bb4c1189eaf5482d4fbf56",
+      "assistant_sha256": "77b7f3523e51e4838f20a88460e29895fa7add6162a2ca3e2b9ff0741c3fc6a6"
+    },
+    {
+      "line_1based": 315,
+      "teacher_row_1based": 30,
+      "id": "rehearsal-diamond-02",
+      "style": "task_first",
+      "source_sha256": "04cfa99026f5e4b270aafa151be44bccd2f625bcb5dbc453c1ca5b67e81725a3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "35dee60d6a14b7170413940a41c5a5c24e3f8f0a7088e7c7bfd2dc22c3daae28",
+      "assistant_sha256": "56770ead512b3b8699ec377a1ce9c7f1adbb8c7da9f0bd1b33389ef3827130ce"
+    },
+    {
+      "line_1based": 316,
+      "teacher_row_1based": 30,
+      "id": "rehearsal-diamond-02",
+      "style": "rephrased",
+      "source_sha256": "04cfa99026f5e4b270aafa151be44bccd2f625bcb5dbc453c1ca5b67e81725a3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "35dee60d6a14b7170413940a41c5a5c24e3f8f0a7088e7c7bfd2dc22c3daae28",
+      "assistant_sha256": "56770ead512b3b8699ec377a1ce9c7f1adbb8c7da9f0bd1b33389ef3827130ce"
+    },
+    {
+      "line_1based": 317,
+      "teacher_row_1based": 31,
+      "id": "rehearsal-diamond-03",
+      "style": "task_first",
+      "source_sha256": "0c25a3f2733bcada6346eb9b9776a7582d29cfeaed4bb942a92a59f3cd6b3cd3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "6270b4bef6e0b2f08e866d148cd49be9f5854ab29323445ccc53a1e44c995f51",
+      "assistant_sha256": "535b04f50094f0b5007bcdac9ec29dd3c85a4bee7c322d3c34a0c1e9f07df644"
+    },
+    {
+      "line_1based": 318,
+      "teacher_row_1based": 31,
+      "id": "rehearsal-diamond-03",
+      "style": "rephrased",
+      "source_sha256": "0c25a3f2733bcada6346eb9b9776a7582d29cfeaed4bb942a92a59f3cd6b3cd3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "6270b4bef6e0b2f08e866d148cd49be9f5854ab29323445ccc53a1e44c995f51",
+      "assistant_sha256": "535b04f50094f0b5007bcdac9ec29dd3c85a4bee7c322d3c34a0c1e9f07df644"
+    },
+    {
+      "line_1based": 319,
+      "teacher_row_1based": 32,
+      "id": "rehearsal-diamond-04",
+      "style": "task_first",
+      "source_sha256": "869b35e3b99d86ff736d38b3ebfc70f9fb56b0ad51a093afdc9f4ef7d5d3ea1e",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "a5a8cf60f57835edd9b802b37587c486a247baf177e4051ad9f950a311a21ccb",
+      "assistant_sha256": "bd041723e14ef83784c25e68ac5d02d60429645c740b283f06d590f9e7dbd016"
+    },
+    {
+      "line_1based": 320,
+      "teacher_row_1based": 32,
+      "id": "rehearsal-diamond-04",
+      "style": "rephrased",
+      "source_sha256": "869b35e3b99d86ff736d38b3ebfc70f9fb56b0ad51a093afdc9f4ef7d5d3ea1e",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "a5a8cf60f57835edd9b802b37587c486a247baf177e4051ad9f950a311a21ccb",
+      "assistant_sha256": "bd041723e14ef83784c25e68ac5d02d60429645c740b283f06d590f9e7dbd016"
+    },
+    {
+      "line_1based": 321,
+      "teacher_row_1based": 33,
+      "id": "rehearsal-schwarz-p-01",
+      "style": "task_first",
+      "source_sha256": "ad1c7afdb899b07ab1f8f599c046aab6568089d65d75bb9dc2661c56c71e3e70",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "5bbaae95ba6440121c5d8c988227f441158b946a4d30e3d9ef6db111c6ad01aa",
+      "assistant_sha256": "f20a7db002ac27ec43afe3b055ca472f40af0743d675ef6d8feac7ccdd8fe857"
+    },
+    {
+      "line_1based": 322,
+      "teacher_row_1based": 33,
+      "id": "rehearsal-schwarz-p-01",
+      "style": "rephrased",
+      "source_sha256": "ad1c7afdb899b07ab1f8f599c046aab6568089d65d75bb9dc2661c56c71e3e70",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "5bbaae95ba6440121c5d8c988227f441158b946a4d30e3d9ef6db111c6ad01aa",
+      "assistant_sha256": "f20a7db002ac27ec43afe3b055ca472f40af0743d675ef6d8feac7ccdd8fe857"
+    },
+    {
+      "line_1based": 323,
+      "teacher_row_1based": 34,
+      "id": "rehearsal-schwarz-p-02",
+      "style": "task_first",
+      "source_sha256": "a7a0190a0d390926f78466bc0b4a800a306bc7110f455a75474b2c0fd3667d9f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "5333ed34cc2b3e48a9fd54f08d1995574407475bdf772241c1bd708d39adfe4d",
+      "assistant_sha256": "98750ba814e53aa75725d42f10246e34ff9b8dd5a46007cffefdbbc198e7ed8a"
+    },
+    {
+      "line_1based": 324,
+      "teacher_row_1based": 34,
+      "id": "rehearsal-schwarz-p-02",
+      "style": "rephrased",
+      "source_sha256": "a7a0190a0d390926f78466bc0b4a800a306bc7110f455a75474b2c0fd3667d9f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "5333ed34cc2b3e48a9fd54f08d1995574407475bdf772241c1bd708d39adfe4d",
+      "assistant_sha256": "98750ba814e53aa75725d42f10246e34ff9b8dd5a46007cffefdbbc198e7ed8a"
+    },
+    {
+      "line_1based": 325,
+      "teacher_row_1based": 35,
+      "id": "rehearsal-schwarz-p-03",
+      "style": "task_first",
+      "source_sha256": "b5dd3e7c54ce8bbfb027cf634b2a8984228319c150395425b3e7d2a942a316ac",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "3ce1bfc5a8109010e698625ccaa43bfe288a8c814d70e2da6927a322506828b4",
+      "assistant_sha256": "71186eae9736ebc21102a4d526f8940a4b737269e84460e748a0311ce282da28"
+    },
+    {
+      "line_1based": 326,
+      "teacher_row_1based": 35,
+      "id": "rehearsal-schwarz-p-03",
+      "style": "rephrased",
+      "source_sha256": "b5dd3e7c54ce8bbfb027cf634b2a8984228319c150395425b3e7d2a942a316ac",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "3ce1bfc5a8109010e698625ccaa43bfe288a8c814d70e2da6927a322506828b4",
+      "assistant_sha256": "71186eae9736ebc21102a4d526f8940a4b737269e84460e748a0311ce282da28"
+    },
+    {
+      "line_1based": 327,
+      "teacher_row_1based": 36,
+      "id": "rehearsal-schwarz-p-04",
+      "style": "task_first",
+      "source_sha256": "559beb16b562b5fed0195bcfacc4248b1076a4c1c0817ca6f1ac301295013996",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "4ec8cd128319db2651d11ca96440815f35a0b76856774013f67f55952257c16d",
+      "assistant_sha256": "406f98509b62ec0595ece66c3113c31d6c2e7e8b634aa544797dcd1882aa2af0"
+    },
+    {
+      "line_1based": 328,
+      "teacher_row_1based": 36,
+      "id": "rehearsal-schwarz-p-04",
+      "style": "rephrased",
+      "source_sha256": "559beb16b562b5fed0195bcfacc4248b1076a4c1c0817ca6f1ac301295013996",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "4ec8cd128319db2651d11ca96440815f35a0b76856774013f67f55952257c16d",
+      "assistant_sha256": "406f98509b62ec0595ece66c3113c31d6c2e7e8b634aa544797dcd1882aa2af0"
+    },
+    {
+      "line_1based": 329,
+      "teacher_row_1based": 37,
+      "id": "rehearsal-scan-normals-01",
+      "style": "task_first",
+      "source_sha256": "8d075a5e03d8125af1a4fe48501be234c530d0db2f7d96d0a9af4c11bff3d1bf",
+      "input_sha256": "b0b9cf74cae9ca2e2bf0af31c3be6a7f8ba764721bfaa56e39cdecfb5df6d6b5",
+      "native_result_sha256": "815a2c7b003a98fc20efc9ed1e0f05b12393ce4339538fa7dd0cb6e8001886f0",
+      "assistant_sha256": "fd72714eada4c2cc4c1aed82058031fad1b781b9ded988ccfdfc78326e2fa9a1"
+    },
+    {
+      "line_1based": 330,
+      "teacher_row_1based": 37,
+      "id": "rehearsal-scan-normals-01",
+      "style": "rephrased",
+      "source_sha256": "8d075a5e03d8125af1a4fe48501be234c530d0db2f7d96d0a9af4c11bff3d1bf",
+      "input_sha256": "b0b9cf74cae9ca2e2bf0af31c3be6a7f8ba764721bfaa56e39cdecfb5df6d6b5",
+      "native_result_sha256": "815a2c7b003a98fc20efc9ed1e0f05b12393ce4339538fa7dd0cb6e8001886f0",
+      "assistant_sha256": "fd72714eada4c2cc4c1aed82058031fad1b781b9ded988ccfdfc78326e2fa9a1"
+    },
+    {
+      "line_1based": 331,
+      "teacher_row_1based": 38,
+      "id": "rehearsal-scan-normals-02",
+      "style": "task_first",
+      "source_sha256": "8d075a5e03d8125af1a4fe48501be234c530d0db2f7d96d0a9af4c11bff3d1bf",
+      "input_sha256": "224656a4e8fd0e6c4fce0506c4cdf5c4feaef01652fede1aadfe6eb4e83faa15",
+      "native_result_sha256": "c4e0765527e0cdb911c194411d00a023791d586fa644d6541a5a218e84fd6ee5",
+      "assistant_sha256": "fd72714eada4c2cc4c1aed82058031fad1b781b9ded988ccfdfc78326e2fa9a1"
+    },
+    {
+      "line_1based": 332,
+      "teacher_row_1based": 38,
+      "id": "rehearsal-scan-normals-02",
+      "style": "rephrased",
+      "source_sha256": "8d075a5e03d8125af1a4fe48501be234c530d0db2f7d96d0a9af4c11bff3d1bf",
+      "input_sha256": "224656a4e8fd0e6c4fce0506c4cdf5c4feaef01652fede1aadfe6eb4e83faa15",
+      "native_result_sha256": "c4e0765527e0cdb911c194411d00a023791d586fa644d6541a5a218e84fd6ee5",
+      "assistant_sha256": "fd72714eada4c2cc4c1aed82058031fad1b781b9ded988ccfdfc78326e2fa9a1"
+    },
+    {
+      "line_1based": 333,
+      "teacher_row_1based": 39,
+      "id": "rehearsal-scan-normals-03",
+      "style": "task_first",
+      "source_sha256": "8d075a5e03d8125af1a4fe48501be234c530d0db2f7d96d0a9af4c11bff3d1bf",
+      "input_sha256": "85ae211c53154ea6a0149e06de17b5f7425bb183b5e0456d545bb0fd54c36604",
+      "native_result_sha256": "4e7e682d111cc1454488aca5f77b7947f33d3c80e969a4167bede98c5e2f0630",
+      "assistant_sha256": "fd72714eada4c2cc4c1aed82058031fad1b781b9ded988ccfdfc78326e2fa9a1"
+    },
+    {
+      "line_1based": 334,
+      "teacher_row_1based": 39,
+      "id": "rehearsal-scan-normals-03",
+      "style": "rephrased",
+      "source_sha256": "8d075a5e03d8125af1a4fe48501be234c530d0db2f7d96d0a9af4c11bff3d1bf",
+      "input_sha256": "85ae211c53154ea6a0149e06de17b5f7425bb183b5e0456d545bb0fd54c36604",
+      "native_result_sha256": "4e7e682d111cc1454488aca5f77b7947f33d3c80e969a4167bede98c5e2f0630",
+      "assistant_sha256": "fd72714eada4c2cc4c1aed82058031fad1b781b9ded988ccfdfc78326e2fa9a1"
+    },
+    {
+      "line_1based": 335,
+      "teacher_row_1based": 40,
+      "id": "rehearsal-scan-normals-04",
+      "style": "task_first",
+      "source_sha256": "8d075a5e03d8125af1a4fe48501be234c530d0db2f7d96d0a9af4c11bff3d1bf",
+      "input_sha256": "f655db2fb7c5804d4e6f8e2c8e2fdf55c71442ffe87eb4cf1074d674aa6fcd10",
+      "native_result_sha256": "9d7eb5441b0937df97178e4e95eaacd51cc10cd58ad6f04095b616d30a152f87",
+      "assistant_sha256": "fd72714eada4c2cc4c1aed82058031fad1b781b9ded988ccfdfc78326e2fa9a1"
+    },
+    {
+      "line_1based": 336,
+      "teacher_row_1based": 40,
+      "id": "rehearsal-scan-normals-04",
+      "style": "rephrased",
+      "source_sha256": "8d075a5e03d8125af1a4fe48501be234c530d0db2f7d96d0a9af4c11bff3d1bf",
+      "input_sha256": "f655db2fb7c5804d4e6f8e2c8e2fdf55c71442ffe87eb4cf1074d674aa6fcd10",
+      "native_result_sha256": "9d7eb5441b0937df97178e4e95eaacd51cc10cd58ad6f04095b616d30a152f87",
+      "assistant_sha256": "fd72714eada4c2cc4c1aed82058031fad1b781b9ded988ccfdfc78326e2fa9a1"
+    },
+    {
+      "line_1based": 337,
+      "teacher_row_1based": 41,
+      "id": "rehearsal-debug-api-01",
+      "style": "task_first",
+      "source_sha256": "183fc1fc1f2e63bec3f4c2f374a1c53d7d0606ae832076cd12730ea040943431",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "f759ce83881152cc2db614aeccc6a4891efab7be831d1b03435b2da6f753d5eb",
+      "assistant_sha256": "0b9a7753d1c695430ad3c49ab4c57cde095a1fb73db1c4fc7ba388cf869ceb10"
+    },
+    {
+      "line_1based": 338,
+      "teacher_row_1based": 41,
+      "id": "rehearsal-debug-api-01",
+      "style": "rephrased",
+      "source_sha256": "183fc1fc1f2e63bec3f4c2f374a1c53d7d0606ae832076cd12730ea040943431",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "f759ce83881152cc2db614aeccc6a4891efab7be831d1b03435b2da6f753d5eb",
+      "assistant_sha256": "0b9a7753d1c695430ad3c49ab4c57cde095a1fb73db1c4fc7ba388cf869ceb10"
+    },
+    {
+      "line_1based": 339,
+      "teacher_row_1based": 42,
+      "id": "rehearsal-debug-api-02",
+      "style": "task_first",
+      "source_sha256": "8fa7b3f325fdd7a5a45614d0b77b32dcb4c3dc1ffa121fdfded04caeb90f6351",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "c5b63c2a29bd34ef3a83868790574e37fc5fa1c08f3c2d5dc9dbc8f1ad5b95b4",
+      "assistant_sha256": "36486d1d205d4669fafb5fbf84596b73d1beda5dcb9dc567d9779ddae3a22ab5"
+    },
+    {
+      "line_1based": 340,
+      "teacher_row_1based": 42,
+      "id": "rehearsal-debug-api-02",
+      "style": "rephrased",
+      "source_sha256": "8fa7b3f325fdd7a5a45614d0b77b32dcb4c3dc1ffa121fdfded04caeb90f6351",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "c5b63c2a29bd34ef3a83868790574e37fc5fa1c08f3c2d5dc9dbc8f1ad5b95b4",
+      "assistant_sha256": "36486d1d205d4669fafb5fbf84596b73d1beda5dcb9dc567d9779ddae3a22ab5"
+    },
+    {
+      "line_1based": 341,
+      "teacher_row_1based": 43,
+      "id": "rehearsal-debug-api-03",
+      "style": "task_first",
+      "source_sha256": "19a451abc607b7dd8ba04da73c1acb0ba63b87a327c87813e7ba03305a8b8ece",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "794889fef14b2235129faef1c54ed7865defa6825c4c22eaa3dcd0337b2815ed",
+      "assistant_sha256": "46e014aac1370efc7be74beaa7cfec89fa31cfa1e8f2c2e402ccb591e191cfde"
+    },
+    {
+      "line_1based": 342,
+      "teacher_row_1based": 43,
+      "id": "rehearsal-debug-api-03",
+      "style": "rephrased",
+      "source_sha256": "19a451abc607b7dd8ba04da73c1acb0ba63b87a327c87813e7ba03305a8b8ece",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "794889fef14b2235129faef1c54ed7865defa6825c4c22eaa3dcd0337b2815ed",
+      "assistant_sha256": "46e014aac1370efc7be74beaa7cfec89fa31cfa1e8f2c2e402ccb591e191cfde"
+    },
+    {
+      "line_1based": 343,
+      "teacher_row_1based": 44,
+      "id": "rehearsal-debug-api-04",
+      "style": "task_first",
+      "source_sha256": "6157f0700641729bd68a8c72b7dbb73a6b81b9e5eb1d6de84883f610b9ac9b7e",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "68e2cfa74f7944aa6a0cd65f05a9acb5976765f2ebe94e66ee02c08006226af9",
+      "assistant_sha256": "10c830798bd351cf24bda6f2b1317d07e231c03bb8aacc8ef7793401d5d6894f"
+    },
+    {
+      "line_1based": 344,
+      "teacher_row_1based": 44,
+      "id": "rehearsal-debug-api-04",
+      "style": "rephrased",
+      "source_sha256": "6157f0700641729bd68a8c72b7dbb73a6b81b9e5eb1d6de84883f610b9ac9b7e",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_result_sha256": "68e2cfa74f7944aa6a0cd65f05a9acb5976765f2ebe94e66ee02c08006226af9",
+      "assistant_sha256": "10c830798bd351cf24bda6f2b1317d07e231c03bb8aacc8ef7793401d5d6894f"
+    },
+    {
+      "line_1based": 345,
+      "teacher_row_1based": 45,
+      "id": "rehearsal-missing-interfaces-01",
+      "style": "task_first",
+      "source_sha256": "d9454f5aff99501b931b08c1912cdb44478ffdacf2f2ff0e7323aea70eae4820",
+      "input_sha256": "ee7de431e6aac264129f4c4bb71cfb23bbf43812e5d44eb6ea3cecf030bdc8b7",
+      "native_result_sha256": "f69961b7f8ded728b9af58ecd901fe4de6acaaba6e861ef0350d992566ba919a",
+      "assistant_sha256": "cdd46030db0f1bd1e43b8d0947b8f6c6720ad45b8a8faee8af19e62768b1794c"
+    },
+    {
+      "line_1based": 346,
+      "teacher_row_1based": 45,
+      "id": "rehearsal-missing-interfaces-01",
+      "style": "rephrased",
+      "source_sha256": "d9454f5aff99501b931b08c1912cdb44478ffdacf2f2ff0e7323aea70eae4820",
+      "input_sha256": "ee7de431e6aac264129f4c4bb71cfb23bbf43812e5d44eb6ea3cecf030bdc8b7",
+      "native_result_sha256": "f69961b7f8ded728b9af58ecd901fe4de6acaaba6e861ef0350d992566ba919a",
+      "assistant_sha256": "cdd46030db0f1bd1e43b8d0947b8f6c6720ad45b8a8faee8af19e62768b1794c"
+    },
+    {
+      "line_1based": 347,
+      "teacher_row_1based": 46,
+      "id": "rehearsal-missing-interfaces-02",
+      "style": "task_first",
+      "source_sha256": "d9454f5aff99501b931b08c1912cdb44478ffdacf2f2ff0e7323aea70eae4820",
+      "input_sha256": "e2fbd0cf5ac127985e5850a4127075e45f540ee8a6a88d959193e8a02751841b",
+      "native_result_sha256": "411af23077ac6f3eaa7613e85c925a4abd6e1ca19b97f74718c6efb813c8d21f",
+      "assistant_sha256": "cdd46030db0f1bd1e43b8d0947b8f6c6720ad45b8a8faee8af19e62768b1794c"
+    },
+    {
+      "line_1based": 348,
+      "teacher_row_1based": 46,
+      "id": "rehearsal-missing-interfaces-02",
+      "style": "rephrased",
+      "source_sha256": "d9454f5aff99501b931b08c1912cdb44478ffdacf2f2ff0e7323aea70eae4820",
+      "input_sha256": "e2fbd0cf5ac127985e5850a4127075e45f540ee8a6a88d959193e8a02751841b",
+      "native_result_sha256": "411af23077ac6f3eaa7613e85c925a4abd6e1ca19b97f74718c6efb813c8d21f",
+      "assistant_sha256": "cdd46030db0f1bd1e43b8d0947b8f6c6720ad45b8a8faee8af19e62768b1794c"
+    },
+    {
+      "line_1based": 349,
+      "teacher_row_1based": 47,
+      "id": "rehearsal-missing-interfaces-03",
+      "style": "task_first",
+      "source_sha256": "d9454f5aff99501b931b08c1912cdb44478ffdacf2f2ff0e7323aea70eae4820",
+      "input_sha256": "303427b0a39c442d85917fe89014f83d67b64e9b423753b4abf6d02b21e969ac",
+      "native_result_sha256": "56c38800a6877d7ffb2515047f0b2fdb5422fcc87af1dea95c9b8f8ac6290770",
+      "assistant_sha256": "cdd46030db0f1bd1e43b8d0947b8f6c6720ad45b8a8faee8af19e62768b1794c"
+    },
+    {
+      "line_1based": 350,
+      "teacher_row_1based": 47,
+      "id": "rehearsal-missing-interfaces-03",
+      "style": "rephrased",
+      "source_sha256": "d9454f5aff99501b931b08c1912cdb44478ffdacf2f2ff0e7323aea70eae4820",
+      "input_sha256": "303427b0a39c442d85917fe89014f83d67b64e9b423753b4abf6d02b21e969ac",
+      "native_result_sha256": "56c38800a6877d7ffb2515047f0b2fdb5422fcc87af1dea95c9b8f8ac6290770",
+      "assistant_sha256": "cdd46030db0f1bd1e43b8d0947b8f6c6720ad45b8a8faee8af19e62768b1794c"
+    },
+    {
+      "line_1based": 351,
+      "teacher_row_1based": 48,
+      "id": "rehearsal-missing-interfaces-04",
+      "style": "task_first",
+      "source_sha256": "d9454f5aff99501b931b08c1912cdb44478ffdacf2f2ff0e7323aea70eae4820",
+      "input_sha256": "5e97ddea4a24f187f5262d76e2086d893bd7656793db3ecdec603ff2db5ba08f",
+      "native_result_sha256": "95463bc3b4f933520735647d5d00bdb1d400ecd124c4e139e58f6f1d801c766d",
+      "assistant_sha256": "cdd46030db0f1bd1e43b8d0947b8f6c6720ad45b8a8faee8af19e62768b1794c"
+    },
+    {
+      "line_1based": 352,
+      "teacher_row_1based": 48,
+      "id": "rehearsal-missing-interfaces-04",
+      "style": "rephrased",
+      "source_sha256": "d9454f5aff99501b931b08c1912cdb44478ffdacf2f2ff0e7323aea70eae4820",
+      "input_sha256": "5e97ddea4a24f187f5262d76e2086d893bd7656793db3ecdec603ff2db5ba08f",
+      "native_result_sha256": "95463bc3b4f933520735647d5d00bdb1d400ecd124c4e139e58f6f1d801c766d",
+      "assistant_sha256": "cdd46030db0f1bd1e43b8d0947b8f6c6720ad45b8a8faee8af19e62768b1794c"
+    },
+    {
+      "line_1based": 353,
+      "teacher_row_1based": 49,
+      "id": "rehearsal-stl-roundtrip-01",
+      "style": "task_first",
+      "source_sha256": "100d780f41c74f7a4be47064548f1b696802cfd9a8a231cf8b4d9156c6333957",
+      "input_sha256": "f314f42e54fdd87d22ef5d5f70eda10795145db88fc210e5616c555e9dd5e75a",
+      "native_result_sha256": "c7b35343cc5ddaedc5cb365586db450bc48b24c6aafb1e7ba1bc4a899e664f7a",
+      "assistant_sha256": "d8610bad93af7e8068306fa13d0e00c1305860749aedc98adea269abe31e24cc"
+    },
+    {
+      "line_1based": 354,
+      "teacher_row_1based": 49,
+      "id": "rehearsal-stl-roundtrip-01",
+      "style": "rephrased",
+      "source_sha256": "100d780f41c74f7a4be47064548f1b696802cfd9a8a231cf8b4d9156c6333957",
+      "input_sha256": "f314f42e54fdd87d22ef5d5f70eda10795145db88fc210e5616c555e9dd5e75a",
+      "native_result_sha256": "c7b35343cc5ddaedc5cb365586db450bc48b24c6aafb1e7ba1bc4a899e664f7a",
+      "assistant_sha256": "d8610bad93af7e8068306fa13d0e00c1305860749aedc98adea269abe31e24cc"
+    },
+    {
+      "line_1based": 355,
+      "teacher_row_1based": 50,
+      "id": "rehearsal-stl-roundtrip-02",
+      "style": "task_first",
+      "source_sha256": "100d780f41c74f7a4be47064548f1b696802cfd9a8a231cf8b4d9156c6333957",
+      "input_sha256": "2de85b055120c2307c2c8994af04c3646e4facf1b3174052326d6d5565071e9a",
+      "native_result_sha256": "2a6d9554ffaea1b2dc2cb109455ed09d642523b763a43e78c32ce48e6e346800",
+      "assistant_sha256": "d8610bad93af7e8068306fa13d0e00c1305860749aedc98adea269abe31e24cc"
+    },
+    {
+      "line_1based": 356,
+      "teacher_row_1based": 50,
+      "id": "rehearsal-stl-roundtrip-02",
+      "style": "rephrased",
+      "source_sha256": "100d780f41c74f7a4be47064548f1b696802cfd9a8a231cf8b4d9156c6333957",
+      "input_sha256": "2de85b055120c2307c2c8994af04c3646e4facf1b3174052326d6d5565071e9a",
+      "native_result_sha256": "2a6d9554ffaea1b2dc2cb109455ed09d642523b763a43e78c32ce48e6e346800",
+      "assistant_sha256": "d8610bad93af7e8068306fa13d0e00c1305860749aedc98adea269abe31e24cc"
+    },
+    {
+      "line_1based": 357,
+      "teacher_row_1based": 51,
+      "id": "rehearsal-stl-roundtrip-03",
+      "style": "task_first",
+      "source_sha256": "100d780f41c74f7a4be47064548f1b696802cfd9a8a231cf8b4d9156c6333957",
+      "input_sha256": "d07e11d7d872543345fa436ee35a0369ed0317d3f9b79e65883d493ddf1029b6",
+      "native_result_sha256": "1e7c9579a04430e4cc9c15989fff9f4fa686077b1640e25ba5098d5f702e6d9e",
+      "assistant_sha256": "d8610bad93af7e8068306fa13d0e00c1305860749aedc98adea269abe31e24cc"
+    },
+    {
+      "line_1based": 358,
+      "teacher_row_1based": 51,
+      "id": "rehearsal-stl-roundtrip-03",
+      "style": "rephrased",
+      "source_sha256": "100d780f41c74f7a4be47064548f1b696802cfd9a8a231cf8b4d9156c6333957",
+      "input_sha256": "d07e11d7d872543345fa436ee35a0369ed0317d3f9b79e65883d493ddf1029b6",
+      "native_result_sha256": "1e7c9579a04430e4cc9c15989fff9f4fa686077b1640e25ba5098d5f702e6d9e",
+      "assistant_sha256": "d8610bad93af7e8068306fa13d0e00c1305860749aedc98adea269abe31e24cc"
+    },
+    {
+      "line_1based": 359,
+      "teacher_row_1based": 52,
+      "id": "rehearsal-stl-roundtrip-04",
+      "style": "task_first",
+      "source_sha256": "100d780f41c74f7a4be47064548f1b696802cfd9a8a231cf8b4d9156c6333957",
+      "input_sha256": "e8ff9707b34156dd440af484283097f84eb794479ed20fc80920eae8241ca386",
+      "native_result_sha256": "bbfd425766c8b11c39a1a053a5d46410d6a041b9df4f653fde904d64ae51436c",
+      "assistant_sha256": "d8610bad93af7e8068306fa13d0e00c1305860749aedc98adea269abe31e24cc"
+    },
+    {
+      "line_1based": 360,
+      "teacher_row_1based": 52,
+      "id": "rehearsal-stl-roundtrip-04",
+      "style": "rephrased",
+      "source_sha256": "100d780f41c74f7a4be47064548f1b696802cfd9a8a231cf8b4d9156c6333957",
+      "input_sha256": "e8ff9707b34156dd440af484283097f84eb794479ed20fc80920eae8241ca386",
+      "native_result_sha256": "bbfd425766c8b11c39a1a053a5d46410d6a041b9df4f653fde904d64ae51436c",
+      "assistant_sha256": "d8610bad93af7e8068306fa13d0e00c1305860749aedc98adea269abe31e24cc"
+    },
+    {
+      "line_1based": 361,
+      "teacher_row_1based": 53,
+      "id": "rehearsal-stl-skin-vent-01",
+      "style": "task_first",
+      "source_sha256": "99aab933a2b7c435dc017ad45550db240e110bfc526c667e8c21da6206d7aabe",
+      "input_sha256": "f314f42e54fdd87d22ef5d5f70eda10795145db88fc210e5616c555e9dd5e75a",
+      "native_result_sha256": "841969eca6e5ea9f37293c549e8f5ef96c9bf7836d8491b4f6d0e4e4272b81fe",
+      "assistant_sha256": "d8c4bdcbec1850047d46d66fcb2a755c35bd7f2eeafbc30b928d3a9bb108660f"
+    },
+    {
+      "line_1based": 362,
+      "teacher_row_1based": 53,
+      "id": "rehearsal-stl-skin-vent-01",
+      "style": "rephrased",
+      "source_sha256": "99aab933a2b7c435dc017ad45550db240e110bfc526c667e8c21da6206d7aabe",
+      "input_sha256": "f314f42e54fdd87d22ef5d5f70eda10795145db88fc210e5616c555e9dd5e75a",
+      "native_result_sha256": "841969eca6e5ea9f37293c549e8f5ef96c9bf7836d8491b4f6d0e4e4272b81fe",
+      "assistant_sha256": "d8c4bdcbec1850047d46d66fcb2a755c35bd7f2eeafbc30b928d3a9bb108660f"
+    },
+    {
+      "line_1based": 363,
+      "teacher_row_1based": 54,
+      "id": "rehearsal-stl-skin-vent-02",
+      "style": "task_first",
+      "source_sha256": "c4bcba1e840eb9f414c56c3d18b720584d134e95b8d3e7f150d562839f9a64a3",
+      "input_sha256": "2de85b055120c2307c2c8994af04c3646e4facf1b3174052326d6d5565071e9a",
+      "native_result_sha256": "c2937c8a03e9842ed339a2fae93532d9313c733f289c62993eba557fbec1c299",
+      "assistant_sha256": "c04e53c89d96318f84daed469d4839d5cbbd1613f855dcc86231cdb0e301ca29"
+    },
+    {
+      "line_1based": 364,
+      "teacher_row_1based": 54,
+      "id": "rehearsal-stl-skin-vent-02",
+      "style": "rephrased",
+      "source_sha256": "c4bcba1e840eb9f414c56c3d18b720584d134e95b8d3e7f150d562839f9a64a3",
+      "input_sha256": "2de85b055120c2307c2c8994af04c3646e4facf1b3174052326d6d5565071e9a",
+      "native_result_sha256": "c2937c8a03e9842ed339a2fae93532d9313c733f289c62993eba557fbec1c299",
+      "assistant_sha256": "c04e53c89d96318f84daed469d4839d5cbbd1613f855dcc86231cdb0e301ca29"
+    },
+    {
+      "line_1based": 365,
+      "teacher_row_1based": 55,
+      "id": "rehearsal-stl-skin-vent-03",
+      "style": "task_first",
+      "source_sha256": "a8170bc4f60c03fb67099237c3bac5a88d22df96551759b3d1b159cd1171ba07",
+      "input_sha256": "d07e11d7d872543345fa436ee35a0369ed0317d3f9b79e65883d493ddf1029b6",
+      "native_result_sha256": "43fb7239c973b2ccfb989bcb88bc87619200c74d9e6e81eb3305c2bcc4db55db",
+      "assistant_sha256": "91b6c0fc6f088af6e7b9dba293bd0ec23a0cd29559978b5997fd4c691993c234"
+    },
+    {
+      "line_1based": 366,
+      "teacher_row_1based": 55,
+      "id": "rehearsal-stl-skin-vent-03",
+      "style": "rephrased",
+      "source_sha256": "a8170bc4f60c03fb67099237c3bac5a88d22df96551759b3d1b159cd1171ba07",
+      "input_sha256": "d07e11d7d872543345fa436ee35a0369ed0317d3f9b79e65883d493ddf1029b6",
+      "native_result_sha256": "43fb7239c973b2ccfb989bcb88bc87619200c74d9e6e81eb3305c2bcc4db55db",
+      "assistant_sha256": "91b6c0fc6f088af6e7b9dba293bd0ec23a0cd29559978b5997fd4c691993c234"
+    },
+    {
+      "line_1based": 367,
+      "teacher_row_1based": 56,
+      "id": "rehearsal-stl-skin-vent-04",
+      "style": "task_first",
+      "source_sha256": "7354db25eb68c5b234605dc32d9c477f394c5c527b52e236b6739821ffa5c52e",
+      "input_sha256": "e8ff9707b34156dd440af484283097f84eb794479ed20fc80920eae8241ca386",
+      "native_result_sha256": "c01b3edd01b43f1293cb7ee663b3541326b8d1d3fef219b52c5c98319ef0ec69",
+      "assistant_sha256": "4347f9e6466435e514821c4bca55d03ef74435afda2741469a6d1b5afe496db8"
+    },
+    {
+      "line_1based": 368,
+      "teacher_row_1based": 56,
+      "id": "rehearsal-stl-skin-vent-04",
+      "style": "rephrased",
+      "source_sha256": "7354db25eb68c5b234605dc32d9c477f394c5c527b52e236b6739821ffa5c52e",
+      "input_sha256": "e8ff9707b34156dd440af484283097f84eb794479ed20fc80920eae8241ca386",
+      "native_result_sha256": "c01b3edd01b43f1293cb7ee663b3541326b8d1d3fef219b52c5c98319ef0ec69",
+      "assistant_sha256": "4347f9e6466435e514821c4bca55d03ef74435afda2741469a6d1b5afe496db8"
+    },
+    {
+      "line_1based": 369,
+      "teacher_row_1based": 57,
+      "id": "rehearsal-xyz-occupancy-01",
+      "style": "task_first",
+      "source_sha256": "12c700bf65d7cba85e38e6173fc67a8c4513daeb78dd85c979fa9ec0be2ae04e",
+      "input_sha256": "82a1a95dc9e9ac79a1015e0613ad9eb614b2ff13966dc308f771d8e6316ed8c6",
+      "native_result_sha256": "6cfd4240c7db80136e3040886af5a9f2ad4d971fa4cd821fffca9432a51f19d2",
+      "assistant_sha256": "10256f182485ae8282476dcf13fbf64a1778da7af49923d6d5190965f614c15d"
+    },
+    {
+      "line_1based": 370,
+      "teacher_row_1based": 57,
+      "id": "rehearsal-xyz-occupancy-01",
+      "style": "rephrased",
+      "source_sha256": "12c700bf65d7cba85e38e6173fc67a8c4513daeb78dd85c979fa9ec0be2ae04e",
+      "input_sha256": "82a1a95dc9e9ac79a1015e0613ad9eb614b2ff13966dc308f771d8e6316ed8c6",
+      "native_result_sha256": "6cfd4240c7db80136e3040886af5a9f2ad4d971fa4cd821fffca9432a51f19d2",
+      "assistant_sha256": "10256f182485ae8282476dcf13fbf64a1778da7af49923d6d5190965f614c15d"
+    },
+    {
+      "line_1based": 371,
+      "teacher_row_1based": 58,
+      "id": "rehearsal-xyz-occupancy-02",
+      "style": "task_first",
+      "source_sha256": "d1c5eccf611f05671a3a3977e070fe131b1b506633324a635a7b129edcb95a28",
+      "input_sha256": "e8aebed7290f8742682480e05304a9b4337b218f8404a8b241452685c50e6f9c",
+      "native_result_sha256": "d157480c82be8bf48032ce6ce59d4b45320222ccfbacdbd1b59b863071067754",
+      "assistant_sha256": "598d60d643d3199e0ec582974bff17b7ef8c4417ed82f8a85751b06dbf1e3c67"
+    },
+    {
+      "line_1based": 372,
+      "teacher_row_1based": 58,
+      "id": "rehearsal-xyz-occupancy-02",
+      "style": "rephrased",
+      "source_sha256": "d1c5eccf611f05671a3a3977e070fe131b1b506633324a635a7b129edcb95a28",
+      "input_sha256": "e8aebed7290f8742682480e05304a9b4337b218f8404a8b241452685c50e6f9c",
+      "native_result_sha256": "d157480c82be8bf48032ce6ce59d4b45320222ccfbacdbd1b59b863071067754",
+      "assistant_sha256": "598d60d643d3199e0ec582974bff17b7ef8c4417ed82f8a85751b06dbf1e3c67"
+    },
+    {
+      "line_1based": 373,
+      "teacher_row_1based": 59,
+      "id": "rehearsal-xyz-occupancy-03",
+      "style": "task_first",
+      "source_sha256": "3be283cff0418cf55f8b39b7f0ed8b1142ec267d1d6bd7c30ebba99bb91cfc4e",
+      "input_sha256": "795c35f9af0af3c2fdd8a898a199f1bf97f5981ba034024c15a2da5a03ca5c72",
+      "native_result_sha256": "40611bb1634001170de9d702af2df39a3e0093324be3c4a9b6a8f131e1171184",
+      "assistant_sha256": "55001d301ed00064384238e1c9bf987e63e612a169e37823851763de471f3834"
+    },
+    {
+      "line_1based": 374,
+      "teacher_row_1based": 59,
+      "id": "rehearsal-xyz-occupancy-03",
+      "style": "rephrased",
+      "source_sha256": "3be283cff0418cf55f8b39b7f0ed8b1142ec267d1d6bd7c30ebba99bb91cfc4e",
+      "input_sha256": "795c35f9af0af3c2fdd8a898a199f1bf97f5981ba034024c15a2da5a03ca5c72",
+      "native_result_sha256": "40611bb1634001170de9d702af2df39a3e0093324be3c4a9b6a8f131e1171184",
+      "assistant_sha256": "55001d301ed00064384238e1c9bf987e63e612a169e37823851763de471f3834"
+    },
+    {
+      "line_1based": 375,
+      "teacher_row_1based": 60,
+      "id": "rehearsal-xyz-occupancy-04",
+      "style": "task_first",
+      "source_sha256": "71a66a7c971f8f61a1a126c215d112519cd6d274c49b866211c3e4d35a5df64d",
+      "input_sha256": "3b4ec044133cd3d94d302c0915a8a1a82e0f35f05ab0ba726f01b35a6b45e00d",
+      "native_result_sha256": "f02d860b9456aa6a6b130fd466059fb8ed413a349885cb12a78e5a74fa3da6c8",
+      "assistant_sha256": "bcab5760f83fea3b5a1fd959421e5429d0cbb15b221e96b519de2809de0ea68e"
+    },
+    {
+      "line_1based": 376,
+      "teacher_row_1based": 60,
+      "id": "rehearsal-xyz-occupancy-04",
+      "style": "rephrased",
+      "source_sha256": "71a66a7c971f8f61a1a126c215d112519cd6d274c49b866211c3e4d35a5df64d",
+      "input_sha256": "3b4ec044133cd3d94d302c0915a8a1a82e0f35f05ab0ba726f01b35a6b45e00d",
+      "native_result_sha256": "f02d860b9456aa6a6b130fd466059fb8ed413a349885cb12a78e5a74fa3da6c8",
+      "assistant_sha256": "bcab5760f83fea3b5a1fd959421e5429d0cbb15b221e96b519de2809de0ea68e"
+    },
+    {
+      "line_1based": 377,
+      "teacher_row_1based": 61,
+      "id": "rehearsal-signed-range-refusal-01",
+      "style": "task_first",
+      "source_sha256": "5ad8dbfc32e5130e9cd15b1b68a5bcbac2d561896de5d2101af2f1c06a52bea2",
+      "input_sha256": "9f620d88606a2095f9da28c4ee89188e4d8e4abe97b6f80d111a63bf3c498278",
+      "native_result_sha256": "faa08026d9e64814b8d66a791a7cdefd9d6cbea662b4a3d5f87edf174faa0533",
+      "assistant_sha256": "055a00cbf79cfd4c22c94755d9995fce164ed57d989c9021f3739c4bf4bacfda"
+    },
+    {
+      "line_1based": 378,
+      "teacher_row_1based": 61,
+      "id": "rehearsal-signed-range-refusal-01",
+      "style": "rephrased",
+      "source_sha256": "5ad8dbfc32e5130e9cd15b1b68a5bcbac2d561896de5d2101af2f1c06a52bea2",
+      "input_sha256": "9f620d88606a2095f9da28c4ee89188e4d8e4abe97b6f80d111a63bf3c498278",
+      "native_result_sha256": "faa08026d9e64814b8d66a791a7cdefd9d6cbea662b4a3d5f87edf174faa0533",
+      "assistant_sha256": "055a00cbf79cfd4c22c94755d9995fce164ed57d989c9021f3739c4bf4bacfda"
+    },
+    {
+      "line_1based": 379,
+      "teacher_row_1based": 62,
+      "id": "rehearsal-signed-range-refusal-02",
+      "style": "task_first",
+      "source_sha256": "03bef52858ec18fa3b240d1b3e92ce92831ccf8f7ada3c0da28df629dd904cba",
+      "input_sha256": "0850d6831950efb0b42443f412933711bec5f48d21e0b0a986fa92e06f522941",
+      "native_result_sha256": "a343c40f0d86632d78d9ff6df94ba208f160063f343e861f04763dd194fcc349",
+      "assistant_sha256": "c35df78c05a842f79045449f9f04fc51cc7f6b0a022609309365643bc188890c"
+    },
+    {
+      "line_1based": 380,
+      "teacher_row_1based": 62,
+      "id": "rehearsal-signed-range-refusal-02",
+      "style": "rephrased",
+      "source_sha256": "03bef52858ec18fa3b240d1b3e92ce92831ccf8f7ada3c0da28df629dd904cba",
+      "input_sha256": "0850d6831950efb0b42443f412933711bec5f48d21e0b0a986fa92e06f522941",
+      "native_result_sha256": "a343c40f0d86632d78d9ff6df94ba208f160063f343e861f04763dd194fcc349",
+      "assistant_sha256": "c35df78c05a842f79045449f9f04fc51cc7f6b0a022609309365643bc188890c"
+    },
+    {
+      "line_1based": 381,
+      "teacher_row_1based": 63,
+      "id": "rehearsal-signed-range-refusal-03",
+      "style": "task_first",
+      "source_sha256": "dc86edcf6b3a6024c2427ac5fc1bae168d37cb4bcd67f8a2269c0c7d9f50eb16",
+      "input_sha256": "a842dacfdd0ab21724cf1121f6abf6fbd40cf7059fe08e6c4fa6ccd0538ed44c",
+      "native_result_sha256": "bfdebeecc100b341c98f6ceec716b7e830c1003f16e14dba25697a0b2368cf4e",
+      "assistant_sha256": "46fe77361d1ecf4b5edeb8e39e04e5b97b72835b64c7dbe226054447be5a6708"
+    },
+    {
+      "line_1based": 382,
+      "teacher_row_1based": 63,
+      "id": "rehearsal-signed-range-refusal-03",
+      "style": "rephrased",
+      "source_sha256": "dc86edcf6b3a6024c2427ac5fc1bae168d37cb4bcd67f8a2269c0c7d9f50eb16",
+      "input_sha256": "a842dacfdd0ab21724cf1121f6abf6fbd40cf7059fe08e6c4fa6ccd0538ed44c",
+      "native_result_sha256": "bfdebeecc100b341c98f6ceec716b7e830c1003f16e14dba25697a0b2368cf4e",
+      "assistant_sha256": "46fe77361d1ecf4b5edeb8e39e04e5b97b72835b64c7dbe226054447be5a6708"
+    },
+    {
+      "line_1based": 383,
+      "teacher_row_1based": 64,
+      "id": "rehearsal-signed-range-refusal-04",
+      "style": "task_first",
+      "source_sha256": "548c2df38158f61e46feeed662715331333d5f2a45f1242bc299b079d16a45fc",
+      "input_sha256": "cd9cd7cf88cc85d8615a521c643312c7bcce625870ff1d9701673e35b1eba1fe",
+      "native_result_sha256": "0f7e3567b90405f9a0a571ad73f5a98eac0c7193bb9fa2172df81fda244df3ef",
+      "assistant_sha256": "e6659eeda6ebcfe7b3e6992dc8e85aae292e906be5084896e991228d540ea60b"
+    },
+    {
+      "line_1based": 384,
+      "teacher_row_1based": 64,
+      "id": "rehearsal-signed-range-refusal-04",
+      "style": "rephrased",
+      "source_sha256": "548c2df38158f61e46feeed662715331333d5f2a45f1242bc299b079d16a45fc",
+      "input_sha256": "cd9cd7cf88cc85d8615a521c643312c7bcce625870ff1d9701673e35b1eba1fe",
+      "native_result_sha256": "0f7e3567b90405f9a0a571ad73f5a98eac0c7193bb9fa2172df81fda244df3ef",
+      "assistant_sha256": "e6659eeda6ebcfe7b3e6992dc8e85aae292e906be5084896e991228d540ea60b"
+    }
+  ],
+  "all_prefix_masks_exact": true,
+  "all_eos_and_complete_programs": true,
+  "truncation": false,
+  "final_contents_read": false,
+  "mlx_imported": false,
+  "gpu_used": false,
+  "source": "New synthetic dimensions using known recipes; no captured-answer repair or final answers.",
+  "original150_preserved_and_previously_trained": true,
+  "manufacturing_authorized": false
+}

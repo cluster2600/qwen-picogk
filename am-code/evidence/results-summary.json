@@ -614,20 +614,41 @@
         "development-shell"
       ],
       "manufacturing_authorized": false
+    },
+    {
+      "name": "course010-32b-corrective006-epoch2",
+      "course": "010",
+      "run": "32b-corrective006-epoch2",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 4,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-debug-api"
+      ],
+      "manufacturing_authorized": false
     }
   ],
   "current_training": {
-    "course": "010",
-    "run": "32b-corrective006-epoch2",
+    "course": "011",
+    "run": "32b-corrective007-continuation1",
     "base": "32B",
     "status": "registered_running_no_candidate_result",
-    "prospective_original_sha256": "febe032b673b92eb8bdc4d8f6590732e6be838c853906bcece315d77bb2d876a",
-    "runtime_protocol_original_sha256": "55ff929f806c4ba4a62fc82b8af15b1dd52de990ae53b2c0dceab06525d30287",
-    "training_rows": 256,
-    "planned_steps": 512,
-    "epochs": 2,
+    "prospective_original_sha256": "f81aa746f1464983b9c11ddde4bb0f31142aa951d0d66926272cebcdd2751f12",
+    "runtime_protocol_original_sha256": "3770c38568c1565327c8d5da0ff6515f37ca33813ae171b07d93ed1158ba6bc6",
+    "training_rows": 384,
+    "planned_steps": 384,
+    "epochs": 1,
     "learning_rate": 2e-06,
-    "fresh_untouched_base": true,
+    "fresh_untouched_base": false,
+    "fresh_optimizer": true,
+    "parent_adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
     "smoke_adapter_resumed": false,
     "active_weights_logs_captures_or_scores_included": false,
     "model_qualification": "not_established",
@@ -635,7 +656,7 @@
   },
   "final_set": "embargoed; no final model evaluation claimed",
   "manufacturing_authorized": false,
-  "completed_course_count": 9,
+  "completed_course_count": 10,
   "corrective003_teachers": {
     "distinct_teachers": 16,
     "message_rows": 32,
@@ -658,22 +679,21 @@
     "formal_scores_unchanged": true
   },
   "last_completed_training": {
-    "name": "course009-32b-mixed001-epoch1",
-    "course": "009",
-    "run": "32b-mixed001-epoch1",
+    "name": "course010-32b-corrective006-epoch2",
+    "course": "010",
+    "run": "32b-corrective006-epoch2",
     "base": "32B",
     "status": "rejected",
-    "development_passed": 3,
+    "development_passed": 4,
     "development_total": 12,
     "scan_passed": 0,
     "scan_total": 4,
     "stopped": 16,
     "truncated": 0,
-    "adapter_sha256": "7d1a08c17d9cc18f7ab4d96ef0b0a93865376ab60ab7ecf38e4e8955033a0345",
+    "adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
     "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
     "lost_baseline_passes": [
-      "development-debug-api",
-      "development-shell"
+      "development-debug-api"
     ],
     "manufacturing_authorized": false
   },
@@ -808,5 +828,29 @@
     "cases": 48,
     "passed": 48,
     "formulations": 96
+  },
+  "current_course010": {
+    "name": "course010-32b-corrective006-epoch2",
+    "course": "010",
+    "run": "32b-corrective006-epoch2",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-debug-api"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective007_teachers": {
+    "cases": 64,
+    "passed": 64,
+    "formulations": 128
   }
 }
