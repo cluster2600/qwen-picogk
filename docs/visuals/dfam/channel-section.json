@@ -1,0 +1,15 @@
+{
+ "evidence": "evidence/dfam-code/strict-v3-20261015.json",
+ "image": "channel-section.png",
+ "image_sha256": "3bfe5864319375c7b815b85cf50f66a18bab4529b5d5a6e11bc9751ed7f8e83e",
+ "manufacturing_qualified": false,
+ "native_geometry_edited_for_render": false,
+ "overhang_rule": "normal z < -cos 45 deg, above the 0.45 mm plate band, as in dfam-native/Checker",
+ "render_source_sha256": "5eff5b443194e452c72fe2ea1c01ecd2773f989b65ac0f4b89a4eb84459781eb",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "dfam-001.bin": "ea9f544b1a6a3a4741958702e5bb77957ca59666a3fb4044f3f2df5183687e95",
+  "dfam-901.bin": "1cd2faa7644e61e5899172b509b982317a794c4e0863cb6fbca50720008df741"
+ },
+ "view": "planar section x = 0 of the actual output meshes; facets classified by outward normal"
+}

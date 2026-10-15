@@ -85,3 +85,34 @@ show the relationship between these records.
 The images show bounded synthetic recipes, not measured Porsche components,
 optimised engineering designs or manufacturing-qualified parts. A good-looking
 image adds no strength, fitment or process qualification evidence.
+
+## DfAM corpus checker figures
+
+These figures show **corpus teacher programs**, not Qwen outputs. Each one is
+rendered from an output STL verified under `dfam-strict-v3`
+([receipt](../../evidence/dfam-code/strict-v3-20261015.json)), and each has a
+neighbouring JSON receipt with source, renderer and image hashes. Dense meshes
+are drawn through a vertex-clustering display proxy that the receipt records;
+the verified geometry itself is not edited.
+
+| Figure | Shows |
+|---|---|
+| ![](dfam/channel-section.png) | Section at x = 0 of `dfam-001` and its round-roof negative control; red facets face down flatter than 45 deg |
+| ![](dfam/selfintersection-fold.png) | The detached zero-volume sheet in `infill-001` that only the exact self-intersection check reports |
+| ![](dfam/infill-thickness.png) | Ray wall thickness of the cut gyroid in `infill-001` ([turntable](dfam/infill-thickness-turntable.gif)) |
+| ![](dfam/scan-001-reconstruction.png) | Raw synthetic scan and the `scan-001` reconstruction ([turntable](dfam/scan-001.gif)) |
+
+![scan-001 turntable](dfam/scan-001.gif)
+
+Regenerate after a verification run. The checker's optional fifth argument
+writes the per-triangle thickness dump; the script refuses to overwrite
+existing figures:
+
+```sh
+dotnet work/dfam-checker/Checker.dll check work/dfam-runs/TAG/CASE/part.stl \
+  work/dfam-fixtures/fixtures.json 0.3 1.0 work/thickness/CASE.bin
+python3 scripts/render_dfam_figures.py --dumps work/thickness \
+  --fixtures work/dfam-fixtures --out docs/visuals/NEW-DIR
+```
+
+The script needs numpy, matplotlib 3.10 and Pillow 11.
