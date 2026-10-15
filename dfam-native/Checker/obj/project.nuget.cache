@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "gQnUCZJuYlI=",
+  "success": true,
+  "projectFilePath": "/home/maxime/work/qwen-picogk/dfam-native/Checker/Checker.csproj",
+  "expectedPackageFiles": [
+    "/home/maxime/.nuget/packages/picogk/2.3.0/picogk.2.3.0.nupkg.sha512",
+    "/home/maxime/.nuget/packages/skiasharp/3.119.0/skiasharp.3.119.0.nupkg.sha512",
+    "/home/maxime/.nuget/packages/skiasharp.nativeassets.macos/3.119.0/skiasharp.nativeassets.macos.3.119.0.nupkg.sha512",
+    "/home/maxime/.nuget/packages/skiasharp.nativeassets.win32/3.119.0/skiasharp.nativeassets.win32.3.119.0.nupkg.sha512"
+  ],
+  "logs": []
+}

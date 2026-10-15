@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Untrusted side of the DfAM code corpus. scripts/dfam_corpus.py copies
+       this template to work/, adds the extracted corpus files under Cases/
+       and builds it. One case runs per process. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <AssemblyName>Runner</AssemblyName>
+    <!-- Every corpus example has its own Main; only the runner is the entry point. -->
+    <StartupObject>CorpusRunner</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="PicoGK" Version="[2.3.0]" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,57 @@
+{
+ "cases": {
+  "infill-001": {
+   "case_sha256": "d92d62a97d617f5870422176cefb8a67248e54fe9d578082383c69bcabb05755",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       35,
+       22,
+       30.000002
+      ],
+      "bbox_min": [
+       -35,
+       -22,
+       -1.04308135e-07
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 86,
+      "enclosed_void_largest_mm3": 0.054,
+      "enclosed_void_mm3": 0.108,
+      "enclosed_void_regions": 2,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 32587.01,
+      "min_wall_mm": 1,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 4431.75,
+      "overhang_fraction": 0.1086,
+      "parity_volume_mm3": 32535.52,
+      "solid_components": 1,
+      "surface_area_mm2": 40818.71,
+      "thin_fraction": 0.0081,
+      "triangles": 1295680,
+      "volume_mm3": 33600.56,
+      "volume_ratio_to_fixture": 0.6449
+     }
+    },
+    "seconds": 4.3
+   }
+  }
+ },
+ "checker_source_sha256": "b44e17ad4bb5c536551ca28ab3b42c2a471d395fa11fad1f744681762ec56be4",
+ "fixtures": {
+  "part.stl": "79cb1719d6ff41222be81d5dc43740db0680cb8f46be4db2fab6946df44830ed",
+  "part_open.stl": "601aaaca2f9f3fa6ff616c39f24c01958f197c44aff0c94bfc410a4d2c97d2a3",
+  "scan.csv": "1938faadfe8beea4bd50dc553b08cd627cab8223b2648dd799cdc6b662b16f69",
+  "scan.xyz": "99a9d97f1fe5a414ff1b31b08344293cd1e3595d628376ec36c06a58a7f826c6",
+  "scan_normals.xyz": "18a070ac655fe2cc6e15973b2008994ba13a7ac9ec4d37640f197d303fcb8993"
+ },
+ "picogk_package": "2.3.0",
+ "voxel_mm": 0.3
+}

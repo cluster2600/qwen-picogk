@@ -1,0 +1,102 @@
+{
+ "schoen1970": {
+  "cite": "Schoen (1970)",
+  "entry": "Schoen, A. H. (1970). Infinite periodic minimal surfaces without self-intersections. NASA Technical Note TN D-5541. https://ntrs.nasa.gov/citations/19700020472",
+  "scope": "Introduced the gyroid. Cite for the gyroid's origin only, not for its trigonometric approximation."
+ },
+ "vonschnering1991": {
+  "cite": "von Schnering & Nesper (1991)",
+  "entry": "von Schnering, H. G., & Nesper, R. (1991). Nodal surfaces of Fourier series: Fundamental invariants of structured matter. Zeitschrift für Physik B Condensed Matter, 83(3), 407-412. https://doi.org/10.1007/BF01313411",
+  "scope": "Periodic nodal surfaces of short Fourier series; cite for using nodal (level-set) approximations such as sin x cos y + ... for TPMS families."
+ },
+ "alketan2021": {
+  "cite": "Al-Ketan & Abu Al-Rub (2021)",
+  "entry": "Al-Ketan, O., & Abu Al-Rub, R. K. (2021). MSLattice: A free software for generating uniform and graded lattices based on triply periodic minimal surfaces. Material Design & Processing Communications, 3(6), e205. https://doi.org/10.1002/mdp2.205",
+  "scope": "Sheet versus solid (skeletal) TPMS networks, level-set offset or sheet thickness controlling relative density, uniform and graded density, cell-size grading, hybrid lattices."
+ },
+ "parlayan2023": {
+  "cite": "Parlayan et al. (2023)",
+  "entry": "Parlayan, O. A., Ozdemir, M., Gayir, C. E., Simsek, U., & Kiziltas, G. (2023). A new sensitivity-based mapping scheme for topology optimization of graded TPMS designs. The International Journal of Advanced Manufacturing Technology, 129(7-8), 3197-3220. https://doi.org/10.1007/s00170-023-12439-1",
+  "scope": "Mapping a topology-optimisation result onto locally graded gyroids using sensitivities rather than relative density. Cite as the origin of optimisation-driven grading; corpus examples only use proxy fields, not this method."
+ },
+ "sigmund1994": {
+  "cite": "Sigmund (1994)",
+  "entry": "Sigmund, O. (1994). Materials with prescribed constitutive parameters: An inverse homogenization problem. International Journal of Solids and Structures, 31(17), 2313-2329. https://doi.org/10.1016/0020-7683(94)90154-6",
+  "scope": "Inverse homogenisation: designing periodic microstructures for prescribed effective properties. Not a TPMS paper; cite only for the homogenisation idea behind cell-level property design."
+ },
+ "cloots2013": {
+  "cite": "Cloots et al. (2013)",
+  "entry": "Cloots, M., Spierings, A. B., & Wegener, K. (2013). Assessing new support minimizing strategies for the additive manufacturing technology SLM. Proceedings of the 24th International Solid Freeform Fabrication Symposium, Austin, TX, 631-643. https://utw10945.utweb.utexas.edu/Manuscripts/2013/2013-50-Cloots.pdf",
+  "scope": "316L on a Concept Laser M2: unsupported overhangs of 30 deg built with all 16 parameter sets, 25 deg only with poor quality in some cases, 20 deg only with a 0 deg scan angle. The paper cites 45 deg from earlier work as the angle below which surface quality may degrade; it does NOT establish 45 deg as a hard limit."
+ },
+ "cloots2017": {
+  "cite": "Cloots et al. (2017)",
+  "entry": "Cloots, M., Zumofen, L., Spierings, A. B., Kirchheim, A., & Wegener, K. (2017). Approaches to minimize overhang angles of SLM parts. Rapid Prototyping Journal, 23(2), 362-369. https://doi.org/10.1108/RPJ-05-2015-0061",
+  "scope": "Support-free surfaces at or below 30 deg on two commercial machines with a shell-core approach and contour-like exposure; process-specific."
+ },
+ "kokkonen2016": {
+  "cite": "Kokkonen et al. (2016)",
+  "entry": "Kokkonen, P., Salonen, L., Virta, J., Hemming, B., Laukkanen, P., Savolainen, M., Komi, E., Junttila, J., Ruusuvuori, K., Varjus, S., Vaajoki, A., Kivi, S., & Welling, J. (2016). Design guide for additive manufacturing of metal components by SLM process. VTT Research Report VTT-R-03160-16. VTT Technical Research Centre of Finland. https://sarjaweb.vtt.fi/julkaisut/muut/2016/VTT-R-03160-16.pdf",
+  "scope": "Downward surfaces at less than 45 deg to the platform need supports (section 2.6); unsupported horizontal overhangs beyond one to two millimetres are not recommended (3.10.4); small-diameter holes are better drilled after printing (Fig. 81); fillets help overhangs. Test materials 316L, H13, Inconel, AlSi12."
+ },
+ "mercelis2006": {
+  "cite": "Mercelis & Kruth (2006)",
+  "entry": "Mercelis, P., & Kruth, J.-P. (2006). Residual stresses in selective laser sintering and selective laser melting. Rapid Prototyping Journal, 12(5), 254-265. https://doi.org/10.1108/13552540610707013",
+  "scope": "Residual stress profile with large tensile zones at the top and bottom of the part and compression between; main factors are material properties, sample and substrate height, scan strategy and heating conditions. Experiments in 316L only."
+ },
+ "kranz2015": {
+  "cite": "Kranz et al. (2015)",
+  "entry": "Kranz, J., Herzog, D., & Emmelmann, C. (2015). Design guidelines for laser additive manufacturing of lightweight structures in TiAl6V4. Journal of Laser Applications, 27(S1), S14001. https://doi.org/10.2351/1.4885235",
+  "scope": "Build orientation and position affect dimensional accuracy and surface quality of thin walls, bars and bores in TiAl6V4. Do not quote numeric minimum wall or hole sizes from it (not read)."
+ },
+ "lamarche2024": {
+  "cite": "Lamarche-Gagnon et al. (2024)",
+  "entry": "Lamarche-Gagnon, M.-É., Molavi-Zarandi, M., Raymond, V., & Ilinca, F. (2024). Additively manufactured conformal cooling channels through topology optimization. Structural and Multidisciplinary Optimization, 67(8), 138. https://doi.org/10.1007/s00158-024-03846-3",
+  "scope": "Uses 45 deg from the build plate, build direction (0,0,1), as the overhang threshold in a topology-optimisation overhang constraint for conformal cooling channels. Cite for 45 deg as a common conservative design default."
+ },
+ "curless1996": {
+  "cite": "Curless & Levoy (1996)",
+  "entry": "Curless, B., & Levoy, M. (1996). A volumetric method for building complex models from range images. Proceedings of SIGGRAPH 96, 303-312. https://doi.org/10.1145/237170.237269",
+  "scope": "Cumulative weighted signed distance on a voxel grid, fusing range images with D = (W D + w d)/(W + w). Assumes range images with known sensor line of sight, not unordered point clouds."
+ },
+ "hoppe1992": {
+  "cite": "Hoppe et al. (1992)",
+  "entry": "Hoppe, H., DeRose, T., Duchamp, T., McDonald, J., & Stuetzle, W. (1992). Surface reconstruction from unorganized points. ACM SIGGRAPH Computer Graphics, 26(2), 71-78. https://doi.org/10.1145/142920.134011",
+  "scope": "Signed distance to tangent planes estimated from k nearest neighbours of unorganised points, with consistent normal orientation; the right citation for unordered .xyz/.csv clouds without sensor poses."
+ },
+ "museth2013": {
+  "cite": "Museth (2013)",
+  "entry": "Museth, K. (2013). VDB: High-resolution sparse volumes with dynamic topology. ACM Transactions on Graphics, 32(3), 27:1-27:22. https://doi.org/10.1145/2487228.2487235",
+  "scope": "The sparse narrow-band level-set data structure (OpenVDB) underlying PicoGK voxels."
+ },
+ "serra1982": {
+  "cite": "Serra (1982)",
+  "entry": "Serra, J. (1982). Image Analysis and Mathematical Morphology. Academic Press, London.",
+  "scope": "Erosion, dilation, opening and closing; cite for morphological opening/closing implemented with PicoGK offsets."
+ },
+ "ramos2025": {
+  "cite": "Ramos et al. (2025)",
+  "entry": "Ramos, A., Angel, V. G., Siqueiros, M., Sahagun, T., Gonzalez, L., & Ballesteros, R. (2025). Reviewing additive manufacturing techniques: Material trends and weight optimization possibilities through innovative printing patterns. Materials, 18(6), 1377. https://doi.org/10.3390/ma18061377 (CC BY 4.0)",
+  "scope": "Review, qualitative only: LPBF metal parts need supports against warping and distortion; SLM support removal is critical because high thermal gradients cause significant residual stress; stress-relief annealing and HIP (porosity, fatigue) are common post-processes; SLM roughness often needs machining or electrochemical polishing; AlSi10Mg and AlSi12 are the most used aluminium AM alloys. Its gyroid/infill section is about FDM slicer infill; never cite it for metal process parameters or LPBF lattice mechanics."
+ },
+ "dubey2024": {
+  "cite": "Dubey et al. (2024)",
+  "entry": "Dubey, D., Singh, S. P., & Behera, B. K. (2024). A review on recent advancements in additive manufacturing techniques. Proceedings of the Institution of Mechanical Engineers, Part E: Journal of Process Mechanical Engineering, 240(3), 3534-3556. https://doi.org/10.1177/09544089241275860",
+  "scope": "Review, abstract only read: classifies AM into the seven ASTM process categories, including powder bed fusion. Cite only for that taxonomy."
+ },
+ "iso52911": {
+  "cite": "ISO/ASTM 52911-1 (2019)",
+  "entry": "ISO/ASTM 52911-1:2019. Additive manufacturing - Design - Part 1: Laser-based powder bed fusion of metals. ISO, Geneva.",
+  "scope": "Standard giving design recommendations for PBF-LB/M. Content not read here: cite only as the applicable design standard, never for specific numbers."
+ },
+ "wade2025": {
+  "cite": "Wade et al. (2025)",
+  "entry": "Wade, C., Beck, D., & MacCurdy, R. (2025). Implicit modeling for 3D-printed multi-material computational object design via Python. Proceedings of the ACM Symposium on Computational Fabrication (SCF '25), 1-16. https://doi.org/10.1145/3745778.3766659 (preprint arXiv:2509.15562)",
+  "scope": "Implicit/SDF modelling with volume-fraction functions; programmatic lattice grading at global, per-cell and per-strut level; describes PicoGK as an OpenVDB-based engineering voxel workflow without multi-material support. Prints were polymer only: do not cite for metal LPBF manufacturability or properties."
+ },
+ "borisov2025": {
+  "cite": "Borisov et al. (2025)",
+  "entry": "Borisov, E. V., Repnin, A. V., & Popovich, A. A. (2025). Additive manufacturing of functionally graded products by selective laser melting: A review. Powder Metallurgy and Functional Coatings, 19(4), 77-90. https://doi.org/10.17073/1997-308X-2025-4-77-90 (CC BY-NC-ND 4.0)",
+  "scope": "Review of multi-material / functionally graded SLM: interface zone widths (about 300 um at 50 um layers for VZh159/BrKhZrTV, overlap zone about 350-400 um), pre-deformed models to compensate warping (no numbers). Never cite it for what PicoGK is (its description is wrong)."
+ }
+}
