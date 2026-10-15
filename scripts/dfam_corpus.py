@@ -7,7 +7,7 @@ prompt, an explanation and a complete C# example for PicoGK 2.3.0. Commands:
   verify   compile every example, run it on synthetic fixtures in its own
            memory-capped process, and measure the outputs with the separate
            trusted checker in dfam-native/Checker
-  assemble write train/valid/test.jsonl in the MLX "text" ChatML format
+  assemble write length-checked MLX messages after full partition/receipt checks
 
 `verify` executes corpus code. Run it only on a workstation with the PicoGK
 native runtime (see docs/DFAM_CODE_CORPUS.md); CI only runs `lint` and the
@@ -18,6 +18,7 @@ import concurrent.futures
 import fcntl
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -52,7 +53,10 @@ FORBIDDEN = [
     (r'\b(vox)?IntersectImplicit\s*\(', 'IntersectImplicit is unreliable in the pinned runtime; use new Voxels(lib, implicit, box) and BoolIntersect'),
     (r'\bMmToVoxels\s*\(', 'Library.MmToVoxels calls the wrong native function in PicoGK 2.3.0'),
 ]
-UNIVERSAL = {'boundary_edges': 0, 'nonmanifold_edges': 0, 'solid_components': 1}
+UNIVERSAL = {'boundary_edges': 0, 'nonmanifold_edges': 0, 'solid_components': 1,
+             'inconsistent_orientation_edges': 0, 'degenerate_triangles': 0}
+POLICY = 'dfam-strict-v2'
+MAX_SEQ_LENGTH = 8192
 # Parity rasterisation leaves sub-voxel pockets between near-touching sheets;
 # a genuinely trapped lattice cell is hundreds of mm3.
 MAX_ENCLOSED_VOID_MM3 = 2.0
@@ -88,11 +92,18 @@ def jaccard(a, b):
 
 def lint_case(case, bib):
     problems = []
+    if not isinstance(case, dict):
+        return ['case must be an object']
     need = {'id', 'category', 'input', 'title', 'user', 'explanation', 'code', 'references', 'expect'}
-    allowed = need | {'split', 'broken'}
+    allowed = need | {'split', 'family', 'broken'}
     missing, extra = need - set(case), set(case) - allowed
     if missing or extra:
         return [f'fields missing {sorted(missing)} extra {sorted(extra)}']
+    for field in ('id', 'category', 'input', 'title', 'user', 'explanation', 'code'):
+        if not isinstance(case[field], str):
+            return [f'{field} must be a string']
+    if 'family' in case and not re.fullmatch(r'[a-z][a-z0-9-]{2,79}', str(case['family'])):
+        problems.append('family must be a stable lowercase identifier')
     m = re.fullmatch(r'(scan|infill|dfam|debug)-(\d{3})', case['id'])
     if not m:
         return ['id must look like scan-001, infill-001, dfam-001 or debug-001']
@@ -138,6 +149,9 @@ def lint_case(case, bib):
         refs = []
     shorts = set()
     for key in refs:
+        if not isinstance(key, str):
+            problems.append('reference keys must be strings')
+            continue
         if key not in bib:
             problems.append(f'unknown reference key {key}')
             continue
@@ -159,12 +173,28 @@ def lint_case(case, bib):
             problems.append(f'unknown expect keys {sorted(unknown)}')
         if prefix in ('infill', 'dfam') and 'volume_ratio' not in expect and 'overhang_fraction_max' not in expect:
             problems.append('infill and dfam cases must state volume_ratio or overhang_fraction_max')
-        if prefix == 'infill' and expect.get('volume_ratio', [0, 1])[1] > 0.9:
+        interval = expect.get('volume_ratio')
+        if interval is not None and (not isinstance(interval, list) or len(interval) != 2 or
+                not all(type(v) in (float, int) and math.isfinite(v) for v in interval) or
+                not 0 < interval[0] <= interval[1] <= 1):
+            problems.append('volume_ratio must be a finite ordered interval in (0, 1]')
+        elif prefix == 'infill' and interval is not None and interval[1] > 0.9:
             problems.append('infill volume_ratio upper bound must be <= 0.9 (it must actually lighten)')
+        for key in ('overhang_fraction_max', 'thin_fraction_max', 'min_wall_mm'):
+            if key in expect and (type(expect[key]) not in (int, float) or not math.isfinite(expect[key]) or
+                                  expect[key] < 0 or (key == 'min_wall_mm' and expect[key] == 0) or
+                                  (key != 'min_wall_mm' and expect[key] > 1)):
+                problems.append(f'{key} must be a fraction in [0, 1] or a positive wall size')
+        if 'outputs' in expect and (not isinstance(expect['outputs'], list) or not expect['outputs'] or
+                not all(isinstance(n, str) and re.fullmatch(r'[A-Za-z0-9_-]+\.stl', n) for n in expect['outputs']) or
+                len(set(expect['outputs'])) != len(expect['outputs'])):
+            problems.append('outputs must be unique plain STL filenames')
     broken = case.get('broken')
     if prefix == 'debug':
         if not isinstance(broken, dict) or set(broken) - {'code', 'expect', 'error'} or 'code' not in broken:
             problems.append('debug cases need broken = {code, expect, error?}')
+        elif not isinstance(broken['code'], str):
+            problems.append('broken.code must be a string')
         elif broken.get('expect') not in ('compile_error', 'runtime_failure'):
             problems.append('broken.expect must be compile_error or runtime_failure')
         elif broken['expect'] == 'compile_error' and not re.fullmatch(r'CS\d{4}', broken.get('error', '')):
@@ -179,12 +209,18 @@ def lint_case(case, bib):
 def lint(cases, full=False):
     bib = bibliography()
     report = {}
+    if not cases:
+        return {'corpus': ['empty corpus']}
+    if any(not isinstance(c, dict) or not isinstance(c.get('id'), str) for c in cases):
+        return {'corpus': ['each case needs a string id']}
     ids = [c.get('id') for c in cases]
     for dup in {i for i in ids if ids.count(i) > 1}:
         report.setdefault(dup, []).append('duplicate id')
     for case in cases:
         for p in lint_case(case, bib):
             report.setdefault(case.get('id', '?'), []).append(p)
+    if report:
+        return report
     code_sh = {c['id']: shingles(c['code'], 6) for c in cases}
     user_sh = {c['id']: shingles(c['user'].lower(), 4) for c in cases}
     keys = sorted(code_sh)
@@ -196,6 +232,19 @@ def lint(cases, full=False):
             if ju > 0.45:
                 report.setdefault(b, []).append(f'prompt near-duplicate of {a} (4-gram Jaccard {ju:.2f})')
     if full:
+        families = {}
+        for case in cases:
+            if not case.get('family') or case.get('split') not in ('train', 'valid', 'test'):
+                report.setdefault(case['id'], []).append('register family and split before assembly')
+                continue
+            families.setdefault(case['family'], set()).add(case['split'])
+            if case['category'] in ('bionic_infill', 'dfam'):
+                for key in ('min_wall_mm', 'thin_fraction_max', 'overhang_fraction_max'):
+                    if key not in case['expect']:
+                        report.setdefault(case['id'], []).append(f'declare process-screen assumption {key}')
+        for family, splits in families.items():
+            if len(splits) != 1:
+                report.setdefault('corpus', []).append(f'family {family} crosses partitions')
         for prefix, count in COUNTS.items():
             got = sum(c['id'].startswith(prefix + '-') for c in cases)
             if got != count:
@@ -232,15 +281,52 @@ def dotnet_env():
     env['PATH'] = env['DOTNET_ROOT'] + os.pathsep + env['PATH']
     env['DOTNET_CLI_TELEMETRY_OPTOUT'] = '1'
     native = os.environ.get('PICOGK_NATIVE', str(home / 'picogk/native'))
+    env['PICOGK_NATIVE'] = native
     env['LD_LIBRARY_PATH'] = native + (os.pathsep + env['LD_LIBRARY_PATH'] if env.get('LD_LIBRARY_PATH') else '')
     return env
 
 
 def capped(cmd, mem):
-    if shutil.which('systemd-run') and subprocess.run(['systemd-run', '--user', '--scope', '--quiet', 'true'],
-                                                      capture_output=True).returncode == 0:
-        return ['systemd-run', '--user', '--scope', '--quiet', '-p', f'MemoryMax={mem}', '-p', 'MemorySwapMax=0'] + cmd
-    return cmd
+    if sys.platform != 'linux' or not shutil.which('systemd-run'):
+        raise RuntimeError('Native verification requires Linux with a working systemd user memory controller; no uncapped fallback')
+    probe = ['systemd-run', '--user', '--scope', '--quiet', '-p', f'MemoryMax={mem}',
+             '-p', 'MemorySwapMax=0', '-p', 'TasksMax=128']
+    if subprocess.run(probe + ['true'], capture_output=True, timeout=15).returncode != 0:
+        raise RuntimeError('Cannot enforce native verification resource limits')
+    return probe + cmd
+
+
+def sandbox_command(runner, source, out, namespace, env):
+    """Only the selected input, runtime and output are exposed to corpus code."""
+    if sys.platform != 'linux' or not shutil.which('bwrap') or not Path('/usr/bin/prlimit').is_file():
+        raise RuntimeError('Corpus execution requires Linux bubblewrap and prlimit; no host execution fallback')
+    dotnet = Path(shutil.which('dotnet', path=env['PATH']) or '').resolve()
+    if not dotnet.is_file():
+        raise RuntimeError('dotnet executable not found')
+    cmd = ['bwrap', '--unshare-all', '--die-with-parent', '--new-session', '--cap-drop', 'ALL',
+           '--clearenv', '--proc', '/proc', '--dev', '/dev', '--tmpfs', '/tmp']
+    readable = {Path('/usr'), Path('/lib'), Path('/lib64'), dotnet.parent,
+                Path(env['DOTNET_ROOT']).resolve(), Path(env['PICOGK_NATIVE']).resolve()}
+    for folder in readable - {Path('/usr'), Path('/lib'), Path('/lib64')}:
+        if folder in (Path('/'), Path.home().resolve()) or ROOT.is_relative_to(folder):
+            raise RuntimeError('Runtime mounts must not expose the home or repository tree')
+    for folder in sorted(readable):
+        if folder.exists():
+            cmd += ['--ro-bind', str(folder), str(folder)]
+    if Path('/etc/ld.so.cache').exists():
+        cmd += ['--ro-bind', '/etc/ld.so.cache', '/etc/ld.so.cache']
+    cmd += ['--ro-bind', str(runner.parent.resolve()), '/app', '--bind', str(out.resolve()), '/output',
+            '--chdir', '/output', '--setenv', 'HOME', '/tmp', '--setenv', 'TMPDIR', '/tmp',
+            '--setenv', 'DOTNET_ROOT', env['DOTNET_ROOT'], '--setenv', 'LD_LIBRARY_PATH', env['PICOGK_NATIVE'],
+            '--setenv', 'DOTNET_CLI_TELEMETRY_OPTOUT', '1', '--setenv', 'DOTNET_PROCESSOR_COUNT', '2',
+            '--setenv', 'DOTNET_GCHeapHardLimit', '80000000']
+    input_path = '/input/' + Path(source).name if source else ''
+    if source:
+        cmd += ['--dir', '/input', '--ro-bind', str(Path(source).resolve()), input_path]
+    cmd += ['--', '/usr/bin/prlimit', '--cpu=300:300', '--fsize=268435456:268435456', '--',
+            str(dotnet), '/app/' + runner.name, namespace, input_path,
+            '/output', str(VOXEL_MM)]
+    return capped(cmd, '3G')
 
 
 def build(project_dir, files, env):
@@ -251,7 +337,7 @@ def build(project_dir, files, env):
     (project_dir / 'Cases').mkdir()
     for name, text in files.items():
         (project_dir / 'Cases' / name).write_text(text)
-    proc = subprocess.run(['dotnet', 'build', '-c', 'Release', '--nologo', '-v', 'q', '-clp:NoSummary', '-o', 'out'],
+    proc = subprocess.run(['dotnet', 'build', '-p:RestoreLockedMode=true', '-c', 'Release', '--nologo', '-v', 'q', '-clp:NoSummary', '-o', 'out'],
                           cwd=project_dir, env=env, capture_output=True, text=True, timeout=900)
     errors = {}
     for line in proc.stdout.splitlines() + proc.stderr.splitlines():
@@ -267,7 +353,7 @@ def ensure_trusted(env):
     stamp = sha(b''.join((src / n).read_bytes() for n in ('Program.cs', 'Checker.csproj', 'packages.lock.json')))
     stamp_file = WORK / 'dfam-checker/source.sha256'
     if not checker.exists() or not stamp_file.exists() or stamp_file.read_text() != stamp:
-        subprocess.run(['dotnet', 'build', '-c', 'Release', '--nologo', '-v', 'q', '-o', str(WORK / 'dfam-checker')],
+        subprocess.run(['dotnet', 'build', '-p:RestoreLockedMode=true', '-c', 'Release', '--nologo', '-v', 'q', '-o', str(WORK / 'dfam-checker')],
                        cwd=src, env=env, check=True, capture_output=True, timeout=900)
         stamp_file.write_text(stamp)
         shutil.rmtree(WORK / 'dfam-fixtures', ignore_errors=True)
@@ -294,6 +380,24 @@ def evaluate(metrics, expect):
     failed = []
     if 'checker_error' in metrics:
         return ['checker error: ' + metrics['checker_error']]
+    required = set(UNIVERSAL) | {'triangles', 'enclosed_void_mm3', 'enclosed_void_largest_mm3',
+                               'volume_ratio_to_fixture', 'overhang_fraction', 'thin_fraction',
+                               'volume_mm3', 'mesh_volume_mm3', 'parity_volume_mm3', 'surface_area_mm2', 'min_wall_mm'}
+    for key in required:
+        if type(metrics.get(key)) not in (int, float) or not math.isfinite(metrics[key]) or metrics[key] < 0:
+            failed.append(f'missing, nonfinite or invalid metric {key}')
+        elif key in UNIVERSAL or key == 'triangles':
+            if metrics[key] != int(metrics[key]):
+                failed.append(f'noninteger count {key}')
+        elif key in ('overhang_fraction', 'thin_fraction') and metrics[key] > 1:
+            failed.append(f'invalid fraction {key}')
+    if failed:
+        return failed
+    for key in ('volume_mm3', 'mesh_volume_mm3', 'parity_volume_mm3', 'surface_area_mm2'):
+        if metrics[key] <= 0:
+            failed.append(f'nonpositive geometry metric {key}')
+    if metrics['min_wall_mm'] != expect.get('min_wall_mm', 1.0):
+        failed.append('checker minimum-wall parameter differs from case assumption')
     if metrics.get('triangles', 0) == 0:
         return ['empty mesh']
     for key, want in UNIVERSAL.items():
@@ -320,10 +424,18 @@ def run_case(runner, checker, fixtures, case, broken, env, run_root, timeout):
     out.mkdir(parents=True)
     source = str(fixtures / INPUTS[case['input']]) if INPUTS[case['input']] else ''
     started = time.time()
+    log_path = out / 'process.log'
     try:
-        proc = subprocess.run(capped(['dotnet', str(runner), namespace, source, str(out), str(VOXEL_MM)], '3G'),
-                              env=env, capture_output=True, text=True, timeout=timeout, cwd=out)
-        code, stderr = proc.returncode, proc.stderr
+        with log_path.open('w') as log:
+            proc = subprocess.run(sandbox_command(runner, source, out, namespace, env),
+                                  env={'PATH': env['PATH'], 'HOME': str(Path.home()),
+                                       'XDG_RUNTIME_DIR': env.get('XDG_RUNTIME_DIR', f'/run/user/{os.getuid()}')},
+                                  stdout=log, stderr=log, timeout=timeout, cwd=out)
+        code, stderr = proc.returncode, ''
+        if log_path.is_file() and not log_path.is_symlink() and log_path.resolve().is_relative_to(out.resolve()):
+            with log_path.open('rb') as log:
+                log.seek(max(0, log_path.stat().st_size - 800))
+                stderr = log.read(800).decode('utf-8', errors='replace')
     except subprocess.TimeoutExpired:
         code, stderr = 'timeout', ''
     record = {'exit': code, 'seconds': round(time.time() - started, 1)}
@@ -339,23 +451,34 @@ def run_case(runner, checker, fixtures, case, broken, env, run_root, timeout):
     failed = []
     for name in names:
         stl = out / name
-        if not stl.exists():
+        if not stl.is_file() or stl.is_symlink() or not stl.resolve().is_relative_to(out.resolve()):
             failed.append(f'missing declared output {name}')
             continue
         metrics = check_stl(checker, fixtures, stl, expect.get('min_wall_mm', 1.0), env)
-        record['outputs'][name] = metrics
+        record['outputs'][name] = dict(metrics, stl_sha256=sha(stl.read_bytes()))
         failed += [f'{name}: {f}' for f in evaluate(metrics, expect)]
     record['failed'] = failed
     return record
 
 
 def verify(cases, tag, jobs, timeout):
+    problems = lint(cases)
+    if problems:
+        raise ValueError('Corpus lint failed: ' + json.dumps(problems))
+    if not re.fullmatch(r'[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}', tag) or not 1 <= jobs <= 4 or timeout <= 0:
+        raise ValueError('Use a plain tag, 1..4 jobs and a positive timeout')
     env = dotnet_env()
+    # Fail before builds or fixture generation if isolation is unavailable.
+    capped(['true'], '3G')
+    if not shutil.which('bwrap') or not Path('/usr/bin/prlimit').is_file():
+        raise RuntimeError('Corpus execution requires bubblewrap and prlimit')
     WORK.mkdir(exist_ok=True)
     lock = open(WORK / 'dfam-verify.lock', 'w')
     print(f'[{tag}] waiting for the verification lock', flush=True)
     fcntl.flock(lock, fcntl.LOCK_EX)
     try:
+        if (WORK / 'dfam-build' / tag).exists() or (WORK / 'dfam-runs' / tag).exists():
+            raise ValueError('Use a new verification tag; existing run evidence is preserved')
         checker, fixtures, checker_sha = ensure_trusted(env)
         project = WORK / 'dfam-build' / tag
         files = {ns(c['id'])[10:] + '.cs': wrap(c['code'], ns(c['id'])) for c in cases}
@@ -420,7 +543,8 @@ def verify(cases, tag, jobs, timeout):
                 if b.get('exit') == 0 and not b.get('failed'):
                     reasons.append('broken code ran and passed every check; the demonstrated bug is not observable')
         verdicts[c['id']] = {'passed': not reasons, 'reasons': reasons, 'case_sha256': case_sha(c), **r}
-    return {'checker_source_sha256': checker_sha,
+    return {'policy': POLICY, 'policy_source_sha256': sha(Path(__file__).read_bytes()),
+            'isolation': 'linux-bubblewrap-systemd', 'checker_source_sha256': checker_sha,
             'fixtures': json.loads((fixtures / 'fixtures.json').read_text())['files_sha256'],
             'voxel_mm': VOXEL_MM, 'picogk_package': '2.3.0', 'cases': verdicts}
 
@@ -441,19 +565,56 @@ def case_sha(case):
 
 
 def assemble_text(case, bib):
+    """Return MLX chat messages; let the pinned tokenizer apply ChatML once."""
     user = case['user'].strip()
     if case.get('broken'):
         user += '\n\n```csharp\n' + case['broken']['code'].strip() + '\n```'
     refs = '\n'.join(f"- {bib[k]['entry']}" for k in case['references'])
     assistant = (case['explanation'].strip() + '\n\n```csharp\n' + case['code'].strip() + '\n```\n\nReferences:\n' + refs)
-    return {'text': f'<|im_start|>user\n{user}\n<|im_end|>\n<|im_start|>assistant\n{assistant}\n<|im_end|>'}
+    return {'messages': [{'role': 'user', 'content': user},
+                         {'role': 'assistant', 'content': assistant}]}
 
 
-def assemble(cases):
+def receipt_check(cases, receipt):
+    if (receipt.get('policy') != POLICY or receipt.get('policy_source_sha256') != sha(Path(__file__).read_bytes()) or
+            receipt.get('isolation') != 'linux-bubblewrap-systemd' or
+            receipt.get('picogk_package') != '2.3.0' or receipt.get('voxel_mm') != VOXEL_MM):
+        raise ValueError('A current strict-policy isolated native verification receipt is required')
+    src = ROOT / 'dfam-native/Checker'
+    stamp = sha(b''.join((src / n).read_bytes() for n in ('Program.cs', 'Checker.csproj', 'packages.lock.json')))
+    if receipt.get('checker_source_sha256') != stamp:
+        raise ValueError('Checker source binding changed')
+    if set(receipt.get('cases', {})) != {c['id'] for c in cases}:
+        raise ValueError('Receipt case set differs from corpus')
+    for case in cases:
+        record = receipt['cases'][case['id']]
+        run = record.get('run', {})
+        if (record.get('passed') is not True or record.get('case_sha256') != case_sha(case) or
+                run.get('exit') != 0 or run.get('failed') != [] or not run.get('outputs')):
+            raise ValueError('Missing or rejected native evidence: ' + case['id'])
+        if 'outputs' in case['expect'] and set(run['outputs']) != set(case['expect']['outputs']):
+            raise ValueError('Receipt outputs differ: ' + case['id'])
+        for name, metrics in run['outputs'].items():
+            if not re.fullmatch(r'[A-Za-z0-9_-]+\.stl', name) or not re.fullmatch(r'[0-9a-f]{64}', metrics.get('stl_sha256', '')):
+                raise ValueError('Missing output binding: ' + case['id'])
+            if evaluate(metrics, case['expect']):
+                raise ValueError('Native metrics fail current policy: ' + case['id'])
+
+
+def assemble(cases, receipt, tokenizer):
+    problems = lint(cases, full=True)
+    if problems:
+        raise ValueError('Corpus not ready for training: ' + json.dumps(problems))
+    receipt_check(cases, receipt)
     bib = bibliography()
     out = {}
     for split in ('train', 'valid', 'test'):
         rows = [assemble_text(c, bib) for c in cases if c['split'] == split]
+        for row in rows:
+            tokens = tokenizer.apply_chat_template(row['messages'], tokenize=True, add_generation_prompt=False,
+                                                   return_dict=False)
+            if len(tokens) > MAX_SEQ_LENGTH:
+                raise ValueError(f'Example exceeds {MAX_SEQ_LENGTH} tokens; refusing truncation')
         out[split] = ''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows)
     return out
 
@@ -462,8 +623,9 @@ def pack(folder):
     """Read one authoring folder: meta.json, user.md, explanation.md, code.cs[, broken.cs]."""
     meta = json.loads((folder / 'meta.json').read_text())
     case = {k: meta[k] for k in ('id', 'category', 'input', 'title', 'references', 'expect') if k in meta}
-    if 'split' in meta:
-        case['split'] = meta['split']
+    for key in ('split', 'family'):
+        if key in meta:
+            case[key] = meta[key]
     case['user'] = (folder / 'user.md').read_text().strip()
     case['explanation'] = (folder / 'explanation.md').read_text().strip()
     case['code'] = (folder / 'code.cs').read_text().strip() + '\n'
@@ -483,6 +645,8 @@ def main():
     p.add_argument('--ids', nargs='*'); p.add_argument('--jobs', type=int, default=3)
     p.add_argument('--timeout', type=int, default=300); p.add_argument('--receipt')
     p = sub.add_parser('assemble'); p.add_argument('--check', action='store_true')
+    p.add_argument('--receipt', type=Path, required=True)
+    p.add_argument('--base', type=Path, required=True, help='local hash-pinned base, tokenizer only; no model loading')
     args = ap.parse_args()
     if args.cmd == 'pack':
         folders = sorted({p.parent for f in args.folders for p in Path(f).rglob('meta.json')})
@@ -501,26 +665,53 @@ def main():
     if args.cmd == 'verify':
         cases = [c for f in args.cases for c in load_cases(f)]
         if args.ids:
+            unknown = set(args.ids) - {c['id'] for c in cases}
+            if unknown:
+                ap.error('unknown case ids: ' + ', '.join(sorted(unknown)))
             cases = [c for c in cases if c['id'] in set(args.ids)]
-        receipt = verify(cases, args.tag, args.jobs, args.timeout)
+        if args.receipt and Path(args.receipt).exists():
+            ap.error('Use a new receipt path; existing evidence is preserved')
+        try:
+            receipt = verify(cases, args.tag, args.jobs, args.timeout)
+        except (ValueError, RuntimeError) as error:
+            ap.error(str(error))
         bad = {k: v['reasons'] for k, v in receipt['cases'].items() if not v['passed']}
         for k, reasons in sorted(bad.items()):
             print(f'FAIL {k}: ' + ' | '.join(reasons))
         print(f"{len(cases) - len(bad)}/{len(cases)} passed")
         if args.receipt:
-            Path(args.receipt).write_text(json.dumps(receipt, indent=1, sort_keys=True) + '\n')
+            with Path(args.receipt).open('x') as output:
+                output.write(json.dumps(receipt, indent=1, sort_keys=True) + '\n')
         return 1 if bad else 0
     if args.cmd == 'assemble':
         cases = load_cases(DATA / 'cases.jsonl')
-        files = assemble(cases)
+        problems = lint(cases, full=True)
+        if problems:
+            ap.error('Corpus not ready for training: ' + json.dumps(problems))
+        receipt = json.loads(args.receipt.read_text())
+        receipt_check(cases, receipt)
+        bindings = json.loads((ROOT / 'release.json').read_text())['base']['files']
+        for name, expected in bindings.items():
+            path = (args.base / name).resolve()
+            if not path.is_relative_to(args.base.resolve()) or sha(path.read_bytes()) != expected:
+                ap.error('Base hash mismatch: ' + name)
+        from transformers import AutoTokenizer
+        tokenizer = AutoTokenizer.from_pretrained(args.base, local_files_only=True, trust_remote_code=False)
+        files = assemble(cases, receipt, tokenizer)
         stale = []
+        if not args.check:
+            for split, text in files.items():
+                path = DATA / f'{split}.jsonl'
+                if path.is_symlink() or (path.exists() and path.read_text() != text):
+                    ap.error('Existing partition differs; preserve it and create a new corpus version: ' + path.name)
         for split, text in files.items():
             path = DATA / f'{split}.jsonl'
             if args.check:
                 if not path.exists() or path.read_text() != text:
                     stale.append(path.name)
-            else:
-                path.write_text(text)
+            elif not path.exists():
+                with path.open('x') as output:
+                    output.write(text)
         if stale:
             print('stale: ' + ', '.join(stale))
             return 1

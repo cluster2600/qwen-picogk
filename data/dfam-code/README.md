@@ -5,11 +5,14 @@ license: apache-2.0
 # PicoGK DfAM code corpus (work in progress)
 
 **Status: 1 of 150 planned cases.** This directory holds the tooling and the
-first verified example of a corpus that teaches C# for PicoGK 2.3.0. The task
+first historical native-verified example of a corpus for C# and PicoGK 2.3.0. The task
 it covers is turning 3D scan data into lightweight parts designed for
 laser powder bed fusion of metals (PBF-LB/M). The planned split is 45 scan
 repair, 60 bionic infill, 30 DfAM and 15 troubleshooting cases. No
-train/valid/test files exist yet.
+train/valid/test files exist yet. **No case is currently eligible for training:**
+the first case has 86 degenerate triangles in its original receipt, which
+the strengthened policy rejects. The old receipt and source are preserved.
+See the [authoring and validation guide](../../docs/DFAM_CODE_CORPUS.md).
 
 ## How an example is accepted
 
@@ -25,7 +28,11 @@ program. `scripts/dfam_corpus.py` handles acceptance in two stages.
 - that every `(year)` citation matches a key in `bibliography.json`.
 
 `verify` compiles every example against the pinned PicoGK NuGet package and
-runs each one in its own memory-capped process on synthetic fixtures. It
+runs each one on synthetic fixtures in a Linux bubblewrap namespace with
+systemd memory/task limits, no network, read-only runtime/input mounts and
+one writable output directory. Missing isolation stops verification; there
+is no host-execution or uncapped fallback. This native path is not available
+on macOS. It
 then measures each output STL with `dfam-native/Checker`, which never loads
 corpus code. The measurements are:
 - open and non-manifold edges;
@@ -36,13 +43,21 @@ corpus code. The measurements are:
 - the thin-wall share, measured by morphological opening;
 - volume relative to the fixture.
 
-Every example must be closed, a single solid, and free of trapped powder.
+Every example must have no detected open/non-manifold edges, inconsistent
+orientations or degenerate triangles, and one voxel-connected solid. Enclosed
+voids must remain within the declared raster tolerances (2 mm³ total and
+0.25 mm³ for the largest pocket); this is not a physical depowdering guarantee.
 For the one example so far, an unvented copy fails with 19,216 mm³ of trapped
 powder.
 
 The fixtures are a synthetic slab with bosses, plus a noisy point cloud with
 outliers and gaps derived from it. They are not a vehicle part.
-`assemble` writes the MLX `{"text": "<|im_start|>user ..."}` format.
+`assemble` writes MLX `messages` records for prompt masking. It requires all
+150 planned cases, family-disjoint partitions, current bound strict-policy
+native receipts and a hash-verified local tokenizer. Rows exceeding 8,192
+tokens are refused rather than truncated. The dedicated training configuration
+is `training/configs/dfam-code.json`; the original 1,024-token planner settings
+are unchanged. Historical receipts alone cannot authorize assembly.
 
 ## Runtime findings the corpus encodes
 

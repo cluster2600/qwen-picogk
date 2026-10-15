@@ -1,0 +1,27 @@
+{
+  "schema": "picogk.dfam.policy-review@1",
+  "policy": "dfam-strict-v2",
+  "policy_source_sha256": "1f702ae1639437a98829b482f6f77e9c0f7810d913e680f305bc520ffddda4d2",
+  "legacy_receipt_sha256": "3811fb1086a3329d34725b9a52a9dd1f98756d5920d003a55a8d986cfffcfd0a",
+  "native_rerun": false,
+  "linux_isolation_integration_verified": false,
+  "training_eligible_cases": 0,
+  "base_repo_id": "mlx-community/Qwen2.5-Coder-1.5B-Instruct-4bit",
+  "base_revision": "b3252a2f97102b1fb1571fec2c9b27219a8536be",
+  "base_files_verified": true,
+  "max_seq_length": 8192,
+  "cases": {
+    "infill-001": {
+      "case_sha256": "d92d62a97d617f5870422176cefb8a67248e54fe9d578082383c69bcabb05755",
+      "current_policy_reasons": [
+        "degenerate_triangles = 86, required 0"
+      ],
+      "chat_tokens": 3606,
+      "fits_without_truncation": true,
+      "split_registered": false,
+      "family_registered": false,
+      "training_eligible": false
+    }
+  },
+  "mlx_mask_prompt_dataset_verified": true
+}
