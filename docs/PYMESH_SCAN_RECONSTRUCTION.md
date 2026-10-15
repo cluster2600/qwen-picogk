@@ -56,8 +56,9 @@ the new PyMesh worker specifically.
 3. `remove_isolated_vertices` discards vertices unused by retained faces.
 
 The [upstream operations](https://pymesh.readthedocs.io/en/latest/mesh_processing.html)
-provide index maps, which the worker composes into original vertex/face
-indices. Zero tolerance is deliberate: no unmeasured welding distance is
+provide index maps, which the worker composes into prepared-intake vertex/face
+indices (after the existing intake's zero-area-face removal, not raw OBJ face
+numbers). Zero tolerance is deliberate: no unmeasured welding distance is
 chosen for the scan. No remeshing, smoothing, hole filling, near-vertex merge
 or self-intersection resolution is applied in this stage.
 
