@@ -20,7 +20,7 @@ def command(args, log, timeout=1800):
 
 
 def run(args):
-    manifest = json.loads((ROOT/'scan-demo.json').read_text())
+    manifest = json.loads((ROOT/'config/scan-demo.json').read_text())
     infer.verify_files(ROOT,manifest['sources_sha256'])
     adapter = ROOT/'models/scan-demo'
     infer.verify_files(adapter,manifest['adapter'])

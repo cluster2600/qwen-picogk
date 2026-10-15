@@ -11,6 +11,14 @@ and radial roles, strict JSON, independent numeric intent checks, native
 reference screens, failure records and uncertainty handling. It is not a
 general CAD assistant or a manufacturing qualification system.
 
+![Main fan surface reconstructed through the scan-demo Qwen and PicoGK workflow](docs/visuals/scan-demo/fan-preview.png)
+
+Actual PicoGK result from the [scan demonstration](docs/OBJ_TO_STL_DEMO.md),
+shown through a display proxy. Qwen proposes tool plans; trusted C# produces
+the geometry. Scale is assumed and the unregistered rear is omitted.
+This is a nonfunctional demonstration, without metal-print or rotation qualification.
+[Image provenance and reuse status](docs/visuals/scan-demo/fan-preview.json).
+
 A separate [AM C# training study](am-code/README.md) publishes the requested
 150-pair corpus, 64 native-validated corrective teachers, prompt-style
 augmentation, portable guards and full rejected-course evidence. Its completed
@@ -117,6 +125,26 @@ Many bounded numeric tasks can be implemented with deterministic code; the
 model's wider usefulness needs independent evaluation.
 
 ## Contents
+
+The [DfAM corpus guide](docs/DFAM_CODE_CORPUS.md) describes a separate,
+one-example authoring effort and its strict training gates. Its historical
+example is currently rejected by the strengthened mesh policy; no DfAM
+training set or new qualified model is claimed.
+
+| Location | Purpose |
+|---|---|
+| `infer.py`, `scan_demo.py` | Stable inference entry points |
+| `contracts/`, `config/` | Plan validation and scan-demo manifest |
+| `training/configs/` | Planner, selector and scan-demo training settings |
+| `scripts/`, `tests/` | Evaluation, release checks and regression tests |
+| `data/`, `evidence/`, `hub/` | Published datasets, receipts and model cards |
+| `native/`, `scan-native/`, `envelope-native/` | Trusted C# geometry hosts |
+| `am-code/` | Separate AM C# study with its own evidence |
+| `docs/`, `examples/` | Guides, visual demonstrations and input examples |
+
+Published receipts keep their original hashes. Where source files have moved
+or changed, [archived source snapshots](evidence/source-snapshots/README.md)
+preserve the exact historical bytes.
 
 - [Model card](hub/planner/README.md), [selector card](hub/selector/README.md),
   [dataset card](hub/dataset/README.md).

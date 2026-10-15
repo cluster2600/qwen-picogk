@@ -1,10 +1,14 @@
 import copy
+import hashlib
 import json
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
 from types import SimpleNamespace
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
 
 import contracts
 import infer
@@ -14,6 +18,20 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ReleaseContracts(unittest.TestCase):
+    def test_reorganized_layout_preserves_parent_and_gallery_identity(self):
+        for name, expected in {
+            'infer.py': '1914af0d4926ba017b381419a83581ab64d9591ca10d5a69c9e0f3be87d891df',
+            'release.json': '93e05fac0c2113de9b851aaf8b5ad03669600ae02bc2a1243f6736c4939bdeb7',
+        }.items():
+            self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(), expected)
+        receipt = json.loads((ROOT/'docs/visuals/generated/gallery.json').read_text())
+        self.assertEqual(hashlib.sha256((ROOT/'contracts/__init__.py').read_bytes()).hexdigest(),
+                         receipt['source_sha256']['contracts.py'])
+        self.assertEqual(Path(evaluate.__file__), ROOT/'scripts/evaluate.py')
+        for name in ['planner', 'selector', 'scan-demo']:
+            self.assertTrue((ROOT/'training/configs'/f'{name}.yaml').is_file())
+            self.assertFalse((ROOT/f'training-{name}.yaml').exists())
+
     def setUp(self):
         self.request = json.loads((ROOT/'examples/pipe-fr.json').read_text())
 

@@ -56,7 +56,7 @@ def main():
                        base_revision=release['base']['revision'], voxel_mm=0.5,
                        selection='Five exposed passing final examples, one recipe/language each. Demonstrations, not a new benchmark.',
                        source_sha256={name: infer.digest(ROOT/name) for name in
-                                      ['scripts/build_gallery.py', 'infer.py', 'contracts.py', 'evaluate.py', 'native/GeometryHost.cs']},
+                                      ['scripts/build_gallery.py', 'infer.py', 'contracts/__init__.py', 'scripts/evaluate.py', 'native/GeometryHost.cs']},
                        rendering='Pending mesh rendering; no generated illustration or measured vehicle part',
                        manufacturing_qualified=False)
         (args.output/'gallery.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2)+'\n')
