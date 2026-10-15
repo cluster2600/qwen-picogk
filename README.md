@@ -21,11 +21,15 @@ This is a nonfunctional demonstration, without metal-print or rotation qualifica
 
 A separate [AM C# training study](am-code/README.md) publishes the requested
 150-pair corpus, 64 native-validated corrective teachers, prompt-style
-augmentation, portable guards and full rejected-course evidence. Its completed
-1.5B candidates remain rejected; a fresh 7B course is running at the snapshot.
+augmentation, portable guards and full rejected-course evidence. All nine
+completed 1.5B, 7B, 14B and 32B courses remain rejected; a fresh 32B course
+(010) is registered and running, with no result recorded at the snapshot.
 No AM C# adapter is qualified or made the default. Large experiment artifacts
 are inventoried as release assets, with local-path redaction and original/public
 hash bindings.
+
+A separate [PicoGK DfAM code corpus](docs/DFAM_CODE_CORPUS.md) is in progress:
+1 of 150 planned examples, and none is currently eligible for training.
 
 ![Actual geometry from our Qwen adapter and PicoGK](docs/visuals/generated/overview.png)
 
