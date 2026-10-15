@@ -1,0 +1,169 @@
+{
+  "schema": "picogk.am.intermediate-cleanup-receipt@1",
+  "status": "completed",
+  "completed_at_utc": "2026-10-15T02:58:22.707245+00:00",
+  "cleanup_plan_sha256": "ef32e9bd4a156eef714f85a9f173338b74f47b10e983380ad5a1e7f8e802b05f",
+  "independent_review_sha256": "b444da9f01c108d002a36135ea34bf2c26c1e363ca2dde9f8911e7064fcfa30d",
+  "download_receipt_sha256": "921f0924afb509186bd393c8fab5af5dc67d33a528d42a1aa01acc5dac68c2a9",
+  "repack_receipt_sha256": "e9271088ffa4e346a79eb8a8236d9dc3258003a11e25bf1b2798685dcc121952",
+  "base_profile_sha256": "a83dbe6460c70da82d9c3220a9930b229d516dfcc390c7403f660e1f55b85c09",
+  "source_files_verified_before_cleanup": {
+    "added_tokens.json": {
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b"
+    },
+    "config.json": {
+      "bytes": 867,
+      "sha256": "a4054d0840b87c2feabea6fb2014bcd5b672500b2ec4dfec6f63a31d7a6ed785"
+    },
+    "merges.txt": {
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "special_tokens_map.json": {
+      "bytes": 613,
+      "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd"
+    },
+    "tokenizer.json": {
+      "bytes": 7031673,
+      "sha256": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf"
+    },
+    "tokenizer_config.json": {
+      "bytes": 7306,
+      "sha256": "7e88129d9769a0b14b1587a7d5e829fe93ac0e1511636471fdfc0811951418e6"
+    },
+    "vocab.json": {
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 143017,
+      "sha256": "7b6da9b2b1f3ebd698ae15f9fcf6ba3099e742ec07e5d383f28b7cb77a4d16db"
+    },
+    "model-00001-of-00004.safetensors": {
+      "bytes": 5366582717,
+      "sha256": "1b35365ad06cde22ea1bba74b0b746817c61c92db686fbc0fec64c02629e0821"
+    },
+    "model-00002-of-00004.safetensors": {
+      "bytes": 5335712920,
+      "sha256": "434c73dc8841a16be740f2fc50cd246822a009a547037c19d3ad7aaa590f8b10"
+    },
+    "model-00003-of-00004.safetensors": {
+      "bytes": 5366641934,
+      "sha256": "6bae5f14badf37ba02af86b66761e94dd3f4f144e9cd3bf5eff9654ff1369d66"
+    },
+    "model-00004-of-00004.safetensors": {
+      "bytes": 2362540888,
+      "sha256": "0a0676a0509f81121f390e088791dd4420ecfbf9ffcf07609261facc8ed324ee"
+    }
+  },
+  "runtime_files_verified_before_cleanup": {
+    "model.safetensors": {
+      "bytes": 18431480752,
+      "sha256": "b4e7ce0334ced489f80446c79b91f8d9b30dd3f3a0f08a16ffad01cf0e62bb5a"
+    },
+    "added_tokens.json": {
+      "bytes": 605,
+      "sha256": "58b54bbe36fc752f79a24a271ef66a0a0830054b4dfad94bde757d851968060b"
+    },
+    "config.json": {
+      "bytes": 867,
+      "sha256": "a4054d0840b87c2feabea6fb2014bcd5b672500b2ec4dfec6f63a31d7a6ed785"
+    },
+    "merges.txt": {
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 111257,
+      "sha256": "71f757f9e6a349e8078a5b4613853ec815f9ad494944574cde5db06292bb9a17"
+    },
+    "special_tokens_map.json": {
+      "bytes": 613,
+      "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd"
+    },
+    "tokenizer.json": {
+      "bytes": 7031673,
+      "sha256": "a8506e7111b80c6d8635951a02eab0f4e1a8e4e5772da83846579e97b16f61bf"
+    },
+    "tokenizer_config.json": {
+      "bytes": 7306,
+      "sha256": "7e88129d9769a0b14b1587a7d5e829fe93ac0e1511636471fdfc0811951418e6"
+    },
+    "vocab.json": {
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "preserved_exact_source_headers": {
+    "model-00001-of-00004.safetensors": {
+      "path": "diagnostics/model32b-preparation/source-headers/model-00001-of-00004.safetensors.header.bin",
+      "bytes": 52669,
+      "sha256": "2cc7ee04a30cb31f0611e1918754b0404e404612ec48532e6f349541763fc380",
+      "contains_tensor_payload": false
+    },
+    "model-00002-of-00004.safetensors": {
+      "path": "diagnostics/model32b-preparation/source-headers/model-00002-of-00004.safetensors.header.bin",
+      "bytes": 58520,
+      "sha256": "e4e38d11bec3e94221fb5dd513e910e54f476fcecbb6ce5c194567b9303ed84b",
+      "contains_tensor_payload": false
+    },
+    "model-00003-of-00004.safetensors": {
+      "path": "diagnostics/model32b-preparation/source-headers/model-00003-of-00004.safetensors.header.bin",
+      "bytes": 56590,
+      "sha256": "af394d5796bd6918305753abd9bf714b4a2e3be2ef79f4f9b41e8b13b1c23af8",
+      "contains_tensor_payload": false
+    },
+    "model-00004-of-00004.safetensors": {
+      "path": "diagnostics/model32b-preparation/source-headers/model-00004-of-00004.safetensors.header.bin",
+      "bytes": 21336,
+      "sha256": "50a662895af99cd846e167a12cda77e014538dbfdf96b3ca5d1e1232f64e3bbd",
+      "contains_tensor_payload": false
+    }
+  },
+  "unlink_results": [
+    {
+      "path": "model32b-upstream/model-00001-of-00004.safetensors",
+      "bytes": 5366582717,
+      "source_sha256": "1b35365ad06cde22ea1bba74b0b746817c61c92db686fbc0fec64c02629e0821",
+      "unlink_succeeded": true
+    },
+    {
+      "path": "model32b-upstream/model-00002-of-00004.safetensors",
+      "bytes": 5335712920,
+      "source_sha256": "434c73dc8841a16be740f2fc50cd246822a009a547037c19d3ad7aaa590f8b10",
+      "unlink_succeeded": true
+    },
+    {
+      "path": "model32b-upstream/model-00003-of-00004.safetensors",
+      "bytes": 5366641934,
+      "source_sha256": "6bae5f14badf37ba02af86b66761e94dd3f4f144e9cd3bf5eff9654ff1369d66",
+      "unlink_succeeded": true
+    },
+    {
+      "path": "model32b-upstream/model-00004-of-00004.safetensors",
+      "bytes": 2362540888,
+      "source_sha256": "0a0676a0509f81121f390e088791dd4420ecfbf9ffcf07609261facc8ed324ee",
+      "unlink_succeeded": true
+    }
+  ],
+  "removed_file_count": 4,
+  "removed_bytes": 18431478459,
+  "preserved_small_upstream_count": 8,
+  "runtime_count": 9,
+  "free_disk_before_bytes": 14770794496,
+  "free_disk_after_bytes": 33236996096,
+  "elapsed_seconds": 27.296357583021745,
+  "runtime_post_cleanup_inode_size_mtime_unchanged": true,
+  "runtime_payload_hash_check_timing": "Full SHA256 verified immediately before four source-path unlinks; exact runtime inode,size,mtime then unchanged after cleanup.",
+  "historical_upstream_preserved_receipt_untouched": true,
+  "only_four_new32b_shards_removed": true,
+  "old1p5_7_14b_models_or_original_data_removed": false,
+  "model_loaded": false,
+  "mlx_imported": false,
+  "gpu_used": false,
+  "native_execution": false,
+  "final_contents_read": false,
+  "baseline_or_training_started": false,
+  "manufacturing_authorized": false
+}

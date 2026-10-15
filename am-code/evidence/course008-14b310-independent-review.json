@@ -1,0 +1,571 @@
+{
+  "adapter_sha256": "998e66e48905652d18c5817310d8c4691d7be28824d5ebc5ea77e177d21df860",
+  "all_generations_stopped": false,
+  "bindings": {
+    "adapter_config": "a2c7f437567739202feca9bae87345cb9b3f00e17a199209b97c8299ef5f40ad",
+    "base_profile": "ae1b81ddd239197ac4f470e6d01173dfc0132d05215ac09ea6a31946625cf89e",
+    "baseline_report": "4364eae7cce8f7969028811b946395508d92ab483a62d6a56e2f9968324def50",
+    "corpus": "68db482a8b8a9ae16e07870f018598fa59a31c3d03745c52a7a0e78664051be0",
+    "corpus_provenance": "f9da9f3610a7c18461d38ca35bfe4bf3463e940c359d240f5ef6285bd4aa4f12",
+    "corpus_token_receipt": "83b3d2dec6acd038abee1817bed9c6afe9a76634d14a29279ddc70494fd54bc5",
+    "development_capture_protocol": "8362e17410af988078b61b85793e86cde0e03664632deebe1728ce32f339b364",
+    "development_capture_receipt": "6b354611c8dda7d146135a97199820136fa0fd0b99c0e91f27382eb131418040",
+    "development_evaluator": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+    "development_report": "b82768cc395b30bed45f49a8de4b005aa36dadad8352621f06c7a0d1c96c7360",
+    "development_responses": "5f5f12b2451ded243029db8d9fcadf4c6604f8c62be79edab7b6e9512a5364b2",
+    "development_tasks": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+    "finite_cpu_audit": "09ded5edddfaa91d4c5638de0f7b5c913fdc484ef265b741f2ffa0488aea6f0a",
+    "formal_rejection": "f95407b2e01b2b259313a2a619a157f3e081e8926e7af63bd5bbe70748e0403e",
+    "previous007_development_report": "d8fad4ffaa7a69d3a49615caf792eebf1d0005fc9dd15475c06520ac12fe96f7",
+    "previous007_scan_report": "747fbb741216f97a70a8910146578b041a11b8e7af9aa2e78b35d19422e9c0bd",
+    "registered_course": "245348fa8b93613d2e53d311d25e745270cfeb2b201f7cb2011da87ba25caa18",
+    "runtime_protocol": "fde5601efcc71fbddd70476100b0f853bfb0ba6662304e126aed8a1ec948a7cc",
+    "scan_capture_protocol": "3ee3df07f27e8e51c9b32754ef7a750ea338207d322624ccf3aa0aacf2250e8d",
+    "scan_capture_receipt": "cd2f86a21001cbfd55dbc9a7f164d640dd1fd0b5925464021e68f0a7f1a38283",
+    "scan_evaluator": "e74790f0acabb39ff8bb62dd54ed265a9050c00c52ef40a80d59d67a6a24705c",
+    "scan_report": "b23aa8d1bf8e1793077b6c0c65e06ffc9dbaf2c3b1e55c7517667c3dbc7fdc4d",
+    "scan_responses": "c7de7eef17aea88c3a122ba323fc036532ccc39daad1519224e38f7fc9f94d73",
+    "training_receipt": "4328d9f749177acd7da51cc56aafb5e3413af95cc21c2eae0975a43a3d1dbf6a"
+  },
+  "captured_source_modified": false,
+  "checks": {
+    "all16_raw_responses_and9_existing_program_sources_exact": true,
+    "baseline_shell_loss_only_refusal_critical_pass": true,
+    "completed310_finite224_adapter_and_receipt_bindings": true,
+    "development_capture_protocol_receipt_and_raw_bindings": true,
+    "exact4of12_0of4_score_and_same007_development_pass_set": true,
+    "exact_mixed310_original150_plus_short160_and_parent": true,
+    "formal_rejection_exact_no_selection": true,
+    "frozen_development_and_scan_evaluator_sources": true,
+    "frozen_tasks_and_scan_freeze": true,
+    "matched_untouched14b_baseline_bound": true,
+    "nineEOS_seven_length_and_seven_no_complete_code_outputs": true,
+    "scan_capture_protocol_receipt_and_raw_bindings": true,
+    "xyz_native_timeout_is_preserved_without_reexecution": true
+  },
+  "course": "008",
+  "created_at_utc": "2026-10-15T03:26:23.909753+00:00",
+  "critical_failed": [
+    "development-cone-roof",
+    "development-scan-normals",
+    "development-vent"
+  ],
+  "critical_passed": [
+    "development-missing-interfaces"
+  ],
+  "development_passed": 4,
+  "development_total": 12,
+  "diagnoses": {
+    "development-closing": "6144-token prose loop,129 nonempty lines/eight unique; one line repeated102 times. No complete C# fence.",
+    "development-cone-roof": "6144-token prose loop,309 nonempty lines/15unique; top repeated lines151 and145times. No complete C# implementation.",
+    "development-diamond": "Compiler rejects Vector<float>/Vector3 mixing, nonexistent X/Y/Z members, lambda-to-IBoundedImplicit and an invented physical-thickness constructor. The field is a gyroid-like harmonic/Tanh expression rather than the requested Diamond nodal function, with wrong phase/period scaling and no valid re-distance/symmetric band.",
+    "development-e2e-signed-range-refusal": "Reaches6144tokens without a complete C# fence.195 nonempty lines/tenunique; one refusal disclaimer line repeats186times. No requested executable JSON refusal is produced.",
+    "development-e2e-stl-roundtrip": "CS0246 atline31: invented JsonWriter type. The only previous007scan pass is lost; no native geometry ran.",
+    "development-e2e-stl-skin-vent": "Reaches6144tokens in prose without a complete C# fence. Seven long nonempty lines; irrelevant feature/technology denials replace the requested implementation.",
+    "development-e2e-xyz-occupancy": "Compiles but native candidate exceeds the unchanged90-second timeout, with empty process log. Source first attempts Mesh.mshFromStlFile on the XYZ input before ReadPoints; it stops after the first point and subtracts the imported-mesh volume from point spheres. There is no stack trace establishing the exact stall location, and no rerun was made.",
+    "development-gyroid": "Stops normally after552tokens of explanatory prose with no complete C# program or field implementation.",
+    "development-scan-normals": "A complete code fence exists but the overall answer reaches6144tokens. Compiler rejects System.Range as int[], nonexistent float.TryCreate and invalid Voxels constructor. Source sorts header names without remapping row values, confuses uppercase component names and coordinate/normal indices, rejects zero coordinate components, and uses a beam plus invented subtraction primitives instead of an IImplicit half-space intersection.",
+    "development-schwarz-p": "Reaches6144tokens with an unclosed repetitive C# fragment. The frozen extractor rejects it; no source was reconstructed or compiled.",
+    "development-shell": "6144-token prose loop,230 nonempty lines/six unique; most frequent lines repeat76,76,75times. Supplies no complete C# implementation.",
+    "development-vent": "CS1503 atline27: Library passed where IImplicit is required in an unsupported BBox3 cutter constructor. Also builds a sphere instead of the requested cube and replaces the required cylindrical Lattice beam by a bounding-box cutter attempt. Cavity copy/erosion is present, but no failed geometry receives native credit."
+  },
+  "eos_responses": 9,
+  "evaluator_or_gate_modified": false,
+  "existing_compiled_source_files": 9,
+  "final_contents_accessed": false,
+  "formal_gate_execution_by_root": "rejected_exit1",
+  "gpu_used": false,
+  "interpretation": "The required mixed310 phase preserves original150 and short160 content but does not improve the observed development pass set and loses the previous scan pass. Repetition/completeness and API/algorithm failures remain. These observations do not establish a causal mechanism; finite arrays and teacher provenance are not model qualification.",
+  "lost_baseline_passes": [
+    "development-shell"
+  ],
+  "manufacturing_authorized": false,
+  "matched_baseline_passes_retained": false,
+  "model_or_tensors_loaded": false,
+  "native_reexecution_or_handrepair": false,
+  "new_vs_baseline_passes": [
+    "development-missing-interfaces"
+  ],
+  "no_complete_csharp_fence_ids": [
+    "development-closing",
+    "development-shell",
+    "development-cone-roof",
+    "development-gyroid",
+    "development-schwarz-p",
+    "development-e2e-stl-skin-vent",
+    "development-e2e-signed-range-refusal"
+  ],
+  "passing_development_ids": [
+    "development-debug-api",
+    "development-initialize",
+    "development-missing-interfaces",
+    "development-offset-sign"
+  ],
+  "passing_scan_ids": [],
+  "repetition_metrics": {
+    "development-closing": {
+      "characters": 34268,
+      "code_fence_markers": 0,
+      "complete_csharp_fences": 0,
+      "finish_reason": "length",
+      "most_frequent_line_counts": [
+        102,
+        21,
+        1,
+        1
+      ],
+      "nonempty_lines": 129,
+      "tokens": 6144,
+      "unique_lines": 8
+    },
+    "development-cone-roof": {
+      "characters": 34938,
+      "code_fence_markers": 0,
+      "complete_csharp_fences": 0,
+      "finish_reason": "length",
+      "most_frequent_line_counts": [
+        151,
+        145,
+        1,
+        1
+      ],
+      "nonempty_lines": 309,
+      "tokens": 6144,
+      "unique_lines": 15
+    },
+    "development-e2e-signed-range-refusal": {
+      "characters": 34819,
+      "code_fence_markers": 0,
+      "complete_csharp_fences": 0,
+      "finish_reason": "length",
+      "most_frequent_line_counts": [
+        186,
+        1,
+        1,
+        1
+      ],
+      "nonempty_lines": 195,
+      "tokens": 6144,
+      "unique_lines": 10
+    },
+    "development-e2e-stl-skin-vent": {
+      "characters": 33585,
+      "code_fence_markers": 0,
+      "complete_csharp_fences": 0,
+      "finish_reason": "length",
+      "most_frequent_line_counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "nonempty_lines": 7,
+      "tokens": 6144,
+      "unique_lines": 7
+    },
+    "development-gyroid": {
+      "characters": 2818,
+      "code_fence_markers": 0,
+      "complete_csharp_fences": 0,
+      "finish_reason": "stop",
+      "most_frequent_line_counts": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "nonempty_lines": 7,
+      "tokens": 552,
+      "unique_lines": 7
+    },
+    "development-scan-normals": {
+      "characters": 26225,
+      "code_fence_markers": 2,
+      "complete_csharp_fences": 1,
+      "finish_reason": "length",
+      "most_frequent_line_counts": [
+        6,
+        6,
+        1,
+        1
+      ],
+      "nonempty_lines": 87,
+      "tokens": 6144,
+      "unique_lines": 77
+    },
+    "development-schwarz-p": {
+      "characters": 26477,
+      "code_fence_markers": 1,
+      "complete_csharp_fences": 0,
+      "finish_reason": "length",
+      "most_frequent_line_counts": [
+        43,
+        42,
+        42,
+        20
+      ],
+      "nonempty_lines": 305,
+      "tokens": 6144,
+      "unique_lines": 157
+    },
+    "development-shell": {
+      "characters": 28782,
+      "code_fence_markers": 0,
+      "complete_csharp_fences": 0,
+      "finish_reason": "length",
+      "most_frequent_line_counts": [
+        76,
+        76,
+        75,
+        1
+      ],
+      "nonempty_lines": 230,
+      "tokens": 6144,
+      "unique_lines": 6
+    }
+  },
+  "responses": 16,
+  "run": "14b-mixed001-epoch1",
+  "same_development_pass_set_as007": true,
+  "scan_passed": 0,
+  "scan_total": 4,
+  "schema": "picogk.am.model-code-independent-review@1",
+  "selection_receipt_created": false,
+  "status": "completed_formally_rejected",
+  "tasks": [
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-initialize",
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "5c53a7186e5928d2ef5f3e7b6a640c001d3b07f7ad7f8d0ad0e1bf9e18496384",
+      "response_sha256": "958956348287c38391181136e67152b48e2bca6c3f6dcf20b84f58eac49daba9",
+      "split": "development",
+      "status": "passed",
+      "tokens": 554
+    },
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-offset-sign",
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "918a6cd250d111e20f247ea5d1cb33d79710f3256377fe9dea32add00ff1be31",
+      "response_sha256": "b443757e25d4e08425437899f262ff2871c14c90a1febd770630550b44230883",
+      "split": "development",
+      "status": "passed",
+      "tokens": 523
+    },
+    {
+      "complete_csharp_fences": 0,
+      "error": "exactly one complete C# code fence required",
+      "error_sha256": "39aa2a572f3706ed46e443a1b8943218f2a0873483f08f946d12069b6e7cd45a",
+      "failed_checks": [],
+      "finish_reason": "length",
+      "id": "development-closing",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "program_sha256": null,
+      "response_sha256": "634821fefa0d6e784b02b0148020d32574a8e7622190142379989a846e13564e",
+      "split": "development",
+      "status": "failed",
+      "tokens": 6144
+    },
+    {
+      "complete_csharp_fences": 0,
+      "error": "exactly one complete C# code fence required",
+      "error_sha256": "39aa2a572f3706ed46e443a1b8943218f2a0873483f08f946d12069b6e7cd45a",
+      "failed_checks": [],
+      "finish_reason": "length",
+      "id": "development-shell",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "program_sha256": null,
+      "response_sha256": "289b89e4ccaaad8d52744bb8661fcf22c618765cba01322e89b72f3d2ee8517d",
+      "split": "development",
+      "status": "failed",
+      "tokens": 6144
+    },
+    {
+      "compiler_excerpts": [
+        {
+          "code": "CS1503",
+          "line": 27,
+          "message": "Argument 1: cannot convert from 'PicoGK.Library' to 'in PicoGK.IImplicit'"
+        }
+      ],
+      "complete_csharp_fences": 1,
+      "error": "C# compilation failed; see am-code/candidate-scores-14b310/development-vent/process.log",
+      "error_sha256": "f634c9d0303420ede671eef44895d65807c181c809cd994f39fdeb67ed99e9bc",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-vent",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "process_log_sha256": "ea293bb7e8693033376c1f6c5fc84ecc95d15d9db04cb432d0b7fcbb9e3bbb25",
+      "program_sha256": "b5dda4afd41ffb88712043ee7c340aba02e59b2891d512faad444a7547b93b6e",
+      "response_sha256": "4ede8fe62032da03b2ffa6a18d18b71cf9976aa3b274363a243576a4d61494b9",
+      "split": "development",
+      "status": "failed",
+      "tokens": 637
+    },
+    {
+      "complete_csharp_fences": 0,
+      "error": "exactly one complete C# code fence required",
+      "error_sha256": "39aa2a572f3706ed46e443a1b8943218f2a0873483f08f946d12069b6e7cd45a",
+      "failed_checks": [],
+      "finish_reason": "length",
+      "id": "development-cone-roof",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "program_sha256": null,
+      "response_sha256": "8997b9f751653ed04311b7bf4e3b0567ea954809d813ed9fad64503c309dfdac",
+      "split": "development",
+      "status": "failed",
+      "tokens": 6144
+    },
+    {
+      "complete_csharp_fences": 0,
+      "error": "exactly one complete C# code fence required",
+      "error_sha256": "39aa2a572f3706ed46e443a1b8943218f2a0873483f08f946d12069b6e7cd45a",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-gyroid",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "program_sha256": null,
+      "response_sha256": "5e05799b2216b4a7a4b51c55e2b7dcad6603d0448c39be122a2181fef5cfeed7",
+      "split": "development",
+      "status": "failed",
+      "tokens": 552
+    },
+    {
+      "compiler_excerpts": [
+        {
+          "code": "CS1061",
+          "line": 57,
+          "message": "'Vector<float>' does not contain a definition for 'X' and no accessible extension method 'X' accepting a first argument of type 'Vector<float>' could be found (are you missing a using directive or an assembly reference?)"
+        },
+        {
+          "code": "CS1061",
+          "line": 57,
+          "message": "'Vector<float>' does not contain a definition for 'Y' and no accessible extension method 'Y' accepting a first argument of type 'Vector<float>' could be found (are you missing a using directive or an assembly reference?)"
+        },
+        {
+          "code": "CS1061",
+          "line": 57,
+          "message": "'Vector<float>' does not contain a definition for 'Z' and no accessible extension method 'Z' accepting a first argument of type 'Vector<float>' could be found (are you missing a using directive or an assembly reference?)"
+        },
+        {
+          "code": "CS0029",
+          "line": 48,
+          "message": "Cannot implicitly convert type 'System.Numerics.Vector3' to 'System.Numerics.Vector<float>'"
+        },
+        {
+          "code": "CS1503",
+          "line": 23,
+          "message": "Argument 1: cannot convert from 'lambda expression' to 'in PicoGK.IBoundedImplicit'"
+        },
+        {
+          "code": "CS1503",
+          "line": 24,
+          "message": "Argument 1: cannot convert from 'PicoGK.Voxels' to 'in PicoGK.IImplicit'"
+        },
+        {
+          "code": "CS1503",
+          "line": 24,
+          "message": "Argument 2: cannot convert from 'float' to 'in PicoGK.BBox3'"
+        }
+      ],
+      "complete_csharp_fences": 1,
+      "error": "C# compilation failed; see am-code/candidate-scores-14b310/development-diamond/process.log",
+      "error_sha256": "9fd34c27b51b6ab67547b7b89d3fa1ac525ed18db9b53baa9f10fc64d0816138",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-diamond",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "process_log_sha256": "d408292ecfd2931fc31c375c7ec558ac85a075f80df29b987991940a15645b5e",
+      "program_sha256": "a9a48d4af575ffd4a912a5dd5d2a43d18f1fc17272e529989a4480c74fde3725",
+      "response_sha256": "537dbdbea6551b02f7067af1a59b243ee6307c9efb5b346911c80d0390c47902",
+      "split": "development",
+      "status": "failed",
+      "tokens": 1069
+    },
+    {
+      "complete_csharp_fences": 0,
+      "error": "exactly one complete C# code fence required",
+      "error_sha256": "39aa2a572f3706ed46e443a1b8943218f2a0873483f08f946d12069b6e7cd45a",
+      "failed_checks": [],
+      "finish_reason": "length",
+      "id": "development-schwarz-p",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "program_sha256": null,
+      "response_sha256": "23f6a5efd689f961196d7358ed9d226a09c4491996854b89747bbf8d34da64da",
+      "split": "development",
+      "status": "failed",
+      "tokens": 6144
+    },
+    {
+      "compiler_excerpts": [
+        {
+          "code": "CS0029",
+          "line": 50,
+          "message": "Cannot implicitly convert type 'System.Range' to 'int[]'"
+        },
+        {
+          "code": "CS0029",
+          "line": 51,
+          "message": "Cannot implicitly convert type 'System.Range' to 'int[]'"
+        },
+        {
+          "code": "CS0117",
+          "line": 63,
+          "message": "'float' does not contain a definition for 'TryCreate'"
+        },
+        {
+          "code": "CS1503",
+          "line": 81,
+          "message": "Argument 1: cannot convert from 'System.Numerics.Vector3' to 'PicoGK.Library'"
+        },
+        {
+          "code": "CS1503",
+          "line": 81,
+          "message": "Argument 2: cannot convert from 'System.Numerics.Vector3' to 'in PicoGK.IImplicit'"
+        },
+        {
+          "code": "CS1503",
+          "line": 81,
+          "message": "Argument 3: cannot convert from 'float' to 'in PicoGK.BBox3'"
+        }
+      ],
+      "complete_csharp_fences": 1,
+      "error": "C# compilation failed; see am-code/candidate-scores-14b310/development-scan-normals/process.log",
+      "error_sha256": "3c3502ca64fa3c6d1a8b421b84ae3389605d5d15453033301de85aeade3ceabb",
+      "failed_checks": [],
+      "finish_reason": "length",
+      "id": "development-scan-normals",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "process_log_sha256": "d8bb6938b4a07653500ba54ca53190ef640e2d98fe724fe49b8ab3f05370c628",
+      "program_sha256": "e8b9f14459ce828959c6a228371fda2f41dcbf2a606ab3d90905dc64763a6dd0",
+      "response_sha256": "a7640b575a34ef2159242e3eb94e85ddab3e28fe19bd564b360edadb936aab08",
+      "split": "development",
+      "status": "failed",
+      "tokens": 6144
+    },
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-debug-api",
+      "native_exit_code": 0,
+      "occupancy_iou": 1.0,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "94fc156728203f2aa1ca82da5f1002734049767bd32f8f17535735675c5775dc",
+      "response_sha256": "f819267a7c7a369a99afdec2fcd5d824fdba46db16fc0d330e95f70cd8f5327a",
+      "split": "development",
+      "status": "passed",
+      "tokens": 604
+    },
+    {
+      "complete_csharp_fences": 1,
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-missing-interfaces",
+      "native_exit_code": 0,
+      "occupancy_iou": null,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "495a7ed32e2aab4e23f1f2ccd629367cf1e1b306236d7289686f03500d7fff9e",
+      "response_sha256": "7e4f23d0bdad0d1561dc1a8dabfca84827755b72596ccc88b79b32890f7fd231",
+      "split": "development",
+      "status": "passed",
+      "tokens": 477
+    },
+    {
+      "compiler_excerpts": [
+        {
+          "code": "CS0246",
+          "line": 31,
+          "message": "The type or namespace name 'JsonWriter' could not be found (are you missing a using directive or an assembly reference?)"
+        }
+      ],
+      "complete_csharp_fences": 1,
+      "error": "C# compilation failed; see am-code/scan-scores-14b310/development-e2e-stl-roundtrip/process.log",
+      "error_sha256": "103e15a7798bedf720537eb8f67ad2565664008f90d35b357a1a6339e76ad062",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-e2e-stl-roundtrip",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "process_log_sha256": "096cfe96e56b221b84e9e719b5642384d6774a4584344a50da2d7c2fb839c403",
+      "program_sha256": "ae12070eab366e8f44436b32f505fef4ea75c7d12fa2fc6ef72b8d8c22e3e66c",
+      "response_sha256": "9a794bcdcafbf4ad5d820ef77c49778672c5f95a274fde5a87610c1bd236360e",
+      "split": "scan",
+      "status": "failed",
+      "tokens": 492
+    },
+    {
+      "complete_csharp_fences": 0,
+      "error": "exactly one complete C# code fence required",
+      "error_sha256": "39aa2a572f3706ed46e443a1b8943218f2a0873483f08f946d12069b6e7cd45a",
+      "failed_checks": [],
+      "finish_reason": "length",
+      "id": "development-e2e-stl-skin-vent",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "program_sha256": null,
+      "response_sha256": "dcef89198a070a6cc03ee291a047b873d971c4fdbf1639b635f6c571f57fd9fc",
+      "split": "scan",
+      "status": "failed",
+      "tokens": 6144
+    },
+    {
+      "complete_csharp_fences": 1,
+      "error": "Native candidate exceeded the frozen 90-second timeout.",
+      "error_sha256": "460e0dbeb5b1d9ffc237d10549b982b96d5ebfc21b625ff384cc302e8c164c2f",
+      "failed_checks": [],
+      "finish_reason": "stop",
+      "id": "development-e2e-xyz-occupancy",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "program_sha256": "82afdc99e9d0070eb528ed14d056a48bed57512e4f0e19cd0a6f9d7d61a6443e",
+      "response_sha256": "81dc3542a0f8d3f31a221457a265166e20eeb9fad741e2241d6826900913cf7b",
+      "split": "scan",
+      "status": "failed",
+      "tokens": 1152
+    },
+    {
+      "complete_csharp_fences": 0,
+      "error": "exactly one complete C# code fence required",
+      "error_sha256": "39aa2a572f3706ed46e443a1b8943218f2a0873483f08f946d12069b6e7cd45a",
+      "failed_checks": [],
+      "finish_reason": "length",
+      "id": "development-e2e-signed-range-refusal",
+      "native_exit_code": null,
+      "occupancy_iou": null,
+      "program_sha256": null,
+      "response_sha256": "27513306c3eedf2da2a66f13e67cb561c1559068432948d782d816014ee8238a",
+      "split": "scan",
+      "status": "failed",
+      "tokens": 6144
+    }
+  ],
+  "truncated_responses": 7,
+  "truncated_task_ids": [
+    "development-closing",
+    "development-shell",
+    "development-cone-roof",
+    "development-schwarz-p",
+    "development-scan-normals",
+    "development-e2e-stl-skin-vent",
+    "development-e2e-signed-range-refusal"
+  ]
+}

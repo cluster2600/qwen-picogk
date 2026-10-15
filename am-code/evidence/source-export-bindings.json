@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Curated synthetic sources/data and seven completed rejected courses; exact310 original150+short160 mixture/text/token proofs and prospective running008 registration/runtime/audit. Base payloads, reserved final contents and active008 files omitted. Historical original-source hashes are preserved.",
+  "scope": "Curated synthetic sources/data and eight completed rejected courses; completed008 full evidence and pinned32B helper/preparation/tensor/header/cleanup/token/smoke-input proofs. Only prospective untouched32B baseline registration included; active baseline results/logs/captures, base payloads and reserved final contents omitted. Historical original-source hashes preserved.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -2355,11 +2355,11 @@
       "transform": "none"
     },
     {
-      "source": "publication-staging/course007-current-assets.json",
+      "source": "publication-staging/course008-current-assets.json",
       "public_path": "evidence/assets.json",
-      "source_sha256": "f58350422e9cd20f8c705b1572b6f3e007c0d73255ed84397738aebdd683b7e1",
-      "public_sha256": "f58350422e9cd20f8c705b1572b6f3e007c0d73255ed84397738aebdd683b7e1",
-      "transform": "none; derived current inventory preserves all ten prior archive records and appends the bound rejected007 record"
+      "source_sha256": "7801db04c6898297fc6701562eac95f8b8f05a73578dad25102e5da548560c0a",
+      "public_sha256": "7801db04c6898297fc6701562eac95f8b8f05a73578dad25102e5da548560c0a",
+      "transform": "none"
     },
     {
       "source": "am-code/data/corrective-005/README.md",
@@ -2674,6 +2674,202 @@
       "public_path": "evidence/course007-assets.json",
       "source_sha256": "8be17457b159c728360f3d328895ca6eb2cbcb4309386930336398049b0caf91",
       "public_sha256": "8be17457b159c728360f3d328895ca6eb2cbcb4309386930336398049b0caf91",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/preparation-plan.json",
+      "public_path": "diagnostics/model32b-preparation/preparation-plan.json",
+      "source_sha256": "830ef53b751125c690f57b0c21b8109519506e3db3a6df2876eb11ba4f4e7b1f",
+      "public_sha256": "830ef53b751125c690f57b0c21b8109519506e3db3a6df2876eb11ba4f4e7b1f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/upstream-metadata.json",
+      "public_path": "diagnostics/model32b-preparation/upstream-metadata.json",
+      "source_sha256": "6c03c02ab84f52279cdd91fd0a634ed9e03b9b91ecd6f767acb6b81413c076f7",
+      "public_sha256": "6c03c02ab84f52279cdd91fd0a634ed9e03b9b91ecd6f767acb6b81413c076f7",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/repacker-source.diff",
+      "public_path": "diagnostics/model32b-preparation/repacker-source.diff",
+      "source_sha256": "94aa776e3efd33294d8219b8763496f1a9ac35c645246188fe543f3a09eb37df",
+      "public_sha256": "94aa776e3efd33294d8219b8763496f1a9ac35c645246188fe543f3a09eb37df",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/preflight-receipt.json",
+      "public_path": "diagnostics/model32b-preparation/preflight-receipt.json",
+      "source_sha256": "b7173a833ab223512a40f35b723c90a427e59e6b6f2ddd5698090b5a207a1718",
+      "public_sha256": "3ddb50b00c2a75350c86330a40ec5265404b7cdf78e29dc2f6939c02720a1f7f",
+      "transform": "JSON/text view: local directory paths redacted; numeric/hash/status fields retained"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/download-receipt.json",
+      "public_path": "diagnostics/model32b-preparation/download-receipt.json",
+      "source_sha256": "921f0924afb509186bd393c8fab5af5dc67d33a528d42a1aa01acc5dac68c2a9",
+      "public_sha256": "921f0924afb509186bd393c8fab5af5dc67d33a528d42a1aa01acc5dac68c2a9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/download.log",
+      "public_path": "diagnostics/model32b-preparation/download.log",
+      "source_sha256": "55678c999b3c49248d37cb9b8cea057ad2f92f05e2960e74c35b756594e0933a",
+      "public_sha256": "55678c999b3c49248d37cb9b8cea057ad2f92f05e2960e74c35b756594e0933a",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/repack-receipt.json",
+      "public_path": "diagnostics/model32b-preparation/repack-receipt.json",
+      "source_sha256": "e9271088ffa4e346a79eb8a8236d9dc3258003a11e25bf1b2798685dcc121952",
+      "public_sha256": "e9271088ffa4e346a79eb8a8236d9dc3258003a11e25bf1b2798685dcc121952",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/repack.log",
+      "public_path": "diagnostics/model32b-preparation/repack.log",
+      "source_sha256": "5424823728368ca3006f46ea80cddd040b77d620a53bbf1de42ee29194361a44",
+      "public_sha256": "5424823728368ca3006f46ea80cddd040b77d620a53bbf1de42ee29194361a44",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/independent-review.json",
+      "public_path": "diagnostics/model32b-preparation/independent-review.json",
+      "source_sha256": "b444da9f01c108d002a36135ea34bf2c26c1e363ca2dde9f8911e7064fcfa30d",
+      "public_sha256": "b444da9f01c108d002a36135ea34bf2c26c1e363ca2dde9f8911e7064fcfa30d",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/preparation-completion.json",
+      "public_path": "diagnostics/model32b-preparation/preparation-completion.json",
+      "source_sha256": "c8952011159669aaa5c0db991ba9c0899a8b6e2478e3f5eb5d9267f87da258e9",
+      "public_sha256": "c8952011159669aaa5c0db991ba9c0899a8b6e2478e3f5eb5d9267f87da258e9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/cleanup-plan.json",
+      "public_path": "diagnostics/model32b-preparation/cleanup-plan.json",
+      "source_sha256": "ef32e9bd4a156eef714f85a9f173338b74f47b10e983380ad5a1e7f8e802b05f",
+      "public_sha256": "ef32e9bd4a156eef714f85a9f173338b74f47b10e983380ad5a1e7f8e802b05f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/cleanup-receipt.json",
+      "public_path": "diagnostics/model32b-preparation/cleanup-receipt.json",
+      "source_sha256": "fe7162edb3f6677a7845e0369164555dd53444eb79c68f2a7fcc3f7bcb9cc90d",
+      "public_sha256": "fe7162edb3f6677a7845e0369164555dd53444eb79c68f2a7fcc3f7bcb9cc90d",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/ready-receipt.json",
+      "public_path": "diagnostics/model32b-preparation/ready-receipt.json",
+      "source_sha256": "27ac2ef66047a3026164fe6039c48d0ea9c0a5525713fb21f55053b2617f300c",
+      "public_sha256": "27ac2ef66047a3026164fe6039c48d0ea9c0a5525713fb21f55053b2617f300c",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/mixed310-tokenization-receipt.json",
+      "public_path": "diagnostics/model32b-preparation/mixed310-tokenization-receipt.json",
+      "source_sha256": "58490c655f7d3370454820c0603cfdf135fa49dfca4584b967420f1a5aea1641",
+      "public_sha256": "58490c655f7d3370454820c0603cfdf135fa49dfca4584b967420f1a5aea1641",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/mixed310-token-rows.json",
+      "public_path": "diagnostics/model32b-preparation/mixed310-token-rows.json",
+      "source_sha256": "794649bd81b19d10957a6d0efdb99eb80ad549bbce557a24d1d3ef5b14d7998e",
+      "public_sha256": "794649bd81b19d10957a6d0efdb99eb80ad549bbce557a24d1d3ef5b14d7998e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/memory-smoke-longest/train.jsonl",
+      "public_path": "diagnostics/model32b-preparation/memory-smoke-longest/train.jsonl",
+      "source_sha256": "73a01552f72df3a10acd09466c78798dbcc3979e8b96bcc1527e2a179c1d57c0",
+      "public_sha256": "73a01552f72df3a10acd09466c78798dbcc3979e8b96bcc1527e2a179c1d57c0",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/memory-smoke-longest/provenance.json",
+      "public_path": "diagnostics/model32b-preparation/memory-smoke-longest/provenance.json",
+      "source_sha256": "69b80a16db55868046e061bb1979931360bd04c0ddcdfdfdb0b6feb1c04213fc",
+      "public_sha256": "69b80a16db55868046e061bb1979931360bd04c0ddcdfdfdb0b6feb1c04213fc",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/source-headers/model-00001-of-00004.safetensors.header.bin",
+      "public_path": "diagnostics/model32b-preparation/source-headers/model-00001-of-00004.safetensors.header.bin",
+      "source_sha256": "2cc7ee04a30cb31f0611e1918754b0404e404612ec48532e6f349541763fc380",
+      "public_sha256": "2cc7ee04a30cb31f0611e1918754b0404e404612ec48532e6f349541763fc380",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/source-headers/model-00002-of-00004.safetensors.header.bin",
+      "public_path": "diagnostics/model32b-preparation/source-headers/model-00002-of-00004.safetensors.header.bin",
+      "source_sha256": "e4e38d11bec3e94221fb5dd513e910e54f476fcecbb6ce5c194567b9303ed84b",
+      "public_sha256": "e4e38d11bec3e94221fb5dd513e910e54f476fcecbb6ce5c194567b9303ed84b",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/source-headers/model-00003-of-00004.safetensors.header.bin",
+      "public_path": "diagnostics/model32b-preparation/source-headers/model-00003-of-00004.safetensors.header.bin",
+      "source_sha256": "af394d5796bd6918305753abd9bf714b4a2e3be2ef79f4f9b41e8b13b1c23af8",
+      "public_sha256": "af394d5796bd6918305753abd9bf714b4a2e3be2ef79f4f9b41e8b13b1c23af8",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/model32b-preparation/source-headers/model-00004-of-00004.safetensors.header.bin",
+      "public_path": "diagnostics/model32b-preparation/source-headers/model-00004-of-00004.safetensors.header.bin",
+      "source_sha256": "50a662895af99cd846e167a12cda77e014538dbfdf96b3ca5d1e1232f64e3bbd",
+      "public_sha256": "50a662895af99cd846e167a12cda77e014538dbfdf96b3ca5d1e1232f64e3bbd",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/repack_model32b.py",
+      "public_path": "repack_model32b.py",
+      "source_sha256": "f3b3943d9d5c0fe93893c173895316ca0c7164638212addbf1dcae08ce301586",
+      "public_sha256": "f3b3943d9d5c0fe93893c173895316ca0c7164638212addbf1dcae08ce301586",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/base-profile-32b.json",
+      "public_path": "base-profile-32b.json",
+      "source_sha256": "a83dbe6460c70da82d9c3220a9930b229d516dfcc390c7403f660e1f55b85c09",
+      "public_sha256": "a83dbe6460c70da82d9c3220a9930b229d516dfcc390c7403f660e1f55b85c09",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/baseline-32b-protocol.json",
+      "public_path": "evidence/baseline-32b-protocol.json",
+      "source_sha256": "0d1d64f29159fef64a369073db71d69ea40bdbfb64c3b83435cd8334e348f2b3",
+      "public_sha256": "0d1d64f29159fef64a369073db71d69ea40bdbfb64c3b83435cd8334e348f2b3",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course-008-cpu-audit.json",
+      "public_path": "evidence/course-008-cpu-audit.json",
+      "source_sha256": "09ded5edddfaa91d4c5638de0f7b5c913fdc484ef265b741f2ffa0488aea6f0a",
+      "public_sha256": "09ded5edddfaa91d4c5638de0f7b5c913fdc484ef265b741f2ffa0488aea6f0a",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/qualification-rejected-14b310.log",
+      "public_path": "evidence/course-008-formal-rejection.json",
+      "source_sha256": "f95407b2e01b2b259313a2a619a157f3e081e8926e7af63bd5bbe70748e0403e",
+      "public_sha256": "f95407b2e01b2b259313a2a619a157f3e081e8926e7af63bd5bbe70748e0403e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course008-14b310-independent-review.json",
+      "public_path": "evidence/course008-14b310-independent-review.json",
+      "source_sha256": "9b85422ce1535fb832c44b3e7c94e53d5c053d046bd92e2e699b64b0bb34f2bb",
+      "public_sha256": "9b85422ce1535fb832c44b3e7c94e53d5c053d046bd92e2e699b64b0bb34f2bb",
+      "transform": "none"
+    },
+    {
+      "source": "publication-staging/course008-assets.json",
+      "public_path": "evidence/course008-assets.json",
+      "source_sha256": "0bdaa1deadc1378518eea403b2f4c05bd2830bacd2520d27c403466234de05be",
+      "public_sha256": "0bdaa1deadc1378518eea403b2f4c05bd2830bacd2520d27c403466234de05be",
       "transform": "none"
     }
   ]
