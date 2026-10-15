@@ -1,0 +1,51 @@
+{
+  "schema": "picogk.am.native-score@2",
+  "development_only": true,
+  "reference_only": false,
+  "passed": 0,
+  "total": 4,
+  "tasks": [
+    {
+      "id": "development-e2e-stl-roundtrip",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "79a3fd4d5ea1430262c2e36d5b32d96d8a646ae49471f2081eb2fd821dc5b509",
+      "error": "C# compilation failed; see am-code/scan-scores-32b310/development-e2e-stl-roundtrip/process.log",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-e2e-stl-skin-vent",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "c3506dc83f1b7edad8dd514267a146bebf869097cf51fff1b8711e84059f7e3d",
+      "error": "C# compilation failed; see am-code/scan-scores-32b310/development-e2e-stl-skin-vent/process.log",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-e2e-xyz-occupancy",
+      "status": "failed",
+      "error": "operation/type outside static allowlist",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-e2e-signed-range-refusal",
+      "status": "failed",
+      "error": "namespace outside static allowlist",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    }
+  ],
+  "physical_qualification": false,
+  "freeze_sha256": "e9fbeca73172f6dece5a45640fab5fe4ff7b37b2f3f51de4522cdba1f5a5da94",
+  "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+  "checker_policy": "roslyn-static-allowlist@2"
+}

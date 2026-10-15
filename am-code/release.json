@@ -3,13 +3,13 @@
   "status": "review_staged_not_published",
   "license": "Apache-2.0 original exported material; dependencies retain notices",
   "files_sha256": {
-    "README.md": "a7cc19ff451f6ba9e2161191b057ee3e28dce206c97e03fe50124a212848304d",
+    "README.md": "4780d8c5bff1988bdbade8d67bab15705ac8508f1a1c4a99a30b546a7cfcf90e",
     "base-manifest.json": "37b65afc534f8befa34e5843a169a3e3478c14c90e8c9b1696400a406d57d7c0",
     "base-profile-14b.json": "ae1b81ddd239197ac4f470e6d01173dfc0132d05215ac09ea6a31946625cf89e",
     "base-profile-32b.json": "a83dbe6460c70da82d9c3220a9930b229d516dfcc390c7403f660e1f55b85c09",
     "base-profile-7b.json": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
     "base_runtime.py": "8f0e3c647bcf7d72f531c6c94faeaf6730cf0cd5e3330e5bcb185d4b45a0e61e",
-    "check_publication.py": "44f2edf9dec6f990548af29d51bc7f7602447c1c21bfef593415104c90f98839",
+    "check_publication.py": "0f86142aec264774b56d9f32f6661a9104a732fd6e1faf20af000c5d586d98fb",
     "data/chat-tokenization.json": "680b0f20afb092e1a7367461b08250122cc51d2869438bc3db8e02dbf6bdc5be",
     "data/chat/train.jsonl": "1ac93688653ea7aa26b1e93b739eaac21717e11af4f9996972b6735bb20fe684",
     "data/corrective-001/README.md": "94310beee2e177beebb4636eb611d708eb695574c559d1c36277fe9f580321d5",
@@ -240,6 +240,16 @@
     "data/corrective-005/manifest.json": "079d5db4a9584430255b8a715f49e6d8fe7239d37fcd4c091dd13100e734d9ea",
     "data/corrective-005/tokenization-receipt.json": "0496909096e2048a48bd7668005cc37b2e2540a7f4ac3a7181a4430c96684ba9",
     "data/corrective-005/train.jsonl": "b59755b51c94a559030863fc5ba164b28cdd338ea2c33704825995bc43f083c7",
+    "data/corrective-006/author.py": "7ab13d4179b7fbf2b4d679467f9e19c3e94b943ade84589f464fe62da8745daa",
+    "data/corrective-006/cases.json": "1da6c8318fdc51ea1f907260c9614f25e61838b8793a754086be6265f8ba45c0",
+    "data/corrective-006/native-review-summary.json": "cc81956096f85ee60cb1b9fc3bed72c2d1d9614eebeada200f448ed7ced865af",
+    "data/corrective-006/prompt-correction-receipt.json": "4539713f14152dd952f6490ebb213fbf6da7fb03e6203c747beded218ccc6224",
+    "data/corrective-006/train.jsonl": "fd988ca7422581a40ec3be64b582d05c3edcda7a2c51b2c8ba4302c8fb5314cc",
+    "data/corrective-006/validate.py": "274474f932690bdb51751bdddf6873446bcbc13719c73b52fed6f1eea10546cf",
+    "data/focused-32b-001/manifest.json": "4d5139d33fec69a801e2b0dc6101d5c660983e66ded36d6ab5b4767e9e4050cc",
+    "data/focused-32b-001/prepare.py": "5712793781fb914e190faae3b72882c3988313ca0d79f4df4831ea3a7ce954cd",
+    "data/focused-32b-001/token-rows.json": "e5e15f58eb0ffa796a09a33f60676af87908b9104ddb634c9f78344d2233b3ee",
+    "data/focused-32b-001/train.jsonl": "ca8e13ad659c55e93192c1c5a7c1029f3228753beceee7873c54a4f81c8519f2",
     "data/manifest.json": "fbb9aca66a0e3a01f26fb305b807a267e4a9c511fcc00a411d4dc533dc5d16dd",
     "data/mixed-14b-001/README.md": "f8a847cb5d9e2ef0154bae5197abbb82e7beacde166b98690ca5d9617a04d16d",
     "data/mixed-14b-001/independent-token-rows.json": "93386708c8328410b85a4fcd5f6d0b6045e0273f1e53c689a9beb8bc173d7b0e",
@@ -262,6 +272,7 @@
     "data/template-overlap.json": "befbd56cdafc2caad5d5909281862d08b2a6bfe4e37f4bddd16ab54ef026f22f",
     "data/train-chat.jsonl": "1ac93688653ea7aa26b1e93b739eaac21717e11af4f9996972b6735bb20fe684",
     "data/train.jsonl": "ed3247fb4c8ecacc013eb95f16fb6ac6d822680e40d32ae95cafb130893108d7",
+    "diagnostics/audit-course009.py": "78a3a3a0d69b847ffbfedce109c288f8b3ad2b798f68b8a13eb7ee778ccaf758",
     "diagnostics/evaluation-policy-v2/development-teacher-checks-v2.json": "8d0c305216fbf1d91f954f4ba1e23526bfd69e5f864b1bd82255baa0e8cac00b",
     "diagnostics/evaluation-policy-v2/frozen-profile-independent-review.json": "613e16cdee410642a1811d6d6db5ea7221db111776ee52c1332d21d85fe5cdc3",
     "diagnostics/evaluation-policy-v2/implementation-check-v2-final.json": "d585e74da5cc0570431a1731d1b3b5d179a79b837564adf25fd37009ee3cf4dc",
@@ -340,7 +351,7 @@
     "evaluation/test_evaluate_v2.py": "ed26f0c9a03b5d33e7602514151af757c7e0143d8d8626d505371992c520b6c0",
     "evaluation/test_policy_v2.py": "8d903965b137f08bb164c57948362b131eaf42e7b9657d88ecb1b51f49baa7f8",
     "evidence/accepted005-14b-assets.json": "bb37357b32a16e28daf6c9670603594fbaf7f20b18fb3041c096578065b2fd3f",
-    "evidence/assets.json": "25e50936c15e6db7a69749324a0aea74f837466456bc18901d91a04aa0f853bd",
+    "evidence/assets.json": "39b15b607c0e316f0459a6227eaa71c6e4eff5701ba85e8a5272641a67419052",
     "evidence/base-profile-support-receipt.json": "0dc7c16d97a554dfdb59195448f2c6c07a4528907876f1e9802abb167ed9cb60",
     "evidence/baseline-14b-capture-protocol.json": "93f2e673650e38111ca4544b2676048f83f926dba5fd6efba654985905854173",
     "evidence/baseline-14b-capture-receipt.json": "bd3af48120f2a7a019e07373548dbff92ca9c560288bc1b40f95aa1d4d911cb7",
@@ -378,6 +389,7 @@
     "evidence/course-008-formal-rejection.json": "f95407b2e01b2b259313a2a619a157f3e081e8926e7af63bd5bbe70748e0403e",
     "evidence/course-008-protocol.json": "245348fa8b93613d2e53d311d25e745270cfeb2b201f7cb2011da87ba25caa18",
     "evidence/course-009-protocol.json": "5116e312f4d5e5cb9d429b99dec50e4d2335d9566500c9840143c3d3e690f3d3",
+    "evidence/course-010-protocol.json": "febe032b673b92eb8bdc4d8f6590732e6be838c853906bcece315d77bb2d876a",
     "evidence/course004-7b342-independent-review.json": "ee65bbe280d0e43a97e0c3db14fcc81ff0256c20d2ca260b0e83b8a7c5c861ce",
     "evidence/course004-assets.json": "c320efcb95f4a70ae30690b4104c81f42d3a0107502da252ebcb6bb8f3fb7902",
     "evidence/course005-7b448-independent-review.json": "2dbf6ce2e2f4d6e8f4a81bcd291b8e1de7758fd33e5fea79fc8be88cbf84db88",
@@ -393,9 +405,20 @@
     "evidence/course008-assets.json": "0bdaa1deadc1378518eea403b2f4c05bd2830bacd2520d27c403466234de05be",
     "evidence/course008-running-protocol-audit.json": "2c70217123d05b4e5d6875b4930e6a9d637b7b4f01e6684e70c5a6bca9f919f2",
     "evidence/course008-runtime-protocol.json": "af6e126fdf622c7254b4c0be034161840326c9981c948a72525da786f71e860d",
+    "evidence/course009-completed-assets.json": "9a138ae95b664008a15272ac236e600d05e16cb48ccd3f3d5d62c26dc0a18275",
+    "evidence/course009-completed/adapter_config.json": "0e9e22c87d95a8a328b99fcdc98a3774eb882d7b5e8484207fe03fbc7f963867",
+    "evidence/course009-completed/completed-diagnostic.json": "458a8e18bff13c18e19971bff2e6c6775cf73c59978c6c6aa0b7835ca6556f2a",
+    "evidence/course009-completed/cpu-audit.json": "e5a5608e05448a2ec82484f0fed2aa26c1daff2507e04903c3482585cc19d980",
+    "evidence/course009-completed/development-report.json": "99816e49fc716c01bfde5005080cd7781adea02984a41cc0307be9b41ad72f8a",
+    "evidence/course009-completed/evaluation-protocol.json": "da41a443f68d0c5348855b17b985aaf99d3c439630468bdb8a043c74a3f4cf65",
+    "evidence/course009-completed/formal-rejection.json": "03cf7b11e55388094f420620bdf428659efb3595d6622523fb7f9feb3acd04e5",
+    "evidence/course009-completed/runtime-protocol.json": "4eaf0a0b085c2b25f7e19590dcc4e972d41f6ccb240c7910b5dd27a209d4c414",
+    "evidence/course009-completed/scan-report.json": "3dc327b19762c501031b53f7b8c68f50fd6b428e20ffd44117948b929cb36c52",
+    "evidence/course009-completed/training-receipt.json": "f3a908f73bd4c9c6aa9d1ff872eb2840e857baa6a18b952df35744f20f22f02c",
     "evidence/course009-launch-independent-review.json": "bb09f2291b51113024e8f1150097f61a507fe59d0540f4b0af284c7c189c372c",
     "evidence/course009-preparation-assets.json": "0bb4373073132aab9463c14340d1b1114ee19fae99e736e1ea898ee437c72cca",
     "evidence/course009-runtime-protocol.json": "4eaf0a0b085c2b25f7e19590dcc4e972d41f6ccb240c7910b5dd27a209d4c414",
+    "evidence/course010-runtime-protocol.json": "25f14df1903d7b72edaad0843b10557358793081c05ee6ea6f59c81959c32aac",
     "evidence/evaluation-policy-v2/checker-profile-v2.json": "834974c4f77a65c03a0c657fc0595bc06eea83d0c45f6cb89fd2b05c498f94bc",
     "evidence/evaluation-policy-v2/checker-profile-v2.sha256": "5bdb615caefb594b3eb55054525fd2021a008d5005e3f919864bed4cadda2a8e",
     "evidence/evaluation-policy-v2/validation-binding-audit-v2.json": "63dda29ececd9458b8a0741cd159c8ebd3dcbb30d28f9e15ea0709645c1c836d",
@@ -410,7 +433,7 @@
     "evidence/model14b-preparation/upstream-index.json": "635d985ebf00b6a25daba71b7eba4d5ec8be7902c15104a79312fe947f44b121",
     "evidence/model7b-manifest.json": "e8684e5874274fd613e9927f8cc755841fa3c8ec3678f0141f01ca6446d3a5e4",
     "evidence/public-native-gold-cli.json": "d191505afd18897d709751f2066f5f49895893b15cce5d1a0b48683eb9cbc463",
-    "evidence/results-summary.json": "19bc0f9d0820dfcf4b5fe1faeb5eb80ab2fe648572f218fb3439b2d663c45354",
+    "evidence/results-summary.json": "518ff3e2a59fb82efb33120f1a9d6304fb36f29a389aad600a72a7ddfb690f65",
     "evidence/seen-replay005/capture.log": "5f5fa59003ac0c70ee5b8f5531d870678d1b4c5bed2abd46961e9f4af05a4868",
     "evidence/seen-replay005/capture/protocol.json": "8f1ca33d2df1700124a0c1cfca0f66bbf41ac1ecf1a9e22e7bb3af2ab2920466",
     "evidence/seen-replay005/capture/receipt.json": "51d65195fd3cbe1ce26219a30154c4bdc93d5e54b5a5dc9842378de91296c616",
@@ -426,7 +449,7 @@
     "evidence/seen-replay005/selected-rows.json": "d82fbdd6a72f811e114438ca0da1604dad1b1e1c51527408e310fdac05f71175",
     "evidence/seen-replay005/tasks.json": "cee95ac7a32f5a8be2738d25418f3e3384e77fc5b49e1e32b9703bd65cb8ec30",
     "evidence/seen-replay005/token-prefix-audit.json": "92c10207a1d02c933748456c1f004b609adca7070639fbc7230c8a7a7bb550ac",
-    "evidence/source-export-bindings.json": "bfd6fa12640ef416abfe8d3f1127de38ee0cb725750874f9b00e1dcfff774ec0",
+    "evidence/source-export-bindings.json": "0f4e14b8444a67e66b5188f89f4c7270c126634fb812ac9fbfcfbe956fceca3f",
     "evidence/validation-binding-audit-v4.json": "ecb3b4bdee879579ef0c08e712f1cceeaea18dcf4c72d182bf5344711a812970",
     "final_qualification.py": "67bcf3e739c3dc0ee540137fbc93b134117b3d5f0dbd5f40de222bf20cf9e1fe",
     "final_qualification_v2.py": "b727cde1616af7939dfd2ffa7d6ac040734871e5be77886c641f70cf42db97e4",
@@ -595,6 +618,16 @@
       "raw_payload_bytes": 79054332,
       "redacted_files": 46,
       "export_index_sha256": "7b2d867b80499501c29d3645dddf08e01dbc6035667df3a5b8937ab97ae8b2f4",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-32b-course009-and-corrective006-full-evidence.tar.gz",
+      "bytes": 394817793,
+      "sha256": "7c10d8739cd63ba5dfe70252504147b0e1fba686b09af638ef416c48bc066e2a",
+      "files": 1279,
+      "raw_payload_bytes": 484020721,
+      "redacted_files": 112,
+      "export_index_sha256": "d4206a16395a9ff3fd81e58421bb419f8b87c0a02e8263fbae49550e723cd901",
       "qualified_adapter": false
     }
   ],
@@ -969,6 +1002,49 @@
           "original_sha256": "998e66e48905652d18c5817310d8c4691d7be28824d5ebc5ea77e177d21df860"
         }
       ]
+    },
+    {
+      "run": "32b-mixed001-epoch1",
+      "status": "rejected",
+      "adapter_sha256": "7d1a08c17d9cc18f7ab4d96ef0b0a93865376ab60ab7ecf38e4e8955033a0345",
+      "original_adapter_config_sha256": "d3c73386a1540b7278d4c8ad47e3323e94c67cbad783127a61477d4260b5fbac",
+      "original_training_receipt_sha256": "f3a908f73bd4c9c6aa9d1ff872eb2840e857baa6a18b952df35744f20f22f02c",
+      "steps": 310,
+      "asset": "rejected-32b-course009-and-corrective006-full-evidence.tar.gz",
+      "asset_tensor_path": "runs/32b-mixed001-epoch1/adapter/adapters.safetensors",
+      "qualified": false,
+      "checkpoints": [
+        {
+          "path": "runs/32b-mixed001-epoch1/adapter/0000060_adapters.safetensors",
+          "sha256": "7b8d38f1438d18ef723f20fd389521300d737ec30641c84ebcd68bc75b277e35",
+          "original_sha256": "7b8d38f1438d18ef723f20fd389521300d737ec30641c84ebcd68bc75b277e35"
+        },
+        {
+          "path": "runs/32b-mixed001-epoch1/adapter/0000120_adapters.safetensors",
+          "sha256": "c15a37342f87c54dbce50cedc4a66efb88177590aaaba04993d5f88c70351dc9",
+          "original_sha256": "c15a37342f87c54dbce50cedc4a66efb88177590aaaba04993d5f88c70351dc9"
+        },
+        {
+          "path": "runs/32b-mixed001-epoch1/adapter/0000180_adapters.safetensors",
+          "sha256": "d1150649f854dba8efaacf3c57609aa836f303175b75804fde1847d1486680c0",
+          "original_sha256": "d1150649f854dba8efaacf3c57609aa836f303175b75804fde1847d1486680c0"
+        },
+        {
+          "path": "runs/32b-mixed001-epoch1/adapter/0000240_adapters.safetensors",
+          "sha256": "3887d7145c8a4f9b2a6a91b959343d70476bd1692b7a5f799afdcc196f84b3c7",
+          "original_sha256": "3887d7145c8a4f9b2a6a91b959343d70476bd1692b7a5f799afdcc196f84b3c7"
+        },
+        {
+          "path": "runs/32b-mixed001-epoch1/adapter/0000300_adapters.safetensors",
+          "sha256": "4e89182c87243bddd9998ecb912da9238f68e041ed8f3b631da06138a1de838a",
+          "original_sha256": "4e89182c87243bddd9998ecb912da9238f68e041ed8f3b631da06138a1de838a"
+        },
+        {
+          "path": "runs/32b-mixed001-epoch1/adapter/adapters.safetensors",
+          "sha256": "7d1a08c17d9cc18f7ab4d96ef0b0a93865376ab60ab7ecf38e4e8955033a0345",
+          "original_sha256": "7d1a08c17d9cc18f7ab4d96ef0b0a93865376ab60ab7ecf38e4e8955033a0345"
+        }
+      ]
     }
   ],
   "base_manifests": [
@@ -986,8 +1062,8 @@
   "final_contents_included": false,
   "current_training_weights_included": false,
   "manufacturing_authorized": false,
-  "source_snapshot": "PR2 completed untouched32B baseline v1/v2: same12raw responses,12EOS,5/12 same pass set; one completed ineligible longest-row memory iteration and exact adapter/proofs; frozen v2 checker sources/tests/historical profile and hash-only seal. Fresh course009 running:310rows/310plannedsteps/LR5e-7,prospective+runtime protocol only,no active payloads or results. Eight prior courses remain rejected,all35 prior remote assets/tag/defaults preserved.",
-  "completed_rejected_courses": 8,
+  "source_snapshot": "Completed rejected32B course009:3/12development,0/4scans,16EOS,allsix checkpoint/final tensors preserved. New48/48 native-valid corrective teachers and exact256row focused mixture. Fresh010 running512plannedsteps/LR2e-6; immutable protocols only, no active payload. All prior39remote assets and frozen checker/holdout/defaults preserved.",
+  "completed_rejected_courses": 9,
   "initial_five_assets_immutable": true,
   "publication": {
     "initial_study_tag": "am-code-20261014-study",
@@ -1000,64 +1076,51 @@
     "existing_thirteen_remote_assets_immutable": true,
     "existing_seventeen_remote_assets_immutable": true,
     "new_archive_assets_for_this_update": [
-      "untouched-32b-baseline-and-memory-smoke-full-evidence.tar.gz"
+      "rejected-32b-course009-and-corrective006-full-evidence.tar.gz"
     ],
     "existing_nineteen_remote_assets_immutable": true,
     "existing_twenty_three_remote_assets_immutable": true,
     "existing_twenty_seven_remote_assets_immutable": true,
     "existing_thirty_one_remote_assets_immutable": true,
-    "existing_thirty_five_remote_assets_immutable": true
+    "existing_thirty_five_remote_assets_immutable": true,
+    "existing_thirty_nine_remote_assets_immutable": true
   },
   "latest_completed_course": {
-    "course": "008",
-    "run": "14b-mixed001-epoch1",
-    "base": "14B",
-    "status": "completed_rejected",
-    "training_rows": 310,
-    "planned_steps": 310,
-    "epochs": 1,
-    "learning_rate": 2e-06,
-    "parent_adapter_sha256": "4a735fb12a763761cc0261224fa2e2f2fbd4b8f0adc94492cec6a256b8a73862",
-    "parent_config_sha256": "8811bcd1b3724aca87b481b7fcd1a0b33cac8e7b4451982f7b7774ec18bb61c6",
-    "base_profile_sha256": "ae1b81ddd239197ac4f470e6d01173dfc0132d05215ac09ea6a31946625cf89e",
-    "corpus_sha256": "68db482a8b8a9ae16e07870f018598fa59a31c3d03745c52a7a0e78664051be0",
-    "provenance_sha256": "f9da9f3610a7c18461d38ca35bfe4bf3463e940c359d240f5ef6285bd4aa4f12",
-    "token_receipt_sha256": "83b3d2dec6acd038abee1817bed9c6afe9a76634d14a29279ddc70494fd54bc5",
-    "protocol_sha256": "245348fa8b93613d2e53d311d25e745270cfeb2b201f7cb2011da87ba25caa18",
-    "runtime_protocol_original_sha256": "fde5601efcc71fbddd70476100b0f853bfb0ba6662304e126aed8a1ec948a7cc",
-    "running_protocol_audit_original_sha256": "2c70217123d05b4e5d6875b4930e6a9d637b7b4f01e6684e70c5a6bca9f919f2",
-    "model_qualification": "formal_gate_rejected",
-    "training_steps": 310,
-    "development_passed": 4,
-    "scan_passed": 0,
-    "eos_responses": 9,
-    "truncated_responses": 7,
-    "all_generations_stopped": false,
-    "completed_weights_and_log_in_new_archive": true,
-    "adapter_sha256": "998e66e48905652d18c5817310d8c4691d7be28824d5ebc5ea77e177d21df860",
-    "adapter_config_sha256": "a2c7f437567739202feca9bae87345cb9b3f00e17a199209b97c8299ef5f40ad",
-    "completed_training_receipt_original_sha256": "4328d9f749177acd7da51cc56aafb5e3413af95cc21c2eae0975a43a3d1dbf6a",
-    "cpu_audit_original_sha256": "09ded5edddfaa91d4c5638de0f7b5c913fdc484ef265b741f2ffa0488aea6f0a",
-    "qualified_adapter": false
-  },
-  "current_training": {
+    "name": "course009-32b-mixed001-epoch1",
     "course": "009",
     "run": "32b-mixed001-epoch1",
     "base": "32B",
+    "status": "rejected",
+    "development_passed": 3,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "7d1a08c17d9cc18f7ab4d96ef0b0a93865376ab60ab7ecf38e4e8955033a0345",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-debug-api",
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "current_training": {
+    "course": "010",
+    "run": "32b-corrective006-epoch2",
+    "base": "32B",
     "status": "registered_running_no_candidate_result",
-    "prospective_original_sha256": "5116e312f4d5e5cb9d429b99dec50e4d2335d9566500c9840143c3d3e690f3d3",
-    "runtime_protocol_original_sha256": "54c1c08b48fb8017ed827f18a6a73b904d4e1379ca39d063a2eb4b9dd0c528b4",
-    "training_rows": 310,
-    "planned_steps": 310,
-    "learning_rate": 5e-07,
+    "prospective_original_sha256": "febe032b673b92eb8bdc4d8f6590732e6be838c853906bcece315d77bb2d876a",
+    "runtime_protocol_original_sha256": "55ff929f806c4ba4a62fc82b8af15b1dd52de990ae53b2c0dceab06525d30287",
+    "training_rows": 256,
+    "planned_steps": 512,
+    "epochs": 2,
+    "learning_rate": 2e-06,
     "fresh_untouched_base": true,
     "smoke_adapter_resumed": false,
     "active_weights_logs_captures_or_scores_included": false,
     "model_qualification": "not_established",
-    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
-    "launch_review_original_sha256": "382bda85b64882899369147c967c4954eefe520e2268b5323554e5dd81010106",
-    "launch_review_public_sha256": "bb09f2291b51113024e8f1150097f61a507fe59d0540f4b0af284c7c189c372c",
-    "latest_launch_review_outside_frozen_archive": true
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45"
   },
   "current_baseline": {
     "base": "32B",
@@ -1098,13 +1161,16 @@
     "cleanup_original_sha256": "fe7162edb3f6677a7845e0369164555dd53444eb79c68f2a7fcc3f7bcb9cc90d",
     "mixed310_token_receipt_original_sha256": "58490c655f7d3370454820c0603cfdf135fa49dfca4584b967420f1a5aea1641",
     "mixed310_max_tokens": 5416,
-    "memory_fit_proven": false,
+    "memory_fit_proven": true,
     "memory_smoke_input_original_sha256": "69b80a16db55868046e061bb1979931360bd04c0ddcdfdfdb0b6feb1c04213fc",
     "memory_smoke_launched_in_this_snapshot": true,
     "baseline_results_included": true,
     "base_payload_published": false,
     "single_longest_training_iteration_fit_observed": true,
-    "full_course_memory_fit_proven": false
+    "full_course_memory_fit_proven": true,
+    "full_course_peak_mlx_memory_bytes": 32187772960,
+    "full_course_memory_scope": "Completed310step course009; not future course stability.",
+    "memory_fit_scope": "Observed full course009310steps/max5416tokens within36GiB; no universal6144or future-course guarantee."
   },
   "memory_smoke32b": {
     "qualification_eligible": false,

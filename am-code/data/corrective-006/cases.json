@@ -1,0 +1,1209 @@
+{
+  "schema": "picogk.am.compact-teaching@1",
+  "count": 48,
+  "train_sha256": "fd988ca7422581a40ec3be64b582d05c3edcda7a2c51b2c8ba4302c8fb5314cc",
+  "author_sha256": "7ab13d4179b7fbf2b4d679467f9e19c3e94b943ade84589f464fe62da8745daa",
+  "reused_author_sha256": "0fb7eb7977f3821d51c3df80412d4094c5c5a5b188103921a9caaf93ce221f71",
+  "source_of_parameters": "New synthetic dimensions; generic development-failure classes only, no final tasks or captured-answer repair.",
+  "final_contents_read": false,
+  "native_validation": "pending; only passing cases may enter training",
+  "cases": [
+    {
+      "id": "correction-value-lambda-01",
+      "family": "value-lambda",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-value-lambda-01/Program.cs",
+      "source_sha256": "9ee10f432a03dcb37595f40f9bbb4271e1bca98239eda8707babb20ec3e01518",
+      "input": "cases/correction-value-lambda-01/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "half": [
+          3.12,
+          3.44,
+          2.86
+        ]
+      }
+    },
+    {
+      "id": "correction-reference-capture-01",
+      "family": "reference-capture",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-reference-capture-01/Program.cs",
+      "source_sha256": "0147b4fe814a22905d427bc62d2d97284a3e3235b120ba1716326a6778270173",
+      "input": "cases/correction-reference-capture-01/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "half": [
+          3.12,
+          3.44,
+          2.86
+        ]
+      }
+    },
+    {
+      "id": "correction-outer-copy-01",
+      "family": "shell",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-outer-copy-01/Program.cs",
+      "source_sha256": "826542f888d737da72a298aba003a57fa8c3950afb5c347a12aac8e51a612e4b",
+      "input": "cases/correction-outer-copy-01/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "radius": 2.74,
+        "wall": 1.08
+      }
+    },
+    {
+      "id": "correction-fresh-cutter-01",
+      "family": "vent",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-fresh-cutter-01/Program.cs",
+      "source_sha256": "b10f29f2113107f49c4dec0eccd4bffa1adcf134e82669f50cea15d18fc5624c",
+      "input": "cases/correction-fresh-cutter-01/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "half": [
+          3.12,
+          3.44,
+          2.86
+        ],
+        "wall": 1.08,
+        "vent_radius": 1.62
+      }
+    },
+    {
+      "id": "correction-box-api-01",
+      "family": "debug-api",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-box-api-01/Program.cs",
+      "source_sha256": "7a23eb4c8e417398f1dbd958435ba74a5e68148e673c8b69c9711579ec03a00e",
+      "input": "cases/correction-box-api-01/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "half": [
+          3.12,
+          3.44,
+          2.86
+        ]
+      }
+    },
+    {
+      "id": "correction-float-gyroid-01",
+      "family": "gyroid",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-float-gyroid-01/Program.cs",
+      "source_sha256": "c3a28a8f61dba78dab3735d6580d5a06c7de6e99f668b5259b2d3ad36b95fc3d",
+      "input": "cases/correction-float-gyroid-01/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "origin": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "cell": 5.92,
+        "wall": 1.08,
+        "extent": 3.48
+      }
+    },
+    {
+      "id": "correction-float-diamond-01",
+      "family": "diamond",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-float-diamond-01/Program.cs",
+      "source_sha256": "68c2a9ccbc8f285df6a4678c46961a1c5ab8c4e4bd03eb3c13761f295eac0915",
+      "input": "cases/correction-float-diamond-01/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "origin": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "cell": 5.92,
+        "wall": 1.08,
+        "extent": 3.48
+      }
+    },
+    {
+      "id": "correction-float-schwarz-p-01",
+      "family": "schwarz-p",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-float-schwarz-p-01/Program.cs",
+      "source_sha256": "d1a2d2f343383c312b19ee66b18347ca4e25c391f13b619d4e769d063795a710",
+      "input": "cases/correction-float-schwarz-p-01/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "origin": [
+          -0.88,
+          -3.08,
+          -0.6799999999999999
+        ],
+        "cell": 5.92,
+        "wall": 1.08,
+        "extent": 3.48
+      }
+    },
+    {
+      "id": "correction-mesh-rebuild-01",
+      "family": "stl-roundtrip",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-mesh-rebuild-01/Program.cs",
+      "source_sha256": "e0f953acb3af95d2736c6d1415628189206b8d648816278cbb5d100f77bcb0de",
+      "input": "cases/correction-mesh-rebuild-01/scan.stl",
+      "input_sha256": "cd552e3c1db7a8209ee204c0c83bb87365918ec5267804445448ef3c2eab1311",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "half": [
+          3.12,
+          3.44,
+          2.86
+        ]
+      }
+    },
+    {
+      "id": "correction-bbox-members-01",
+      "family": "stl-skin-vent",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-bbox-members-01/Program.cs",
+      "source_sha256": "17dbb5f06772eca8c6d2050e91ae0610a53cb6759308274adb0621adc506d112",
+      "input": "cases/correction-bbox-members-01/scan.stl",
+      "input_sha256": "cd552e3c1db7a8209ee204c0c83bb87365918ec5267804445448ef3c2eab1311",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          0.6,
+          -1.6,
+          0.8
+        ],
+        "half": [
+          3.12,
+          3.44,
+          2.86
+        ],
+        "wall": 1.08,
+        "vent_radius": 1.62
+      }
+    },
+    {
+      "id": "correction-safe-xyz-01",
+      "family": "xyz-occupancy",
+      "variant": 1,
+      "kind": "geometry",
+      "source": "cases/correction-safe-xyz-01/Program.cs",
+      "source_sha256": "c27ef75616259f077bc8cee84fdcc36d3ceff6d7e14fc71dc1e53a55804f8ef8",
+      "input": "cases/correction-safe-xyz-01/observations.xyz",
+      "input_sha256": "746992b4c5b50e37e8028c9a0769e9abf5570363cc71d38d991ff34e5af0b5bb",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -1.6,
+            -1.6,
+            0.8
+          ],
+          [
+            2.8000000000000003,
+            -1.6,
+            0.8
+          ],
+          [
+            0.6,
+            -4.0,
+            1.9000000000000001
+          ],
+          [
+            0.6,
+            0.7999999999999998,
+            -0.30000000000000004
+          ]
+        ],
+        "radius": 0.78,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "correction-safe-refusal-01",
+      "family": "signed-range-refusal",
+      "variant": 1,
+      "kind": "refusal",
+      "source": "cases/correction-safe-refusal-01/Program.cs",
+      "source_sha256": "cae182a27e60e9cff04af41f4b00abd5c3c15614c1a9f8603516e8c9f399a2b9",
+      "input": "cases/correction-safe-refusal-01/unsigned.xyz",
+      "input_sha256": "746992b4c5b50e37e8028c9a0769e9abf5570363cc71d38d991ff34e5af0b5bb",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_depth_images",
+          "camera_extrinsics",
+          "oriented_samples"
+        ],
+        "input_valid": true
+      }
+    },
+    {
+      "id": "correction-value-lambda-02",
+      "family": "value-lambda",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-value-lambda-02/Program.cs",
+      "source_sha256": "e5b346eba6d5780564cca7a7a97dea216e25022ddb8b0aa9f623ab38a50c2d05",
+      "input": "cases/correction-value-lambda-02/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "half": [
+          3.2800000000000002,
+          3.56,
+          3.04
+        ]
+      }
+    },
+    {
+      "id": "correction-reference-capture-02",
+      "family": "reference-capture",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-reference-capture-02/Program.cs",
+      "source_sha256": "314ac5a1a7375203ccc6d282516db6b0ac89afb602816b337c037cc0ee4c907e",
+      "input": "cases/correction-reference-capture-02/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "half": [
+          3.2800000000000002,
+          3.56,
+          3.04
+        ]
+      }
+    },
+    {
+      "id": "correction-outer-copy-02",
+      "family": "shell",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-outer-copy-02/Program.cs",
+      "source_sha256": "e2bfaf47adcd680c77bf5439431e822446a63d6e0ae9c53dc5cbbb91c34761a7",
+      "input": "cases/correction-outer-copy-02/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "radius": 3.06,
+        "wall": 1.16
+      }
+    },
+    {
+      "id": "correction-fresh-cutter-02",
+      "family": "vent",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-fresh-cutter-02/Program.cs",
+      "source_sha256": "67056722e2eeaf81db1da2f69f694f54451ec0b02de661857d385212a908ec6a",
+      "input": "cases/correction-fresh-cutter-02/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "half": [
+          3.2800000000000002,
+          3.56,
+          3.04
+        ],
+        "wall": 1.16,
+        "vent_radius": 1.76
+      }
+    },
+    {
+      "id": "correction-box-api-02",
+      "family": "debug-api",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-box-api-02/Program.cs",
+      "source_sha256": "286369bfd91f1b90e1e4ed7c9ad834dcf02d41363365a3c8998ecdd46660f9e2",
+      "input": "cases/correction-box-api-02/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "half": [
+          3.2800000000000002,
+          3.56,
+          3.04
+        ]
+      }
+    },
+    {
+      "id": "correction-float-gyroid-02",
+      "family": "gyroid",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-float-gyroid-02/Program.cs",
+      "source_sha256": "ba124f5aee4ac87fc0c300446b6af87148c873e81aec7ae864020bf8eda15710",
+      "input": "cases/correction-float-gyroid-02/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "origin": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "cell": 6.28,
+        "wall": 1.16,
+        "extent": 3.62
+      }
+    },
+    {
+      "id": "correction-float-diamond-02",
+      "family": "diamond",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-float-diamond-02/Program.cs",
+      "source_sha256": "24aef5cc98aa48a0a0f58a58a855edea847b5a06c23787d621fa974dd6343394",
+      "input": "cases/correction-float-diamond-02/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "origin": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "cell": 6.28,
+        "wall": 1.16,
+        "extent": 3.62
+      }
+    },
+    {
+      "id": "correction-float-schwarz-p-02",
+      "family": "schwarz-p",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-float-schwarz-p-02/Program.cs",
+      "source_sha256": "6bfbfee35f400bd4eebc2e906b983da1b2e67f6fef5b4dd70629da65b02c64dd",
+      "input": "cases/correction-float-schwarz-p-02/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "origin": [
+          -2.9699999999999998,
+          -0.9700000000000001,
+          -2.17
+        ],
+        "cell": 6.28,
+        "wall": 1.16,
+        "extent": 3.62
+      }
+    },
+    {
+      "id": "correction-mesh-rebuild-02",
+      "family": "stl-roundtrip",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-mesh-rebuild-02/Program.cs",
+      "source_sha256": "e0f953acb3af95d2736c6d1415628189206b8d648816278cbb5d100f77bcb0de",
+      "input": "cases/correction-mesh-rebuild-02/scan.stl",
+      "input_sha256": "6d30ce2f1fdd2365d9fb04b13f2e94c3a3556c2112e09306e08a394bf41797af",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "half": [
+          3.2800000000000002,
+          3.56,
+          3.04
+        ]
+      }
+    },
+    {
+      "id": "correction-bbox-members-02",
+      "family": "stl-skin-vent",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-bbox-members-02/Program.cs",
+      "source_sha256": "d73959924a30d7520f9a77748e047a0ffb2dc24e492a01336b06ccb27b55454e",
+      "input": "cases/correction-bbox-members-02/scan.stl",
+      "input_sha256": "6d30ce2f1fdd2365d9fb04b13f2e94c3a3556c2112e09306e08a394bf41797af",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -1.4,
+          0.6,
+          -0.6
+        ],
+        "half": [
+          3.2800000000000002,
+          3.56,
+          3.04
+        ],
+        "wall": 1.16,
+        "vent_radius": 1.76
+      }
+    },
+    {
+      "id": "correction-safe-xyz-02",
+      "family": "xyz-occupancy",
+      "variant": 2,
+      "kind": "geometry",
+      "source": "cases/correction-safe-xyz-02/Program.cs",
+      "source_sha256": "f891b238052e7a57012de68ddefab5b787b9b6c615ac990fc9729dda96f76e4f",
+      "input": "cases/correction-safe-xyz-02/observations.xyz",
+      "input_sha256": "137747c09f8e2e9d5c214d9665b433d7d4d3741c858a4762d34a14d1e9ef03d2",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -3.6,
+            0.6,
+            -0.6
+          ],
+          [
+            0.8000000000000003,
+            0.6,
+            -0.6
+          ],
+          [
+            -1.4,
+            -1.7999999999999998,
+            0.5000000000000001
+          ],
+          [
+            -1.4,
+            3.0,
+            -1.7000000000000002
+          ]
+        ],
+        "radius": 0.9,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "correction-safe-refusal-02",
+      "family": "signed-range-refusal",
+      "variant": 2,
+      "kind": "refusal",
+      "source": "cases/correction-safe-refusal-02/Program.cs",
+      "source_sha256": "49a128565231e1e771325dda17e72dc6f80acb0b153ff6fe0a925cfc5042d943",
+      "input": "cases/correction-safe-refusal-02/unsigned.xyz",
+      "input_sha256": "137747c09f8e2e9d5c214d9665b433d7d4d3741c858a4762d34a14d1e9ef03d2",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "registered_camera_poses",
+          "depth_confidence",
+          "outward_normals"
+        ],
+        "input_valid": true
+      }
+    },
+    {
+      "id": "correction-value-lambda-03",
+      "family": "value-lambda",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-value-lambda-03/Program.cs",
+      "source_sha256": "9bd8705c5fab90b51e78f5daab83a373a0c75c38124cb8fc25d4c56f9faf5018",
+      "input": "cases/correction-value-lambda-03/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "half": [
+          3.44,
+          3.6799999999999997,
+          3.2199999999999998
+        ]
+      }
+    },
+    {
+      "id": "correction-reference-capture-03",
+      "family": "reference-capture",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-reference-capture-03/Program.cs",
+      "source_sha256": "d90bb174e2cef1a4dca93eeb9a1ea703daa6531e1836c86d5407e7cce3d18166",
+      "input": "cases/correction-reference-capture-03/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "half": [
+          3.44,
+          3.6799999999999997,
+          3.2199999999999998
+        ]
+      }
+    },
+    {
+      "id": "correction-outer-copy-03",
+      "family": "shell",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-outer-copy-03/Program.cs",
+      "source_sha256": "09d8bfe2309f677fa293ec7bd1bcbeb5c8b5c9781c2c1219e292a168c033c5c1",
+      "input": "cases/correction-outer-copy-03/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "radius": 3.34,
+        "wall": 1.24
+      }
+    },
+    {
+      "id": "correction-fresh-cutter-03",
+      "family": "vent",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-fresh-cutter-03/Program.cs",
+      "source_sha256": "a3a2541605f6dfe28d9b381e5daf00ae9cf7ab4521039781c479c8ec862f4385",
+      "input": "cases/correction-fresh-cutter-03/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "half": [
+          3.44,
+          3.6799999999999997,
+          3.2199999999999998
+        ],
+        "wall": 1.24,
+        "vent_radius": 1.88
+      }
+    },
+    {
+      "id": "correction-box-api-03",
+      "family": "debug-api",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-box-api-03/Program.cs",
+      "source_sha256": "ef79c98e30e27a6f790034052ca392a96c3fc0a647811acb709e7c20526e0d80",
+      "input": "cases/correction-box-api-03/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "half": [
+          3.44,
+          3.6799999999999997,
+          3.2199999999999998
+        ]
+      }
+    },
+    {
+      "id": "correction-float-gyroid-03",
+      "family": "gyroid",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-float-gyroid-03/Program.cs",
+      "source_sha256": "32c03a9ef74568cca58d9825494dc6b876c27ef9913730ea24bbf932faf97ce8",
+      "input": "cases/correction-float-gyroid-03/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "origin": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "cell": 6.62,
+        "wall": 1.24,
+        "extent": 3.76
+      }
+    },
+    {
+      "id": "correction-float-diamond-03",
+      "family": "diamond",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-float-diamond-03/Program.cs",
+      "source_sha256": "d220c3445997cb0e4cb692f5eefc30242a88cd3d77b2862fdf20082c7bc2ea2d",
+      "input": "cases/correction-float-diamond-03/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "origin": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "cell": 6.62,
+        "wall": 1.24,
+        "extent": 3.76
+      }
+    },
+    {
+      "id": "correction-float-schwarz-p-03",
+      "family": "schwarz-p",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-float-schwarz-p-03/Program.cs",
+      "source_sha256": "66cea38a8a404e3868bcd3faffef87c680b9d27fff3c089428c9e9512e5149eb",
+      "input": "cases/correction-float-schwarz-p-03/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "origin": [
+          -0.655,
+          -0.2550000000000001,
+          -1.855
+        ],
+        "cell": 6.62,
+        "wall": 1.24,
+        "extent": 3.76
+      }
+    },
+    {
+      "id": "correction-mesh-rebuild-03",
+      "family": "stl-roundtrip",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-mesh-rebuild-03/Program.cs",
+      "source_sha256": "e0f953acb3af95d2736c6d1415628189206b8d648816278cbb5d100f77bcb0de",
+      "input": "cases/correction-mesh-rebuild-03/scan.stl",
+      "input_sha256": "79bdd0eb4b1b9630b8b08d34b19ae481cbcbb27c4d04e297a6344a6c62c97699",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "half": [
+          3.44,
+          3.6799999999999997,
+          3.2199999999999998
+        ]
+      }
+    },
+    {
+      "id": "correction-bbox-members-03",
+      "family": "stl-skin-vent",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-bbox-members-03/Program.cs",
+      "source_sha256": "e694e4bf7fc65de23016bcab8cc6925f6106089167fa09e8a472a3a8cabb1a72",
+      "input": "cases/correction-bbox-members-03/scan.stl",
+      "input_sha256": "79bdd0eb4b1b9630b8b08d34b19ae481cbcbb27c4d04e297a6344a6c62c97699",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          1.0,
+          1.4,
+          -0.2
+        ],
+        "half": [
+          3.44,
+          3.6799999999999997,
+          3.2199999999999998
+        ],
+        "wall": 1.24,
+        "vent_radius": 1.88
+      }
+    },
+    {
+      "id": "correction-safe-xyz-03",
+      "family": "xyz-occupancy",
+      "variant": 3,
+      "kind": "geometry",
+      "source": "cases/correction-safe-xyz-03/Program.cs",
+      "source_sha256": "30e79dd59b7c313e57b48dd3ac4d9b510f27dd1c83011382dfc28df16006290f",
+      "input": "cases/correction-safe-xyz-03/observations.xyz",
+      "input_sha256": "cc142d6054e44aa356a9f792dc534c6cd8a234787b61459c09d4e571cdf17aaf",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -1.2000000000000002,
+            1.4,
+            -0.2
+          ],
+          [
+            3.2,
+            1.4,
+            -0.2
+          ],
+          [
+            1.0,
+            -1.0,
+            0.9000000000000001
+          ],
+          [
+            1.0,
+            3.8,
+            -1.3
+          ]
+        ],
+        "radius": 1.02,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "correction-safe-refusal-03",
+      "family": "signed-range-refusal",
+      "variant": 3,
+      "kind": "refusal",
+      "source": "cases/correction-safe-refusal-03/Program.cs",
+      "source_sha256": "f8d75c1e2ff15c8cbebf5ffa87f3c1eaea360d54374880d4c1b633aef47b1cd5",
+      "input": "cases/correction-safe-refusal-03/unsigned.xyz",
+      "input_sha256": "cc142d6054e44aa356a9f792dc534c6cd8a234787b61459c09d4e571cdf17aaf",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "range_pixel_calibration",
+          "ray_origins",
+          "normal_orientation"
+        ],
+        "input_valid": true
+      }
+    },
+    {
+      "id": "correction-value-lambda-04",
+      "family": "value-lambda",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-value-lambda-04/Program.cs",
+      "source_sha256": "507980e66516a629f275f9f225330a7755afd318d365669a4ddc3ab5b7688a57",
+      "input": "cases/correction-value-lambda-04/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "half": [
+          3.6,
+          3.8,
+          3.4
+        ]
+      }
+    },
+    {
+      "id": "correction-reference-capture-04",
+      "family": "reference-capture",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-reference-capture-04/Program.cs",
+      "source_sha256": "4fa1cdbe8ad710fd1fb27cc9eb1630ff147d78406162bbd3511fde64b425bc47",
+      "input": "cases/correction-reference-capture-04/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "half": [
+          3.6,
+          3.8,
+          3.4
+        ]
+      }
+    },
+    {
+      "id": "correction-outer-copy-04",
+      "family": "shell",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-outer-copy-04/Program.cs",
+      "source_sha256": "a67afdf4673a319bd218715cc3256ea52a20834fe81e83216f352f6cc9a94889",
+      "input": "cases/correction-outer-copy-04/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "radius": 3.58,
+        "wall": 1.32
+      }
+    },
+    {
+      "id": "correction-fresh-cutter-04",
+      "family": "vent",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-fresh-cutter-04/Program.cs",
+      "source_sha256": "ebccd85fd0cc2d4144848864019ef967d7bb5ac8d0c7a3d43ba16807ead7e933",
+      "input": "cases/correction-fresh-cutter-04/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "half": [
+          3.6,
+          3.8,
+          3.4
+        ],
+        "wall": 1.32,
+        "vent_radius": 2.02
+      }
+    },
+    {
+      "id": "correction-box-api-04",
+      "family": "debug-api",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-box-api-04/Program.cs",
+      "source_sha256": "782e9ae03f2c770528cddc4d599b14989b231029ef2ba3715086259ecb87a63e",
+      "input": "cases/correction-box-api-04/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "half": [
+          3.6,
+          3.8,
+          3.4
+        ]
+      }
+    },
+    {
+      "id": "correction-float-gyroid-04",
+      "family": "gyroid",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-float-gyroid-04/Program.cs",
+      "source_sha256": "8626e61e55d9ba94d3b7d27a8a3afd1eedcef03924077cf369c33dc7c96237e6",
+      "input": "cases/correction-float-gyroid-04/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "origin": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "cell": 7.08,
+        "wall": 1.32,
+        "extent": 3.9
+      }
+    },
+    {
+      "id": "correction-float-diamond-04",
+      "family": "diamond",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-float-diamond-04/Program.cs",
+      "source_sha256": "1c2da19ca24e63d6759237b38a415a49ad6aea3265bc0aa45af3d8a1e87b66de",
+      "input": "cases/correction-float-diamond-04/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "origin": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "cell": 7.08,
+        "wall": 1.32,
+        "extent": 3.9
+      }
+    },
+    {
+      "id": "correction-float-schwarz-p-04",
+      "family": "schwarz-p",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-float-schwarz-p-04/Program.cs",
+      "source_sha256": "6167a3b104ee404e8bb02151024bcb4b3dcfe32ed1e369ba71f6f0e76841944e",
+      "input": "cases/correction-float-schwarz-p-04/input.dat",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "origin": [
+          -1.97,
+          -2.5700000000000003,
+          -0.5700000000000001
+        ],
+        "cell": 7.08,
+        "wall": 1.32,
+        "extent": 3.9
+      }
+    },
+    {
+      "id": "correction-mesh-rebuild-04",
+      "family": "stl-roundtrip",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-mesh-rebuild-04/Program.cs",
+      "source_sha256": "e0f953acb3af95d2736c6d1415628189206b8d648816278cbb5d100f77bcb0de",
+      "input": "cases/correction-mesh-rebuild-04/scan.stl",
+      "input_sha256": "8efa65230da2968ff4c03b3ee0c3261219575beeb62a607358094a685f8825e6",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "half": [
+          3.6,
+          3.8,
+          3.4
+        ]
+      }
+    },
+    {
+      "id": "correction-bbox-members-04",
+      "family": "stl-skin-vent",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-bbox-members-04/Program.cs",
+      "source_sha256": "6c4f6fac3934b5f678220ae7b6038ac9aba292ec06d2c0f479f7e5e42fe60d5c",
+      "input": "cases/correction-bbox-members-04/scan.stl",
+      "input_sha256": "8efa65230da2968ff4c03b3ee0c3261219575beeb62a607358094a685f8825e6",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.2,
+          -0.8,
+          1.2
+        ],
+        "half": [
+          3.6,
+          3.8,
+          3.4
+        ],
+        "wall": 1.32,
+        "vent_radius": 2.02
+      }
+    },
+    {
+      "id": "correction-safe-xyz-04",
+      "family": "xyz-occupancy",
+      "variant": 4,
+      "kind": "geometry",
+      "source": "cases/correction-safe-xyz-04/Program.cs",
+      "source_sha256": "3e48d3fcc6a1fe3426b97faf3964902c288ab79afbad8df37d490049ee8cb41b",
+      "input": "cases/correction-safe-xyz-04/observations.xyz",
+      "input_sha256": "becbdd62fedc8d5329456888b0930ef845eac2e573078bd982147f51b6925c78",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -2.4000000000000004,
+            -0.8,
+            1.2
+          ],
+          [
+            2.0,
+            -0.8,
+            1.2
+          ],
+          [
+            -0.2,
+            -3.2,
+            2.3
+          ],
+          [
+            -0.2,
+            1.5999999999999999,
+            0.09999999999999987
+          ]
+        ],
+        "radius": 1.14,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "correction-safe-refusal-04",
+      "family": "signed-range-refusal",
+      "variant": 4,
+      "kind": "refusal",
+      "source": "cases/correction-safe-refusal-04/Program.cs",
+      "source_sha256": "44ef1ef95f1c6329dc0e8e6bae3de682cb791db5446464d798123532fec08a26",
+      "input": "cases/correction-safe-refusal-04/unsigned.xyz",
+      "input_sha256": "becbdd62fedc8d5329456888b0930ef845eac2e573078bd982147f51b6925c78",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "depth_visibility",
+          "camera_intrinsics",
+          "signed_observations"
+        ],
+        "input_valid": true
+      }
+    }
+  ],
+  "prompt_correction": "Four refusal prompts remove inherited native-initialization instruction; all source/fixture/answer bytes unchanged; prior draft preserved."
+}

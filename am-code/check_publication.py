@@ -107,6 +107,55 @@ def check_completed32b(root, release):
     assert release['checker_v2']['profile_reanchored'] is False
 
 
+def check_completed009(root, release):
+    """Check the completed rejection and native-pass-only corrective mixture."""
+    read = lambda name: json.loads((root/name).read_text())
+    prefix = 'evidence/course009-completed/'
+    development, scan = read(prefix+'development-report.json'), read(prefix+'scan-report.json')
+    rejection = read(prefix+'formal-rejection.json')
+    assert development['passed'] == 3 and scan['passed'] == 0
+    assert rejection['status'] == 'rejected' and rejection['development_passes'] == 3 and rejection['scan_passes'] == 0
+    assert rejection['checks']['all_candidate_responses_stopped'] is True
+    assert rejection['checks']['all_scan_responses_stopped'] is True
+    assert rejection['checks']['retains_all_baseline_passes'] is False
+    audit = read(prefix+'cpu-audit.json')
+    assert len(audit['checks']) == 92 and all(audit['checks'].values())
+    receipt = read(prefix+'training-receipt.json')
+    assert receipt['training_steps'] == receipt['training_rows'] == 310
+    assert receipt['all_tensors_finite'] is True and receipt['peak_memory_bytes'] == 32187772960
+    assert receipt['adapter_sha256'] == '7d1a08c17d9cc18f7ab4d96ef0b0a93865376ab60ab7ecf38e4e8955033a0345'
+    diagnostic = read(prefix+'completed-diagnostic.json')
+    assert diagnostic['all16responses_stopped'] is True and diagnostic['actual_programs_written'] == 14
+    assert len(diagnostic['records']) == 16 and diagnostic['selection_receipt_exists'] is False
+    cases = read('data/corrective-006/cases.json')
+    native = read('data/corrective-006/native-review-summary.json')
+    assert native['passed'] == native['total'] == cases['count'] == 48
+    assert native['acceptance_thresholds_changed'] is False and native['model_or_gpu_used'] is False
+    assert native['train_sha256'] == digest(root/'data/corrective-006/train.jsonl')
+    answers = [json.loads(line) for line in (root/'data/corrective-006/train.jsonl').read_text().splitlines()]
+    results = {row['id']: row for row in native['tasks']}
+    for answer, case in zip(answers, cases['cases']):
+        result = results[case['id']]
+        assert result['status'] == 'passed' and result['native_exit_code'] == 0
+        assert result['checks'] and all(type(v) is bool and v for v in result['checks'].values())
+        fences = re.findall(r'```csharp\n(.*?)```', answer['messages'][1]['content'], re.S)
+        assert len(fences) == 1 and hashlib.sha256(fences[0].encode()).hexdigest() == case['source_sha256'] == result['source_sha256']
+    mixture = read('data/focused-32b-001/manifest.json')
+    assert mixture['rows'] == 256 and mixture['new_teacher_cases'] == 48 and mixture['new_rows'] == 96
+    assert mixture['maximum_tokens'] == 1759 and mixture['truncation'] is False
+    corpus = (root/'data/focused-32b-001/train.jsonl').read_bytes()
+    assert corpus.startswith((root/'data/corrective-005/train.jsonl').read_bytes())
+    assert digest(root/'data/focused-32b-001/train.jsonl') == mixture['train_sha256']
+    plan, runtime = read('evidence/course-010-protocol.json'), read('evidence/course010-runtime-protocol.json')
+    assert plan['iterations'] == runtime['config']['iters'] == 512
+    assert plan['training_rows'] == runtime['supplemental_rows'] == 256
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 2e-6
+    assert plan['parent_adapter'] is None and runtime['config']['resume_adapter_file'] is None
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mixture['train_sha256']
+    assert release['completed_rejected_courses'] == 9
+    assert release['current_training']['course'] == '010' and release['current_training_weights_included'] is False
+
+
 def check(root=ROOT, assets=None, native_runtime=False):
     release = json.loads((root/'release.json').read_text())
     assert release['schema'] == 'picogk.am.public-release@1'
@@ -248,9 +297,10 @@ def check(root=ROOT, assets=None, native_runtime=False):
     baseline14b = json.loads((root/'evidence/baseline-14b-report.json').read_text())
     assert baseline14b['passed'] == 4 and baseline14b['total'] == 12
     results = json.loads((root/'evidence/results-summary.json').read_text())['results']
-    assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0), (4, 2), (2, 3), (4, 1), (4, 0)]
+    assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0), (4, 2), (2, 3), (4, 1), (4, 0), (3, 0)]
     assert all(row['manufacturing_authorized'] is False for row in results)
     check_completed32b(root, release)
+    check_completed009(root, release)
     assert 'TRUSTED_PROFILE_SHA256 = None' in (root/'qwen-picogk-am').read_text()
     forbidden = re.compile(r'/Users/|-----BEGIN .*PRIVATE KEY|Bearer [A-Za-z0-9._-]{12,}|sk-[A-Za-z0-9]{20,}|VIN\s*[:=]', re.I)
     for relative in release['files_sha256']:
