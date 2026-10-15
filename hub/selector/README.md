@@ -40,7 +40,7 @@ Put these two adapter files in the source repository's `models/selector/`.
 The exact system cards and recorded questions are in `data/selector/`.
 
 ```sh
-.venv/bin/python evaluate.py --adapter selector --split test --output work/selector.json
+.venv/bin/python scripts/evaluate.py --adapter selector --split test --output work/selector.json
 ```
 
 Original contributions: Apache-2.0. Scalar/vector cards derive from four

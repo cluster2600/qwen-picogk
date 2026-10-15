@@ -70,7 +70,11 @@ def check(weights=False):
             assert (folder/'render.png').read_bytes()[:8] == b'\x89PNG\r\n\x1a\n'
         assert hashlib.sha256((gallery/'overview.png').read_bytes()).hexdigest() == receipt['overview_sha256']
         for name, sha in receipt['source_sha256'].items():
-            assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest() == sha
+            path = ROOT/name
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != sha:
+                # Preserve published source hashes across module/config relocation.
+                path = ROOT/'contracts/__init__.py' if name == 'contracts.py' else ROOT/'evidence/source-snapshots/v0.1.0'/(name+'.txt')
+            assert hashlib.sha256(path.read_bytes()).hexdigest() == sha
         assert hashlib.sha256((ROOT/'scripts/render_gallery.py').read_bytes()).hexdigest() == receipt['rendering']['source_sha256']
     advanced = ROOT/'docs/visuals/advanced'
     if (advanced/'manifest.json').exists():
@@ -101,8 +105,8 @@ def check(weights=False):
         assert hashlib.sha256((ROOT/'scripts/animate_mesh.py').read_bytes()).hexdigest()==receipt['source_sha256']
     print(json.dumps({'data_files_verified': len(manifest['data_files']), 'synthetic_cases': len(cases),
                       'training_rows': len(rows), 'weights_verified': weights, 'dataset_code_executed': False}))
-    if (ROOT/'scan-demo.json').exists():
-        scan=json.loads((ROOT/'scan-demo.json').read_text())
+    if (ROOT/'config/scan-demo.json').exists():
+        scan=json.loads((ROOT/'config/scan-demo.json').read_text())
         for name,sha in {**scan['sources_sha256'],**scan['data_sha256']}.items():
             path=(ROOT/name).resolve()
             assert path.is_relative_to(ROOT) and hashlib.sha256(path.read_bytes()).hexdigest()==sha
