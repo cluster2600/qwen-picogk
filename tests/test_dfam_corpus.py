@@ -93,6 +93,16 @@ class DfamCorpusTest(unittest.TestCase):
             self.assertTrue(dfam_corpus.lint([bad]))
         self.assertTrue(dfam_corpus.lint([]))
 
+    def test_only_scan_cases_may_declare_volume_above_reference(self):
+        infill = copy.deepcopy(self.cases[0]); infill['expect']['volume_ratio'] = [0.5, 1.1]
+        self.assertTrue(any('volume_ratio' in p for p in dfam_corpus.lint_case(infill, self.bib)))
+        scan = copy.deepcopy(self.cases[0]); scan.update(id='scan-900', category='scan_repair')
+        for interval, ok in [([0.9, 1.15], True), ([0.9, 1.6], False), ([1.2, 1.1], False)]:
+            scan['expect'] = {'volume_ratio': interval}
+            with self.subTest(interval=interval):
+                problems = [p for p in dfam_corpus.lint_case(scan, self.bib) if 'volume_ratio' in p]
+                self.assertEqual(not problems, ok)
+
     def test_unassigned_corpus_is_refused_before_assembly(self):
         with self.assertRaisesRegex(ValueError, 'Corpus not ready'):
             dfam_corpus.assemble(self.cases, {}, Mock())
@@ -108,17 +118,19 @@ class DfamCorpusTest(unittest.TestCase):
         self.assertIn('family gyroid-sheet crosses partitions', problems['corpus'])
 
     def test_receipt_requires_current_bindings_and_recomputed_metrics(self):
+        # The receipt fixture covers infill-001 only; bind it to that case.
+        cases = [c for c in self.cases if c['id'] == 'infill-001']
         receipt = self.receipt()
-        dfam_corpus.receipt_check(self.cases, receipt)
+        dfam_corpus.receipt_check(cases, receipt)
         for key, value in [('policy_source_sha256', '0' * 64), ('checker_source_sha256', '0' * 64),
                            ('voxel_mm', 0.5), ('isolation', 'host')]:
             with self.subTest(key=key), self.assertRaises(ValueError):
-                dfam_corpus.receipt_check(self.cases, dict(receipt, **{key: value}))
+                dfam_corpus.receipt_check(cases, dict(receipt, **{key: value}))
         for key, value in [('degenerate_triangles', 86), ('stl_sha256', ''), ('thin_fraction', float('nan'))]:
             changed = copy.deepcopy(receipt)
             changed['cases']['infill-001']['run']['outputs']['part.stl'][key] = value
             with self.subTest(key=key), self.assertRaises(ValueError):
-                dfam_corpus.receipt_check(self.cases, changed)
+                dfam_corpus.receipt_check(cases, changed)
         changed = copy.deepcopy(self.cases)
         changed[0]['user'] += ' changed'
         with self.assertRaises(ValueError):

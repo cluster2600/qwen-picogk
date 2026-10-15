@@ -65,6 +65,7 @@ CANDIDATE_CPU_QUOTA = '200%'
 # Parity rasterisation leaves sub-voxel pockets between near-touching sheets;
 # a genuinely trapped lattice cell is hundreds of mm3.
 MAX_ENCLOSED_VOID_MM3 = 2.0
+SCAN_VOLUME_RATIO_MAX = 1.5
 MAX_ENCLOSED_POCKET_MM3 = 0.25
 YEAR = re.compile(r'\((?:19|20)\d\d\)')
 
@@ -179,10 +180,14 @@ def lint_case(case, bib):
         if prefix in ('infill', 'dfam') and 'volume_ratio' not in expect and 'overhang_fraction_max' not in expect:
             problems.append('infill and dfam cases must state volume_ratio or overhang_fraction_max')
         interval = expect.get('volume_ratio')
+        # A scan reconstruction can legitimately exceed the reference volume:
+        # closing fills concavities and follows the outermost noisy points.
+        # Every other category removes or keeps material, so stays within (0, 1].
+        top = SCAN_VOLUME_RATIO_MAX if prefix == 'scan' else 1
         if interval is not None and (not isinstance(interval, list) or len(interval) != 2 or
                 not all(type(v) in (float, int) and math.isfinite(v) for v in interval) or
-                not 0 < interval[0] <= interval[1] <= 1):
-            problems.append('volume_ratio must be a finite ordered interval in (0, 1]')
+                not 0 < interval[0] <= interval[1] <= top):
+            problems.append(f'volume_ratio must be a finite ordered interval in (0, {top}]')
         elif prefix == 'infill' and interval is not None and interval[1] > 0.9:
             problems.append('infill volume_ratio upper bound must be <= 0.9 (it must actually lighten)')
         for key in ('overhang_fraction_max', 'thin_fraction_max', 'min_wall_mm'):

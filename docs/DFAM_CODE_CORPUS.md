@@ -1,10 +1,13 @@
 # PicoGK DfAM corpus: authoring, verification and training gates
 
 This is a work-in-progress teaching corpus, separate from the released
-parameter planner and the AM C# study. It has **one historical example**,
-not 150 completed examples and not a newly trained model. Its source and old
-verification receipt remain unchanged. Under `dfam-strict-v2`, that example
-is blocked by 86 degenerate triangles. No training partitions are published.
+parameter planner and the AM C# study. It has **four examples**, not 150
+completed examples and not a newly trained model. The historical `infill-001`
+source and old verification receipt remain unchanged; under `dfam-strict-v2`
+that example is blocked by 86 degenerate triangles. `scan-001`, `dfam-001` and
+`debug-001` pass strict isolated native verification on Linux
+([receipt](../evidence/dfam-code/strict-v2-20261015.json)). No training
+partitions are published.
 
 ## Acceptance gates
 
