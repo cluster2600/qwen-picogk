@@ -319,7 +319,12 @@ def sandbox_command(runner, source, out, namespace, env):
             '--chdir', '/output', '--setenv', 'HOME', '/tmp', '--setenv', 'TMPDIR', '/tmp',
             '--setenv', 'DOTNET_ROOT', env['DOTNET_ROOT'], '--setenv', 'LD_LIBRARY_PATH', env['PICOGK_NATIVE'],
             '--setenv', 'DOTNET_CLI_TELEMETRY_OPTOUT', '1', '--setenv', 'DOTNET_PROCESSOR_COUNT', '2',
-            '--setenv', 'DOTNET_GCHeapHardLimit', '80000000']
+            '--setenv', 'DOTNET_GCHeapHardLimit', '80000000',
+            # .NET's W^X double mapping reserves executable memory through a
+            # large shared-memory file, which the 256 MiB RLIMIT_FSIZE below
+            # kills with SIGXFSZ (exit 153) before Main runs. Keep the file
+            # limit and turn the double mapping off instead.
+            '--setenv', 'DOTNET_EnableWriteXorExecute', '0']
     input_path = '/input/' + Path(source).name if source else ''
     if source:
         cmd += ['--dir', '/input', '--ro-bind', str(Path(source).resolve()), input_path]

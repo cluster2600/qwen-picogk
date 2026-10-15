@@ -168,6 +168,9 @@ class DfamCorpusTest(unittest.TestCase):
             self.assertEqual(cmd[cmd.index('--bind') + 1:cmd.index('--bind') + 3], [str(out.resolve()), '/output'])
             self.assertIn('/input/selected.stl', cmd)
             self.assertIn('--fsize=268435456:268435456', cmd)
+            # The runtime cannot start under that file limit with W^X double mapping.
+            i = cmd.index('DOTNET_EnableWriteXorExecute')
+            self.assertEqual((cmd[i - 1], cmd[i + 1]), ('--setenv', '0'))
             self.assertNotIn(str(ROOT), cmd)
 
     def test_escaping_candidate_output_is_not_sent_to_checker(self):
