@@ -101,5 +101,53 @@
     "model_called": true,
     "geometry_encoder": false,
     "model_response_repaired": false
+  },
+  "private_fan_verification": {
+    "status": "demo_geometry_passed",
+    "input_sha256": "244d4caeb2c4ac4a692b650ec9d766bee2a8124335a0236a55a1d30c1b2b98ba",
+    "delivered_stl_sha256": "bf5283aa0b55639109e122aeddce64ece955950398d6d91548b8b434be838572",
+    "repair_used": true,
+    "retained_surface_area_fraction": 0.9868936876182818,
+    "omitted_triangles": 16755,
+    "manufacturing_qualified": false,
+    "result_sha256": "efb6884c1dcd87da95de51f65d272a0b2743e37a3f98fc77c7656065f8b3b66e",
+    "checks": {
+      "watertight": true,
+      "winding_consistent": true,
+      "one_component": true,
+      "positive_volume": true,
+      "no_zero_area_faces": true,
+      "topology_clean": true,
+      "scan_coverage": true,
+      "reconstructed_surface": true,
+      "pymesh_no_self_intersections": true
+    },
+    "pymesh_cleanup": {
+      "stage": "exact_mesh_cleanup",
+      "input_npz_sha256": "ef2e866c3d11e3bb0597b3f350e503350ac4126175615c345aa8da58a3daec5e",
+      "output_npz_sha256": "2a3f7a7f0c43de6cc2991dd431874f7076fd9b6a0e78987aa508a1a734ecc144",
+      "pymesh_version": "0.3",
+      "python_version": "3.6.11",
+      "numpy_version": "1.19.0",
+      "duplicate_vertex_tolerance": 0.0,
+      "input_vertices": 624492,
+      "input_faces": 1240439,
+      "output_vertices": 624479,
+      "output_faces": 1240439,
+      "merged_vertices": 13,
+      "removed_isolated_vertices": 0,
+      "manufacturing_qualified": false
+    },
+    "pymesh_audit": {
+      "stage": "native_intersection_audit",
+      "input_sha256": "bf5283aa0b55639109e122aeddce64ece955950398d6d91548b8b434be838572",
+      "pymesh_version": "0.3",
+      "python_version": "3.6.11",
+      "self_intersection_pairs": 0,
+      "repair_performed": false,
+      "manufacturing_qualified": false
+    },
+    "source_hashes_verified": true,
+    "scope": "Dominant front surface demo envelope; unregistered rear fragment omitted; added connections are hypotheses; raw geometry and correspondence arrays remain private."
   }
 }

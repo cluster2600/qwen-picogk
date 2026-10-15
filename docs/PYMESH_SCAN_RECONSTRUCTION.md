@@ -118,6 +118,17 @@ unchanged delivered STL passes both assessment engines with zero PyMesh
 intersection pairs. This is one exposed integration fixture, not a new model
 benchmark or proof for the private fan.
 
+A separate complete private-fan run also passed all nine combined checks:
+PyMesh merged 13 exact duplicate vertices without removing faces from the
+prepared intake, and detected zero intersection pairs in the delivered STL.
+The first native result failed the component and reconstructed-surface checks;
+the one declared demo-envelope retry passed. That retry uses the dominant
+front surface (98.689% of input triangle area), omits 16,755 triangles from
+the unregistered rear fragment, and adds hypothetical connections. The area
+fraction is not an accuracy score. The receipt records hashes and aggregate
+results; geometry and correspondence arrays remain private. Source bindings
+and the delivered STL hash were verified after completion.
+
 The receipt also records an earlier hash-mismatch refusal with no STL delivery.
 The mismatch was not reproduced by isolated-stage hash-stability diagnostics
 or the accepted clean run; its cause is not established. No hash gate was
