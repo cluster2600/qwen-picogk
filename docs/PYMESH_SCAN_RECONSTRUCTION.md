@@ -7,6 +7,12 @@ native-STL self-intersection audit. The Qwen adapter and its bounded JSON
 contract are unchanged. This integration does not train Qwen on PyMesh APIs
 or introduce a raw-scan encoder.
 
+The separate [DfAM corpus checker](DFAM_CODE_CORPUS.md) uses libigl under
+`dfam-strict-v3`. This integration does not replace it. PyMesh cleanup uses
+zero tolerance; the DfAM sidecar uses a 0.0001 mm weld grid, so their counts
+are not interchangeable. The [latest-change review](CHANGE_REVIEW_20261015.md)
+records the follow-up priorities after integrating both changes.
+
 ```mermaid
 flowchart LR
     A[Private OBJ] --> B[Independent intake and rigid pose]
