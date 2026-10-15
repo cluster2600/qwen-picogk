@@ -1,7 +1,7 @@
 {
   "schema": "picogk.am.release-assets-staged@1",
   "created_at": "2026-10-14T15:58:01.496883+00:00",
-  "status": "existing_assets_unchanged_completed_course008_staged",
+  "status": "existing_assets_unchanged_completed32b_baseline_smoke_v2_source_update",
   "assets": [
     {
       "asset": "original150-full-evidence.tar.gz",
@@ -122,6 +122,16 @@
       "redacted_files": 28,
       "export_index_sha256": "dcd5f32d4a3010b2165dd494219cddb8d169f1380087b94218336334e0eb69a0",
       "qualified_adapter": false
+    },
+    {
+      "asset": "untouched-32b-baseline-and-memory-smoke-full-evidence.tar.gz",
+      "bytes": 61219435,
+      "sha256": "fe3aea94582032690b80e2713984a4858f4e034222b784b45c201ae5f1d13604",
+      "files": 436,
+      "raw_payload_bytes": 79054332,
+      "redacted_files": 46,
+      "export_index_sha256": "7b2d867b80499501c29d3645dddf08e01dbc6035667df3a5b8937ab97ae8b2f4",
+      "qualified_adapter": false
     }
   ],
   "ongoing_training_weights_copied": false,
@@ -140,7 +150,7 @@
   "updated_at": "2026-10-15T03:32:44.486592+00:00",
   "initial_five_assets_immutable": true,
   "new_assets": [
-    "rejected-14b-course008-full-evidence.tar.gz"
+    "untouched-32b-baseline-and-memory-smoke-full-evidence.tar.gz"
   ],
   "initial_uploaded_seven_assets_immutable": true,
   "existing_thirteen_remote_assets_immutable": true,

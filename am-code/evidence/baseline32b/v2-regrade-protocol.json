@@ -1,0 +1,33 @@
+{
+  "schema": "picogk.am.prospective-unchanged-capture-regrade@2",
+  "registered_at_utc": "2026-10-15T04:14:49.756606+00:00",
+  "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+  "checker_policy": "roslyn-static-allowlist@2",
+  "task_sha256": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+  "capture": "baseline-development-32b",
+  "capture_protocol_sha256": "59b8f70fee0d642ed859b0a6aff760df350f4b2a235fc428d98d092b66b2b1b7",
+  "capture_responses_sha256": "528c198c9d0e6a50891dd9009a12a69487f11f36d70280864bb213adde78ea95",
+  "capture_receipt_sha256": "fbf9d8dc2b27638e247b8dd821af4f2b10ac09796ec47be198a07da4f5dc4625",
+  "historical_v1_report_sha256": "6a84e3de296fee17a9984651af025c07dec418f28d85ec4f4345956c3aa630a1",
+  "raw_response_sha256": {
+    "development-initialize": "8c4ebf0e550b3546b5653806b269021cce8334e5e6a77fbdea27b89f756f2b3c",
+    "development-offset-sign": "b89f82523eb49a5d8c34d3b15ccabf1698159893d11528d68aa8695f31a70abe",
+    "development-closing": "778256c2032b71970374dde5244395641808d60c27a78e87e5b87f5f5e288ac2",
+    "development-shell": "346ee9ea448cfd2e817cfa9ed4d4e2905e4689893da2eae16b6e75f9b8ca7a0e",
+    "development-vent": "1e916f8ce61214b664f26a6f48370d3378289002d59e959c9e9b22d38c21bacc",
+    "development-cone-roof": "7b0f3fae4da317258498f561a134f04fcd301c96d0a2d8ff38d56b04fa7c9f1b",
+    "development-gyroid": "14247a11f7e621199e5de7bf43175b0d81e8f7c4cf3a52c37036a8583b92b574",
+    "development-diamond": "a16feaa03fbbc15766fc8d60a5d88b056033caa39616b4ba6c5e0315f2991e20",
+    "development-schwarz-p": "81216900c5ecd6efb010d722d87fd60cf2e49fb8b5822a04a584f701f50803fd",
+    "development-scan-normals": "148f183c9fa5017c65b95aa43951c23b4b5df4fa636069dba798a878b0053ba8",
+    "development-debug-api": "07dcc04ad99781fefcb391e4ce218cd0696e670c9264e2771cad6c6c25caadd2",
+    "development-missing-interfaces": "ad3c7029e7118744ac212cc83a1943dbf3a3643197569aff9907960ec913bc01"
+  },
+  "run_dir": "baseline-scores-32b-v2",
+  "model_queried_again": false,
+  "raw_responses_modified": false,
+  "v1_source_or_receipts_modified": false,
+  "geometry_or_acceptance_gates_changed": false,
+  "final_semantic_access": false,
+  "manufacturing_authorized": false
+}

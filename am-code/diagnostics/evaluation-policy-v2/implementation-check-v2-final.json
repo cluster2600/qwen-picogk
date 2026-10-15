@@ -1,0 +1,61 @@
+{
+  "schema": "picogk.am.prospective-v2-implementation-check@1",
+  "status": "sources_and_cpu_checks_complete_profile_freeze_pending",
+  "source_sha256": {
+    "evaluation/policy_v2.py": "34637f85ec9ae86e0d4acff485989a0b89eb0b3536c8baeced449777ac88e852",
+    "evaluation/PolicyLexer/Program.cs": "faa0eb9520cd92e0424bd839d4b700b5e71dbde2e0ebfd7cd047252415f9bd74",
+    "evaluation/PolicyLexer/PolicyLexer.csproj": "c7bc1fb63db3821a86ccbb8c61a0acd52cfe3b6faaf95ceeae04edf682f234cb",
+    "evaluation/evaluate_v2.py": "45c65926c94e49b9d1ce54799e45f49e16dc8ccf2e962a227ddfc5856a5e9e1d",
+    "end-to-end/evaluate_v2.py": "939a1e5c0986ca98ff7fb471f5c44589a58b222cf4520d65fceb0d3235847af7",
+    "evaluation/test_policy_v2.py": "8d903965b137f08bb164c57948362b131eaf42e7b9657d88ecb1b51f49baa7f8",
+    "evaluation/test_evaluate_v2.py": "ed26f0c9a03b5d33e7602514151af757c7e0143d8d8626d505371992c520b6c0",
+    "sealed-reference-hashes-v2.json": "da8694851a053a570691df180888dd63531d9c6fa6ccfbd756039756270327a7",
+    "diagnostics/evaluation-policy-v2/lexical-results-v2.json": "ae4f0c4ea67959b35c221cfa6b12f3e5e78b4f3c620999e9929d3e85578dc3a6"
+  },
+  "v1_sha256": {
+    "evaluation/evaluate.py": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+    "end-to-end/evaluate.py": "e74790f0acabb39ff8bb62dd54ed265a9050c00c52ef40a80d59d67a6a24705c",
+    "evaluation/development.json": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+    "end-to-end/development.json": "b6391901ee32eff8dcebaf87239278743214cc604000c5b39dfd14dd27461baf",
+    "end-to-end/freeze.json": "e9fbeca73172f6dece5a45640fab5fe4ff7b37b2f3f51de4522cdba1f5a5da94"
+  },
+  "checks": {
+    "all_v1_frozen_identities_unchanged": true,
+    "all_closed_profile_files_exist": true,
+    "all_closed_external_files_exist": true,
+    "cached_inspector_source_exact": true,
+    "cached_native_dependency_copies_exact": true
+  },
+  "unit_tests": {
+    "command": "venv/bin/python -B -m unittest -v test_policy_v2 test_evaluate_v2",
+    "cwd": "evaluation",
+    "passed": 14,
+    "total": 14,
+    "exit_code": 0
+  },
+  "independent_real_lexer_fixtures": {
+    "passed": 18,
+    "total": 18,
+    "accept": 7,
+    "reject": 11,
+    "parse_errors": 0
+  },
+  "blind_development_reference_subsets_verified": 16,
+  "sealed_artifact_hash_count": 140,
+  "profile_required_file_count": 40,
+  "profile_external_file_count": 14,
+  "compiler_build": {
+    "sdk": "9.0.317",
+    "warnings": 0,
+    "errors": 0,
+    "exit_code": 0
+  },
+  "native_geometry_executed": false,
+  "model_or_gpu_accessed": false,
+  "semantic_final_contents_read": false,
+  "historical_results_modified": false,
+  "regrade_performed": false,
+  "initial_implementation_check_sha256": "fc05bb29857abc85374912e8d13fd70df8b2637ba9691ecfc30350607cfba938",
+  "development_teacher_checks_sha256": "8d0c305216fbf1d91f954f4ba1e23526bfd69e5f864b1bd82255baa0e8cac00b",
+  "development_teacher_policy_and_hash_checks_passed": true
+}

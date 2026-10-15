@@ -10,3 +10,6 @@ check:
 	$(PYTHON) am-code/repack_model14b.py --self-check
 	$(PYTHON) am-code/qualification.py --self-check
 	$(PYTHON) am-code/final_qualification.py --self-check
+	$(PYTHON) am-code/qualification_v2.py --self-check
+	$(PYTHON) am-code/infer_v2_selfcheck.py
+	PYTHONPATH=am-code/evaluation $(PYTHON) -m unittest test_policy_v2.ProfileBindingTests test_evaluate_v2

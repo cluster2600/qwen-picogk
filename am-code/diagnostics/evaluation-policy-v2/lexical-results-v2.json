@@ -1,0 +1,181 @@
+{
+  "schema": "picogk.am.lexical-policy-validation@2",
+  "status": "passed",
+  "fixture_sha256": "f819b97e9a166c2956c1531068ac7f43680d06e40f81f0a5f152cd1243d20fc4",
+  "source_and_binary_sha256": {
+    "evaluation/policy_v2.py": "34637f85ec9ae86e0d4acff485989a0b89eb0b3536c8baeced449777ac88e852",
+    "evaluation/PolicyLexer/Program.cs": "faa0eb9520cd92e0424bd839d4b700b5e71dbde2e0ebfd7cd047252415f9bd74",
+    "evaluation/PolicyLexer/PolicyLexer.csproj": "c7bc1fb63db3821a86ccbb8c61a0acd52cfe3b6faaf95ceeae04edf682f234cb",
+    "evaluation/PolicyLexer/bin/Release/net9.0/PolicyLexer.dll": "940e230dd24ae3b562a21690badc0d2b6c27af1bca568fcf88913c50a7e2e9ec"
+  },
+  "cases": [
+    {
+      "id": "ordinary-literal-words",
+      "source_sha256": "4f1b4b00e186691f2ba6394e56535c6e14032c070dc50a28d1a3cc7ecfa69f09",
+      "syntax_errors": [],
+      "expected_policy_acceptance": true,
+      "actual_policy_acceptance": true,
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": "actual-process-start",
+      "source_sha256": "a3e812079325f265cd097a34f573aaf05ea6e98a66c8fafea9753bb2aa11487e",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "operation/type outside static allowlist"
+    },
+    {
+      "id": "actual-process-construction",
+      "source_sha256": "4e081faee639e2538485b7f48fb4c04a5763c7874c70d4ef6f7919c06f7d2a98",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "operation/type outside static allowlist"
+    },
+    {
+      "id": "global-process-alias",
+      "source_sha256": "26c819c802173f009e545de317a7ea9a29035d3dc7d938171aab073ffcdd826d",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "namespace outside static allowlist"
+    },
+    {
+      "id": "verbatim-literal-words",
+      "source_sha256": "133b42566750855b77b697880a028bb5688b30bc61bf94638e4bf8b2aa9400f0",
+      "syntax_errors": [],
+      "expected_policy_acceptance": true,
+      "actual_policy_acceptance": true,
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": "raw-literal-words",
+      "source_sha256": "b14581e89cbe2c1285db586e6e7bfc9f98b132b02da28d1d6ec5193735d4f924",
+      "syntax_errors": [],
+      "expected_policy_acceptance": true,
+      "actual_policy_acceptance": true,
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": "utf8-literal-words",
+      "source_sha256": "eccf60fd51fd9db7c8dd5d13ffb0bde21fc8ef8208f7cfad7ae1fbbae0b2606a",
+      "syntax_errors": [],
+      "expected_policy_acceptance": true,
+      "actual_policy_acceptance": true,
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": "interpolated-text-safe-expression",
+      "source_sha256": "55f8bd283c9b1b8eb21062ced6e6144bdcf07de6a796005e41e97c5e696ba571",
+      "syntax_errors": [],
+      "expected_policy_acceptance": true,
+      "actual_policy_acceptance": true,
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": "interpolation-real-environment-call",
+      "source_sha256": "4365718704be6709bf7ab9ea6bb4ff2555c071e93ca7f42d9d2fde1097dd97fc",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "operation/type outside static allowlist"
+    },
+    {
+      "id": "raw-interpolation-real-process",
+      "source_sha256": "ee4a6ca0b79cfd5bac7e2c6bcfcb50e5aea7abbef241cd828e8301a3f628a3c1",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "operation/type outside static allowlist"
+    },
+    {
+      "id": "nested-raw-interpolation-real-process",
+      "source_sha256": "293f48c527694a253864f3f5c55af4f42a218302d45c4f4c06650b8b1083594f",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "operation/type outside static allowlist"
+    },
+    {
+      "id": "astral-before-literal-safe",
+      "source_sha256": "0aa9b04eaf8e18560f142d48899ae2c1c58fa45d8a3f346f5a387e5b33112afb",
+      "syntax_errors": [],
+      "expected_policy_acceptance": true,
+      "actual_policy_acceptance": true,
+      "passed": true,
+      "error": null
+    },
+    {
+      "id": "astral-before-literal-and-api",
+      "source_sha256": "ca74461c3528055b535d2f3ac9cd4f9cb034f0b41c0f786786f5130385cb775c",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "operation/type outside static allowlist"
+    },
+    {
+      "id": "escaped-process-identifier",
+      "source_sha256": "21a63cfb587d803cb6907cbb1f8e53fa7fd974782b87cdd7fdf078069d1739f7",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "escaped identifiers/preprocessor forbidden"
+    },
+    {
+      "id": "verbatim-process-identifier",
+      "source_sha256": "626080211ee4b8bbe36087cb1f241b05879d8d7ac8a00b0d34326a3cf5d93e60",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "escaped identifiers/preprocessor forbidden"
+    },
+    {
+      "id": "qualified-func-actual",
+      "source_sha256": "135a41ef04f202f394cccaa8e38c84c8f98c2c07c5aba76fe666bf10a65cf11d",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "fully qualified System type outside static allowlist"
+    },
+    {
+      "id": "streamreader-actual",
+      "source_sha256": "c8c9ead8cce9a75ffa8ccb16d18c70be4ddbf31a7158aa038e3953bb40159b37",
+      "syntax_errors": [],
+      "expected_policy_acceptance": false,
+      "actual_policy_acceptance": false,
+      "passed": true,
+      "error": "operation/type outside static allowlist"
+    },
+    {
+      "id": "comment-api-words",
+      "source_sha256": "2358be34056a192406539370e454c945ecc991955e5fd11db94bb9e1260b4aeb",
+      "syntax_errors": [],
+      "expected_policy_acceptance": true,
+      "actual_policy_acceptance": true,
+      "passed": true,
+      "error": null
+    }
+  ],
+  "passed": 18,
+  "total": 18,
+  "native_execution": false,
+  "model_loaded": false,
+  "gpu_used": false,
+  "semantic_final_contents_read": false
+}

@@ -21,6 +21,92 @@ def digest(path):
     return result.hexdigest()
 
 
+def check_completed32b(root, release):
+    """Check exported evidence identities without trusting a relocated checker profile."""
+    read = lambda name: json.loads((root/name).read_text())
+    ledger = read('evidence/source-export-bindings.json')['files']
+    bindings = {row['public_path']: row for row in ledger}
+    assert len(bindings) == len(ledger)
+    for name, row in bindings.items():
+        assert digest(root/name) == row['public_sha256'], name
+    original = lambda name: bindings[name]['source_sha256']
+    capture = read('evidence/baseline32b/capture/responses.json')
+    capture_protocol = read('evidence/baseline32b/capture/protocol.json')
+    capture_receipt = read('evidence/baseline32b/capture/receipt.json')
+    old, new = read('evidence/baseline32b/v1-report.json'), read('evidence/baseline32b/v2-report.json')
+    policy = read('evidence/evaluation-policy-v2/checker-profile-v2.json')
+    anchor = (root/'evidence/evaluation-policy-v2/checker-profile-v2.sha256').read_text().strip()
+    peer = read('diagnostics/evaluation-policy-v2/frozen-profile-independent-review.json')
+    assert len(capture) == len(old['tasks']) == len(new['tasks']) == 12
+    assert all(row['finish_reason'] == 'stop' and row['response'].strip() for row in capture)
+    assert capture_receipt['status'] == 'completed' and capture_receipt['all_stopped'] is True
+    assert capture_receipt['responses_sha256'] == original('evidence/baseline32b/capture/responses.json')
+    assert capture_receipt['protocol_sha256'] == original('evidence/baseline32b/capture/protocol.json')
+    assert capture_protocol['adapter_sha256'] is None and capture_protocol['adapter_config_sha256'] is None
+    assert old['passed'] == new['passed'] == 5 and old['total'] == new['total'] == 12
+    assert {row['id'] for row in old['tasks'] if row['status'] == 'passed'} == {
+        row['id'] for row in new['tasks'] if row['status'] == 'passed'}
+    assert new['schema'] == 'picogk.am.native-score@2' and new['checker_profile_sha256'] == anchor
+    assert all(row['checker_profile_sha256'] == anchor and row['checker_policy'] == new['checker_policy']
+               for row in new['tasks'])
+    answers = {row['id']: row['response'] for row in capture}
+    source_rows = [row for row in new['tasks'] if row.get('source_sha256')]
+    assert len(source_rows) == 11
+    for row in source_rows:
+        fences = re.findall(r'```(?:csharp|cs|C#)\s*\n(.*?)```', answers[row['id']], re.S)
+        assert len(fences) == 1
+        assert hashlib.sha256((fences[0].strip()+'\n').encode()).hexdigest() == row['source_sha256']
+    cone = next(row for row in new['tasks'] if row['id'] == 'development-cone-roof')
+    assert cone['status'] == 'failed' and cone['checks']['static_allowlist'] is True
+    assert 'C# compilation failed' in cone['error']
+    assert peer['status'] == 'passed' and len(peer['checks']) == 17 and all(peer['checks'].values())
+    assert peer['capture_responses_sha256'] == original('evidence/baseline32b/capture/responses.json')
+    assert peer['historical_v1_report_sha256'] == original('evidence/baseline32b/v1-report.json')
+    assert peer['v2_report_sha256'] == original('evidence/baseline32b/v2-report.json')
+    assert peer['checker_profile_sha256'] == anchor == original('evidence/evaluation-policy-v2/checker-profile-v2.json')
+    assert len(policy['files']) == 40 and len(policy['external_files']) == 14
+    assert digest(root/'evidence/evaluation-policy-v2/checker-profile-v2.json') != anchor
+    assert not (root/'checker-profile-v2.json').exists() and not (root/'checker-profile-v2.sha256').exists()
+    for name in ('qualification_v2.py', 'final_qualification_v2.py', 'infer_v2.py',
+                 'evaluation/policy_v2.py', 'evaluation/evaluate_v2.py', 'end-to-end/evaluate_v2.py',
+                 'evaluation/PolicyLexer/Program.cs', 'evaluation/PolicyLexer/PolicyLexer.csproj',
+                 'sealed-reference-hashes-v2.json'):
+        assert policy['files'][name] == original(name), name
+    sealed = read('sealed-reference-hashes-v2.json')
+    assert sealed['schema'] == 'picogk.am.sealed-reference-hashes@2' and len(sealed['files']) == 140
+    assert sealed['preparation'] == 'blind_streaming_sha256_no_semantic_final_access'
+    assert all(re.fullmatch('[0-9a-f]{64}', value) for value in sealed['files'].values())
+    lexical = read('diagnostics/evaluation-policy-v2/lexical-results-v2.json')
+    assert lexical['status'] == 'passed' and len(lexical['cases']) == 18
+    assert all(row['passed'] is True for row in lexical['cases'])
+    smoke = read('evidence/memory-smoke32b/cpu-audit.json')
+    receipt = read('evidence/memory-smoke32b/training-receipt.json')
+    assert len(smoke['checks']) == 97 and all(smoke['checks'].values())
+    assert smoke['qualification_eligible'] is False and smoke['full_training_may_resume_smoke_adapter'] is False
+    assert smoke['full_course_memory_or_stability_proven'] is False
+    assert smoke['trainable_arrays'] == 224 and smoke['trainable_parameters'] == 16777216
+    assert smoke['maximum_actual_tokens'] == receipt['maximum_tokens'] == 5416
+    assert smoke['training_steps'] == receipt['training_steps'] == smoke['training_rows'] == 1
+    assert receipt['adapter_sha256'] == smoke['adapter_sha256'] == release['memory_smoke32b']['adapter_sha256']
+    assert receipt['peak_memory_bytes'] == 31790475366 < 36*1024**3
+    one = (root/'diagnostics/model32b-preparation/memory-smoke-longest/train.jsonl').read_bytes()
+    assert one == (root/'data/train-chat.jsonl').read_bytes().splitlines(keepends=True)[134]
+    registration, runtime = read('evidence/course-009-protocol.json'), read('evidence/course009-runtime-protocol.json')
+    assert registration['checker_profile_sha256'] == anchor and registration['parent_adapter'] is None
+    assert registration['smoke_adapter_resumed'] is False and registration['fresh_optimizer'] is True
+    assert registration['iterations'] == registration['training_rows'] == runtime['supplemental_rows'] == 310
+    assert registration['learning_rate'] == runtime['config']['learning_rate'] == 5e-7
+    assert runtime['config']['resume_adapter_file'] is None and runtime['config']['iters'] == 310
+    assert runtime['corpus_sha256'] == registration['corpus_sha256'] == digest(root/'data/mixed-14b-001/train.jsonl')
+    launch = read('evidence/course009-launch-independent-review.json')
+    assert launch['status'] == 'passed' and len(launch['checks']) == 32 and all(launch['checks'].values())
+    assert launch['prospective_protocol_sha256'] == original('evidence/course-009-protocol.json')
+    assert launch['runtime_protocol_sha256'] == original('evidence/course009-runtime-protocol.json')
+    assert launch['checker_profile_sha256'] == anchor and launch['training_rows'] == 310
+    assert release['current_training']['active_weights_logs_captures_or_scores_included'] is False
+    assert release['checker_v2']['profile_reanchored'] is False
+
+
 def check(root=ROOT, assets=None, native_runtime=False):
     release = json.loads((root/'release.json').read_text())
     assert release['schema'] == 'picogk.am.public-release@1'
@@ -164,6 +250,7 @@ def check(root=ROOT, assets=None, native_runtime=False):
     results = json.loads((root/'evidence/results-summary.json').read_text())['results']
     assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0), (4, 2), (2, 3), (4, 1), (4, 0)]
     assert all(row['manufacturing_authorized'] is False for row in results)
+    check_completed32b(root, release)
     assert 'TRUSTED_PROFILE_SHA256 = None' in (root/'qwen-picogk-am').read_text()
     forbidden = re.compile(r'/Users/|-----BEGIN .*PRIVATE KEY|Bearer [A-Za-z0-9._-]{12,}|sk-[A-Za-z0-9]{20,}|VIN\s*[:=]', re.I)
     for relative in release['files_sha256']:
@@ -190,6 +277,8 @@ def check(root=ROOT, assets=None, native_runtime=False):
             'existing_diversity_source_programs': 71, 'retained_prose_corrections': 16,
             'short_task_augmented_rows': 160, 'short_task_max14b_tokens': 1759,
             'repacked_base_tensor_metadata': 1255, 'untouched14b_baseline_passes': 4,
+            'untouched32b_v1_and_v2_baseline_passes': [5, 5], 'memory_smoke_qualification_eligible': False,
+            'historical_checker_profile_reanchored': False, 'active_course009_payload_included': False,
             'asset_hashes_checked': assets is not None, 'native_payload_hashes_checked': native_runtime,
             'mlx_imported': False, 'generated_code_executed': False,
             'qualified_adapter': False, 'manufacturing_authorized': False}

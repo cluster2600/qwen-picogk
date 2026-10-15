@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Curated synthetic sources/data and eight completed rejected courses; completed008 full evidence and pinned32B helper/preparation/tensor/header/cleanup/token/smoke-input proofs. Only prospective untouched32B baseline registration included; active baseline results/logs/captures, base payloads and reserved final contents omitted. Historical original-source hashes preserved.",
+  "scope": "Curated synthetic sources/data and eight immutable rejected courses; completed untouched32B baseline v1/v2 same-response evidence, ineligible one-step memory fit, and historical v2 checker source/profile/checksum provenance. Course009 includes prospective and immutable runtime protocol only; active payloads/logs/captures/results and actual reserved final contents excluded.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -2355,10 +2355,10 @@
       "transform": "none"
     },
     {
-      "source": "publication-staging/course008-current-assets.json",
+      "source": "publication-staging/course009-preparation-current-assets.json",
       "public_path": "evidence/assets.json",
-      "source_sha256": "7801db04c6898297fc6701562eac95f8b8f05a73578dad25102e5da548560c0a",
-      "public_sha256": "7801db04c6898297fc6701562eac95f8b8f05a73578dad25102e5da548560c0a",
+      "source_sha256": "25e50936c15e6db7a69749324a0aea74f837466456bc18901d91a04aa0f853bd",
+      "public_sha256": "25e50936c15e6db7a69749324a0aea74f837466456bc18901d91a04aa0f853bd",
       "transform": "none"
     },
     {
@@ -2871,6 +2871,265 @@
       "source_sha256": "0bdaa1deadc1378518eea403b2f4c05bd2830bacd2520d27c403466234de05be",
       "public_sha256": "0bdaa1deadc1378518eea403b2f4c05bd2830bacd2520d27c403466234de05be",
       "transform": "none"
+    },
+    {
+      "source": "am-code/qualification_v2.py",
+      "public_path": "qualification_v2.py",
+      "source_sha256": "9011fd1c737276ec8d3e781033ecfb9651ae0baa42529a327297e9c2ee9864a6",
+      "public_sha256": "9011fd1c737276ec8d3e781033ecfb9651ae0baa42529a327297e9c2ee9864a6",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/final_qualification_v2.py",
+      "public_path": "final_qualification_v2.py",
+      "source_sha256": "b727cde1616af7939dfd2ffa7d6ac040734871e5be77886c641f70cf42db97e4",
+      "public_sha256": "b727cde1616af7939dfd2ffa7d6ac040734871e5be77886c641f70cf42db97e4",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/test_qualification_v2.py",
+      "public_path": "test_qualification_v2.py",
+      "source_sha256": "93b5841d088418ae3d18c0802c8bb5e3a30020cd1fdb602844751b0c289d0bf5",
+      "public_sha256": "93b5841d088418ae3d18c0802c8bb5e3a30020cd1fdb602844751b0c289d0bf5",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/infer_v2.py",
+      "public_path": "infer_v2.py",
+      "source_sha256": "f0fa6e6c19b3062dea28ad492f5bc117031961a669dba9e54077159d371a9b9d",
+      "public_sha256": "f0fa6e6c19b3062dea28ad492f5bc117031961a669dba9e54077159d371a9b9d",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/infer_v2_selfcheck.py",
+      "public_path": "infer_v2_selfcheck.py",
+      "source_sha256": "83c5e353f3b363bb92c582c1cd537b63205c78d66ebbe381673c858a84f43d83",
+      "public_sha256": "83c5e353f3b363bb92c582c1cd537b63205c78d66ebbe381673c858a84f43d83",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/evaluation/policy_v2.py",
+      "public_path": "evaluation/policy_v2.py",
+      "source_sha256": "34637f85ec9ae86e0d4acff485989a0b89eb0b3536c8baeced449777ac88e852",
+      "public_sha256": "596b19aa03f081b08aab2cbc8eaa99664e944e746291c1a65a9173f94cf497cb",
+      "transform": "Portable native path configuration via QWEN_PICOGK_AM_DOTNET/PICO; checker functions and policy unchanged; historical profile is not re-anchored"
+    },
+    {
+      "source": "am-code/evaluation/evaluate_v2.py",
+      "public_path": "evaluation/evaluate_v2.py",
+      "source_sha256": "45c65926c94e49b9d1ce54799e45f49e16dc8ccf2e962a227ddfc5856a5e9e1d",
+      "public_sha256": "45c65926c94e49b9d1ce54799e45f49e16dc8ccf2e962a227ddfc5856a5e9e1d",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/end-to-end/evaluate_v2.py",
+      "public_path": "end-to-end/evaluate_v2.py",
+      "source_sha256": "939a1e5c0986ca98ff7fb471f5c44589a58b222cf4520d65fceb0d3235847af7",
+      "public_sha256": "939a1e5c0986ca98ff7fb471f5c44589a58b222cf4520d65fceb0d3235847af7",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/evaluation/test_policy_v2.py",
+      "public_path": "evaluation/test_policy_v2.py",
+      "source_sha256": "8d903965b137f08bb164c57948362b131eaf42e7b9657d88ecb1b51f49baa7f8",
+      "public_sha256": "8d903965b137f08bb164c57948362b131eaf42e7b9657d88ecb1b51f49baa7f8",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/evaluation/test_evaluate_v2.py",
+      "public_path": "evaluation/test_evaluate_v2.py",
+      "source_sha256": "ed26f0c9a03b5d33e7602514151af757c7e0143d8d8626d505371992c520b6c0",
+      "public_sha256": "ed26f0c9a03b5d33e7602514151af757c7e0143d8d8626d505371992c520b6c0",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/evaluation/PolicyLexer/Program.cs",
+      "public_path": "evaluation/PolicyLexer/Program.cs",
+      "source_sha256": "faa0eb9520cd92e0424bd839d4b700b5e71dbde2e0ebfd7cd047252415f9bd74",
+      "public_sha256": "faa0eb9520cd92e0424bd839d4b700b5e71dbde2e0ebfd7cd047252415f9bd74",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/evaluation/PolicyLexer/PolicyLexer.csproj",
+      "public_path": "evaluation/PolicyLexer/PolicyLexer.csproj",
+      "source_sha256": "c7bc1fb63db3821a86ccbb8c61a0acd52cfe3b6faaf95ceeae04edf682f234cb",
+      "public_sha256": "c7bc1fb63db3821a86ccbb8c61a0acd52cfe3b6faaf95ceeae04edf682f234cb",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/sealed-reference-hashes-v2.json",
+      "public_path": "sealed-reference-hashes-v2.json",
+      "source_sha256": "da8694851a053a570691df180888dd63531d9c6fa6ccfbd756039756270327a7",
+      "public_sha256": "da8694851a053a570691df180888dd63531d9c6fa6ccfbd756039756270327a7",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/checker-profile-v2.json",
+      "public_path": "evidence/evaluation-policy-v2/checker-profile-v2.json",
+      "source_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "public_sha256": "834974c4f77a65c03a0c657fc0595bc06eea83d0c45f6cb89fd2b05c498f94bc",
+      "transform": "JSON/text view: local paths redacted; historical original identities preserved"
+    },
+    {
+      "source": "am-code/checker-profile-v2.sha256",
+      "public_path": "evidence/evaluation-policy-v2/checker-profile-v2.sha256",
+      "source_sha256": "5bdb615caefb594b3eb55054525fd2021a008d5005e3f919864bed4cadda2a8e",
+      "public_sha256": "5bdb615caefb594b3eb55054525fd2021a008d5005e3f919864bed4cadda2a8e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/validation-binding-audit-v2.json",
+      "public_path": "evidence/evaluation-policy-v2/validation-binding-audit-v2.json",
+      "source_sha256": "63dda29ececd9458b8a0741cd159c8ebd3dcbb30d28f9e15ea0709645c1c836d",
+      "public_sha256": "63dda29ececd9458b8a0741cd159c8ebd3dcbb30d28f9e15ea0709645c1c836d",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/evaluation-policy-v2/implementation-check-v2.json",
+      "public_path": "diagnostics/evaluation-policy-v2/implementation-check-v2.json",
+      "source_sha256": "fc05bb29857abc85374912e8d13fd70df8b2637ba9691ecfc30350607cfba938",
+      "public_sha256": "fc05bb29857abc85374912e8d13fd70df8b2637ba9691ecfc30350607cfba938",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/evaluation-policy-v2/implementation-check-v2-final.json",
+      "public_path": "diagnostics/evaluation-policy-v2/implementation-check-v2-final.json",
+      "source_sha256": "d585e74da5cc0570431a1731d1b3b5d179a79b837564adf25fd37009ee3cf4dc",
+      "public_sha256": "d585e74da5cc0570431a1731d1b3b5d179a79b837564adf25fd37009ee3cf4dc",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/evaluation-policy-v2/development-teacher-checks-v2.json",
+      "public_path": "diagnostics/evaluation-policy-v2/development-teacher-checks-v2.json",
+      "source_sha256": "8d0c305216fbf1d91f954f4ba1e23526bfd69e5f864b1bd82255baa0e8cac00b",
+      "public_sha256": "8d0c305216fbf1d91f954f4ba1e23526bfd69e5f864b1bd82255baa0e8cac00b",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/evaluation-policy-v2/lexical-testcases.json",
+      "public_path": "diagnostics/evaluation-policy-v2/lexical-testcases.json",
+      "source_sha256": "f819b97e9a166c2956c1531068ac7f43680d06e40f81f0a5f152cd1243d20fc4",
+      "public_sha256": "f819b97e9a166c2956c1531068ac7f43680d06e40f81f0a5f152cd1243d20fc4",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/evaluation-policy-v2/lexical-results-v2.json",
+      "public_path": "diagnostics/evaluation-policy-v2/lexical-results-v2.json",
+      "source_sha256": "ae4f0c4ea67959b35c221cfa6b12f3e5e78b4f3c620999e9929d3e85578dc3a6",
+      "public_sha256": "ae4f0c4ea67959b35c221cfa6b12f3e5e78b4f3c620999e9929d3e85578dc3a6",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/evaluation-policy-v2/frozen-profile-independent-review.json",
+      "public_path": "diagnostics/evaluation-policy-v2/frozen-profile-independent-review.json",
+      "source_sha256": "613e16cdee410642a1811d6d6db5ea7221db111776ee52c1332d21d85fe5cdc3",
+      "public_sha256": "613e16cdee410642a1811d6d6db5ea7221db111776ee52c1332d21d85fe5cdc3",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/baseline-development-32b/responses.json",
+      "public_path": "evidence/baseline32b/capture/responses.json",
+      "source_sha256": "528c198c9d0e6a50891dd9009a12a69487f11f36d70280864bb213adde78ea95",
+      "public_sha256": "528c198c9d0e6a50891dd9009a12a69487f11f36d70280864bb213adde78ea95",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/baseline-development-32b/protocol.json",
+      "public_path": "evidence/baseline32b/capture/protocol.json",
+      "source_sha256": "59b8f70fee0d642ed859b0a6aff760df350f4b2a235fc428d98d092b66b2b1b7",
+      "public_sha256": "59b8f70fee0d642ed859b0a6aff760df350f4b2a235fc428d98d092b66b2b1b7",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/baseline-development-32b/receipt.json",
+      "public_path": "evidence/baseline32b/capture/receipt.json",
+      "source_sha256": "fbf9d8dc2b27638e247b8dd821af4f2b10ac09796ec47be198a07da4f5dc4625",
+      "public_sha256": "fbf9d8dc2b27638e247b8dd821af4f2b10ac09796ec47be198a07da4f5dc4625",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/baseline-scores-32b/report.json",
+      "public_path": "evidence/baseline32b/v1-report.json",
+      "source_sha256": "6a84e3de296fee17a9984651af025c07dec418f28d85ec4f4345956c3aa630a1",
+      "public_sha256": "817d7bab6f0f93389162ab90b687f8e1a7284d14b3efc0dd270487caf1ada38b",
+      "transform": "JSON/text view: local paths redacted; historical original identities preserved"
+    },
+    {
+      "source": "am-code/baseline-scores-32b-v2/report.json",
+      "public_path": "evidence/baseline32b/v2-report.json",
+      "source_sha256": "6bba43bb33c9ad382ba264fb360cd0142b06d24d491791450690a9dd1fc70423",
+      "public_sha256": "01e59cc75a5c91a63d2a926cc53e5df1f2703575575d0437636d81d5487ea49d",
+      "transform": "JSON/text view: local paths redacted; historical original identities preserved"
+    },
+    {
+      "source": "am-code/diagnostics/baseline-32b-independent-review.json",
+      "public_path": "evidence/baseline32b/v1-independent-review.json",
+      "source_sha256": "bb631b4d0c02719fa44b591632d73a8c2ac3f5d934f49f4883bc39a86276a0fb",
+      "public_sha256": "bb631b4d0c02719fa44b591632d73a8c2ac3f5d934f49f4883bc39a86276a0fb",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/baseline-32b-v2-regrade-protocol.json",
+      "public_path": "evidence/baseline32b/v2-regrade-protocol.json",
+      "source_sha256": "66a43d9c440ba5ff819ea26d4d3bf8bcf857b9ce9ba983b05fe2130cd04d3501",
+      "public_sha256": "66a43d9c440ba5ff819ea26d4d3bf8bcf857b9ce9ba983b05fe2130cd04d3501",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/memory-smoke-32b-protocol.json",
+      "public_path": "evidence/memory-smoke32b/prospective-protocol.json",
+      "source_sha256": "e8791958f24701ba6f8fdbcf5c07192b26c6b5370b59a3fb7d9a9adc85932d94",
+      "public_sha256": "e8791958f24701ba6f8fdbcf5c07192b26c6b5370b59a3fb7d9a9adc85932d94",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/memory-smoke-32b-cpu-audit.json",
+      "public_path": "evidence/memory-smoke32b/cpu-audit.json",
+      "source_sha256": "85764f685733d4fe28d3e51f1cff500c8ab6328bcb4fd98cb287514850a4d49f",
+      "public_sha256": "85764f685733d4fe28d3e51f1cff500c8ab6328bcb4fd98cb287514850a4d49f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/runs/32b-memory-longest001/protocol.json",
+      "public_path": "evidence/memory-smoke32b/runtime-protocol.json",
+      "source_sha256": "f762c163e685e5c6011682ff29c0d9ab6c6488df353734243532f64ed582c680",
+      "public_sha256": "2a14b6fcba32bc3e8e12cca64957b1d2f857473dbe9b38ad790bf210a5d68fb9",
+      "transform": "JSON/text view: local paths redacted; historical original identities preserved"
+    },
+    {
+      "source": "am-code/runs/32b-memory-longest001/training-receipt.json",
+      "public_path": "evidence/memory-smoke32b/training-receipt.json",
+      "source_sha256": "3ad189a5d6a72abb381821013410b938d781d82257abe470bfca1f4179ca6f47",
+      "public_sha256": "3ad189a5d6a72abb381821013410b938d781d82257abe470bfca1f4179ca6f47",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/runs/32b-memory-longest001/adapter/adapter_config.json",
+      "public_path": "evidence/memory-smoke32b/adapter_config.json",
+      "source_sha256": "0b2ad2686de506d1e1d043ea2e153ba1a44cc3a260a1f94809a6143842c2e290",
+      "public_sha256": "c6fc185d181323dd59504624236e880ebe67ed72c3f58e2db46e719a72996656",
+      "transform": "JSON/text view: local paths redacted; historical original identities preserved"
+    },
+    {
+      "source": "am-code/course-009-protocol.json",
+      "public_path": "evidence/course-009-protocol.json",
+      "source_sha256": "5116e312f4d5e5cb9d429b99dec50e4d2335d9566500c9840143c3d3e690f3d3",
+      "public_sha256": "5116e312f4d5e5cb9d429b99dec50e4d2335d9566500c9840143c3d3e690f3d3",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/runs/32b-mixed001-epoch1/protocol.json",
+      "public_path": "evidence/course009-runtime-protocol.json",
+      "source_sha256": "54c1c08b48fb8017ed827f18a6a73b904d4e1379ca39d063a2eb4b9dd0c528b4",
+      "public_sha256": "4eaf0a0b085c2b25f7e19590dcc4e972d41f6ccb240c7910b5dd27a209d4c414",
+      "transform": "JSON/text view: local paths redacted; historical original identities preserved"
+    },
+    {
+      "source": "am-code/diagnostics/course009-launch-independent-review.json",
+      "public_path": "evidence/course009-launch-independent-review.json",
+      "source_sha256": "382bda85b64882899369147c967c4954eefe520e2268b5323554e5dd81010106",
+      "public_sha256": "bb09f2291b51113024e8f1150097f61a507fe59d0540f4b0af284c7c189c372c",
+      "transform": "JSON/text view: local paths redacted; historical original identities preserved"
     }
   ]
 }

@@ -536,6 +536,64 @@
       "xyz_stall_location_proven": false,
       "hash_scope": "Original completed local artifacts; export-index binds public redacted bytes.",
       "asset": "rejected-14b-course008-full-evidence.tar.gz"
+    },
+    {
+      "name": "baseline-32b-v1",
+      "base": "32B",
+      "status": "baseline",
+      "checker_policy": "regex-static-allowlist@1",
+      "checker_profile_sha256": null,
+      "development_passed": 5,
+      "development_total": 12,
+      "passing_tasks": [
+        "development-initialize",
+        "development-offset-sign",
+        "development-shell",
+        "development-debug-api",
+        "development-missing-interfaces"
+      ],
+      "stopped": 12,
+      "truncated": 0,
+      "captured_responses": 12,
+      "score_sha256": "6a84e3de296fee17a9984651af025c07dec418f28d85ec4f4345956c3aa630a1",
+      "public_score_sha256": "817d7bab6f0f93389162ab90b687f8e1a7284d14b3efc0dd270487caf1ada38b",
+      "responses_sha256": "528c198c9d0e6a50891dd9009a12a69487f11f36d70280864bb213adde78ea95",
+      "protocol_sha256": "59b8f70fee0d642ed859b0a6aff760df350f4b2a235fc428d98d092b66b2b1b7",
+      "adapter_sha256": null,
+      "adapter_config_sha256": null,
+      "base_weights_sha256": "b4e7ce0334ced489f80446c79b91f8d9b30dd3f3a0f08a16ffad01cf0e62bb5a",
+      "task_sha256": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+      "same_capture_regraded_without_model_query": false,
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "baseline-32b-v2",
+      "base": "32B",
+      "status": "baseline",
+      "checker_policy": "roslyn-static-allowlist@2",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "development_passed": 5,
+      "development_total": 12,
+      "passing_tasks": [
+        "development-initialize",
+        "development-offset-sign",
+        "development-shell",
+        "development-debug-api",
+        "development-missing-interfaces"
+      ],
+      "stopped": 12,
+      "truncated": 0,
+      "captured_responses": 12,
+      "score_sha256": "6bba43bb33c9ad382ba264fb360cd0142b06d24d491791450690a9dd1fc70423",
+      "public_score_sha256": "01e59cc75a5c91a63d2a926cc53e5df1f2703575575d0437636d81d5487ea49d",
+      "responses_sha256": "528c198c9d0e6a50891dd9009a12a69487f11f36d70280864bb213adde78ea95",
+      "protocol_sha256": "59b8f70fee0d642ed859b0a6aff760df350f4b2a235fc428d98d092b66b2b1b7",
+      "adapter_sha256": null,
+      "adapter_config_sha256": null,
+      "base_weights_sha256": "b4e7ce0334ced489f80446c79b91f8d9b30dd3f3a0f08a16ffad01cf0e62bb5a",
+      "task_sha256": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
+      "same_capture_regraded_without_model_query": true,
+      "manufacturing_authorized": false
     }
   ],
   "current_training": {
@@ -676,5 +734,45 @@
     "memory_smoke_launched_in_this_snapshot": false,
     "baseline_results_included": false,
     "base_payload_published": false
+  },
+  "ineligible_memory_smokes": [
+    {
+      "qualification_eligible": false,
+      "future_full_course_may_resume_smoke": false,
+      "steps": 1,
+      "rows": 1,
+      "actual_tokens": 5416,
+      "maximum_sequence_limit": 6144,
+      "reported_mlx_peak_bytes": 31790475366,
+      "runtime_memory_cap_bytes": 38654705664,
+      "full_course_fit_proven": false,
+      "adapter_sha256": "928e84c301ac5b3b12ac528e215b4ef80ab18f6ba8e184d99b458ef4aca028cc",
+      "adapter_files": [
+        {
+          "archive_path": "runs/32b-memory-longest001/adapter/adapters.safetensors",
+          "sha256": "928e84c301ac5b3b12ac528e215b4ef80ab18f6ba8e184d99b458ef4aca028cc"
+        }
+      ],
+      "intermediate_checkpoints": [],
+      "adapter_config_original_sha256": "0b2ad2686de506d1e1d043ea2e153ba1a44cc3a260a1f94809a6143842c2e290",
+      "adapter_config_public_sha256": "c6fc185d181323dd59504624236e880ebe67ed72c3f58e2db46e719a72996656",
+      "training_receipt_original_sha256": "3ad189a5d6a72abb381821013410b938d781d82257abe470bfca1f4179ca6f47",
+      "training_receipt_public_sha256": "3ad189a5d6a72abb381821013410b938d781d82257abe470bfca1f4179ca6f47",
+      "cpu_audit_original_sha256": "85764f685733d4fe28d3e51f1cff500c8ab6328bcb4fd98cb287514850a4d49f",
+      "arrays": 224,
+      "parameters": 16777216,
+      "finite": true
+    }
+  ],
+  "current_course009": {
+    "status": "registered_running_no_candidate_result",
+    "prospective_original_sha256": "5116e312f4d5e5cb9d429b99dec50e4d2335d9566500c9840143c3d3e690f3d3",
+    "runtime_protocol_original_sha256": "54c1c08b48fb8017ed827f18a6a73b904d4e1379ca39d063a2eb4b9dd0c528b4",
+    "training_rows": 310,
+    "planned_steps": 310,
+    "learning_rate": 5e-07,
+    "fresh_untouched_base": true,
+    "smoke_adapter_resumed": false,
+    "active_weights_logs_captures_or_scores_included": false
   }
 }

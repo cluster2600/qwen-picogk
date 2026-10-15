@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "count": 12,
+  "protocol_sha256": "59b8f70fee0d642ed859b0a6aff760df350f4b2a235fc428d98d092b66b2b1b7",
+  "responses_sha256": "528c198c9d0e6a50891dd9009a12a69487f11f36d70280864bb213adde78ea95",
+  "all_stopped": true,
+  "peak_memory_bytes": 19172111196
+}
