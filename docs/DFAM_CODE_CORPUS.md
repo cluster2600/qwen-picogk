@@ -49,7 +49,13 @@ Candidate execution has:
 - only the selected input fixture, mounted read-only;
 - one writable case output directory and a private temporary filesystem;
 - a 3 GiB memory limit, no swap, 128 tasks, two declared .NET processors,
-  a 300-second CPU limit, a 256 MiB per-file limit and a wall timeout.
+  a 300-second CPU limit, a 256 MiB per-file limit and a wall timeout;
+- a two-CPU cgroup quota (`CPUQuota=200%`). The CPU limit counts every
+  thread, including PicoGK's native OpenVDB threads, which ignore the .NET
+  processor count and otherwise use all host cores.
+- .NET write-xor-execute double mapping disabled
+  (`DOTNET_EnableWriteXorExecute=0`). With it enabled, the runtime is killed
+  by the per-file limit (SIGXFSZ, exit 153) before any case code runs.
 
 The checker and fixture generator use 4 GiB scopes. Missing limit/isolation
 facilities refuse the operation before native fixture generation. A failing

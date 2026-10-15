@@ -153,6 +153,14 @@ class DfamCorpusTest(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 dfam_corpus.capped(['true'], '3G')
 
+    def test_candidate_scope_requests_two_cpu_quota(self):
+        with patch.object(dfam_corpus.sys, 'platform', 'linux'), patch.object(dfam_corpus.shutil, 'which', return_value='/usr/bin/systemd-run'), patch.object(dfam_corpus.subprocess, 'run', return_value=Mock(returncode=0)) as run:
+            cmd = dfam_corpus.capped(['true'], '3G', dfam_corpus.CANDIDATE_CPU_QUOTA)
+            self.assertIn('CPUQuota=200%', run.call_args[0][0])   # the probe tests the quota too
+            checker = dfam_corpus.capped(['true'], '4G')             # trusted checker: no quota
+        self.assertEqual(cmd[cmd.index('CPUQuota=200%') - 1], '-p')
+        self.assertNotIn('CPUQuota=200%', checker)
+
     def test_sandbox_exposes_only_runtime_selected_input_and_output(self):
         with tempfile.TemporaryDirectory() as tmp:
             base = Path(tmp); runtime = base/'dotnet'; runtime.mkdir()
@@ -161,13 +169,16 @@ class DfamCorpusTest(unittest.TestCase):
             app = base/'app'; app.mkdir()
             source = base/'selected.stl'; source.touch()
             env = {'PATH': str(runtime), 'DOTNET_ROOT': str(runtime), 'PICOGK_NATIVE': str(runtime)}
-            with patch.object(dfam_corpus.sys, 'platform', 'linux'), patch.object(dfam_corpus.shutil, 'which', side_effect=lambda name, **kw: str(binary) if name == 'dotnet' else '/usr/bin/bwrap'), patch.object(dfam_corpus, 'capped', side_effect=lambda cmd, mem: cmd), patch.object(Path, 'is_file', return_value=True):
+            with patch.object(dfam_corpus.sys, 'platform', 'linux'), patch.object(dfam_corpus.shutil, 'which', side_effect=lambda name, **kw: str(binary) if name == 'dotnet' else '/usr/bin/bwrap'), patch.object(dfam_corpus, 'capped', side_effect=lambda cmd, mem, *quota: cmd), patch.object(Path, 'is_file', return_value=True):
                 cmd = dfam_corpus.sandbox_command(app/'Runner.dll', str(source), out, 'Case', env)
             self.assertIn('--unshare-all', cmd)
             self.assertIn('--clearenv', cmd)
             self.assertEqual(cmd[cmd.index('--bind') + 1:cmd.index('--bind') + 3], [str(out.resolve()), '/output'])
             self.assertIn('/input/selected.stl', cmd)
             self.assertIn('--fsize=268435456:268435456', cmd)
+            # The runtime cannot start under that file limit with W^X double mapping.
+            i = cmd.index('DOTNET_EnableWriteXorExecute')
+            self.assertEqual((cmd[i - 1], cmd[i + 1]), ('--setenv', '0'))
             self.assertNotIn(str(ROOT), cmd)
 
     def test_escaping_candidate_output_is_not_sent_to_checker(self):
