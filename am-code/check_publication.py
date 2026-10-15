@@ -153,7 +153,7 @@ def check_completed009(root, release):
     assert plan['parent_adapter'] is None and runtime['config']['resume_adapter_file'] is None
     assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mixture['train_sha256']
     assert release['completed_rejected_courses'] == 10
-    assert release['current_training']['course'] == '011' and release['current_training_weights_included'] is False
+    assert release['current_training']['course'] == '012' and release['current_training_weights_included'] is False
 
 
 def check_completed010(root, release):
@@ -190,7 +190,26 @@ def check_completed010(root, release):
     assert plan['iterations'] == plan['training_rows'] == runtime['config']['iters'] == runtime['supplemental_rows'] == 384
     assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == receipt['adapter_sha256']
     assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
-    assert release['completed_rejected_courses'] == 10 and release['current_training']['course'] == '011'
+    assert release['completed_rejected_courses'] == 10 and release['current_training']['course'] == '012'
+
+
+def check_recovery012(root, release):
+    read = lambda name: json.loads((root/name).read_text())
+    audit = read('evidence/course011-interruption-audit.json')
+    assert audit['status'] == 'incomplete_not_eligible_for_qualification'
+    assert audit['last_logged_step'] == 140 and audit['latest_durable_checkpoint_step'] == 120
+    assert not audit['completed_receipt_exists'] and audit['qualification_credit'] == 0
+    assert not audit['checkpoint_evaluated'] and len(audit['files']) == 3
+    assert all(x['finite_float32_arrays'] == 224 for x in audit['files'].values())
+    plan, launch, runtime = [read('evidence/'+name) for name in ('course-012-protocol.json','course012-launch-receipt.json','course012-runtime-protocol.json')]
+    assert plan['iterations'] == runtime['config']['iters'] == 384
+    assert plan['training_rows'] == runtime['supplemental_rows'] == 384
+    assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == '75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468'
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == digest(root/'data/focused-32b-002/train.jsonl')
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 2e-6
+    assert launch['status'] == 'launched_not_completed' and launch['process_group_session_detached']
+    assert not launch['active_weights_read_or_published'] and not release['current_training_weights_included']
+    assert release['interrupted_courses'][0]['status'] == 'interrupted_ineligible'
 
 
 def check(root=ROOT, assets=None, native_runtime=False):
@@ -339,6 +358,7 @@ def check(root=ROOT, assets=None, native_runtime=False):
     check_completed32b(root, release)
     check_completed009(root, release)
     check_completed010(root, release)
+    check_recovery012(root, release)
     assert 'TRUSTED_PROFILE_SHA256 = None' in (root/'qwen-picogk-am').read_text()
     forbidden = re.compile(r'/Users/|-----BEGIN .*PRIVATE KEY|Bearer [A-Za-z0-9._-]{12,}|sk-[A-Za-z0-9]{20,}|VIN\s*[:=]', re.I)
     for relative in release['files_sha256']:
@@ -366,7 +386,7 @@ def check(root=ROOT, assets=None, native_runtime=False):
             'short_task_augmented_rows': 160, 'short_task_max14b_tokens': 1759,
             'repacked_base_tensor_metadata': 1255, 'untouched14b_baseline_passes': 4,
             'untouched32b_v1_and_v2_baseline_passes': [5, 5], 'memory_smoke_qualification_eligible': False,
-            'historical_checker_profile_reanchored': False, 'active_course011_payload_included': False,
+            'historical_checker_profile_reanchored': False, 'active_course012_payload_included': False,
             'asset_hashes_checked': assets is not None, 'native_payload_hashes_checked': native_runtime,
             'mlx_imported': False, 'generated_code_executed': False,
             'qualified_adapter': False, 'manufacturing_authorized': False}

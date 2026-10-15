@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Curated original150, ten immutable rejected courses, new64native teachers and384row corpus; active011 protocol text only, no active payload or final contents.",
+  "scope": "Curated original150, ten immutable rejected courses, new64native teachers and384row corpus; active011 protocol text only, no active payload or final contents. Interrupted011 audit and prospective/runtime012 recovery metadata appended; no interrupted or active tensor payload added.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -3437,6 +3437,34 @@
       "public_path": "evidence/course011-runtime-protocol.json",
       "source_sha256": "3770c38568c1565327c8d5da0ff6515f37ca33813ae171b07d93ed1158ba6bc6",
       "public_sha256": "b00344db4de90a86ce2c0a31b6f398bbf6845648cf7a1a225a06db4e1f3fc9ab",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/course011-interruption-audit.json",
+      "public_path": "evidence/course011-interruption-audit.json",
+      "source_sha256": "65f8ce2867e55c83515a8768541f4228e69dcc7fe31d007ed6c3e5b295eb662f",
+      "public_sha256": "65f8ce2867e55c83515a8768541f4228e69dcc7fe31d007ed6c3e5b295eb662f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course-012-protocol.json",
+      "public_path": "evidence/course-012-protocol.json",
+      "source_sha256": "2f9af1b8de4eb33541af7bd34e1ac90c9280d0ac34b176b3027c2ead16606993",
+      "public_sha256": "2f9af1b8de4eb33541af7bd34e1ac90c9280d0ac34b176b3027c2ead16606993",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course012-launch-receipt.json",
+      "public_path": "evidence/course012-launch-receipt.json",
+      "source_sha256": "1363e4d54c6bf6f42a1ffb2c72a1194eac0162035ae17889581a782186f5618c",
+      "public_sha256": "4557bce52e82bc41a25ee9fed69e3fb22eac127da3d0b3a8d72f385d4d27fbd5",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/runs/32b-corrective007-recovery1/protocol.json",
+      "public_path": "evidence/course012-runtime-protocol.json",
+      "source_sha256": "de51293a192b09d6482b64ac957dff6b7c4fe0047dcd746a7b07db4f42d8ba6f",
+      "public_sha256": "b07893bb5f4e671bcc2c908de55e29be826dff47f5ec05474390967b4270469b",
       "transform": "local paths redacted only"
     }
   ]

@@ -636,12 +636,12 @@
     }
   ],
   "current_training": {
-    "course": "011",
-    "run": "32b-corrective007-continuation1",
+    "course": "012",
+    "run": "32b-corrective007-recovery1",
     "base": "32B",
     "status": "registered_running_no_candidate_result",
-    "prospective_original_sha256": "f81aa746f1464983b9c11ddde4bb0f31142aa951d0d66926272cebcdd2751f12",
-    "runtime_protocol_original_sha256": "3770c38568c1565327c8d5da0ff6515f37ca33813ae171b07d93ed1158ba6bc6",
+    "prospective_original_sha256": "2f9af1b8de4eb33541af7bd34e1ac90c9280d0ac34b176b3027c2ead16606993",
+    "runtime_protocol_original_sha256": "de51293a192b09d6482b64ac957dff6b7c4fe0047dcd746a7b07db4f42d8ba6f",
     "training_rows": 384,
     "planned_steps": 384,
     "epochs": 1,
@@ -652,7 +652,10 @@
     "smoke_adapter_resumed": false,
     "active_weights_logs_captures_or_scores_included": false,
     "model_qualification": "not_established",
-    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45"
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "recovery_of": "011",
+    "recovery_mode": "Full384step replay from completed010 parent; fresh optimizer; no exact mid-epoch resume claim",
+    "detached_local_process": true
   },
   "final_set": "embargoed; no final model evaluation claimed",
   "manufacturing_authorized": false,
@@ -852,5 +855,20 @@
     "cases": 64,
     "passed": 64,
     "formulations": 128
-  }
+  },
+  "interrupted_courses": [
+    {
+      "course": "011",
+      "run": "32b-corrective007-continuation1",
+      "status": "interrupted_ineligible",
+      "last_logged_step": 140,
+      "latest_durable_checkpoint_step": 120,
+      "planned_steps": 384,
+      "completed_receipt_exists": false,
+      "cause": "unknown",
+      "cpu_audit_original_sha256": "65f8ce2867e55c83515a8768541f4228e69dcc7fe31d007ed6c3e5b295eb662f",
+      "checkpoint_evaluated": false,
+      "qualification_credit": 0
+    }
+  ]
 }

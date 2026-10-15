@@ -1,0 +1,40 @@
+{
+  "schema": "picogk.am.interrupted-run-audit@1",
+  "status": "incomplete_not_eligible_for_qualification",
+  "observed_at": "2026-10-15T20:41:40.827260+00:00",
+  "run": "32b-corrective007-continuation1",
+  "last_logged_step": 140,
+  "latest_durable_checkpoint_step": 120,
+  "planned_steps": 384,
+  "completed_receipt_exists": false,
+  "training_lock_observed_free": true,
+  "process_observed_absent": true,
+  "termination_cause": "unknown; log contains no error or termination receipt",
+  "files": {
+    "runs/32b-corrective007-continuation1/adapter/0000060_adapters.safetensors": {
+      "sha256": "46602774b17664073b24ddf094da7b7100fe44651220bec16a9a7a973778136f",
+      "bytes": 67133160,
+      "finite_float32_arrays": 224
+    },
+    "runs/32b-corrective007-continuation1/adapter/0000120_adapters.safetensors": {
+      "sha256": "3920e83ecd1c2dadc1c6fad096942008648e08a73ea433e634c8076631304919",
+      "bytes": 67133160,
+      "finite_float32_arrays": 224
+    },
+    "runs/32b-corrective007-continuation1/adapter/adapters.safetensors": {
+      "sha256": "3920e83ecd1c2dadc1c6fad096942008648e08a73ea433e634c8076631304919",
+      "bytes": 67133160,
+      "finite_float32_arrays": 224
+    }
+  },
+  "registered_plan_sha256": "f81aa746f1464983b9c11ddde4bb0f31142aa951d0d66926272cebcdd2751f12",
+  "runtime_protocol_sha256": "3770c38568c1565327c8d5da0ff6515f37ca33813ae171b07d93ed1158ba6bc6",
+  "config_sha256": "41e12ec97e3f9a27962acfccf9b4b82b79f44b43a6e0baebc63221993b20abd9",
+  "log_sha256": "cfdb907b993bc801bdbdff902be6f09edc529bf08792a6ff4eafc4d01f1e9c57",
+  "parent_adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
+  "corpus_sha256": "f706b243a241286995bc7a0680bbdf85051a5bd2dae4fd61263df00f1ffb2c98",
+  "final_contents_read": false,
+  "checkpoint_evaluated": false,
+  "qualification_credit": 0,
+  "manufacturing_authorized": false
+}
