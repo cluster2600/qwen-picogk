@@ -1,0 +1,38 @@
+{
+  "schema": "picogk.dfam.cleanup-candidate@1",
+  "case_id": "infill-001",
+  "case_sha256": "b09fb17f2df334fb4e3d2fb81e636420502202e468829800852f28ab83249502",
+  "parent_case_sha256": "d92d62a97d617f5870422176cefb8a67248e54fe9d578082383c69bcabb05755",
+  "helper_sha256": "a8c6cfd3ed2c800d258dec11ba2b1884ae19a950f66353bb93dc2f54bb335b33",
+  "selfcheck_source_sha256": "a3a346d61badca5e359500283908cdd13e763d4e74f186890ebc6adaf3d1e98d",
+  "selfcheck_project_sha256": "4253f4a9a559ca00ee602c111f2b3b54f74dfb9b722c4eabb5f965cff28309ce",
+  "dotnet_sdk": "10.0.402",
+  "compilation": {
+    "compiles": true,
+    "errors": {},
+    "candidate_executed": false
+  },
+  "synthetic_math_selfcheck": {
+    "passed": true,
+    "tests": 15,
+    "synthetic_only": true,
+    "picogk_loaded": false,
+    "corpus_native_verification": false,
+    "removed_triangles": 2,
+    "max_vertex_displacement_mm": 1e-05
+  },
+  "chat_tokens": 4563,
+  "max_seq_length": 8192,
+  "family": "graded-gyroid-sheet",
+  "split": "train",
+  "native_candidate_executed": false,
+  "strict_native_verified": false,
+  "training_eligible": false,
+  "remaining_gates": [
+    "Full native isolated run of the revised case on Linux.",
+    "Independent whole-part mesh/cavity/volume verification.",
+    "Declare and review overhang process assumptions.",
+    "Complete corpus and family-disjoint partitions."
+  ],
+  "manufacturing_qualified": false
+}

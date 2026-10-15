@@ -2,9 +2,37 @@
 
 This is a work-in-progress teaching corpus, separate from the released
 parameter planner and the AM C# study. It has **one historical example**,
-not 150 completed examples and not a newly trained model. Its source and old
-verification receipt remain unchanged. Under `dfam-strict-v2`, that example
-is blocked by 86 degenerate triangles. No training partitions are published.
+not 150 completed examples and not a newly trained model. Its original source
+is archived next to the unchanged historical receipt. Under `dfam-strict-v2`,
+the original export is blocked by 86 degenerate triangles. The current source
+has a numerical cleanup candidate awaiting native revalidation. No training
+partitions are published.
+
+## Numerical cleanup candidate
+
+`dfam-native/MeshCleanup.cs` is embedded verbatim (after its using directives)
+in the revised standalone C# example. It replaces vertices consistently by
+the first vertex in each rounded 0.0001 mm cell, matching the independent
+checker's existing weld convention, then removes collapsed/numerically
+zero-area triangles. Removing tiny faces without welding their neighbours
+could leave actual holes. The routine preserves winding and reports both
+the removal count and the maximum vertex displacement.
+
+The pure C# `CleanupChecks` executable exercises a closed tetrahedron with
+near-duplicate vertices, collapsed and collinear faces, unchanged valid faces,
+idempotence, movement bounds and invalid/nonfinite/overflowing input. It loads
+neither PicoGK nor corpus code. These checks run locally and in a separate
+Linux CI job; they are not full-part reconstruction or native validation.
+
+```sh
+dotnet run --project dfam-native/CleanupChecks/CleanupChecks.csproj -c Release
+```
+
+The original 86-face measurement does not describe the revised export. Its
+actual removal count, resulting topology, cavity metrics and volume need a
+fresh isolated native run. The example remains ineligible for assembly until
+that evidence and the other corpus gates pass. Its public/exposed family is
+reserved for training, not a new test-set claim.
 
 ## Acceptance gates
 
@@ -73,9 +101,9 @@ python3.12 scripts/dfam_corpus.py verify data/dfam-code/cases.jsonl \
   --receipt work/dfam-strict-v2.json
 ```
 
-The first case is expected to fail the strict geometry gate until its author
-repairs the mesh and reruns verification. Do not alter the historical receipt
-or loosen a threshold to admit it. Compiler/native dependency preparation can
+The original case fails the strict geometry gate; the cleanup revision has
+no new native verdict yet. Do not alter the historical receipt or loosen a
+threshold to admit it. Compiler/native dependency preparation can
 access NuGet before candidate execution; candidate namespaces have no network.
 Verification refuses existing run tags and receipt paths to preserve prior
 evidence. Choose a new tag/path for a new run.

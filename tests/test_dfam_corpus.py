@@ -21,6 +21,17 @@ class DfamCorpusTest(unittest.TestCase):
     def test_cases_pass_lint(self):
         self.assertEqual(dfam_corpus.lint(self.cases), {})
 
+    def test_cleanup_candidate_has_traceable_exact_helper_and_parent(self):
+        source = (ROOT/'dfam-native/MeshCleanup.cs').read_text()
+        helper = source[source.index('// Numerical export cleanup'):]
+        self.assertIn(helper, self.cases[0]['code'])
+        self.assertEqual(self.cases[0]['family'], 'graded-gyroid-sheet')
+        self.assertEqual(self.cases[0]['split'], 'train')
+        old = dfam_corpus.load_cases(ROOT/'evidence/dfam-code/snapshots/infill-001-original.jsonl')[0]
+        receipt = json.loads((ROOT/'evidence/dfam-code/verification.json').read_text())
+        self.assertEqual(dfam_corpus.case_sha(old), receipt['cases']['infill-001']['case_sha256'])
+        self.assertNotEqual(dfam_corpus.case_sha(old), dfam_corpus.case_sha(self.cases[0]))
+
     def test_bibliography_entries_are_scoped(self):
         for key, entry in self.bib.items():
             self.assertEqual(set(entry), {'cite', 'entry', 'scope'}, key)
@@ -94,9 +105,12 @@ class DfamCorpusTest(unittest.TestCase):
         self.assertTrue(dfam_corpus.lint([]))
 
     def test_unassigned_corpus_is_refused_before_assembly(self):
+        unassigned = [dict(c) for c in self.cases]
+        unassigned[0].pop('family', None)
+        unassigned[0].pop('split', None)
         with self.assertRaisesRegex(ValueError, 'Corpus not ready'):
-            dfam_corpus.assemble(self.cases, {}, Mock())
-        problems = dfam_corpus.lint(self.cases, full=True)
+            dfam_corpus.assemble(unassigned, {}, Mock())
+        problems = dfam_corpus.lint(unassigned, full=True)
         self.assertIn('register family and split before assembly', problems['infill-001'])
 
     def test_related_family_cannot_cross_partitions(self):
