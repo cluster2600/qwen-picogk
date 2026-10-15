@@ -39,12 +39,12 @@ parent inputs are unavailable, so full historical retraining is not claimed.
 .venv/bin/python -m mlx_lm lora \
   --model /path/to/exact/pinned/base \
   --train --data data/planner --resume-adapter-file models/training-parent/adapters.safetensors \
-  --adapter-path work/retrained-planner --config training-planner.yaml
+  --adapter-path work/retrained-planner --config training/configs/planner.yaml
 ```
 
 For the separate selector, replace the data folder with `data/selector`,
 the parent with `models/planner/adapters.safetensors`, the destination with
-`work/retrained-selector` and the config with `training-selector.yaml`.
+`work/retrained-selector` and the config with `training/configs/selector.yaml`.
 Training validation data must remain fixed.
 The command is a reproduction aid, not a promise of byte-identical weights
 on different software/hardware. Do not select a new checkpoint on the now
@@ -53,9 +53,9 @@ public final set; create a new untouched final before future optimisation.
 ## Repeat exposed evaluations
 
 ```sh
-.venv/bin/python evaluate.py --base /path/to/exact/base \
+.venv/bin/python scripts/evaluate.py --base /path/to/exact/base \
   --adapter planner --split test --output work/planner-contract-final.json
-.venv/bin/python evaluate.py --base /path/to/exact/base \
+.venv/bin/python scripts/evaluate.py --base /path/to/exact/base \
   --adapter baseline --split test --output work/baseline-contract-final.json
 ```
 
@@ -73,7 +73,7 @@ distinct from the original benchmark receipts.
 ```sh
 dotnet restore native/GeometryHost.csproj --locked-mode
 dotnet build native/GeometryHost.csproj -c Release -o native/bin --no-restore
-.venv/bin/python evaluate.py --base /path/to/exact/base --adapter planner \
+.venv/bin/python scripts/evaluate.py --base /path/to/exact/base --adapter planner \
   --native-host native/bin/GeometryHost.dll --output work/planner-native-final.json
 ```
 

@@ -207,7 +207,7 @@ python3 scripts/check_release.py --weights
 The chain currently targets the configured Apple-silicon Mac. Use the original
 pinned inference environment and base, and the separate scan-demo adapter.
 Docker must contain the registered local scientific image identified in
-`scan-demo.json`; the command does not pull an image or install software.
+`config/scan-demo.json`; the command does not pull an image or install software.
 That environment already supplies NumPy, SciPy, trimesh, rtree and PyMeshLab.
 Its amd64 geometry tools run locally under Docker emulation. Native PicoGK runs
 on macOS through .NET 9 and the locked official PicoGK 2.3.0 NuGet package.

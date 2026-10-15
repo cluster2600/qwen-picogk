@@ -126,6 +126,21 @@ model's wider usefulness needs independent evaluation.
 
 ## Contents
 
+| Location | Purpose |
+|---|---|
+| `infer.py`, `scan_demo.py` | Stable inference entry points |
+| `contracts/`, `config/` | Plan validation and scan-demo manifest |
+| `training/configs/` | Planner, selector and scan-demo training settings |
+| `scripts/`, `tests/` | Evaluation, release checks and regression tests |
+| `data/`, `evidence/`, `hub/` | Published datasets, receipts and model cards |
+| `native/`, `scan-native/`, `envelope-native/` | Trusted C# geometry hosts |
+| `am-code/` | Separate AM C# study with its own evidence |
+| `docs/`, `examples/` | Guides, visual demonstrations and input examples |
+
+Published receipts keep their original hashes. Where source files have moved
+or changed, [archived source snapshots](evidence/source-snapshots/README.md)
+preserve the exact historical bytes.
+
 - [Model card](hub/planner/README.md), [selector card](hub/selector/README.md),
   [dataset card](hub/dataset/README.md).
 - [Training and reproduction](docs/TRAINING.md): exact parent, data, settings,

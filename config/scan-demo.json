@@ -6,7 +6,7 @@
   },
   "system_prompt": "You are the scan-demo tool planner. Output only JSON with method, target_faces, poisson_depth, mm_per_source_unit, voxel_mm, manufacturing_qualified. If surface_topology is open, method must be screened_poisson. If surface_topology is closed, method must be direct_voxelization. Copy the declared scale and voxel step exactly. Use target_faces 180000 when triangles > 1000000, otherwise 300000. Use poisson_depth 9. manufacturing_qualified is always false. Proposals are independently checked. No code, prose or physical certification.",
   "sources_sha256": {
-    "scan_demo.py": "c45070976726e6c298beb1763ed91032e488932b7da72f9855a6232645e1a752",
+    "scan_demo.py": "76c764d1c713e060c58aa87402247d9d992c50a9e21e17a933af8cca02842490",
     "scripts/scan_mesh.py": "998fd9d9738105ff5c1c307d7a6bce174bca5be19fb52b0ceaae82b7c1d24636",
     "scripts/scan_policy.py": "e1667ed881c297e163f49d6f57c1bd07b825537b23d4a956028daa222fc062d1",
     "scan-native/Program.cs": "09502cb21da03a35e46c09c0d7cb10066035cdf03a28354a97b2d96e3f281eb1",
@@ -23,7 +23,6 @@
     "data/scan-demo/test.jsonl": "4919f28e01127ddf9df76a95b6c49ff49461110336c2d3857abf1714a3998a34",
     "data/scan-demo/cases.json": "2d9002fd97b81a424ac99fca243fab57f5238038ea23ef992ffd85ce6d5a4b69",
     "data/scan-demo/valid.jsonl": "3df0b0c00dd11edb01e76d3dd42f4fbcf0ce6075c29919180baa885c8e11b49b",
-    "training-scan-demo.yaml": "9360311295bc2b6cddb99fdb424b0810018976cdf79db4fa700144dea1231622",
     "evidence/scan-demo/released-planner-rejected.json": "3e7bf941430e1cd32fa628ab123fed5b9abf0fd6d79966af36179885b80fe9c2",
     "evidence/scan-demo/candidate-120-specimen.json": "d294d7bfd9b97c6bfb2cd10df355eee1c2f3b7f8ce7f2ca43c1ab84e2a324fde",
     "evidence/scan-demo/training-registered-v2.json": "ce08b5b38cdb4177fdd260b1299c9836ba95c877b4667a1c898e5adaf35418e4",
@@ -44,6 +43,7 @@
     "evidence/scan-demo/snapshots/main-demo/scan_mesh.py.txt": "b03dce0647706866a2eb9f3075b4819fb1dd8241ee10b858df0abeaeef4da4d0",
     "evidence/scan-demo/automatic-main-demo.json": "9f252ce044d9164a04e9c7d7322e858b11e299179b19bc101f0a687f3d257da0",
     "evidence/scan-demo/llm-main-demo.json": "ffebc8b7ab4af1bd2483b2b19cde12b08c1c527e57dd911b49874370b77135b2",
-    "evidence/scan-demo/llm-repair-main-demo.json": "8f9292576925cf139ac63e8b143ca4ade03c6d6ae48c3b10a3b550bc03671b01"
+    "evidence/scan-demo/llm-repair-main-demo.json": "8f9292576925cf139ac63e8b143ca4ade03c6d6ae48c3b10a3b550bc03671b01",
+    "training/configs/scan-demo.yaml": "9360311295bc2b6cddb99fdb424b0810018976cdf79db4fa700144dea1231622"
   }
 }
