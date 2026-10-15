@@ -29,7 +29,8 @@ are inventoried as release assets, with local-path redaction and original/public
 hash bindings.
 
 A separate [PicoGK DfAM code corpus](docs/DFAM_CODE_CORPUS.md) is in progress:
-1 of 150 planned examples, and none is currently eligible for training.
+4 of 150 planned examples. Three pass strict isolated native verification;
+training assembly still requires the complete corpus.
 
 ![Actual geometry from our Qwen adapter and PicoGK](docs/visuals/generated/overview.png)
 

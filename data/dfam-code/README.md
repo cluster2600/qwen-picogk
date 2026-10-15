@@ -4,14 +4,17 @@ license: apache-2.0
 
 # PicoGK DfAM code corpus (work in progress)
 
-**Status: 1 of 150 planned cases.** This directory holds the tooling and the
-first historical native-verified example of a corpus for C# and PicoGK 2.3.0. The task
+**Status: 4 of 150 planned cases.** This directory holds the tooling and the
+first examples of a corpus for C# and PicoGK 2.3.0. The task
 it covers is turning 3D scan data into lightweight parts designed for
 laser powder bed fusion of metals (PBF-LB/M). The planned split is 45 scan
 repair, 60 bionic infill, 30 DfAM and 15 troubleshooting cases. No
-train/valid/test files exist yet. **No case is currently eligible for training:**
-the first case has 86 degenerate triangles in its original receipt, which
-the strengthened policy rejects. The old receipt and source are preserved.
+train/valid/test files exist yet, and assembly requires all 150 cases.
+`scan-001`, `dfam-001` and `debug-001` pass the strict policy under isolated
+native verification ([receipt](../../evidence/dfam-code/strict-v2-20261015.json)).
+The first case, `infill-001`, has 86 degenerate triangles in its original
+receipt, which the strengthened policy rejects. Its old receipt and source
+are preserved.
 See the [authoring and validation guide](../../docs/DFAM_CODE_CORPUS.md).
 
 ## How an example is accepted
@@ -47,8 +50,10 @@ Every example must have no detected open/non-manifold edges, inconsistent
 orientations or degenerate triangles, and one voxel-connected solid. Enclosed
 voids must remain within the declared raster tolerances (2 mm³ total and
 0.25 mm³ for the largest pocket); this is not a physical depowdering guarantee.
-For the one example so far, an unvented copy fails with 19,216 mm³ of trapped
-powder.
+For `infill-001`, an unvented copy fails with 19,216 mm³ of trapped powder.
+For `dfam-001`, the same channel with a round roof measures an overhang
+fraction of 0.0483 and fails the declared 0.035 limit, which the teardrop
+passes at 0.0218 ([negative control](../../evidence/dfam-code/negative-controls/)).
 
 The fixtures are a synthetic slab with bosses, plus a noisy point cloud with
 outliers and gaps derived from it. They are not a vehicle part.
