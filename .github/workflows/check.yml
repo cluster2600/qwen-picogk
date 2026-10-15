@@ -11,3 +11,11 @@ jobs:
         with:
           python-version: '3.12'
       - run: make check
+  cleanup-math:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.317'
+      - run: dotnet run --project dfam-native/CleanupChecks/CleanupChecks.csproj -c Release

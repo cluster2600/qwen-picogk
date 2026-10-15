@@ -11,7 +11,11 @@ laser powder bed fusion of metals (PBF-LB/M). The planned split is 45 scan
 repair, 60 bionic infill, 30 DfAM and 15 troubleshooting cases. No
 train/valid/test files exist yet. **No case is currently eligible for training:**
 the first case has 86 degenerate triangles in its original receipt, which
-the strengthened policy rejects. The old receipt and source are preserved.
+the strengthened policy rejects. Its revised numerical export welds vertices
+consistently before removing collapsed faces. The revised full part is **not
+yet native-revalidated**. The old receipt and original source snapshot are
+preserved in `evidence/dfam-code/`. The public seed is assigned to the
+`graded-gyroid-sheet` training family and cannot become an untouched holdout.
 See the [authoring and validation guide](../../docs/DFAM_CODE_CORPUS.md).
 
 ## How an example is accepted
