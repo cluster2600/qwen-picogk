@@ -54,8 +54,17 @@ FORBIDDEN = [
     (r'\bMmToVoxels\s*\(', 'Library.MmToVoxels calls the wrong native function in PicoGK 2.3.0'),
 ]
 UNIVERSAL = {'boundary_edges': 0, 'nonmanifold_edges': 0, 'solid_components': 1,
-             'inconsistent_orientation_edges': 0, 'degenerate_triangles': 0}
-POLICY = 'dfam-strict-v2'
+             'inconsistent_orientation_edges': 0, 'degenerate_triangles': 0,
+             'needle_triangles': 0, 'self_intersecting_pairs': 0}
+# v3 adds mesh-based wall thickness and needle triangles (C# checker) and an
+# independent exact-predicate self-intersection check (libigl sidecar).
+POLICY = 'dfam-strict-v3'
+SELFCHECK = ROOT / 'dfam-native/SelfCheck'
+SELFCHECK_PYTHON = WORK / 'dfam-selfcheck/bin/python'
+CHECKER_FILES = ('Checker/Program.cs', 'Checker/Checker.csproj', 'Checker/packages.lock.json',
+                 'SelfCheck/selfcheck.py', 'SelfCheck/requirements.txt')
+COUNT_METRICS = {'triangles', 'self_intersecting_coplanar_pairs', 'self_intersecting_triangles'}
+FRACTION_METRICS = {'overhang_fraction', 'thin_fraction', 'thin_wall_area_fraction'}
 MAX_SEQ_LENGTH = 8192
 # DOTNET_PROCESSOR_COUNT only limits managed threads. PicoGK's native OpenVDB
 # code uses every host core, and RLIMIT_CPU counts all of them, so a 16-core
@@ -174,7 +183,8 @@ def lint_case(case, bib):
     if not isinstance(expect, dict):
         problems.append('expect must be an object')
     else:
-        unknown = set(expect) - {'outputs', 'volume_ratio', 'overhang_fraction_max', 'thin_fraction_max', 'min_wall_mm'}
+        unknown = set(expect) - {'outputs', 'volume_ratio', 'overhang_fraction_max', 'thin_fraction_max',
+                                 'thin_wall_area_fraction_max', 'min_wall_mm'}
         if unknown:
             problems.append(f'unknown expect keys {sorted(unknown)}')
         if prefix in ('infill', 'dfam') and 'volume_ratio' not in expect and 'overhang_fraction_max' not in expect:
@@ -190,7 +200,7 @@ def lint_case(case, bib):
             problems.append(f'volume_ratio must be a finite ordered interval in (0, {top}]')
         elif prefix == 'infill' and interval is not None and interval[1] > 0.9:
             problems.append('infill volume_ratio upper bound must be <= 0.9 (it must actually lighten)')
-        for key in ('overhang_fraction_max', 'thin_fraction_max', 'min_wall_mm'):
+        for key in ('overhang_fraction_max', 'thin_fraction_max', 'thin_wall_area_fraction_max', 'min_wall_mm'):
             if key in expect and (type(expect[key]) not in (int, float) or not math.isfinite(expect[key]) or
                                   expect[key] < 0 or (key == 'min_wall_mm' and expect[key] == 0) or
                                   (key != 'min_wall_mm' and expect[key] > 1)):
@@ -249,7 +259,7 @@ def lint(cases, full=False):
                 continue
             families.setdefault(case['family'], set()).add(case['split'])
             if case['category'] in ('bionic_infill', 'dfam'):
-                for key in ('min_wall_mm', 'thin_fraction_max', 'overhang_fraction_max'):
+                for key in ('min_wall_mm', 'thin_fraction_max', 'thin_wall_area_fraction_max', 'overhang_fraction_max'):
                     if key not in case['expect']:
                         report.setdefault(case['id'], []).append(f'declare process-screen assumption {key}')
         for family, splits in families.items():
@@ -364,16 +374,40 @@ def build(project_dir, files, env):
     return proc.returncode == 0, {k: sorted(v) for k, v in errors.items()}, proc.stdout[-4000:]
 
 
+def checker_stamp():
+    """Binds the C# checker and the self-intersection sidecar sources."""
+    return sha(b''.join((ROOT / 'dfam-native' / n).read_bytes() for n in CHECKER_FILES))
+
+
+def ensure_selfcheck():
+    """Hash-pinned libigl environment for the sidecar, rebuilt when its sources change."""
+    venv = SELFCHECK_PYTHON.parents[1]
+    stamp = sha((SELFCHECK / 'requirements.txt').read_bytes() + (SELFCHECK / 'selfcheck.py').read_bytes())
+    stamp_file = venv / 'source.sha256'
+    if SELFCHECK_PYTHON.exists() and stamp_file.exists() and stamp_file.read_text() == stamp:
+        return
+    shutil.rmtree(venv, ignore_errors=True)
+    subprocess.run([sys.executable, '-m', 'venv', str(venv)], check=True, capture_output=True, timeout=300)
+    subprocess.run([str(SELFCHECK_PYTHON), '-m', 'pip', 'install', '--quiet', '--require-hashes', '--only-binary=:all:',
+                    '--no-deps', '-r', str(SELFCHECK / 'requirements.txt')], check=True, capture_output=True, timeout=900)
+    subprocess.run(capped([str(SELFCHECK_PYTHON), '-I', str(SELFCHECK / 'selfcheck.py'), '--self-test'], '4G'),
+                   check=True, capture_output=True, timeout=300)
+    stamp_file.write_text(stamp)
+
+
 def ensure_trusted(env):
     checker = WORK / 'dfam-checker/Checker.dll'
     src = ROOT / 'dfam-native/Checker'
-    stamp = sha(b''.join((src / n).read_bytes() for n in ('Program.cs', 'Checker.csproj', 'packages.lock.json')))
+    stamp = checker_stamp()
     stamp_file = WORK / 'dfam-checker/source.sha256'
     if not checker.exists() or not stamp_file.exists() or stamp_file.read_text() != stamp:
         subprocess.run(['dotnet', 'build', '-p:RestoreLockedMode=true', '-c', 'Release', '--nologo', '-v', 'q', '-o', str(WORK / 'dfam-checker')],
                        cwd=src, env=env, check=True, capture_output=True, timeout=900)
+        # Known answers for the thickness and needle measurements, without PicoGK.
+        subprocess.run(['dotnet', str(checker), 'selftest'], env=env, check=True, capture_output=True, timeout=300)
         stamp_file.write_text(stamp)
         shutil.rmtree(WORK / 'dfam-fixtures', ignore_errors=True)
+    ensure_selfcheck()
     fixtures = WORK / 'dfam-fixtures'
     if not (fixtures / 'fixtures.json').exists():
         shutil.rmtree(fixtures, ignore_errors=True)
@@ -389,7 +423,14 @@ def check_stl(checker, fixtures, stl, min_wall, env):
     line = next((l for l in proc.stdout.splitlines() if l.startswith('{')), None)
     if proc.returncode != 0 or line is None:
         return {'checker_error': (proc.stderr or proc.stdout)[-800:]}
-    return json.loads(line)
+    metrics = json.loads(line)
+    side = subprocess.run(capped([str(SELFCHECK_PYTHON), '-I', str(SELFCHECK / 'selfcheck.py'), str(stl)], '4G'),
+                          capture_output=True, text=True, timeout=900)
+    line = next((l for l in side.stdout.splitlines() if l.startswith('{')), None)
+    if side.returncode != 0 or line is None:
+        return {'checker_error': 'selfcheck: ' + (side.stderr or side.stdout)[-800:]}
+    metrics.update(json.loads(line))
+    return metrics
 
 
 def evaluate(metrics, expect):
@@ -397,16 +438,17 @@ def evaluate(metrics, expect):
     failed = []
     if 'checker_error' in metrics:
         return ['checker error: ' + metrics['checker_error']]
-    required = set(UNIVERSAL) | {'triangles', 'enclosed_void_mm3', 'enclosed_void_largest_mm3',
-                               'volume_ratio_to_fixture', 'overhang_fraction', 'thin_fraction',
-                               'volume_mm3', 'mesh_volume_mm3', 'parity_volume_mm3', 'surface_area_mm2', 'min_wall_mm'}
+    required = set(UNIVERSAL) | COUNT_METRICS | FRACTION_METRICS | {
+        'enclosed_void_mm3', 'enclosed_void_largest_mm3', 'volume_ratio_to_fixture',
+        'volume_mm3', 'mesh_volume_mm3', 'parity_volume_mm3', 'surface_area_mm2', 'min_wall_mm',
+        'wall_thickness_p01_mm', 'wall_thickness_p05_mm', 'wall_thickness_cap_mm'}
     for key in required:
         if type(metrics.get(key)) not in (int, float) or not math.isfinite(metrics[key]) or metrics[key] < 0:
             failed.append(f'missing, nonfinite or invalid metric {key}')
-        elif key in UNIVERSAL or key == 'triangles':
+        elif key in UNIVERSAL or key in COUNT_METRICS:
             if metrics[key] != int(metrics[key]):
                 failed.append(f'noninteger count {key}')
-        elif key in ('overhang_fraction', 'thin_fraction') and metrics[key] > 1:
+        elif key in FRACTION_METRICS and metrics[key] > 1:
             failed.append(f'invalid fraction {key}')
     if failed:
         return failed
@@ -431,6 +473,9 @@ def evaluate(metrics, expect):
         failed.append(f"overhang_fraction = {metrics['overhang_fraction']}, declared max {expect['overhang_fraction_max']}")
     if 'thin_fraction_max' in expect and metrics['thin_fraction'] > expect['thin_fraction_max']:
         failed.append(f"thin_fraction = {metrics['thin_fraction']}, declared max {expect['thin_fraction_max']}")
+    if 'thin_wall_area_fraction_max' in expect and metrics['thin_wall_area_fraction'] > expect['thin_wall_area_fraction_max']:
+        failed.append(f"thin_wall_area_fraction = {metrics['thin_wall_area_fraction']}, "
+                      f"declared max {expect['thin_wall_area_fraction_max']}")
     return failed
 
 
@@ -597,9 +642,7 @@ def receipt_check(cases, receipt):
             receipt.get('isolation') != 'linux-bubblewrap-systemd' or
             receipt.get('picogk_package') != '2.3.0' or receipt.get('voxel_mm') != VOXEL_MM):
         raise ValueError('A current strict-policy isolated native verification receipt is required')
-    src = ROOT / 'dfam-native/Checker'
-    stamp = sha(b''.join((src / n).read_bytes() for n in ('Program.cs', 'Checker.csproj', 'packages.lock.json')))
-    if receipt.get('checker_source_sha256') != stamp:
+    if receipt.get('checker_source_sha256') != checker_stamp():
         raise ValueError('Checker source binding changed')
     if set(receipt.get('cases', {})) != {c['id'] for c in cases}:
         raise ValueError('Receipt case set differs from corpus')

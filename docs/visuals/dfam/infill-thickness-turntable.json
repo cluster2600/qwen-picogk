@@ -1,0 +1,22 @@
+{
+ "display_proxy": {
+  "cell_mm": 0.7,
+  "cut": "triangles with centroid y < 0",
+  "method": "vertex clustering for display only",
+  "source_triangles_shown": 648254,
+  "triangles": 106175
+ },
+ "evidence": "evidence/dfam-code/strict-v3-20261015.json",
+ "frame_ms": 120,
+ "frames": 24,
+ "image": "infill-thickness-turntable.gif",
+ "image_sha256": "827ae53eba084096169d6e56029d470a30cda631f5ee270bbc9de5a087840efe",
+ "manufacturing_qualified": false,
+ "native_geometry_edited_for_render": false,
+ "note": "infill-001 fails strict-v3 on mesh defects; its thickness field is shown, not endorsed",
+ "render_source_sha256": "5eff5b443194e452c72fe2ea1c01ecd2773f989b65ac0f4b89a4eb84459781eb",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "infill-001.bin": "6c10d987d785987a2fd04d67ea63a742531207ab9c4d837b31074aad62e7e5e5"
+ }
+}

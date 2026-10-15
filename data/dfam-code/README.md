@@ -10,11 +10,12 @@ it covers is turning 3D scan data into lightweight parts designed for
 laser powder bed fusion of metals (PBF-LB/M). The planned split is 45 scan
 repair, 60 bionic infill, 30 DfAM and 15 troubleshooting cases. No
 train/valid/test files exist yet, and assembly requires all 150 cases.
-`scan-001`, `dfam-001` and `debug-001` pass the strict policy under isolated
-native verification ([receipt](../../evidence/dfam-code/strict-v2-20261015.json)).
-The first case, `infill-001`, has 86 degenerate triangles in its original
-receipt, which the strengthened policy rejects. Its old receipt and source
-are preserved.
+`scan-001`, `dfam-001` and `debug-001` pass the strict policy `dfam-strict-v3`
+under isolated native verification ([receipt](../../evidence/dfam-code/strict-v3-20261015.json);
+the earlier [strict-v2 receipt](../../evidence/dfam-code/strict-v2-20261015.json)
+is kept). The first case, `infill-001`, fails on 86 degenerate triangles and a
+detached zero-volume sheet that the self-intersection check reports. Its old
+receipts and source are preserved.
 See the [authoring and validation guide](../../docs/DFAM_CODE_CORPUS.md).
 
 ## How an example is accepted
@@ -44,10 +45,17 @@ corpus code. The measurements are:
   independently of OpenVDB;
 - the share of surface facing downward at less than 45 deg;
 - the thin-wall share, measured by morphological opening;
+- wall thickness on the mesh itself, by a ray from every triangle along the
+  inward normal (area-weighted percentiles and the area below the minimum
+  wall);
+- needle triangles, whose height is below 1e-3 of their longest edge;
+- self-intersecting triangle pairs, counted by a separate libigl sidecar with
+  exact predicates;
 - volume relative to the fixture.
 
 Every example must have no detected open/non-manifold edges, inconsistent
-orientations or degenerate triangles, and one voxel-connected solid. Enclosed
+orientations, degenerate or needle triangles, or self-intersecting pairs, and
+one voxel-connected solid. Enclosed
 voids must remain within the declared raster tolerances (2 mm³ total and
 0.25 mm³ for the largest pocket); this is not a physical depowdering guarantee.
 For `infill-001`, an unvented copy fails with 19,216 mm³ of trapped powder.
