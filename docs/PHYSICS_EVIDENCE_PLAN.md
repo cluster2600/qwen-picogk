@@ -12,6 +12,9 @@ Seven open-source projects were reviewed on 15 October 2026 by reading their
 source at the commits listed below; none was built or run for the review.
 Phase 1 is implemented. Phases 2 to 4 are planned.
 
+The [latest-change review](CHANGE_REVIEW_20261015.md) orders the immediate
+corpus and CI follow-ups before the planned solver studies.
+
 ```mermaid
 flowchart TB
     subgraph G["Per-case gate, every example (implemented)"]
@@ -46,7 +49,7 @@ flowchart TB
 | [ExaCA](https://github.com/LLNL/ExaCA) @ aaf79ed | Cellular-automaton grain structure | MIT | Sub-millimetre volumes only | **Deferred** |
 | [MeltPoolDG](https://github.com/MeltPoolDG/MeltPoolDG) @ de5f8a0 | Two-phase melt-pool research code; geometry written in C++ | LGPL-3.0 | Full 3D physics needs a cluster | **Cite only** |
 | [DeepXDE](https://github.com/lululxvi/deepxde) @ 99b66203 | Physics-informed networks and DeepONet; no STL or 3D geometry import | LGPL-2.1 | Yes, on CPU | **Deferred** until solver data exists |
-| [PyMesh](https://github.com/PyMesh/PyMesh) (last commit July 2020) | Mesh processing; abandoned, does not import on Python 3.12, no licence file | none stated | No | **Not used**; libigl replaces it |
+| [PyMesh](https://github.com/PyMesh/PyMesh) | Mesh processing in a separate pinned PyMesh 0.3 / Python 3.6.11 Docker runtime; not installed in the MLX environment | Redistribution licence not established here | Tested through amd64 emulation on the Mac | **Scan reconstruction only**: exact cleanup and final intersection audit; DfAM uses libigl |
 
 316L stainless steel is the only alloy shipped by AdditiveFOAM, ExaCA and
 adamantine alike, and it is also the test material of Kokkonen et al. (2016)
@@ -179,8 +182,12 @@ physics, and not fast enough to score every generated design.
   microstructure. It cannot judge printability or overhangs.
 - **MeltPoolDG.** Cite its papers in the limits; its full 3D physics needs a
   cluster and its geometry is written in C++.
-- **PyMesh.** Not used. libigl covers self-intersections; pytetwild or Gmsh
-  cover tetrahedral meshing if CalculiX is used later.
+- **PyMesh.** Already used by the separate [scan reconstruction
+  chain](PYMESH_SCAN_RECONSTRUCTION.md), not by the DfAM checker. Its exact
+  cleanup and intersection audit complement that chain's existing checks.
+  DfAM keeps its libigl sidecar and 0.0001 mm weld grid; the two engines'
+  counts and welding policies are not interchangeable. Tetrahedral meshing
+  remains a separate future decision if CalculiX is used later.
 
 ## Ground rules
 

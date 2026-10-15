@@ -91,6 +91,66 @@ def inspect(source, output):
     return result
 
 
+def pymesh_intake(intake, cleaned, output):
+    """Independently prove that PyMesh retained the exact acquired surface."""
+    import numpy as np
+    import trimesh
+    intake, cleaned = Path(intake), Path(cleaned)
+    metadata = json.loads((intake/'intake.json').read_text())
+    receipt = json.loads((cleaned/'pymesh.json').read_text())
+    if (digest(intake/'prepared.npz') != metadata['prepared_npz_sha256'] or
+            receipt['input_npz_sha256'] != metadata['prepared_npz_sha256'] or
+            digest(cleaned/'cleaned.npz') != receipt['output_npz_sha256'] or
+            receipt['duplicate_vertex_tolerance'] != 0):
+        raise ValueError('PyMesh cleanup binding or exact-weld policy mismatch')
+    with np.load(intake/'prepared.npz', allow_pickle=False) as src:
+        vertices, faces = src['vertices'], src['faces']
+    with np.load(cleaned/'cleaned.npz', allow_pickle=False) as data:
+        v, f = data['vertices'], data['faces']
+        vi, fi = data['input_vertex_indices'], data['input_face_indices']
+    if (v.ndim != 2 or v.shape[1] != 3 or not np.isfinite(v).all() or
+            f.ndim != 2 or f.shape[1] != 3 or not len(f) or f.dtype.kind not in 'iu' or
+            f.min() < 0 or f.max() >= len(v) or vi.dtype.kind not in 'iu' or fi.dtype.kind not in 'iu' or
+            vi.shape != (len(v),) or fi.shape != (len(f),) or
+            vi.min() < 0 or vi.max() >= len(vertices) or fi.min() < 0 or fi.max() >= len(faces)):
+        raise ValueError('Invalid PyMesh coordinates, faces or source maps')
+    if not np.array_equal(v, vertices[vi]) or not np.array_equal(v[f], vertices[faces[fi]]):
+        raise ValueError('PyMesh moved vertices or changed retained oriented triangles')
+    # Verify complete surface coverage, allowing only exact duplicate faces.
+    _, canonical = np.unique(vertices, axis=0, return_inverse=True)
+    corners = canonical[faces]
+    before, groups = np.unique(np.sort(corners, axis=1), axis=0, return_inverse=True)
+    parity = ((corners[:,0] > corners[:,1]).astype(np.uint8) +
+              (corners[:,0] > corners[:,2]).astype(np.uint8) +
+              (corners[:,1] > corners[:,2]).astype(np.uint8)) % 2
+    low, high = np.ones(len(before), dtype=np.uint8), np.zeros(len(before), dtype=np.uint8)
+    np.minimum.at(low, groups, parity)
+    np.maximum.at(high, groups, parity)
+    if np.any(low != high):
+        raise ValueError('Opposing acquired duplicate orientations need explicit review')
+    after = np.unique(np.sort(canonical[vi][f], axis=1), axis=0)
+    if not np.array_equal(before, after) or len(after) != len(f):
+        raise ValueError('PyMesh removed acquired surface or left duplicate faces')
+    mesh = trimesh.Trimesh(v, f, process=False)
+    if not np.all(mesh.area_faces > 0):
+        raise ValueError('PyMesh left zero-area faces')
+    _, counts = np.unique(mesh.edges_sorted, axis=0, return_counts=True)
+    labels = trimesh.graph.connected_component_labels(mesh.face_adjacency, node_count=len(f))
+    if np.any(counts > 2) or not mesh.is_winding_consistent:
+        raise ValueError('Cleaned scan is nonmanifold or inconsistently oriented')
+    output = fresh(output)
+    mesh.export(output/'prepared.stl')
+    np.savez_compressed(output/'prepared.npz', vertices=v, faces=f)
+    metadata.update(vertices=len(v), triangles=len(f), prepared_triangles=len(f),
+                    boundary_edges=int((counts == 1).sum()), nonmanifold_edges=int((counts > 2).sum()),
+                    connected_surface_components=len(np.unique(labels)), winding_consistent=True,
+                    prepared_sha256=digest(output/'prepared.stl'), prepared_npz_sha256=digest(output/'prepared.npz'),
+                    pymesh_cleanup=receipt, cleanup_preserves_acquired_surface=True,
+                    cleanup_vertices_moved=False, cleanup_holes_filled=False)
+    save(output/'intake.json', metadata)
+    return metadata
+
+
 def reconstruct(intake, plan, output):
     import numpy as np
     import pymeshlab
@@ -251,7 +311,7 @@ def assess(intake, native, output):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('stage', choices=['inspect','inspect_closed','dominant_demo','reconstruct','assess'])
+    parser.add_argument('stage', choices=['inspect','inspect_closed','dominant_demo','pymesh_intake','reconstruct','assess'])
     parser.add_argument('paths', nargs='+', type=Path)
     args = parser.parse_args()
     if len(args.paths) != (2 if args.stage in ('inspect','inspect_closed','dominant_demo') else 3):
