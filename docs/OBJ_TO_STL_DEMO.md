@@ -252,8 +252,11 @@ The [public scalar receipt](../evidence/scan-demo/automatic-main-demo.json)
 records scope, both quality outcomes, assumptions and source bindings. Its
 private source snapshot preserves the executed worker version before the
 small-closed-mesh regression fix; that fix affects the direct import branch,
-not this fan's geometry operations. Raw geometry, correspondence, PNG and GIF
-remain private. This single exposed development example is not a new geometry
+not this fan's geometry operations. The owner requested publication of the
+[fan preview](visuals/scan-demo/fan-preview.png); its
+[provenance and reuse status](visuals/scan-demo/fan-preview.json) are recorded.
+Raw geometry, correspondence, STL and GIF remain private. This single exposed
+development example is not a new geometry
 holdout, dimensional inspection, original CAD recovery or metal-process proof.
 
 ## About the suggested screenshot code

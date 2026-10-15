@@ -21,3 +21,10 @@ QuasiCrystals and experimental PicoGK.Geometry carry Apache-2.0 notices.
 Their revisions and scope are recorded in evidence/results-library.json.
 No third-party research PDF, photograph, scan, vehicle identifier or measured
 Porsche geometry is included. References are provenance, not endorsements.
+
+The scan-derived illustration docs/visuals/scan-demo/fan-preview.png is
+published at the repository owner's specific request. It is excluded from the
+Apache-2.0 grant for original code and synthetic examples. No separate reuse
+licence is granted for this illustration or the underlying scan/part; source
+scan reuse rights remain unverified. Its provenance and limits are recorded in
+docs/visuals/scan-demo/fan-preview.json. No raw scan or derived STL is included.

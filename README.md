@@ -11,6 +11,14 @@ and radial roles, strict JSON, independent numeric intent checks, native
 reference screens, failure records and uncertainty handling. It is not a
 general CAD assistant or a manufacturing qualification system.
 
+![Main fan surface reconstructed through the scan-demo Qwen and PicoGK workflow](docs/visuals/scan-demo/fan-preview.png)
+
+Actual PicoGK result from the [scan demonstration](docs/OBJ_TO_STL_DEMO.md),
+shown through a display proxy. Qwen proposes tool plans; trusted C# produces
+the geometry. Scale is assumed and the unregistered rear is omitted.
+This is a nonfunctional demonstration, without metal-print or rotation qualification.
+[Image provenance and reuse status](docs/visuals/scan-demo/fan-preview.json).
+
 A separate [AM C# training study](am-code/README.md) publishes the requested
 150-pair corpus, 64 native-validated corrective teachers, prompt-style
 augmentation, portable guards and full rejected-course evidence. Its completed

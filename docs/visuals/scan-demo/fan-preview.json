@@ -1,0 +1,21 @@
+{
+  "image": "fan-preview.png",
+  "image_sha256": "aa1e47fa4a86774fe363635b8f90ab6e3ec12f4068d493d7c6a4c252dd89e483",
+  "native_stl_sha256": "bf5283aa0b55639109e122aeddce64ece955950398d6d91548b8b434be838572",
+  "display_proxy_sha256": "61c4f4b25be72732afbfed20464983fc24fbb9ed12d1580d3e4ebf0016097f45",
+  "render_source_sha256": "2f93b0e2aaedd1740cb721f785628a2c2a57e761831a9feab90f36244a1dff71",
+  "display_proxy_triangles": 60000,
+  "display_proxy_only": true,
+  "native_geometry_edited_for_render": false,
+  "model_calls": 2,
+  "model_role": "numeric topology metadata to bounded tool plans; trusted project C# produces geometry",
+  "publication_authorization": "Repository owner explicitly requested this fan image on GitHub on 2026-10-15",
+  "render_license": "No separate reuse licence granted for this scan-derived illustration; excluded from the Apache-2.0 grant for original code and synthetic examples",
+  "underlying_scan_license": "unverified; no rights granted to underlying scan or part",
+  "scope": "main acquired surface only; unregistered rear omitted",
+  "assumed_mm_per_source_unit": 1,
+  "assumed_voxel_mm": 0.5,
+  "manufacturing_qualified": false,
+  "raw_scan_published": false,
+  "stl_published": false
+}
