@@ -30,6 +30,10 @@ def run(args):
     image = subprocess.check_output(['docker','image','inspect',manifest['geometry_image_id'],'--format','{{.Id}}'],text=True).strip()
     if image != manifest['geometry_image_id']:
         raise ValueError('Use the registered local geometry runtime')
+    pymesh_image = subprocess.check_output(['docker','image','inspect',manifest['pymesh_runtime']['image_id'],
+                                           '--format','{{.Id}}'],text=True).strip()
+    if pymesh_image != manifest['pymesh_runtime']['image_id']:
+        raise ValueError('Use the registered local PyMesh runtime')
 
     def geometry(stage, *paths):
         print('Geometry: '+stage,flush=True)
@@ -38,10 +42,22 @@ def run(args):
                  '-v',str(source)+':/input/scan.obj:ro',image,'/repo/scripts/scan_mesh.py',stage,*paths],
                 output/(Path(paths[-1]).name+'.log'))
 
+    def pymesh(stage, *paths):
+        print('PyMesh: '+stage,flush=True)
+        command(['docker','run','--rm','--network','none','--platform','linux/amd64',
+                 '--read-only','--cap-drop','ALL','--security-opt','no-new-privileges',
+                 '--pids-limit','128','--memory','4g','--memory-swap','4g','--cpus','4',
+                 '--tmpfs','/tmp:rw,noexec,nosuid,size=128m','--entrypoint','python',
+                 '-v',str(ROOT/'scripts')+':/scripts:ro','-v',str(output)+':/private:rw',
+                 pymesh_image,'/scripts/scan_pymesh.py',stage,*paths],output/(Path(paths[-1]).name+'.log'))
+
     geometry('inspect','/input/scan.obj','/private/intake')
     audit = json.loads((output/'intake/intake.json').read_text())
-    if audit['input_sha256'] != source_sha or audit['nonmanifold_edges'] or not audit['winding_consistent']:
-        raise ValueError('Input changed or unsupported nonmanifold/inconsistent scan')
+    if audit['input_sha256'] != source_sha:
+        raise ValueError('Input changed before PyMesh cleanup')
+    pymesh('prepare','/private/intake','/private/pymesh-prepared')
+    geometry('pymesh_intake','/private/intake','/private/pymesh-prepared','/private/clean-intake')
+    audit = json.loads((output/'clean-intake/intake.json').read_text())
     request = dict(surface_topology='open' if audit['boundary_edges'] else 'closed',
                    task='end-to-end OBJ to PicoGK STL demo', triangles=audit['triangles'],
                    boundary_edges=audit['boundary_edges'],connected_surface_components=audit['connected_surface_components'],
@@ -68,7 +84,7 @@ def run(args):
         mx.clear_cache()
         return plan
     plan=propose(request,'llm')
-    geometry('reconstruct','/private/intake','/private/llm.json','/private/reconstruction')
+    geometry('reconstruct','/private/clean-intake','/private/llm.json','/private/reconstruction')
     closed = output/'reconstruction/reconstructed.stl'
     host = ROOT/'scan-native/bin/Release/net9.0/ScanDemo.dll'
     dotnet = shutil.which('dotnet')
@@ -79,8 +95,21 @@ def run(args):
     print('PicoGK: reconstruct the closed surface as voxels and STL',flush=True)
     command([dotnet,str(host),str(closed),infer.digest(closed),str(plan['mm_per_source_unit']),str(plan['voxel_mm']),
              str(output/'native')],output/'native.log')
-    geometry('assess','/private/intake','/private/native','/private/assessment')
-    quality = json.loads((output/'assessment/quality.json').read_text())
+    def assessment(reference, native, label):
+        geometry('assess',reference,native,label)
+        pymesh('audit',native,label+'-pymesh')
+        folder = output/Path(label).name
+        quality = json.loads((folder/'quality.json').read_text())
+        audit = json.loads((output/(Path(label).name+'-pymesh')/'pymesh.json').read_text())
+        if audit['input_sha256'] != quality['native_sha256']:
+            raise ValueError('PyMesh and independent assessment audited different STL files')
+        quality['pymesh'] = audit
+        quality['checks']['pymesh_no_self_intersections'] = audit['self_intersection_pairs'] == 0
+        quality['status'] = 'demo_geometry_passed' if all(quality['checks'].values()) else 'demo_geometry_rejected'
+        (folder/'combined-quality.json').write_text(json.dumps(quality,indent=2,allow_nan=False)+'\n')
+        return quality
+
+    quality = assessment('/private/intake','/private/native','/private/assessment')
     first_quality=quality
     delivered=output/'native/candidate.stl'
     repair_used=quality['status']=='demo_geometry_rejected'
@@ -89,7 +118,7 @@ def run(args):
         project=ROOT/'envelope-native/EnvelopeDemo.csproj'
         command([dotnet,'restore',str(project),'--locked-mode'],output/'envelope-restore.log')
         command([dotnet,'build',str(project),'--no-restore','-c','Release'],output/'envelope-build.log')
-        geometry('dominant_demo','/private/intake','/private/dominant-intake')
+        geometry('dominant_demo','/private/clean-intake','/private/dominant-intake')
         reference=json.loads((output/'dominant-intake/intake.json').read_text())
         prepared=output/'dominant-intake/prepared.stl'
         command([dotnet,str(ROOT/'envelope-native/bin/Release/net9.0/EnvelopeDemo.dll'),str(prepared),infer.digest(prepared),
@@ -105,14 +134,15 @@ def run(args):
             raise ValueError('Repair mesh changed after independent inspection')
         command([dotnet,str(host),str(candidate),infer.digest(candidate),str(repair_plan['mm_per_source_unit']),
                  str(repair_plan['voxel_mm']),str(output/'native-repair')],output/'native-repair.log')
-        geometry('assess','/private/dominant-intake','/private/native-repair','/private/assessment-repair')
-        quality=json.loads((output/'assessment-repair/quality.json').read_text())
+        quality=assessment('/private/dominant-intake','/private/native-repair','/private/assessment-repair')
         delivered=output/'native-repair/candidate.stl'
     if infer.digest(source) != source_sha:
         raise ValueError('Source changed during the chain')
+    infer.verify_files(ROOT,manifest['sources_sha256'])
     result = dict(status=quality['status'],input_sha256=source_sha,
                   model_adapter_sha256=manifest['adapter']['adapters.safetensors'],
                   sources_sha256=manifest['sources_sha256'],quality=quality,
+                  pymesh_runtime=manifest['pymesh_runtime'],pymesh_cleanup=audit['pymesh_cleanup'],
                   first_quality=first_quality,repair_used=repair_used,
                   assumptions=dict(mm_per_source_unit=1.,voxel_mm=.5,material='AlSi10Mg',process='laser powder bed fusion'),
                   llm_role='typed topology features to guarded tool plan; not a raw-mesh encoder or C# author',

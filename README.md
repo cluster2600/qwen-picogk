@@ -47,6 +47,10 @@ typed features; geometry checks control STL delivery. This addition does not
 replace the original planner or its benchmark, and it does not qualify a
 metal part for manufacture.
 
+The current scan chain adds [PyMesh exact cleanup and native intersection
+auditing](docs/PYMESH_SCAN_RECONSTRUCTION.md), with source correspondence,
+surface-preservation checks and a separately pinned offline runtime.
+
 The [traceable gallery](docs/visuals/README.md) contains five real model calls,
 their raw responses, native PicoGK STL files and mesh renders. The diagrams
 in [architecture and evidence flow](docs/ARCHITECTURE.md) document the system.
