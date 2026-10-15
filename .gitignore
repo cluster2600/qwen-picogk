@@ -12,6 +12,8 @@ scan-native/bin/
 scan-native/obj/
 envelope-native/bin/
 envelope-native/obj/
+dfam-native/**/bin/
+dfam-native/**/obj/
 /model/
 am-code/model7b/
 am-code/model14b/

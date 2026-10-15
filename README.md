@@ -126,6 +126,11 @@ model's wider usefulness needs independent evaluation.
 
 ## Contents
 
+The [DfAM corpus guide](docs/DFAM_CODE_CORPUS.md) describes a separate,
+one-example authoring effort and its strict training gates. Its historical
+example is currently rejected by the strengthened mesh policy; no DfAM
+training set or new qualified model is claimed.
+
 | Location | Purpose |
 |---|---|
 | `infer.py`, `scan_demo.py` | Stable inference entry points |
