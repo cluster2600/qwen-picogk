@@ -32,7 +32,17 @@ class DfamCorpusTest(unittest.TestCase):
         record = receipt['cases']['infill-001']
         self.assertTrue(record['passed'])
         metrics = record['run']['outputs']['part.stl']
-        self.assertIn('degenerate_triangles = 86, required 0', dfam_corpus.evaluate(metrics, {'min_wall_mm': 1.0}))
+        # The legacy record lacks the v3 measurements, and its mesh had 86 degenerate triangles.
+        self.assertIn('missing, nonfinite or invalid metric self_intersecting_pairs',
+                      dfam_corpus.evaluate(metrics, {'min_wall_mm': 1.0}))
+        self.assertIn('degenerate_triangles = 86, required 0',
+                      dfam_corpus.evaluate(dict(self.v3_fields(), **metrics), {'min_wall_mm': 1.0}))
+        with self.assertRaisesRegex(ValueError, 'current strict-policy'):
+            dfam_corpus.receipt_check(self.cases, receipt)
+
+    def test_strict_v2_receipt_is_historical_under_v3(self):
+        receipt = json.loads((ROOT / 'evidence/dfam-code/strict-v2-20261015.json').read_text())
+        self.assertEqual(receipt['policy'], 'dfam-strict-v2')
         with self.assertRaisesRegex(ValueError, 'current strict-policy'):
             dfam_corpus.receipt_check(self.cases, receipt)
 
@@ -48,17 +58,22 @@ class DfamCorpusTest(unittest.TestCase):
         self.assertIn(self.cases[0]['code'].strip(), row['messages'][1]['content'])
         self.assertNotIn('<|im_start|>', row['messages'][0]['content'])
 
+    @staticmethod
+    def v3_fields():
+        # Values measured on infill-001 by the v3 checker and the libigl sidecar.
+        return dict(needle_triangles=0, self_intersecting_pairs=0, self_intersecting_coplanar_pairs=0,
+                    self_intersecting_triangles=0, wall_thickness_p01_mm=1.0495, wall_thickness_p05_mm=1.2039,
+                    wall_thickness_cap_mm=4.0, thin_wall_area_fraction=0.00371)
+
     def metrics(self):
         receipt = json.loads((ROOT / 'evidence/dfam-code/verification.json').read_text())
-        return dict(receipt['cases']['infill-001']['run']['outputs']['part.stl'],
+        return dict(receipt['cases']['infill-001']['run']['outputs']['part.stl'], **self.v3_fields(),
                     degenerate_triangles=0, stl_sha256='a' * 64)
 
     def receipt(self):
-        src = ROOT / 'dfam-native/Checker'
         return dict(policy=dfam_corpus.POLICY, isolation='linux-bubblewrap-systemd',
                     policy_source_sha256=dfam_corpus.sha(Path(dfam_corpus.__file__).read_bytes()),
-                    checker_source_sha256=dfam_corpus.sha(b''.join((src / n).read_bytes() for n in
-                        ('Program.cs', 'Checker.csproj', 'packages.lock.json'))),
+                    checker_source_sha256=dfam_corpus.checker_stamp(),
                     picogk_package='2.3.0', voxel_mm=0.3,
                     cases={'infill-001': dict(passed=True, case_sha256=dfam_corpus.case_sha(self.cases[0]),
                         run=dict(exit=0, failed=[], outputs={'part.stl': self.metrics()}))})
@@ -77,8 +92,39 @@ class DfamCorpusTest(unittest.TestCase):
         self.assertTrue(dfam_corpus.evaluate(metrics, self.cases[0]['expect']))
 
     def test_declared_overhang_and_thin_limits_are_enforced(self):
-        expect = dict(self.cases[0]['expect'], overhang_fraction_max=0, thin_fraction_max=0)
-        self.assertEqual(len(dfam_corpus.evaluate(self.metrics(), expect)), 2)
+        expect = dict(self.cases[0]['expect'], overhang_fraction_max=0, thin_fraction_max=0,
+                      thin_wall_area_fraction_max=0.001)
+        self.assertEqual(len(dfam_corpus.evaluate(self.metrics(), expect)), 3)
+
+    def test_v3_gates_self_intersections_needles_and_thickness_metrics(self):
+        expect = self.cases[0]['expect']
+        for key, value in [('self_intersecting_pairs', 4), ('needle_triangles', 2)]:
+            with self.subTest(key=key):
+                self.assertIn(f'{key} = {value}, required 0',
+                              dfam_corpus.evaluate(dict(self.metrics(), **{key: value}), expect))
+        for key, value in [('thin_wall_area_fraction', 1.5), ('wall_thickness_p01_mm', float('nan')),
+                           ('self_intersecting_triangles', 2.5)]:
+            with self.subTest(key=key):
+                self.assertTrue(dfam_corpus.evaluate(dict(self.metrics(), **{key: value}), expect))
+        metrics = self.metrics(); del metrics['wall_thickness_p05_mm']
+        self.assertTrue(dfam_corpus.evaluate(metrics, expect))
+
+    def test_checker_stamp_binds_the_selfcheck_sidecar(self):
+        self.assertIn('SelfCheck/selfcheck.py', dfam_corpus.CHECKER_FILES)
+        self.assertIn('SelfCheck/requirements.txt', dfam_corpus.CHECKER_FILES)
+        for line in (ROOT / 'dfam-native/SelfCheck/requirements.txt').read_text().splitlines():
+            if line and not line.startswith('#'):
+                self.assertRegex(line, r'^[a-z]+==[0-9.]+ --hash=sha256:[0-9a-f]{64}$')
+
+    def test_selfcheck_known_answers(self):
+        try:
+            import numpy  # noqa: F401
+            import igl  # noqa: F401
+        except ImportError:
+            self.skipTest('numpy/libigl not installed; the native verifier installs the pinned sidecar')
+        sys.path.insert(0, str(ROOT / 'dfam-native/SelfCheck'))
+        import selfcheck
+        self.assertFalse(selfcheck.self_test()['closed_cube']['found'])
 
     def test_schema_rejects_invalid_expectations_and_paths(self):
         for key, value in [('volume_ratio', [0.7, 0.5]), ('volume_ratio', [True, 0.7]),
