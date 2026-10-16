@@ -6,13 +6,15 @@ simulation numbers next to the corpus's process assumptions. This page
 records what was run, what matched a measurement, what did not, and what the
 numbers may and may not be used for.
 
-**Status, 15 October 2026:**
+**Status, 16 October 2026:**
 - The pinned container is built.
-- The AM-Bench smoke test runs and is mesh-converged, but **it does not
-  reproduce NIST's measured melt-pool length within its acceptance band**.
-- The 316L power-speed sweep is complete and published as an uncalibrated
-  trend.
-- The thin-wall heat build-up study is still to do.
+- **Validation against three AM-Bench cases:** cross-section width
+  reproduces within 6 % in all three, depth within 10 % in two, and
+  melt-pool length fails in all three. The length shortfall grows with scan
+  speed.
+- The 316L power-speed sweep is published as an uncalibrated trend.
+- The thin-wall heat build-up study is deferred, because it depends on the
+  unvalidated thermal tail (see the end of this page).
 
 None of this is process qualification.
 
@@ -22,6 +24,7 @@ flowchart LR
     B --> C["smoke: AMB2018-02-B<br/>IN625, 179.2 W, 800 mm/s"]
     C --> D{"length at 1290 degC<br/>within NIST mean +/- 2 SD?"}
     D -- "no: 300 vs 359 +/- 20 um" --> E["recorded as a model gap,<br/>mesh refinement rules out resolution"]
+    E --> V["validate: cases A, B, C<br/>width passes, length fails"]
     B --> F["sweep: 316L<br/>5 powers x 5 speeds"]
     F --> G["width, depth,<br/>lack-of-fusion criterion"]
     E --> H["evidence/process/*.json<br/>inputs, outputs, image and harness hashes"]
@@ -86,6 +89,37 @@ transcribed for this comparison. Second, the thermographic length carries its
 own emissivity and threshold uncertainty. Comparing width and depth against
 those tables is the next validation step.
 
+### Validation against cases A, B and C
+
+Width and depth are the quantities a melt-pool calibration normally targets.
+They come from ex-situ cross sections in Table 4 of Lane et al. (2020,
+Integrating Materials and Manufacturing Innovation 9, 16-30,
+doi:10.1007/s40192-020-00169-1; read from NIST's public-access copy). Case B
+had already been seen at every isotherm, so the criteria for cases A and C
+were committed (`8fa8d8c`) before those runs:
+- every quantity at NIST's 1290 degC isotherm;
+- length within the measured mean +/- 2 SD;
+- width and depth within +/- 10 % of the measured mean.
+
+![Measured against simulated length, width and depth for cases A, B and C](visuals/process/amb2018-abc-validation.png)
+
+| Case | Power, speed | Length sim / meas (um) | Width sim / meas (um) | Depth sim / meas (um) |
+|---|---|---|---|---|
+| A | 137.9 W, 400 mm/s | 273 / 300 +/- 12, **fail** (-9 %) | 146 / 148, pass (-1 %) | 48 / 42, **fail** (+15 %) |
+| B | 179.2 W, 800 mm/s | 300 / 359 +/- 20, **fail** (-17 %) | 124 / 123, pass (0 %) | 39 / 36, pass (+7 %) |
+| C | 179.2 W, 1200 mm/s | 236 / 370 +/- 10, **fail** (-36 %) | 100 / 106, pass (-6 %) | 28 / 30, pass (-7 %) |
+
+The length gap is not explained by the measurement uncertainty. Lane et al.
+give an expanded uncertainty (k = 2) of only 12, 21 and 33 um for these
+lengths, and motion blur in the 20 us thermal images contributes 5 to 14 um.
+The simulated length falls with speed from case B to C; the measured length
+rises. The calibrated tutorial therefore represents the melt pool's cross
+section, but not its extent behind the beam. Quantities that depend on the
+thermal tail are not supported by this setup: cooling rates, solidification
+data for ExaCA, and heat build-up between tracks and layers. Indicators built
+from width and depth, such as the lack-of-fusion criterion below, rest on the
+better-matched quantities.
+
 ![Temperature around the moving beam in the smoke test](visuals/process/amb2018-melt-pool.gif)
 
 The animation shows the top surface and the centre section (depth scale
@@ -149,13 +183,21 @@ wide, which is a geometric sanity bound only.
 
 ## What remains for Phase 2
 
-1. Compare width and depth with Lane et al. (2020) for cases A, B and C, the
-   quantities a calibration would normally target.
-2. Thin-wall heat build-up: 0.6, 1.0 and 2.0 mm walls with insulated sides
-   over 10 to 20 layers, using AdditiveFOAM's multi-layer workflow.
-3. Add AdditiveFOAM (JOSS, doi:10.21105/joss.07770), Knapp et al. (2023) and
-   Tang et al. (2017) to `data/dfam-code/bibliography.json` once a corpus
-   explanation cites these results.
+1. **Thin-wall heat build-up: deferred.** A meaningful run needs:
+   - 10 or more layers of 0.6, 1.0 and 2.0 mm rasters inside a powder bed
+     wide enough for the 2 mm wall;
+   - about 400,000 cells and 250 ms of simulated time;
+   - by the smoke test's throughput (about 2.5 million cell-steps per second
+     on 8 ranks), roughly 1.5 h per width.
+
+   The answer depends on the thermal tail, which the validation above shows
+   is too short by up to a third. Run it only after the length is brought into
+   agreement, for example by a calibration that includes length. Otherwise
+   report it strictly as a comparison between widths under the same model.
+2. Add AdditiveFOAM (JOSS, doi:10.21105/joss.07770), Knapp et al. (2023),
+   Lane et al. (2020) and Tang et al. (2017) to
+   `data/dfam-code/bibliography.json` once a corpus explanation cites these
+   results.
 
 ## Reproduce
 
@@ -165,6 +207,8 @@ python3 physics/additivefoam/run_track.py smoke --out work/process/smoke-NEW \
   --receipt work/process/smoke-NEW.json
 python3 physics/additivefoam/run_track.py smoke --refine 2 --out work/process/smoke-10um-NEW \
   --receipt work/process/smoke-10um-NEW.json
+python3 physics/additivefoam/run_track.py validate --out work/process/validate-NEW \
+  --receipt work/process/validate-NEW.json
 python3 physics/additivefoam/run_track.py sweep --out work/process/sweep-NEW \
   --receipt work/process/sweep-NEW.json
 python3 physics/additivefoam/render_figures.py --smoke20 ... --smoke10 ... \

@@ -102,8 +102,17 @@ check and the 316L sweep ([results](PROCESS_SIMULATION.md)).
   model and is recorded as evidence; nothing was tuned to close it.
 - **316L sweep.** It is published as an uncalibrated trend only.
 
-**Remaining:** the width and depth comparison with Lane et al. (2020), and the
-thin-wall boxes.
+**Done on 16 October 2026:** validation against AM-Bench cases A, B and C,
+with the criteria committed before cases A and C were run.
+
+- **Width** passes in all three cases (within 6 %).
+- **Depth** passes in two of three.
+- **Length** fails in all three, falling 9 to 36 % short, with the gap
+  growing with speed.
+
+The model therefore supports width/depth-based indicators but not
+thermal-tail quantities. The thin-wall boxes are deferred until the length
+agrees (about 1.5 h of compute per wall width).
 
 AdditiveFOAM solves heat transfer and melt flow around a moving beam in a
 millimetre-scale box. It cannot read our STL files, and it has no solid
