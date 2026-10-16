@@ -105,5 +105,22 @@ class AdamantineHarnessTest(unittest.TestCase):
             self.assertEqual(checks['cooled_below_600_k'], row['final_temperature_active']['max'] < 600.0)
             self.assertEqual(row['plate_bottom_max_displacement_mm'], 0.0)
 
+    def test_grid_offset_keeps_the_part_and_the_plate_alignment(self):
+        try:
+            import numpy as np
+        except ImportError:
+            self.skipTest('numpy not installed; the Phase 3 tools install it separately')
+        import hexmesh
+        corners = np.array([[x, y, z] for z in (0, 1) for y in (0, 1) for x in (0, 1)], float) * 10.0
+        quads = [(0, 2, 3, 1), (4, 5, 7, 6), (0, 1, 5, 4), (2, 6, 7, 3), (0, 4, 6, 2), (1, 3, 7, 5)]
+        tris = corners[np.array([t for a, b, c, d in quads for t in ((a, b, c), (a, c, d))])]
+        grid, origin = hexmesh.occupancy(tris, 1.0, offset_xy=0.5)
+        # Shifted by half a cell, a 10 mm cube covers 10 x 10 cell centres in x and y
+        # (the jittered rays sit just past each centre) and keeps its 10 layers in z.
+        self.assertEqual(int(grid.sum()), 1000)
+        self.assertAlmostEqual(origin[2], -1.0)                            # z is not shifted
+        grid, origin, layers = hexmesh.add_plate(grid, origin, 1.0, 2.0)
+        self.assertAlmostEqual(origin[2] + layers * 1.0, 0.0, places=6)
+
 if __name__ == '__main__':
     unittest.main()
