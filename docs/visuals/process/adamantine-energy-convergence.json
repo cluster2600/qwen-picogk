@@ -1,0 +1,12 @@
+{
+ "image": "adamantine-energy-convergence.png",
+ "image_sha256": "859f9ffcff2ff371dbaee84db1080ffd01fccbd32d0955eafef1e0e0269c19dd",
+ "manufacturing_qualified": false,
+ "render_source_sha256": "37de5351aac1387945e39bf9ff806f3f99f5416c38392da9848122f057e22a13",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "adamantine-pipeline-dfam-001-0.5mm.json": "baa5af6212c1e436199305de1a9d5c1e759355538543dcf4b3d6acd844a9536b",
+  "adamantine-pipeline-dfam-001-1.0mm.json": "e500e786664429d7e985bb6f4ab45893ba302d2e7d4b264a234367e46ca15429"
+ },
+ "uncalibrated_for_any_machine": true
+}

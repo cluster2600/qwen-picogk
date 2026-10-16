@@ -1,0 +1,69 @@
+{
+ "absorption_efficiency": 0.3,
+ "beam_depth_mm": 0.5,
+ "beam_diameter_mm": 2.0,
+ "checks": {
+  "completed": true,
+  "energy_within_5pct": false,
+  "heated_above_ambient": true
+ },
+ "cpus": 4,
+ "duration_s": 0.17,
+ "energy_ratio": 1.1641,
+ "expected_absorbed_energy_j": 14.4,
+ "final_temperature": {
+  "max": 328.39,
+  "mean": 300.059,
+  "min": 300.0,
+  "n": 400408
+ },
+ "harness_sha256": "2fe998f37cf17220661e29595be8cb69598595eecdc5eedd644bd18a59a86c94",
+ "heat_input_log_entries": 850,
+ "hexmesh_sha256": "08957cf43a964b3dc0686583eec53a57a610c41b2cbc21f3057ab5b713c2afe2",
+ "image": "rombur/adamantine:1.1@sha256:ac735f9b6fec7626e79e91061cbd03b6274478fbafcaf2dcbe078c042affc9fa",
+ "inputs_sha256": {
+  "part.info": "1b7ae088e4839903f188610751de4e748f45aebcfa38a6cd9073e65952dac270",
+  "part.msh": "8fa618072770b365070a0ccc43b60f51a9393fe4f20cb5e439cb68f2a728e538",
+  "scan_path.txt": "7177d3c96ca6f0c0790aef9e2066db60e9569959a77a1cb1b8130071437b5f71"
+ },
+ "logged_absorbed_energy_j": 16.7632,
+ "manufacturing_qualified": false,
+ "mesh": {
+  "cell_mm": 1.0,
+  "grid": [
+   72,
+   46,
+   33
+  ],
+  "hex_volume_mm3": 50051.0,
+  "hexahedra": 50051,
+  "msh_sha256": "8fa618072770b365070a0ccc43b60f51a9393fe4f20cb5e439cb68f2a728e538",
+  "nodes": 57085,
+  "stl_sha256": "4b7ece573fc7364d6f8bea34d880f0b709cc39f6d5624f2a7315d5d97c6231da",
+  "stl_volume_mm3": 49901.97,
+  "volume_ratio": 1.003
+ },
+ "mode": "pipeline",
+ "outputs": 31,
+ "passed": false,
+ "peak_temperature_k": 351.9,
+ "power_w": 400.0,
+ "scan_line_mm": [
+  [
+   -30,
+   -15,
+   16
+  ],
+  [
+   30,
+   -15,
+   16
+  ]
+ ],
+ "schema": "qwen-picogk.process.adamantine@1",
+ "solver_seconds": 65.0,
+ "speed_mm_s": 500.0,
+ "stl_sha256": "4b7ece573fc7364d6f8bea34d880f0b709cc39f6d5624f2a7315d5d97c6231da",
+ "time_step_s": 0.0002,
+ "uncalibrated_for_any_machine": true
+}
