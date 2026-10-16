@@ -401,6 +401,9 @@ def check(root=ROOT, assets=None, native_runtime=False):
     check_completed010(root, release)
     check_recovery012(root, release)
     check_completed012(root, release)
+    teacher_counts = json.loads((root/'evidence/results-summary.json').read_text())
+    assert teacher_counts['corrective007_teachers'] == dict(cases=64, passed=64, formulations=128)
+    assert teacher_counts['corrective008_teachers'] == dict(cases=48, passed=48, formulations=96)
     assert 'TRUSTED_PROFILE_SHA256 = None' in (root/'qwen-picogk-am').read_text()
     forbidden = re.compile(r'/Users/|-----BEGIN .*PRIVATE KEY|Bearer [A-Za-z0-9._-]{12,}|sk-[A-Za-z0-9]{20,}|VIN\s*[:=]', re.I)
     for relative in release['files_sha256']:

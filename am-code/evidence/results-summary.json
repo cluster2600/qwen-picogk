@@ -868,9 +868,9 @@
     "manufacturing_authorized": false
   },
   "corrective007_teachers": {
-    "cases": 48,
-    "passed": 48,
-    "formulations": 96
+    "cases": 64,
+    "passed": 64,
+    "formulations": 128
   },
   "interrupted_courses": [
     {
@@ -905,5 +905,10 @@
       "development-shell"
     ],
     "manufacturing_authorized": false
+  },
+  "corrective008_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
   }
 }
