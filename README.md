@@ -35,9 +35,10 @@ self-intersections with exact predicates; training assembly still requires
 the complete corpus. A [physics evidence plan](docs/PHYSICS_EVIDENCE_PLAN.md)
 reviews seven open-source AM simulation and geometry projects and schedules
 process and part-scale studies. Its first [process simulations](docs/PROCESS_SIMULATION.md)
-run AdditiveFOAM in a pinned container. Its AM-Bench smoke test is mesh-converged
-but 15 % short of NIST's measured melt-pool length, which is recorded rather
-than tuned away. A 316L sweep is published as an uncalibrated trend.
+run AdditiveFOAM in a pinned container. Against three NIST AM-Bench cases,
+the calibrated tutorial reproduces cross-section width within 6 %. Its
+melt-pool length is 9 to 36 % short, which is recorded rather than tuned
+away. A 316L sweep is published as an uncalibrated trend.
 
 ![Round roof versus teardrop roof: the overhang screen separates them](docs/visuals/dfam/channel-section.png)
 

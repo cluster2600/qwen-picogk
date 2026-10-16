@@ -136,6 +136,58 @@ def process_map(sweep, out):
     receipt(path, {Path(sweep).name: sha(sweep)}, isotherm_k=record['isotherm_k'])
 
 
+# Expanded uncertainty (k = 2) of the AMMT-20 us melt-pool lengths, Lane et al.
+# (2020) Table 5; Table 4's lengths come from those measurements.
+LENGTH_U_K2_UM = {'A': 11.91, 'B': 21.26, 'C': 32.57}
+
+
+def validation(record_path, out):
+    """Small multiples: measured vs simulated length, width and depth for cases A, B and C."""
+    path = fresh(out / 'amb2018-abc-validation.png')
+    record = json.loads(Path(record_path).read_text())
+    iso = f"{record['isotherm_k']:g}"
+    names = ['A', 'B', 'C']
+    cases = {c['case'][-1].upper(): c for c in record['cases']}
+    figure, axes = plt.subplots(1, 3, figsize=(10.4, 4.2), dpi=128, facecolor=BG)
+    for axis, key, title in zip(axes, ('length', 'width', 'depth'), ('Length', 'Width', 'Depth')):
+        style(axis)
+        for i, name in enumerate(names):
+            ref, pool = cases[name]['reference'], cases[name]['melt_pool'][iso]
+            measured = ref[f'{key}_um']
+            if key == 'length':
+                band = 2 * ref['length_sd_um']
+                axis.errorbar(i - 0.1, measured, yerr=LENGTH_U_K2_UM[name], fmt='none', ecolor=SERIES[0],
+                              elinewidth=1.4, capsize=3, zorder=2)
+            else:
+                band = 0.1 * measured
+            axis.add_patch(plt.Rectangle((i - 0.32, measured - band), 0.64, 2 * band, color='#e4e9ed', zorder=0,
+                                         label='acceptance band' if i == 0 else None))
+            axis.scatter(i - 0.1, measured, s=60, color=SERIES[0], edgecolor=BG, linewidth=2, zorder=3,
+                         label='measured (NIST AMMT)' if i == 0 else None)
+            axis.scatter(i + 0.1, pool[f'{key}_um'], s=60, color=SERIES[1], edgecolor=BG, linewidth=2, zorder=3,
+                         label='AdditiveFOAM at 1290 degC' if i == 0 else None)
+            passed = cases[name]['checks']['length_within_2sd' if key == 'length' else f'{key}_within_10pct']
+            axis.text(i + 0.22, pool[f'{key}_um'], 'pass' if passed else 'fail', va='center', fontsize=8,
+                      color=INK if passed else '#b3261e', fontweight='bold')
+        speeds = [f"{name}\n{cases[name]['reference']['speed_m_s'] * 1000:.0f} mm/s" for name in names]
+        axis.set_xticks(range(3), speeds)
+        axis.set_xlim(-0.6, 2.7)
+        axis.set_title(f'{title} (um)', color=INK, fontsize=10.5, loc='left')
+        axis.grid(axis='y', color=GRID, lw=0.6)
+    handles, labels = axes[0].get_legend_handles_labels()
+    figure.legend(handles, labels, loc='lower center', ncol=3, frameon=False, fontsize=8.5,
+                  bbox_to_anchor=(0.5, 0.045))
+    figure.suptitle('AM-Bench AMB2018-02, IN625: cross-section width matches; melt-pool length does not',
+                    color=INK, fontsize=11)
+    figure.text(0.5, 0.01, 'Bands: length mean +/- 2 SD, width and depth +/- 10 %, fixed before cases A and C '
+                'were run. Error bars: expanded length uncertainty (k = 2), Lane et al. 2020 Table 5.',
+                ha='center', color=MUTED, fontsize=7.8)
+    figure.tight_layout(rect=(0, 0.12, 1, 0.93))
+    figure.savefig(path, facecolor=BG)
+    plt.close(figure)
+    receipt(path, {Path(record_path).name: sha(record_path)}, length_u_k2_um=LENGTH_U_K2_UM)
+
+
 def read_field(path):
     text = Path(path).read_text()
     uniform = re.search(r'internalField\s+uniform\s+([0-9.eE+-]+)\s*;', text)
@@ -198,10 +250,15 @@ def melt_pool_gif(case, smoke20, out):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    for name in ('smoke20', 'smoke10', 'sweep', 'case', 'out'):
-        parser.add_argument(f'--{name}', type=Path, required=True)
+    parser.add_argument('--validation', type=Path, help='render only the A/B/C validation figure')
+    for name in ('smoke20', 'smoke10', 'sweep', 'case'):
+        parser.add_argument(f'--{name}', type=Path)
+    parser.add_argument('--out', type=Path, required=True)
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
+    if args.validation:
+        validation(args.validation, args.out)
+        return
     length_check(args.smoke20, args.smoke10, args.out)
     process_map(args.sweep, args.out)
     melt_pool_gif(args.case, args.smoke20, args.out)

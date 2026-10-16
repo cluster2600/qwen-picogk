@@ -1,0 +1,16 @@
+{
+ "image": "amb2018-abc-validation.png",
+ "image_sha256": "0d3082c61afe76314a12cf5e2510b0f3722e7816cc328e2d0b933a00d0414890",
+ "length_u_k2_um": {
+  "A": 11.91,
+  "B": 21.26,
+  "C": 32.57
+ },
+ "manufacturing_qualified": false,
+ "render_source_sha256": "faf894b71f6d9d21bab1cd450e383e0acb579f4c8db5c33e56b83bdc2ff08fed",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "additivefoam-amb2018-02-abc-validation.json": "69c751d460c23b102fc65a43835cc7345b499acae1241d9752c11f6049925d65"
+ },
+ "uncalibrated_for_any_machine": true
+}

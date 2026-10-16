@@ -129,5 +129,6 @@ support.
 |---|---|
 | ![](process/amb2018-length-check.png) | Smoke test: simulated length per isotherm and mesh against NIST's measured band (fails at NIST's 1290 degC threshold) |
 | ![](process/316l-process-map.png) | 316L width and depth over power and speed, with the lack-of-fusion boundary (uncalibrated) |
+| ![](process/amb2018-abc-validation.png) | AM-Bench cases A, B and C: measured against simulated length, width and depth, with the pre-set acceptance bands |
 
 ![Temperature around the moving beam](process/amb2018-melt-pool.gif)

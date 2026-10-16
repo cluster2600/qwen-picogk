@@ -56,6 +56,24 @@ class ProcessHarnessTest(unittest.TestCase):
             expect = run_track.indicators(pool['width_um'], pool['depth_um'], sweep['layer_m'], sweep['hatch_m'])
             self.assertEqual(case['indicators'], expect)
 
+    def test_validation_verdicts_follow_from_recorded_numbers(self):
+        record = json.loads((ROOT / 'evidence/process/additivefoam-amb2018-02-abc-validation.json').read_text())
+        self.assertIn('fixed before cases A and C were run', record['acceptance'])
+        iso = f"{record['isotherm_k']:g}"
+        self.assertEqual(iso, '1563.15')                                 # NIST's 1290 degC threshold
+        verdicts = {}
+        for case in record['cases']:
+            name, ref, pool = case['case'][-1].upper(), case['reference'], case['melt_pool'][iso]
+            self.assertEqual(ref, run_track.AMMT[name])
+            length_ok = abs(pool['length_um'] - ref['length_um']) <= 2 * ref['length_sd_um']
+            self.assertEqual(case['checks']['length_within_2sd'], length_ok)
+            for key in ('width', 'depth'):
+                ok = abs(pool[f'{key}_um'] - ref[f'{key}_um']) <= 0.10 * ref[f'{key}_um']
+                self.assertEqual(case['checks'][f'{key}_within_10pct'], ok)
+            verdicts[name] = (length_ok, case['checks']['width_within_10pct'], case['checks']['depth_within_10pct'])
+        # The documented outcome: width passes everywhere, length nowhere, depth fails for A.
+        self.assertEqual(verdicts, {'A': (False, True, False), 'B': (False, True, True), 'C': (False, True, True)})
+
     def test_dockerfile_pins_base_key_and_commit(self):
         text = (ROOT / 'physics/additivefoam/Dockerfile').read_text()
         self.assertIn('ubuntu:24.04@sha256:', text)
