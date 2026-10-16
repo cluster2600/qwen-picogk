@@ -1,0 +1,13 @@
+{
+ "frame_ms": 180,
+ "frames": 21,
+ "image": "adamantine-layers-dfam-001.gif",
+ "image_sha256": "e9d34d19d94f8c39a0be88a6531b0de4591dca5ff1a8092887c2523a3f65d50d",
+ "manufacturing_qualified": false,
+ "render_source_sha256": "4fca20a51578c86968a876b6b7dcb88cf7fe1836220098239b8d09f4fecc640b",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "adamantine-layers-comparison.json": "370abc49d684e1e9e22fe618ae7b9d33f1b18c989ee5d2431211f7efa9c6b687"
+ },
+ "uncalibrated_for_any_machine": true
+}

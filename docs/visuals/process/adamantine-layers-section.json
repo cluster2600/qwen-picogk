@@ -1,0 +1,11 @@
+{
+ "image": "adamantine-layers-section.png",
+ "image_sha256": "a36b22cd163329db10dd5d3e618bfee669459705ca572008421beaa4cfc384f4",
+ "manufacturing_qualified": false,
+ "render_source_sha256": "4fca20a51578c86968a876b6b7dcb88cf7fe1836220098239b8d09f4fecc640b",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "adamantine-layers-comparison.json": "370abc49d684e1e9e22fe618ae7b9d33f1b18c989ee5d2431211f7efa9c6b687"
+ },
+ "uncalibrated_for_any_machine": true
+}
