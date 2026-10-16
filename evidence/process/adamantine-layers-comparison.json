@@ -1,0 +1,96 @@
+{
+ "analysis_sha256": "4fca20a51578c86968a876b6b7dcb88cf7fe1836220098239b8d09f4fecc640b",
+ "baseline": "solid",
+ "checks": {
+  "debug-001": {
+   "cooled_below_600_k": false,
+   "plate_bottom_clamped": true
+  },
+  "dfam-001": {
+   "cooled_below_600_k": false,
+   "plate_bottom_clamped": true
+  },
+  "solid": {
+   "cooled_below_600_k": false,
+   "plate_bottom_clamped": true
+  }
+ },
+ "displacement_not_von_mises": true,
+ "manufacturing_qualified": false,
+ "schema": "qwen-picogk.process.adamantine-layers@1",
+ "uncalibrated_for_any_machine": true,
+ "variants": {
+  "debug-001": {
+   "final_output_sha256": "e70153d0521df35a9faf6533b45e5f9cebee07bf53aafcbda47cd8f07722f753",
+   "final_temperature_active": {
+    "max": 793.1,
+    "mean": 770.4,
+    "min": 727.0
+   },
+   "final_time_s": 124.0,
+   "max_displacement_at_mm": [
+    31.0,
+    3.0,
+    30.0
+   ],
+   "max_displacement_mm": 0.6373,
+   "outputs": 21,
+   "plate_bottom_max_displacement_mm": 0.0,
+   "receipt_sha256": "1b52ce49b1aa479e1d576a79cb8b54cb6bccc807793a5515827f4cc4dcd1d789",
+   "sampled_peak_temperature_k": 1148.5,
+   "slab_top_mean_uz_mm": -0.2334,
+   "slab_top_uz_range_mm": 0.2412,
+   "solver_seconds": 16193.9,
+   "stl_sha256": "0e1a0cf135be450413566748354f3561bf154f6ea29d793fa119dab7874ebb27",
+   "top_layer_z_mm": 30.0
+  },
+  "dfam-001": {
+   "final_output_sha256": "3017918a9eb3710454a512d02bde350f35de5b4fd308e34875e8a8a23097170b",
+   "final_temperature_active": {
+    "max": 783.1,
+    "mean": 751.2,
+    "min": 692.8
+   },
+   "final_time_s": 124.0,
+   "max_displacement_at_mm": [
+    31.0,
+    -3.0,
+    30.0
+   ],
+   "max_displacement_mm": 0.6576,
+   "outputs": 21,
+   "plate_bottom_max_displacement_mm": 0.0,
+   "receipt_sha256": "c5cf6b4378bd37a678ce98b12c08e12231518e273496583940008386e73dcf25",
+   "sampled_peak_temperature_k": 1145.5,
+   "slab_top_mean_uz_mm": -0.2417,
+   "slab_top_uz_range_mm": 0.2495,
+   "solver_seconds": 16081.1,
+   "stl_sha256": "4b7ece573fc7364d6f8bea34d880f0b709cc39f6d5624f2a7315d5d97c6231da",
+   "top_layer_z_mm": 30.0
+  },
+  "solid": {
+   "final_output_sha256": "e21fddacd1141300d98b0994ad0f4e3493abaa078fc95b42bcdafe5ef9b9aef8",
+   "final_temperature_active": {
+    "max": 812.1,
+    "mean": 785.5,
+    "min": 735.2
+   },
+   "final_time_s": 124.0,
+   "max_displacement_at_mm": [
+    31.0,
+    -3.0,
+    30.0
+   ],
+   "max_displacement_mm": 0.6328,
+   "outputs": 21,
+   "plate_bottom_max_displacement_mm": 0.0,
+   "receipt_sha256": "b99dbc7f5ec76ac39949cabf7df87cdb88ee46bf9406953e29311afc6b32a8e5",
+   "sampled_peak_temperature_k": 1152.6,
+   "slab_top_mean_uz_mm": -0.2271,
+   "slab_top_uz_range_mm": 0.238,
+   "solver_seconds": 16047.5,
+   "stl_sha256": "79cb1719d6ff41222be81d5dc43740db0680cb8f46be4db2fab6946df44830ed",
+   "top_layer_z_mm": 30.0
+  }
+ }
+}

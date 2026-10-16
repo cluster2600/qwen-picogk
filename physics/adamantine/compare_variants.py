@@ -110,8 +110,8 @@ def section_figure(runs, out):
     bar = figure.colorbar(image, ax=list(axes), fraction=0.02, pad=0.02)
     bar.set_label('displacement magnitude (mm)', color=MUTED, fontsize=8.5)
     bar.ax.tick_params(colors=MUTED, labelsize=7.5)
-    figure.suptitle('Section x = 0 after the lumped-layer build and cooling (one model, three geometries)',
-                    color=INK, fontsize=11)
+    figure.suptitle(f'Section x = 0 at t = {last["time"]:.0f} s, part still hot '
+                    '(one model, three geometries)', color=INK, fontsize=11)
     figure.text(0.01, 0.005, 'adamantine 1.1, linear thermo-elastic, 1 mm layers at 1720 K on a clamped 5 mm plate; '
                 'uncalibrated comparison, not a distortion prediction', color=MUTED, fontsize=7.5)
     figure.savefig(path, facecolor=BG, bbox_inches='tight')

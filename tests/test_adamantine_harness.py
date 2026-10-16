@@ -94,5 +94,16 @@ class AdamantineHarnessTest(unittest.TestCase):
         self.assertEqual(len(quads_written), ny * nx)                      # one face per bottom cell
         self.assertTrue(all(l.split()[3] == '1' for l in quads_written))  # physical tag -> boundary id 1
 
+    def test_layer_comparison_records_its_limits(self):
+        record = json.loads((EVIDENCE / 'adamantine-layers-comparison.json').read_text())
+        self.assertTrue(record['displacement_not_von_mises'])
+        self.assertEqual(record['baseline'], 'solid')
+        for name, checks in record['checks'].items():
+            self.assertTrue(checks['plate_bottom_clamped'], name)
+            self.assertFalse(checks['cooled_below_600_k'], name)       # the documented hot snapshot
+            row = record['variants'][name]
+            self.assertEqual(checks['cooled_below_600_k'], row['final_temperature_active']['max'] < 600.0)
+            self.assertEqual(row['plate_bottom_max_displacement_mm'], 0.0)
+
 if __name__ == '__main__':
     unittest.main()

@@ -13,8 +13,10 @@ data, and the chain from a verified STL to a thermal run on that geometry.
 - A lumped-layer thermo-elastic build mode exists and passed a three-layer
   trial (clamped plate held at zero displacement, layers activated on
   schedule).
-- Builds of three variants (solid, `dfam-001`, `debug-001`) are running.
-  Their comparison will be added when they finish.
+- Builds of three variants (solid, `dfam-001`, `debug-001`) are complete.
+  The channel and the holes change displacement by only a few percent, and
+  the compressed layer time keeps the part far hotter than a real build (see
+  below).
 - Three adamantine defects were found and reported upstream (see below).
 
 Nothing here is calibrated or a prediction for a real machine.
@@ -148,19 +150,63 @@ emissivity are uncalibrated, and plasticity, build-plate removal and support
 structures are not modelled. Results are differences between geometries under
 one model, not distortion predictions.
 
+### Results: three geometries under one model
+
+Each variant was built as 30 lumped layers of 1 mm, deposited every 2 s from
+t = 2 s to t = 60 s. The schedule's two extra boxes above z = 30 mm contain no
+cells. Cooling continued until t = 124 s, and the table compares that state.
+The full record is
+in [adamantine-layers-comparison.json](../evidence/process/adamantine-layers-comparison.json),
+with one run receipt per variant (`adamantine-layers-run-*.json`). Their
+`solver_seconds` include about 1.5 h when the host machine was suspended; the
+three runs shared the machine's CPUs.
+
+| Variant | Max displacement (mm) | Slab-top warp, range of u_z (mm) | Mean T at 124 s | Plate clamped |
+|---|---:|---:|---:|---|
+| `solid` | 0.633 | 0.238 | 786 K | yes |
+| `dfam-001` | 0.658 (+3.9 %) | 0.249 (+4.8 %) | 751 K | yes |
+| `debug-001` | 0.637 (+0.7 %) | 0.241 (+1.3 %) | 770 K | yes |
+
+![Displacement in the section x = 0 for the three variants](visuals/process/adamantine-layers-section.png)
+
+![Maximum displacement and slab-top warp per variant](visuals/process/adamantine-layers-comparison.png)
+
+![dfam-001 section x = 0 during the lumped-layer build](visuals/process/adamantine-layers-dfam-001.gif)
+
+The largest displacement is at the top corner of the bored boss in all three
+variants. Compared with the solid blank:
+- `dfam-001`'s teardrop channel raises the maximum displacement by about 4 %
+  and the slab-top warp by about 5 %;
+- `debug-001`'s two clearance holes change both by about 1 %.
+
+**How far these numbers go.** They are a comparison under one uncalibrated
+model and do not predict distortion.
+- **Compressed time.** Each 1 mm lumped layer stands for roughly 25 real
+  layers but arrives every 2 s. The part therefore runs at about 900 K
+  through the build and is still at 750 to 790 K at the end. This is a hot
+  snapshot, not the cooled residual state; the run's own
+  `cooled_below_600_k` check records that.
+- **Mesh resolution.** Differences of a few percent are close to what 1 mm
+  staircasing of the channel and holes can produce. A 0.5 mm repeat is needed
+  before relying on them.
+- **Missing physics.** The model is linear thermo-elastic with clamped
+  boundaries. It has no plasticity, no plate removal and no supports.
+- **Cost.** A realistic layer time with adamantine 1.1's explicit time
+  stepping would take days at this resolution, so it was not attempted.
+
+Displacement was used throughout; the von Mises output is affected by #501.
+
 ## Next steps for Phase 3
 
-1. **Lumped-layer deposition** of about 1 mm per layer, using adamantine's
-   `material_deposition_method file` with a box file, which the plan's layer
-   writer will produce. Each layer starts hot, as in an inherent-heat
-   approach.
-2. **Mechanical runs.** Before relying on the stress output, confirm the two
-   suspected issues noted in the plan: the von Mises formula and the
-   cooling-rate parentheses.
-3. **Comparisons between variants:** solid, vented and lattice versions of
-   `dfam-001` and `infill-001` on the same 0.5 mm mesh, reported as
-   differences between variants. Lattices need a homogenised material, because
-   1 mm walls cannot be resolved at this cell size.
+1. **Repeat the comparison on 0.5 mm cells** to see whether the 1-5 %
+   differences survive refinement.
+2. **A realistic thermal history.** Use longer layer intervals on a coarser
+   mesh, or wait for implicit time stepping upstream, so the final state is
+   cooled.
+3. **Lattice variants:** `infill-001` needs a homogenised material for its
+   core, because 1 mm gyroid walls cannot be resolved at part-scale cells.
+4. **Stress:** once #501 is fixed, add von Mises comparisons alongside
+   displacement.
 
 ## Reproduce
 

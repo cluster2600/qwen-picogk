@@ -169,8 +169,14 @@ particular machine prints a 1.0 mm wall.
   0.6 % at 0.5 mm cells but not at 1 mm cells (+16 %), which sets 0.5 mm as
   the minimum resolution.
 
-**Remaining:** lumped-layer deposition, mechanics after checking the two
-suspected upstream issues, and the comparisons between variants.
+**Also done:** lumped-layer thermo-elastic builds of the solid blank,
+`dfam-001` and `debug-001` ([results](PART_SCALE_SIMULATION.md)). The channel
+raises displacement and warp by about 4-5 % and the holes by about 1 %, in a
+hot snapshot. The compressed layer time leaves the part at 750-790 K, so the
+results are indicative comparisons only.
+
+**Remaining:** a 0.5 mm repeat, a realistic thermal history, homogenised
+lattice variants, and stress once adamantine #501 is fixed.
 
 adamantine is the only reviewed code that predicts part-scale temperature,
 displacement and stress. Simulating every laser track of a 70 x 44 x 30 mm
