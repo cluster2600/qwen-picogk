@@ -1,0 +1,30 @@
+{
+  "schema": "picogk.am.local-launch@1",
+  "status": "launched_not_completed",
+  "launched_at": "2026-10-15T20:42:25.087436+00:00",
+  "pid": 56328,
+  "process_group_session_detached": true,
+  "argv": [
+    "runtime/venv/bin/python",
+    "am-code/train.py",
+    "--name",
+    "32b-corrective007-recovery1",
+    "--iters",
+    "384",
+    "--learning-rate",
+    "2e-6",
+    "--resume",
+    "am-code/runs/32b-corrective006-epoch2/adapter/adapters.safetensors",
+    "--corpus",
+    "am-code/data/focused-32b-002/train.jsonl",
+    "--corpus-sha256",
+    "f706b243a241286995bc7a0680bbdf85051a5bd2dae4fd61263df00f1ffb2c98",
+    "--base-profile",
+    "am-code/base-profile-32b.json"
+  ],
+  "prospective_protocol_sha256": "2f9af1b8de4eb33541af7bd34e1ac90c9280d0ac34b176b3027c2ead16606993",
+  "log": "training-32b-corrective007-recovery1.log",
+  "completed_receipt_expected": "runs/32b-corrective007-recovery1/training-receipt.json",
+  "active_weights_read_or_published": false,
+  "manufacturing_authorized": false
+}

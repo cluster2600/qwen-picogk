@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "training_steps": 512,
+  "elapsed_seconds": 18313.50050833309,
+  "peak_memory_bytes": 22179907274,
+  "trainable_arrays": 224,
+  "all_tensors_finite": true,
+  "adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
+  "protocol_sha256": "55ff929f806c4ba4a62fc82b8af15b1dd52de990ae53b2c0dceab06525d30287",
+  "training_rows": 256,
+  "maximum_tokens": 1759,
+  "physical_qualification": false
+}

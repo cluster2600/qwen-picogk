@@ -1,0 +1,7 @@
+{
+  "status": "infrastructure_error_before_audit",
+  "error": "KeyError: resume_adapter_sha256",
+  "cause": "Fresh-base protocol omits optional resume_adapter_sha256; audit inherited a continuation-only direct lookup.",
+  "resolution": "Use optional lookup and require null parent plus null configured resume adapter; original trainer and model artifacts unchanged.",
+  "qualification_credit": 0
+}

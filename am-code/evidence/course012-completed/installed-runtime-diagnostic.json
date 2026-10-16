@@ -1,0 +1,30 @@
+{
+  "schema": "picogk.am.installed-runtime-diagnostic@1",
+  "status": "passed",
+  "created_at": "2026-10-16T02:14:42.748489+00:00",
+  "loaded_adapter_arrays_exact": 224,
+  "loaded_lora_modules": 112,
+  "lora_scale": 20,
+  "actual_chat_rows_verified": 384,
+  "actual_prompt_masks_match": true,
+  "actual_eos_retained": true,
+  "loss_and_gradient_mask_matches_installed_definition": true,
+  "assistant_target_tokens": 286702,
+  "actual_loss_target_tokens": 287086,
+  "extra_zero_padding_targets": 384,
+  "padding_fraction": 0.0013375782866458135,
+  "padding_observation": "Installed iterate_batches pads beyond each sequence; default_loss includes one zero padding label after the sequence. Preserved unchanged; small fraction is not a demonstrated cause of qualification failure.",
+  "dependencies_sha256": {
+    "datasets.py": "fa112840e6ea98a4ff18428792fe2ab023999c2da51ea64b3ebdf8657a152f17",
+    "trainer.py": "ee33ebdbd20a184108541cb490d08085485e71a82ffd6d68d7d216029ecd28fe",
+    "utils.py": "166eaf5e5f923113bed43614a5fb7319795fa0cac5a7fa319ea54e5f0045b553"
+  },
+  "adapter_sha256": "a7b7bb6ca313c540eabde4c164f9ff9749fdfb69775425dd99a6fa1559b76fb9",
+  "corpus_sha256": "f706b243a241286995bc7a0680bbdf85051a5bd2dae4fd61263df00f1ffb2c98",
+  "source_sha256": "582abfbb8fe1fda201524f608ed5d0bbcee199fbf1d2fd6b610c1c07172e8552",
+  "inference_answers_generated": 0,
+  "checker_or_training_sources_modified": false,
+  "final_contents_read": false,
+  "peak_memory_bytes": 18498414260,
+  "manufacturing_authorized": false
+}
