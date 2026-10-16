@@ -116,3 +116,18 @@ python3 scripts/render_dfam_figures.py --dumps work/thickness \
 ```
 
 The script needs numpy, matplotlib 3.10 and Pillow 11.
+
+## Process simulation figures
+
+Rendered by `physics/additivefoam/render_figures.py` from the receipts in
+`evidence/process/` and, for the animation, from the reconstructed ASCII
+temperature fields of the 20 um smoke case. Each figure has a JSON receipt.
+See [PROCESS_SIMULATION.md](../PROCESS_SIMULATION.md) for what the numbers
+support.
+
+| Figure | Shows |
+|---|---|
+| ![](process/amb2018-length-check.png) | Smoke test: simulated length per isotherm and mesh against NIST's measured band (fails at NIST's 1290 degC threshold) |
+| ![](process/316l-process-map.png) | 316L width and depth over power and speed, with the lack-of-fusion boundary (uncalibrated) |
+
+![Temperature around the moving beam](process/amb2018-melt-pool.gif)

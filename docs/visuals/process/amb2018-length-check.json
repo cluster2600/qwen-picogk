@@ -1,0 +1,13 @@
+{
+ "image": "amb2018-length-check.png",
+ "image_sha256": "64c7c0d0ddf190102187e0ba17ce88075cab1719d19584671d8d1df57094e608",
+ "manufacturing_qualified": false,
+ "reference_url": "https://www.nist.gov/ambench/chal-amb2018-02-mp-length",
+ "render_source_sha256": "acc3a774805ac576d0fe91a8324f947cab71754d174751a25af5c3c96dd21c44",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "additivefoam-smoke-amb2018-02-b-10um.json": "c606d2168e4ce2efabe30b5200884ad88b2eb027793cf5e9e96f4738ff6fa5a6",
+  "additivefoam-smoke-amb2018-02-b-20um.json": "d285538139934b648eb56e5410dc42e6714692807be15f2fb425cb3cceeb5cc9"
+ },
+ "uncalibrated_for_any_machine": true
+}
