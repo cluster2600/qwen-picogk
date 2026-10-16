@@ -172,6 +172,16 @@
       "redacted_files": 122,
       "export_index_sha256": "4646e3ed65826cad7ebf46fadabf111591065466fec986d8edde5e5643147189",
       "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-32b-course014-and-corrective010-full-evidence.tar.gz",
+      "bytes": 769991206,
+      "sha256": "07bc2d804f2ec5be60586acfc9ca32b6e6ba751cdc0d6717829dacfb774d282f",
+      "files": 1335,
+      "raw_payload_bytes": 889802072,
+      "redacted_files": 121,
+      "export_index_sha256": "286141479949fc26a6630a3c400906f534fda1bdb5943e8bb728fc379d85754a",
+      "qualified_adapter": false
     }
   ],
   "ongoing_training_weights_copied": false,
@@ -187,17 +197,17 @@
   "completed_baseline7b_included": true,
   "current_7b_training_weights_or_live_log_included": false,
   "extensionless_script_text_redaction_verified": true,
-  "updated_at": "2026-10-16T08:47:40.443437+00:00",
+  "updated_at": "2026-10-16T18:16:28.259833+00:00",
   "initial_five_assets_immutable": true,
   "new_assets": [
     {
-      "asset": "rejected-32b-course013-and-corrective009-full-evidence.tar.gz",
-      "bytes": 582942317,
-      "sha256": "3468bfcd836d6bf9d2a7599604a3a629ffc5f7c7deefe1064dbe7a917cafab1d",
-      "files": 1513,
-      "raw_payload_bytes": 689670013,
-      "redacted_files": 122,
-      "export_index_sha256": "4646e3ed65826cad7ebf46fadabf111591065466fec986d8edde5e5643147189",
+      "asset": "rejected-32b-course014-and-corrective010-full-evidence.tar.gz",
+      "bytes": 769991206,
+      "sha256": "07bc2d804f2ec5be60586acfc9ca32b6e6ba751cdc0d6717829dacfb774d282f",
+      "files": 1335,
+      "raw_payload_bytes": 889802072,
+      "redacted_files": 121,
+      "export_index_sha256": "286141479949fc26a6630a3c400906f534fda1bdb5943e8bb728fc379d85754a",
       "qualified_adapter": false
     }
   ],
@@ -211,5 +221,6 @@
   "existing_thirty_nine_remote_assets_immutable": true,
   "existing_forty_four_remote_assets_immutable": true,
   "existing_fifty_one_remote_assets_immutable": true,
-  "existing_fifty_seven_remote_assets_immutable": true
+  "existing_fifty_seven_remote_assets_immutable": true,
+  "existing_sixty_one_remote_assets_immutable": true
 }
