@@ -1,0 +1,12 @@
+{
+ "image": "316l-process-map.png",
+ "image_sha256": "1df83c7ccea311f031114cafd5e0897d6aca94bd6e08b84ce82f22164efd7c51",
+ "isotherm_k": 1709.0,
+ "manufacturing_qualified": false,
+ "render_source_sha256": "acc3a774805ac576d0fe91a8324f947cab71754d174751a25af5c3c96dd21c44",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "additivefoam-316l-single-track-sweep.json": "d5dba117c85566948d7caec21ef5b9b1f7a4e43b3ea88fc9741f679d3720feac"
+ },
+ "uncalibrated_for_any_machine": true
+}

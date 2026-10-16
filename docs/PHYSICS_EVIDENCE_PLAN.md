@@ -10,7 +10,10 @@ certain to the most expensive. Nothing in it is manufacturing qualification.
 
 Seven open-source projects were reviewed on 15 October 2026 by reading their
 source at the commits listed below; none was built or run for the review.
-Phase 1 is implemented. Phases 2 to 4 are planned.
+Phase 1 is implemented. Phase 2 has started: its container, smoke test and
+316L sweep are in [PROCESS_SIMULATION.md](PROCESS_SIMULATION.md), and the
+smoke test did **not** meet its acceptance criterion (see below). Phases 3 and
+4 are planned.
 
 The [latest-change review](CHANGE_REVIEW_20261015.md) orders the immediate
 corpus and CI follow-ups before the planned solver studies.
@@ -87,7 +90,20 @@ sheet. Receipt: [strict-v3-20261015.json](../evidence/dfam-code/strict-v3-202610
 
 ![Measured wall thickness turning around the cut gyroid](visuals/dfam/infill-thickness-turntable.gif)
 
-## Phase 2: back the process assumptions with AdditiveFOAM (planned, 3 to 5 days)
+## Phase 2: back the process assumptions with AdditiveFOAM (in progress)
+
+**Done on 15 October 2026:** the container, the smoke test, a mesh-convergence
+check and the 316L sweep ([results](PROCESS_SIMULATION.md)).
+
+- **Smoke test.** It runs in 18 s, and halving the cell size changes the
+  length by about 1 %. At NIST's 1290 degC threshold it gives a length of
+  300 um against a measured 359 +/- 20 um, so it fails its gate.
+- **What that means.** The installation works. The gap is a property of the
+  model and is recorded as evidence; nothing was tuned to close it.
+- **316L sweep.** It is published as an uncalibrated trend only.
+
+**Remaining:** the width and depth comparison with Lane et al. (2020), and the
+thin-wall boxes.
 
 AdditiveFOAM solves heat transfer and melt flow around a moving beam in a
 millimetre-scale box. It cannot read our STL files, and it has no solid

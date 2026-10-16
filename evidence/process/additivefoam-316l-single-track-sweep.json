@@ -1,0 +1,1122 @@
+{
+ "cases": [
+  {
+   "case": "ss316l-P150-V600",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.31,
+    "lack_of_fusion_criterion": 2.089,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "8c9a96e5b9b01afaf785cd2649115c9b66701fcbd589452cf3e17638b2716b8c",
+    "system": "06abcc86cc48a8e54c362e66d7e65ba42312ed624266287bcda122e7350c6d47"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "224b8930b4f7faecb25b9ebd503799c3fcf412672de0ae04b0ca6d96e24eaacf",
+     "depth_sd_um": 0.06,
+     "depth_um": 35.0,
+     "length_sd_um": 0.76,
+     "length_um": 252.08,
+     "samples": 199,
+     "width_sd_um": 0.13,
+     "width_um": 113.01,
+     "window_s": [
+      0.001333333,
+      0.003
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004833333,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 150.0,
+    "radius_m": null,
+    "speed_m_s": 0.6,
+    "track_m": 0.002
+   },
+   "solver_seconds": 14.8
+  },
+  {
+   "case": "ss316l-P150-V800",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.28,
+    "lack_of_fusion_criterion": 3.173,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "fef934777520fc8826a2b9ec6979bb727338fad293d54d6d5b907088c465d855",
+    "system": "621197bdcd890bea30e60a076c09e50cef2015b799702ef38efd17d8b6c9c7a7"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "e32569b2f5f3fa3b77eea26c66a9e98ed74b5487f6846d66f0814b077676ad81",
+     "depth_sd_um": 0.03,
+     "depth_um": 27.4,
+     "length_sd_um": 2.08,
+     "length_um": 207.55,
+     "samples": 150,
+     "width_sd_um": 0.27,
+     "width_um": 97.95,
+     "window_s": [
+      0.001,
+      0.00225
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 150.0,
+    "radius_m": null,
+    "speed_m_s": 0.8,
+    "track_m": 0.002
+   },
+   "solver_seconds": 13.6
+  },
+  {
+   "case": "ss316l-P150-V1000",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.311,
+    "lack_of_fusion_criterion": 4.468,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "004dd0a43a2423a0eea1979439211c89320de52b2bfb06bbeda12ade163287c4",
+    "system": "7c01d30e3da970a2086b17665f07cc6e4dd49bfda8f3e3817e34e611be38b0fa"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "ee3ea309b25994107c61fd66f5ef636da918398688796d07e285249affd2f9a0",
+     "depth_sd_um": 0.07,
+     "depth_um": 23.98,
+     "length_sd_um": 1.3,
+     "length_um": 169.84,
+     "samples": 119,
+     "width_sd_um": 0.14,
+     "width_um": 77.02,
+     "window_s": [
+      0.0008,
+      0.0018
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.0035,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 150.0,
+    "radius_m": null,
+    "speed_m_s": 1.0,
+    "track_m": 0.002
+   },
+   "solver_seconds": 12.4
+  },
+  {
+   "case": "ss316l-P150-V1200",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.305,
+    "lack_of_fusion_criterion": 6.594,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "adc9549865e7faf62afd6e3fac64cf22f22d2508ce9ca1b40c793a369d5d4d0d",
+    "system": "953af21048b3e9f14706dae17572b697247c0b18e7eab90ff45d4083953d82e9"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "e4a1bb0573c13a9e50b0d47d8b20d860d3f611eaa46d05735002b325424e7a51",
+     "depth_sd_um": 0.06,
+     "depth_um": 19.6,
+     "length_sd_um": 2.02,
+     "length_um": 138.01,
+     "samples": 99,
+     "width_sd_um": 0.23,
+     "width_um": 64.16,
+     "window_s": [
+      0.000666667,
+      0.0015
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.003166667,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 150.0,
+    "radius_m": null,
+    "speed_m_s": 1.2,
+    "track_m": 0.002
+   },
+   "solver_seconds": 11.1
+  },
+  {
+   "case": "ss316l-P150-V1400",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.338,
+    "lack_of_fusion_criterion": 11.575,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "8f0be6ca09f7bd19b5a075532dc76c063454d362713f918a14144ed20eb76e5e",
+    "system": "2459462656953512ade77cb72ed2c3a157fc1e8eb93b9b58b6c1473600bee03a"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "51c287fcb33285976942fe8578c5018358c23029129e8dc47eb483a610dae5fb",
+     "depth_sd_um": 0.07,
+     "depth_um": 15.39,
+     "length_sd_um": 2.3,
+     "length_um": 100.6,
+     "samples": 85,
+     "width_sd_um": 0.5,
+     "width_um": 45.55,
+     "window_s": [
+      0.000571429,
+      0.001285714
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.002928571,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 150.0,
+    "radius_m": null,
+    "speed_m_s": 1.4,
+    "track_m": 0.002
+   },
+   "solver_seconds": 10.3
+  },
+  {
+   "case": "ss316l-P200-V600",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.322,
+    "lack_of_fusion_criterion": 1.312,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "656889ff6837f17ffeab4a697eb860084a1b71c25ce5986ebc0f7fbde51552f4",
+    "system": "06abcc86cc48a8e54c362e66d7e65ba42312ed624266287bcda122e7350c6d47"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "c99d0e24333ba9467ebef1206ca7774b06484fbf486033a4afd25467a1af6824",
+     "depth_sd_um": 0.01,
+     "depth_um": 44.83,
+     "length_sd_um": 2.8,
+     "length_um": 363.03,
+     "samples": 200,
+     "width_sd_um": 0.14,
+     "width_um": 139.28,
+     "window_s": [
+      0.001333333,
+      0.003
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004833333,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 200.0,
+    "radius_m": null,
+    "speed_m_s": 0.6,
+    "track_m": 0.002
+   },
+   "solver_seconds": 16.2
+  },
+  {
+   "case": "ss316l-P200-V800",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.313,
+    "lack_of_fusion_criterion": 1.878,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "1706a9c015ceb60f7841f57099fbfc969532a709cbd437aee5c08d6ea8ba4938",
+    "system": "621197bdcd890bea30e60a076c09e50cef2015b799702ef38efd17d8b6c9c7a7"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "8f376c6dec77363fa3ca7b562cdcdea91f4f44fab0eb3179afedde68a2c6accc",
+     "depth_sd_um": 0.03,
+     "depth_um": 37.08,
+     "length_sd_um": 0.89,
+     "length_um": 331.5,
+     "samples": 155,
+     "width_sd_um": 0.09,
+     "width_um": 118.32,
+     "window_s": [
+      0.001,
+      0.00225
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 200.0,
+    "radius_m": null,
+    "speed_m_s": 0.8,
+    "track_m": 0.002
+   },
+   "solver_seconds": 13.7
+  },
+  {
+   "case": "ss316l-P200-V1000",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.273,
+    "lack_of_fusion_criterion": 2.667,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "685415892ce6733d6a151118d9d56d23e3df789f32f73cbb4facb67cc5c7cbe3",
+    "system": "7c01d30e3da970a2086b17665f07cc6e4dd49bfda8f3e3817e34e611be38b0fa"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "3e3f34bfbdae6f8b47436c06ea565439a6e2a219d0b0c97d1425d67db3e19325",
+     "depth_sd_um": 0.01,
+     "depth_um": 29.65,
+     "length_sd_um": 0.77,
+     "length_um": 292.04,
+     "samples": 129,
+     "width_sd_um": 0.12,
+     "width_um": 108.65,
+     "window_s": [
+      0.0008,
+      0.0018
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.0035,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 200.0,
+    "radius_m": null,
+    "speed_m_s": 1.0,
+    "track_m": 0.002
+   },
+   "solver_seconds": 12.6
+  },
+  {
+   "case": "ss316l-P200-V1200",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.273,
+    "lack_of_fusion_criterion": 3.257,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "771f40279abc7783b7ffcbe1004277f6bb9ad723de415217f4eed8e225b0017a",
+    "system": "953af21048b3e9f14706dae17572b697247c0b18e7eab90ff45d4083953d82e9"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "48c2f8b536c5c6bfb4c160f4c77793e1b62207a56d0b219d0c49864ba555c5d8",
+     "depth_sd_um": 0.02,
+     "depth_um": 26.85,
+     "length_sd_um": 0.58,
+     "length_um": 252.72,
+     "samples": 107,
+     "width_sd_um": 0.22,
+     "width_um": 98.18,
+     "window_s": [
+      0.000666667,
+      0.0015
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.003166667,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 200.0,
+    "radius_m": null,
+    "speed_m_s": 1.2,
+    "track_m": 0.002
+   },
+   "solver_seconds": 11.2
+  },
+  {
+   "case": "ss316l-P200-V1400",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.302,
+    "lack_of_fusion_criterion": 4.126,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "4536ff0b93c48c23f1a5a9e9139099c32a9f82b7dbdc282b2d8d05e3a27acded",
+    "system": "2459462656953512ade77cb72ed2c3a157fc1e8eb93b9b58b6c1473600bee03a"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "afe0c09e620d003fe44010a3925cbcfd4e03aa8cee86a991bd6aaccbee79b958",
+     "depth_sd_um": 0.06,
+     "depth_um": 24.67,
+     "length_sd_um": 2.06,
+     "length_um": 219.42,
+     "samples": 96,
+     "width_sd_um": 0.36,
+     "width_um": 81.72,
+     "window_s": [
+      0.000571429,
+      0.001285714
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.002928571,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 200.0,
+    "radius_m": null,
+    "speed_m_s": 1.4,
+    "track_m": 0.002
+   },
+   "solver_seconds": 11.7
+  },
+  {
+   "case": "ss316l-P250-V600",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.336,
+    "lack_of_fusion_criterion": 1.031,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "b0c00d8a9821a84ae57658c8842b191245713510a0d30a9305dd0dab0673e963",
+    "system": "06abcc86cc48a8e54c362e66d7e65ba42312ed624266287bcda122e7350c6d47"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "962b1ccb76b5c9691f2cef5ae29388b89405c2c7c76abffba350283b1472541e",
+     "depth_sd_um": 0.02,
+     "depth_um": 51.43,
+     "length_sd_um": 0.87,
+     "length_um": 473.8,
+     "samples": 215,
+     "width_sd_um": 0.06,
+     "width_um": 153.22,
+     "window_s": [
+      0.001333333,
+      0.003
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004833333,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 250.0,
+    "radius_m": null,
+    "speed_m_s": 0.6,
+    "track_m": 0.002
+   },
+   "solver_seconds": 16.1
+  },
+  {
+   "case": "ss316l-P250-V800",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.317,
+    "lack_of_fusion_criterion": 1.327,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "cce94fb06f1c22fc9329799f729f82c68e4abc4a86fceec6cba27a7fdfa82385",
+    "system": "621197bdcd890bea30e60a076c09e50cef2015b799702ef38efd17d8b6c9c7a7"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "835f40838cffa96c5eb28446434f4f702b9d3a65a8c89532e735b3629773843c",
+     "depth_sd_um": 0.04,
+     "depth_um": 44.29,
+     "length_sd_um": 2.06,
+     "length_um": 438.5,
+     "samples": 184,
+     "width_sd_um": 0.15,
+     "width_um": 139.82,
+     "window_s": [
+      0.001,
+      0.00225
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 250.0,
+    "radius_m": null,
+    "speed_m_s": 0.8,
+    "track_m": 0.002
+   },
+   "solver_seconds": 15.4
+  },
+  {
+   "case": "ss316l-P250-V1000",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.308,
+    "lack_of_fusion_criterion": 1.771,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "9c6172d7df23aa70fa191f8d8cefac5928475e7b42d01615feea624d2282792d",
+    "system": "7c01d30e3da970a2086b17665f07cc6e4dd49bfda8f3e3817e34e611be38b0fa"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "9798f3d11b7b9433d58647690b5f2d76efc30da8eb7e92d11f9fd243c42af58b",
+     "depth_sd_um": 0.02,
+     "depth_um": 37.94,
+     "length_sd_um": 1.54,
+     "length_um": 409.66,
+     "samples": 157,
+     "width_sd_um": 0.22,
+     "width_um": 123.11,
+     "window_s": [
+      0.0008,
+      0.0018
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.0035,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 250.0,
+    "radius_m": null,
+    "speed_m_s": 1.0,
+    "track_m": 0.002
+   },
+   "solver_seconds": 15.9
+  },
+  {
+   "case": "ss316l-P250-V1200",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.281,
+    "lack_of_fusion_criterion": 2.333,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "1dca4b8ca4c92b61d0020e8cd81e5f5588e0231f7cbc580b888e40f9203123de",
+    "system": "953af21048b3e9f14706dae17572b697247c0b18e7eab90ff45d4083953d82e9"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "92eb9df20680a02d1e7c77b931bf901f53cfd23bfe0a47451c4fc126867ca57f",
+     "depth_sd_um": 0.02,
+     "depth_um": 32.01,
+     "length_sd_um": 0.87,
+     "length_um": 374.08,
+     "samples": 137,
+     "width_sd_um": 0.07,
+     "width_um": 113.84,
+     "window_s": [
+      0.000666667,
+      0.0015
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.003166667,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 250.0,
+    "radius_m": null,
+    "speed_m_s": 1.2,
+    "track_m": 0.002
+   },
+   "solver_seconds": 12.8
+  },
+  {
+   "case": "ss316l-P250-V1400",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.265,
+    "lack_of_fusion_criterion": 2.865,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "62029c9b88b3fe3b85c544919a6e07c0fa5ddbb39a099d94da90f0c3db78c057",
+    "system": "2459462656953512ade77cb72ed2c3a157fc1e8eb93b9b58b6c1473600bee03a"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "160af3f9d3be8e61c014052ffb190adb62995c4b0777889cf10ac1a20f5f8376",
+     "depth_sd_um": 0.01,
+     "depth_um": 28.35,
+     "length_sd_um": 0.88,
+     "length_um": 334.51,
+     "samples": 119,
+     "width_sd_um": 0.11,
+     "width_um": 106.95,
+     "window_s": [
+      0.000571429,
+      0.001285714
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.002928571,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 250.0,
+    "radius_m": null,
+    "speed_m_s": 1.4,
+    "track_m": 0.002
+   },
+   "solver_seconds": 12.4
+  },
+  {
+   "case": "ss316l-P300-V600",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.362,
+    "lack_of_fusion_criterion": 0.813,
+    "lack_of_fusion_risk": false
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "137f5770229d5f746943732c921c2d5d186d417d6585d544bb992f65268578fe",
+    "system": "06abcc86cc48a8e54c362e66d7e65ba42312ed624266287bcda122e7350c6d47"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "bcff843591a0b991142befb999d1d5bc4953ffb61aba8256e60439ffa106e565",
+     "depth_sd_um": 0.02,
+     "depth_um": 59.82,
+     "length_sd_um": 2.92,
+     "length_um": 584.65,
+     "samples": 244,
+     "width_sd_um": 0.09,
+     "width_um": 165.22,
+     "window_s": [
+      0.001333333,
+      0.003
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004833333,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 300.0,
+    "radius_m": null,
+    "speed_m_s": 0.6,
+    "track_m": 0.002
+   },
+   "solver_seconds": 18.3
+  },
+  {
+   "case": "ss316l-P300-V800",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.321,
+    "lack_of_fusion_criterion": 1.119,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "d0dc156c18e18ec216690d0ef7523457da0e5a1e1866547a03c5b279743f79c1",
+    "system": "621197bdcd890bea30e60a076c09e50cef2015b799702ef38efd17d8b6c9c7a7"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "67e61754a4d7c22e04915817cff099574f8f337bff14df13a59327741d2ab077",
+     "depth_sd_um": 0.01,
+     "depth_um": 48.48,
+     "length_sd_um": 2.91,
+     "length_um": 543.37,
+     "samples": 211,
+     "width_sd_um": 0.06,
+     "width_um": 151.05,
+     "window_s": [
+      0.001,
+      0.00225
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 300.0,
+    "radius_m": null,
+    "speed_m_s": 0.8,
+    "track_m": 0.002
+   },
+   "solver_seconds": 34.2
+  },
+  {
+   "case": "ss316l-P300-V1000",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.311,
+    "lack_of_fusion_criterion": 1.345,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "31d5a90ae2a44ecf4086ac47d96ee21664bf992247393c53b536a95f67c92ee5",
+    "system": "7c01d30e3da970a2086b17665f07cc6e4dd49bfda8f3e3817e34e611be38b0fa"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "b815dfab7df45d1e3d417f9cfea7d656672ff70daf3e8272b803da06c6b41aeb",
+     "depth_sd_um": 0.01,
+     "depth_um": 43.69,
+     "length_sd_um": 1.08,
+     "length_um": 514.81,
+     "samples": 185,
+     "width_sd_um": 0.13,
+     "width_um": 140.43,
+     "window_s": [
+      0.0008,
+      0.0018
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.0035,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 300.0,
+    "radius_m": null,
+    "speed_m_s": 1.0,
+    "track_m": 0.002
+   },
+   "solver_seconds": 32.6
+  },
+  {
+   "case": "ss316l-P300-V1200",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.301,
+    "lack_of_fusion_criterion": 1.703,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "a791a20092e713232c93f547be6f32a3e8e3d5b61cad5927c9071de87ccc7cfa",
+    "system": "953af21048b3e9f14706dae17572b697247c0b18e7eab90ff45d4083953d82e9"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "3cedb940c099ab94cc6a999b91549458d6dfdfe6760f0ade593ddaca9d225690",
+     "depth_sd_um": 0.01,
+     "depth_um": 38.37,
+     "length_sd_um": 2.31,
+     "length_um": 487.35,
+     "samples": 164,
+     "width_sd_um": 0.15,
+     "width_um": 127.4,
+     "window_s": [
+      0.000666667,
+      0.0015
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.003166667,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 300.0,
+    "radius_m": null,
+    "speed_m_s": 1.2,
+    "track_m": 0.002
+   },
+   "solver_seconds": 15.1
+  },
+  {
+   "case": "ss316l-P300-V1400",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.285,
+    "lack_of_fusion_criterion": 2.165,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "ba3934b910807b7b7283efa2f6f671d2efcef14279508da3cd19d5fbe10a9cf8",
+    "system": "2459462656953512ade77cb72ed2c3a157fc1e8eb93b9b58b6c1473600bee03a"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "aeb407c60f9d3be5f626592017827b8bfa81f4adb7ab94d0fc5ef35507c268d0",
+     "depth_sd_um": 0.02,
+     "depth_um": 33.4,
+     "length_sd_um": 1.12,
+     "length_um": 455.28,
+     "samples": 145,
+     "width_sd_um": 0.06,
+     "width_um": 117.01,
+     "window_s": [
+      0.000571429,
+      0.001285714
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.002928571,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 300.0,
+    "radius_m": null,
+    "speed_m_s": 1.4,
+    "track_m": 0.002
+   },
+   "solver_seconds": 13.8
+  },
+  {
+   "case": "ss316l-P350-V600",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.366,
+    "lack_of_fusion_criterion": 0.691,
+    "lack_of_fusion_risk": false
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "6e0fb294c5b90c8779e0b76f555f11b5460d29369fc6d3bbed5f841769defdf1",
+    "system": "06abcc86cc48a8e54c362e66d7e65ba42312ed624266287bcda122e7350c6d47"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "cc061b5a00651e8f27597c9faebdf5158440484c61c27e35fb4434404bb7e6d4",
+     "depth_sd_um": 0.01,
+     "depth_um": 65.2,
+     "length_sd_um": 4.4,
+     "length_um": 685.38,
+     "samples": 286,
+     "width_sd_um": 0.07,
+     "width_um": 178.27,
+     "window_s": [
+      0.001333333,
+      0.003
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004833333,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 350.0,
+    "radius_m": null,
+    "speed_m_s": 0.6,
+    "track_m": 0.002
+   },
+   "solver_seconds": 21.6
+  },
+  {
+   "case": "ss316l-P350-V800",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.348,
+    "lack_of_fusion_criterion": 0.932,
+    "lack_of_fusion_risk": false
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "f8efba09130c798f717aae65ad547b6983a566e0d365a464c8df148a262c6c02",
+    "system": "621197bdcd890bea30e60a076c09e50cef2015b799702ef38efd17d8b6c9c7a7"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "793c6f4a84c47d1fb763da9b87c875b8e3ed4c159036dfe189afba9d0305f063",
+     "depth_sd_um": 0.01,
+     "depth_um": 54.89,
+     "length_sd_um": 2.26,
+     "length_um": 656.88,
+     "samples": 236,
+     "width_sd_um": 0.03,
+     "width_um": 157.95,
+     "window_s": [
+      0.001,
+      0.00225
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 350.0,
+    "radius_m": null,
+    "speed_m_s": 0.8,
+    "track_m": 0.002
+   },
+   "solver_seconds": 18.8
+  },
+  {
+   "case": "ss316l-P350-V1000",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.314,
+    "lack_of_fusion_criterion": 1.165,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "e13fcff10e323c8f57b44d1e8a97ea98c5dc1b25ee837fc9a2fc5d26a67bdb83",
+    "system": "7c01d30e3da970a2086b17665f07cc6e4dd49bfda8f3e3817e34e611be38b0fa"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "37f9ba2b77315e15dfe45ae3112bac5c2cc5cd00cc5dc25f530b13e6d4f728ef",
+     "depth_sd_um": 0.0,
+     "depth_um": 47.14,
+     "length_sd_um": 1.4,
+     "length_um": 615.79,
+     "samples": 208,
+     "width_sd_um": 0.06,
+     "width_um": 149.98,
+     "window_s": [
+      0.0008,
+      0.0018
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.0035,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 350.0,
+    "radius_m": null,
+    "speed_m_s": 1.0,
+    "track_m": 0.002
+   },
+   "solver_seconds": 16.7
+  },
+  {
+   "case": "ss316l-P350-V1200",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.306,
+    "lack_of_fusion_criterion": 1.363,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "411e7752dd7bd4ab0632a0603a2299c23d8f6e00b27f3259135acc1994ea87b5",
+    "system": "953af21048b3e9f14706dae17572b697247c0b18e7eab90ff45d4083953d82e9"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "e0285ca4a673538cb385530342200996a9ea6a443c13589bcbefde4faecae087",
+     "depth_sd_um": 0.01,
+     "depth_um": 43.13,
+     "length_sd_um": 0.97,
+     "length_um": 591.69,
+     "samples": 187,
+     "width_sd_um": 0.12,
+     "width_um": 141.04,
+     "window_s": [
+      0.000666667,
+      0.0015
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.003166667,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 350.0,
+    "radius_m": null,
+    "speed_m_s": 1.2,
+    "track_m": 0.002
+   },
+   "solver_seconds": 15.6
+  },
+  {
+   "case": "ss316l-P350-V1400",
+   "indicators": {
+    "beyond_conduction_model": false,
+    "depth_over_width": 0.296,
+    "lack_of_fusion_criterion": 1.662,
+    "lack_of_fusion_risk": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "eddd8afcdb569d9fe05f34b535a5463f3ec9690cef7da0cf7e60d6cd43b9dba8",
+    "system": "2459462656953512ade77cb72ed2c3a157fc1e8eb93b9b58b6c1473600bee03a"
+   },
+   "melt_pool": {
+    "1709": {
+     "csv_sha256": "67a7acce394cea99c1e089e5f266ad12dd4e0f503df768e8f80bed0554cbe3bf",
+     "depth_sd_um": 0.01,
+     "depth_um": 38.62,
+     "length_sd_um": 2.81,
+     "length_um": 564.82,
+     "samples": 168,
+     "width_sd_um": 0.13,
+     "width_um": 130.31,
+     "window_s": [
+      0.000571429,
+      0.001285714
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.002928571,
+    "eta": null,
+    "isotherms_k": [
+     1709.0
+    ],
+    "material": "SS316L",
+    "power_w": 350.0,
+    "radius_m": null,
+    "speed_m_s": 1.4,
+    "track_m": 0.002
+   },
+   "solver_seconds": 14.8
+  }
+ ],
+ "hatch_m": 0.0001,
+ "heat_source": "tutorial superGaussian k=2, second-moment radius 85 um, depth 30 um, eta 0.33 (calibrated for IN625 on the AMMT; transferred to 316L without calibration)",
+ "isotherm_k": 1709.0,
+ "layer_m": 4e-05,
+ "manufacturing_qualified": false,
+ "material": "SS316L",
+ "mode": "sweep",
+ "provenance": {
+  "additivefoam_commit": "9c05c5eb54db03faa342b14b0806efe740de8c44",
+  "dockerfile_sha256": "8eaae1aef88176e25cd8e8efc4f9bb0744467238918a561018297dfbbddd84f7",
+  "harness_sha256": "604b5149cf33ab0cf4f9d60f1244394b6d7f7d92ab1f8b4324783bd0161809e8",
+  "image": "qwen-picogk/additivefoam:2.0.0-9c05c5e",
+  "image_id": "sha256:40db6cd51eb8700a5904efdb509a1f57e8d07191ad373aa5305b1afae7e28133",
+  "ranks": 8,
+  "tutorial": "tutorials/AMB2018-02-B"
+ },
+ "schema": "qwen-picogk.process.additivefoam@1",
+ "uncalibrated_for_any_machine": true
+}
