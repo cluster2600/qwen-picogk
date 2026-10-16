@@ -5,7 +5,11 @@ inside the mesh by vertical ray parity, the same rule as the DfAM checker's
 occupancy raster (rays jittered off cell edges). This is a separate tool so
 the trusted checker and its corpus receipts stay unchanged.
 
-    hexmesh.py PART.stl OUT.msh --cell-mm 1.0   -> JSON summary on stdout
+    hexmesh.py PART.stl OUT.msh --cell-mm 1.0 [--plate-mm 5]   -> JSON summary on stdout
+
+--plate-mm adds a build plate under the part, spanning the grid's footprint,
+and writes its bottom faces as Gmsh quadrilaterals with physical tag 1, which
+deal.II reads as boundary id 1 (clamped in the thermo-mechanical runs).
 
 Coordinates stay in millimetres; set `units { mesh millimeter }` in adamantine.
 """
@@ -71,8 +75,19 @@ def occupancy(tris, cell):
     return grid.reshape(nz, ny, nx), origin
 
 
-def write_gmsh(path, grid, origin, cell, physical=1):
-    """Gmsh 2.2 ASCII: shared corner nodes, 8-node hexahedra (type 5) with one physical tag."""
+def add_plate(grid, origin, cell, plate_mm):
+    """Fill the empty bottom layer and add layers below it, so the plate top is the part's lowest z."""
+    layers = max(1, int(np.ceil(plate_mm / cell)))
+    grid = np.concatenate([np.ones((layers - 1,) + grid.shape[1:], bool), grid], axis=0)
+    grid[layers - 1] = True                       # the grid's first layer lies just below the part
+    origin = origin.copy()
+    origin[2] -= (layers - 1) * cell
+    return grid, origin, layers
+
+
+def write_gmsh(path, grid, origin, cell, physical=1, clamp_bottom=False):
+    """Gmsh 2.2 ASCII: shared corner nodes, 8-node hexahedra (type 5) with one physical tag,
+    and optionally quadrilaterals (type 3, physical tag 1) on the grid's bottom faces."""
     nz, ny, nx = grid.shape
     k, j, i = np.nonzero(grid)
     corners = np.array([(0, 0, 0), (1, 0, 0), (1, 1, 0), (0, 1, 0), (0, 0, 1), (1, 0, 1), (1, 1, 1), (0, 1, 1)])
@@ -83,14 +98,24 @@ def write_gmsh(path, grid, origin, cell, physical=1):
     nj = (used // (nx + 1)) % (ny + 1)
     nk = used // ((nx + 1) * (ny + 1))
     xyz = origin + np.stack([ni, nj, nk], 1) * cell
+    quads = np.zeros((0, 4), int)
+    if clamp_bottom:
+        bottom = k == 0
+        quads = inverse[bottom][:, [0, 3, 2, 1]]             # bottom face, outward normal -z
+    n = len(inverse) + len(quads)
     with open(path, 'w') as out:
         out.write('$MeshFormat\n2.2 0 8\n$EndMeshFormat\n$Nodes\n%d\n' % len(used))
         np.savetxt(out, np.column_stack([np.arange(1, len(used) + 1), xyz]), fmt='%d %.6f %.6f %.6f')
-        out.write('$EndNodes\n$Elements\n%d\n' % len(inverse))
+        out.write('$EndNodes\n$Elements\n%d\n' % n)
         elements = np.column_stack([np.arange(1, len(inverse) + 1), np.full(len(inverse), 5),
                                     np.full(len(inverse), 2), np.full(len(inverse), physical),
                                     np.full(len(inverse), physical), inverse + 1])
         np.savetxt(out, elements, fmt='%d')
+        if len(quads):
+            faces = np.column_stack([np.arange(len(inverse) + 1, n + 1), np.full(len(quads), 3),
+                                     np.full(len(quads), 2), np.ones(len(quads), int), np.ones(len(quads), int),
+                                     quads + 1])
+            np.savetxt(out, faces, fmt='%d')
         out.write('$EndElements\n')
     return len(used), len(inverse)
 
@@ -100,17 +125,25 @@ def main():
     parser.add_argument('stl', type=Path)
     parser.add_argument('out', type=Path)
     parser.add_argument('--cell-mm', type=float, default=1.0)
+    parser.add_argument('--plate-mm', type=float, default=0.0)
     args = parser.parse_args()
     if args.out.exists():
         parser.error('refusing to overwrite an existing mesh')
     tris = read_binary_stl(args.stl)
     grid, origin = occupancy(tris, args.cell_mm)
-    nodes, cells = write_gmsh(args.out, grid, origin, args.cell_mm)
+    part_cells = int(grid.sum())
+    plate_layers = 0
+    if args.plate_mm > 0:
+        grid, origin, plate_layers = add_plate(grid, origin, args.cell_mm, args.plate_mm)
+    nodes, cells = write_gmsh(args.out, grid, origin, args.cell_mm, clamp_bottom=args.plate_mm > 0)
     mesh_volume = abs(signed_volume(tris))
-    hex_volume = cells * args.cell_mm ** 3
+    hex_volume = part_cells * args.cell_mm ** 3
     print(json.dumps({'stl_sha256': hashlib.sha256(args.stl.read_bytes()).hexdigest(),
                       'msh_sha256': hashlib.sha256(args.out.read_bytes()).hexdigest(),
                       'cell_mm': args.cell_mm, 'grid': list(grid.shape[::-1]), 'nodes': nodes, 'hexahedra': cells,
+                      'part_hexahedra': part_cells, 'plate_layers': plate_layers,
+                      'plate_top_mm': round(float(origin[2] + plate_layers * args.cell_mm), 6),
+                      'top_mm': round(float(origin[2] + grid.shape[0] * args.cell_mm), 6),
                       'stl_volume_mm3': round(mesh_volume, 2), 'hex_volume_mm3': round(hex_volume, 2),
                       'volume_ratio': round(hex_volume / mesh_volume, 4)}, sort_keys=True))
 

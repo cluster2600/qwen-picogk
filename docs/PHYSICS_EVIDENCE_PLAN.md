@@ -198,10 +198,16 @@ flowchart LR
 4. **Studies.** Solid, vented and lattice variants of `dfam-001` and
    `infill-001`: displacement and stress hot spots near overhangs and
    channels, read as comparisons between variants, not as predictions.
-5. **First, confirm two suspected upstream bugs** found by reading the code:
-   the von Mises formula appears to count one shear term twice and omit
-   another, and the cooling rate appears to be missing parentheses. If they
-   are real, report them upstream before relying on either output.
+5. **Upstream bugs, confirmed and reported** on 16 October 2026:
+   - the von Mises formula omits σxz and counts σyz twice
+     ([#501](https://github.com/adamantine-sim/adamantine/issues/501));
+   - the cooling rate lacks parentheses
+     ([#502](https://github.com/adamantine-sim/adamantine/issues/502));
+   - input validation rejects file-based deposition
+     ([#503](https://github.com/adamantine-sim/adamantine/issues/503),
+     worked around).
+
+   Comparisons use displacement until these are fixed.
 
 **Acceptance:** the shipped example reproduces; mesh export round-trips the
 part volume within 1 %; results are labelled as comparisons. **Limits:** no
