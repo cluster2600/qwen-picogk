@@ -3,13 +3,13 @@
   "status": "review_staged_not_published",
   "license": "Apache-2.0 original exported material; dependencies retain notices",
   "files_sha256": {
-    "README.md": "d5dbae5479bcc05511d793b76b0e76829c809698f577e29b48d93a2dd2696265",
+    "README.md": "4e9cb71535b7e0e61698d6c1ade9d69579c4f54400e0951ad866a018f2737e40",
     "base-manifest.json": "37b65afc534f8befa34e5843a169a3e3478c14c90e8c9b1696400a406d57d7c0",
     "base-profile-14b.json": "ae1b81ddd239197ac4f470e6d01173dfc0132d05215ac09ea6a31946625cf89e",
     "base-profile-32b.json": "a83dbe6460c70da82d9c3220a9930b229d516dfcc390c7403f660e1f55b85c09",
     "base-profile-7b.json": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
     "base_runtime.py": "8f0e3c647bcf7d72f531c6c94faeaf6730cf0cd5e3330e5bcb185d4b45a0e61e",
-    "check_publication.py": "ae621b0b3dbea4365b7657ad5f1e1cb1d4557a7b8d956053946415cf6137fc25",
+    "check_publication.py": "c3ac35e3014d80d8c6bcac665eec55570f009a047ef0afdd0b94bbac57d428cd",
     "data/chat-tokenization.json": "680b0f20afb092e1a7367461b08250122cc51d2869438bc3db8e02dbf6bdc5be",
     "data/chat/train.jsonl": "1ac93688653ea7aa26b1e93b739eaac21717e11af4f9996972b6735bb20fe684",
     "data/corrective-001/README.md": "94310beee2e177beebb4636eb611d708eb695574c559d1c36277fe9f580321d5",
@@ -256,6 +256,11 @@
     "data/corrective-008/native-review-summary.json": "cf974affd5f45225e5247d63e7e439ec8fba98b845740a741a26a5f7b67a8228",
     "data/corrective-008/train.jsonl": "8b6e50e382bc0ef575897aa66faead7e2991ab16b8ee9b4872ccd11c5843a56d",
     "data/corrective-008/validate.py": "274474f932690bdb51751bdddf6873446bcbc13719c73b52fed6f1eea10546cf",
+    "data/corrective-009/author.py": "f07341e885eba3a34ee3e035ecb9f8122d29716631b1a795481294891fcaf815",
+    "data/corrective-009/cases.json": "bebfc3736fb1c2032d617c9c50d44243e996354f2705cd5a8a59f00965c6b175",
+    "data/corrective-009/native-review-summary.json": "4c9f11c31a44109968aa6fbff12dc99820a05bc62320df02e69fc2d78a80b683",
+    "data/corrective-009/train.jsonl": "34c495a8264cbdfdde644ad3672efe681c64db36c32b1664f077055f7e8e2088",
+    "data/corrective-009/validate.py": "274474f932690bdb51751bdddf6873446bcbc13719c73b52fed6f1eea10546cf",
     "data/focused-32b-001/manifest.json": "4d5139d33fec69a801e2b0dc6101d5c660983e66ded36d6ab5b4767e9e4050cc",
     "data/focused-32b-001/prepare.py": "5712793781fb914e190faae3b72882c3988313ca0d79f4df4831ea3a7ce954cd",
     "data/focused-32b-001/token-rows.json": "e5e15f58eb0ffa796a09a33f60676af87908b9104ddb634c9f78344d2233b3ee",
@@ -268,6 +273,10 @@
     "data/focused-32b-003/prepare.py": "e430057ef34fb0f3b1f3e1cdecd2f5b3d1324f1bc1ac6e36d37f26d3fbe81817",
     "data/focused-32b-003/token-rows.json": "a06ce8857a937e1b231e876886f51b776bf01edfd290d06353676ac36d8a1195",
     "data/focused-32b-003/train.jsonl": "4ce37b97fbc242d9bf054af697b164df83daad0e4d7ae056a5ae32a96a5a13b8",
+    "data/focused-32b-004/manifest.json": "9d154e1bd1a922aa87c388cab6a0459f17fb7cbf591d6f135ed687c7d345f46d",
+    "data/focused-32b-004/prepare.py": "d49c3166b6cb7ce660f185769ae3580e974f4dbc1a53bd7a9fa56b70cf2b881d",
+    "data/focused-32b-004/token-rows.json": "8df3029489ae50a9bde95cc648dc0e7d88f07f6dcc2b4a8b70ad089a081586bf",
+    "data/focused-32b-004/train.jsonl": "214b7fbd8cc4faa765f1a26aa24fdb9f8fdfe003d9d25102708e09fa88b846a3",
     "data/manifest.json": "fbb9aca66a0e3a01f26fb305b807a267e4a9c511fcc00a411d4dc533dc5d16dd",
     "data/mixed-14b-001/README.md": "f8a847cb5d9e2ef0154bae5197abbb82e7beacde166b98690ca5d9617a04d16d",
     "data/mixed-14b-001/independent-token-rows.json": "93386708c8328410b85a4fcd5f6d0b6045e0273f1e53c689a9beb8bc173d7b0e",
@@ -293,6 +302,7 @@
     "diagnostics/audit-course009.py": "78a3a3a0d69b847ffbfedce109c288f8b3ad2b798f68b8a13eb7ee778ccaf758",
     "diagnostics/audit-course010.py": "dcbdc7188233ebce0eb5abf6ff63e279334b7999500f5aaf87929c98abddf8fb",
     "diagnostics/audit-course012.py": "4d6aadc55f368eb090ef2f28588588bbd9b3715ad48ba664c75ae4fe5e994f73",
+    "diagnostics/audit-course013.py": "3256bf2c349ab13050bb30715db166b818490fb114243956e0304e263db53b49",
     "diagnostics/evaluation-policy-v2/development-teacher-checks-v2.json": "8d0c305216fbf1d91f954f4ba1e23526bfd69e5f864b1bd82255baa0e8cac00b",
     "diagnostics/evaluation-policy-v2/frozen-profile-independent-review.json": "613e16cdee410642a1811d6d6db5ea7221db111776ee52c1332d21d85fe5cdc3",
     "diagnostics/evaluation-policy-v2/implementation-check-v2-final.json": "d585e74da5cc0570431a1731d1b3b5d179a79b837564adf25fd37009ee3cf4dc",
@@ -372,7 +382,7 @@
     "evaluation/test_evaluate_v2.py": "ed26f0c9a03b5d33e7602514151af757c7e0143d8d8626d505371992c520b6c0",
     "evaluation/test_policy_v2.py": "8d903965b137f08bb164c57948362b131eaf42e7b9657d88ecb1b51f49baa7f8",
     "evidence/accepted005-14b-assets.json": "bb37357b32a16e28daf6c9670603594fbaf7f20b18fb3041c096578065b2fd3f",
-    "evidence/assets.json": "e314b7f81bbba18a84b3ab331146e2cacd4e04530b217fac2076bb7542e45f50",
+    "evidence/assets.json": "8d3dd74eff3e763129ccb50ecfdbe728641353da907e1605400b9af52dd9733f",
     "evidence/base-profile-support-receipt.json": "0dc7c16d97a554dfdb59195448f2c6c07a4528907876f1e9802abb167ed9cb60",
     "evidence/baseline-14b-capture-protocol.json": "93f2e673650e38111ca4544b2676048f83f926dba5fd6efba654985905854173",
     "evidence/baseline-14b-capture-receipt.json": "bd3af48120f2a7a019e07373548dbff92ca9c560288bc1b40f95aa1d4d911cb7",
@@ -414,6 +424,7 @@
     "evidence/course-011-protocol.json": "f81aa746f1464983b9c11ddde4bb0f31142aa951d0d66926272cebcdd2751f12",
     "evidence/course-012-protocol.json": "2f9af1b8de4eb33541af7bd34e1ac90c9280d0ac34b176b3027c2ead16606993",
     "evidence/course-013-protocol.json": "74e27ba9b9ce5cfad5bcd34752520254caab08d07c181e2154d10873705c1959",
+    "evidence/course-014-protocol.json": "cb725a85ddc1c4a65f9c269b2cb89c28495bc32b911d82e2b8bf20e461398cd2",
     "evidence/course004-7b342-independent-review.json": "ee65bbe280d0e43a97e0c3db14fcc81ff0256c20d2ca260b0e83b8a7c5c861ce",
     "evidence/course004-assets.json": "c320efcb95f4a70ae30690b4104c81f42d3a0107502da252ebcb6bb8f3fb7902",
     "evidence/course005-7b448-independent-review.json": "2dbf6ce2e2f4d6e8f4a81bcd291b8e1de7758fd33e5fea79fc8be88cbf84db88",
@@ -471,7 +482,19 @@
     "evidence/course012-launch-receipt.json": "4557bce52e82bc41a25ee9fed69e3fb22eac127da3d0b3a8d72f385d4d27fbd5",
     "evidence/course012-recovery-metadata.json": "a43f0d7f9376500446f69021a0be66887d749c4af28f658f763aeab5603e6be6",
     "evidence/course012-runtime-protocol.json": "b07893bb5f4e671bcc2c908de55e29be826dff47f5ec05474390967b4270469b",
+    "evidence/course013-completed-assets.json": "7bcdcfeb497f572372e2ab76487c8074864a31be1da4baf053b08c22bf0f43bb",
+    "evidence/course013-completed/adapter_config.json": "361728df4b19d46ca481d370a382744012c7e50b6c3854d5fbc734775c2dd31c",
+    "evidence/course013-completed/completed-diagnostic.json": "24f58fad9ad6a57cbfd0713823b8f8744ae2cb80eda30088a19253d0dd863f63",
+    "evidence/course013-completed/cpu-audit.json": "267be4f18d0b57296ec4556684852e5d24981e5eab2c621c522866e8c2418f7a",
+    "evidence/course013-completed/development-report.json": "8cbf4e09728f20485a4df951b9125147c0ee375e1829ffc11873da1e8a53c6a6",
+    "evidence/course013-completed/evaluation-protocol.json": "9d2188954f874f1b7a0b92878c9d162844e1993d1031203b324f647ec4560ad4",
+    "evidence/course013-completed/formal-rejection.json": "d2dc810bc1ef082cadba45ce61cfe86aaa75dd70263cf8daf3b10890226ebe6e",
+    "evidence/course013-completed/preaudit-infrastructure-attempt.json": "c659ad79532acaee42bce16c06fd599ad10d336382c4e096fe3d6bccdf66cad9",
+    "evidence/course013-completed/runtime-protocol.json": "e26d07bcd36361f1c8dc580f9c8f80e8a5ecfd4ad16a51e2207d981760e4abe4",
+    "evidence/course013-completed/scan-report.json": "30306f5add293c4cba11c87c291b926898c5714ece280c8a4029c90153c27375",
+    "evidence/course013-completed/training-receipt.json": "f9f825c6ed38d7c0189da3eab7496f1778c108ab34ff64a0167e1f041e338e39",
     "evidence/course013-runtime-protocol.json": "e26d07bcd36361f1c8dc580f9c8f80e8a5ecfd4ad16a51e2207d981760e4abe4",
+    "evidence/course014-runtime-protocol.json": "57ff09224fcdb71733f5ea10230e68ce1240db1720fca7447e9f2f791badca90",
     "evidence/evaluation-policy-v2/checker-profile-v2.json": "834974c4f77a65c03a0c657fc0595bc06eea83d0c45f6cb89fd2b05c498f94bc",
     "evidence/evaluation-policy-v2/checker-profile-v2.sha256": "5bdb615caefb594b3eb55054525fd2021a008d5005e3f919864bed4cadda2a8e",
     "evidence/evaluation-policy-v2/validation-binding-audit-v2.json": "63dda29ececd9458b8a0741cd159c8ebd3dcbb30d28f9e15ea0709645c1c836d",
@@ -486,7 +509,7 @@
     "evidence/model14b-preparation/upstream-index.json": "635d985ebf00b6a25daba71b7eba4d5ec8be7902c15104a79312fe947f44b121",
     "evidence/model7b-manifest.json": "e8684e5874274fd613e9927f8cc755841fa3c8ec3678f0141f01ca6446d3a5e4",
     "evidence/public-native-gold-cli.json": "d191505afd18897d709751f2066f5f49895893b15cce5d1a0b48683eb9cbc463",
-    "evidence/results-summary.json": "1de4c4cbd506842e220c05c681e4c936c66dcca2d149f96e3b8b884818dcf29d",
+    "evidence/results-summary.json": "6d14dad24b7d763280567fe230befff8c8b3335b2d4d2e7215214d9eb2e09aab",
     "evidence/seen-replay005/capture.log": "5f5fa59003ac0c70ee5b8f5531d870678d1b4c5bed2abd46961e9f4af05a4868",
     "evidence/seen-replay005/capture/protocol.json": "8f1ca33d2df1700124a0c1cfca0f66bbf41ac1ecf1a9e22e7bb3af2ab2920466",
     "evidence/seen-replay005/capture/receipt.json": "51d65195fd3cbe1ce26219a30154c4bdc93d5e54b5a5dc9842378de91296c616",
@@ -502,7 +525,7 @@
     "evidence/seen-replay005/selected-rows.json": "d82fbdd6a72f811e114438ca0da1604dad1b1e1c51527408e310fdac05f71175",
     "evidence/seen-replay005/tasks.json": "cee95ac7a32f5a8be2738d25418f3e3384e77fc5b49e1e32b9703bd65cb8ec30",
     "evidence/seen-replay005/token-prefix-audit.json": "92c10207a1d02c933748456c1f004b609adca7070639fbc7230c8a7a7bb550ac",
-    "evidence/source-export-bindings.json": "910d23c70509c81a3e9079207dd24a19b3a414abc47b5de9b27e62a51e283077",
+    "evidence/source-export-bindings.json": "86c11992212a950b08d34849d7bc53e7cf97f6d89f832d2d381dfb51f3f718e5",
     "evidence/validation-binding-audit-v4.json": "ecb3b4bdee879579ef0c08e712f1cceeaea18dcf4c72d182bf5344711a812970",
     "final_qualification.py": "67bcf3e739c3dc0ee540137fbc93b134117b3d5f0dbd5f40de222bf20cf9e1fe",
     "final_qualification_v2.py": "b727cde1616af7939dfd2ffa7d6ac040734871e5be77886c641f70cf42db97e4",
@@ -701,6 +724,16 @@
       "raw_payload_bytes": 555021139,
       "redacted_files": 124,
       "export_index_sha256": "af8a94804ae18893d59e41cf9d7dbfc3633c8bff55a1e677b80819d57df04591",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-32b-course013-and-corrective009-full-evidence.tar.gz",
+      "bytes": 582942317,
+      "sha256": "3468bfcd836d6bf9d2a7599604a3a629ffc5f7c7deefe1064dbe7a917cafab1d",
+      "files": 1513,
+      "raw_payload_bytes": 689670013,
+      "redacted_files": 122,
+      "export_index_sha256": "4646e3ed65826cad7ebf46fadabf111591065466fec986d8edde5e5643147189",
       "qualified_adapter": false
     }
   ],
@@ -1224,6 +1257,64 @@
           "original_sha256": "a7b7bb6ca313c540eabde4c164f9ff9749fdfb69775425dd99a6fa1559b76fb9"
         }
       ]
+    },
+    {
+      "run": "32b-state008-epoch2",
+      "status": "rejected",
+      "adapter_sha256": "e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6",
+      "original_adapter_config_sha256": "aff1a7b92256e349da6a7fcf6dbc3fc80b662af804be5aa8d3bd81c4257815be",
+      "original_training_receipt_sha256": "f9f825c6ed38d7c0189da3eab7496f1778c108ab34ff64a0167e1f041e338e39",
+      "steps": 512,
+      "asset": "rejected-32b-course013-and-corrective009-full-evidence.tar.gz",
+      "asset_tensor_path": "runs/32b-state008-epoch2/adapter/adapters.safetensors",
+      "qualified": false,
+      "checkpoints": [
+        {
+          "path": "runs/32b-state008-epoch2/adapter/0000060_adapters.safetensors",
+          "sha256": "89a1e91831675219bcf083d920c374e96cb56e9b397039e6d08daac52f403d50",
+          "original_sha256": "89a1e91831675219bcf083d920c374e96cb56e9b397039e6d08daac52f403d50"
+        },
+        {
+          "path": "runs/32b-state008-epoch2/adapter/0000120_adapters.safetensors",
+          "sha256": "69311533c7c46442cd63307bdde8685a27767afa4efd873314562fa6a567efd9",
+          "original_sha256": "69311533c7c46442cd63307bdde8685a27767afa4efd873314562fa6a567efd9"
+        },
+        {
+          "path": "runs/32b-state008-epoch2/adapter/0000180_adapters.safetensors",
+          "sha256": "39ee356991304fd77dc97b0cb7b94999318777debe329d2b1114c7d115b4b0b9",
+          "original_sha256": "39ee356991304fd77dc97b0cb7b94999318777debe329d2b1114c7d115b4b0b9"
+        },
+        {
+          "path": "runs/32b-state008-epoch2/adapter/0000240_adapters.safetensors",
+          "sha256": "14734d68a427dce282448d721cd6d8530a1a111bda44b53d285aca68da99c85e",
+          "original_sha256": "14734d68a427dce282448d721cd6d8530a1a111bda44b53d285aca68da99c85e"
+        },
+        {
+          "path": "runs/32b-state008-epoch2/adapter/0000300_adapters.safetensors",
+          "sha256": "918ee4d7d9d862c596548dc33bfd252367dca2b51f13c3126ebabce78f9a8952",
+          "original_sha256": "918ee4d7d9d862c596548dc33bfd252367dca2b51f13c3126ebabce78f9a8952"
+        },
+        {
+          "path": "runs/32b-state008-epoch2/adapter/0000360_adapters.safetensors",
+          "sha256": "e71add7203ee81c65a98aed3bb8d7de6b6aff9c68ab7cc85ad691c9e784f4233",
+          "original_sha256": "e71add7203ee81c65a98aed3bb8d7de6b6aff9c68ab7cc85ad691c9e784f4233"
+        },
+        {
+          "path": "runs/32b-state008-epoch2/adapter/0000420_adapters.safetensors",
+          "sha256": "c3d293101d1a08da2dc9524add0b9c809cd8bf8c49448de626fe6ae7d8db582a",
+          "original_sha256": "c3d293101d1a08da2dc9524add0b9c809cd8bf8c49448de626fe6ae7d8db582a"
+        },
+        {
+          "path": "runs/32b-state008-epoch2/adapter/0000480_adapters.safetensors",
+          "sha256": "ea0e8eb193926f455175918112cee9c0dae1fd164e42b5743d7d12f1fb8cd166",
+          "original_sha256": "ea0e8eb193926f455175918112cee9c0dae1fd164e42b5743d7d12f1fb8cd166"
+        },
+        {
+          "path": "runs/32b-state008-epoch2/adapter/adapters.safetensors",
+          "sha256": "e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6",
+          "original_sha256": "e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6"
+        }
+      ]
     }
   ],
   "base_manifests": [
@@ -1241,8 +1332,8 @@
   "final_contents_included": false,
   "current_training_weights_included": false,
   "manufacturing_authorized": false,
-  "source_snapshot": "Eleven completed rejected courses preserved. Completed012:4/12development,0/4scans,16EOS,129CPUchecks,seven tensors and actual installed-runtime diagnostic. New48nativevalid alternative008 implementations and256rows; fresh013 running512steps, protocols only. Prior51assets immutable; final sealed/defaults preserved.",
-  "completed_rejected_courses": 11,
+  "source_snapshot": "Twelve completed rejections preserved; completed013 at5/12development+0/4scans,16EOS,128CPUchecks,allnine tensors. New48nativevalid009 teachers and352row mixture. Course014 continues exact completed013; active payload excluded. Prior57assets immutable; final sealed/defaults preserved.",
+  "completed_rejected_courses": 12,
   "initial_five_assets_immutable": true,
   "publication": {
     "initial_study_tag": "am-code-20261014-study",
@@ -1255,7 +1346,7 @@
     "existing_thirteen_remote_assets_immutable": true,
     "existing_seventeen_remote_assets_immutable": true,
     "new_archive_assets_for_this_update": [
-      "rejected-32b-course012-and-corrective008-full-evidence.tar.gz"
+      "rejected-32b-course013-and-corrective009-full-evidence.tar.gz"
     ],
     "existing_nineteen_remote_assets_immutable": true,
     "existing_twenty_three_remote_assets_immutable": true,
@@ -1265,41 +1356,40 @@
     "existing_thirty_nine_remote_assets_immutable": true,
     "existing_forty_four_remote_assets_immutable": true,
     "existing_forty_eight_remote_assets_immutable": true,
-    "existing_fifty_one_remote_assets_immutable": true
+    "existing_fifty_one_remote_assets_immutable": true,
+    "existing_fifty_seven_remote_assets_immutable": true
   },
   "latest_completed_course": {
-    "name": "course012-32b-corrective007-recovery1",
-    "course": "012",
-    "run": "32b-corrective007-recovery1",
+    "name": "course013-32b-state008-epoch2",
+    "course": "013",
+    "run": "32b-state008-epoch2",
     "base": "32B",
     "status": "rejected",
-    "development_passed": 4,
+    "development_passed": 5,
     "development_total": 12,
     "scan_passed": 0,
     "scan_total": 4,
     "stopped": 16,
     "truncated": 0,
-    "adapter_sha256": "a7b7bb6ca313c540eabde4c164f9ff9749fdfb69775425dd99a6fa1559b76fb9",
+    "adapter_sha256": "e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6",
     "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
-    "lost_baseline_passes": [
-      "development-shell"
-    ],
+    "lost_baseline_passes": [],
     "manufacturing_authorized": false
   },
   "current_training": {
-    "course": "013",
-    "run": "32b-state008-epoch2",
+    "course": "014",
+    "run": "32b-api009-continuation2",
     "base": "32B",
     "status": "registered_running_no_candidate_result",
-    "prospective_original_sha256": "74e27ba9b9ce5cfad5bcd34752520254caab08d07c181e2154d10873705c1959",
-    "runtime_protocol_original_sha256": "e64c73d54df4a4799edf631a9c8e670e17c967074694707d755c4eabe383d20c",
-    "training_rows": 256,
-    "planned_steps": 512,
+    "prospective_original_sha256": "cb725a85ddc1c4a65f9c269b2cb89c28495bc32b911d82e2b8bf20e461398cd2",
+    "runtime_protocol_original_sha256": "e8c8b65874df03828cc629a37c5d06d7183967d6ca073c4fc88b70fea5fa7278",
+    "training_rows": 352,
+    "planned_steps": 704,
     "epochs": 2,
     "learning_rate": 2e-06,
-    "fresh_untouched_base": true,
+    "fresh_untouched_base": false,
     "fresh_optimizer": true,
-    "parent_adapter_sha256": null,
+    "parent_adapter_sha256": "e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6",
     "smoke_adapter_resumed": false,
     "active_weights_logs_captures_or_scores_included": false,
     "model_qualification": "not_established",

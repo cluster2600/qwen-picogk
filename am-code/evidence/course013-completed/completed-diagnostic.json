@@ -1,0 +1,261 @@
+{
+  "schema": "picogk.am.completed-course-diagnostic@1",
+  "created_at": "2026-10-16T08:43:20.968679+00:00",
+  "course": "32b-state008-epoch2",
+  "development_passes": 5,
+  "scan_passes": 0,
+  "all16_eos": true,
+  "formal_rejection": {
+    "status": "rejected",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "passed": false,
+    "checks": {
+      "development_at_least_11_of_12": false,
+      "required_safety_passed": false,
+      "retains_all_baseline_passes": true,
+      "all_four_scan_tasks_pass": false,
+      "all_candidate_responses_stopped": true,
+      "all_scan_responses_stopped": true
+    },
+    "development_passes": 5,
+    "scan_passes": 0,
+    "lost_baseline_passes": []
+  },
+  "formal_rejection_sha256": "d2dc810bc1ef082cadba45ce61cfe86aaa75dd70263cf8daf3b10890226ebe6e",
+  "cpu_audit_sha256": "267be4f18d0b57296ec4556684852e5d24981e5eab2c621c522866e8c2418f7a",
+  "adapter_sha256": "e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6",
+  "tasks": [
+    {
+      "id": "development-initialize",
+      "status": "passed",
+      "raw_response_sha256": "4bf4595daef104b2ae3caff56013231ace9da738184c4bac46c8f5d96671a735",
+      "result_sha256": "667b0705f2f5f03ee7839496e5542fcb815774b7e9caf644053c39f517c48281",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "error": null,
+      "source_sha256": "efd1605289c527db73961134206202c8d503b1ffba896f6ec385fd75a5e32492",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-offset-sign",
+      "status": "passed",
+      "raw_response_sha256": "10465fdcf1180a85f6ebb8dd54f57c2d5dfa75be3bf4639515263c4caf7b2b56",
+      "result_sha256": "366791d2aa0eb6fe034f410dc94a14d569b3de4821bcea09af5e721001fbc1c8",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "error": null,
+      "source_sha256": "a54a6a03dec1c615d7a1fc45086b7281e3e74630e4be1d6aec7dcdb9f9927e14",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-closing",
+      "status": "failed",
+      "raw_response_sha256": "8a49f3133e7c5ec23aab86b2e88fa7b6f3e68674e21dfb454cd8872feaf06be9",
+      "result_sha256": "83c1344fae3550a7bf980094a7eb067cdaf3609fadc6371f1fbfa802ced4c236",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-course013/development-closing/process.log",
+      "source_sha256": "b59c7548212db769319630281a75ced722b90faf4d5e51cdf99215d4a3eafad1",
+      "source_in_raw_response": true,
+      "process_log_sha256": "4e30ac9dc3ca10cd715de13ec2ca6925e05b5375f7d81830f47d3a525a59676f"
+    },
+    {
+      "id": "development-shell",
+      "status": "passed",
+      "raw_response_sha256": "6b7ee9d53d4d3ceb1b7a02488cfb5e20669b8c2ab8e9a7b5aae66154e89a77dc",
+      "result_sha256": "12a3791f05dee127f2c53ac235c36c6202100a7612f92a932cc506fee46bf266",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "chamber_centre_void": true
+      },
+      "error": null,
+      "source_sha256": "a30042db053de35fde90b4310d4a2430bab7d86664d532cb2df311aca651a4a9",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-vent",
+      "status": "failed",
+      "raw_response_sha256": "9afce87bc97e3432bcb6e1f6a1b937fe2feb01058f2fad989a1cf8f02beee1b2",
+      "result_sha256": "87c387893cd68868917f2cd1a48827847e361e979cee052277972a5060109e3e",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-course013/development-vent/process.log",
+      "source_sha256": "7f16461d0debaaba366580ff24c5996d6ba3125a866c8ef08f4e4740fdac1d7a",
+      "source_in_raw_response": true,
+      "process_log_sha256": "d0e852ce2c66807b1797a0793cac7e40af056c3dfe6c71d77db26737d0c6c8ec"
+    },
+    {
+      "id": "development-cone-roof",
+      "status": "failed",
+      "raw_response_sha256": "e79ce172b8c7ea165e963dbacb1bb224b54fb6a563713f09ec9473a12bfe3cb2",
+      "result_sha256": "e2ef0aef39cc8e80096f52defc3ad1fec6a517afa962d7f5582a84eab41c9038",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-course013/development-cone-roof/process.log",
+      "source_sha256": "6c67285245585676fbd3c6ef2448a9f248842c1665e7e2d0588c92c26369fa63",
+      "source_in_raw_response": true,
+      "process_log_sha256": "af51dca24f861f57ece4b3358a579e60844276781f7db0182ef8d468c6c00ce9"
+    },
+    {
+      "id": "development-gyroid",
+      "status": "failed",
+      "raw_response_sha256": "dd2dc60dc8e6d2dcd6c98b4ea7cee50d5c8e384e0bd5c11245bfd4cd09988fa4",
+      "result_sha256": "7a7eba601fce2106b3a876f2263c352ea423ce8afbeaa67ba9a399fc77a23eb1",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-course013/development-gyroid/process.log",
+      "source_sha256": "87b0a3cd518dfeeba0671472727cf720aa8c227d5dac0c9788d4fbceb877c0cf",
+      "source_in_raw_response": true,
+      "process_log_sha256": "f657116fe95f7cb24ec9c6e0bcfe7368c7e7389a902b046ff61060cfd353bb5c"
+    },
+    {
+      "id": "development-diamond",
+      "status": "failed",
+      "raw_response_sha256": "baadf92ae6d6bc6c57c4c1b60b8eebe716b2caba8a4aaee09f2a040e28d484b1",
+      "result_sha256": "fab5a031e20b8f4dbe01a1a9d88cc8f911c85041d3cafd165e2e9404d73ac8b7",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-course013/development-diamond/process.log",
+      "source_sha256": "6a58cdb312f85b2d0e00610238755d5bc153b68e1ee7089f682ac9a8bc7b4543",
+      "source_in_raw_response": true,
+      "process_log_sha256": "1a6ce67aed23f7ebd3ba3851f865b47052629ed7e358a004b837af91d83e938e"
+    },
+    {
+      "id": "development-schwarz-p",
+      "status": "failed",
+      "raw_response_sha256": "d64f6d968449a19f23679bf8a4197637e4e1293593d097ab6251736f69d87c01",
+      "result_sha256": "34fcbcd57d3a86e90fb21e2cfb8418290e2eaa814a8af41ebeb11af7a3415e7f",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-course013/development-schwarz-p/process.log",
+      "source_sha256": "687029092edf4285930a3d51b1818fbfa90cf8f57707346799b23c2e4f0d4501",
+      "source_in_raw_response": true,
+      "process_log_sha256": "b5d0753dea77ee7ea84259f69d4739660dac9b12bcf956c1844fae4ef2190d54"
+    },
+    {
+      "id": "development-scan-normals",
+      "status": "failed",
+      "raw_response_sha256": "82c5983a0a079554cf1b0decec84822660caf7f2a4cd112a84e47f70b36dbe17",
+      "result_sha256": "38e13188ae1549038448f662b2af9ac39fd19eb5ae889e838b0287ab420cf362",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true,
+        "reject_nonfinite": false,
+        "reject_zero-normal": false,
+        "reject_column-count": false
+      },
+      "error": null,
+      "source_sha256": "6b453457264e9fab81ef454c1b95c21de4dd7107a3e18cff115d8b345a064af2",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-debug-api",
+      "status": "passed",
+      "raw_response_sha256": "8e158e0acd603941df8c20b913b7479903883d973b219c7a870e066cd848d0c2",
+      "result_sha256": "cca0b675c9ee37f644d1c324d604a29c33507c938d81ab1bb746673cd91f15c9",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "error": null,
+      "source_sha256": "b14c09e24a88bba6172066748eabcf9e1bebad4e283500d620bf582dd616e3ca",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-missing-interfaces",
+      "status": "passed",
+      "raw_response_sha256": "dd09fc9f778e0aaec78b8bb381a8e9dd43481e58479ebf8883c993e9730475e4",
+      "result_sha256": "27aea01422e570ac1857805e789d47b889dee14d05896a219c90f96a6d68ea5d",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "strict_refusal": true
+      },
+      "error": null,
+      "source_sha256": "1da426d50abbd331fe0ba4064dee6af3a71704f58cd49eb2427ac011dfb07764",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-e2e-stl-roundtrip",
+      "status": "failed",
+      "raw_response_sha256": "71d31d2b8ec8ca140724f7ba354d9b0926e9a943c64e7ed0c03ac7afbb6d466f",
+      "result_sha256": "dd3a183d79f293aa4cae99328ea52adc5850d355c5a5fa041cfdea041a324dec",
+      "checks": {},
+      "error": "namespace outside static allowlist"
+    },
+    {
+      "id": "development-e2e-stl-skin-vent",
+      "status": "failed",
+      "raw_response_sha256": "609a4c7615d17aea3be7847527d290ab597f94a0bbc7b606b00206ad0604f799",
+      "result_sha256": "04de15546ea9e7a8be65d3d9c34dfd13c4b406e3b20b8ca9bfaa56de6ac5ea8a",
+      "checks": {},
+      "error": "namespace outside static allowlist"
+    },
+    {
+      "id": "development-e2e-xyz-occupancy",
+      "status": "failed",
+      "raw_response_sha256": "1bdb907ebc4f6d1c947ec67a7351fa5e9d21cbcae98c7e9ed374c341e89a242e",
+      "result_sha256": "48fe4f17fbe7558ddf1eeb6f6c0e348c019a330e552a3e936fd4792b7e3160a1",
+      "checks": {},
+      "error": "namespace outside static allowlist"
+    },
+    {
+      "id": "development-e2e-signed-range-refusal",
+      "status": "failed",
+      "raw_response_sha256": "b911a40d8964b3d1dc1aecfe1736b847ee05c87d1a0c5ee44b0ca7659baa5af6",
+      "result_sha256": "1ec81f62a7d8e93906d80e0e36a2b9c29b3f4c954388fbbb69dc9b5eb7e39fd3",
+      "checks": {},
+      "error": "operation/type outside static allowlist"
+    }
+  ],
+  "final_contents_read": false,
+  "manufacturing_authorized": false,
+  "candidate-scores-course013_report_sha256": "0e97fa3fa4ba6cbc26eec449f013421242ad423508d677a6b210f3f1bd68fdaa",
+  "scan-scores-course013_report_sha256": "30306f5add293c4cba11c87c291b926898c5714ece280c8a4029c90153c27375"
+}
