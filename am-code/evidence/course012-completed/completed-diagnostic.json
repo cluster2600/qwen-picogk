@@ -1,0 +1,272 @@
+{
+  "schema": "picogk.am.completed-course-diagnostic@1",
+  "created_at": "2026-10-16T02:19:01.565636+00:00",
+  "course": "32b-corrective007-recovery1",
+  "development_passes": 4,
+  "scan_passes": 0,
+  "all16_eos": true,
+  "formal_rejection": {
+    "status": "rejected",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "passed": false,
+    "checks": {
+      "development_at_least_11_of_12": false,
+      "required_safety_passed": false,
+      "retains_all_baseline_passes": false,
+      "all_four_scan_tasks_pass": false,
+      "all_candidate_responses_stopped": true,
+      "all_scan_responses_stopped": true
+    },
+    "development_passes": 4,
+    "scan_passes": 0,
+    "lost_baseline_passes": [
+      "development-shell"
+    ]
+  },
+  "formal_rejection_sha256": "33ba4d3e3126495fbd02c315e5e0ca14d7e22f4084867e50908af4104d0abfea",
+  "cpu_audit_sha256": "c8330fa001884c5810c11382d91857c25027ca522d7d04f8adb5406b73dfb52b",
+  "runtime_diagnostic_sha256": "16687ffc21251a24d7c60615315fa9dc75cdad228d0be98860e4b80bd57f11c8",
+  "adapter_sha256": "a7b7bb6ca313c540eabde4c164f9ff9749fdfb69775425dd99a6fa1559b76fb9",
+  "development_report_sha256": "c21a03d0514dee4fe2b59dc9c6119fcedf62f1aae816648cc654962343b5bbce",
+  "scan_report_sha256": "83b096d80a4c66d4984850f3a4a78a079b1969e14a5dc0a2f97773eb8dc31315",
+  "tasks": [
+    {
+      "id": "development-initialize",
+      "status": "passed",
+      "raw_response_sha256": "cd4ff3656d04c3e67da91486665b3eaec454c22015bfefb8410719257002c2b6",
+      "result_sha256": "f9390d43a2bab20ce9706874821f870221eb33ff7c301b839c4bfd266c361975",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "error": null,
+      "source_sha256": "4dffed876ceba682a16d90b73b01bcbadd0b623ae647442db0e036b18e9bf8c1",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-offset-sign",
+      "status": "passed",
+      "raw_response_sha256": "127280941f9187af973d39487a8792bdfb88398928c525b19842768ef1a46761",
+      "result_sha256": "fe996f6c4cacfd14776627495613b10b993f3fb3d403cb8e885a60c1ae5f9ba2",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "error": null,
+      "source_sha256": "15978493e42664e6d7ec5362943f237ac262ce1e9c6c45729de28f53ae2d8efe",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-closing",
+      "status": "failed",
+      "raw_response_sha256": "33e9c154be01c1119d053329a0d0cd9fd2dd9b2dfa8e0dbb7c96eb43957029e7",
+      "result_sha256": "fc60fb99a5c5b50b715378cde4c7f55a15b2d868360c22eabfb0d2efec9e3ee6",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": false
+      },
+      "error": "isolated native process failed; see am-code/candidate-scores-course012/development-closing/process.log",
+      "source_sha256": "e11c5c3b27b3f3bf711012716a3d200b7b1ee1f8cb6d40b9523edc9bd77982a9",
+      "source_in_raw_response": true,
+      "process_log_sha256": "652d8708b60848832af46af6f6dc619c1893c4b7732146c8b3fa4208be1d747e"
+    },
+    {
+      "id": "development-shell",
+      "status": "failed",
+      "raw_response_sha256": "67a20c04f9e206fba9dedc32146e41e4c2474a1f931d2aee2839dfe993b34069",
+      "result_sha256": "c7f1580ea3bcfd8e86cb9001c6e1cee102e2fc9e23bb06adb3f4eb573ee94539",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": false,
+        "native_volume": false,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": false,
+        "chamber_centre_void": true
+      },
+      "error": null,
+      "source_sha256": "3bb5785be55ba59812d1cd9b80c4278a173875238edf82a7e826f64d67234d16",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-vent",
+      "status": "failed",
+      "raw_response_sha256": "4e9589c95813cd6e062a5bf304f8fd7123a66f691f4455c8d1a78462263104b5",
+      "result_sha256": "b0e585387d356fb3b51f74b268cf5a1d7d2c69b83ff746ddbac95d0b28fd2972",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": false
+      },
+      "error": "isolated native process failed; see am-code/candidate-scores-course012/development-vent/process.log",
+      "source_sha256": "b27ff827d3c56b93d152cd13824b179489e54b655a01c939f519c5479ff41212",
+      "source_in_raw_response": true,
+      "process_log_sha256": "3dd48dcd8e237738e5a2337ee38145790651a517517bd317a2ffc3fabdd9577d"
+    },
+    {
+      "id": "development-cone-roof",
+      "status": "failed",
+      "raw_response_sha256": "62bcf3ee2f9c681c9d55688ca4f7e20b40a2ed6405de1466614ca6541530b636",
+      "result_sha256": "b66c6bb48f2b848d3db19cdb8e6748905563ebbe10de7a8c075bf2756a5a384f",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-course012/development-cone-roof/process.log",
+      "source_sha256": "10d3daaa1c4cfebe7f1a01bf1d1eb964752dce6d35cbbd18881406452a5e8d79",
+      "source_in_raw_response": true,
+      "process_log_sha256": "db6bd9e1a1c422611bf854e4029235f50b8567ecba37eaab198dea883e6e07a0"
+    },
+    {
+      "id": "development-gyroid",
+      "status": "failed",
+      "raw_response_sha256": "7dfae88029048f4a61b7f1f780c2e35aa1baae932da1281a35376593dedff235",
+      "result_sha256": "2166a8d8d607f9bbd66dc12628da0ef1acb8152ce7a167f3916ecc32005aabf9",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": false,
+        "native_volume": false,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": false,
+        "physical_wall_native_rays": true
+      },
+      "error": null,
+      "source_sha256": "d1378a71ea1fada15ff0ba65bfa4acf97c731d4d5479e8d1e20dffc5b17c8d16",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-diamond",
+      "status": "failed",
+      "raw_response_sha256": "e8ea580e43b6dd305260bcfc150aa7254d0b14bdffbf16fe349097dc4812b733",
+      "result_sha256": "1636015dd5dd867b92020a70b467a86f2bb860323046b1c03b2bc0d0bd527cf6",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-course012/development-diamond/process.log",
+      "source_sha256": "c8d71af3e5d9d3f9219b01fe707cb32e3a2256f89aea60ecae8649fd3f8ed762",
+      "source_in_raw_response": true,
+      "process_log_sha256": "9e8b6fedf1e060e0f2e20e778af44c9e0172dae7c5a323c67ae0bd51b63ec8bc"
+    },
+    {
+      "id": "development-schwarz-p",
+      "status": "failed",
+      "raw_response_sha256": "91b904e9274e82e8be0ac8f447367ef5e7498dcc52a6a08292a4c021e4bc6ead",
+      "result_sha256": "6870c085e020c343272d35a22ec1fa2007e980a7bfe30e65c52c1e2924acb389",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-course012/development-schwarz-p/process.log",
+      "source_sha256": "b3fd99575e4560536d85848d324c2f400fc501cdf5e868b6198af2bd1d0cbd38",
+      "source_in_raw_response": true,
+      "process_log_sha256": "f4bbd766b85e91bc9b80446e69e3ca6e45698568fdee591b149c5953da017e43"
+    },
+    {
+      "id": "development-scan-normals",
+      "status": "failed",
+      "raw_response_sha256": "acab7837c284d22ec8f29caa2a434e6d1ebd7dc5203fe34a75d4fc786cef40d4",
+      "result_sha256": "42304868ee136b6acb2e3f77634ac949f2694b503175356af2b268058f66732d",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": false
+      },
+      "error": "isolated native process failed; see am-code/candidate-scores-course012/development-scan-normals/process.log",
+      "source_sha256": "631e2999d6069b5d782f5a920176b6f071b799da1dc6a9df0bb7c38ab4a59afb",
+      "source_in_raw_response": true,
+      "process_log_sha256": "5aa043aed12e4d145915d10f6e1c90d088b2d559071f4b773993b5e51f4b0092"
+    },
+    {
+      "id": "development-debug-api",
+      "status": "passed",
+      "raw_response_sha256": "9702f2553cc736796fc4f8e7e3404be76ea0ff75b40cdd12c632a8645fb194a7",
+      "result_sha256": "f8d5c3283f9e59854120e69877c9d4ff56fae8bea71457c74d16f822c00d67bd",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "error": null,
+      "source_sha256": "0870902b6f401499c57cf92af9737b937f32e5edf94bf720713c3ddd6b710a4c",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-missing-interfaces",
+      "status": "passed",
+      "raw_response_sha256": "7f6bef0745ae1e44eed00ee5075ca83913c290d132edcd51dfaded644b1d0812",
+      "result_sha256": "f3dd1893429861ba0f6e2781a9835b0891432b198563012245fcf6eb42f30e0a",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "strict_refusal": true
+      },
+      "error": null,
+      "source_sha256": "c395077ab8e5f65229c26a86c68ce65e081cc1b74264114aad9d8a2c37d5705c",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-e2e-stl-roundtrip",
+      "status": "failed",
+      "raw_response_sha256": "43e43d352deda3ffbd0aacd8f80717937b382a9fec59d2ffedaaf2321370a2b3",
+      "result_sha256": "dd3a183d79f293aa4cae99328ea52adc5850d355c5a5fa041cfdea041a324dec",
+      "checks": {},
+      "error": "namespace outside static allowlist"
+    },
+    {
+      "id": "development-e2e-stl-skin-vent",
+      "status": "failed",
+      "raw_response_sha256": "a81c10158161278e42ec5b87b32e6e7df48f4a2d32b50a336cb106242741cb5e",
+      "result_sha256": "04de15546ea9e7a8be65d3d9c34dfd13c4b406e3b20b8ca9bfaa56de6ac5ea8a",
+      "checks": {},
+      "error": "namespace outside static allowlist"
+    },
+    {
+      "id": "development-e2e-xyz-occupancy",
+      "status": "failed",
+      "raw_response_sha256": "a5da21e9175dc48312a098ef2403d773d8f410aef4bac9ac383ba7d53a016067",
+      "result_sha256": "7d5a1a2a4c230ed26c1725f048b87fe840ac21daad83568a8b983f5c494549ac",
+      "checks": {},
+      "error": "operation/type outside static allowlist"
+    },
+    {
+      "id": "development-e2e-signed-range-refusal",
+      "status": "failed",
+      "raw_response_sha256": "3b32368e1f02cbe88b8e6bb25218938a197984ce2f09dd9424ee647d3088b517",
+      "result_sha256": "6c84b2c100add2d0fa268d3bb4f8ff1aaa45dc3d16fb0a924d9d95e62cec5edf",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": false
+      },
+      "error": "Isolated native execution failed; see process.log",
+      "source_sha256": "f95588867984411fc89d98436af8664dbcda63147c8aaa7f91d2d8d95be134f8",
+      "source_in_raw_response": true,
+      "process_log_sha256": "862d9e0c76f32838b5feb0829633f96d56ab36bd8e4f72d408520e5a88d2cffc"
+    }
+  ],
+  "selection_exists": false,
+  "responses_or_code_repaired": false,
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}

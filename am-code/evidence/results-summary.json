@@ -633,33 +633,49 @@
         "development-debug-api"
       ],
       "manufacturing_authorized": false
+    },
+    {
+      "name": "course012-32b-corrective007-recovery1",
+      "course": "012",
+      "run": "32b-corrective007-recovery1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 4,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "a7b7bb6ca313c540eabde4c164f9ff9749fdfb69775425dd99a6fa1559b76fb9",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
     }
   ],
   "current_training": {
-    "course": "012",
-    "run": "32b-corrective007-recovery1",
+    "course": "013",
+    "run": "32b-state008-epoch2",
     "base": "32B",
     "status": "registered_running_no_candidate_result",
-    "prospective_original_sha256": "2f9af1b8de4eb33541af7bd34e1ac90c9280d0ac34b176b3027c2ead16606993",
-    "runtime_protocol_original_sha256": "de51293a192b09d6482b64ac957dff6b7c4fe0047dcd746a7b07db4f42d8ba6f",
-    "training_rows": 384,
-    "planned_steps": 384,
-    "epochs": 1,
+    "prospective_original_sha256": "74e27ba9b9ce5cfad5bcd34752520254caab08d07c181e2154d10873705c1959",
+    "runtime_protocol_original_sha256": "e64c73d54df4a4799edf631a9c8e670e17c967074694707d755c4eabe383d20c",
+    "training_rows": 256,
+    "planned_steps": 512,
+    "epochs": 2,
     "learning_rate": 2e-06,
-    "fresh_untouched_base": false,
+    "fresh_untouched_base": true,
     "fresh_optimizer": true,
-    "parent_adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
+    "parent_adapter_sha256": null,
     "smoke_adapter_resumed": false,
     "active_weights_logs_captures_or_scores_included": false,
     "model_qualification": "not_established",
-    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
-    "recovery_of": "011",
-    "recovery_mode": "Full384step replay from completed010 parent; fresh optimizer; no exact mid-epoch resume claim",
-    "detached_local_process": true
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45"
   },
   "final_set": "embargoed; no final model evaluation claimed",
   "manufacturing_authorized": false,
-  "completed_course_count": 10,
+  "completed_course_count": 11,
   "corrective003_teachers": {
     "distinct_teachers": 16,
     "message_rows": 32,
@@ -682,9 +698,9 @@
     "formal_scores_unchanged": true
   },
   "last_completed_training": {
-    "name": "course010-32b-corrective006-epoch2",
-    "course": "010",
-    "run": "32b-corrective006-epoch2",
+    "name": "course012-32b-corrective007-recovery1",
+    "course": "012",
+    "run": "32b-corrective007-recovery1",
     "base": "32B",
     "status": "rejected",
     "development_passed": 4,
@@ -693,10 +709,10 @@
     "scan_total": 4,
     "stopped": 16,
     "truncated": 0,
-    "adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
+    "adapter_sha256": "a7b7bb6ca313c540eabde4c164f9ff9749fdfb69775425dd99a6fa1559b76fb9",
     "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
     "lost_baseline_passes": [
-      "development-debug-api"
+      "development-shell"
     ],
     "manufacturing_authorized": false
   },
@@ -852,9 +868,9 @@
     "manufacturing_authorized": false
   },
   "corrective007_teachers": {
-    "cases": 64,
-    "passed": 64,
-    "formulations": 128
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
   },
   "interrupted_courses": [
     {
@@ -870,5 +886,24 @@
       "checkpoint_evaluated": false,
       "qualification_credit": 0
     }
-  ]
+  ],
+  "current_course012": {
+    "name": "course012-32b-corrective007-recovery1",
+    "course": "012",
+    "run": "32b-corrective007-recovery1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "a7b7bb6ca313c540eabde4c164f9ff9749fdfb69775425dd99a6fa1559b76fb9",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  }
 }
