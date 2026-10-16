@@ -100,6 +100,49 @@ at an elevated temperature rather than trace each beam path. The figures show
 that the chain works and that the channel geometry survives meshing; they do
 not predict temperatures on a machine.
 
+## Upstream issues found while building this
+
+Reading the adamantine 1.1 source in the pinned image (`a2e3a41`) confirmed
+three defects. All three are still present on upstream `master` (`5aca53e`,
+29 September 2026), and none had been reported when checked:
+
+| Where | Defect | Effect on this work |
+|---|---|---|
+| `PostProcessor.cc`, `get_von_mises_stress` ([#501](https://github.com/adamantine-sim/adamantine/issues/501)) | The shear sum uses `tensor[2][1]`, which equals σyz for a symmetric tensor, so σyz is counted twice and σxz never enters | The von Mises output is not used; comparisons use displacement |
+| `Microstructure.hh:144` ([#502](https://github.com/adamantine-sim/adamantine/issues/502)) | `_old_temperature[dof] - temperature[dof] / delta_t` lacks parentheses, giving T_old − T/Δt | Cooling-rate and G/R outputs are not used |
+| `validate_input_database.cc:186` ([#503](https://github.com/adamantine-sim/adamantine/issues/503)) | `database.count("geometry.material_deposition_file")` passes a path to `ptree::count`, which matches only direct children, so file-based deposition is always rejected | Worked around with a root key of that literal name; documented in `run_case.py` |
+
+All three were reported upstream on 16 October 2026.
+
+## Lumped-layer build (thermo-elastic)
+
+```mermaid
+flowchart LR
+    A["verified STL"] --> B["hexmesh.py --plate-mm 5<br/>1 mm hexahedra + build plate,<br/>bottom faces = boundary 1"]
+    B --> C["layers.txt<br/>one box per 1 mm layer,<br/>activated every 2 s"]
+    C --> D["adamantine 1.1<br/>layers start at 1720 K,<br/>plate at 300 K, clamped"]
+    D --> E["linear thermo-elastic solve<br/>every 50 thermal steps"]
+    E --> F["displacement after<br/>build and 60 s cooling"]
+    F --> G["comparison between<br/>solid, dfam-001, debug-001"]
+```
+
+The `layers` mode of `run_case.py`:
+- adds a 5 mm build plate under the part, clamped at its bottom faces;
+- activates each 1 mm layer of the part at 1720 K, just above the liquidus,
+  every 2 s;
+- solves linear thermo-elastic mechanics every 50 thermal steps of 0.02 s;
+- lets the part cool for 60 s after the last layer.
+
+adamantine uses the solidus as the stress-free temperature of material that
+has melted and the initial 300 K for the untouched plate. The layer boxes are
+1 % shorter than a cell at each face; a three-layer trial showed that boxes
+touching the next cell layer activate it early.
+
+This is a flash-heating comparison model. Its layer time, convection and
+emissivity are uncalibrated, and plasticity, build-plate removal and support
+structures are not modelled. Results are differences between geometries under
+one model, not distortion predictions.
+
 ## Next steps for Phase 3
 
 1. **Lumped-layer deposition** of about 1 mm per layer, using adamantine's

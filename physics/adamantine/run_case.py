@@ -233,23 +233,157 @@ def pipeline(stl, out, cell_mm=1.0, power_w=400.0, eta=0.3, speed=500.0, line=((
     return record
 
 
+# Workaround for adamantine 1.1 (still on master 5aca53e; reported as adamantine #503): validate_input_database.cc
+# checks database.count("geometry.material_deposition_file") on the root tree, and
+# ptree::count matches only direct child keys, so file-based deposition is always
+# rejected. A root key with that literal name satisfies the check; the deposition
+# reader still takes the value from the geometry block.
+LAYERS_INFO = """geometry.material_deposition_file layers.txt
+geometry
+{{
+  dim 3
+  import_mesh true
+  mesh_file part.msh
+  mesh_format gmsh
+  reset_material_id true
+  material_height {material_height_m}
+  material_deposition true
+  material_deposition_method file
+  material_deposition_file layers.txt
+}}
+units {{ mesh millimeter }}
+boundary
+{{
+  type convective,radiative,traction_free
+  boundary_1 {{ type convective,radiative,clamped }}
+}}
+physics {{ thermal true mechanical true }}
+refinement {{ n_refinements 0 time_steps_between_refinement 2000000000 }}
+materials
+{{
+  n_materials 1
+  property_format polynomial
+  initial_temperature 300
+  new_material_temperature {new_material_temperature_k}
+  material_0
+  {{
+    solid {{ density 7904 specific_heat 714 thermal_conductivity_x 31.4 thermal_conductivity_y 31.4
+            thermal_conductivity_z 31.4 convection_heat_transfer_coef 100 emissivity 0.15
+            lame_first_parameter 92.0e9 lame_second_parameter 79.0e9 thermal_expansion_coef 17.2e-6 }}
+    powder {{ density 7904 specific_heat 714 thermal_conductivity_x 0.314 thermal_conductivity_y 0.314
+             thermal_conductivity_z 0.314 convection_heat_transfer_coef 100 emissivity 0.15
+             lame_first_parameter 92.0e9 lame_second_parameter 79.0e9 thermal_expansion_coef 17.2e-6 }}
+    liquid {{ density 7904 specific_heat 847 thermal_conductivity_x 37.3 thermal_conductivity_y 37.3
+             thermal_conductivity_z 37.3 convection_heat_transfer_coef 100 emissivity 0.15
+             lame_first_parameter 92.0e9 lame_second_parameter 79.0e9 thermal_expansion_coef 17.2e-6 }}
+    solidus 1675
+    liquidus 1708
+    latent_heat 290000
+    radiation_temperature_infty 300
+    convection_temperature_infty 300
+  }}
+}}
+sources
+{{
+  n_beams 1
+  beam_0
+  {{
+    type goldak
+    depth 1e-3
+    diameter 1e-3
+    scan_path_file scan_path.txt
+    scan_path_file_format segment
+    absorption_efficiency 0
+    max_power 0
+  }}
+}}
+time_stepping {{ method forward_euler duration {duration_s} time_step {dt_s} mechanical_time_step_factor {mech_factor} }}
+post_processor {{ filename_prefix output time_steps_between_output {output_every} }}
+discretization {{ thermal {{ fe_degree 1 quadrature gauss }} mechanical {{ fe_degree 1 }} }}
+memory_space host
+"""
+
+
+def layers(stl, out, cell_mm=1.0, plate_mm=5.0, layer_mm=1.0, interval_s=2.0, cool_s=60.0, dt_s=0.02,
+           mech_factor=50, new_material_temperature_k=1720.0, max_layers=None):
+    """Lumped-layer build on a clamped plate, linear thermo-elastic, as a comparison between variants.
+
+    Each layer of the part is activated at new_material_temperature_k, above the liquidus, so its
+    stress-free reference is the solidus; the plate starts at 300 K. No heat source is used."""
+    out.mkdir(parents=True)
+    mesh = subprocess.run([sys.executable, str(HERE / 'hexmesh.py'), str(stl), str(out / 'part.msh'),
+                           '--cell-mm', str(cell_mm), '--plate-mm', str(plate_mm)],
+                          capture_output=True, text=True, check=True)
+    summary = json.loads(mesh.stdout.strip().splitlines()[-1])
+    z0, z1 = summary['plate_top_mm'], summary['top_mm']
+    nx, ny, _ = summary['grid']
+    # The deposition boxes cover the grid footprint; only cells of the imported mesh activate.
+    lo_x, lo_y = None, None
+    nodes = []
+    with open(out / 'part.msh') as stream:
+        for line in stream:
+            if line.startswith('$Nodes'):
+                count = int(next(stream))
+                for _ in range(count):
+                    _, x, y, z = next(stream).split()
+                    nodes.append((float(x), float(y)))
+                break
+    xs, ys = [n[0] for n in nodes], [n[1] for n in nodes]
+    cx, cy, sx, sy = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2, max(xs) - min(xs) + 1, max(ys) - min(ys) + 1
+    count = int(round((z1 - z0) / layer_mm))
+    if max_layers:
+        count = min(count, max_layers)
+    rows = ['3']
+    for k in range(count):
+        zc = z0 + (k + 0.5) * layer_mm
+        # Boxes touching the next cell layer would activate it too, so keep 1 % clear at each face.
+        rows.append(' '.join(f'{v:.6g}' for v in (cx * 1e-3, cy * 1e-3, zc * 1e-3, sx * 1e-3, sy * 1e-3,
+                                                     (layer_mm - 0.02 * cell_mm) * 1e-3, (k + 1) * interval_s, 0.0)))
+    (out / 'layers.txt').write_text('\n'.join(rows) + '\n')
+    duration = count * interval_s + cool_s
+    (out / 'scan_path.txt').write_text(f'Number of path segments\n2\nMode x y z pmod param\n'
+                                       f'1 {cx} {cy} {z1} 0 {duration}\n')
+    steps = round(duration / dt_s)
+    (out / 'part.info').write_text(LAYERS_INFO.format(
+        material_height_m=z0 * 1e-3, new_material_temperature_k=new_material_temperature_k,
+        duration_s=duration, dt_s=dt_s, mech_factor=mech_factor, output_every=max(mech_factor, steps // 20)))
+    started = time.time()
+    run = container(out, f'{BINARY} -i part.info > log.adamantine 2>&1', cpus=4, timeout=6 * 3600)
+    log = (out / 'log.adamantine').read_text()
+    outputs = sorted(Path(out).glob('output.*.0.vtu'), key=lambda p: int(p.name.split('.')[1]))
+    if run.returncode or not outputs:
+        raise RuntimeError(log[-1500:])
+    return {'stl_sha256': sha(stl), 'mesh': summary, 'layers': count, 'layer_mm': layer_mm,
+            'interval_s': interval_s, 'cool_s': cool_s, 'duration_s': duration, 'time_step_s': dt_s,
+            'mechanical_time_step_factor': mech_factor, 'new_material_temperature_k': new_material_temperature_k,
+            'solver_seconds': round(time.time() - started, 1), 'cpus': 4, 'outputs': len(outputs),
+            'inputs_sha256': {p.name: sha(p) for p in (out / 'part.info', out / 'layers.txt', out / 'part.msh')}}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('mode', choices=('smoke', 'pipeline'))
+    parser.add_argument('mode', choices=('smoke', 'pipeline', 'layers'))
     parser.add_argument('stl', nargs='?', type=Path)
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--receipt', type=Path, required=True)
-    parser.add_argument('--cell-mm', type=float, default=1.0, help='hex cell size for pipeline')
+    parser.add_argument('--cell-mm', type=float, default=1.0, help='hex cell size for pipeline and layers')
+    parser.add_argument('--max-layers', type=int, help='layers: stop after this many layers (trials)')
+    parser.add_argument('--cool-s', type=float, default=60.0, help='layers: cooling time after the last layer')
     args = parser.parse_args()
     if args.out.exists() or args.receipt.exists():
         parser.error('use a new output directory and receipt path')
-    body = smoke(args.out) if args.mode == 'smoke' else pipeline(args.stl, args.out, cell_mm=args.cell_mm)
+    if args.mode == 'smoke':
+        body = smoke(args.out)
+    elif args.mode == 'pipeline':
+        body = pipeline(args.stl, args.out, cell_mm=args.cell_mm)
+    else:
+        body = layers(args.stl, args.out, cell_mm=args.cell_mm, max_layers=args.max_layers, cool_s=args.cool_s)
     record = {'schema': 'qwen-picogk.process.adamantine@1', 'mode': args.mode, 'image': IMAGE,
               'harness_sha256': sha(__file__), 'hexmesh_sha256': sha(HERE / 'hexmesh.py'),
               'uncalibrated_for_any_machine': True, 'manufacturing_qualified': False, **body}
     args.receipt.parent.mkdir(parents=True, exist_ok=True)
     args.receipt.write_text(json.dumps(record, indent=1, sort_keys=True) + '\n')
-    print(json.dumps({k: record[k] for k in ('checks', 'passed')}, indent=1))
+    print(json.dumps({k: record.get(k) for k in ('checks', 'passed', 'solver_seconds', 'outputs')}, indent=1))
 
 
 if __name__ == '__main__':
