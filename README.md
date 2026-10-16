@@ -38,7 +38,10 @@ process and part-scale studies. Its first [process simulations](docs/PROCESS_SIM
 run AdditiveFOAM in a pinned container. Against three NIST AM-Bench cases,
 the calibrated tutorial reproduces cross-section width within 6 %. Its
 melt-pool length is 9 to 36 % short, which is recorded rather than tuned
-away. A 316L sweep is published as an uncalibrated trend.
+away. A 316L sweep is published as an uncalibrated trend. The
+[part-scale chain](docs/PART_SCALE_SIMULATION.md) now runs verified corpus
+geometry in a pinned adamantine image, and its heat balance closes at 0.5 mm
+cells.
 
 ![Round roof versus teardrop roof: the overhang screen separates them](docs/visuals/dfam/channel-section.png)
 

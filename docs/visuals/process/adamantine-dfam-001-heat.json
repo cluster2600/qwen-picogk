@@ -1,0 +1,15 @@
+{
+ "frame_ms": 140,
+ "frames": 31,
+ "image": "adamantine-dfam-001-heat.gif",
+ "image_sha256": "725054ca9922413f8fea3c4c449edabbd05447028eb6457edc0eebcd34bc5ccd",
+ "manufacturing_qualified": false,
+ "raster_cell_mm": 0.5,
+ "render_source_sha256": "37de5351aac1387945e39bf9ff806f3f99f5416c38392da9848122f057e22a13",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "adamantine-pipeline-dfam-001-0.5mm.json": "baa5af6212c1e436199305de1a9d5c1e759355538543dcf4b3d6acd844a9536b",
+  "vtu (concatenated)": "79d4368fbc09b60ce34b0349749d16c1e964e60736f0ce2f43ab9a0716e797c2"
+ },
+ "uncalibrated_for_any_machine": true
+}

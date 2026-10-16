@@ -157,7 +157,20 @@ machine". **Limits:** powder is a continuum, the free surface is flat and
 absorption is assumed, so this cannot predict dross, roughness or whether a
 particular machine prints a 1.0 mm wall.
 
-## Phase 3: compare design variants with adamantine (planned, 1 to 2 weeks)
+## Phase 3: compare design variants with adamantine (in progress)
+
+**Done on 16 October 2026** ([results](PART_SCALE_SIMULATION.md)):
+- `rombur/adamantine:1.1` is pinned by digest, and its shipped 316L example
+  matches the image's own regression data.
+- A separate `physics/adamantine/hexmesh.py`, rather than a checker mode, so
+  the corpus receipts stay valid, turns verified STLs into hexahedral meshes
+  within 1 % of the STL volume.
+- A laser line on `dfam-001` runs end to end. Its heat balance closes to
+  0.6 % at 0.5 mm cells but not at 1 mm cells (+16 %), which sets 0.5 mm as
+  the minimum resolution.
+
+**Remaining:** lumped-layer deposition, mechanics after checking the two
+suspected upstream issues, and the comparisons between variants.
 
 adamantine is the only reviewed code that predicts part-scale temperature,
 displacement and stress. Simulating every laser track of a 70 x 44 x 30 mm
@@ -166,7 +179,7 @@ part is out of reach on any hardware, but lumped layers about 1 mm thick on a
 
 ```mermaid
 flowchart LR
-    A["verified output STL"] --> B["checker export-hex<br/>parity raster to VTU hexes"]
+    A["verified output STL"] --> B["hexmesh.py<br/>parity raster to Gmsh hexes"]
     B --> C["material IDs<br/>solid, homogenised lattice"]
     D["layer writer<br/>lumped deposition,<br/>AMPES event-series CSV"] --> E["adamantine<br/>rombur/adamantine, pinned digest"]
     C --> E
@@ -175,9 +188,10 @@ flowchart LR
 ```
 
 1. **Image.** Pin `rombur/adamantine` by digest and run a shipped example.
-2. **Mesh.** A new `export-hex` mode in the checker writes its existing
-   occupancy raster as a hexahedral VTU mesh. Lattice regions get one
-   homogenised material: 1 mm gyroid walls cannot be resolved at part scale.
+2. **Mesh.** `physics/adamantine/hexmesh.py` writes the checker's occupancy
+   rule (vertical ray parity) as a Gmsh hexahedral mesh. It is a separate tool,
+   so the trusted checker and its receipts stay unchanged. Lattice regions get
+   one homogenised material: 1 mm gyroid walls cannot be resolved at part scale.
 3. **Deposition.** A small writer produces lumped layers, and per-track paths
    in AMPES's event-series format (time, x, y, z, power) for later track-level
    runs.
