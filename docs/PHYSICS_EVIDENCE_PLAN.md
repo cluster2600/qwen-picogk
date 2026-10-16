@@ -102,8 +102,17 @@ check and the 316L sweep ([results](PROCESS_SIMULATION.md)).
   model and is recorded as evidence; nothing was tuned to close it.
 - **316L sweep.** It is published as an uncalibrated trend only.
 
-**Remaining:** the width and depth comparison with Lane et al. (2020), and the
-thin-wall boxes.
+**Done on 16 October 2026:** validation against AM-Bench cases A, B and C,
+with the criteria committed before cases A and C were run.
+
+- **Width** passes in all three cases (within 6 %).
+- **Depth** passes in two of three.
+- **Length** fails in all three, falling 9 to 36 % short, with the gap
+  growing with speed.
+
+The model therefore supports width/depth-based indicators but not
+thermal-tail quantities. The thin-wall boxes are deferred until the length
+agrees (about 1.5 h of compute per wall width).
 
 AdditiveFOAM solves heat transfer and melt flow around a moving beam in a
 millimetre-scale box. It cannot read our STL files, and it has no solid
@@ -148,7 +157,20 @@ machine". **Limits:** powder is a continuum, the free surface is flat and
 absorption is assumed, so this cannot predict dross, roughness or whether a
 particular machine prints a 1.0 mm wall.
 
-## Phase 3: compare design variants with adamantine (planned, 1 to 2 weeks)
+## Phase 3: compare design variants with adamantine (in progress)
+
+**Done on 16 October 2026** ([results](PART_SCALE_SIMULATION.md)):
+- `rombur/adamantine:1.1` is pinned by digest, and its shipped 316L example
+  matches the image's own regression data.
+- A separate `physics/adamantine/hexmesh.py`, rather than a checker mode, so
+  the corpus receipts stay valid, turns verified STLs into hexahedral meshes
+  within 1 % of the STL volume.
+- A laser line on `dfam-001` runs end to end. Its heat balance closes to
+  0.6 % at 0.5 mm cells but not at 1 mm cells (+16 %), which sets 0.5 mm as
+  the minimum resolution.
+
+**Remaining:** lumped-layer deposition, mechanics after checking the two
+suspected upstream issues, and the comparisons between variants.
 
 adamantine is the only reviewed code that predicts part-scale temperature,
 displacement and stress. Simulating every laser track of a 70 x 44 x 30 mm
@@ -157,7 +179,7 @@ part is out of reach on any hardware, but lumped layers about 1 mm thick on a
 
 ```mermaid
 flowchart LR
-    A["verified output STL"] --> B["checker export-hex<br/>parity raster to VTU hexes"]
+    A["verified output STL"] --> B["hexmesh.py<br/>parity raster to Gmsh hexes"]
     B --> C["material IDs<br/>solid, homogenised lattice"]
     D["layer writer<br/>lumped deposition,<br/>AMPES event-series CSV"] --> E["adamantine<br/>rombur/adamantine, pinned digest"]
     C --> E
@@ -166,19 +188,26 @@ flowchart LR
 ```
 
 1. **Image.** Pin `rombur/adamantine` by digest and run a shipped example.
-2. **Mesh.** A new `export-hex` mode in the checker writes its existing
-   occupancy raster as a hexahedral VTU mesh. Lattice regions get one
-   homogenised material: 1 mm gyroid walls cannot be resolved at part scale.
+2. **Mesh.** `physics/adamantine/hexmesh.py` writes the checker's occupancy
+   rule (vertical ray parity) as a Gmsh hexahedral mesh. It is a separate tool,
+   so the trusted checker and its receipts stay unchanged. Lattice regions get
+   one homogenised material: 1 mm gyroid walls cannot be resolved at part scale.
 3. **Deposition.** A small writer produces lumped layers, and per-track paths
    in AMPES's event-series format (time, x, y, z, power) for later track-level
    runs.
 4. **Studies.** Solid, vented and lattice variants of `dfam-001` and
    `infill-001`: displacement and stress hot spots near overhangs and
    channels, read as comparisons between variants, not as predictions.
-5. **First, confirm two suspected upstream bugs** found by reading the code:
-   the von Mises formula appears to count one shear term twice and omit
-   another, and the cooling rate appears to be missing parentheses. If they
-   are real, report them upstream before relying on either output.
+5. **Upstream bugs, confirmed and reported** on 16 October 2026:
+   - the von Mises formula omits σxz and counts σyz twice
+     ([#501](https://github.com/adamantine-sim/adamantine/issues/501));
+   - the cooling rate lacks parentheses
+     ([#502](https://github.com/adamantine-sim/adamantine/issues/502));
+   - input validation rejects file-based deposition
+     ([#503](https://github.com/adamantine-sim/adamantine/issues/503),
+     worked around).
+
+   Comparisons use displacement until these are fixed.
 
 **Acceptance:** the shipped example reproduces; mesh export round-trips the
 part volume within 1 %; results are labelled as comparisons. **Limits:** no

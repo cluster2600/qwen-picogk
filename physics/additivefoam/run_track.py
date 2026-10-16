@@ -32,6 +32,25 @@ STEADY_FRACTION = (0.4, 0.9)    # beam between 0.8 and 1.8 mm: past start-up, be
 AMB_B = {'power_w': 179.2, 'speed_m_s': 0.8, 'length_um': 359.0, 'length_sd_um': 20.0, 'n': 10,
          'isotherm_k': 1290 + 273.15}
 
+# AMMT cases A, B and C. Length: in-situ thermography at 1290 degC, mean and SD
+# from https://www.nist.gov/ambench/chal-amb2018-02-mp-length. Width and depth:
+# ex-situ cross sections, class means and u_mean from Table 4 of B. Lane et al.,
+# Integr. Mater. Manuf. Innov. 9 (2020) 16-30, doi:10.1007/s40192-020-00169-1
+# (NIST public-access copy, pub_id 927485). The table labels u_mean in mm; the
+# values are in um, like the means beside them.
+# Acceptance, fixed before cases A and C were run (case B had already been seen):
+# every quantity at the 1290 degC isotherm; length within mean +/- 2 SD; width
+# and depth within +/- 10 % of the measured mean.
+AMMT = {
+    'A': {'power_w': 137.9, 'speed_m_s': 0.4, 'length_um': 300.0, 'length_sd_um': 12.0, 'length_n': 19,
+          'width_um': 148.0, 'width_umean_um': 1.07, 'depth_um': 42.0, 'depth_umean_um': 0.49},
+    'B': {'power_w': 179.2, 'speed_m_s': 0.8, 'length_um': 359.0, 'length_sd_um': 20.0, 'length_n': 10,
+          'width_um': 123.0, 'width_umean_um': 1.87, 'depth_um': 36.0, 'depth_umean_um': 0.56},
+    'C': {'power_w': 179.2, 'speed_m_s': 1.2, 'length_um': 370.0, 'length_sd_um': 10.0, 'length_n': 7,
+          'width_um': 106.0, 'width_umean_um': 0.37, 'depth_um': 30.0, 'depth_umean_um': 0.16},
+}
+CROSS_SECTION_TOLERANCE = 0.10
+
 # Assumed process for the 316L indicators (not machine data).
 LAYER_M, HATCH_M = 40e-6, 100e-6
 
@@ -190,6 +209,32 @@ def smoke(root, refine=1):
     return record
 
 
+def validate(root):
+    """AMB2018-02 cases A, B and C against length, width and depth, at 1290 degC."""
+    iso = AMB_B['isotherm_k']
+    cases = []
+    for name, ref in AMMT.items():
+        record = run_case(root, f'amb2018-02-{name.lower()}', material='IN625', power_w=ref['power_w'],
+                          speed_m_s=ref['speed_m_s'], isotherms_k=[iso, 1620.0, 1410.0])
+        pool = record['melt_pool'][f'{iso:g}']
+        checks = {'length_within_2sd': abs(pool['length_um'] - ref['length_um']) <= 2 * ref['length_sd_um']}
+        for key in ('width', 'depth'):
+            error = (pool[f'{key}_um'] - ref[f'{key}_um']) / ref[f'{key}_um']
+            checks[f'{key}_relative_error'] = round(error, 4)
+            checks[f'{key}_within_10pct'] = abs(error) <= CROSS_SECTION_TOLERANCE
+        checks['length_relative_error'] = round((pool['length_um'] - ref['length_um']) / ref['length_um'], 4)
+        record['reference'] = ref
+        record['checks'] = checks
+        cases.append(record)
+        print(f"case {name}: L {pool['length_um']} (meas {ref['length_um']}), W {pool['width_um']} "
+              f"(meas {ref['width_um']}), D {pool['depth_um']} (meas {ref['depth_um']})", flush=True)
+    return {'isotherm_k': iso, 'cases': cases,
+            'acceptance': 'at 1290 degC: length within mean +/- 2 SD; width and depth within 10 % of the mean; '
+                          'fixed before cases A and C were run, after case B had been seen',
+            'references': ['https://www.nist.gov/ambench/chal-amb2018-02-mp-length',
+                           'Lane et al. (2020) doi:10.1007/s40192-020-00169-1, Table 4']}
+
+
 def sweep(root, powers=(150, 200, 250, 300, 350), speeds=(0.6, 0.8, 1.0, 1.2, 1.4)):
     """316L power-speed grid with the tutorial's IN625-calibrated source (uncalibrated for 316L)."""
     liquidus = 1709.0
@@ -211,7 +256,7 @@ def sweep(root, powers=(150, 200, 250, 300, 350), speeds=(0.6, 0.8, 1.0, 1.2, 1.
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('mode', choices=('smoke', 'sweep'))
+    parser.add_argument('mode', choices=('smoke', 'validate', 'sweep'))
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--receipt', type=Path, required=True)
     parser.add_argument('--refine', type=int, default=1, help='divide the 20 um cells (smoke only)')
@@ -219,7 +264,8 @@ def main():
     if args.out.exists() or args.receipt.exists():
         parser.error('Use a new output directory and receipt path; never overwrite evidence')
     args.out.mkdir(parents=True)
-    body = smoke(args.out, args.refine) if args.mode == 'smoke' else sweep(args.out)
+    body = {'smoke': lambda: smoke(args.out, args.refine), 'validate': lambda: validate(args.out),
+            'sweep': lambda: sweep(args.out)}[args.mode]()
     record = {'schema': 'qwen-picogk.process.additivefoam@1', 'mode': args.mode, 'provenance': provenance(),
               'uncalibrated_for_any_machine': args.mode == 'sweep', 'manufacturing_qualified': False, **body}
     args.receipt.parent.mkdir(parents=True, exist_ok=True)

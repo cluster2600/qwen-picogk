@@ -1,0 +1,38 @@
+{
+ "active_vertices_of": 160000,
+ "case": "demo_316_short",
+ "checks": {
+  "all_in_285_580": true,
+  "max_within_10pct_of_gold": true,
+  "mean_within_10pct_of_gold": true
+ },
+ "cpus": 1,
+ "final_output": "output.67.0.vtu",
+ "final_output_sha256": "0f513affdcdb01c5acfac06d5f784d812bcc17b58a2e457a8aa1968be2f7831e",
+ "gold_dofs": {
+  "max": 474.402,
+  "mean": 301.47,
+  "min": 300.0,
+  "n": 229570
+ },
+ "gold_sha256": "4113de4b9ce92d30e06eb49e17c8e013d21065711538ebdcc18479b5759a3ad6",
+ "harness_sha256": "2fe998f37cf17220661e29595be8cb69598595eecdc5eedd644bd18a59a86c94",
+ "hexmesh_sha256": "08957cf43a964b3dc0686583eec53a57a610c41b2cbc21f3057ab5b713c2afe2",
+ "image": "rombur/adamantine:1.1@sha256:ac735f9b6fec7626e79e91061cbd03b6274478fbafcaf2dcbe078c042affc9fa",
+ "inputs_sha256": {
+  "demo_316_short.info": "8c65e09f8816b00d2c43fa33be9cc35813c07c470d001a580a98adfd516cfbd6",
+  "demo_316_short_scan_path.txt": "4220392e94f4915db12d2392d45a2251dc78a8272ebb130c31cc992dc90e20e7"
+ },
+ "manufacturing_qualified": false,
+ "mode": "smoke",
+ "passed": true,
+ "schema": "qwen-picogk.process.adamantine@1",
+ "solver_seconds": 22.1,
+ "temperature_vertices": {
+  "max": 473.819,
+  "mean": 301.478,
+  "min": 300.0,
+  "n": 60408
+ },
+ "uncalibrated_for_any_machine": true
+}

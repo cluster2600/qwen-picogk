@@ -1,0 +1,284 @@
+{
+ "acceptance": "at 1290 degC: length within mean +/- 2 SD; width and depth within 10 % of the mean; fixed before cases A and C were run, after case B had been seen",
+ "cases": [
+  {
+   "case": "amb2018-02-a",
+   "checks": {
+    "depth_relative_error": 0.1526,
+    "depth_within_10pct": false,
+    "length_relative_error": -0.0913,
+    "length_within_2sd": false,
+    "width_relative_error": -0.0124,
+    "width_within_10pct": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "3739bfdc7a0d97f3d50581b35dd1ea793b546b91513869324d367894cd6a9331",
+    "system": "780ee8c72480f080d5075b1d5c499c767fb143e24a581bf774d647dbb58a83f8"
+   },
+   "melt_pool": {
+    "1410": {
+     "csv_sha256": "636170d57a66f74b4f51ab9924abcb1cf8ac2e17ff4f60d9a63c72bf9591c25e",
+     "depth_sd_um": 0.04,
+     "depth_um": 55.89,
+     "length_sd_um": 2.07,
+     "length_um": 336.03,
+     "samples": 351,
+     "width_sd_um": 0.16,
+     "width_um": 159.6,
+     "window_s": [
+      0.002,
+      0.0045
+     ]
+    },
+    "1563.15": {
+     "csv_sha256": "c4524cccfffbfdc1251582639946878de10bc84f3b08be9bc63f4c373677aaa7",
+     "depth_sd_um": 0.04,
+     "depth_um": 48.41,
+     "length_sd_um": 1.39,
+     "length_um": 272.6,
+     "samples": 351,
+     "width_sd_um": 0.22,
+     "width_um": 146.17,
+     "window_s": [
+      0.002,
+      0.0045
+     ]
+    },
+    "1620": {
+     "csv_sha256": "3c14e0e2d466cac286ef42dac70b1df6bc8c2b800d7bdaab12bfd5ff079deb63",
+     "depth_sd_um": 0.04,
+     "depth_um": 46.2,
+     "length_sd_um": 1.89,
+     "length_um": 239.39,
+     "samples": 351,
+     "width_sd_um": 0.23,
+     "width_um": 141.26,
+     "window_s": [
+      0.002,
+      0.0045
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.0065,
+    "eta": null,
+    "isotherms_k": [
+     1563.15,
+     1620.0,
+     1410.0
+    ],
+    "material": "IN625",
+    "power_w": 137.9,
+    "radius_m": null,
+    "speed_m_s": 0.4,
+    "track_m": 0.002
+   },
+   "reference": {
+    "depth_um": 42.0,
+    "depth_umean_um": 0.49,
+    "length_n": 19,
+    "length_sd_um": 12.0,
+    "length_um": 300.0,
+    "power_w": 137.9,
+    "speed_m_s": 0.4,
+    "width_um": 148.0,
+    "width_umean_um": 1.07
+   },
+   "solver_seconds": 25.5
+  },
+  {
+   "case": "amb2018-02-b",
+   "checks": {
+    "depth_relative_error": 0.0708,
+    "depth_within_10pct": true,
+    "length_relative_error": -0.1653,
+    "length_within_2sd": false,
+    "width_relative_error": 0.0045,
+    "width_within_10pct": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "5741782e8cad7f2d178f4d9ad1248f5a4f7c473556aac4da8b150a793a88fcbc",
+    "system": "d1259e58849ed74ad1c7da255851728bbc2c833825c5394ce955c0c7706e869d"
+   },
+   "melt_pool": {
+    "1410": {
+     "csv_sha256": "64086f9c5d6ad572ce7c1d696ca6a0a821a774b90f6d8ee2be99314abb8eed33",
+     "depth_sd_um": 0.03,
+     "depth_um": 43.7,
+     "length_sd_um": 1.56,
+     "length_um": 391.28,
+     "samples": 169,
+     "width_sd_um": 0.1,
+     "width_um": 137.34,
+     "window_s": [
+      0.001,
+      0.00225
+     ]
+    },
+    "1563.15": {
+     "csv_sha256": "cff21f3dfe3e232eaf2f186012a7b9e50efb439a73d3b9292c821e9874d6e1fa",
+     "depth_sd_um": 0.04,
+     "depth_um": 38.55,
+     "length_sd_um": 1.43,
+     "length_um": 299.65,
+     "samples": 169,
+     "width_sd_um": 0.12,
+     "width_um": 123.55,
+     "window_s": [
+      0.001,
+      0.00225
+     ]
+    },
+    "1620": {
+     "csv_sha256": "a47c6ea51264f63c80d5ee0987cd9dbb6a66522f8b4a0c978da40cb9840b0bef",
+     "depth_sd_um": 0.05,
+     "depth_um": 36.78,
+     "length_sd_um": 1.18,
+     "length_um": 250.61,
+     "samples": 169,
+     "width_sd_um": 0.12,
+     "width_um": 118.54,
+     "window_s": [
+      0.001,
+      0.00225
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.004,
+    "eta": null,
+    "isotherms_k": [
+     1563.15,
+     1620.0,
+     1410.0
+    ],
+    "material": "IN625",
+    "power_w": 179.2,
+    "radius_m": null,
+    "speed_m_s": 0.8,
+    "track_m": 0.002
+   },
+   "reference": {
+    "depth_um": 36.0,
+    "depth_umean_um": 0.56,
+    "length_n": 10,
+    "length_sd_um": 20.0,
+    "length_um": 359.0,
+    "power_w": 179.2,
+    "speed_m_s": 0.8,
+    "width_um": 123.0,
+    "width_umean_um": 1.87
+   },
+   "solver_seconds": 14.7
+  },
+  {
+   "case": "amb2018-02-c",
+   "checks": {
+    "depth_relative_error": -0.075,
+    "depth_within_10pct": true,
+    "length_relative_error": -0.3616,
+    "length_within_2sd": false,
+    "width_relative_error": -0.056,
+    "width_within_10pct": true
+   },
+   "inputs_sha256": {
+    "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+    "constant": "e01dbb8a77fe2e865ddd7e2906b9107a89bbf3a6b0ceda33a3823aa9ed5b72b5",
+    "system": "18689e1d104ecea04040e1b921c69017bb0708986c557a1403094623183199f2"
+   },
+   "melt_pool": {
+    "1410": {
+     "csv_sha256": "b514dee4536ddb8197f6e647263a04f844324aae4ac16ed8435f37ea22f80fb9",
+     "depth_sd_um": 0.02,
+     "depth_um": 32.92,
+     "length_sd_um": 2.55,
+     "length_um": 339.96,
+     "samples": 113,
+     "width_sd_um": 0.25,
+     "width_um": 115.38,
+     "window_s": [
+      0.000666667,
+      0.0015
+     ]
+    },
+    "1563.15": {
+     "csv_sha256": "484ce1743f01136c30fd36a4859c1e1aa9f67880652262bb3a22c685220fcef5",
+     "depth_sd_um": 0.03,
+     "depth_um": 27.75,
+     "length_sd_um": 1.12,
+     "length_um": 236.19,
+     "samples": 113,
+     "width_sd_um": 0.28,
+     "width_um": 100.06,
+     "window_s": [
+      0.000666667,
+      0.0015
+     ]
+    },
+    "1620": {
+     "csv_sha256": "d248bbd2f27ccf4b2ecb49ddb7eb04db3763c69445be1eaca29d65f71d8f3bf2",
+     "depth_sd_um": 0.03,
+     "depth_um": 26.08,
+     "length_sd_um": 0.64,
+     "length_um": 192.66,
+     "samples": 113,
+     "width_sd_um": 0.29,
+     "width_um": 94.37,
+     "window_s": [
+      0.000666667,
+      0.0015
+     ]
+    }
+   },
+   "parameters": {
+    "cell_um": 20.0,
+    "end_time_s": 0.003166667,
+    "eta": null,
+    "isotherms_k": [
+     1563.15,
+     1620.0,
+     1410.0
+    ],
+    "material": "IN625",
+    "power_w": 179.2,
+    "radius_m": null,
+    "speed_m_s": 1.2,
+    "track_m": 0.002
+   },
+   "reference": {
+    "depth_um": 30.0,
+    "depth_umean_um": 0.16,
+    "length_n": 7,
+    "length_sd_um": 10.0,
+    "length_um": 370.0,
+    "power_w": 179.2,
+    "speed_m_s": 1.2,
+    "width_um": 106.0,
+    "width_umean_um": 0.37
+   },
+   "solver_seconds": 11.3
+  }
+ ],
+ "isotherm_k": 1563.15,
+ "manufacturing_qualified": false,
+ "mode": "validate",
+ "provenance": {
+  "additivefoam_commit": "9c05c5eb54db03faa342b14b0806efe740de8c44",
+  "dockerfile_sha256": "8eaae1aef88176e25cd8e8efc4f9bb0744467238918a561018297dfbbddd84f7",
+  "harness_sha256": "c118d0a4b953b90dc12fc84375030c8127f88d34311d805f1cb8a8c8fb0dcf6e",
+  "image": "qwen-picogk/additivefoam:2.0.0-9c05c5e",
+  "image_id": "sha256:40db6cd51eb8700a5904efdb509a1f57e8d07191ad373aa5305b1afae7e28133",
+  "ranks": 8,
+  "tutorial": "tutorials/AMB2018-02-B"
+ },
+ "references": [
+  "https://www.nist.gov/ambench/chal-amb2018-02-mp-length",
+  "Lane et al. (2020) doi:10.1007/s40192-020-00169-1, Table 4"
+ ],
+ "schema": "qwen-picogk.process.additivefoam@1",
+ "uncalibrated_for_any_machine": false
+}
