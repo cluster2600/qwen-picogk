@@ -10,9 +10,14 @@ data, and the chain from a verified STL to a thermal run on that geometry.
 - The image is pinned, and the shipped example matches its regression data.
 - A verified corpus STL now runs end to end in adamantine.
 - The heat balance closes to 0.6 % at 0.5 mm cells.
+- A lumped-layer thermo-elastic build mode exists and passed a three-layer
+  trial (clamped plate held at zero displacement, layers activated on
+  schedule).
+- Builds of three variants (solid, `dfam-001`, `debug-001`) are running.
+  Their comparison will be added when they finish.
+- Three adamantine defects were found and reported upstream (see below).
 
-No comparison between design variants has been run yet, and nothing here is
-calibrated or a prediction for a real machine.
+Nothing here is calibrated or a prediction for a real machine.
 
 ```mermaid
 flowchart LR
