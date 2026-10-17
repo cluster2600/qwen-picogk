@@ -188,8 +188,14 @@ model.
   thermo-elasticity the cooled state cannot depend on the build history at
   all.
 
-**Remaining:** elastoplastic runs on the cooling schedule, homogenised lattice
-variants, and stress once adamantine #501 is fixed.
+**Plasticity check.** In adamantine 1.1 the J2 return mapping updates only
+the stress; plastic strain never reaches the displacement solve. A 300 MPa
+yield gives the same displacement as a purely elastic run, to six decimals.
+Elastoplastic residual distortion needs an upstream fix or another solver.
+
+**Remaining:** homogenised lattice variants (elastic), stress once
+adamantine #501 is fixed, and a plasticity-capable solver for residual
+distortion.
 
 adamantine is the only reviewed code that predicts part-scale temperature,
 displacement and stress. Simulating every laser track of a 70 x 44 x 30 mm

@@ -154,5 +154,19 @@ class AdamantineHarnessTest(unittest.TestCase):
             self.assertLess(abs(row['effect']), 0.005)          # vanishes once cooled
             self.assertGreater(hot[key]['effect'], 0.03)         # present while hot
 
+    def test_plasticity_trial_records_identical_displacement(self):
+        record = json.loads((EVIDENCE / 'adamantine-plasticity-trial.json').read_text())
+        trials = record['trials']
+        self.assertTrue(record['identical_displacement'])
+        self.assertEqual({t['max_displacement_mm'] for t in trials.values()}, {trials['el']['max_displacement_mm']})
+        for name, row in trials.items():
+            receipt = EVIDENCE / f'adamantine-plasticity-trial-{name}.json'
+            self.assertEqual(hashlib.sha256(receipt.read_bytes()).hexdigest(), row['receipt_sha256'])
+        plastic = json.loads((EVIDENCE / 'adamantine-plasticity-trial-y300.json').read_text())
+        self.assertEqual(plastic['uniaxial_yield_mpa'], 300.0)
+        self.assertIn('elastic_limit 2.44949e+08', run_case.LAYERS_INFO.format(
+            plastic=' elastic_limit 2.44949e+08', material_height_m=0, new_material_temperature_k=1720,
+            duration_s=1, dt_s=0.1, mech_factor=1, output_every=1))
+
 if __name__ == '__main__':
     unittest.main()
