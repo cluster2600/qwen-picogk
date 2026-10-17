@@ -85,6 +85,14 @@ def metrics(run, receipt):
             'receipt_sha256': sha(receipt), 'final_output_sha256': sha(files[-1])}
 
 
+def section_cut(points):
+    """Nodes on the grid plane nearest to x = 0, and the cell size along y."""
+    x0 = points[np.argmin(np.abs(points[:, 0])), 0]
+    cut = np.abs(points[:, 0] - x0) < 1e-3
+    ys = np.unique(np.round(points[cut, 1], 4))
+    return cut, float(np.diff(ys).min()) if len(ys) > 1 else 1.0
+
+
 def section_figure(runs, out):
     path = fresh(out / 'adamantine-layers-section.png')
     figure, axes = plt.subplots(1, len(runs), figsize=(4.0 * len(runs), 3.8), dpi=128, facecolor=BG, sharey=True)
@@ -93,8 +101,9 @@ def section_figure(runs, out):
     for name, run in runs.items():
         last = read(outputs(run)[-1])
         p, u, T = last['points'], last['displacement'], last['temperature']
-        cut = (np.abs(p[:, 0]) < 0.51) & (T > 0)
-        grid = raster(p[cut, 1], p[cut, 2], np.linalg.norm(u[cut], axis=1), SECTION, cell=1.0)
+        plane, cell = section_cut(p)
+        cut = plane & (T > 0)
+        grid = raster(p[cut, 1], p[cut, 2], np.linalg.norm(u[cut], axis=1), SECTION, cell=cell)
         fields.append((name, grid))
         vmax = max(vmax, np.nanmax(grid))
     for axis, (name, grid) in zip(axes, fields):
@@ -160,8 +169,9 @@ def build_gif(run, name, out):
     for f in files:
         data = read(f)
         p, T = data['points'], data['temperature']
-        cut = (np.abs(p[:, 0]) < 0.51) & (T > 0)
-        grid = raster(p[cut, 1], p[cut, 2], T[cut], SECTION, cell=1.0)
+        plane, cell = section_cut(p)
+        cut = plane & (T > 0)
+        grid = raster(p[cut, 1], p[cut, 2], T[cut], SECTION, cell=cell)
         figure, axis = plt.subplots(figsize=(5.4, 4.2), dpi=100, facecolor=BG)
         image = axis.imshow(grid, origin='lower', extent=SECTION, cmap='magma', vmin=300, vmax=1750,
                             interpolation='nearest')
@@ -171,7 +181,7 @@ def build_gif(run, name, out):
             side.set_color(GRID)
         axis.set_xlabel('y (mm)', color=MUTED, fontsize=8)
         axis.set_ylabel('z (mm)', color=MUTED, fontsize=8)
-        axis.set_title(f'{name}, section x = 0, t = {data["time"]:.0f} s', color=INK, fontsize=10, loc='left')
+        axis.set_title(f'{name}, section near x = 0, t = {data["time"]:.0f} s', color=INK, fontsize=10, loc='left')
         bar = figure.colorbar(image, ax=axis, fraction=0.04, pad=0.02)
         bar.set_label('T (K)', color=MUTED, fontsize=8)
         bar.ax.tick_params(colors=MUTED, labelsize=7)

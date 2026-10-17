@@ -305,7 +305,7 @@ memory_space host
 
 
 def layers(stl, out, cell_mm=1.0, plate_mm=5.0, layer_mm=1.0, interval_s=2.0, cool_s=60.0, dt_s=0.02,
-           mech_factor=50, new_material_temperature_k=1720.0, max_layers=None, offset_mm=0.0):
+           mech_factor=50, new_material_temperature_k=1720.0, max_layers=None, offset_mm=0.0, first_s=None):
     """Lumped-layer build on a clamped plate, linear thermo-elastic, as a comparison between variants.
 
     Each layer of the part is activated at new_material_temperature_k, above the liquidus, so its
@@ -333,14 +333,16 @@ def layers(stl, out, cell_mm=1.0, plate_mm=5.0, layer_mm=1.0, interval_s=2.0, co
     count = int(round((z1 - z0) / layer_mm))
     if max_layers:
         count = min(count, max_layers)
+    first_s = interval_s if first_s is None else first_s       # time of the first layer
     rows = ['3']
     for k in range(count):
         zc = z0 + (k + 0.5) * layer_mm
         # Boxes touching the next cell layer would activate it too, so keep 1 % clear at each face.
         rows.append(' '.join(f'{v:.6g}' for v in (cx * 1e-3, cy * 1e-3, zc * 1e-3, sx * 1e-3, sy * 1e-3,
-                                                     (layer_mm - 0.02 * cell_mm) * 1e-3, (k + 1) * interval_s, 0.0)))
+                                                     (layer_mm - 0.02 * cell_mm) * 1e-3, first_s + k * interval_s,
+                                                     0.0)))
     (out / 'layers.txt').write_text('\n'.join(rows) + '\n')
-    duration = count * interval_s + cool_s
+    duration = first_s + (count - 1) * interval_s + cool_s
     (out / 'scan_path.txt').write_text(f'Number of path segments\n2\nMode x y z pmod param\n'
                                        f'1 {cx} {cy} {z1} 0 {duration}\n')
     steps = round(duration / dt_s)
@@ -354,7 +356,8 @@ def layers(stl, out, cell_mm=1.0, plate_mm=5.0, layer_mm=1.0, interval_s=2.0, co
     if run.returncode or not outputs:
         raise RuntimeError(log[-1500:])
     return {'stl_sha256': sha(stl), 'mesh': summary, 'layers': count, 'layer_mm': layer_mm,
-            'interval_s': interval_s, 'cool_s': cool_s, 'duration_s': duration, 'time_step_s': dt_s,
+            'interval_s': interval_s, 'first_layer_s': first_s, 'cool_s': cool_s, 'duration_s': duration,
+            'time_step_s': dt_s, 'plate_mm': plate_mm,
             'mechanical_time_step_factor': mech_factor, 'new_material_temperature_k': new_material_temperature_k,
             'solver_seconds': round(time.time() - started, 1), 'cpus': 4, 'outputs': len(outputs),
             'inputs_sha256': {p.name: sha(p) for p in (out / 'part.info', out / 'layers.txt', out / 'part.msh')}}
@@ -370,6 +373,12 @@ def main():
     parser.add_argument('--max-layers', type=int, help='layers: stop after this many layers (trials)')
     parser.add_argument('--cool-s', type=float, default=60.0, help='layers: cooling time after the last layer')
     parser.add_argument('--offset-mm', type=float, default=0.0, help='layers: shift the hex grid in x and y')
+    parser.add_argument('--plate-mm', type=float, default=5.0, help='layers: build plate thickness')
+    parser.add_argument('--layer-mm', type=float, default=1.0, help='layers: lumped layer thickness')
+    parser.add_argument('--interval-s', type=float, default=2.0, help='layers: time between lumped layers')
+    parser.add_argument('--dt-s', type=float, default=0.02, help='layers: explicit thermal time step')
+    parser.add_argument('--mech-factor', type=int, default=50, help='layers: thermal steps per mechanical solve')
+    parser.add_argument('--first-s', type=float, help='layers: time of the first layer (default: one interval)')
     args = parser.parse_args()
     if args.out.exists() or args.receipt.exists():
         parser.error('use a new output directory and receipt path')
@@ -379,7 +388,9 @@ def main():
         body = pipeline(args.stl, args.out, cell_mm=args.cell_mm)
     else:
         body = layers(args.stl, args.out, cell_mm=args.cell_mm, max_layers=args.max_layers, cool_s=args.cool_s,
-                      offset_mm=args.offset_mm)
+                      offset_mm=args.offset_mm, plate_mm=args.plate_mm, layer_mm=args.layer_mm,
+                      interval_s=args.interval_s, dt_s=args.dt_s, mech_factor=args.mech_factor,
+                      first_s=args.first_s)
     record = {'schema': 'qwen-picogk.process.adamantine@1', 'mode': args.mode, 'image': IMAGE,
               'harness_sha256': sha(__file__), 'hexmesh_sha256': sha(HERE / 'hexmesh.py'),
               'uncalibrated_for_any_machine': True, 'manufacturing_qualified': False, **body}

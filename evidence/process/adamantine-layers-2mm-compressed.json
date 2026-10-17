@@ -1,0 +1,68 @@
+{
+ "analysis_sha256": "531a258ebfda47585b7fdb2bb0b1f0a84c8c82fbe46fd71aa09d1d38672a5cdb",
+ "baseline": "c2comp-solid",
+ "checks": {
+  "c2comp-dfam-001": {
+   "cooled_below_600_k": false,
+   "plate_bottom_clamped": true
+  },
+  "c2comp-solid": {
+   "cooled_below_600_k": false,
+   "plate_bottom_clamped": true
+  }
+ },
+ "displacement_not_von_mises": true,
+ "manufacturing_qualified": false,
+ "schema": "qwen-picogk.process.adamantine-layers@1",
+ "uncalibrated_for_any_machine": true,
+ "variants": {
+  "c2comp-dfam-001": {
+   "final_output_sha256": "29105e8fb814269628206df36844de3e5624afe220a8151bf8453640d91f12e1",
+   "final_temperature_active": {
+    "max": 813.1,
+    "mean": 779.6,
+    "min": 718.5
+   },
+   "final_time_s": 92.8,
+   "max_displacement_at_mm": [
+    31.0,
+    -4.0,
+    30.0
+   ],
+   "max_displacement_mm": 0.6271,
+   "outputs": 21,
+   "plate_bottom_max_displacement_mm": 0.0,
+   "receipt_sha256": "2655d788c9cc84d7d86c59f8eea0b9927496e8deac11c6052b0ffd467261e532",
+   "sampled_peak_temperature_k": 1360.2,
+   "slab_top_mean_uz_mm": -0.2171,
+   "slab_top_uz_range_mm": 0.2446,
+   "solver_seconds": 436.8,
+   "stl_sha256": "4b7ece573fc7364d6f8bea34d880f0b709cc39f6d5624f2a7315d5d97c6231da",
+   "top_layer_z_mm": 30.0
+  },
+  "c2comp-solid": {
+   "final_output_sha256": "f0d46b1a7adb71eed4dbe005563c33ee2be402061d03f690f2be1425b4790c14",
+   "final_temperature_active": {
+    "max": 834.8,
+    "mean": 806.0,
+    "min": 752.1
+   },
+   "final_time_s": 92.8,
+   "max_displacement_at_mm": [
+    31.0,
+    -4.0,
+    30.0
+   ],
+   "max_displacement_mm": 0.6075,
+   "outputs": 21,
+   "plate_bottom_max_displacement_mm": 0.0,
+   "receipt_sha256": "730e46600a251991155327fc90ceb8884328b858cd7ec89a4f432a0156291ce3",
+   "sampled_peak_temperature_k": 1361.0,
+   "slab_top_mean_uz_mm": -0.2056,
+   "slab_top_uz_range_mm": 0.2346,
+   "solver_seconds": 441.5,
+   "stl_sha256": "79cb1719d6ff41222be81d5dc43740db0680cb8f46be4db2fab6946df44830ed",
+   "top_layer_z_mm": 30.0
+  }
+ }
+}

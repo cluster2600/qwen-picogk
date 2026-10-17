@@ -1,0 +1,57 @@
+{
+ "analysis_sha256": "ee0fa1b45fd2f45634d77ec6d23642709dace594627809e4450593f3ede57849",
+ "baseline": "solid",
+ "configs": {
+  "1 mm, compressed": {
+   "final_time_s": 124.0,
+   "max_displacement_mm": {
+    "effect": 0.03919,
+    "solid": 0.6328,
+    "variant": 0.6576
+   },
+   "slab_top_uz_range_mm": {
+    "effect": 0.04832,
+    "solid": 0.238,
+    "variant": 0.2495
+   },
+   "solid_final_mean_temperature_k": 785.5
+  },
+  "2 mm, compressed": {
+   "final_time_s": 92.8,
+   "max_displacement_mm": {
+    "effect": 0.03226,
+    "solid": 0.6075,
+    "variant": 0.6271
+   },
+   "slab_top_uz_range_mm": {
+    "effect": 0.04263,
+    "solid": 0.2346,
+    "variant": 0.2446
+   },
+   "solid_final_mean_temperature_k": 806.0
+  },
+  "2 mm, cooled to 300 K": {
+   "final_time_s": 6300.8,
+   "max_displacement_mm": {
+    "effect": -0.00172,
+    "solid": 1.0444,
+    "variant": 1.0426
+   },
+   "slab_top_uz_range_mm": {
+    "effect": -0.00257,
+    "solid": 0.3889,
+    "variant": 0.3879
+   },
+   "solid_final_mean_temperature_k": 300.0
+  }
+ },
+ "manufacturing_qualified": false,
+ "schema": "qwen-picogk.process.adamantine-schedule@1",
+ "sources_sha256": {
+  "adamantine-layers-2mm-compressed.json": "de6681d4d895fdf9dcb89046ec5d36de0dd20c7e1fe7dd630067b2db520d50f4",
+  "adamantine-layers-2mm-cooled.json": "35bf5c9f92610904081c406089281f28133da3b9b3b3d544e08d425ff5b650ba",
+  "adamantine-layers-comparison.json": "370abc49d684e1e9e22fe618ae7b9d33f1b18c989ee5d2431211f7efa9c6b687"
+ },
+ "uncalibrated_for_any_machine": true,
+ "variant": "dfam-001"
+}
