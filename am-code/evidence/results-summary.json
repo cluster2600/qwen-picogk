@@ -669,22 +669,97 @@
       "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
       "lost_baseline_passes": [],
       "manufacturing_authorized": false
+    },
+    {
+      "name": "course014-32b-api009-continuation2",
+      "course": "014",
+      "run": "32b-api009-continuation2",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 5,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "5e75429ebcc454ea991b5a2790c927fab81706733c126599c868be8527dab9c2",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course015-32b-repair010-fresh1",
+      "course": "015",
+      "run": "32b-repair010-fresh1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 4,
+      "development_total": 12,
+      "scan_passed": 1,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "43489285c8bddf9ecac501329aee0360e07dfa7f8f274b997003764282ded549",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-initialize",
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course016-32b-field011-continuation1",
+      "course": "016",
+      "run": "32b-field011-continuation1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 6,
+      "development_total": 12,
+      "scan_passed": 1,
+      "scan_total": 4,
+      "stopped": 15,
+      "truncated": 1,
+      "adapter_sha256": "06827b46061b9af89f8fdf4393749a9732e39b24ca639e24b668b446ed98399a",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-debug-api"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course017-32b-compact012-continuation1",
+      "course": "017",
+      "run": "32b-compact012-continuation1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 5,
+      "development_total": 12,
+      "scan_passed": 1,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "04fc4530f0f32e2785d232f5a482bd2329ec4f8ad653b2636d32ccf6add07b59",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [],
+      "manufacturing_authorized": false
     }
   ],
   "current_training": {
-    "course": "014",
-    "run": "32b-api009-continuation2",
+    "course": "018",
+    "run": "32b-typed013-fresh1",
     "base": "32B",
     "status": "registered_running_no_candidate_result",
-    "prospective_original_sha256": "cb725a85ddc1c4a65f9c269b2cb89c28495bc32b911d82e2b8bf20e461398cd2",
-    "runtime_protocol_original_sha256": "e8c8b65874df03828cc629a37c5d06d7183967d6ca073c4fc88b70fea5fa7278",
-    "training_rows": 352,
-    "planned_steps": 704,
-    "epochs": 2,
+    "prospective_original_sha256": "a3e6a11b4ad80cd9ef4b263b79a2bf44abc2a65e99053cd1d50d230c43e791c4",
+    "runtime_protocol_original_sha256": "c25c68893f26b124c3d308f9b10f5cd766a408130bc02004443f093740f239a1",
+    "training_rows": 256,
+    "planned_steps": 256,
+    "epochs": 1,
     "learning_rate": 2e-06,
-    "fresh_untouched_base": false,
+    "fresh_untouched_base": true,
     "fresh_optimizer": true,
-    "parent_adapter_sha256": "e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6",
+    "parent_adapter_sha256": null,
     "smoke_adapter_resumed": false,
     "active_weights_logs_captures_or_scores_included": false,
     "model_qualification": "not_established",
@@ -692,7 +767,7 @@
   },
   "final_set": "embargoed; no final model evaluation claimed",
   "manufacturing_authorized": false,
-  "completed_course_count": 12,
+  "completed_course_count": 16,
   "corrective003_teachers": {
     "distinct_teachers": 16,
     "message_rows": 32,
@@ -715,18 +790,18 @@
     "formal_scores_unchanged": true
   },
   "last_completed_training": {
-    "name": "course013-32b-state008-epoch2",
-    "course": "013",
-    "run": "32b-state008-epoch2",
+    "name": "course017-32b-compact012-continuation1",
+    "course": "017",
+    "run": "32b-compact012-continuation1",
     "base": "32B",
     "status": "rejected",
     "development_passed": 5,
     "development_total": 12,
-    "scan_passed": 0,
+    "scan_passed": 1,
     "scan_total": 4,
     "stopped": 16,
     "truncated": 0,
-    "adapter_sha256": "e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6",
+    "adapter_sha256": "04fc4530f0f32e2785d232f5a482bd2329ec4f8ad653b2636d32ccf6add07b59",
     "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
     "lost_baseline_passes": [],
     "manufacturing_authorized": false
@@ -944,6 +1019,101 @@
     "manufacturing_authorized": false
   },
   "corrective009_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
+  },
+  "current_course014": {
+    "name": "course014-32b-api009-continuation2",
+    "course": "014",
+    "run": "32b-api009-continuation2",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 5,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "5e75429ebcc454ea991b5a2790c927fab81706733c126599c868be8527dab9c2",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective010_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 144
+  },
+  "current_course015": {
+    "name": "course015-32b-repair010-fresh1",
+    "course": "015",
+    "run": "32b-repair010-fresh1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 1,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "43489285c8bddf9ecac501329aee0360e07dfa7f8f274b997003764282ded549",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-initialize",
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective011_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
+  },
+  "current_course016": {
+    "name": "course016-32b-field011-continuation1",
+    "course": "016",
+    "run": "32b-field011-continuation1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 6,
+    "development_total": 12,
+    "scan_passed": 1,
+    "scan_total": 4,
+    "stopped": 15,
+    "truncated": 1,
+    "adapter_sha256": "06827b46061b9af89f8fdf4393749a9732e39b24ca639e24b668b446ed98399a",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-debug-api"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective012_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
+  },
+  "current_course017": {
+    "name": "course017-32b-compact012-continuation1",
+    "course": "017",
+    "run": "32b-compact012-continuation1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 5,
+    "development_total": 12,
+    "scan_passed": 1,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "04fc4530f0f32e2785d232f5a482bd2329ec4f8ad653b2636d32ccf6add07b59",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [],
+    "manufacturing_authorized": false
+  },
+  "corrective013_teachers": {
     "cases": 48,
     "passed": 48,
     "formulations": 96
