@@ -236,6 +236,35 @@ Records: [schedule](../evidence/process/adamantine-layers-schedule.json),
 [2 mm compressed](../evidence/process/adamantine-layers-2mm-compressed.json),
 [2 mm cooled](../evidence/process/adamantine-layers-2mm-cooled.json).
 
+### Plasticity does not reach the displacement in adamantine 1.1
+
+The next question was whether plasticity makes the cooled distortion depend on
+the channel. A short trial (2 mm cells, two layers, cooling to 600 s) compared
+three otherwise identical runs:
+- elastic, with no plastic inputs;
+- plastic, with an effectively infinite yield stress;
+- plastic, with a 300 MPa uniaxial yield, a 2 GPa plastic modulus and
+  isotropic hardening.
+
+All three give the same displacement to six decimals: 0.381896 mm maximum and
+0.073257 mm mean.
+
+The source explains why. `MechanicalPhysics::solve` solves the global system
+"assuming that the deformation is elastic". Only afterwards does
+`compute_stress` apply the J2 radial return, and only to the stress. The
+plastic strain never enters the equilibrium solve, so the displacement field
+is the elastic one whatever the yield stress. In release 1.1, plasticity
+affects only the stress output, which is itself affected by #501. Residual
+distortion with plasticity therefore cannot be computed with this tool. The
+trial is recorded in [adamantine-plasticity-trial.json](../evidence/process/adamantine-plasticity-trial.json).
+
+Two input details are recorded in `run_case.py`:
+- adamantine compares the norm of the deviatoric stress with `elastic_limit`,
+  so a uniaxial yield σy enters as √(2/3)·σy;
+- the back-stress update looks dimensionally wrong (the plastic modulus
+  squared, with no strain increment), so the runs used pure isotropic
+  hardening, which multiplies it by zero.
+
 **How far these numbers go.** They are a comparison under one uncalibrated
 model and do not predict distortion.
 - **Compressed time.** Each 1 mm lumped layer stands for roughly 25 real
@@ -258,11 +287,10 @@ Displacement was used throughout; the von Mises output is affected by #501.
 1. **Grid sensitivity.** Done for the channel, by a half-cell shift. The
    holes' effect could be checked the same way. A true 0.5 mm repeat waits for
    cheaper time stepping.
-2. **Elastoplastic runs.** Done for the cooling question in elastic form: a
-   fully cooled 2 mm run removes the channel effect. Only plasticity can make
-   residual distortion depend on geometry through the thermal history.
-   adamantine 1.1 supports J2 plasticity with a temperature-independent yield
-   stress, so it can be added next on the 2 mm cooling schedule.
+2. **Elastoplastic residual distortion: not possible with adamantine 1.1.**
+   Plastic strain does not reach the displacement solve (see above). It needs
+   an upstream fix, or another solver such as CalculiX with an inherent-strain
+   or sequentially coupled thermo-mechanical approach.
 3. **Lattice variants:** `infill-001` needs a homogenised material for its
    core, because 1 mm gyroid walls cannot be resolved at part-scale cells.
 4. **Stress:** once #501 is fixed, add von Mises comparisons alongside
