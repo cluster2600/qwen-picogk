@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Original150 and thirteen completed rejections preserved; new48native010teachers and496rowmixture; immutable015protocol only, active payload/finalcontents excluded.",
+  "scope": "Original150 and fourteen completed rejections preserved; new48native011teachers and592rowmixture; immutable016protocol only, active payload/finalcontents excluded.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -2355,10 +2355,10 @@
       "transform": "none"
     },
     {
-      "source": "publication-staging/course014-current-assets.json",
+      "source": "publication-staging/course015-current-assets.json",
       "public_path": "evidence/assets.json",
-      "source_sha256": "c57a90fdc5e1ac71389fe5ceb1244cfdcba73a10ad6280ac3403a5aa979d059e",
-      "public_sha256": "c57a90fdc5e1ac71389fe5ceb1244cfdcba73a10ad6280ac3403a5aa979d059e",
+      "source_sha256": "67ca0ac0f9f92db4bcb515cfa68ea1eeb8c95bd5285caa93bc1ee1e8bee612b6",
+      "public_sha256": "67ca0ac0f9f92db4bcb515cfa68ea1eeb8c95bd5285caa93bc1ee1e8bee612b6",
       "transform": "none"
     },
     {
@@ -3934,6 +3934,153 @@
       "public_path": "evidence/course015-runtime-protocol.json",
       "source_sha256": "d13c356707ba5ea16e472d32bd2ad63901a2a0fe72bcae428eb7466cfd934620",
       "public_sha256": "e9a80fb5590582a3a24190b7327b8b62416a924a538e6e3ff547e53748b8e7ee",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/course015-cpu-audit.json",
+      "public_path": "evidence/course015-completed/cpu-audit.json",
+      "source_sha256": "afb09b1c12d6b911a615d6ca25808515c811c5aa233dd3381d4925273d4b6b67",
+      "public_sha256": "afb09b1c12d6b911a615d6ca25808515c811c5aa233dd3381d4925273d4b6b67",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course015-evaluation-protocol.json",
+      "public_path": "evidence/course015-completed/evaluation-protocol.json",
+      "source_sha256": "b419bbc5ed9479a1b099a0524c61990387f199cad39b411b6f9ff2c5b1970b46",
+      "public_sha256": "b419bbc5ed9479a1b099a0524c61990387f199cad39b411b6f9ff2c5b1970b46",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/runs/32b-repair010-fresh1/training-receipt.json",
+      "public_path": "evidence/course015-completed/training-receipt.json",
+      "source_sha256": "fa861d2b4716ac5fbda0fb2d4906df52e4145c83a5c0810db960d3ebe810a860",
+      "public_sha256": "fa861d2b4716ac5fbda0fb2d4906df52e4145c83a5c0810db960d3ebe810a860",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/runs/32b-repair010-fresh1/protocol.json",
+      "public_path": "evidence/course015-completed/runtime-protocol.json",
+      "source_sha256": "d13c356707ba5ea16e472d32bd2ad63901a2a0fe72bcae428eb7466cfd934620",
+      "public_sha256": "e9a80fb5590582a3a24190b7327b8b62416a924a538e6e3ff547e53748b8e7ee",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/runs/32b-repair010-fresh1/adapter/adapter_config.json",
+      "public_path": "evidence/course015-completed/adapter_config.json",
+      "source_sha256": "3f28ee9b98a94b927de1cab9deb04d0b40c578b97c2407ef04c0b10a38cb7373",
+      "public_sha256": "a1ee7c1c8a3a0173f9de471f9822cf8b714bdb804b3b6fc61984b93220cb9158",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/candidate-scores-course015/report.json",
+      "public_path": "evidence/course015-completed/development-report.json",
+      "source_sha256": "cd5e8f2b29a8c847bb46450a25d563a00e889cbeb827bfef5d37d4217ab398ef",
+      "public_sha256": "39e657c2fcca06bb07b43a46f3fef4736ccf79d3ca35ef54249cd74799981b4d",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/scan-scores-course015/report.json",
+      "public_path": "evidence/course015-completed/scan-report.json",
+      "source_sha256": "1136da2bf166f56a05d514417ebf79b21de8eb9143efdd6523e749e76c437d62",
+      "public_sha256": "a71ac1a844a9626e51cc99d44aa04f8b5dd3a66b3697891fe890dc084e5b60af",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/qualification-rejected-course015.log",
+      "public_path": "evidence/course015-completed/formal-rejection.json",
+      "source_sha256": "e513d021f3978af0de7bdadc7c3ec58493d4ba8ef2ebfe8fe690748afd8b9870",
+      "public_sha256": "e513d021f3978af0de7bdadc7c3ec58493d4ba8ef2ebfe8fe690748afd8b9870",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course015-completed-diagnostic.json",
+      "public_path": "evidence/course015-completed/completed-diagnostic.json",
+      "source_sha256": "477a1192ebbb321f75624f79163b85c1ff79072d34ebc9de5e9fe4c891f8b86e",
+      "public_sha256": "477a1192ebbb321f75624f79163b85c1ff79072d34ebc9de5e9fe4c891f8b86e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/audit-course015.py",
+      "public_path": "diagnostics/audit-course015.py",
+      "source_sha256": "d762555be8667582505ca6cf1bff58a4b5630a25070789000ce6dcbae00a8b00",
+      "public_sha256": "d762555be8667582505ca6cf1bff58a4b5630a25070789000ce6dcbae00a8b00",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-011/author.py",
+      "public_path": "data/corrective-011/author.py",
+      "source_sha256": "070d58251f22256b7ea738abde2306dc99e1c983a65c346d18e5e44abd716a87",
+      "public_sha256": "070d58251f22256b7ea738abde2306dc99e1c983a65c346d18e5e44abd716a87",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-011/validate.py",
+      "public_path": "data/corrective-011/validate.py",
+      "source_sha256": "274474f932690bdb51751bdddf6873446bcbc13719c73b52fed6f1eea10546cf",
+      "public_sha256": "274474f932690bdb51751bdddf6873446bcbc13719c73b52fed6f1eea10546cf",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-011/train.jsonl",
+      "public_path": "data/corrective-011/train.jsonl",
+      "source_sha256": "48c569348ac96b5e4920ea82ddc37218f8e80875d8ecd340913855d01c3c8295",
+      "public_sha256": "48c569348ac96b5e4920ea82ddc37218f8e80875d8ecd340913855d01c3c8295",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-011/cases.json",
+      "public_path": "data/corrective-011/cases.json",
+      "source_sha256": "6a63a0f675190fab80c9fc7abc270aa9e21a715d15bedb4e3b8a67bf095574cd",
+      "public_sha256": "6a63a0f675190fab80c9fc7abc270aa9e21a715d15bedb4e3b8a67bf095574cd",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/focused-32b-006/prepare.py",
+      "public_path": "data/focused-32b-006/prepare.py",
+      "source_sha256": "1a2d618c0f41850ba50da51c5c2fc86d0d579ee215d263fbf4b8e443af1e8eba",
+      "public_sha256": "1a2d618c0f41850ba50da51c5c2fc86d0d579ee215d263fbf4b8e443af1e8eba",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/focused-32b-006/train.jsonl",
+      "public_path": "data/focused-32b-006/train.jsonl",
+      "source_sha256": "a253acd42a733facbd7dc34bf471e18b8196a34a5a5f215135bfc1acf9d6eb18",
+      "public_sha256": "a253acd42a733facbd7dc34bf471e18b8196a34a5a5f215135bfc1acf9d6eb18",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/focused-32b-006/manifest.json",
+      "public_path": "data/focused-32b-006/manifest.json",
+      "source_sha256": "e09118d9607c31f8391765a435a1e75ce6b161cd2745ff42f4bdeaf4be13ca37",
+      "public_sha256": "e09118d9607c31f8391765a435a1e75ce6b161cd2745ff42f4bdeaf4be13ca37",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/focused-32b-006/token-rows.json",
+      "public_path": "data/focused-32b-006/token-rows.json",
+      "source_sha256": "5e3e512d24c787fac22dee935c823e6f9db3bae7d3e8ce67620000a758a49a65",
+      "public_sha256": "5e3e512d24c787fac22dee935c823e6f9db3bae7d3e8ce67620000a758a49a65",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/data/corrective-011/native-review-001/report.json",
+      "public_path": "data/corrective-011/native-review-summary.json",
+      "source_sha256": "efdfbfd80a39353677743f8c103f627dd81740780141dc0177777f4fecc3d036",
+      "public_sha256": "efdfbfd80a39353677743f8c103f627dd81740780141dc0177777f4fecc3d036",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course-016-protocol.json",
+      "public_path": "evidence/course-016-protocol.json",
+      "source_sha256": "1e5d5ad21beb98096b1c2ba26370b2eaf460b8a903313b3e213667dc0dd8d28e",
+      "public_sha256": "1e5d5ad21beb98096b1c2ba26370b2eaf460b8a903313b3e213667dc0dd8d28e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/runs/32b-field011-continuation1/protocol.json",
+      "public_path": "evidence/course016-runtime-protocol.json",
+      "source_sha256": "318799af8953cfaf1240a6156c26be6e82161cb0360717e848f472088290a068",
+      "public_sha256": "e441e48cea64b6cbc96e4e3639783a10a019bf3c16424e896fb2f869eec476b7",
       "transform": "local paths redacted only"
     }
   ]

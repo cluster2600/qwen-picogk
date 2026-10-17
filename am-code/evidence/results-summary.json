@@ -688,22 +688,42 @@
         "development-shell"
       ],
       "manufacturing_authorized": false
+    },
+    {
+      "name": "course015-32b-repair010-fresh1",
+      "course": "015",
+      "run": "32b-repair010-fresh1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 4,
+      "development_total": 12,
+      "scan_passed": 1,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "43489285c8bddf9ecac501329aee0360e07dfa7f8f274b997003764282ded549",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-initialize",
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
     }
   ],
   "current_training": {
-    "course": "015",
-    "run": "32b-repair010-fresh1",
+    "course": "016",
+    "run": "32b-field011-continuation1",
     "base": "32B",
     "status": "registered_running_no_candidate_result",
-    "prospective_original_sha256": "0ed6deb7c997353ffb9408a0c5741802fc1903383e7d294cb43fa91fad4f9c87",
-    "runtime_protocol_original_sha256": "d13c356707ba5ea16e472d32bd2ad63901a2a0fe72bcae428eb7466cfd934620",
-    "training_rows": 496,
-    "planned_steps": 496,
+    "prospective_original_sha256": "1e5d5ad21beb98096b1c2ba26370b2eaf460b8a903313b3e213667dc0dd8d28e",
+    "runtime_protocol_original_sha256": "318799af8953cfaf1240a6156c26be6e82161cb0360717e848f472088290a068",
+    "training_rows": 592,
+    "planned_steps": 592,
     "epochs": 1,
-    "learning_rate": 5e-06,
-    "fresh_untouched_base": true,
+    "learning_rate": 2e-06,
+    "fresh_untouched_base": false,
     "fresh_optimizer": true,
-    "parent_adapter_sha256": null,
+    "parent_adapter_sha256": "43489285c8bddf9ecac501329aee0360e07dfa7f8f274b997003764282ded549",
     "smoke_adapter_resumed": false,
     "active_weights_logs_captures_or_scores_included": false,
     "model_qualification": "not_established",
@@ -711,7 +731,7 @@
   },
   "final_set": "embargoed; no final model evaluation claimed",
   "manufacturing_authorized": false,
-  "completed_course_count": 13,
+  "completed_course_count": 14,
   "corrective003_teachers": {
     "distinct_teachers": 16,
     "message_rows": 32,
@@ -734,20 +754,21 @@
     "formal_scores_unchanged": true
   },
   "last_completed_training": {
-    "name": "course014-32b-api009-continuation2",
-    "course": "014",
-    "run": "32b-api009-continuation2",
+    "name": "course015-32b-repair010-fresh1",
+    "course": "015",
+    "run": "32b-repair010-fresh1",
     "base": "32B",
     "status": "rejected",
-    "development_passed": 5,
+    "development_passed": 4,
     "development_total": 12,
-    "scan_passed": 0,
+    "scan_passed": 1,
     "scan_total": 4,
     "stopped": 16,
     "truncated": 0,
-    "adapter_sha256": "5e75429ebcc454ea991b5a2790c927fab81706733c126599c868be8527dab9c2",
+    "adapter_sha256": "43489285c8bddf9ecac501329aee0360e07dfa7f8f274b997003764282ded549",
     "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
     "lost_baseline_passes": [
+      "development-initialize",
       "development-shell"
     ],
     "manufacturing_authorized": false
@@ -992,5 +1013,30 @@
     "cases": 48,
     "passed": 48,
     "formulations": 144
+  },
+  "current_course015": {
+    "name": "course015-32b-repair010-fresh1",
+    "course": "015",
+    "run": "32b-repair010-fresh1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 1,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "43489285c8bddf9ecac501329aee0360e07dfa7f8f274b997003764282ded549",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-initialize",
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective011_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
   }
 }
