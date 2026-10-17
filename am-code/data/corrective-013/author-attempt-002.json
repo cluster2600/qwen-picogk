@@ -1,0 +1,10 @@
+{
+  "schema": "picogk.am.author-infrastructure-attempt@1",
+  "created_at_utc": "2026-10-17T21:13:53.634994+00:00",
+  "status": "author_distinctness_rejected",
+  "preserved_directory": "data/corrective-013-author-attempt-002",
+  "cause": "Four refusal programs shared unchanged implementation text with the preceding teachers; extra zero-overlap assertion rejected the author batch before native validation.",
+  "correction": "Rename the declared command argument consistently in all complete programs; keep zero-overlap assertion and every frozen native checker unchanged.",
+  "model_answers_changed": false,
+  "final_contents_read": false
+}

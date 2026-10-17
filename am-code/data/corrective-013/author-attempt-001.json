@@ -1,0 +1,10 @@
+{
+  "schema": "picogk.am.author-infrastructure-attempt@1",
+  "created_at_utc": "2026-10-17T21:13:37.141491+00:00",
+  "status": "author_assertion_rejected",
+  "preserved_directory": "data/corrective-013-author-attempt-001",
+  "cause": "An extra author assertion incorrectly rejected the valid nested synthetic Hull helper. No native validation or model training ran on this partial author output.",
+  "correction": "Allow the declared helper; unchanged native checker remains authoritative. All prior files and log retained.",
+  "model_answers_changed": false,
+  "final_contents_read": false
+}
