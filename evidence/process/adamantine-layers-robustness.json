@@ -1,0 +1,29 @@
+{
+ "analysis_sha256": "32bd6abcedd5c50b329824f2f986d1211cfb1b22a58bfd3ec1e13e317db96371",
+ "baseline": "solid",
+ "grid_shift_xy_mm": 0.5,
+ "manufacturing_qualified": false,
+ "metrics": {
+  "max_displacement_mm": {
+   "effect_aligned": 0.03919,
+   "effect_change": -0.00183,
+   "effect_shifted": 0.03736,
+   "robust": true,
+   "solid_grid_shift": 0.01517
+  },
+  "slab_top_uz_range_mm": {
+   "effect_aligned": 0.04832,
+   "effect_change": -0.0076,
+   "effect_shifted": 0.04072,
+   "robust": true,
+   "solid_grid_shift": 0.03193
+  }
+ },
+ "schema": "qwen-picogk.process.adamantine-robustness@1",
+ "sources_sha256": {
+  "adamantine-layers-comparison.json": "370abc49d684e1e9e22fe618ae7b9d33f1b18c989ee5d2431211f7efa9c6b687",
+  "adamantine-layers-offset-comparison.json": "6a3f99a8005b56b8f711e01f95e55ef9ed40fdeab200a8628bc029640abc3255"
+ },
+ "uncalibrated_for_any_machine": true,
+ "variant": "dfam-001"
+}

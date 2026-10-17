@@ -134,5 +134,6 @@ support.
 | ![](process/adamantine-dfam-001-peak.png) | Peak temperature on the dfam-001 slab top and in the section through its teardrop channel ([animation](process/adamantine-dfam-001-heat.gif)) |
 | ![](process/adamantine-layers-section.png) | Lumped-layer build: displacement in the section x = 0 for the solid blank, dfam-001 and debug-001 ([build animation](process/adamantine-layers-dfam-001.gif)) |
 | ![](process/adamantine-layers-comparison.png) | Maximum displacement and slab-top warp per variant, relative to the solid blank |
+| ![](process/adamantine-layers-robustness.png) | The dfam-001 channel effect on the aligned grid and on a grid shifted by half a cell |
 
 ![Temperature around the moving beam](process/amb2018-melt-pool.gif)

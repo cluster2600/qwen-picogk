@@ -179,6 +179,29 @@ variants. Compared with the solid blank:
   and the slab-top warp by about 5 %;
 - `debug-001`'s two clearance holes change both by about 1 %.
 
+### Does the channel effect survive a different staircase?
+
+A 0.5 mm repeat would cost about 32 times more. Explicit time stepping forces
+a step four times smaller as well as eight times as many cells. So the solid
+blank and `dfam-001` were rebuilt instead on the same 1 mm grid shifted by
+half a cell in x and y. That staircases the channel differently: 49,577
+instead of 50,051 cells, both within 1 % of the STL volume.
+
+![Channel effect on the aligned and the shifted grid](visuals/process/adamantine-layers-robustness.png)
+
+| `dfam-001` relative to the solid | Aligned grid | Shifted grid | Grid shift alone, solid |
+|---|---:|---:|---:|
+| Maximum displacement | +3.92 % | +3.74 % | +1.5 % |
+| Slab-top warp | +4.83 % | +4.07 % | +3.2 % |
+
+The grid shift moves the solid's absolute values by 1.5 to 3.2 %. The paired
+channel effect moves much less: by 0.2 points for maximum displacement and
+0.8 points for warp, keeping its sign. Within this model, the channel's 4 to
+5 % increase is therefore robust to staircasing. The holes' smaller 1 % effect
+was not retested and remains below the absolute grid sensitivity. Records:
+[robustness](../evidence/process/adamantine-layers-robustness.json) and the
+[shifted comparison](../evidence/process/adamantine-layers-offset-comparison.json).
+
 **How far these numbers go.** They are a comparison under one uncalibrated
 model and do not predict distortion.
 - **Compressed time.** Each 1 mm lumped layer stands for roughly 25 real
@@ -186,9 +209,9 @@ model and do not predict distortion.
   through the build and is still at 750 to 790 K at the end. This is a hot
   snapshot, not the cooled residual state; the run's own
   `cooled_below_600_k` check records that.
-- **Mesh resolution.** Differences of a few percent are close to what 1 mm
-  staircasing of the channel and holes can produce. A 0.5 mm repeat is needed
-  before relying on them.
+- **Mesh resolution.** Absolute values shift by up to about 3 % with the
+  grid. Paired effects are more stable: the channel's survives the shift
+  check above, while the holes' 1 % effect is unconfirmed.
 - **Missing physics.** The model is linear thermo-elastic with clamped
   boundaries. It has no plasticity, no plate removal and no supports.
 - **Cost.** A realistic layer time with adamantine 1.1's explicit time
@@ -198,8 +221,9 @@ Displacement was used throughout; the von Mises output is affected by #501.
 
 ## Next steps for Phase 3
 
-1. **Repeat the comparison on 0.5 mm cells** to see whether the 1-5 %
-   differences survive refinement.
+1. **Grid sensitivity.** Done for the channel, by a half-cell shift. The
+   holes' effect could be checked the same way. A true 0.5 mm repeat waits for
+   cheaper time stepping.
 2. **A realistic thermal history.** Use longer layer intervals on a coarser
    mesh, or wait for implicit time stepping upstream, so the final state is
    cooled.

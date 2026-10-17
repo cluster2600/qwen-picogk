@@ -1,0 +1,68 @@
+{
+ "analysis_sha256": "4fca20a51578c86968a876b6b7dcb88cf7fe1836220098239b8d09f4fecc640b",
+ "baseline": "off-solid",
+ "checks": {
+  "off-dfam-001": {
+   "cooled_below_600_k": false,
+   "plate_bottom_clamped": true
+  },
+  "off-solid": {
+   "cooled_below_600_k": false,
+   "plate_bottom_clamped": true
+  }
+ },
+ "displacement_not_von_mises": true,
+ "manufacturing_qualified": false,
+ "schema": "qwen-picogk.process.adamantine-layers@1",
+ "uncalibrated_for_any_machine": true,
+ "variants": {
+  "off-dfam-001": {
+   "final_output_sha256": "843060a8da884283c73bfb9b1598bd311daf5cd579df51b606b6d28d307acfc6",
+   "final_temperature_active": {
+    "max": 773.9,
+    "mean": 740.9,
+    "min": 682.3
+   },
+   "final_time_s": 124.0,
+   "max_displacement_at_mm": [
+    30.5,
+    -4.5,
+    30.0
+   ],
+   "max_displacement_mm": 0.6664,
+   "outputs": 21,
+   "plate_bottom_max_displacement_mm": 0.0,
+   "receipt_sha256": "5bbece50efeca52cd46ef1ce61edf89988b5bc7b9d83513a0612d3abbfc4792a",
+   "sampled_peak_temperature_k": 1133.7,
+   "slab_top_mean_uz_mm": -0.2459,
+   "slab_top_uz_range_mm": 0.2556,
+   "solver_seconds": 7994.1,
+   "stl_sha256": "4b7ece573fc7364d6f8bea34d880f0b709cc39f6d5624f2a7315d5d97c6231da",
+   "top_layer_z_mm": 30.0
+  },
+  "off-solid": {
+   "final_output_sha256": "d90c572fc642d2195fcceed79aa428e2c24579b0779e8aaed8efdd6b20f34f03",
+   "final_temperature_active": {
+    "max": 801.0,
+    "mean": 773.1,
+    "min": 718.7
+   },
+   "final_time_s": 124.0,
+   "max_displacement_at_mm": [
+    30.5,
+    -4.5,
+    30.0
+   ],
+   "max_displacement_mm": 0.6424,
+   "outputs": 21,
+   "plate_bottom_max_displacement_mm": 0.0,
+   "receipt_sha256": "303f64bdd97dd9229efab922b648352044dd8f8439ef3b7b30fdde4b4ba34369",
+   "sampled_peak_temperature_k": 1140.8,
+   "slab_top_mean_uz_mm": -0.2315,
+   "slab_top_uz_range_mm": 0.2456,
+   "solver_seconds": 7803.6,
+   "stl_sha256": "79cb1719d6ff41222be81d5dc43740db0680cb8f46be4db2fab6946df44830ed",
+   "top_layer_z_mm": 30.0
+  }
+ }
+}

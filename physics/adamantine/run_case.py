@@ -305,14 +305,14 @@ memory_space host
 
 
 def layers(stl, out, cell_mm=1.0, plate_mm=5.0, layer_mm=1.0, interval_s=2.0, cool_s=60.0, dt_s=0.02,
-           mech_factor=50, new_material_temperature_k=1720.0, max_layers=None):
+           mech_factor=50, new_material_temperature_k=1720.0, max_layers=None, offset_mm=0.0):
     """Lumped-layer build on a clamped plate, linear thermo-elastic, as a comparison between variants.
 
     Each layer of the part is activated at new_material_temperature_k, above the liquidus, so its
     stress-free reference is the solidus; the plate starts at 300 K. No heat source is used."""
     out.mkdir(parents=True)
     mesh = subprocess.run([sys.executable, str(HERE / 'hexmesh.py'), str(stl), str(out / 'part.msh'),
-                           '--cell-mm', str(cell_mm), '--plate-mm', str(plate_mm)],
+                           '--cell-mm', str(cell_mm), '--plate-mm', str(plate_mm), '--offset-mm', str(offset_mm)],
                           capture_output=True, text=True, check=True)
     summary = json.loads(mesh.stdout.strip().splitlines()[-1])
     z0, z1 = summary['plate_top_mm'], summary['top_mm']
@@ -369,6 +369,7 @@ def main():
     parser.add_argument('--cell-mm', type=float, default=1.0, help='hex cell size for pipeline and layers')
     parser.add_argument('--max-layers', type=int, help='layers: stop after this many layers (trials)')
     parser.add_argument('--cool-s', type=float, default=60.0, help='layers: cooling time after the last layer')
+    parser.add_argument('--offset-mm', type=float, default=0.0, help='layers: shift the hex grid in x and y')
     args = parser.parse_args()
     if args.out.exists() or args.receipt.exists():
         parser.error('use a new output directory and receipt path')
@@ -377,7 +378,8 @@ def main():
     elif args.mode == 'pipeline':
         body = pipeline(args.stl, args.out, cell_mm=args.cell_mm)
     else:
-        body = layers(args.stl, args.out, cell_mm=args.cell_mm, max_layers=args.max_layers, cool_s=args.cool_s)
+        body = layers(args.stl, args.out, cell_mm=args.cell_mm, max_layers=args.max_layers, cool_s=args.cool_s,
+                      offset_mm=args.offset_mm)
     record = {'schema': 'qwen-picogk.process.adamantine@1', 'mode': args.mode, 'image': IMAGE,
               'harness_sha256': sha(__file__), 'hexmesh_sha256': sha(HERE / 'hexmesh.py'),
               'uncalibrated_for_any_machine': True, 'manufacturing_qualified': False, **body}
