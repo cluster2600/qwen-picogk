@@ -1,0 +1,11 @@
+{
+  "schema": "picogk.am.diagnostic-addendum@1",
+  "original_diagnostic_sha256": "90edcec16b2f6bf55aa204439f5957c6bf8caeab6e2d0dba8853f2a505b99c44",
+  "correction": {
+    "scan_failures.signed-range-refusal": "C# compilation failure; runtime refusal controls were not reached. The prior general failed-controls wording is superseded by this precise stage."
+  },
+  "source_report_sha256": "d7777e82b82c736007ef5425ac53b60c71c98c376a70c000ed9725cb008145d6",
+  "original_files_changed": false,
+  "model_answers_repaired": false,
+  "final_contents_read": false
+}
