@@ -1,0 +1,11 @@
+{
+ "image": "adamantine-layers-robustness.png",
+ "image_sha256": "eabf1027a0096f297336de19a55d38dd889fa4d30b392982a8bf7ad09f6b490e",
+ "manufacturing_qualified": false,
+ "render_source_sha256": "32bd6abcedd5c50b329824f2f986d1211cfb1b22a58bfd3ec1e13e317db96371",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "adamantine-layers-robustness.json": "8aa22726c1ccb46714435413ba3d132ae62dbe6a6a148678c7a69460e6041b29"
+ },
+ "uncalibrated_for_any_machine": true
+}

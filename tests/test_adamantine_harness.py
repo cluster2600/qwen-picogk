@@ -1,5 +1,6 @@
 """Phase 3 harness checks that need neither Docker nor adamantine."""
 import base64
+import hashlib
 import json
 from pathlib import Path
 import struct
@@ -121,6 +122,24 @@ class AdamantineHarnessTest(unittest.TestCase):
         self.assertAlmostEqual(origin[2], -1.0)                            # z is not shifted
         grid, origin, layers = hexmesh.add_plate(grid, origin, 1.0, 2.0)
         self.assertAlmostEqual(origin[2] + layers * 1.0, 0.0, places=6)
+
+    def test_robustness_follows_from_both_comparisons(self):
+        try:
+            import numpy  # noqa: F401  (robustness.py imports matplotlib and numpy)
+            import matplotlib  # noqa: F401
+        except ImportError:
+            self.skipTest('numpy/matplotlib not installed')
+        import robustness
+        aligned = json.loads((EVIDENCE / 'adamantine-layers-comparison.json').read_text())
+        shifted = json.loads((EVIDENCE / 'adamantine-layers-offset-comparison.json').read_text())
+        record = json.loads((EVIDENCE / 'adamantine-layers-robustness.json').read_text())
+        self.assertEqual(record['metrics'], robustness.effects(aligned, shifted))
+        self.assertTrue(all(m['robust'] for m in record['metrics'].values()))
+
+    def test_robustness_record_matches_its_sources(self):
+        record = json.loads((EVIDENCE / 'adamantine-layers-robustness.json').read_text())
+        for name, digest in record['sources_sha256'].items():
+            self.assertEqual(hashlib.sha256((EVIDENCE / name).read_bytes()).hexdigest(), digest)
 
 if __name__ == '__main__':
     unittest.main()

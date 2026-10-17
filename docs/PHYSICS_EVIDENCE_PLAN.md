@@ -175,8 +175,13 @@ raises displacement and warp by about 4-5 % and the holes by about 1 %, in a
 hot snapshot. The compressed layer time leaves the part at 750-790 K, so the
 results are indicative comparisons only.
 
-**Remaining:** a 0.5 mm repeat, a realistic thermal history, homogenised
-lattice variants, and stress once adamantine #501 is fixed.
+**Grid check, 17 October 2026.** On a grid shifted by half a cell, the
+channel effect is +3.7 % (max displacement) and +4.1 % (warp), against +3.9 %
+and +4.8 % on the original grid. That is robust to staircasing within this
+model.
+
+**Remaining:** a realistic thermal history, homogenised lattice variants, and
+stress once adamantine #501 is fixed.
 
 adamantine is the only reviewed code that predicts part-scale temperature,
 displacement and stress. Simulating every laser track of a 70 x 44 x 30 mm
