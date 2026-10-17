@@ -152,8 +152,10 @@ class DfamCorpusTest(unittest.TestCase):
     def test_unassigned_corpus_is_refused_before_assembly(self):
         with self.assertRaisesRegex(ValueError, 'Corpus not ready'):
             dfam_corpus.assemble(self.cases, {}, Mock())
-        problems = dfam_corpus.lint(self.cases, full=True)
-        self.assertIn('register family and split before assembly', problems['infill-001'])
+        # Every published case now registers a family and split; an unregistered copy must be refused.
+        unregistered = {k: v for k, v in self.cases[0].items() if k not in ('family', 'split')}
+        problems = dfam_corpus.lint([unregistered], full=True)
+        self.assertIn('register family and split before assembly', problems[unregistered['id']])
 
     def test_related_family_cannot_cross_partitions(self):
         a = dict(self.cases[0], family='gyroid-sheet', split='train')
@@ -234,6 +236,7 @@ class DfamCorpusTest(unittest.TestCase):
             self.assertEqual(cmd[cmd.index('--bind') + 1:cmd.index('--bind') + 3], [str(out.resolve()), '/output'])
             self.assertIn('/input/selected.stl', cmd)
             self.assertIn('--fsize=268435456:268435456', cmd)
+            self.assertIn('--cpu=600:600', cmd)                     # 2 CPUs x the default 300 s wall timeout
             # The runtime cannot start under that file limit with W^X double mapping.
             i = cmd.index('DOTNET_EnableWriteXorExecute')
             self.assertEqual((cmd[i - 1], cmd[i + 1]), ('--setenv', '0'))

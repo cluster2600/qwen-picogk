@@ -10,12 +10,14 @@ it covers is turning 3D scan data into lightweight parts designed for
 laser powder bed fusion of metals (PBF-LB/M). The planned split is 45 scan
 repair, 60 bionic infill, 30 DfAM and 15 troubleshooting cases. No
 train/valid/test files exist yet, and assembly requires all 150 cases.
-`scan-001`, `dfam-001` and `debug-001` pass the strict policy `dfam-strict-v3`
-under isolated native verification ([receipt](../../evidence/dfam-code/strict-v3-20261015.json);
-the earlier [strict-v2 receipt](../../evidence/dfam-code/strict-v2-20261015.json)
-is kept). The first case, `infill-001`, fails on 86 degenerate triangles and a
-detached zero-volume sheet that the self-intersection check reports. Its old
-receipts and source are preserved.
+All four cases pass the strict policy `dfam-strict-v3` under isolated native
+verification ([receipt](../../evidence/dfam-code/strict-v3-20261017.json)).
+`infill-001` now welds its export, drops collapsed faces and removes detached
+shells that enclose no volume. Its original source is archived byte for byte
+in [evidence/dfam-code/snapshots](../../evidence/dfam-code/snapshots/), and
+its earlier receipts are kept, together with the
+[first strict-v3 receipt](../../evidence/dfam-code/strict-v3-20261015.json) and
+the [strict-v2 receipt](../../evidence/dfam-code/strict-v2-20261015.json).
 See the [authoring and validation guide](../../docs/DFAM_CODE_CORPUS.md).
 
 ## How an example is accepted
