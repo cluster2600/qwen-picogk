@@ -141,5 +141,18 @@ class AdamantineHarnessTest(unittest.TestCase):
         for name, digest in record['sources_sha256'].items():
             self.assertEqual(hashlib.sha256((EVIDENCE / name).read_bytes()).hexdigest(), digest)
 
+    def test_schedule_record_matches_sources_and_documented_outcome(self):
+        record = json.loads((EVIDENCE / 'adamantine-layers-schedule.json').read_text())
+        for name, digest in record['sources_sha256'].items():
+            self.assertEqual(hashlib.sha256((EVIDENCE / name).read_bytes()).hexdigest(), digest)
+        cooled = record['configs']['2 mm, cooled to 300 K']
+        hot = record['configs']['2 mm, compressed']
+        self.assertEqual(cooled['solid_final_mean_temperature_k'], 300.0)
+        for key in ('max_displacement_mm', 'slab_top_uz_range_mm'):
+            row = cooled[key]
+            self.assertAlmostEqual(row['effect'], round((row['variant'] - row['solid']) / row['solid'], 5), places=5)
+            self.assertLess(abs(row['effect']), 0.005)          # vanishes once cooled
+            self.assertGreater(hot[key]['effect'], 0.03)         # present while hot
+
 if __name__ == '__main__':
     unittest.main()

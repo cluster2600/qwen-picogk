@@ -180,8 +180,16 @@ channel effect is +3.7 % (max displacement) and +4.1 % (warp), against +3.9 %
 and +4.8 % on the original grid. That is robust to staircasing within this
 model.
 
-**Remaining:** a realistic thermal history, homogenised lattice variants, and
-stress once adamantine #501 is fixed.
+**Cooling check, 17 October 2026.**
+- On 2 mm cells the compressed schedule reproduces the channel effect
+  (+3.2 % and +4.3 %).
+- A schedule that cools the part to 300 K removes it (-0.2 % and -0.3 %).
+- The effect is therefore a transient thermal one. In linear
+  thermo-elasticity the cooled state cannot depend on the build history at
+  all.
+
+**Remaining:** elastoplastic runs on the cooling schedule, homogenised lattice
+variants, and stress once adamantine #501 is fixed.
 
 adamantine is the only reviewed code that predicts part-scale temperature,
 displacement and stress. Simulating every laser track of a 70 x 44 x 30 mm

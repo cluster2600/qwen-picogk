@@ -1,0 +1,68 @@
+{
+ "analysis_sha256": "531a258ebfda47585b7fdb2bb0b1f0a84c8c82fbe46fd71aa09d1d38672a5cdb",
+ "baseline": "c2cool-solid",
+ "checks": {
+  "c2cool-dfam-001": {
+   "cooled_below_600_k": true,
+   "plate_bottom_clamped": true
+  },
+  "c2cool-solid": {
+   "cooled_below_600_k": true,
+   "plate_bottom_clamped": true
+  }
+ },
+ "displacement_not_von_mises": true,
+ "manufacturing_qualified": false,
+ "schema": "qwen-picogk.process.adamantine-layers@1",
+ "uncalibrated_for_any_machine": true,
+ "variants": {
+  "c2cool-dfam-001": {
+   "final_output_sha256": "355ec4428a59d20d9fe62ef30369873555912c757d32fd4a8d6ad3d29b2d27d6",
+   "final_temperature_active": {
+    "max": 300.0,
+    "mean": 300.0,
+    "min": 300.0
+   },
+   "final_time_s": 6300.8,
+   "max_displacement_at_mm": [
+    31.0,
+    -4.0,
+    30.0
+   ],
+   "max_displacement_mm": 1.0426,
+   "outputs": 21,
+   "plate_bottom_max_displacement_mm": 0.0,
+   "receipt_sha256": "bac2bdce7b2dd12c86eea025e9a8b55bb5e6910ebb8fa6bb95e86b6addbe0ece",
+   "sampled_peak_temperature_k": 426.1,
+   "slab_top_mean_uz_mm": -0.4557,
+   "slab_top_uz_range_mm": 0.3879,
+   "solver_seconds": 10956.6,
+   "stl_sha256": "4b7ece573fc7364d6f8bea34d880f0b709cc39f6d5624f2a7315d5d97c6231da",
+   "top_layer_z_mm": 30.0
+  },
+  "c2cool-solid": {
+   "final_output_sha256": "b92e45cc5cbd54a815295b79c8ba2e4c219f13f077fd84bf97ecc924950e86e9",
+   "final_temperature_active": {
+    "max": 300.0,
+    "mean": 300.0,
+    "min": 300.0
+   },
+   "final_time_s": 6300.8,
+   "max_displacement_at_mm": [
+    31.0,
+    4.0,
+    30.0
+   ],
+   "max_displacement_mm": 1.0444,
+   "outputs": 21,
+   "plate_bottom_max_displacement_mm": 0.0,
+   "receipt_sha256": "d7bb84800b74861bec2f09a9351b46a54f48c4ade7cb65585e2f1ca782c47852",
+   "sampled_peak_temperature_k": 426.1,
+   "slab_top_mean_uz_mm": -0.4575,
+   "slab_top_uz_range_mm": 0.3889,
+   "solver_seconds": 10998.3,
+   "stl_sha256": "79cb1719d6ff41222be81d5dc43740db0680cb8f46be4db2fab6946df44830ed",
+   "top_layer_z_mm": 30.0
+  }
+ }
+}

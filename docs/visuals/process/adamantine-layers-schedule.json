@@ -1,0 +1,11 @@
+{
+ "image": "adamantine-layers-schedule.png",
+ "image_sha256": "fbce48956c35151b8d0d72fb5b460d32cf2b71d947dc33cd840017158838f263",
+ "manufacturing_qualified": false,
+ "render_source_sha256": "ee0fa1b45fd2f45634d77ec6d23642709dace594627809e4450593f3ede57849",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "adamantine-layers-schedule.json": "16bc2d1897311aff8663f47778a485d002ed6bc5d708990fe1799d1cc0f46857"
+ },
+ "uncalibrated_for_any_machine": true
+}

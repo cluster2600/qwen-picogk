@@ -14,9 +14,9 @@ data, and the chain from a verified STL to a thermal run on that geometry.
   trial (clamped plate held at zero displacement, layers activated on
   schedule).
 - Builds of three variants (solid, `dfam-001`, `debug-001`) are complete.
-  The channel and the holes change displacement by only a few percent, and
-  the compressed layer time keeps the part far hotter than a real build (see
-  below).
+  The channel raises displacement by 4 to 5 % while the part is hot. The
+  effect survives a grid shift and a coarser mesh, but disappears once the
+  part has cooled to 300 K, as linear thermo-elasticity requires (see below).
 - Three adamantine defects were found and reported upstream (see below).
 
 Nothing here is calibrated or a prediction for a real machine.
@@ -202,6 +202,40 @@ was not retested and remains below the absolute grid sensitivity. Records:
 [robustness](../evidence/process/adamantine-layers-robustness.json) and the
 [shifted comparison](../evidence/process/adamantine-layers-offset-comparison.json).
 
+### Does the channel effect last once the part has cooled?
+
+The runs above stop while the part is still at 750 to 790 K. Two more pairs
+were built on 2 mm cells, where the explicit time step can be four times
+longer:
+- the same compressed schedule, ending at 806 K, to check that the coarser
+  mesh reproduces the effect;
+- a cooling schedule: a 2 mm layer every 300 s, about the part's thermal time
+  constant, then 1,500 s of final cooling, ending at 300 K everywhere.
+
+![Channel effect for three meshes and schedules](visuals/process/adamantine-layers-schedule.png)
+
+| Configuration | Solid ends at | Max displacement: solid, dfam-001, effect | Slab-top warp: solid, dfam-001, effect |
+|---|---:|---|---|
+| 1 mm, compressed | 786 K | 0.633, 0.658 mm, +3.9 % | 0.238, 0.250 mm, +4.8 % |
+| 2 mm, compressed | 806 K | 0.608, 0.627 mm, +3.2 % | 0.235, 0.245 mm, +4.3 % |
+| 2 mm, cooled | 300 K | 1.044, 1.043 mm, **-0.2 %** | 0.389, 0.388 mm, **-0.3 %** |
+
+The 2 mm compressed pair reproduces the 1 mm effect, so the effect is not a
+resolution artefact. Once the part reaches room temperature, the effect
+disappears while total displacement rises to about 1.04 mm. In this model the
+channel changes the transient temperature field during the build, not the
+final distortion.
+
+That outcome is built into the model. Linear thermo-elasticity carries no
+memory of the path: the cooled state depends only on each cell's stress-free
+temperature (the solidus for deposited material, 300 K for the plate) and on
+the uniform final temperature. No build schedule can change it. Whether the
+channel alters residual distortion is a question for an elastoplastic run,
+which adamantine supports with a temperature-independent yield stress.
+Records: [schedule](../evidence/process/adamantine-layers-schedule.json),
+[2 mm compressed](../evidence/process/adamantine-layers-2mm-compressed.json),
+[2 mm cooled](../evidence/process/adamantine-layers-2mm-cooled.json).
+
 **How far these numbers go.** They are a comparison under one uncalibrated
 model and do not predict distortion.
 - **Compressed time.** Each 1 mm lumped layer stands for roughly 25 real
@@ -224,9 +258,11 @@ Displacement was used throughout; the von Mises output is affected by #501.
 1. **Grid sensitivity.** Done for the channel, by a half-cell shift. The
    holes' effect could be checked the same way. A true 0.5 mm repeat waits for
    cheaper time stepping.
-2. **A realistic thermal history.** Use longer layer intervals on a coarser
-   mesh, or wait for implicit time stepping upstream, so the final state is
-   cooled.
+2. **Elastoplastic runs.** Done for the cooling question in elastic form: a
+   fully cooled 2 mm run removes the channel effect. Only plasticity can make
+   residual distortion depend on geometry through the thermal history.
+   adamantine 1.1 supports J2 plasticity with a temperature-independent yield
+   stress, so it can be added next on the 2 mm cooling schedule.
 3. **Lattice variants:** `infill-001` needs a homogenised material for its
    core, because 1 mm gyroid walls cannot be resolved at part-scale cells.
 4. **Stress:** once #501 is fixed, add von Mises comparisons alongside
