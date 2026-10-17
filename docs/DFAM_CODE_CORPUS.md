@@ -3,13 +3,16 @@
 This is a work-in-progress teaching corpus, separate from the released
 parameter planner and the AM C# study. It has **four examples**, not 150
 completed examples and not a newly trained model. Under the current
-`dfam-strict-v3` policy, `scan-001`, `dfam-001` and `debug-001` pass isolated
-native verification on Linux ([receipt](../evidence/dfam-code/strict-v3-20261015.json)).
-The historical `infill-001` source and receipts remain unchanged; it is
-blocked by 86 degenerate triangles, the same 86 as needle triangles, and a
-detached zero-volume sheet that the self-intersection check reports. The
-earlier [strict-v2 receipt](../evidence/dfam-code/strict-v2-20261015.json) is
-kept as history. No training partitions are published. The wider plan for
+`dfam-strict-v3` policy, all four cases pass isolated native verification on
+Linux ([receipt](../evidence/dfam-code/strict-v3-20261017.json)).
+- `infill-001` was revised to weld its export, drop collapsed faces and
+  remove the detached zero-volume sheet described below. Its original source
+  is archived in `evidence/dfam-code/snapshots/`.
+- The [first strict-v3](../evidence/dfam-code/strict-v3-20261015.json) and
+  [strict-v2](../evidence/dfam-code/strict-v2-20261015.json) receipts are
+  kept as history.
+
+No training partitions are published. The wider plan for
 physics evidence is in [PHYSICS_EVIDENCE_PLAN.md](PHYSICS_EVIDENCE_PLAN.md).
 
 ```mermaid
@@ -74,8 +77,10 @@ The self-intersection check found a defect the earlier checks could not
 see. In `infill-001`, four triangles form two 0.10 x 0.09 mm quads back to
 back on the same four vertices: a detached sheet with no volume. Every edge
 is used exactly twice, so the edge checks pass. It has no volume, so the
-voxel component count does not see it. The numerical vertex weld proposed
-for this case in #6 removes the degenerate triangles, but not this sheet.
+voxel component count does not see it. A vertex weld alone, as proposed in
+#6, removes the degenerate triangles but not this sheet. The revised case also
+drops edge-connected shells, other than the main body, that enclose less than
+1e-6 mm³.
 
 ![Wall thickness of the graded gyroid](visuals/dfam/infill-thickness.png)
 
@@ -113,7 +118,10 @@ Candidate execution has:
 - only the selected input fixture, mounted read-only;
 - one writable case output directory and a private temporary filesystem;
 - a 3 GiB memory limit, no swap, 128 tasks, two declared .NET processors,
-  a 300-second CPU limit, a 256 MiB per-file limit and a wall timeout;
+  a CPU-time limit of two CPUs times the wall timeout (600 s at the default
+  300 s), a 256 MiB per-file limit and a wall timeout. A fixed 300 s CPU budget
+  made verdicts depend on machine load, because native threads spin when
+  cores are contended;
 - a two-CPU cgroup quota (`CPUQuota=200%`). The CPU limit counts every
   thread, including PicoGK's native OpenVDB threads, which ignore the .NET
   processor count and otherwise use all host cores.
