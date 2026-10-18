@@ -763,22 +763,42 @@
         "development-shell"
       ],
       "manufacturing_authorized": false
+    },
+    {
+      "name": "course019-32b-typed013-continuation1",
+      "course": "019",
+      "run": "32b-typed013-continuation1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 4,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "bdf811c476131c8b5d02557ed3b66f5e62163f395997d59f3c3b1b378aa5abad",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-debug-api",
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
     }
   ],
   "current_training": {
-    "course": "019",
-    "run": "32b-typed013-continuation1",
+    "course": "020",
+    "run": "32b-semantic014-continuation1",
     "base": "32B",
     "status": "registered_running_no_candidate_result",
-    "prospective_original_sha256": "11fd922ae614b12e99dd7fd9a6a65d3fcb46bcc8de67f69278ffb3bd1022d372",
-    "runtime_protocol_original_sha256": "dce821846ed9ce9ce86efd4e720f6602db57cc83ba1ea3bd3fa093e06a4d21ac",
-    "training_rows": 256,
-    "planned_steps": 512,
-    "epochs": 2,
+    "prospective_original_sha256": "608a6abe0cbe46423cf89b3c2a3e318adea95415f3c268f761a91f5b2fefb642",
+    "runtime_protocol_original_sha256": "85156da618bcde205a353832eaa5a1bda52b27b24a0af21d3a143e61e6ae7ed0",
+    "training_rows": 272,
+    "planned_steps": 272,
+    "epochs": 1,
     "learning_rate": 2e-06,
     "fresh_untouched_base": false,
     "fresh_optimizer": true,
-    "parent_adapter_sha256": "3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62",
+    "parent_adapter_sha256": "bdf811c476131c8b5d02557ed3b66f5e62163f395997d59f3c3b1b378aa5abad",
     "smoke_adapter_resumed": false,
     "active_weights_logs_captures_or_scores_included": false,
     "model_qualification": "not_established",
@@ -786,7 +806,7 @@
   },
   "final_set": "embargoed; no final model evaluation claimed",
   "manufacturing_authorized": false,
-  "completed_course_count": 17,
+  "completed_course_count": 18,
   "corrective003_teachers": {
     "distinct_teachers": 16,
     "message_rows": 32,
@@ -809,20 +829,21 @@
     "formal_scores_unchanged": true
   },
   "last_completed_training": {
-    "name": "course018-32b-typed013-fresh1",
-    "course": "018",
-    "run": "32b-typed013-fresh1",
+    "name": "course019-32b-typed013-continuation1",
+    "course": "019",
+    "run": "32b-typed013-continuation1",
     "base": "32B",
     "status": "rejected",
     "development_passed": 4,
     "development_total": 12,
     "scan_passed": 0,
     "scan_total": 4,
-    "stopped": 13,
-    "truncated": 3,
-    "adapter_sha256": "3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62",
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "bdf811c476131c8b5d02557ed3b66f5e62163f395997d59f3c3b1b378aa5abad",
     "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
     "lost_baseline_passes": [
+      "development-debug-api",
       "development-shell"
     ],
     "manufacturing_authorized": false
@@ -1160,6 +1181,37 @@
   },
   "course018_seen_training_probes": {
     "passed": 0,
+    "total": 4,
+    "all_eos": true,
+    "qualification_credit": 0
+  },
+  "current_course019": {
+    "name": "course019-32b-typed013-continuation1",
+    "course": "019",
+    "run": "32b-typed013-continuation1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "bdf811c476131c8b5d02557ed3b66f5e62163f395997d59f3c3b1b378aa5abad",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-debug-api",
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective014_teachers": {
+    "cases": 8,
+    "passed": 8,
+    "formulations": 16
+  },
+  "course019_seen_training_probes": {
+    "passed": 2,
     "total": 4,
     "all_eos": true,
     "qualification_credit": 0

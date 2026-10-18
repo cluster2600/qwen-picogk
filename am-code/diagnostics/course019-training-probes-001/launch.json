@@ -1,0 +1,19 @@
+{
+  "schema": "picogk.am.diagnostic-launch@1",
+  "pid": 38063,
+  "argv": [
+    "runtime/venv/bin/python",
+    "am-code/infer_v2.py",
+    "--tasks",
+    "am-code/diagnostics/course019-training-probes-001/tasks.json",
+    "--output",
+    "am-code/diagnostics/course019-training-probes-001/capture",
+    "--adapter",
+    "am-code/runs/32b-typed013-continuation1/adapter",
+    "--base-profile",
+    "am-code/base-profile-32b.json"
+  ],
+  "launched_at_utc": "2026-10-18T10:12:39.038014+00:00",
+  "protocol_sha256": "ee39a2ac93f8d9f652c9f5dc627f71389569c73cf570c736e37122908ec774db",
+  "qualification_credit": 0
+}
