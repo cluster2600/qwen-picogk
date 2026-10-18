@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Original150 and nineteen completed rejections preserved; completed020 plus four known-training probes with zero qualification credit. All prior curriculum preserved; no active payload or final contents.",
+  "scope": "Original150 and nineteen completed rejections preserved; completed020 plus four known-training probes with zero qualification credit. All prior curriculum preserved; no active payload or final contents. User-stopped021 and exact interrupted checkpoints preserved; no qualification credit or relaunch.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -2355,10 +2355,10 @@
       "transform": "none"
     },
     {
-      "source": "publication-staging/course020-current-assets.json",
+      "source": "publication-staging/course021-current-assets.json",
       "public_path": "evidence/assets.json",
-      "source_sha256": "0e15a3bf641df87dd3577224fc6929091b7f9c2dfd8b0309bc98a9ff928395ff",
-      "public_sha256": "0e15a3bf641df87dd3577224fc6929091b7f9c2dfd8b0309bc98a9ff928395ff",
+      "source_sha256": "69c48c3089621d84877ef5489b6512dd24f163d5ab592e6e5b0b435ab2bf7f42",
+      "public_sha256": "69c48c3089621d84877ef5489b6512dd24f163d5ab592e6e5b0b435ab2bf7f42",
       "transform": "none"
     },
     {
@@ -5054,6 +5054,90 @@
       "public_path": "diagnostics/course020-training-probes-001/native-score-001/report.json",
       "source_sha256": "55281a45db8ab273e1fc3b7c9d8dd155adc26f70e544bc0c6c5d4a3a2419abeb",
       "public_sha256": "55281a45db8ab273e1fc3b7c9d8dd155adc26f70e544bc0c6c5d4a3a2419abeb",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course-021-protocol.json",
+      "public_path": "evidence/course021-stopped/course-021-protocol.json",
+      "source_sha256": "e006d93fabcc43496dc06bbb02ee98c111c50d49b97e91b5fac9202fb0b01c11",
+      "public_sha256": "e006d93fabcc43496dc06bbb02ee98c111c50d49b97e91b5fac9202fb0b01c11",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course021-launch-receipt.json",
+      "public_path": "evidence/course021-stopped/course021-launch-receipt.json",
+      "source_sha256": "23e54bb517e1084ae4b2f4f2223c6807dcad0028089c51e41c8083da1f2fe3bd",
+      "public_sha256": "786fd41ffa6dd17f0b79fd915e38b10cff19fcca00c52575043d0c7a660b65de",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/course021-launch-verification.json",
+      "public_path": "evidence/course021-stopped/course021-launch-verification.json",
+      "source_sha256": "4d0fd9b9ae38a3f6f0f62c36d07e2823119bbd93927cae3d8cd253857a47681f",
+      "public_sha256": "fa824fda9cdf6cb58f693d581cbd2e2d0247a80153ed796d631092afb6846f13",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/course021-protocol-addendum-001.json",
+      "public_path": "evidence/course021-stopped/course021-protocol-addendum-001.json",
+      "source_sha256": "f27f176faee9f8fb83cd15f831daa5f5a3ad4874d0ebb478fd7a46ca979cc7f8",
+      "public_sha256": "f27f176faee9f8fb83cd15f831daa5f5a3ad4874d0ebb478fd7a46ca979cc7f8",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course021-stopped-cpu-audit.json",
+      "public_path": "evidence/course021-stopped/course021-stopped-cpu-audit.json",
+      "source_sha256": "3c9110c62caa7aeb6aafedb13fa1d9b05f2d64eba245690389dcf336a8d83b80",
+      "public_sha256": "3c9110c62caa7aeb6aafedb13fa1d9b05f2d64eba245690389dcf336a8d83b80",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course021-stopped-cpu-audit.log",
+      "public_path": "evidence/course021-stopped/course021-stopped-cpu-audit.log",
+      "source_sha256": "a0bb67d66fa1c60b444626e1a77aa5659d15b01d5e7b088caa5eedc64712685f",
+      "public_sha256": "a0bb67d66fa1c60b444626e1a77aa5659d15b01d5e7b088caa5eedc64712685f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course021-user-stop-receipt.json",
+      "public_path": "evidence/course021-stopped/course021-user-stop-receipt.json",
+      "source_sha256": "4aab76f1a2b7d63de0ea299f9e58b28021ba2e8be1dcce7091ff0275b2b99398",
+      "public_sha256": "4aab76f1a2b7d63de0ea299f9e58b28021ba2e8be1dcce7091ff0275b2b99398",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/training-32b-semantic014-rate5-continuation1.log",
+      "public_path": "evidence/course021-stopped/training-32b-semantic014-rate5-continuation1.log",
+      "source_sha256": "7a50ba632005271305d658406dccfb518e808b8373c4edb921456567528cbae6",
+      "public_sha256": "c347a7ddcf4d0ccb7aa8ded16ff80f431b6121e886331c2028db87e8a479eafb",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/runs/32b-semantic014-rate5-continuation1/protocol.json",
+      "public_path": "evidence/course021-stopped/protocol.json",
+      "source_sha256": "66879110f8a8bb1e5d904ac50c3e9359b201e5091529b4d02710f78920197554",
+      "public_sha256": "3ab8ee485909b652effe809d63a6d06bc0b83235ae7e8716e4a1015760def6d3",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/runs/32b-semantic014-rate5-continuation1/adapter/adapter_config.json",
+      "public_path": "evidence/course021-stopped/adapter_config.json",
+      "source_sha256": "e501381b2c26774fba7f5335672128912f5d24960801aa18e0ee9a9e179c8625",
+      "public_sha256": "75705133a87321fd5355bfe6ec762218068fb9d84eb564a7c7b3f9928e34f6d4",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/diagnostics/audit-course021-stopped.py",
+      "public_path": "diagnostics/audit-course021-stopped.py",
+      "source_sha256": "f80e4673fed235a8f6ce7d8a25a45ad07824ab3521c6c633919e24ee44140406",
+      "public_sha256": "f80e4673fed235a8f6ce7d8a25a45ad07824ab3521c6c633919e24ee44140406",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course021-optimization-decision.json",
+      "public_path": "diagnostics/course021-optimization-decision.json",
+      "source_sha256": "a46e58f737db3846fcc02b1c407a3bcd9e9b397f85588e8b11ad1d320f1288a3",
+      "public_sha256": "a46e58f737db3846fcc02b1c407a3bcd9e9b397f85588e8b11ad1d320f1288a3",
       "transform": "none"
     }
   ]

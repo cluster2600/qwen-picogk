@@ -1,0 +1,25 @@
+{
+  "schema": "picogk.am.optimization-decision@1",
+  "registered_at": "2026-10-18T15:20:00.977992+00:00",
+  "course": "021",
+  "known_training_probe_passes": 3,
+  "known_training_probe_total": 4,
+  "development_passes": 5,
+  "scan_passes": 0,
+  "all_qualification_eos": true,
+  "qualification_credit": 0,
+  "findings": "020 retains all five own-base passes but fails seven development and all four scan tasks. The unchanged seen-training diagnostic improves2/4 to3/4; shell still fails analytic volume. Generic API/namespace constraints are already present in training prompts, so an absent basic API card is not an established cause.",
+  "experiment": "One fixed272-step pass from exact audited completed020 at5e-6 instead of2e-6, with the same272-row corpus, seed, rank, layers and optimizer type. No new curriculum or teacher renaming. Test whether a larger update improves native task performance while the unchanged baseline-retention gate detects regression.",
+  "limits": "Additional optimization, optimizer reset and learning-rate change occur together. This is a prospective optimization hypothesis, not a controlled causal comparison or proof of generalization. Do not infer success from loss or known-training reproduction. Select only final272 after CPU audit and unchanged native/formal gates. Diagnose a rejection rather than automatically escalating rates or repeating this run.",
+  "source_bindings": {
+    "course020-cpu-audit.json": "e9f9f2637ef415ebc6596a76691d6b0b45bfa6233cab82dec88a48b640157c4e",
+    "candidate-scores-course020/report.json": "7b6fe561cf09085735a6df73a0084b636b9bbf5ba01d91fb68d71a635c5c34ad",
+    "scan-scores-course020/report.json": "4649736865edfebc4e91ff8852ec6017122e0639782b3b1ecf4ab6da73f6b9ae",
+    "qualification-rejected-course020.log": "d2dc810bc1ef082cadba45ce61cfe86aaa75dd70263cf8daf3b10890226ebe6e",
+    "diagnostics/course020-training-probes-001/native-score-001/report.json": "55281a45db8ab273e1fc3b7c9d8dd155adc26f70e544bc0c6c5d4a3a2419abeb",
+    "diagnostics/course020-training-probes-001/interpretation.json": "ba4b85cbc2ecda5b3f4b63ec58a24ef0d281de1d8a797e536167b138499c557c",
+    "data/corrective-002/headers/development_generic.txt": "7f60b77ff9f921795ccfdc951754a09d2bf53d6dd521eeebdbb87f761813b1a7"
+  },
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}

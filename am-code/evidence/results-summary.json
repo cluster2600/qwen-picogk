@@ -803,12 +803,14 @@
     }
   ],
   "current_training": {
-    "course": "020",
-    "run": "32b-semantic014-continuation1",
-    "status": "completed_rejected_no_active_training",
+    "course": "021",
+    "run": "32b-semantic014-rate5-continuation1",
+    "status": "user_stopped_interrupted_ineligible",
+    "automation_status": "PAUSED",
+    "next_course_registered": false,
     "active_weights_logs_captures_or_scores_included": false,
     "model_qualification": "not_established",
-    "next_course_registered": false
+    "recovery_authorized": false
   },
   "final_set": "embargoed; no final model evaluation claimed",
   "manufacturing_authorized": false,
@@ -1020,6 +1022,39 @@
       "cpu_audit_original_sha256": "65f8ce2867e55c83515a8768541f4228e69dcc7fe31d007ed6c3e5b295eb662f",
       "checkpoint_evaluated": false,
       "qualification_credit": 0
+    },
+    {
+      "course": "021",
+      "run": "32b-semantic014-rate5-continuation1",
+      "status": "interrupted_ineligible",
+      "last_logged_step": 120,
+      "latest_durable_checkpoint_step": 120,
+      "planned_steps": 272,
+      "completed_receipt_exists": false,
+      "cause": "explicit_user_stop",
+      "cpu_audit_original_sha256": "3c9110c62caa7aeb6aafedb13fa1d9b05f2d64eba245690389dcf336a8d83b80",
+      "checkpoint_evaluated": false,
+      "qualification_credit": 0,
+      "automation_status": "PAUSED",
+      "recovery_authorized": false,
+      "asset": "interrupted-32b-course021-user-stopped-full-evidence.tar.gz",
+      "checkpoints": [
+        {
+          "path": "runs/32b-semantic014-rate5-continuation1/adapter/0000060_adapters.safetensors",
+          "sha256": "33279b54c76cfdbba90852357fcebbe7757e1179b2734b2d57cf52d169bfac2c",
+          "original_sha256": "33279b54c76cfdbba90852357fcebbe7757e1179b2734b2d57cf52d169bfac2c"
+        },
+        {
+          "path": "runs/32b-semantic014-rate5-continuation1/adapter/0000120_adapters.safetensors",
+          "sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5",
+          "original_sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5"
+        },
+        {
+          "path": "runs/32b-semantic014-rate5-continuation1/adapter/adapters.safetensors",
+          "sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5",
+          "original_sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5"
+        }
+      ]
     }
   ],
   "current_course012": {
@@ -1241,5 +1276,38 @@
     "total": 4,
     "all_eos": true,
     "qualification_credit": 0
+  },
+  "current_course021": {
+    "course": "021",
+    "run": "32b-semantic014-rate5-continuation1",
+    "status": "interrupted_ineligible",
+    "last_logged_step": 120,
+    "latest_durable_checkpoint_step": 120,
+    "planned_steps": 272,
+    "completed_receipt_exists": false,
+    "cause": "explicit_user_stop",
+    "cpu_audit_original_sha256": "3c9110c62caa7aeb6aafedb13fa1d9b05f2d64eba245690389dcf336a8d83b80",
+    "checkpoint_evaluated": false,
+    "qualification_credit": 0,
+    "automation_status": "PAUSED",
+    "recovery_authorized": false,
+    "asset": "interrupted-32b-course021-user-stopped-full-evidence.tar.gz",
+    "checkpoints": [
+      {
+        "path": "runs/32b-semantic014-rate5-continuation1/adapter/0000060_adapters.safetensors",
+        "sha256": "33279b54c76cfdbba90852357fcebbe7757e1179b2734b2d57cf52d169bfac2c",
+        "original_sha256": "33279b54c76cfdbba90852357fcebbe7757e1179b2734b2d57cf52d169bfac2c"
+      },
+      {
+        "path": "runs/32b-semantic014-rate5-continuation1/adapter/0000120_adapters.safetensors",
+        "sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5",
+        "original_sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5"
+      },
+      {
+        "path": "runs/32b-semantic014-rate5-continuation1/adapter/adapters.safetensors",
+        "sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5",
+        "original_sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5"
+      }
+    ]
   }
 }

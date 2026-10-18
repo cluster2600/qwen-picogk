@@ -153,7 +153,7 @@ def check_completed009(root, release):
     assert plan['parent_adapter'] is None and runtime['config']['resume_adapter_file'] is None
     assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mixture['train_sha256']
     assert release['completed_rejected_courses'] == 19
-    assert release['current_training']['course'] == '020' and release['current_training_weights_included'] is False
+    assert release['current_training']['course'] == '021' and release['current_training_weights_included'] is False
 
 
 def check_completed010(root, release):
@@ -190,7 +190,7 @@ def check_completed010(root, release):
     assert plan['iterations'] == plan['training_rows'] == runtime['config']['iters'] == runtime['supplemental_rows'] == 384
     assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == receipt['adapter_sha256']
     assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
-    assert release['completed_rejected_courses'] == 19 and release['current_training']['course'] == '020'
+    assert release['completed_rejected_courses'] == 19 and release['current_training']['course'] == '021'
 
 
 def check_recovery012(root, release):
@@ -250,7 +250,7 @@ def check_completed012(root, release):
     assert plan['iterations']==launch['config']['iters']==512 and plan['training_rows']==launch['supplemental_rows']==256
     assert plan['parent_adapter'] is None and launch['config']['resume_adapter_file'] is None
     assert plan['corpus_sha256']==launch['corpus_sha256']==mix['train_sha256']
-    assert release['completed_rejected_courses']==19 and release['current_training']['course']=='020'
+    assert release['completed_rejected_courses']==19 and release['current_training']['course']=='021'
 
 
 
@@ -552,8 +552,31 @@ def check_completed020(root, release):
     assert tasks['seen-typed-shell-02']['checks']['independent_analytic_volume'] is False
     assert all(tasks['seen-typed-shell-02']['checks'][key] for key in ('native_exit_zero','independent_world_bounds','independent_vdb_membership_probes','sealed_void_detected'))
     assert read(prefix+'interpretation.json')['qualification_credit'] == 0
-    assert release['current_training']['status'] == 'completed_rejected_no_active_training'
+    assert release['current_training']['status'] == 'user_stopped_interrupted_ineligible'
     assert release['current_training']['next_course_registered'] is False
+
+
+def check_stopped021(root, release):
+    read = lambda n: json.loads((root/n).read_text())
+    prefix = 'evidence/course021-stopped/'
+    audit = read(prefix+'course021-stopped-cpu-audit.json')
+    stop = read(prefix+'course021-user-stop-receipt.json')
+    plan, runtime = read(prefix+'course-021-protocol.json'), read(prefix+'protocol.json')
+    assert audit['status'] == 'passed' and len(audit['checks']) == 57 and all(audit['checks'].values())
+    assert audit['last_logged_step'] == audit['latest_durable_checkpoint_step'] == 120
+    assert audit['planned_steps'] == plan['iterations'] == runtime['config']['iters'] == 272
+    assert audit['trainable_arrays'] == 224 and audit['exact_tensor_files'] == 3
+    assert audit['checkpoint_evaluated'] is False and audit['qualification_credit'] == 0
+    assert stop['process_exited'] and stop['parent_lock_free'] and stop['automation_status'] == 'PAUSED'
+    assert not stop['training_completed'] and not stop['training_receipt_exists'] and not stop['recovery_or_relaunch_authorized']
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 5e-6
+    assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == '6d1297c2758022d4d471d0125c5595fafe91239efab3529bb1f6a9587987f4d0'
+    assert plan['corpus_sha256'] == digest(root/'data/focused-32b-009/train.jsonl')
+    course = release['interrupted_courses'][-1]
+    assert course['course'] == '021' and course['status'] == 'interrupted_ineligible' and course['cause'] == 'explicit_user_stop'
+    assert len(course['checkpoints']) == 3 and not course['checkpoint_evaluated']
+    assert release['current_training']['automation_status'] == 'PAUSED' and not release['current_training']['recovery_authorized']
+    assert read(prefix+'course021-protocol-addendum-001.json')['reused_teacher_cases'] == 136
 
 
 def check(root=ROOT, assets=None, native_runtime=False):
@@ -712,6 +735,7 @@ def check(root=ROOT, assets=None, native_runtime=False):
     check_completed018(root, release)
     check_completed019(root, release)
     check_completed020(root, release)
+    check_stopped021(root, release)
     teacher_counts = json.loads((root/'evidence/results-summary.json').read_text())
     assert teacher_counts['corrective007_teachers'] == dict(cases=64, passed=64, formulations=128)
     assert teacher_counts['corrective008_teachers'] == dict(cases=48, passed=48, formulations=96)

@@ -1,0 +1,19 @@
+{"run": "32b-semantic014-rate5-continuation1", "iters": 272, "registered": "2026-10-18T15:20:10.977528+00:00"}
+Warning: Validation set not found or empty. Training will proceed without validation.
+{"rows": 272, "valid_rows": 0, "maximum_tokens": 2129}
+Loading fine-tuned weights from am-code/runs/32b-semantic014-continuation1/adapter/adapters.safetensors
+Trainable parameters: 0.051% (16.777M/32763.876M)
+Starting training..., iters: 272
+Iter 10: Train loss 0.008, Learning Rate 5.000e-06, It/sec 0.027, Tokens/sec 21.596, Trained Tokens 7973, Peak mem 21.836 GB
+Iter 20: Train loss 0.018, Learning Rate 5.000e-06, It/sec 0.035, Tokens/sec 22.839, Trained Tokens 14585, Peak mem 22.417 GB
+Iter 30: Train loss 0.014, Learning Rate 5.000e-06, It/sec 0.026, Tokens/sec 21.490, Trained Tokens 22934, Peak mem 22.680 GB
+Iter 40: Train loss 0.015, Learning Rate 5.000e-06, It/sec 0.029, Tokens/sec 21.764, Trained Tokens 30495, Peak mem 22.680 GB
+Iter 50: Train loss 0.008, Learning Rate 5.000e-06, It/sec 0.028, Tokens/sec 22.525, Trained Tokens 38566, Peak mem 22.680 GB
+Iter 60: Train loss 0.019, Learning Rate 5.000e-06, It/sec 0.034, Tokens/sec 20.706, Trained Tokens 44583, Peak mem 22.680 GB
+Iter 60: Saved adapter weights to am-code/runs/32b-semantic014-rate5-continuation1/adapter/adapters.safetensors and am-code/runs/32b-semantic014-rate5-continuation1/adapter/0000060_adapters.safetensors.
+Iter 70: Train loss 0.016, Learning Rate 5.000e-06, It/sec 0.029, Tokens/sec 22.760, Trained Tokens 52420, Peak mem 22.747 GB
+Iter 80: Train loss 0.012, Learning Rate 5.000e-06, It/sec 0.030, Tokens/sec 21.529, Trained Tokens 59696, Peak mem 22.747 GB
+Iter 90: Train loss 0.012, Learning Rate 5.000e-06, It/sec 0.031, Tokens/sec 21.762, Trained Tokens 66721, Peak mem 22.747 GB
+Iter 100: Train loss 0.007, Learning Rate 5.000e-06, It/sec 0.029, Tokens/sec 18.522, Trained Tokens 73165, Peak mem 22.747 GB
+Iter 110: Train loss 0.004, Learning Rate 5.000e-06, It/sec 0.029, Tokens/sec 20.498, Trained Tokens 80328, Peak mem 22.747 GB
+Iter 120: Train loss 0.008, Learning Rate 5.000e-06, It/sec 0.022, Tokens/sec 20.406, Trained Tokens 89411, Peak mem 22.747 GB
