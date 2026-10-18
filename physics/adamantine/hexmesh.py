@@ -36,11 +36,16 @@ def signed_volume(tris):
     return float(np.einsum('ij,ij->i', tris[:, 0], np.cross(tris[:, 1], tris[:, 2])).sum() / 6.0)
 
 
-def occupancy(tris, cell):
-    """Boolean grid (nz, ny, nx) of solid cells and the grid origin (cell corner)."""
+def occupancy(tris, cell, offset_xy=0.0):
+    """Boolean grid (nz, ny, nx) of solid cells and the grid origin (cell corner).
+    offset_xy shifts the grid in x and y, to test sensitivity to staircasing; z stays
+    aligned with the part's lowest point so the build plate meets the part exactly."""
     lo, hi = tris.reshape(-1, 3).min(0), tris.reshape(-1, 3).max(0)
     origin = lo - cell
+    origin[:2] -= offset_xy
     nx, ny, nz = (np.ceil((hi - lo) / cell).astype(int) + 2)
+    if offset_xy:
+        nx, ny = nx + 1, ny + 1
     jx, jy = JITTER[0] * cell, JITTER[1] * cell
     # Every (triangle, column) pair whose column centre lies in the triangle's xy box.
     i0 = np.clip(np.floor((tris[:, :, 0].min(1) - origin[0]) / cell - 0.5).astype(int), 0, nx - 1)
@@ -126,11 +131,12 @@ def main():
     parser.add_argument('out', type=Path)
     parser.add_argument('--cell-mm', type=float, default=1.0)
     parser.add_argument('--plate-mm', type=float, default=0.0)
+    parser.add_argument('--offset-mm', type=float, default=0.0, help='shift the grid in x and y')
     args = parser.parse_args()
     if args.out.exists():
         parser.error('refusing to overwrite an existing mesh')
     tris = read_binary_stl(args.stl)
-    grid, origin = occupancy(tris, args.cell_mm)
+    grid, origin = occupancy(tris, args.cell_mm, args.offset_mm)
     part_cells = int(grid.sum())
     plate_layers = 0
     if args.plate_mm > 0:
@@ -141,7 +147,7 @@ def main():
     print(json.dumps({'stl_sha256': hashlib.sha256(args.stl.read_bytes()).hexdigest(),
                       'msh_sha256': hashlib.sha256(args.out.read_bytes()).hexdigest(),
                       'cell_mm': args.cell_mm, 'grid': list(grid.shape[::-1]), 'nodes': nodes, 'hexahedra': cells,
-                      'part_hexahedra': part_cells, 'plate_layers': plate_layers,
+                      'part_hexahedra': part_cells, 'plate_layers': plate_layers, 'offset_xy_mm': args.offset_mm,
                       'plate_top_mm': round(float(origin[2] + plate_layers * args.cell_mm), 6),
                       'top_mm': round(float(origin[2] + grid.shape[0] * args.cell_mm), 6),
                       'stl_volume_mm3': round(mesh_volume, 2), 'hex_volume_mm3': round(hex_volume, 2),

@@ -13,8 +13,10 @@ data, and the chain from a verified STL to a thermal run on that geometry.
 - A lumped-layer thermo-elastic build mode exists and passed a three-layer
   trial (clamped plate held at zero displacement, layers activated on
   schedule).
-- Builds of three variants (solid, `dfam-001`, `debug-001`) are running.
-  Their comparison will be added when they finish.
+- Builds of three variants (solid, `dfam-001`, `debug-001`) are complete.
+  The channel raises displacement by 4 to 5 % while the part is hot. The
+  effect survives a grid shift and a coarser mesh, but disappears once the
+  part has cooled to 300 K, as linear thermo-elasticity requires (see below).
 - Three adamantine defects were found and reported upstream (see below).
 
 Nothing here is calibrated or a prediction for a real machine.
@@ -148,19 +150,151 @@ emissivity are uncalibrated, and plasticity, build-plate removal and support
 structures are not modelled. Results are differences between geometries under
 one model, not distortion predictions.
 
+### Results: three geometries under one model
+
+Each variant was built as 30 lumped layers of 1 mm, deposited every 2 s from
+t = 2 s to t = 60 s. The schedule's two extra boxes above z = 30 mm contain no
+cells. Cooling continued until t = 124 s, and the table compares that state.
+The full record is
+in [adamantine-layers-comparison.json](../evidence/process/adamantine-layers-comparison.json),
+with one run receipt per variant (`adamantine-layers-run-*.json`). Their
+`solver_seconds` include about 1.5 h when the host machine was suspended; the
+three runs shared the machine's CPUs.
+
+| Variant | Max displacement (mm) | Slab-top warp, range of u_z (mm) | Mean T at 124 s | Plate clamped |
+|---|---:|---:|---:|---|
+| `solid` | 0.633 | 0.238 | 786 K | yes |
+| `dfam-001` | 0.658 (+3.9 %) | 0.249 (+4.8 %) | 751 K | yes |
+| `debug-001` | 0.637 (+0.7 %) | 0.241 (+1.3 %) | 770 K | yes |
+
+![Displacement in the section x = 0 for the three variants](visuals/process/adamantine-layers-section.png)
+
+![Maximum displacement and slab-top warp per variant](visuals/process/adamantine-layers-comparison.png)
+
+![dfam-001 section x = 0 during the lumped-layer build](visuals/process/adamantine-layers-dfam-001.gif)
+
+The largest displacement is at the top corner of the bored boss in all three
+variants. Compared with the solid blank:
+- `dfam-001`'s teardrop channel raises the maximum displacement by about 4 %
+  and the slab-top warp by about 5 %;
+- `debug-001`'s two clearance holes change both by about 1 %.
+
+### Does the channel effect survive a different staircase?
+
+A 0.5 mm repeat would cost about 32 times more. Explicit time stepping forces
+a step four times smaller as well as eight times as many cells. So the solid
+blank and `dfam-001` were rebuilt instead on the same 1 mm grid shifted by
+half a cell in x and y. That staircases the channel differently: 49,577
+instead of 50,051 cells, both within 1 % of the STL volume.
+
+![Channel effect on the aligned and the shifted grid](visuals/process/adamantine-layers-robustness.png)
+
+| `dfam-001` relative to the solid | Aligned grid | Shifted grid | Grid shift alone, solid |
+|---|---:|---:|---:|
+| Maximum displacement | +3.92 % | +3.74 % | +1.5 % |
+| Slab-top warp | +4.83 % | +4.07 % | +3.2 % |
+
+The grid shift moves the solid's absolute values by 1.5 to 3.2 %. The paired
+channel effect moves much less: by 0.2 points for maximum displacement and
+0.8 points for warp, keeping its sign. Within this model, the channel's 4 to
+5 % increase is therefore robust to staircasing. The holes' smaller 1 % effect
+was not retested and remains below the absolute grid sensitivity. Records:
+[robustness](../evidence/process/adamantine-layers-robustness.json) and the
+[shifted comparison](../evidence/process/adamantine-layers-offset-comparison.json).
+
+### Does the channel effect last once the part has cooled?
+
+The runs above stop while the part is still at 750 to 790 K. Two more pairs
+were built on 2 mm cells, where the explicit time step can be four times
+longer:
+- the same compressed schedule, ending at 806 K, to check that the coarser
+  mesh reproduces the effect;
+- a cooling schedule: a 2 mm layer every 300 s, about the part's thermal time
+  constant, then 1,500 s of final cooling, ending at 300 K everywhere.
+
+![Channel effect for three meshes and schedules](visuals/process/adamantine-layers-schedule.png)
+
+| Configuration | Solid ends at | Max displacement: solid, dfam-001, effect | Slab-top warp: solid, dfam-001, effect |
+|---|---:|---|---|
+| 1 mm, compressed | 786 K | 0.633, 0.658 mm, +3.9 % | 0.238, 0.250 mm, +4.8 % |
+| 2 mm, compressed | 806 K | 0.608, 0.627 mm, +3.2 % | 0.235, 0.245 mm, +4.3 % |
+| 2 mm, cooled | 300 K | 1.044, 1.043 mm, **-0.2 %** | 0.389, 0.388 mm, **-0.3 %** |
+
+The 2 mm compressed pair reproduces the 1 mm effect, so the effect is not a
+resolution artefact. Once the part reaches room temperature, the effect
+disappears while total displacement rises to about 1.04 mm. In this model the
+channel changes the transient temperature field during the build, not the
+final distortion.
+
+That outcome is built into the model. Linear thermo-elasticity carries no
+memory of the path: the cooled state depends only on each cell's stress-free
+temperature (the solidus for deposited material, 300 K for the plate) and on
+the uniform final temperature. No build schedule can change it. Whether the
+channel alters residual distortion is a question for an elastoplastic run,
+which adamantine supports with a temperature-independent yield stress.
+Records: [schedule](../evidence/process/adamantine-layers-schedule.json),
+[2 mm compressed](../evidence/process/adamantine-layers-2mm-compressed.json),
+[2 mm cooled](../evidence/process/adamantine-layers-2mm-cooled.json).
+
+### Plasticity does not reach the displacement in adamantine 1.1
+
+The next question was whether plasticity makes the cooled distortion depend on
+the channel. A short trial (2 mm cells, two layers, cooling to 600 s) compared
+three otherwise identical runs:
+- elastic, with no plastic inputs;
+- plastic, with an effectively infinite yield stress;
+- plastic, with a 300 MPa uniaxial yield, a 2 GPa plastic modulus and
+  isotropic hardening.
+
+All three give the same displacement to six decimals: 0.381896 mm maximum and
+0.073257 mm mean.
+
+The source explains why. `MechanicalPhysics::solve` solves the global system
+"assuming that the deformation is elastic". Only afterwards does
+`compute_stress` apply the J2 radial return, and only to the stress. The
+plastic strain never enters the equilibrium solve, so the displacement field
+is the elastic one whatever the yield stress. In release 1.1, plasticity
+affects only the stress output, which is itself affected by #501. Residual
+distortion with plasticity therefore cannot be computed with this tool. The
+trial is recorded in [adamantine-plasticity-trial.json](../evidence/process/adamantine-plasticity-trial.json).
+
+Two input details are recorded in `run_case.py`:
+- adamantine compares the norm of the deviatoric stress with `elastic_limit`,
+  so a uniaxial yield σy enters as √(2/3)·σy;
+- the back-stress update looks dimensionally wrong (the plastic modulus
+  squared, with no strain increment), so the runs used pure isotropic
+  hardening, which multiplies it by zero.
+
+**How far these numbers go.** They are a comparison under one uncalibrated
+model and do not predict distortion.
+- **Compressed time.** Each 1 mm lumped layer stands for roughly 25 real
+  layers but arrives every 2 s. The part therefore runs at about 900 K
+  through the build and is still at 750 to 790 K at the end. This is a hot
+  snapshot, not the cooled residual state; the run's own
+  `cooled_below_600_k` check records that.
+- **Mesh resolution.** Absolute values shift by up to about 3 % with the
+  grid. Paired effects are more stable: the channel's survives the shift
+  check above, while the holes' 1 % effect is unconfirmed.
+- **Missing physics.** The model is linear thermo-elastic with clamped
+  boundaries. It has no plasticity, no plate removal and no supports.
+- **Cost.** A realistic layer time with adamantine 1.1's explicit time
+  stepping would take days at this resolution, so it was not attempted.
+
+Displacement was used throughout; the von Mises output is affected by #501.
+
 ## Next steps for Phase 3
 
-1. **Lumped-layer deposition** of about 1 mm per layer, using adamantine's
-   `material_deposition_method file` with a box file, which the plan's layer
-   writer will produce. Each layer starts hot, as in an inherent-heat
-   approach.
-2. **Mechanical runs.** Before relying on the stress output, confirm the two
-   suspected issues noted in the plan: the von Mises formula and the
-   cooling-rate parentheses.
-3. **Comparisons between variants:** solid, vented and lattice versions of
-   `dfam-001` and `infill-001` on the same 0.5 mm mesh, reported as
-   differences between variants. Lattices need a homogenised material, because
-   1 mm walls cannot be resolved at this cell size.
+1. **Grid sensitivity.** Done for the channel, by a half-cell shift. The
+   holes' effect could be checked the same way. A true 0.5 mm repeat waits for
+   cheaper time stepping.
+2. **Elastoplastic residual distortion: not possible with adamantine 1.1.**
+   Plastic strain does not reach the displacement solve (see above). It needs
+   an upstream fix, or another solver such as CalculiX with an inherent-strain
+   or sequentially coupled thermo-mechanical approach.
+3. **Lattice variants:** `infill-001` needs a homogenised material for its
+   core, because 1 mm gyroid walls cannot be resolved at part-scale cells.
+4. **Stress:** once #501 is fixed, add von Mises comparisons alongside
+   displacement.
 
 ## Reproduce
 

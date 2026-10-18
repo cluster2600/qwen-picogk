@@ -132,5 +132,9 @@ support.
 | ![](process/amb2018-abc-validation.png) | AM-Bench cases A, B and C: measured against simulated length, width and depth, with the pre-set acceptance bands |
 | ![](process/adamantine-energy-convergence.png) | adamantine heat balance for a laser line on dfam-001 at 1.0 and 0.5 mm cells |
 | ![](process/adamantine-dfam-001-peak.png) | Peak temperature on the dfam-001 slab top and in the section through its teardrop channel ([animation](process/adamantine-dfam-001-heat.gif)) |
+| ![](process/adamantine-layers-section.png) | Lumped-layer build: displacement in the section x = 0 for the solid blank, dfam-001 and debug-001 ([build animation](process/adamantine-layers-dfam-001.gif)) |
+| ![](process/adamantine-layers-comparison.png) | Maximum displacement and slab-top warp per variant, relative to the solid blank |
+| ![](process/adamantine-layers-robustness.png) | The dfam-001 channel effect on the aligned grid and on a grid shifted by half a cell |
+| ![](process/adamantine-layers-schedule.png) | The channel effect with 1 mm and 2 mm cells while hot, and on 2 mm cells after cooling to 300 K |
 
 ![Temperature around the moving beam](process/amb2018-melt-pool.gif)

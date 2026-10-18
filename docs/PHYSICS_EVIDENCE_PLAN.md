@@ -169,8 +169,33 @@ particular machine prints a 1.0 mm wall.
   0.6 % at 0.5 mm cells but not at 1 mm cells (+16 %), which sets 0.5 mm as
   the minimum resolution.
 
-**Remaining:** lumped-layer deposition, mechanics after checking the two
-suspected upstream issues, and the comparisons between variants.
+**Also done:** lumped-layer thermo-elastic builds of the solid blank,
+`dfam-001` and `debug-001` ([results](PART_SCALE_SIMULATION.md)). The channel
+raises displacement and warp by about 4-5 % and the holes by about 1 %, in a
+hot snapshot. The compressed layer time leaves the part at 750-790 K, so the
+results are indicative comparisons only.
+
+**Grid check, 17 October 2026.** On a grid shifted by half a cell, the
+channel effect is +3.7 % (max displacement) and +4.1 % (warp), against +3.9 %
+and +4.8 % on the original grid. That is robust to staircasing within this
+model.
+
+**Cooling check, 17 October 2026.**
+- On 2 mm cells the compressed schedule reproduces the channel effect
+  (+3.2 % and +4.3 %).
+- A schedule that cools the part to 300 K removes it (-0.2 % and -0.3 %).
+- The effect is therefore a transient thermal one. In linear
+  thermo-elasticity the cooled state cannot depend on the build history at
+  all.
+
+**Plasticity check.** In adamantine 1.1 the J2 return mapping updates only
+the stress; plastic strain never reaches the displacement solve. A 300 MPa
+yield gives the same displacement as a purely elastic run, to six decimals.
+Elastoplastic residual distortion needs an upstream fix or another solver.
+
+**Remaining:** homogenised lattice variants (elastic), stress once
+adamantine #501 is fixed, and a plasticity-capable solver for residual
+distortion.
 
 adamantine is the only reviewed code that predicts part-scale temperature,
 displacement and stress. Simulating every laser track of a 70 x 44 x 30 mm

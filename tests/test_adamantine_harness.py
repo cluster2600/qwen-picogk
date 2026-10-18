@@ -1,5 +1,6 @@
 """Phase 3 harness checks that need neither Docker nor adamantine."""
 import base64
+import hashlib
 import json
 from pathlib import Path
 import struct
@@ -93,6 +94,79 @@ class AdamantineHarnessTest(unittest.TestCase):
         quads_written = [l for l in lines[1:] if l.split()[1:2] == ['3']]
         self.assertEqual(len(quads_written), ny * nx)                      # one face per bottom cell
         self.assertTrue(all(l.split()[3] == '1' for l in quads_written))  # physical tag -> boundary id 1
+
+    def test_layer_comparison_records_its_limits(self):
+        record = json.loads((EVIDENCE / 'adamantine-layers-comparison.json').read_text())
+        self.assertTrue(record['displacement_not_von_mises'])
+        self.assertEqual(record['baseline'], 'solid')
+        for name, checks in record['checks'].items():
+            self.assertTrue(checks['plate_bottom_clamped'], name)
+            self.assertFalse(checks['cooled_below_600_k'], name)       # the documented hot snapshot
+            row = record['variants'][name]
+            self.assertEqual(checks['cooled_below_600_k'], row['final_temperature_active']['max'] < 600.0)
+            self.assertEqual(row['plate_bottom_max_displacement_mm'], 0.0)
+
+    def test_grid_offset_keeps_the_part_and_the_plate_alignment(self):
+        try:
+            import numpy as np
+        except ImportError:
+            self.skipTest('numpy not installed; the Phase 3 tools install it separately')
+        import hexmesh
+        corners = np.array([[x, y, z] for z in (0, 1) for y in (0, 1) for x in (0, 1)], float) * 10.0
+        quads = [(0, 2, 3, 1), (4, 5, 7, 6), (0, 1, 5, 4), (2, 6, 7, 3), (0, 4, 6, 2), (1, 3, 7, 5)]
+        tris = corners[np.array([t for a, b, c, d in quads for t in ((a, b, c), (a, c, d))])]
+        grid, origin = hexmesh.occupancy(tris, 1.0, offset_xy=0.5)
+        # Shifted by half a cell, a 10 mm cube covers 10 x 10 cell centres in x and y
+        # (the jittered rays sit just past each centre) and keeps its 10 layers in z.
+        self.assertEqual(int(grid.sum()), 1000)
+        self.assertAlmostEqual(origin[2], -1.0)                            # z is not shifted
+        grid, origin, layers = hexmesh.add_plate(grid, origin, 1.0, 2.0)
+        self.assertAlmostEqual(origin[2] + layers * 1.0, 0.0, places=6)
+
+    def test_robustness_follows_from_both_comparisons(self):
+        try:
+            import numpy  # noqa: F401  (robustness.py imports matplotlib and numpy)
+            import matplotlib  # noqa: F401
+        except ImportError:
+            self.skipTest('numpy/matplotlib not installed')
+        import robustness
+        aligned = json.loads((EVIDENCE / 'adamantine-layers-comparison.json').read_text())
+        shifted = json.loads((EVIDENCE / 'adamantine-layers-offset-comparison.json').read_text())
+        record = json.loads((EVIDENCE / 'adamantine-layers-robustness.json').read_text())
+        self.assertEqual(record['metrics'], robustness.effects(aligned, shifted))
+        self.assertTrue(all(m['robust'] for m in record['metrics'].values()))
+
+    def test_robustness_record_matches_its_sources(self):
+        record = json.loads((EVIDENCE / 'adamantine-layers-robustness.json').read_text())
+        for name, digest in record['sources_sha256'].items():
+            self.assertEqual(hashlib.sha256((EVIDENCE / name).read_bytes()).hexdigest(), digest)
+
+    def test_schedule_record_matches_sources_and_documented_outcome(self):
+        record = json.loads((EVIDENCE / 'adamantine-layers-schedule.json').read_text())
+        for name, digest in record['sources_sha256'].items():
+            self.assertEqual(hashlib.sha256((EVIDENCE / name).read_bytes()).hexdigest(), digest)
+        cooled = record['configs']['2 mm, cooled to 300 K']
+        hot = record['configs']['2 mm, compressed']
+        self.assertEqual(cooled['solid_final_mean_temperature_k'], 300.0)
+        for key in ('max_displacement_mm', 'slab_top_uz_range_mm'):
+            row = cooled[key]
+            self.assertAlmostEqual(row['effect'], round((row['variant'] - row['solid']) / row['solid'], 5), places=5)
+            self.assertLess(abs(row['effect']), 0.005)          # vanishes once cooled
+            self.assertGreater(hot[key]['effect'], 0.03)         # present while hot
+
+    def test_plasticity_trial_records_identical_displacement(self):
+        record = json.loads((EVIDENCE / 'adamantine-plasticity-trial.json').read_text())
+        trials = record['trials']
+        self.assertTrue(record['identical_displacement'])
+        self.assertEqual({t['max_displacement_mm'] for t in trials.values()}, {trials['el']['max_displacement_mm']})
+        for name, row in trials.items():
+            receipt = EVIDENCE / f'adamantine-plasticity-trial-{name}.json'
+            self.assertEqual(hashlib.sha256(receipt.read_bytes()).hexdigest(), row['receipt_sha256'])
+        plastic = json.loads((EVIDENCE / 'adamantine-plasticity-trial-y300.json').read_text())
+        self.assertEqual(plastic['uniaxial_yield_mpa'], 300.0)
+        self.assertIn('elastic_limit 2.44949e+08', run_case.LAYERS_INFO.format(
+            plastic=' elastic_limit 2.44949e+08', material_height_m=0, new_material_temperature_k=1720,
+            duration_s=1, dt_s=0.1, mech_factor=1, output_every=1))
 
 if __name__ == '__main__':
     unittest.main()
