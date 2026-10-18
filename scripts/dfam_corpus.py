@@ -71,6 +71,12 @@ MAX_SEQ_LENGTH = 8192
 # host spent the 300 s CPU budget in about 25 s of wall time. A two-CPU cgroup
 # quota makes the declared two processors real and host-independent.
 CANDIDATE_CPU_QUOTA = '200%'
+CANDIDATE_CPUS = 2
+# RLIMIT_CPU is set to CANDIDATE_CPUS x the wall timeout. Under contention the
+# native threads spin and burn CPU time faster than they progress, so a fixed
+# 300 s budget made verdicts depend on machine load (scan-001 was killed only
+# while other jobs ran). At this value the limit cannot bind before the wall
+# timeout, which remains the real bound on runaway code.
 # Parity rasterisation leaves sub-voxel pockets between near-touching sheets;
 # a genuinely trapped lattice cell is hundreds of mm3.
 MAX_ENCLOSED_VOID_MM3 = 2.0
@@ -318,7 +324,7 @@ def capped(cmd, mem, cpu_quota=None):
     return probe + cmd
 
 
-def sandbox_command(runner, source, out, namespace, env):
+def sandbox_command(runner, source, out, namespace, env, wall_timeout=300):
     """Only the selected input, runtime and output are exposed to corpus code."""
     if sys.platform != 'linux' or not shutil.which('bwrap') or not Path('/usr/bin/prlimit').is_file():
         raise RuntimeError('Corpus execution requires Linux bubblewrap and prlimit; no host execution fallback')
@@ -350,7 +356,8 @@ def sandbox_command(runner, source, out, namespace, env):
     input_path = '/input/' + Path(source).name if source else ''
     if source:
         cmd += ['--dir', '/input', '--ro-bind', str(Path(source).resolve()), input_path]
-    cmd += ['--', '/usr/bin/prlimit', '--cpu=300:300', '--fsize=268435456:268435456', '--',
+    cpu = CANDIDATE_CPUS * int(wall_timeout)
+    cmd += ['--', '/usr/bin/prlimit', f'--cpu={cpu}:{cpu}', '--fsize=268435456:268435456', '--',
             str(dotnet), '/app/' + runner.name, namespace, input_path,
             '/output', str(VOXEL_MM)]
     return capped(cmd, '3G', CANDIDATE_CPU_QUOTA)
@@ -489,7 +496,7 @@ def run_case(runner, checker, fixtures, case, broken, env, run_root, timeout):
     log_path = out / 'process.log'
     try:
         with log_path.open('w') as log:
-            proc = subprocess.run(sandbox_command(runner, source, out, namespace, env),
+            proc = subprocess.run(sandbox_command(runner, source, out, namespace, env, timeout),
                                   env={'PATH': env['PATH'], 'HOME': str(Path.home()),
                                        'XDG_RUNTIME_DIR': env.get('XDG_RUNTIME_DIR', f'/run/user/{os.getuid()}')},
                                   stdout=log, stderr=log, timeout=timeout, cwd=out)

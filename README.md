@@ -29,7 +29,7 @@ are inventoried as release assets, with local-path redaction and original/public
 hash bindings.
 
 A separate [PicoGK DfAM code corpus](docs/DFAM_CODE_CORPUS.md) is in progress:
-4 of 150 planned examples. Three pass strict isolated native verification,
+4 of 150 planned examples. All four pass strict isolated native verification,
 which now also measures wall thickness on the mesh and checks
 self-intersections with exact predicates; training assembly still requires
 the complete corpus. A [physics evidence plan](docs/PHYSICS_EVIDENCE_PLAN.md)
