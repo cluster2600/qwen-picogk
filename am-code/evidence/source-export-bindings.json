@@ -1,6 +1,6 @@
 {
   "schema": "picogk.am.source-export-bindings@1",
-  "scope": "Original150 and eighteen completed rejections preserved; completed019 plus four seen-training probes with zeroqualificationcredit,8nativevalidatedsemantic014teachers and272rowmixture;immutable020protocol only,activepayload/finalcontents excluded.",
+  "scope": "Original150 and nineteen completed rejections preserved; completed020 plus four known-training probes with zero qualification credit. All prior curriculum preserved; no active payload or final contents.",
   "files": [
     {
       "source": "am-code/data/train.jsonl",
@@ -2355,10 +2355,10 @@
       "transform": "none"
     },
     {
-      "source": "publication-staging/course019-current-assets.json",
+      "source": "publication-staging/course020-current-assets.json",
       "public_path": "evidence/assets.json",
-      "source_sha256": "7503764e8c974dd026261165c393d9bfc9a8d2a1695754ba777d8579fc93f72f",
-      "public_sha256": "7503764e8c974dd026261165c393d9bfc9a8d2a1695754ba777d8579fc93f72f",
+      "source_sha256": "0e15a3bf641df87dd3577224fc6929091b7f9c2dfd8b0309bc98a9ff928395ff",
+      "public_sha256": "0e15a3bf641df87dd3577224fc6929091b7f9c2dfd8b0309bc98a9ff928395ff",
       "transform": "none"
     },
     {
@@ -4915,6 +4915,146 @@
       "source_sha256": "85156da618bcde205a353832eaa5a1bda52b27b24a0af21d3a143e61e6ae7ed0",
       "public_sha256": "886f94d6f4050001209a22e6a985e46aead0010c64a2116265ef04ec476d523d",
       "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/course020-cpu-audit.json",
+      "public_path": "evidence/course020-completed/cpu-audit.json",
+      "source_sha256": "e9f9f2637ef415ebc6596a76691d6b0b45bfa6233cab82dec88a48b640157c4e",
+      "public_sha256": "e9f9f2637ef415ebc6596a76691d6b0b45bfa6233cab82dec88a48b640157c4e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/course020-evaluation-protocol.json",
+      "public_path": "evidence/course020-completed/evaluation-protocol.json",
+      "source_sha256": "be2fa589f23069130b7161bc57556d9f8f7e646c88208f68a6df6b57d6c44ed9",
+      "public_sha256": "be2fa589f23069130b7161bc57556d9f8f7e646c88208f68a6df6b57d6c44ed9",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/runs/32b-semantic014-continuation1/training-receipt.json",
+      "public_path": "evidence/course020-completed/training-receipt.json",
+      "source_sha256": "e0591ba93203e9d46ac3d1baf8aed2ec586b0cf1f60946d8f574ff3c825c4207",
+      "public_sha256": "e0591ba93203e9d46ac3d1baf8aed2ec586b0cf1f60946d8f574ff3c825c4207",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/runs/32b-semantic014-continuation1/protocol.json",
+      "public_path": "evidence/course020-completed/runtime-protocol.json",
+      "source_sha256": "85156da618bcde205a353832eaa5a1bda52b27b24a0af21d3a143e61e6ae7ed0",
+      "public_sha256": "886f94d6f4050001209a22e6a985e46aead0010c64a2116265ef04ec476d523d",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/runs/32b-semantic014-continuation1/adapter/adapter_config.json",
+      "public_path": "evidence/course020-completed/adapter_config.json",
+      "source_sha256": "90091f0dd83c911fa989856b2ba0e6883b01882c22b4f90b76946109a13cccbc",
+      "public_sha256": "ccc6abda4f1fbd9d432beba25ab04b11c6547b1ea6231ea154e560639ea18371",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/candidate-scores-course020/report.json",
+      "public_path": "evidence/course020-completed/development-report.json",
+      "source_sha256": "7b6fe561cf09085735a6df73a0084b636b9bbf5ba01d91fb68d71a635c5c34ad",
+      "public_sha256": "6bd9be7a2162f77bf2ef43f6c9a65aadbb0b58598506fc11dd2bca7922a513d8",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/scan-scores-course020/report.json",
+      "public_path": "evidence/course020-completed/scan-report.json",
+      "source_sha256": "4649736865edfebc4e91ff8852ec6017122e0639782b3b1ecf4ab6da73f6b9ae",
+      "public_sha256": "4649736865edfebc4e91ff8852ec6017122e0639782b3b1ecf4ab6da73f6b9ae",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/qualification-rejected-course020.log",
+      "public_path": "evidence/course020-completed/formal-rejection.json",
+      "source_sha256": "d2dc810bc1ef082cadba45ce61cfe86aaa75dd70263cf8daf3b10890226ebe6e",
+      "public_sha256": "d2dc810bc1ef082cadba45ce61cfe86aaa75dd70263cf8daf3b10890226ebe6e",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course020-completed-diagnostic.json",
+      "public_path": "evidence/course020-completed/completed-diagnostic.json",
+      "source_sha256": "51236fbe81c433072a4baef868efdc08d91bb6deddcfb703ff17c6fb5568f285",
+      "public_sha256": "db59906d051b28133bf6ffffd3146e935afb7f80f2e177da747a0a226912113e",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/diagnostics/audit-course020.py",
+      "public_path": "diagnostics/audit-course020.py",
+      "source_sha256": "f8f78c5f2875ee48d88db4496c694f4325dbb8032e3764255b7b91b193e50c9f",
+      "public_sha256": "f8f78c5f2875ee48d88db4496c694f4325dbb8032e3764255b7b91b193e50c9f",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course020-training-probes-001/tasks.json",
+      "public_path": "diagnostics/course020-training-probes-001/tasks.json",
+      "source_sha256": "e29f0b35744abf1db2c8290032ef76fb25a8f3796fcadbdadc3d5b05b5360450",
+      "public_sha256": "e29f0b35744abf1db2c8290032ef76fb25a8f3796fcadbdadc3d5b05b5360450",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course020-training-probes-001/protocol.json",
+      "public_path": "diagnostics/course020-training-probes-001/protocol.json",
+      "source_sha256": "21ae96db1a4669e0ce6871303efff2a2a9adfda5665493c1fee4daca1fd93214",
+      "public_sha256": "21ae96db1a4669e0ce6871303efff2a2a9adfda5665493c1fee4daca1fd93214",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course020-training-probes-001/launch.json",
+      "public_path": "diagnostics/course020-training-probes-001/launch.json",
+      "source_sha256": "48d3571fece244c22bd67ad31da1df3c481238e5747cbdb4675730d9a33baf65",
+      "public_sha256": "d0f8059c6b3183952992dc91e517b0d5fd62d075e7520c89a0be1118426adf9f",
+      "transform": "local paths redacted only"
+    },
+    {
+      "source": "am-code/diagnostics/course020-training-probes-001/score.py",
+      "public_path": "diagnostics/course020-training-probes-001/score.py",
+      "source_sha256": "a66173b45f04bf9ce585ba59e9d4bcde7ab63af085acb06c9e0817cdb77347c3",
+      "public_sha256": "a66173b45f04bf9ce585ba59e9d4bcde7ab63af085acb06c9e0817cdb77347c3",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course020-training-probes-001/scorer-registration.json",
+      "public_path": "diagnostics/course020-training-probes-001/scorer-registration.json",
+      "source_sha256": "6cd4825dfb426f82fa14717f1bf2f00875edb66a81e1b1968c2fbb5475221082",
+      "public_sha256": "6cd4825dfb426f82fa14717f1bf2f00875edb66a81e1b1968c2fbb5475221082",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course020-training-probes-001/interpretation.json",
+      "public_path": "diagnostics/course020-training-probes-001/interpretation.json",
+      "source_sha256": "ba4b85cbc2ecda5b3f4b63ec58a24ef0d281de1d8a797e536167b138499c557c",
+      "public_sha256": "ba4b85cbc2ecda5b3f4b63ec58a24ef0d281de1d8a797e536167b138499c557c",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course020-training-probes-001/capture/receipt.json",
+      "public_path": "diagnostics/course020-training-probes-001/capture/receipt.json",
+      "source_sha256": "97dde08b90a01543282a2db3f2092d2115a1bfc58faebd54307bbd9e5f04687d",
+      "public_sha256": "97dde08b90a01543282a2db3f2092d2115a1bfc58faebd54307bbd9e5f04687d",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course020-training-probes-001/capture/protocol.json",
+      "public_path": "diagnostics/course020-training-probes-001/capture/protocol.json",
+      "source_sha256": "6793a89f2b9d01e06417b50ffdb72672f9e75c85e5309e8570dcbdd7daf75833",
+      "public_sha256": "6793a89f2b9d01e06417b50ffdb72672f9e75c85e5309e8570dcbdd7daf75833",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course020-training-probes-001/capture/responses.json",
+      "public_path": "diagnostics/course020-training-probes-001/capture/responses.json",
+      "source_sha256": "e87c5053408e9585d0ae09b62aa2bbfe7714eb0cd226593793155eab95e5f360",
+      "public_sha256": "e87c5053408e9585d0ae09b62aa2bbfe7714eb0cd226593793155eab95e5f360",
+      "transform": "none"
+    },
+    {
+      "source": "am-code/diagnostics/course020-training-probes-001/native-score-001/report.json",
+      "public_path": "diagnostics/course020-training-probes-001/native-score-001/report.json",
+      "source_sha256": "55281a45db8ab273e1fc3b7c9d8dd155adc26f70e544bc0c6c5d4a3a2419abeb",
+      "public_sha256": "55281a45db8ab273e1fc3b7c9d8dd155adc26f70e544bc0c6c5d4a3a2419abeb",
+      "transform": "none"
     }
   ]
 }

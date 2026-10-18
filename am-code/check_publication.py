@@ -152,7 +152,7 @@ def check_completed009(root, release):
     assert plan['learning_rate'] == runtime['config']['learning_rate'] == 2e-6
     assert plan['parent_adapter'] is None and runtime['config']['resume_adapter_file'] is None
     assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mixture['train_sha256']
-    assert release['completed_rejected_courses'] == 18
+    assert release['completed_rejected_courses'] == 19
     assert release['current_training']['course'] == '020' and release['current_training_weights_included'] is False
 
 
@@ -190,7 +190,7 @@ def check_completed010(root, release):
     assert plan['iterations'] == plan['training_rows'] == runtime['config']['iters'] == runtime['supplemental_rows'] == 384
     assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == receipt['adapter_sha256']
     assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
-    assert release['completed_rejected_courses'] == 18 and release['current_training']['course'] == '020'
+    assert release['completed_rejected_courses'] == 19 and release['current_training']['course'] == '020'
 
 
 def check_recovery012(root, release):
@@ -250,7 +250,7 @@ def check_completed012(root, release):
     assert plan['iterations']==launch['config']['iters']==512 and plan['training_rows']==launch['supplemental_rows']==256
     assert plan['parent_adapter'] is None and launch['config']['resume_adapter_file'] is None
     assert plan['corpus_sha256']==launch['corpus_sha256']==mix['train_sha256']
-    assert release['completed_rejected_courses']==18 and release['current_training']['course']=='020'
+    assert release['completed_rejected_courses']==19 and release['current_training']['course']=='020'
 
 
 
@@ -531,6 +531,31 @@ def check_completed019(root, release):
     assert read('evidence/results-summary.json')['corrective014_teachers'] == dict(cases=8,passed=8,formulations=16)
 
 
+def check_completed020(root, release):
+    read = lambda n: json.loads((root/n).read_text())
+    prefix = 'evidence/course020-completed/'
+    dev, scan, rejection = [read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed'] == 5 and scan['passed'] == 0 and rejection['status'] == 'rejected'
+    assert rejection['checks']['all_candidate_responses_stopped'] and rejection['checks']['all_scan_responses_stopped']
+    assert rejection['lost_baseline_passes'] == []
+    audit, receipt = read(prefix+'cpu-audit.json'), read(prefix+'training-receipt.json')
+    assert len(audit['checks']) == 144 and all(audit['checks'].values())
+    assert receipt['training_steps'] == receipt['training_rows'] == 272 and receipt['all_tensors_finite']
+    assert receipt['adapter_sha256'] == '6d1297c2758022d4d471d0125c5595fafe91239efab3529bb1f6a9587987f4d0'
+    prefix='diagnostics/course020-training-probes-001/'
+    probe, reg = read(prefix+'native-score-001/report.json'), read(prefix+'scorer-registration.json')
+    assert probe['passed'] == 3 and probe['total'] == 4 and probe['qualification_credit'] == 0 and probe['known_training_cases']
+    assert read(prefix+'capture/receipt.json')['all_stopped'] and probe['no_answer_repairs']
+    assert probe['scorer_source_sha256'] == reg['source_sha256'] == digest(root/(prefix+'score.py'))
+    assert not reg['acceptance_thresholds_changed']
+    tasks = {r['id']:r for r in probe['tasks']}
+    assert tasks['seen-typed-shell-02']['checks']['independent_analytic_volume'] is False
+    assert all(tasks['seen-typed-shell-02']['checks'][key] for key in ('native_exit_zero','independent_world_bounds','independent_vdb_membership_probes','sealed_void_detected'))
+    assert read(prefix+'interpretation.json')['qualification_credit'] == 0
+    assert release['current_training']['status'] == 'completed_rejected_no_active_training'
+    assert release['current_training']['next_course_registered'] is False
+
+
 def check(root=ROOT, assets=None, native_runtime=False):
     release = json.loads((root/'release.json').read_text())
     assert release['schema'] == 'picogk.am.public-release@1'
@@ -672,7 +697,7 @@ def check(root=ROOT, assets=None, native_runtime=False):
     baseline14b = json.loads((root/'evidence/baseline-14b-report.json').read_text())
     assert baseline14b['passed'] == 4 and baseline14b['total'] == 12
     results = json.loads((root/'evidence/results-summary.json').read_text())['results']
-    assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0), (4, 2), (2, 3), (4, 1), (4, 0), (3, 0), (4, 0), (4, 0), (5, 0), (5, 0), (4, 1), (6, 1), (5, 1), (4, 0), (4, 0)]
+    assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0), (4, 2), (2, 3), (4, 1), (4, 0), (3, 0), (4, 0), (4, 0), (5, 0), (5, 0), (4, 1), (6, 1), (5, 1), (4, 0), (4, 0), (5, 0)]
     assert all(row['manufacturing_authorized'] is False for row in results)
     check_completed32b(root, release)
     check_completed009(root, release)
@@ -686,6 +711,7 @@ def check(root=ROOT, assets=None, native_runtime=False):
     check_completed017(root, release)
     check_completed018(root, release)
     check_completed019(root, release)
+    check_completed020(root, release)
     teacher_counts = json.loads((root/'evidence/results-summary.json').read_text())
     assert teacher_counts['corrective007_teachers'] == dict(cases=64, passed=64, formulations=128)
     assert teacher_counts['corrective008_teachers'] == dict(cases=48, passed=48, formulations=96)

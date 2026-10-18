@@ -1,0 +1,12 @@
+{
+  "schema": "picogk.am.diagnostic-scorer-registration@1",
+  "registered_at_utc": "2026-10-18T14:43:26.423643+00:00",
+  "source": "score.py",
+  "source_sha256": "a66173b45f04bf9ce585ba59e9d4bcde7ab63af085acb06c9e0817cdb77347c3",
+  "native_oracles_source": "data/corrective-001/validate.py",
+  "native_oracles_sha256": "ab10c0fdbf05406e6f3c53ef126514470929dda814c9212520df1eba98176768",
+  "acceptance_thresholds_changed": false,
+  "qualification_credit": 0,
+  "final_contents_read": false,
+  "source_change": "Only training corpus binding008to009; native engine/policy/oracles/thresholds unchanged."
+}

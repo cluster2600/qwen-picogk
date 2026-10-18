@@ -1,6 +1,6 @@
 # AM C# training study — 14 October 2026
 
-This separate study trains Qwen to write complete C# programs with PicoGK 2.3 for synthetic scan ingestion, morphological repair, bionic infill and additive-manufacturing geometry. **No AM C# adapter is qualified yet.** Eighteen completed courses are rejected: three 1.5B courses, three 7B courses, two 14B courses and ten 32B courses. The repository's published multilingual JSON planner and its defaults are preserved.
+This separate study trains Qwen to write complete C# programs with PicoGK 2.3 for synthetic scan ingestion, morphological repair, bionic infill and additive-manufacturing geometry. **No AM C# adapter is qualified yet.** Nineteen completed courses are rejected: three 1.5B courses, three 7B courses, two 14B courses and eleven 32B courses. The repository's published multilingual JSON planner and its defaults are preserved.
 
 | Experiment | Development | File-to-geometry scans | Outcome |
 |---|---:|---:|---|
@@ -30,6 +30,8 @@ This separate study trains Qwen to write complete C# programs with PicoGK 2.3 fo
 | Fresh 32B typed API course 018, 256 rows / 256 steps | 4/12 | 0/4 | Rejected; shell baseline lost; 13 EOS, three length stops |
 
 | 32B continuation, course 019, unchanged 256 rows / 512 steps | 4/12 | 0/4 | Rejected; shell and debug baseline passes lost; 16/16 EOS |
+
+| 32B semantic continuation, course 020, 272 rows / 272 steps | 5/12 | 0/4 | Rejected; retains all five baseline passes; 16/16 EOS |
 
 The bases pass different tasks. Candidate selection must use the matched baseline for its own base identity. [Results](evidence/results-summary.json) bind reported scores, captured responses, protocols, weights and configurations by SHA-256. Training loss, EOS, compilation and a closed mesh are separate observations; none replaces independent geometry or model gates.
 
@@ -198,3 +200,12 @@ The same four known-training diagnostic prompts were each captured once on cours
 Eight new independent synthetic closing/shell observations emphasize operation order, the final Voxels receiver and full wall thickness. All eight pass unchanged native oracles. The prospective 272-row mixture preserves the preceding 256 rows byte-for-byte and appends 16 formulations with exact token masks and EOS; no row exceeds 6,144 tokens. Course 020 registers one full 272-step pass from the exact audited course 019 adapter at the same learning rate and seed. This conditioning and optimization hypothesis remains uncertain.
 
 The twenty-third archive, `rejected-32b-course019-and-seen-training-diagnostic-full-evidence.tar.gz`, preserves all nine completed019 checkpoint/final tensors, the exact corpus, 16 raw answers/native grades, rejection/audit/diagnosis, the four training-set probes, and the eight native-validated semantic teachers with their prospective mixture. [Asset metadata](evidence/course019-completed-assets.json) binds all 81 prior immutable provider assets. Active course 020 payloads, base/native SDK/compiler binaries, private data and sealed final contents are excluded. No adapter is qualified or promoted for serving.
+
+
+Course 020 completed one 272-step pass from the audited course 019 adapter. Its 144-check CPU audit verifies 224 finite FP32 arrays, all four intermediate checkpoints, and exact parent, corpus, runtime and checker bindings. Development passes initialization, offset, shell, debug and missing interfaces, retaining every own-base pass. Scans pass none. All 16 original responses end at EOS; the formal selector rejects the candidate and the final set remains sealed.
+
+Closing and gyroid outputs raise native empty-solid exceptions; vent, cone, diamond, Schwarz and normals fail compilation through unsupported API calls or argument types. Three scan answers fail namespace policy and the refusal fails its sparse-input strict-refusal check. These are model-output failures; no infrastructure cause has been established.
+
+The four fixed known-training diagnostic prompts pass 3/4, versus 2/4 on course 019. Closing, normals and signed refusal pass; shell compiles and passes bounds, membership and sealed-void checks but fails independent analytic volume. This training-set observation has zero qualification credit and gives no causal or held-out generalization proof. Every answer and native grade is preserved unchanged. No next course is registered; further conditioning and API coverage diagnosis precedes another distinct experiment.
+
+The twenty-fourth archive, `rejected-32b-course020-and-seen-training-diagnostic-full-evidence.tar.gz`, preserves five completed checkpoint/final tensors, the exact 272-row corpus, all 16 qualification answers and native grades, the rejection and audit, and the complete four-prompt diagnostic. [Asset metadata](evidence/course020-completed-assets.json) binds the 85 prior immutable provider assets. Base and native SDK/compiler binaries, private data and sealed final contents are excluded. No adapter is qualified or promoted for serving.
