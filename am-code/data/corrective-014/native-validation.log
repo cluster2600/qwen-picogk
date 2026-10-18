@@ -1,0 +1,24 @@
+semantic-closing-01 passed
+semantic-closing-02 passed
+semantic-closing-03 passed
+semantic-closing-04 passed
+semantic-shell-01 passed
+semantic-shell-02 passed
+semantic-shell-03 passed
+semantic-shell-04 passed
+{
+  "schema": "picogk.am.typed-validation@2",
+  "total": 8,
+  "passed": 8,
+  "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+  "train_sha256": "4c63264a2629b124b87fea098e35ebc51123ee6049004f651303dee735ded90d",
+  "cases_sha256": "46e5e3bca749fabbd7e2f7844bc6777b34084718775af41c1f71a0f8c0ce15d4",
+  "validator_sha256": "10d8377782b3960841ac43d23ba240c5ffefb7212b0b2227b29e6e772090d764",
+  "reused_validator_sha256": "ab10c0fdbf05406e6f3c53ef126514470929dda814c9212520df1eba98176768",
+  "reused_native_engine_sha256": "0be12645cb3e8b6cc5d5abdf38a78789d155a9cfe9d74ea820565f375f906ea7",
+  "acceptance_thresholds_changed": false,
+  "cases_run_serially": true,
+  "final_contents_read": false,
+  "model_or_gpu_used": false,
+  "manufacturing_authorized": false
+}

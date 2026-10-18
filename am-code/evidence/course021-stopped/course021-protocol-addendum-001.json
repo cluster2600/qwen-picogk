@@ -1,0 +1,12 @@
+{
+  "schema": "picogk.am.protocol-addendum@1",
+  "created_at": "2026-10-18T15:21:13.642310+00:00",
+  "prospective_protocol_sha256": "e006d93fabcc43496dc06bbb02ee98c111c50d49b97e91b5fac9202fb0b01c11",
+  "correction": "The inherited reused_curriculum_teacher_cases128 excludes the eight semantic014 teachers. Course021 reuses136 validated teacher cases total:80 accepted rehearsal,48 typed013,and8semantic014;272 rows. New teacher cases/formulations remain zero. Training configuration and corpus are unchanged.",
+  "reused_teacher_cases": 136,
+  "training_rows": 272,
+  "new_teacher_cases": 0,
+  "new_formulations": 0,
+  "original_protocol_unchanged": true,
+  "model_result_claimed": false
+}

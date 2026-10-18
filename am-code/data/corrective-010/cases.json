@@ -1,0 +1,1368 @@
+{
+  "schema": "picogk.am.compact-teaching@1",
+  "count": 48,
+  "families": [
+    "closing",
+    "shell",
+    "vent",
+    "cone-roof",
+    "gyroid",
+    "diamond",
+    "schwarz-p",
+    "scan-normals",
+    "debug-api",
+    "stl-skin-vent",
+    "xyz-occupancy",
+    "signed-range-refusal"
+  ],
+  "train_sha256": "6c44b4ccda88ecdee7f9432745333c3bb6b672b2240fe7e71044f047ee7d8fa0",
+  "author_sha256": "ca4611c114a6baa5e21dc7fdd6c305326b6fcb470662064d1f38782cef6502eb",
+  "cases": [
+    {
+      "id": "repair-closing-01",
+      "family": "closing",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-closing-01/input.dat",
+      "source": "cases/repair-closing-01/Program.cs",
+      "source_sha256": "3d9d904dd903a7c2d3ee9b4d3d3ae577acd7904a16128347c47917a3d306e9c7",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "half": 2.94
+      },
+      "synthetic_faulty_input_sha256": "783564f27883883786ca8ca9b2c150ec652977fccc6c4dbe37be81015117095c",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-closing-02",
+      "family": "closing",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-closing-02/input.dat",
+      "source": "cases/repair-closing-02/Program.cs",
+      "source_sha256": "5821e5c8b2b99b127a362fc67dce562af824da0a8b50cf9945c2b3f2f48a6384",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "half": 3.14
+      },
+      "synthetic_faulty_input_sha256": "75ae206aaa04892f0b50555822848172d82570538a78e3b8360757dbc9dfcbf5",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-closing-03",
+      "family": "closing",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-closing-03/input.dat",
+      "source": "cases/repair-closing-03/Program.cs",
+      "source_sha256": "3c41a2a77a341c2e445d7a1a945aa0a9ef46d238c8b6c9f09e03d74bf549a60b",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "half": 3.46
+      },
+      "synthetic_faulty_input_sha256": "3a7a7fd8fd99e6fc7fcfff35055296dfe5da44c3a26d674030364cbd4be9f25c",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-closing-04",
+      "family": "closing",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-closing-04/input.dat",
+      "source": "cases/repair-closing-04/Program.cs",
+      "source_sha256": "bc59f45fce5a01da278aa8db104ecc9cc448918bace7db09ec1be317fd2c4f92",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "half": 3.7
+      },
+      "synthetic_faulty_input_sha256": "888a2ff28ad70d85170bfb371157d64247fa0d4abc2e68073be2e1e37c386295",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-shell-01",
+      "family": "shell",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-shell-01/input.dat",
+      "source": "cases/repair-shell-01/Program.cs",
+      "source_sha256": "40b230f0c85719b38564368e5f68ef52fd91cf14d5e86094d13d961019b71480",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "radius": 2.78,
+        "wall": 1.08
+      },
+      "synthetic_faulty_input_sha256": "c1ee0b4df9a029d2b8c1849ce509ade8e0c1d3514587f59ae074cbeefc6c4490",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-shell-02",
+      "family": "shell",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-shell-02/input.dat",
+      "source": "cases/repair-shell-02/Program.cs",
+      "source_sha256": "feb153ae2918e53fd36154c8631adb12be0ce7a884b1555db4940ad753206740",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "radius": 2.98,
+        "wall": 1.18
+      },
+      "synthetic_faulty_input_sha256": "6163b805aa087bd552631e097573b6963407c6093f8e58e04e657e84220a700b",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-shell-03",
+      "family": "shell",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-shell-03/input.dat",
+      "source": "cases/repair-shell-03/Program.cs",
+      "source_sha256": "0c62ffab707367b511ac48cc675763d582a30c20e47b43b3b7151b586b0039e5",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "radius": 3.28,
+        "wall": 1.26
+      },
+      "synthetic_faulty_input_sha256": "9542a80e9bd9718b6d6f919df61c23c0ef9d2d293e590a0477d8515cdaf47f11",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-shell-04",
+      "family": "shell",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-shell-04/input.dat",
+      "source": "cases/repair-shell-04/Program.cs",
+      "source_sha256": "d68b21b9bbaee82ed49b6a7d662bf7d8dee5ac3e4c702e0898429fbedb6c0803",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "radius": 3.58,
+        "wall": 1.34
+      },
+      "synthetic_faulty_input_sha256": "c79eb3f63affbd723628fca0132992348accdda619af43aa08d84479e73c1169",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-vent-01",
+      "family": "vent",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-vent-01/input.dat",
+      "source": "cases/repair-vent-01/Program.cs",
+      "source_sha256": "e4fccd21aeeb89e79d744325b1d58f722a2fed6e9d7805553b818a75badaf066",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "half": [
+          3.24,
+          3.52,
+          2.68
+        ],
+        "wall": 1.08,
+        "vent_radius": 1.58
+      },
+      "synthetic_faulty_input_sha256": "b07e7c5adf5315a4b1e405263e1265548aaf15bd549175d63f11025984302acd",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-vent-02",
+      "family": "vent",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-vent-02/input.dat",
+      "source": "cases/repair-vent-02/Program.cs",
+      "source_sha256": "22a7311f8e8e703bbfe23afe31a1b1a3a3add1122e17e6c714f3baef7c477d64",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "half": [
+          3.4200000000000004,
+          3.68,
+          2.9000000000000004
+        ],
+        "wall": 1.18,
+        "vent_radius": 1.72
+      },
+      "synthetic_faulty_input_sha256": "2170a842f942f88b9035149270444b4d6bd2a0debfbbb9468202392d66891ef0",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-vent-03",
+      "family": "vent",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-vent-03/input.dat",
+      "source": "cases/repair-vent-03/Program.cs",
+      "source_sha256": "c0437e106f0cf715fc97d5bb19f21c4814bca542a34f78c8e3cb3d83658c134c",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "half": [
+          3.6,
+          3.84,
+          3.12
+        ],
+        "wall": 1.26,
+        "vent_radius": 1.84
+      },
+      "synthetic_faulty_input_sha256": "ef1b1fe5857092e320b7ca1904a274f5d01230be2bd0ae36a1d9ce3362580913",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-vent-04",
+      "family": "vent",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-vent-04/input.dat",
+      "source": "cases/repair-vent-04/Program.cs",
+      "source_sha256": "755c57162ec4e2604f8fb68b5357ba4e5791c50c377bf8c46c17f03994ca90d6",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "half": [
+          3.7800000000000002,
+          4.0,
+          3.3400000000000003
+        ],
+        "wall": 1.34,
+        "vent_radius": 1.96
+      },
+      "synthetic_faulty_input_sha256": "28e1e3732ea0ba207f45599ce5b674273deed58864503909cb7ad7637f2bf0b6",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-cone-roof-01",
+      "family": "cone-roof",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-cone-roof-01/input.dat",
+      "source": "cases/repair-cone-roof-01/Program.cs",
+      "source_sha256": "90b75364e634b64b9ead7fa25ab448c31343544f154b1209fe9b6324ea818d32",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          -0.2,
+          0.8,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          -0.2,
+          0.8,
+          0
+        ],
+        "radius": 1.5,
+        "rise": 3.94,
+        "shoulder": 1.66,
+        "port": 1.18,
+        "floor": 1.06
+      },
+      "synthetic_faulty_input_sha256": "2b46dba47dad225e57c413e598c82636582629916e96b85af545ff90f89e21ec",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-cone-roof-02",
+      "family": "cone-roof",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-cone-roof-02/input.dat",
+      "source": "cases/repair-cone-roof-02/Program.cs",
+      "source_sha256": "02238e2d13fc1819d8a49da68f0484a01967e895726ed406d9d7896a751c230f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          0.6,
+          -0.8,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          0.6,
+          -0.8,
+          0
+        ],
+        "radius": 1.66,
+        "rise": 4.18,
+        "shoulder": 1.82,
+        "port": 1.26,
+        "floor": 1.06
+      },
+      "synthetic_faulty_input_sha256": "c51681130d9d3aace0fc72ae0e27bb820cc6dd027992b4749720667bc6e79679",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-cone-roof-03",
+      "family": "cone-roof",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-cone-roof-03/input.dat",
+      "source": "cases/repair-cone-roof-03/Program.cs",
+      "source_sha256": "9530823b5487ca1dc58bd0282115628d1ff034121fd9e3589158ab9d1f17b189",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          -0.8,
+          0.2,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          -0.8,
+          0.2,
+          0
+        ],
+        "radius": 1.82,
+        "rise": 4.46,
+        "shoulder": 1.98,
+        "port": 1.34,
+        "floor": 1.06
+      },
+      "synthetic_faulty_input_sha256": "ea15a8215d7686cb3dcba1edb7e41b7cb5f6b24fced5dbab8ee87fabe34d4e11",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-cone-roof-04",
+      "family": "cone-roof",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-cone-roof-04/input.dat",
+      "source": "cases/repair-cone-roof-04/Program.cs",
+      "source_sha256": "9d852dbc4c91d6e23ac7e63e6acc2280f4be577ab52215c3dd7164be806033ff",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          1.0,
+          0.4,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          1.0,
+          0.4,
+          0
+        ],
+        "radius": 1.98,
+        "rise": 4.74,
+        "shoulder": 2.14,
+        "port": 1.42,
+        "floor": 1.06
+      },
+      "synthetic_faulty_input_sha256": "e6c16573b0fc9e96f467d1475909adf0f1d1b9d75488a00caebab019b53cbca5",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-gyroid-01",
+      "family": "gyroid",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-gyroid-01/input.dat",
+      "source": "cases/repair-gyroid-01/Program.cs",
+      "source_sha256": "0ccb199d9a13358743e4c2ffecac7d0b42d1d2e1dc183729c309695ea58ed769",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "origin": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "cell": 5.86,
+        "wall": 1.08,
+        "extent": 3.44
+      },
+      "synthetic_faulty_input_sha256": "d6e4b63c15415e50e4a08c26f6f0073e9cf62eccd38ba604772ab8b4d594d81a",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-gyroid-02",
+      "family": "gyroid",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-gyroid-02/input.dat",
+      "source": "cases/repair-gyroid-02/Program.cs",
+      "source_sha256": "4c03ff848fea6a71f240f62df6a4884efd6e9feff3e8dad6fcd7874083784919",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "origin": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "cell": 6.18,
+        "wall": 1.18,
+        "extent": 3.56
+      },
+      "synthetic_faulty_input_sha256": "726812a78077b670791ae148065377efa425847f772da5bf13af517d9cf9664a",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-gyroid-03",
+      "family": "gyroid",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-gyroid-03/input.dat",
+      "source": "cases/repair-gyroid-03/Program.cs",
+      "source_sha256": "2d763b74276008df5085182587c649de47e6f75b0cc44a8f134992f79c85f6e1",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "origin": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "cell": 6.54,
+        "wall": 1.26,
+        "extent": 3.6799999999999997
+      },
+      "synthetic_faulty_input_sha256": "76e92771cbb4fc4a2e887657f50223937ce9f0d4f5b0f1c3ce5725bb4eb1b871",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-gyroid-04",
+      "family": "gyroid",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-gyroid-04/input.dat",
+      "source": "cases/repair-gyroid-04/Program.cs",
+      "source_sha256": "f1c3e6728601fdc6a9de7035561a7107088d83f031edf08b0faf2775004dc6a3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "origin": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "cell": 6.98,
+        "wall": 1.34,
+        "extent": 3.8
+      },
+      "synthetic_faulty_input_sha256": "fbff2ea08a79cdef587b72bf256f332952d3eca1790b3fcab0fada06496af1bc",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-diamond-01",
+      "family": "diamond",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-diamond-01/input.dat",
+      "source": "cases/repair-diamond-01/Program.cs",
+      "source_sha256": "6595b0f3f515f88ba557a49ee5f4fc9043966ae0f588d2b64c24ab95d95d8c08",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "origin": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "cell": 5.86,
+        "wall": 1.08,
+        "extent": 3.44
+      },
+      "synthetic_faulty_input_sha256": "498fc140c5411a02c6a9d2faae5005cfba7b0514cbaedf180cecc9f47d113b4e",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-diamond-02",
+      "family": "diamond",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-diamond-02/input.dat",
+      "source": "cases/repair-diamond-02/Program.cs",
+      "source_sha256": "924bcd6f43510bffe2257b5e5f831f9a0380652154ed78f14880ecfe2ed305a8",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "origin": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "cell": 6.18,
+        "wall": 1.18,
+        "extent": 3.56
+      },
+      "synthetic_faulty_input_sha256": "36a290d6ece2ee528803e0783a46e607f28930476d7db97d73c65286b1a4393d",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-diamond-03",
+      "family": "diamond",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-diamond-03/input.dat",
+      "source": "cases/repair-diamond-03/Program.cs",
+      "source_sha256": "361a921e00fd03ba09f5c92b9256471d189379247bfed217b7c9c39c31360754",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "origin": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "cell": 6.54,
+        "wall": 1.26,
+        "extent": 3.6799999999999997
+      },
+      "synthetic_faulty_input_sha256": "3df3b94107d2998ea067b55dc7be944a4474c0e1352f84009e507cc178a24425",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-diamond-04",
+      "family": "diamond",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-diamond-04/input.dat",
+      "source": "cases/repair-diamond-04/Program.cs",
+      "source_sha256": "b2fc6ae9e3f46acbbe012d900c48adc67ee60f80dd25c7635552a03498ed6ad5",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "origin": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "cell": 6.98,
+        "wall": 1.34,
+        "extent": 3.8
+      },
+      "synthetic_faulty_input_sha256": "22bf34a3ad7efb6f2fcf54f679200e58560840968ed47a65e464e98d4dcab8d7",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-schwarz-p-01",
+      "family": "schwarz-p",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-schwarz-p-01/input.dat",
+      "source": "cases/repair-schwarz-p-01/Program.cs",
+      "source_sha256": "468156226e4ed20603c0290fd0f89169d273724f2eb7143a3150dfe106acf064",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "origin": [
+          -1.665,
+          -0.665,
+          -1.065
+        ],
+        "cell": 5.86,
+        "wall": 1.08,
+        "extent": 3.44
+      },
+      "synthetic_faulty_input_sha256": "16a20b54a7934847f2fa9a6dc4c9b48269b0292b3eef4c88595cb8b17eface87",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-schwarz-p-02",
+      "family": "schwarz-p",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-schwarz-p-02/input.dat",
+      "source": "cases/repair-schwarz-p-02/Program.cs",
+      "source_sha256": "3a49cf10fb25983ac162deebbad00e5f27f268110327dc1e700cf09a71e8941a",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "origin": [
+          -0.945,
+          -2.3449999999999998,
+          -0.5449999999999999
+        ],
+        "cell": 6.18,
+        "wall": 1.18,
+        "extent": 3.56
+      },
+      "synthetic_faulty_input_sha256": "ca212d4917b89b1693d93d715fa7a48cd5818dacda4cf00d8dee6bfa4761f590",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-schwarz-p-03",
+      "family": "schwarz-p",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-schwarz-p-03/input.dat",
+      "source": "cases/repair-schwarz-p-03/Program.cs",
+      "source_sha256": "ddb2f9cb3c6f873741c10c099d238382c1176ba1b8647aa2af00eb31fb7a0325",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "origin": [
+          -2.435,
+          -1.435,
+          -2.235
+        ],
+        "cell": 6.54,
+        "wall": 1.26,
+        "extent": 3.6799999999999997
+      },
+      "synthetic_faulty_input_sha256": "7548914cc8b3b52a71fd5d1c4140843750eccbbd441c428b1976a6af4d8c210d",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-schwarz-p-04",
+      "family": "schwarz-p",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-schwarz-p-04/input.dat",
+      "source": "cases/repair-schwarz-p-04/Program.cs",
+      "source_sha256": "c569961e1ab61d64475a159ecaf5cccb9e37a4c5f68aec60110d477c51f15619",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "origin": [
+          -0.7450000000000001,
+          -1.3450000000000002,
+          -1.945
+        ],
+        "cell": 6.98,
+        "wall": 1.34,
+        "extent": 3.8
+      },
+      "synthetic_faulty_input_sha256": "7cae47d8dbd62afd3ff0836168be21b7fee328596a8c5b83025923a10aeaa240",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-scan-normals-01",
+      "family": "scan-normals",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-scan-normals-01/planes.csv",
+      "source": "cases/repair-scan-normals-01/Program.cs",
+      "source_sha256": "d42ebf3f07e084edec4253e2616a3e4e857906b5f60a418cc62c2d77c2cab536",
+      "input_sha256": "8004617c03bc7eab338f4a38143627509031223ca37ea3824e31d2c2995a55ee",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "half": [
+          2.46,
+          2.74,
+          3.02
+        ],
+        "parser": "planes",
+        "header": [
+          "nx",
+          "z",
+          "x",
+          "ny",
+          "y",
+          "nz"
+        ]
+      },
+      "synthetic_faulty_input_sha256": "2820fe98a7a54b30013c6699f8e075fd284163cdf4eece94f815953695047946",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-scan-normals-02",
+      "family": "scan-normals",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-scan-normals-02/planes.csv",
+      "source": "cases/repair-scan-normals-02/Program.cs",
+      "source_sha256": "d42ebf3f07e084edec4253e2616a3e4e857906b5f60a418cc62c2d77c2cab536",
+      "input_sha256": "b93a5bf01534c4fe743241b5d9dd3ad4d0268e88d0985044c342663aff37542d",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "half": [
+          2.64,
+          2.9000000000000004,
+          3.16
+        ],
+        "parser": "planes",
+        "header": [
+          "z",
+          "ny",
+          "x",
+          "nz",
+          "y",
+          "nx"
+        ]
+      },
+      "synthetic_faulty_input_sha256": "2820fe98a7a54b30013c6699f8e075fd284163cdf4eece94f815953695047946",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-scan-normals-03",
+      "family": "scan-normals",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-scan-normals-03/planes.csv",
+      "source": "cases/repair-scan-normals-03/Program.cs",
+      "source_sha256": "d42ebf3f07e084edec4253e2616a3e4e857906b5f60a418cc62c2d77c2cab536",
+      "input_sha256": "3739eb67c64128b16caffa91ecddc29dc82f3ddf4e6855d55184bce49b7dd06b",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "half": [
+          2.82,
+          3.06,
+          3.3
+        ],
+        "parser": "planes",
+        "header": [
+          "ny",
+          "x",
+          "nz",
+          "z",
+          "nx",
+          "y"
+        ]
+      },
+      "synthetic_faulty_input_sha256": "2820fe98a7a54b30013c6699f8e075fd284163cdf4eece94f815953695047946",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-scan-normals-04",
+      "family": "scan-normals",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-scan-normals-04/planes.csv",
+      "source": "cases/repair-scan-normals-04/Program.cs",
+      "source_sha256": "d42ebf3f07e084edec4253e2616a3e4e857906b5f60a418cc62c2d77c2cab536",
+      "input_sha256": "82aeb741a3e641ec684bb35ea39e66b3edc16fb07f716ea7665e63b566781751",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "half": [
+          3.0,
+          3.22,
+          3.44
+        ],
+        "parser": "planes",
+        "header": [
+          "y",
+          "nz",
+          "nx",
+          "x",
+          "z",
+          "ny"
+        ]
+      },
+      "synthetic_faulty_input_sha256": "2820fe98a7a54b30013c6699f8e075fd284163cdf4eece94f815953695047946",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-debug-api-01",
+      "family": "debug-api",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-debug-api-01/input.dat",
+      "source": "cases/repair-debug-api-01/Program.cs",
+      "source_sha256": "67f6671e738396f1b8c1e012e3cc0788d2afed3dbe0a9e90f9bb1efce44b3b3f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "radius": 1.38,
+        "half_height": 2.48
+      },
+      "synthetic_faulty_input_sha256": "a2160463e87c341c9255ad89315bb01a0579fc7ab962fd70e002e3644b99a1c8",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-debug-api-02",
+      "family": "debug-api",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-debug-api-02/input.dat",
+      "source": "cases/repair-debug-api-02/Program.cs",
+      "source_sha256": "127406c7bad620a603bc7892a4e61687d37ac670abcd0d82ef11633d086885d6",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "radius": 1.5,
+        "half_height": 2.68
+      },
+      "synthetic_faulty_input_sha256": "89a47688927357ac0b8d46c9e2a22d792ea5c8e16f323561b581d742c5a340e8",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-debug-api-03",
+      "family": "debug-api",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-debug-api-03/input.dat",
+      "source": "cases/repair-debug-api-03/Program.cs",
+      "source_sha256": "eea8b724d75c7e75abb9eac94e22c7f588930069963cc7dda1ed80e7f4a70428",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "radius": 1.62,
+        "half_height": 2.88
+      },
+      "synthetic_faulty_input_sha256": "e74cdf975712c702e59c2b24575239f5ea0b38392f282d654712f9439dc1b056",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-debug-api-04",
+      "family": "debug-api",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-debug-api-04/input.dat",
+      "source": "cases/repair-debug-api-04/Program.cs",
+      "source_sha256": "0d719c14adf64376c9cd28f227bcd432380aefe1f4c5c75f9e781fb2a1f1277a",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "radius": 1.78,
+        "half_height": 3.08
+      },
+      "synthetic_faulty_input_sha256": "c86daf53c73ea6ebe860f3a247ad06d9dcaf7a5c0a3f03805eb5a5d3e621e9df",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-stl-skin-vent-01",
+      "family": "stl-skin-vent",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-stl-skin-vent-01/scan.stl",
+      "source": "cases/repair-stl-skin-vent-01/Program.cs",
+      "source_sha256": "8850e6eabe5e36987f0737716b5a80c096baab54878c206c008d386119127616",
+      "input_sha256": "b389db7efc6dd705f0205b8090a39b600eee77a19a76827188e30e8ed9b54280",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.2,
+          0.8,
+          0.4
+        ],
+        "half": [
+          3.24,
+          3.52,
+          2.68
+        ],
+        "wall": 1.08,
+        "vent_radius": 1.58
+      },
+      "synthetic_faulty_input_sha256": "7dad782e397ea7c84b9a5fcc59b91e7e64ee8861bbdc42c075276b8d26386f26",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-stl-skin-vent-02",
+      "family": "stl-skin-vent",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-stl-skin-vent-02/scan.stl",
+      "source": "cases/repair-stl-skin-vent-02/Program.cs",
+      "source_sha256": "1a3e7922096512052311370a4f321353bd69e0ea5a738cfef7dd9c06bcded8c0",
+      "input_sha256": "f4fcf4780b075ad58705f774e5d0b734b6119a2cfa98bff6a7c8939b6529c8ae",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          0.6,
+          -0.8,
+          1.0
+        ],
+        "half": [
+          3.4200000000000004,
+          3.68,
+          2.9000000000000004
+        ],
+        "wall": 1.18,
+        "vent_radius": 1.72
+      },
+      "synthetic_faulty_input_sha256": "fb45fc521f174663434aa949415071bfa3d564fbe69f22679a073d91c7d682f6",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-stl-skin-vent-03",
+      "family": "stl-skin-vent",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-stl-skin-vent-03/scan.stl",
+      "source": "cases/repair-stl-skin-vent-03/Program.cs",
+      "source_sha256": "fbb0b217b993a4f39cd8962bed31a17e6308e60f491c9ca92fc9d36a58ffc7c2",
+      "input_sha256": "1ab89e9c798cd51442ac0e1f1e6cb556379dcb87c0ad467e09b1d1513f5e2d25",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.8,
+          0.2,
+          -0.6
+        ],
+        "half": [
+          3.6,
+          3.84,
+          3.12
+        ],
+        "wall": 1.26,
+        "vent_radius": 1.84
+      },
+      "synthetic_faulty_input_sha256": "7196b72013347954a7b48a22aa71b55e7dd3dc34225d7d27bde3ea4298cbb858",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-stl-skin-vent-04",
+      "family": "stl-skin-vent",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-stl-skin-vent-04/scan.stl",
+      "source": "cases/repair-stl-skin-vent-04/Program.cs",
+      "source_sha256": "c817161b35e5b5dd5a0d52d124a9ecfa0170699fcb25c5239b657e0a2ee2e221",
+      "input_sha256": "af50eb490bed1a4d0c12e9bae0e2db8671e832151c0de0f11bd8644a02123013",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          1.0,
+          0.4,
+          -0.2
+        ],
+        "half": [
+          3.7800000000000002,
+          4.0,
+          3.3400000000000003
+        ],
+        "wall": 1.34,
+        "vent_radius": 1.96
+      },
+      "synthetic_faulty_input_sha256": "01be00642d00afc5e47e96b3dee9a32315365bf0b00309c2d3b167bc7e27a0e7",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-xyz-occupancy-01",
+      "family": "xyz-occupancy",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/repair-xyz-occupancy-01/observations.xyz",
+      "source": "cases/repair-xyz-occupancy-01/Program.cs",
+      "source_sha256": "e297139988d6a66d67fe9ac8e0e3dc389de66a414cafb6b26d976be8322cce08",
+      "input_sha256": "7180cbbc0a615fa5347f39a07e75cb8a87eb9e880575acb1b3c3a1a400b803f0",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -2.3000000000000003,
+            0.8,
+            0.4
+          ],
+          [
+            1.9000000000000001,
+            0.8,
+            0.4
+          ],
+          [
+            -0.2,
+            -1.4999999999999998,
+            1.6
+          ],
+          [
+            -0.2,
+            3.0999999999999996,
+            -0.7999999999999999
+          ]
+        ],
+        "radius": 0.72,
+        "parser": "xyz"
+      },
+      "synthetic_faulty_input_sha256": "88740d18069f348a6bf13da01a112eb6993166c162d4285a305f5cee99c8e782",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-xyz-occupancy-02",
+      "family": "xyz-occupancy",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/repair-xyz-occupancy-02/observations.xyz",
+      "source": "cases/repair-xyz-occupancy-02/Program.cs",
+      "source_sha256": "e58aa30cbe1478dc9a01534e625f148a572f4f17e94702676b79455f036b2d77",
+      "input_sha256": "a54f66fd457ed090ad9100deff67574cc400b0ae27d3ce8ff3941f6eb4aad044",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -1.5,
+            -0.8,
+            1.0
+          ],
+          [
+            2.7,
+            -0.8,
+            1.0
+          ],
+          [
+            0.6,
+            -3.0999999999999996,
+            2.2
+          ],
+          [
+            0.6,
+            1.4999999999999998,
+            -0.19999999999999996
+          ]
+        ],
+        "radius": 0.84,
+        "parser": "xyz"
+      },
+      "synthetic_faulty_input_sha256": "ea1c91b4fcbb42410848716f0852a5bf8bdfd37ac82293cc928110567506d5c1",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-xyz-occupancy-03",
+      "family": "xyz-occupancy",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/repair-xyz-occupancy-03/observations.xyz",
+      "source": "cases/repair-xyz-occupancy-03/Program.cs",
+      "source_sha256": "7b0798007fc40ad2f5725772a92c3898f579ae4a38ffee1da28cca240488b031",
+      "input_sha256": "bf543a9bf2ad4c9dc7189e0d757282765f47ea5d61a12724ecdffba8f9bb5d3a",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -2.9000000000000004,
+            0.2,
+            -0.6
+          ],
+          [
+            1.3,
+            0.2,
+            -0.6
+          ],
+          [
+            -0.8,
+            -2.0999999999999996,
+            0.6
+          ],
+          [
+            -0.8,
+            2.5,
+            -1.7999999999999998
+          ]
+        ],
+        "radius": 0.96,
+        "parser": "xyz"
+      },
+      "synthetic_faulty_input_sha256": "f1279f3771c5bae9b8bdff4472d88cd895c12bd7170e8b635de989a083ba8f82",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-xyz-occupancy-04",
+      "family": "xyz-occupancy",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/repair-xyz-occupancy-04/observations.xyz",
+      "source": "cases/repair-xyz-occupancy-04/Program.cs",
+      "source_sha256": "748f72ba3d60743ba55e11bf2f7ea9175151821439780653d7ac07235ca2e131",
+      "input_sha256": "ba3f5848b792fae86460f60d70880ebb18de273147b0b8f682aedd60a5e11060",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -1.1,
+            0.4,
+            -0.2
+          ],
+          [
+            3.1,
+            0.4,
+            -0.2
+          ],
+          [
+            1.0,
+            -1.9,
+            1.0
+          ],
+          [
+            1.0,
+            2.6999999999999997,
+            -1.4
+          ]
+        ],
+        "radius": 1.08,
+        "parser": "xyz"
+      },
+      "synthetic_faulty_input_sha256": "45855ee0558c0a35e1a4b679c85099eb6f81e370d6e3360eede57a96b7ee9cd1",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-signed-range-refusal-01",
+      "family": "signed-range-refusal",
+      "variant": 1,
+      "kind": "refusal",
+      "input": "cases/repair-signed-range-refusal-01/unsigned.xyz",
+      "source": "cases/repair-signed-range-refusal-01/Program.cs",
+      "source_sha256": "bb84af22a4b4779a81b0a0b41d49bbe1ad31faca34d8d9f577519de5597b5169",
+      "input_sha256": "9f620d88606a2095f9da28c4ee89188e4d8e4abe97b6f80d111a63bf3c498278",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_oriented_surface_records",
+          "registered_camera_frame",
+          "signed_depth_frames"
+        ],
+        "input_valid": true
+      },
+      "synthetic_faulty_input_sha256": "14f27599c8fc3e4466d34c1ffd59ec9903b48f4b696c0325d7a0fa62e93c2fe9",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-signed-range-refusal-02",
+      "family": "signed-range-refusal",
+      "variant": 2,
+      "kind": "refusal",
+      "input": "cases/repair-signed-range-refusal-02/unsigned.xyz",
+      "source": "cases/repair-signed-range-refusal-02/Program.cs",
+      "source_sha256": "3fa81b2664a67d74e317dcd25666c1cfd231f9cb3834fb9d094dcf669f54dc6e",
+      "input_sha256": "0850d6831950efb0b42443f412933711bec5f48d21e0b0a986fa92e06f522941",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_scanner_pixel_model",
+          "outward_sample_directions",
+          "camera_ray_origins"
+        ],
+        "input_valid": true
+      },
+      "synthetic_faulty_input_sha256": "686989689889bb8fd7a99cc749a70166f2367a9a0d1cfbda72a5b94e32e2ba2c",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-signed-range-refusal-03",
+      "family": "signed-range-refusal",
+      "variant": 3,
+      "kind": "refusal",
+      "input": "cases/repair-signed-range-refusal-03/unsigned.xyz",
+      "source": "cases/repair-signed-range-refusal-03/Program.cs",
+      "source_sha256": "c09f59e79bd9cf59396eb398233606c4f8bd2ad7296a64cfe4f6be0fa0531447",
+      "input_sha256": "a842dacfdd0ab21724cf1121f6abf6fbd40cf7059fe08e6c4fa6ccd0538ed44c",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_depth_image_model",
+          "surface_orientation_map",
+          "sensor_extrinsics"
+        ],
+        "input_valid": true
+      },
+      "synthetic_faulty_input_sha256": "a953a3ff96caf983a98e411c0159756404c79db8a42b329e9a0839cb7f6e7204",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    },
+    {
+      "id": "repair-signed-range-refusal-04",
+      "family": "signed-range-refusal",
+      "variant": 4,
+      "kind": "refusal",
+      "input": "cases/repair-signed-range-refusal-04/unsigned.xyz",
+      "source": "cases/repair-signed-range-refusal-04/Program.cs",
+      "source_sha256": "b99033af731b56b0139f95ad540d3faafdc45d25fb800d19b01c91d658fa3084",
+      "input_sha256": "cd9cd7cf88cc85d8615a521c643312c7bcce625870ff1d9701673e35b1eba1fe",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_registered_range_samples",
+          "outward_normal_frame",
+          "visibility_confidence"
+        ],
+        "input_valid": true
+      },
+      "synthetic_faulty_input_sha256": "8810a465127cc921307d45d952b252bae83516edb089b31426cb124f5a4f37d4",
+      "synthetic_fault_origin": "mechanical mutation of independently authored teacher; never a captured model response"
+    }
+  ],
+  "reused_recipe_source_sha256": "d0f6e8850e227ceac4effe46b1c5e4024cd3a1c21cd7e6336b76e1d62e084603",
+  "implementation_changes": "Separate synthetic observations, explicit reordered shared export boundary, independently mutated faulty-input repair prompts; no captured answers or final data.",
+  "final_contents_read": false,
+  "native_validation": "pending; no eligibility before native proof",
+  "reused_implementation_recipe_sha256": "acc7108c6de1a928b5eab273b3b15499114b96473992bb2a2709782a79a9af89",
+  "reused_repair_recipe_sha256": "f07341e885eba3a34ee3e035ecb9f8122d29716631b1a795481294891fcaf815"
+}

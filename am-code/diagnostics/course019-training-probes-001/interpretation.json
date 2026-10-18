@@ -1,0 +1,15 @@
+{
+  "schema": "picogk.am.seen-training-interpretation@1",
+  "created_at_utc": "2026-10-18T10:43:45.512417+00:00",
+  "passed": 2,
+  "total": 4,
+  "previous_passed": 0,
+  "all_eos": true,
+  "qualification_credit": 0,
+  "report_sha256": "dbd1fb7ddbe7a505a215dc462b7ca5fc89659cab842ae3243a16b9a85107dfe2",
+  "findings": "Normals and signed refusal pass. Closing compiles but omits Offset operations, failing membership; shell compiles but uses wrong radial thickness, failing analytic volume and membership. Both previous018 and019 raw answers remain untouched.",
+  "limits": "Four known training prompts, not held-out proof. Extra optimization and optimizer reset jointly changed; no single-cause attribution. Held-out development4/12+scan0/4 still rejects019.",
+  "next_experiment": "Eight independent synthetic closing/shell observations, new centres and dimensions, explicit operation order/final receiver/full thickness conditioning; unchanged native oracles required8/8 before training. Preserve prior256 rows exactly; append16formulations only after validation. No automatic new48 renaming or blind additional passes.",
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}

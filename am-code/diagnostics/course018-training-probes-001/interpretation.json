@@ -1,0 +1,12 @@
+{
+  "schema": "picogk.am.seen-training-interpretation@1",
+  "created_at_utc": "2026-10-18T03:12:30.644962+00:00",
+  "report_sha256": "768b46cbaf09c599b38718a765e1e42b82e2fd0cafbe2e159d2b2f66bb22aa51",
+  "known_training_cases": true,
+  "qualification_credit": 0,
+  "observation": "All4 original known training prompts reachedEOS, but3 generated programs failedcompilation andshell failedanalyticvolume/bounds/membership/sealedvoid checks.",
+  "inference": "Failures occur even for exact training conditioning. This does not identify a single cause or establish optimization sufficiency; it gives no held-out qualification credit.",
+  "next_experiment": "Hold exact256-row curriculum,LR,seed,rank/layers fixed; add2fullpasses/512steps from exact audited completed018 with a freshoptimizer. No newcurriculum, no repairedanswers or intermediate selection.",
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}

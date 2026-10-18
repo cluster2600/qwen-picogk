@@ -1,0 +1,28 @@
+{
+  "schema": "picogk.am.local-training-launch@1",
+  "launched_at": "2026-10-18T15:20:01.018549+00:00",
+  "pid": 80855,
+  "argv": [
+    "runtime/venv/bin/python",
+    "am-code/train.py",
+    "--name",
+    "32b-semantic014-rate5-continuation1",
+    "--iters",
+    "272",
+    "--learning-rate",
+    "5e-6",
+    "--resume",
+    "am-code/runs/32b-semantic014-continuation1/adapter/adapters.safetensors",
+    "--corpus",
+    "am-code/data/focused-32b-009/train.jsonl",
+    "--corpus-sha256",
+    "50b461feb13055b6553c40e3c90ee261e859e02130916344cca5948890a1e4a0",
+    "--base-profile",
+    "am-code/base-profile-32b.json"
+  ],
+  "log": "training-32b-semantic014-rate5-continuation1.log",
+  "prospective_protocol_sha256": "e006d93fabcc43496dc06bbb02ee98c111c50d49b97e91b5fac9202fb0b01c11",
+  "status": "launched_not_completed",
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}
