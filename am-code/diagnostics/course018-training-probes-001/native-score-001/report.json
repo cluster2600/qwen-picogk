@@ -1,0 +1,121 @@
+{
+  "schema": "picogk.am.seen-training-reproduction@1",
+  "total": 4,
+  "passed": 0,
+  "tasks": [
+    {
+      "id": "seen-typed-closing-02",
+      "status": "failed",
+      "source_sha256": "f28f234152f635c40fabb9523ac3ebfb0fe41b01972f7f9447b5a857c16a3172",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/diagnostics/course018-training-probes-001/native-score-001/seen-typed-closing-02/process.log",
+      "original_raw_answer_sha256": "1af7d7994c5c4e8b0b9d5ab0a5069d6a2d0f41364cb185e378336a4a6ea5bdb8",
+      "known_training_case": true,
+      "qualification_credit": 0
+    },
+    {
+      "id": "seen-typed-shell-02",
+      "status": "failed",
+      "source_sha256": "068ad9c589f5ecae5c27a1aa4c22f1f4fa203a6a823b1b6ab57afd5c0dab8784",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_nondegenerate_positive_stl": true,
+        "finite_nonempty_vdb": true,
+        "stl_vdb_volume_interval": true,
+        "bounded_output": true,
+        "independent_analytic_volume": false,
+        "independent_world_bounds": false,
+        "independent_vdb_membership_probes": false,
+        "same_solid_stl_membership_probes": true,
+        "sealed_void_detected": false,
+        "bounded_report": true
+      },
+      "native_exit_code": 0,
+      "details": {
+        "mesh": {
+          "triangles": 3004,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 24.08017438307326
+        },
+        "native": {
+          "volume_mm3": 19.2,
+          "library_volume_mm3": 24.270472,
+          "volume_interval_mm3": [
+            6.656000000000001,
+            53.76
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -2.1888254,
+            -1.5888253,
+            -2.3888254
+          ],
+          "high": [
+            1.4000001,
+            2,
+            1.1888254
+          ],
+          "triangles": 3004,
+          "unsupported_triangles": 433,
+          "wall_rays_mm": [],
+          "inspected_rays": 265,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "probe_source_sha256": "8b86b2ea6ae2edceb5120dbff70e000e62d1426c418643414e1127621fb79dbd"
+      },
+      "original_raw_answer_sha256": "b969548eacb357835d6f8bb163f4ab8903c0daf37d1ed8e1907545634de92937",
+      "known_training_case": true,
+      "qualification_credit": 0
+    },
+    {
+      "id": "seen-typed-scan-normals-02",
+      "status": "failed",
+      "source_sha256": "84c45f8ae06c5a5e675d22f030d435c9b7ee8404f07fe48fa8840472504a799d",
+      "input_sha256": "81de4cb28bfd35d52ea49a40b8fc13d2697f43602f46c65095e352829712bdea",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/diagnostics/course018-training-probes-001/native-score-001/seen-typed-scan-normals-02/process.log",
+      "original_raw_answer_sha256": "bccb5c2cd68bf6ec6722d4e6825acfcf62cae649eff5277d6f3f75a2d65b45f0",
+      "known_training_case": true,
+      "qualification_credit": 0
+    },
+    {
+      "id": "seen-typed-signed-range-refusal-02",
+      "status": "failed",
+      "source_sha256": "d77762f7d8e0200159bdf53cecdc7e3feeaa3653dd852b18c073dd0decb72e23",
+      "input_sha256": "0850d6831950efb0b42443f412933711bec5f48d21e0b0a986fa92e06f522941",
+      "checks": {
+        "static_allowlist": true,
+        "no_native_initialization": true
+      },
+      "error": "C# compilation failed; see am-code/diagnostics/course018-training-probes-001/native-score-001/seen-typed-signed-range-refusal-02/process.log",
+      "original_raw_answer_sha256": "264416f9f308038e4f99c904076a995397e2ac77500eb04946ae309ac6c29f50",
+      "known_training_case": true,
+      "qualification_credit": 0
+    }
+  ],
+  "protocol_sha256": "6327c4a0fe1f731c41f304e631ebaabe373114cc78e1d3083cdfac6b0105220a",
+  "responses_sha256": "6f5d545fec595c9a2969146941c71d8571c07f4544b853bcb8d52746ea5ca467",
+  "scorer_source_sha256": "1df2641037ac46717db690860d68d7e9c18aad9f4ac244548d699cde01fb9c6d",
+  "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+  "known_training_cases": true,
+  "qualification_credit": 0,
+  "no_answer_repairs": true,
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}

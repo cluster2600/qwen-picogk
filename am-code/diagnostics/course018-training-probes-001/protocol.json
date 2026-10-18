@@ -1,0 +1,57 @@
+{
+  "schema": "picogk.am.prospective-seen-training-diagnostic@1",
+  "registered_at_utc": "2026-10-18T02:43:01.188175+00:00",
+  "purpose": "One capture per original known training prompt after formal rejection; not a retry of qualification tasks, not held-out, no answer repair, no selection or final access.",
+  "adapter_sha256": "3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62",
+  "tasks_sha256": "e29f0b35744abf1db2c8290032ef76fb25a8f3796fcadbdadc3d5b05b5360450",
+  "train_corpus_sha256": "bab30161af29bf82a657efb18bd4771addf76615fd35f845f45e539a7263e3d0",
+  "infer_source_sha256": "f0fa6e6c19b3062dea28ad492f5bc117031961a669dba9e54077159d371a9b9d",
+  "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+  "temperature": 0,
+  "max_tokens": 6144,
+  "qualification_credit": 0,
+  "bindings": [
+    {
+      "id": "seen-typed-closing-02",
+      "teacher_id": "typed-closing-02",
+      "family": "closing",
+      "training_line_1based": 163,
+      "prompt_sha256": "d6362298dce6d73886036e7d8b285bd59c23f17ec4635b2698700936704679d9",
+      "teacher_source_sha256": "cc1346128012587c8f9a74d812bb15749f37f52b3f2c8ba54a17cc885cb98814",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_teacher_report_sha256": "20e7ef6ffa7170628c146aed623355241abbdd4f748a4e5f76ea38dc407ad52c"
+    },
+    {
+      "id": "seen-typed-shell-02",
+      "teacher_id": "typed-shell-02",
+      "family": "shell",
+      "training_line_1based": 171,
+      "prompt_sha256": "b84dbbc3a4f67df62e26671b74cb0cf58ea8fd0292268157d8e1b1fd41f328d2",
+      "teacher_source_sha256": "f9490c2b99e7f9df131aae7cf4e1f2b8170328d123dca737e6e06fb2d8b34c17",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "native_teacher_report_sha256": "20e7ef6ffa7170628c146aed623355241abbdd4f748a4e5f76ea38dc407ad52c"
+    },
+    {
+      "id": "seen-typed-scan-normals-02",
+      "teacher_id": "typed-scan-normals-02",
+      "family": "scan-normals",
+      "training_line_1based": 219,
+      "prompt_sha256": "17783f8c71ee75678bc0b38bc168251a46c725fb182dd7fbfac02d928582719a",
+      "teacher_source_sha256": "8158f176aacbdb35c833686f5c3209ada48fe7ea2084b64985e492420997889b",
+      "input_sha256": "81de4cb28bfd35d52ea49a40b8fc13d2697f43602f46c65095e352829712bdea",
+      "native_teacher_report_sha256": "20e7ef6ffa7170628c146aed623355241abbdd4f748a4e5f76ea38dc407ad52c"
+    },
+    {
+      "id": "seen-typed-signed-range-refusal-02",
+      "teacher_id": "typed-signed-range-refusal-02",
+      "family": "signed-range-refusal",
+      "training_line_1based": 251,
+      "prompt_sha256": "173b5942ec317b3bf7d8d0bd817f385a93ad37330941ff1987d2ba494ea03762",
+      "teacher_source_sha256": "9b627b8e9112a177f6da71125df72d82a4a245f373515864644db3ee5ee10cf3",
+      "input_sha256": "0850d6831950efb0b42443f412933711bec5f48d21e0b0a986fa92e06f522941",
+      "native_teacher_report_sha256": "20e7ef6ffa7170628c146aed623355241abbdd4f748a4e5f76ea38dc407ad52c"
+    }
+  ],
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}

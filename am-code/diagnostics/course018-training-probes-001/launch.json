@@ -1,0 +1,21 @@
+{
+  "schema": "picogk.am.local-inference-launch@1",
+  "pid": 49315,
+  "argv": [
+    "runtime/venv/bin/python",
+    "am-code/infer_v2.py",
+    "--tasks",
+    "am-code/diagnostics/course018-training-probes-001/tasks.json",
+    "--output",
+    "am-code/diagnostics/course018-training-probes-001/capture",
+    "--adapter",
+    "am-code/runs/32b-typed013-fresh1/adapter",
+    "--base-profile",
+    "am-code/base-profile-32b.json"
+  ],
+  "launched_at": "2026-10-18T02:43:01.191572+00:00",
+  "status": "launched_not_completed",
+  "prospective_protocol_sha256": "6327c4a0fe1f731c41f304e631ebaabe373114cc78e1d3083cdfac6b0105220a",
+  "qualification_credit": 0,
+  "final_contents_read": false
+}

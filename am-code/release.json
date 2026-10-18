@@ -3,13 +3,13 @@
   "status": "review_staged_not_published",
   "license": "Apache-2.0 original exported material; dependencies retain notices",
   "files_sha256": {
-    "README.md": "21f35b371a16dd14f0ebcfb4c46768af354509a8abfcb6050a53e647c77ba7a8",
+    "README.md": "37e83dc31eb8e3538ea388a7e227d595f4126f00d7af777d7c9987d912e2644c",
     "base-manifest.json": "37b65afc534f8befa34e5843a169a3e3478c14c90e8c9b1696400a406d57d7c0",
     "base-profile-14b.json": "ae1b81ddd239197ac4f470e6d01173dfc0132d05215ac09ea6a31946625cf89e",
     "base-profile-32b.json": "a83dbe6460c70da82d9c3220a9930b229d516dfcc390c7403f660e1f55b85c09",
     "base-profile-7b.json": "e518369dfb009746e5ab92497741286b72d581b4ac05c3995404d6a6a0657129",
     "base_runtime.py": "8f0e3c647bcf7d72f531c6c94faeaf6730cf0cd5e3330e5bcb185d4b45a0e61e",
-    "check_publication.py": "a40d161bcb7336b6b81efc403ee98c83c7b198cbf044b5d06c61c0400583955c",
+    "check_publication.py": "19bfeec9a9f491d034453a5048b9ee834ec57d832c24d004ec6f9abe6dabb5f1",
     "data/chat-tokenization.json": "680b0f20afb092e1a7367461b08250122cc51d2869438bc3db8e02dbf6bdc5be",
     "data/chat/train.jsonl": "1ac93688653ea7aa26b1e93b739eaac21717e11af4f9996972b6735bb20fe684",
     "data/corrective-001/README.md": "94310beee2e177beebb4636eb611d708eb695574c559d1c36277fe9f580321d5",
@@ -345,6 +345,17 @@
     "diagnostics/audit-course015.py": "d762555be8667582505ca6cf1bff58a4b5630a25070789000ce6dcbae00a8b00",
     "diagnostics/audit-course016.py": "2d1e9ebd6e26b3b417768212b7441022ebd26de94c3cbb8e54007824280e455a",
     "diagnostics/audit-course017.py": "8fd12ae426d230e64b4b4d2aa1b10665b4709e83335dc195a3a1273e979a09ad",
+    "diagnostics/audit-course018.py": "261f0cf55ae4f387ddb5f29635d174dc5ba37f4b1c4970e493a37a1c5c5627eb",
+    "diagnostics/course018-training-probes-001/capture/protocol.json": "b4a7a71443e8a161fa82a70be358110a1073e614f83dbad97ca4378fce469b27",
+    "diagnostics/course018-training-probes-001/capture/receipt.json": "236f726fc42ec2686d3e1f58853e80479e3ce9e07c2241cf9b1e50e28d250e1f",
+    "diagnostics/course018-training-probes-001/capture/responses.json": "6f5d545fec595c9a2969146941c71d8571c07f4544b853bcb8d52746ea5ca467",
+    "diagnostics/course018-training-probes-001/interpretation.json": "478074230e474439322df9cd62cf7a63652fa13984f7de7d7fd1b2ffe430bf48",
+    "diagnostics/course018-training-probes-001/launch.json": "14978f99c4c2e1bda2555c0f61d9ec20f8e4f6cc9ebd4e623fc47513a36be880",
+    "diagnostics/course018-training-probes-001/native-score-001/report.json": "e92af83005950d422960a804dc0de89474b76c801b284511acb83f9ca3382d27",
+    "diagnostics/course018-training-probes-001/protocol.json": "6327c4a0fe1f731c41f304e631ebaabe373114cc78e1d3083cdfac6b0105220a",
+    "diagnostics/course018-training-probes-001/score.py": "1df2641037ac46717db690860d68d7e9c18aad9f4ac244548d699cde01fb9c6d",
+    "diagnostics/course018-training-probes-001/scorer-registration.json": "beba3d0112f92635852aa15d7701914d7de9283a240ce9e492a5c42ca27bf423",
+    "diagnostics/course018-training-probes-001/tasks.json": "e29f0b35744abf1db2c8290032ef76fb25a8f3796fcadbdadc3d5b05b5360450",
     "diagnostics/evaluation-policy-v2/development-teacher-checks-v2.json": "8d0c305216fbf1d91f954f4ba1e23526bfd69e5f864b1bd82255baa0e8cac00b",
     "diagnostics/evaluation-policy-v2/frozen-profile-independent-review.json": "613e16cdee410642a1811d6d6db5ea7221db111776ee52c1332d21d85fe5cdc3",
     "diagnostics/evaluation-policy-v2/implementation-check-v2-final.json": "d585e74da5cc0570431a1731d1b3b5d179a79b837564adf25fd37009ee3cf4dc",
@@ -424,7 +435,7 @@
     "evaluation/test_evaluate_v2.py": "ed26f0c9a03b5d33e7602514151af757c7e0143d8d8626d505371992c520b6c0",
     "evaluation/test_policy_v2.py": "8d903965b137f08bb164c57948362b131eaf42e7b9657d88ecb1b51f49baa7f8",
     "evidence/accepted005-14b-assets.json": "bb37357b32a16e28daf6c9670603594fbaf7f20b18fb3041c096578065b2fd3f",
-    "evidence/assets.json": "e4b0028fcc98a85a74e7a7492b7d2acd3b2659fd6743372959de06e891169620",
+    "evidence/assets.json": "a5490db54f3ef247e2f417e44ef85fa86bae0ea292d21e0f7d0b82bbb49a6fad",
     "evidence/base-profile-support-receipt.json": "0dc7c16d97a554dfdb59195448f2c6c07a4528907876f1e9802abb167ed9cb60",
     "evidence/baseline-14b-capture-protocol.json": "93f2e673650e38111ca4544b2676048f83f926dba5fd6efba654985905854173",
     "evidence/baseline-14b-capture-receipt.json": "bd3af48120f2a7a019e07373548dbff92ca9c560288bc1b40f95aa1d4d911cb7",
@@ -471,6 +482,7 @@
     "evidence/course-016-protocol.json": "1e5d5ad21beb98096b1c2ba26370b2eaf460b8a903313b3e213667dc0dd8d28e",
     "evidence/course-017-protocol.json": "7c4ae6b144ed3a3e4645e41c9c66576c0f07adb9cc4b69c29344eb2513706689",
     "evidence/course-018-protocol.json": "a3e6a11b4ad80cd9ef4b263b79a2bf44abc2a65e99053cd1d50d230c43e791c4",
+    "evidence/course-019-protocol.json": "11fd922ae614b12e99dd7fd9a6a65d3fcb46bcc8de67f69278ffb3bd1022d372",
     "evidence/course004-7b342-independent-review.json": "ee65bbe280d0e43a97e0c3db14fcc81ff0256c20d2ca260b0e83b8a7c5c861ce",
     "evidence/course004-assets.json": "c320efcb95f4a70ae30690b4104c81f42d3a0107502da252ebcb6bb8f3fb7902",
     "evidence/course005-7b448-independent-review.json": "2dbf6ce2e2f4d6e8f4a81bcd291b8e1de7758fd33e5fea79fc8be88cbf84db88",
@@ -586,7 +598,18 @@
     "evidence/course017-completed/scan-report.json": "58b485964b0d93fb60d16d5b2986fece6485a57574d32916e00d240cfa4d0bb2",
     "evidence/course017-completed/training-receipt.json": "a278fb76ba1d4a7c6e4e10c7fcc7014e08c34248f1f2dae33560de6b9436d742",
     "evidence/course017-runtime-protocol.json": "49f133060ddaac4f60e093bcd3e41cdfe20146fea3e73586007fc0fda9bda4d4",
+    "evidence/course018-completed-assets.json": "3fec350bc8ac1e2ca13350158f92ada91ce4434b638c9413c06b29d51c18414b",
+    "evidence/course018-completed/adapter_config.json": "710303fee058b6bb929b750b8f0787238fd61c344609909450bec6a4c801810b",
+    "evidence/course018-completed/completed-diagnostic.json": "612ec0d6b42ec074abf0edd51738549e1982ed9ac66f04b1b38460eb4b534364",
+    "evidence/course018-completed/cpu-audit.json": "97d28137f5859fa527e9a702d05319856ed44882201c85bfa3e327cc6f907424",
+    "evidence/course018-completed/development-report.json": "2621a98c1c083c08d6a67c3d24ea45309328ad5de419caea34adb199b9451cfe",
+    "evidence/course018-completed/evaluation-protocol.json": "0cbda05672d5ad501b6d5bb4d7da722ef8771f17859eb9d4eb8127a41a5ed721",
+    "evidence/course018-completed/formal-rejection.json": "fbc8f7a8d4be379b6ac9f0914a56194ca7a99122a4be142c4b5611f9ac7b4061",
+    "evidence/course018-completed/runtime-protocol.json": "bc2c0e8794a8c272cd7bd5a45bd14096260b73fbe067bc2cac43861bb6a1ea07",
+    "evidence/course018-completed/scan-report.json": "f81185e0d048401cad2cb26d61856bacf047c67a3d072af14914bff016836d1a",
+    "evidence/course018-completed/training-receipt.json": "ababb8a99d2ed38f7b38285ecd20b7724fd70da7c5f2d399bd4cd8f4ab3534ef",
     "evidence/course018-runtime-protocol.json": "bc2c0e8794a8c272cd7bd5a45bd14096260b73fbe067bc2cac43861bb6a1ea07",
+    "evidence/course019-runtime-protocol.json": "740031ba7c7666e8fd7632b8c14afc3cf5cc5e09e92276cdc468893461158f2a",
     "evidence/evaluation-policy-v2/checker-profile-v2.json": "834974c4f77a65c03a0c657fc0595bc06eea83d0c45f6cb89fd2b05c498f94bc",
     "evidence/evaluation-policy-v2/checker-profile-v2.sha256": "5bdb615caefb594b3eb55054525fd2021a008d5005e3f919864bed4cadda2a8e",
     "evidence/evaluation-policy-v2/validation-binding-audit-v2.json": "63dda29ececd9458b8a0741cd159c8ebd3dcbb30d28f9e15ea0709645c1c836d",
@@ -601,7 +624,7 @@
     "evidence/model14b-preparation/upstream-index.json": "635d985ebf00b6a25daba71b7eba4d5ec8be7902c15104a79312fe947f44b121",
     "evidence/model7b-manifest.json": "e8684e5874274fd613e9927f8cc755841fa3c8ec3678f0141f01ca6446d3a5e4",
     "evidence/public-native-gold-cli.json": "d191505afd18897d709751f2066f5f49895893b15cce5d1a0b48683eb9cbc463",
-    "evidence/results-summary.json": "651728a4df9103017b2ce39faf5bdb1e6f30691cacc64b5075e2324b91a57915",
+    "evidence/results-summary.json": "d06c8033df78d4c13a22fec07065e5da9f574bbf81156c0fef4774e22f370473",
     "evidence/seen-replay005/capture.log": "5f5fa59003ac0c70ee5b8f5531d870678d1b4c5bed2abd46961e9f4af05a4868",
     "evidence/seen-replay005/capture/protocol.json": "8f1ca33d2df1700124a0c1cfca0f66bbf41ac1ecf1a9e22e7bb3af2ab2920466",
     "evidence/seen-replay005/capture/receipt.json": "51d65195fd3cbe1ce26219a30154c4bdc93d5e54b5a5dc9842378de91296c616",
@@ -617,7 +640,7 @@
     "evidence/seen-replay005/selected-rows.json": "d82fbdd6a72f811e114438ca0da1604dad1b1e1c51527408e310fdac05f71175",
     "evidence/seen-replay005/tasks.json": "cee95ac7a32f5a8be2738d25418f3e3384e77fc5b49e1e32b9703bd65cb8ec30",
     "evidence/seen-replay005/token-prefix-audit.json": "92c10207a1d02c933748456c1f004b609adca7070639fbc7230c8a7a7bb550ac",
-    "evidence/source-export-bindings.json": "7e0c7ccd7142b2e95f4b84e0d428a61a5938d3743d76e24611063050acdb8826",
+    "evidence/source-export-bindings.json": "b436d3d1ab4a2b7bc3a3cb23b425a7e3937c7c4014a1feaa31fe554c4af6e462",
     "evidence/validation-binding-audit-v4.json": "ecb3b4bdee879579ef0c08e712f1cceeaea18dcf4c72d182bf5344711a812970",
     "final_qualification.py": "67bcf3e739c3dc0ee540137fbc93b134117b3d5f0dbd5f40de222bf20cf9e1fe",
     "final_qualification_v2.py": "b727cde1616af7939dfd2ffa7d6ac040734871e5be77886c641f70cf42db97e4",
@@ -866,6 +889,16 @@
       "raw_payload_bytes": 430988735,
       "redacted_files": 134,
       "export_index_sha256": "a1178b5c994580effda9b9ad9798803ff920831234cabd0bd76fd4fe7d5989c7",
+      "qualified_adapter": false
+    },
+    {
+      "asset": "rejected-32b-course018-and-seen-training-diagnostic-full-evidence.tar.gz",
+      "bytes": 312042235,
+      "sha256": "4aefd593071a92e65c3d7f72bed35fedbd2c1cea37162e36a2643f2ee9ebc963",
+      "files": 214,
+      "raw_payload_bytes": 340507415,
+      "redacted_files": 54,
+      "export_index_sha256": "2ef52f3b86128967761f578acb6e284f27cf469e611c5157081e1e25c027adb0",
       "qualified_adapter": false
     }
   ],
@@ -1679,6 +1712,44 @@
           "original_sha256": "04fc4530f0f32e2785d232f5a482bd2329ec4f8ad653b2636d32ccf6add07b59"
         }
       ]
+    },
+    {
+      "run": "32b-typed013-fresh1",
+      "status": "rejected",
+      "adapter_sha256": "3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62",
+      "original_adapter_config_sha256": "1a5c674da7e80c21d8b3f8e2b2405c4233fc89821d31c6e7b55bdbfcb4731587",
+      "original_training_receipt_sha256": "ababb8a99d2ed38f7b38285ecd20b7724fd70da7c5f2d399bd4cd8f4ab3534ef",
+      "steps": 256,
+      "asset": "rejected-32b-course018-and-seen-training-diagnostic-full-evidence.tar.gz",
+      "asset_tensor_path": "runs/32b-typed013-fresh1/adapter/adapters.safetensors",
+      "qualified": false,
+      "checkpoints": [
+        {
+          "path": "runs/32b-typed013-fresh1/adapter/0000060_adapters.safetensors",
+          "sha256": "c627d515e9cbc60c3b16f5c847060705189164028df8179835d894c1051111ce",
+          "original_sha256": "c627d515e9cbc60c3b16f5c847060705189164028df8179835d894c1051111ce"
+        },
+        {
+          "path": "runs/32b-typed013-fresh1/adapter/0000120_adapters.safetensors",
+          "sha256": "6f54e09993213a4cb69a57ee7fd577dfca6a208d0e3a3ce9e16d0437182a2f2a",
+          "original_sha256": "6f54e09993213a4cb69a57ee7fd577dfca6a208d0e3a3ce9e16d0437182a2f2a"
+        },
+        {
+          "path": "runs/32b-typed013-fresh1/adapter/0000180_adapters.safetensors",
+          "sha256": "e2b861aa7e3c3f17834adf1071cba0b0d7c818bdf94eb911e79b317cac9c765e",
+          "original_sha256": "e2b861aa7e3c3f17834adf1071cba0b0d7c818bdf94eb911e79b317cac9c765e"
+        },
+        {
+          "path": "runs/32b-typed013-fresh1/adapter/0000240_adapters.safetensors",
+          "sha256": "99b035f20fecad8d91816ecf62c9b64afa0f71853fffd4571533e2426350417b",
+          "original_sha256": "99b035f20fecad8d91816ecf62c9b64afa0f71853fffd4571533e2426350417b"
+        },
+        {
+          "path": "runs/32b-typed013-fresh1/adapter/adapters.safetensors",
+          "sha256": "3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62",
+          "original_sha256": "3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62"
+        }
+      ]
     }
   ],
   "base_manifests": [
@@ -1696,8 +1767,8 @@
   "final_contents_included": false,
   "current_training_weights_included": false,
   "manufacturing_authorized": false,
-  "source_snapshot": "Sixteen completed rejections preserved; completed017 at5/12development+1/4scans,all16EOS,all5baselinepasses retained,135CPUchecks,5tensors. New48nativevalid013 fullyqualified type lessons and256rowmixture retainingaccepted160; allhistoricalcorpora and2authorassertionfailures preserved. Course018 freshpinnedbase2e-6 for256steps; activepayload excluded. Prior73assets immutable;finalsealed/defaultspreserved.",
-  "completed_rejected_courses": 16,
+  "source_snapshot": "Seventeen completed rejections preserved. Course018:4/12development,0/4scans,13EOS/3lengthstops,lostshellbaseline,139CPUchecks,5tensors. Four seen-training probes score0/4 despiteallEOS; no qualification credit. Course019 continues exactaudited018 at2e-6 for512steps/twofullpasses of unchanged256rowcorpus; activepayload excluded. Prior77assets immutable;finalsealed/defaultspreserved.",
+  "completed_rejected_courses": 17,
   "initial_five_assets_immutable": true,
   "publication": {
     "initial_study_tag": "am-code-20261014-study",
@@ -1710,7 +1781,7 @@
     "existing_thirteen_remote_assets_immutable": true,
     "existing_seventeen_remote_assets_immutable": true,
     "new_archive_assets_for_this_update": [
-      "rejected-32b-course017-and-corrective013-full-evidence.tar.gz"
+      "rejected-32b-course018-and-seen-training-diagnostic-full-evidence.tar.gz"
     ],
     "existing_nineteen_remote_assets_immutable": true,
     "existing_twenty_three_remote_assets_immutable": true,
@@ -1725,39 +1796,42 @@
     "existing_sixty_one_remote_assets_immutable": true,
     "existing_sixty_five_remote_assets_immutable": true,
     "existing_sixty_nine_remote_assets_immutable": true,
-    "existing_seventy_three_remote_assets_immutable": true
+    "existing_seventy_three_remote_assets_immutable": true,
+    "existing_seventy_seven_remote_assets_immutable": true
   },
   "latest_completed_course": {
-    "name": "course017-32b-compact012-continuation1",
-    "course": "017",
-    "run": "32b-compact012-continuation1",
-    "base": "32B",
-    "status": "rejected",
-    "development_passed": 5,
-    "development_total": 12,
-    "scan_passed": 1,
-    "scan_total": 4,
-    "stopped": 16,
-    "truncated": 0,
-    "adapter_sha256": "04fc4530f0f32e2785d232f5a482bd2329ec4f8ad653b2636d32ccf6add07b59",
-    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
-    "lost_baseline_passes": [],
-    "manufacturing_authorized": false
-  },
-  "current_training": {
+    "name": "course018-32b-typed013-fresh1",
     "course": "018",
     "run": "32b-typed013-fresh1",
     "base": "32B",
+    "status": "rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 13,
+    "truncated": 3,
+    "adapter_sha256": "3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "current_training": {
+    "course": "019",
+    "run": "32b-typed013-continuation1",
+    "base": "32B",
     "status": "registered_running_no_candidate_result",
-    "prospective_original_sha256": "a3e6a11b4ad80cd9ef4b263b79a2bf44abc2a65e99053cd1d50d230c43e791c4",
-    "runtime_protocol_original_sha256": "c25c68893f26b124c3d308f9b10f5cd766a408130bc02004443f093740f239a1",
+    "prospective_original_sha256": "11fd922ae614b12e99dd7fd9a6a65d3fcb46bcc8de67f69278ffb3bd1022d372",
+    "runtime_protocol_original_sha256": "dce821846ed9ce9ce86efd4e720f6602db57cc83ba1ea3bd3fa093e06a4d21ac",
     "training_rows": 256,
-    "planned_steps": 256,
-    "epochs": 1,
+    "planned_steps": 512,
+    "epochs": 2,
     "learning_rate": 2e-06,
-    "fresh_untouched_base": true,
+    "fresh_untouched_base": false,
     "fresh_optimizer": true,
-    "parent_adapter_sha256": null,
+    "parent_adapter_sha256": "3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62",
     "smoke_adapter_resumed": false,
     "active_weights_logs_captures_or_scores_included": false,
     "model_qualification": "not_established",
