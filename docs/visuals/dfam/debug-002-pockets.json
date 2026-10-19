@@ -1,0 +1,15 @@
+{
+ "evidence": "evidence/dfam-code/strict-v3-20261019.json",
+ "image": "debug-002-pockets.png",
+ "image_sha256": "3ac8507dba6152439a0106a94481eb27830a309b68405f17165a9198e5732693",
+ "manufacturing_qualified": false,
+ "native_geometry_edited_for_render": false,
+ "render_source_sha256": "238784149bdeabe112da7308c2c84286853e0065582117dc0fe00398d66a7fd6",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6, scipy 1.15.3, libigl fast_winding_number",
+ "sources_sha256": {
+  "debug-002-broken/part.stl": "f2d8933ef361e358142a2b509cb31d830acb350e2b6c05f33625983e4d02da26",
+  "debug-002/part.stl": "9553d9c342e45c587550c106c417ef8985639aa0fd7cf95dd94512653659ba4b"
+ },
+ "synthetic_fixtures": true,
+ "view": "planar section y = 0; sealed regions by 2D flood fill from the frame edge, for display. The 3D enclosed-void measure is the checker's."
+}

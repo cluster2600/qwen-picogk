@@ -1,0 +1,16 @@
+{
+ "evidence": "evidence/dfam-code/strict-v3-20261019.json",
+ "image": "dfam-002-gusset.png",
+ "image_sha256": "d4840784c36473b400b8de1e3a621aa366f1f35789713d197c8b0ba9eaf3eb5f",
+ "manufacturing_qualified": false,
+ "native_geometry_edited_for_render": false,
+ "overhang_rule": "normal z < -cos 45 deg, above the 0.45 mm plate band, as in dfam-native/Checker",
+ "render_source_sha256": "238784149bdeabe112da7308c2c84286853e0065582117dc0fe00398d66a7fd6",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6, scipy 1.15.3, libigl fast_winding_number",
+ "sources_sha256": {
+  "bracket/part.stl": "c49d5f72e3a305f1d6fe782b1c59458f36867b6740c009828c5c7b6bda4b7c7d",
+  "dfam-002/part.stl": "f1c21e9a1f8c2aaca02fb18cf2966558f9246e55281b7a234ec28832e7bc0d2f"
+ },
+ "synthetic_fixtures": true,
+ "view": "planar section y = 0 of the actual meshes, filled by winding number; facets classified by outward normal"
+}

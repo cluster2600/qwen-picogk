@@ -4,19 +4,20 @@ license: apache-2.0
 
 # PicoGK DfAM code corpus (work in progress)
 
-**Status: 4 of 150 planned cases.** This directory holds the tooling and the
+**Status: 8 of 150 planned cases.** This directory holds the tooling and the
 first examples of a corpus for C# and PicoGK 2.3.0. The task
 it covers is turning 3D scan data into lightweight parts designed for
 laser powder bed fusion of metals (PBF-LB/M). The planned split is 45 scan
 repair, 60 bionic infill, 30 DfAM and 15 troubleshooting cases. No
 train/valid/test files exist yet, and assembly requires all 150 cases.
-All four cases pass the strict policy `dfam-strict-v3` under isolated native
-verification ([receipt](../../evidence/dfam-code/strict-v3-20261017.json)).
+All eight cases pass the strict policy `dfam-strict-v3` under isolated native
+verification ([receipt](../../evidence/dfam-code/strict-v3-20261019.json)).
 `infill-001` now welds its export, drops collapsed faces and removes detached
 shells that enclose no volume. Its original source is archived byte for byte
 in [evidence/dfam-code/snapshots](../../evidence/dfam-code/snapshots/), and
 its earlier receipts are kept, together with the
-[first strict-v3 receipt](../../evidence/dfam-code/strict-v3-20261015.json) and
+[2026-10-17](../../evidence/dfam-code/strict-v3-20261017.json) and
+[first](../../evidence/dfam-code/strict-v3-20261015.json) strict-v3 receipts and
 the [strict-v2 receipt](../../evidence/dfam-code/strict-v2-20261015.json).
 See the [authoring and validation guide](../../docs/DFAM_CODE_CORPUS.md).
 
@@ -64,9 +65,12 @@ For `infill-001`, an unvented copy fails with 19,216 mm³ of trapped powder.
 For `dfam-001`, the same channel with a round roof measures an overhang
 fraction of 0.0483 and fails the declared 0.035 limit, which the teardrop
 passes at 0.0218 ([negative control](../../evidence/dfam-code/negative-controls/)).
+The broken program of `debug-002` is part of every run: it must keep failing,
+and does, with 2,623 mm³ of powder in six sealed pockets.
 
-The fixtures are a synthetic slab with bosses, plus a noisy point cloud with
-outliers and gaps derived from it. They are not a vehicle part.
+The fixtures are three synthetic shapes, a slab with bosses, a bracket and a
+manifold block with an internal channel, each with an open copy and a noisy
+point cloud with outliers and scanner gaps. They are not vehicle parts.
 `assemble` writes MLX `messages` records for prompt masking. It requires all
 150 planned cases, family-disjoint partitions, current bound strict-policy
 native receipts and a hash-verified local tokenizer. Rows exceeding 8,192
@@ -87,8 +91,13 @@ These were observed with PicoGK 2.3.0 and PicoGKRuntime `0f26321` on Linux:
   the narrow band, but the written value still has the correct sign.
   `fSignedDistance` scales those values by the voxel size a second time.
 - Converting a mesh to voxels fills fully enclosed cavities. This is useful
-  for solidifying a closed splat shell, and it is why the checker uses parity
-  instead.
+  for solidifying a closed splat shell and for finding sealed cavities
+  (`infill-002`, `debug-002`), and it is why the checker uses parity instead.
+  Even without cavities the round trip shifts the volume by a few mm³.
+- A level-set value within a hair of zero at a voxel node makes the mesher
+  place several vertices on or next to that node. The result is zero-area or
+  needle triangles: a 3.0 mm hole centred on a node gave 200. Keep implicit
+  values off zero, or weld vertices within 0.0001 mm across cell boundaries.
 
 ## Limits
 

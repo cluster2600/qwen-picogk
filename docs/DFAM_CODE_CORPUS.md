@@ -1,16 +1,19 @@
 # PicoGK DfAM corpus: authoring, verification and training gates
 
 This is a work-in-progress teaching corpus, separate from the released
-parameter planner and the AM C# study. It has **four examples**, not 150
+parameter planner and the AM C# study. It has **eight examples**, not 150
 completed examples and not a newly trained model. Under the current
-`dfam-strict-v3` policy, all four cases pass isolated native verification on
-Linux ([receipt](../evidence/dfam-code/strict-v3-20261017.json)).
+`dfam-strict-v3` policy, all eight cases pass isolated native verification on
+Linux ([receipt](../evidence/dfam-code/strict-v3-20261019.json)).
+- `scan-002`, `dfam-002`, `infill-002` and `debug-002` were added on
+  2026-10-19, together with two new [fixture families](#fixture-families).
 - `infill-001` was revised to weld its export, drop collapsed faces and
   remove the detached zero-volume sheet described below. Its original source
   is archived in `evidence/dfam-code/snapshots/`.
-- The [first strict-v3](../evidence/dfam-code/strict-v3-20261015.json) and
-  [strict-v2](../evidence/dfam-code/strict-v2-20261015.json) receipts are
-  kept as history.
+- The [2026-10-17](../evidence/dfam-code/strict-v3-20261017.json) and
+  [first](../evidence/dfam-code/strict-v3-20261015.json) strict-v3 receipts
+  and the [strict-v2](../evidence/dfam-code/strict-v2-20261015.json) receipt
+  are kept as history.
 
 No training partitions are published. The wider plan for
 physics evidence is in [PHYSICS_EVIDENCE_PLAN.md](PHYSICS_EVIDENCE_PLAN.md).
@@ -31,27 +34,73 @@ flowchart LR
 ## Shared export cleanup
 
 PicoGK's mesher can emit zero-area triangles where a surface passes exactly
-through voxel lattice points. Three cases (`infill-001`, `debug-001`,
-`dfam-001`) therefore embed the same export cleanup, kept as a single source
-in `dfam-native/MeshCleanup.cs`. It replaces vertices consistently by the
-first vertex in each rounded 0.0001 mm cell, which is the checker's own weld
-convention, and then drops faces that collapse. Dropping tiny faces without
-welding their neighbours could open real holes. The helper preserves winding
-and reports the number of removed faces and the largest vertex displacement.
-A test fails if a case that defines `MeshCleanup` does not embed this exact
-source.
+through voxel lattice points. Six cases (`infill-001`, `debug-001`,
+`dfam-001`, `dfam-002`, `infill-002` and `debug-002`) therefore embed the
+same export cleanup, kept as a single source in
+`dfam-native/MeshCleanup.cs`. It replaces vertices consistently by the first
+vertex in each rounded 0.0001 mm cell, which is the checker's own weld
+convention. A vertex whose own cell is still empty also joins a vertex within
+0.0001 mm in a neighbouring cell. Without that, two vertices 0.1 µm apart on
+either side of a cell boundary stay separate and form needle triangles; the
+mesher leaves such pairs where a surface passes almost exactly through a
+voxel node, and `infill-002` had two. The helper then drops faces that
+collapse. Dropping tiny faces without welding their neighbours could open
+real holes. It preserves winding, never moves a vertex further than the
+cell diagonal, and reports the number of removed faces and the largest
+vertex displacement. A test fails if a case that defines `MeshCleanup` does
+not embed this exact source.
 
 The pure C# `CleanupChecks` executable tests the helper on its own: a closed
-tetrahedron with near-duplicate vertices, collapsed and collinear faces,
-untouched valid faces, idempotence, the movement bound, and invalid,
-non-finite or overflowing input. It loads neither PicoGK nor corpus code and
-runs as a separate CI job. It is a unit test of the weld, not native
+tetrahedron with near-duplicate vertices, the same across a cell boundary, a
+needle across a boundary, vertices just beyond the tolerance kept apart,
+collapsed and collinear faces, untouched valid faces, idempotence, the
+movement bound, and invalid, non-finite or overflowing input. It loads
+neither PicoGK nor corpus code and runs as a separate CI job. It is a unit test of the weld, not native
 verification of any part. The zero-volume shell removal in `infill-001` is
 not part of this helper and is covered by the native receipt instead.
 
 ```sh
 dotnet run --project dfam-native/CleanupChecks/CleanupChecks.csproj -c Release
 ```
+
+## Fixture families
+
+The trusted checker generates every input deterministically
+(`Checker fixtures DIR VOXEL`). A family has a closed STL, an open STL with
+three scanner gaps, and a noisy point cloud with about 0.5 % outliers, written
+as `.xyz`, `.xyz` with normals and `.csv`. Since 2026-10-19 there are three
+families. The original slab is reproduced byte for byte, so the older
+receipts still describe their inputs.
+
+![The three fixture families](visuals/dfam/fixture-families.png)
+
+| Family | Files | Shape | What it exercises |
+|---|---|---|---|
+| slab | `fixtures.json`, `part.stl`, ... | 70 x 44 x 30 mm slab with a bored boss and a pin boss | the original cases |
+| bracket | `bracket/` | 60 x 40 x 38 mm: base plate, 2 mm web, 12 mm horizontal lip, 0.8 mm rib, 6.4 mm hole | overhangs, thin walls, small holes |
+| manifold | `manifold/` | 50 x 36 x 30 mm block with a 6 mm L-shaped internal channel and a blind branch | internal channels, sealing, powder removal |
+
+Input kinds are `xyz`, `xyzn`, `csv`, `stl` and `stl_open` for the slab, and
+the same names prefixed with the family for the others, such as
+`bracket_xyzn` or `manifold_stl`. Only the selected file is mounted in the
+sandbox, and each output is compared with its own family's `fixture.json`, so
+`volume_ratio_to_fixture` refers to the right part. The shapes are synthetic
+and are not vehicle parts.
+
+```mermaid
+flowchart LR
+    G["Checker fixtures<br/>trusted, deterministic"] --> S["slab<br/>fixtures.json"]
+    G --> B["bracket/<br/>fixture.json"]
+    G --> M["manifold/<br/>fixture.json"]
+    S --> C1["scan-001 · infill-001 · dfam-001<br/>debug-001 · debug-002"]
+    B --> C2["scan-002 from bracket_xyzn<br/>dfam-002 from bracket_stl"]
+    M --> C3["infill-002 from manifold_stl"]
+```
+
+One radius had to change before the bracket was usable. A 3.0 mm hole
+centred on a voxel node meets the 0.3 mm grid exactly, and the mesher emitted
+200 zero-area triangles on its wall. The hole is now 3.2 mm in radius, a
+6.4 mm M6 clearance hole.
 
 ## Acceptance gates
 
@@ -114,6 +163,61 @@ On the gyroid, the ray thickness gives a 1st percentile of 1.05 mm and a
 assumed 1.0 mm minimum. That matches the design, which grades the sheets
 down to 1.0 mm at the top. The [turntable](visuals/dfam/infill-thickness-turntable.gif)
 shows the whole cut part.
+
+### Cases added on 2026-10-19
+
+All numbers below are from the
+[2026-10-19 receipt](../evidence/dfam-code/strict-v3-20261019.json).
+
+**`scan-002`: oriented point cloud to solid.** The bracket's cloud with
+normals is turned into a signed distance field. Tangent-plane distances
+(Hoppe et al. 1992) give the magnitude. Where nearby faces disagree on the
+side, at sharp corners and beside thin walls, the generalised winding number
+of the oriented samples (Barill et al. 2018) decides. The volume is within
+0.11 % of the reference, the 0.8 mm rib survives (1st-percentile wall
+0.79 mm) and the 6.4 mm hole stays open. Run through `scan-001`'s published
+code outside the verifier, the same points without normals cap the hole and
+come out 6.7 % over volume. Both keep the rib; the closing rounds its ends.
+
+![scan-002 and scan-001 on the bracket](visuals/dfam/scan-002-vs-scan-001.png)
+
+Two pitfalls found while writing it are explained in the case:
+- With random sampling, the rib's corner is sampled more coarsely than its
+  edge radius, so the nearest sample's tangent plane can point the wrong way.
+- A field value within a hair of zero at a voxel node makes the mesher stack
+  vertices there and leave needle triangles. The field is kept at least
+  0.003 mm from zero.
+
+**`dfam-002`: gusset and rib.** A gusset whose underside rises at 50 deg
+replaces the 12 mm flat underside of the lip, and the 0.8 mm rib is
+thickened to 1.2 mm. The downward area under the lip falls from 422 to
+2 mm², the part's overhang share is 0.0059 against a declared 0.01, the
+1st-percentile wall is 1.2 mm and the volume grows by 14 %. The program
+probes the stated layout first and refuses a part that does not match.
+
+![dfam-002 before and after](visuals/dfam/dfam-002-gusset.png)
+
+**`infill-002`: sleeved channels in a lattice block.** A morphological
+closing finds the manifold's channels without a hard-coded path. Each
+channel keeps a solid 2 mm sleeve, the rest becomes a D-sheet lattice, and
+openings come in through the top, at least the minimum wall away from any
+channel. About 300 mm³ of lattice pockets that skin and sleeves cut off from
+every opening are made solid rather than left as powder traps. Volume ratio
+0.570, overhang share 0.111 (declared 0.13), 0.19 % of the area below
+1.0 mm and no enclosed void. The [section sweep](visuals/dfam/infill-002-section-sweep.gif)
+moves the cut through the whole block.
+
+![infill-002 sections](visuals/dfam/infill-002-sections.png)
+
+**`debug-002`: sealed pockets.** A `runtime_failure` case: the broken program
+compiles and runs, and the checker rejects its output for 2,623 mm³ of
+enclosed voids in six pockets of 437 mm³, plus 388 degenerate triangles from
+an unwelded export. The corrected program opens each pocket through the
+bottom face, uses 80 deg points with flanks 50 deg from the plate instead of
+118 deg drill points, checks every pocket's wall and checks itself for
+sealed volume.
+
+![debug-002 broken and corrected](visuals/dfam/debug-002-pockets.png)
 
 ### Limits of the checks
 
@@ -183,9 +287,8 @@ creates `work/dfam-selfcheck/`, a Python virtual environment installed with
 scipy 1.15.3; Linux x86_64, CPython 3.12), and runs the sidecar's self-test.
 Like NuGet, this preparation needs network access; candidate code never does.
 
-The first case is expected to fail the strict geometry gate until its author
-repairs the mesh and reruns verification. Do not alter the historical receipt
-or loosen a threshold to admit it. Compiler/native dependency preparation can
+Do not alter a historical receipt or loosen a threshold to admit a case.
+Compiler/native dependency preparation can
 access NuGet before candidate execution; candidate namespaces have no network.
 Verification refuses existing run tags and receipt paths to preserve prior
 evidence. Choose a new tag/path for a new run.
@@ -216,10 +319,10 @@ point clouds, open versus closed meshes, multiple components, thin features,
 internal channels, independent lattice families and failure/refusal cases.
 Do not generate 149 numeric paraphrases of the gyroid example. Each new
 case needs provenance, scoped references, explicit assumptions and fresh
-native verification. The current synthetic fixture is only one shape: add
-independent fixture families and unseen native integration tests before
-claiming generalization. A scalar `family` field alone does not supply those
-new fixtures or qualify another part.
+native verification. The fixtures are now three synthetic shapes. That is
+still not evidence of generalisation: add more independent fixture families
+and unseen native integration tests before claiming it. A scalar `family`
+field alone does not supply new fixtures or qualify another part.
 
 ## Assemble without truncating C#
 
@@ -233,7 +336,7 @@ python3.12 scripts/dfam_corpus.py assemble --check \
   --receipt work/dfam-strict-v3.json --base /path/to/exact/base
 ```
 
-Both commands currently refuse the incomplete one-case corpus with an explicit
+Both commands currently refuse the incomplete eight-case corpus with an explicit
 diagnostic. They require the complete category counts and partition plan,
 current passing native receipts and unchanged base files. The tokenizer applies
 its actual chat template once, including end markers. Every row must fit
@@ -244,7 +347,8 @@ Assembly preserves existing partition files: differing files are refused,
 and unchanged files are left in place. Use a new corpus version for a new
 partition protocol.
 Raw `text` ChatML rows are incompatible with `mask_prompt: true` in the pinned
-MLX-LM 0.31.3. The current example is about 3.6k tokens; the original 1,024-token
+MLX-LM 0.31.3. With the pinned tokenizer the current examples assemble to
+3.2k-7.1k tokens (`scan-002` is the longest); the original 1,024-token
 planner configurations are unsuitable for complete DfAM programs.
 
 `training/configs/dfam-code.json` is a JSON configuration (also valid YAML),
