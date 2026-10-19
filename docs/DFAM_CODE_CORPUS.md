@@ -28,6 +28,31 @@ flowchart LR
     H --> I["receipt<br/>policy, sources, case and STL hashes"]
 ```
 
+## Shared export cleanup
+
+PicoGK's mesher can emit zero-area triangles where a surface passes exactly
+through voxel lattice points. Three cases (`infill-001`, `debug-001`,
+`dfam-001`) therefore embed the same export cleanup, kept as a single source
+in `dfam-native/MeshCleanup.cs`. It replaces vertices consistently by the
+first vertex in each rounded 0.0001 mm cell, which is the checker's own weld
+convention, and then drops faces that collapse. Dropping tiny faces without
+welding their neighbours could open real holes. The helper preserves winding
+and reports the number of removed faces and the largest vertex displacement.
+A test fails if a case that defines `MeshCleanup` does not embed this exact
+source.
+
+The pure C# `CleanupChecks` executable tests the helper on its own: a closed
+tetrahedron with near-duplicate vertices, collapsed and collinear faces,
+untouched valid faces, idempotence, the movement bound, and invalid,
+non-finite or overflowing input. It loads neither PicoGK nor corpus code and
+runs as a separate CI job. It is a unit test of the weld, not native
+verification of any part. The zero-volume shell removal in `infill-001` is
+not part of this helper and is covered by the native receipt instead.
+
+```sh
+dotnet run --project dfam-native/CleanupChecks/CleanupChecks.csproj -c Release
+```
+
 ## Acceptance gates
 
 1. `lint` checks field types, finite ordered thresholds, safe output filenames,

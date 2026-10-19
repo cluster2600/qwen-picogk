@@ -24,3 +24,11 @@ jobs:
           -v "$PWD/config:/repo/config:ro" -v "$PWD/evidence:/repo/evidence:ro"
           pymesh/pymesh@sha256:ecf699d33793efe612b66c36b2a7d3954085af55999cc3f631748fcf1671eb4e
           -m unittest discover -s /repo/tests -p test_scan_pymesh.py -v
+  cleanup-math:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.317'
+      - run: dotnet run --project dfam-native/CleanupChecks/CleanupChecks.csproj -c Release

@@ -21,6 +21,24 @@ class DfamCorpusTest(unittest.TestCase):
     def test_cases_pass_lint(self):
         self.assertEqual(dfam_corpus.lint(self.cases), {})
 
+    def test_cases_embed_the_tested_cleanup_helper_verbatim(self):
+        # CleanupChecks tests dfam-native/MeshCleanup.cs; every case that ships the helper must ship that exact source.
+        source = (ROOT/'dfam-native/MeshCleanup.cs').read_text()
+        helper = source[source.index('// Numerical export cleanup'):]
+        embedding = [c['id'] for c in self.cases if 'class MeshCleanup' in c['code']]
+        self.assertTrue(embedding)
+        for case in self.cases:
+            if case['id'] in embedding:
+                self.assertIn(helper, case['code'], case['id'])
+
+    def test_revised_infill_keeps_a_traceable_parent(self):
+        case = next(c for c in self.cases if c['id'] == 'infill-001')
+        self.assertEqual((case['family'], case['split']), ('graded-gyroid-sheet', 'train'))
+        old = dfam_corpus.load_cases(ROOT/'evidence/dfam-code/snapshots/infill-001-original.jsonl')[0]
+        receipt = json.loads((ROOT/'evidence/dfam-code/verification.json').read_text())
+        self.assertEqual(dfam_corpus.case_sha(old), receipt['cases']['infill-001']['case_sha256'])
+        self.assertNotEqual(dfam_corpus.case_sha(old), dfam_corpus.case_sha(case))
+
     def test_bibliography_entries_are_scoped(self):
         for key, entry in self.bib.items():
             self.assertEqual(set(entry), {'cite', 'entry', 'scope'}, key)
