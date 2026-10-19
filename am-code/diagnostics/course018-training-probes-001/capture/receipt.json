@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "count": 4,
+  "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+  "checker_policy": "roslyn-static-allowlist@2",
+  "protocol_sha256": "b4a7a71443e8a161fa82a70be358110a1073e614f83dbad97ca4378fce469b27",
+  "responses_sha256": "6f5d545fec595c9a2969146941c71d8571c07f4544b853bcb8d52746ea5ca467",
+  "all_stopped": true,
+  "peak_memory_bytes": 19933558860
+}

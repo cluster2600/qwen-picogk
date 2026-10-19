@@ -1,0 +1,48 @@
+{
+ "cool_s": 60.0,
+ "cpus": 4,
+ "duration_s": 94.0,
+ "first_layer_s": 2.0,
+ "harness_sha256": "9e462dfe2cc7ddde8c9190fa087e51110f0cd791b81a91ee3ed02842474d69ed",
+ "hexmesh_sha256": "e82fc5cb89f8f81987ff6714f0ec4680600510722da3bfc4302546885133e874",
+ "image": "rombur/adamantine:1.1@sha256:ac735f9b6fec7626e79e91061cbd03b6274478fbafcaf2dcbe078c042affc9fa",
+ "inputs_sha256": {
+  "layers.txt": "f1d69d818f932f12f9df44f0be99dda836861740f9ff8455cc53199c17fe507c",
+  "part.info": "ac696793ad7e77592014ef71da6e07c568a0fc4f0703a4977ae9573fe5b7df5d",
+  "part.msh": "2226f8d1b084ba97de847188090def7e357adcd7b107cc74f26f6f786d3b3178"
+ },
+ "interval_s": 2.0,
+ "layer_mm": 2.0,
+ "layers": 17,
+ "manufacturing_qualified": false,
+ "mechanical_time_step_factor": 50,
+ "mesh": {
+  "cell_mm": 2.0,
+  "grid": [
+   37,
+   24,
+   20
+  ],
+  "hex_volume_mm3": 51776.0,
+  "hexahedra": 9136,
+  "msh_sha256": "2226f8d1b084ba97de847188090def7e357adcd7b107cc74f26f6f786d3b3178",
+  "nodes": 11166,
+  "offset_xy_mm": 0.0,
+  "part_hexahedra": 6472,
+  "plate_layers": 3,
+  "plate_top_mm": 0.0,
+  "stl_sha256": "79cb1719d6ff41222be81d5dc43740db0680cb8f46be4db2fab6946df44830ed",
+  "stl_volume_mm3": 52086.58,
+  "top_mm": 34.0,
+  "volume_ratio": 0.994
+ },
+ "mode": "layers",
+ "new_material_temperature_k": 1720.0,
+ "outputs": 21,
+ "plate_mm": 6.0,
+ "schema": "qwen-picogk.process.adamantine@1",
+ "solver_seconds": 441.5,
+ "stl_sha256": "79cb1719d6ff41222be81d5dc43740db0680cb8f46be4db2fab6946df44830ed",
+ "time_step_s": 0.08,
+ "uncalibrated_for_any_machine": true
+}

@@ -1,0 +1,1272 @@
+{
+  "schema": "picogk.am.compact-teaching@1",
+  "count": 48,
+  "families": [
+    "closing",
+    "shell",
+    "vent",
+    "cone-roof",
+    "gyroid",
+    "diamond",
+    "schwarz-p",
+    "scan-normals",
+    "debug-api",
+    "stl-skin-vent",
+    "xyz-occupancy",
+    "signed-range-refusal"
+  ],
+  "train_sha256": "affaab0b30543b190299fef6fde58719ed2e79c4a269e3081bb025eb95f2d32c",
+  "author_sha256": "1c5920ff1e6eb7d75e27efaa931ea09a4fc5ace6dff723d9143cc7f519a7d578",
+  "cases": [
+    {
+      "id": "compact-closing-01",
+      "family": "closing",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-closing-01/input.dat",
+      "source": "cases/compact-closing-01/Program.cs",
+      "source_sha256": "a7fffd427cd9278d771d31e3bbda8454f9514fb38450c50a56894c3d999850cd",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "half": 2.94
+      }
+    },
+    {
+      "id": "compact-closing-02",
+      "family": "closing",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-closing-02/input.dat",
+      "source": "cases/compact-closing-02/Program.cs",
+      "source_sha256": "99a50a816281f0e14d95d443679786763adbc6b85b493160df06c0075b6c5a4b",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "half": 3.14
+      }
+    },
+    {
+      "id": "compact-closing-03",
+      "family": "closing",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-closing-03/input.dat",
+      "source": "cases/compact-closing-03/Program.cs",
+      "source_sha256": "877403f16f1dc6a67e48654a0778cda246747affe6af2015cf1aeeeae9f9b139",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "half": 3.46
+      }
+    },
+    {
+      "id": "compact-closing-04",
+      "family": "closing",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-closing-04/input.dat",
+      "source": "cases/compact-closing-04/Program.cs",
+      "source_sha256": "2d948339f91f4c62e57c394b729d7e7b0317d6b39a588ff6aaf70e12a241c5b3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "half": 3.7
+      }
+    },
+    {
+      "id": "compact-shell-01",
+      "family": "shell",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-shell-01/input.dat",
+      "source": "cases/compact-shell-01/Program.cs",
+      "source_sha256": "113836003a2de52f68e0679f5e5d648d1c26134e41b9874c927618f15df15aac",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "radius": 2.78,
+        "wall": 1.08
+      }
+    },
+    {
+      "id": "compact-shell-02",
+      "family": "shell",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-shell-02/input.dat",
+      "source": "cases/compact-shell-02/Program.cs",
+      "source_sha256": "12a1aa325de858bd3570bf04cdbf0eb29a5b5df2914ea9dfb5f5635c0a3b2982",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "radius": 2.98,
+        "wall": 1.18
+      }
+    },
+    {
+      "id": "compact-shell-03",
+      "family": "shell",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-shell-03/input.dat",
+      "source": "cases/compact-shell-03/Program.cs",
+      "source_sha256": "ff5643e6a2a1f122c6c2f3bd79e4115e302530015946d0268709c25139da7cce",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "radius": 3.28,
+        "wall": 1.26
+      }
+    },
+    {
+      "id": "compact-shell-04",
+      "family": "shell",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-shell-04/input.dat",
+      "source": "cases/compact-shell-04/Program.cs",
+      "source_sha256": "09e8b363b2a17e9d2af7aeb61112a1861f426e6ab27eec770ffb4155f91531ab",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "radius": 3.58,
+        "wall": 1.34
+      }
+    },
+    {
+      "id": "compact-vent-01",
+      "family": "vent",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-vent-01/input.dat",
+      "source": "cases/compact-vent-01/Program.cs",
+      "source_sha256": "ef01230ca5a878bb4eee87fc7a8dae673ad81a7eb398550cc25fe82006a9d971",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "half": [
+          3.24,
+          3.52,
+          2.68
+        ],
+        "wall": 1.08,
+        "vent_radius": 1.58
+      }
+    },
+    {
+      "id": "compact-vent-02",
+      "family": "vent",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-vent-02/input.dat",
+      "source": "cases/compact-vent-02/Program.cs",
+      "source_sha256": "448a2beac61128a0e8c3b8d7f77ebd6e84bea0efd3757e1c399b5789a6ba27bc",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "half": [
+          3.4200000000000004,
+          3.68,
+          2.9000000000000004
+        ],
+        "wall": 1.18,
+        "vent_radius": 1.72
+      }
+    },
+    {
+      "id": "compact-vent-03",
+      "family": "vent",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-vent-03/input.dat",
+      "source": "cases/compact-vent-03/Program.cs",
+      "source_sha256": "e8e573a4fc4369392f7223716b8f9b85334d90b972fdbecab03768319d7e5aaf",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "half": [
+          3.6,
+          3.84,
+          3.12
+        ],
+        "wall": 1.26,
+        "vent_radius": 1.84
+      }
+    },
+    {
+      "id": "compact-vent-04",
+      "family": "vent",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-vent-04/input.dat",
+      "source": "cases/compact-vent-04/Program.cs",
+      "source_sha256": "eb860e2ac0de695acfb452755e2b79c067427922fb3feb1f25bae5d9c62b32f3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "half": [
+          3.7800000000000002,
+          4.0,
+          3.3400000000000003
+        ],
+        "wall": 1.34,
+        "vent_radius": 1.96
+      }
+    },
+    {
+      "id": "compact-cone-roof-01",
+      "family": "cone-roof",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-cone-roof-01/input.dat",
+      "source": "cases/compact-cone-roof-01/Program.cs",
+      "source_sha256": "8bf9311660e2d23799fa248a0559749f3d50640905ede4c4cd79981cbe29c6f6",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          -0.4,
+          0.4,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          -0.4,
+          0.4,
+          0
+        ],
+        "radius": 1.5,
+        "rise": 3.94,
+        "shoulder": 1.66,
+        "port": 1.18,
+        "floor": 1.06
+      }
+    },
+    {
+      "id": "compact-cone-roof-02",
+      "family": "cone-roof",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-cone-roof-02/input.dat",
+      "source": "cases/compact-cone-roof-02/Program.cs",
+      "source_sha256": "d4a0e13fd5fb969ed38185643ea973f8b7637ed3d3f6efbaec962fc1fee1dfd3",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          0.8,
+          -0.6,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          0.8,
+          -0.6,
+          0
+        ],
+        "radius": 1.66,
+        "rise": 4.18,
+        "shoulder": 1.82,
+        "port": 1.26,
+        "floor": 1.06
+      }
+    },
+    {
+      "id": "compact-cone-roof-03",
+      "family": "cone-roof",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-cone-roof-03/input.dat",
+      "source": "cases/compact-cone-roof-03/Program.cs",
+      "source_sha256": "eae3c7caf2dafd283203602e12273fcaec95923f0246b7674697cb827aeb3ab1",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          -0.6,
+          -0.8,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          -0.6,
+          -0.8,
+          0
+        ],
+        "radius": 1.82,
+        "rise": 4.46,
+        "shoulder": 1.98,
+        "port": 1.34,
+        "floor": 1.06
+      }
+    },
+    {
+      "id": "compact-cone-roof-04",
+      "family": "cone-roof",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-cone-roof-04/input.dat",
+      "source": "cases/compact-cone-roof-04/Program.cs",
+      "source_sha256": "7c039fe67b4ce51f18a604aaa0f94b85f0cf694874e3c272f961b19ec084699f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          0.6,
+          0.8,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          0.6,
+          0.8,
+          0
+        ],
+        "radius": 1.98,
+        "rise": 4.74,
+        "shoulder": 2.14,
+        "port": 1.42,
+        "floor": 1.06
+      }
+    },
+    {
+      "id": "compact-gyroid-01",
+      "family": "gyroid",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-gyroid-01/input.dat",
+      "source": "cases/compact-gyroid-01/Program.cs",
+      "source_sha256": "f9b76b39156e70ec2db93300baa2bab0e3ca06da348ee692051673d978873fab",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "origin": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "cell": 5.86,
+        "wall": 1.08,
+        "extent": 3.44
+      }
+    },
+    {
+      "id": "compact-gyroid-02",
+      "family": "gyroid",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-gyroid-02/input.dat",
+      "source": "cases/compact-gyroid-02/Program.cs",
+      "source_sha256": "4a9d5f5e04d70dcd831d6f2e897352a452786df382079a17359244a08a3efccd",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "origin": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "cell": 6.18,
+        "wall": 1.18,
+        "extent": 3.56
+      }
+    },
+    {
+      "id": "compact-gyroid-03",
+      "family": "gyroid",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-gyroid-03/input.dat",
+      "source": "cases/compact-gyroid-03/Program.cs",
+      "source_sha256": "2781017b23f42fc2e5f0db18f2c0e8b0dac2a7ed420311077620e6a37a83b2c2",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "origin": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "cell": 6.54,
+        "wall": 1.26,
+        "extent": 3.6799999999999997
+      }
+    },
+    {
+      "id": "compact-gyroid-04",
+      "family": "gyroid",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-gyroid-04/input.dat",
+      "source": "cases/compact-gyroid-04/Program.cs",
+      "source_sha256": "25b1a0e1f281610d9481ca7c1dfe622b89b1797d3d8026ba6ccb5f1c2d3703cd",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "origin": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "cell": 6.98,
+        "wall": 1.34,
+        "extent": 3.8
+      }
+    },
+    {
+      "id": "compact-diamond-01",
+      "family": "diamond",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-diamond-01/input.dat",
+      "source": "cases/compact-diamond-01/Program.cs",
+      "source_sha256": "e6454f5391633580ca8b17d80ee7ae64c0d0d902a10a69fc6df832ace2bc468b",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "origin": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "cell": 5.86,
+        "wall": 1.08,
+        "extent": 3.44
+      }
+    },
+    {
+      "id": "compact-diamond-02",
+      "family": "diamond",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-diamond-02/input.dat",
+      "source": "cases/compact-diamond-02/Program.cs",
+      "source_sha256": "bc9772d45872d4d965dbd649f006abd66ec2a5bf03b57b9eb57726475e0aec41",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "origin": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "cell": 6.18,
+        "wall": 1.18,
+        "extent": 3.56
+      }
+    },
+    {
+      "id": "compact-diamond-03",
+      "family": "diamond",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-diamond-03/input.dat",
+      "source": "cases/compact-diamond-03/Program.cs",
+      "source_sha256": "62188d5f51244761155fff510b957f18df834ec7e7ec54c3eaaffaec9fb27bd5",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "origin": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "cell": 6.54,
+        "wall": 1.26,
+        "extent": 3.6799999999999997
+      }
+    },
+    {
+      "id": "compact-diamond-04",
+      "family": "diamond",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-diamond-04/input.dat",
+      "source": "cases/compact-diamond-04/Program.cs",
+      "source_sha256": "6693cf24a5fe92eecd5d2d1812dd4c09da492ed01bf684d6de886ebd407b84c0",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "origin": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "cell": 6.98,
+        "wall": 1.34,
+        "extent": 3.8
+      }
+    },
+    {
+      "id": "compact-schwarz-p-01",
+      "family": "schwarz-p",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-schwarz-p-01/input.dat",
+      "source": "cases/compact-schwarz-p-01/Program.cs",
+      "source_sha256": "a72f27d2110b2e014ef21b19589165feae284785ed3037edb97accb3144a56ff",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "origin": [
+          -1.8650000000000002,
+          -1.065,
+          -0.665
+        ],
+        "cell": 5.86,
+        "wall": 1.08,
+        "extent": 3.44
+      }
+    },
+    {
+      "id": "compact-schwarz-p-02",
+      "family": "schwarz-p",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-schwarz-p-02/input.dat",
+      "source": "cases/compact-schwarz-p-02/Program.cs",
+      "source_sha256": "f8c155617ab40e82487e9d5a8dfd74fe9f6ad31c4933b4188c5aeb79093c9026",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "origin": [
+          -0.7449999999999999,
+          -2.145,
+          -1.9449999999999998
+        ],
+        "cell": 6.18,
+        "wall": 1.18,
+        "extent": 3.56
+      }
+    },
+    {
+      "id": "compact-schwarz-p-03",
+      "family": "schwarz-p",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-schwarz-p-03/input.dat",
+      "source": "cases/compact-schwarz-p-03/Program.cs",
+      "source_sha256": "a630b043b8fdeec3a56bc6e39f86427bbd89a61fcf36b7dffe3aace458e6226a",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "origin": [
+          -2.235,
+          -2.435,
+          -1.0350000000000001
+        ],
+        "cell": 6.54,
+        "wall": 1.26,
+        "extent": 3.6799999999999997
+      }
+    },
+    {
+      "id": "compact-schwarz-p-04",
+      "family": "schwarz-p",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-schwarz-p-04/input.dat",
+      "source": "cases/compact-schwarz-p-04/Program.cs",
+      "source_sha256": "111a406091accd331d6b3de49c6764ea7dc15b53b98d8fc157ca4663447c6f2c",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "origin": [
+          -1.145,
+          -0.9450000000000001,
+          -1.945
+        ],
+        "cell": 6.98,
+        "wall": 1.34,
+        "extent": 3.8
+      }
+    },
+    {
+      "id": "compact-scan-normals-01",
+      "family": "scan-normals",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-scan-normals-01/planes.csv",
+      "source": "cases/compact-scan-normals-01/Program.cs",
+      "source_sha256": "e2569cca84cd0edc70a63fb03422bc8d2bb03b8b9bd204455e82c6919a3754ab",
+      "input_sha256": "b3128c6b8b59c304b8e3545666ff42933a14d705798b2296c2bb44af92837411",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "half": [
+          2.46,
+          2.74,
+          3.02
+        ],
+        "parser": "planes",
+        "header": [
+          "nx",
+          "z",
+          "x",
+          "ny",
+          "y",
+          "nz"
+        ]
+      }
+    },
+    {
+      "id": "compact-scan-normals-02",
+      "family": "scan-normals",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-scan-normals-02/planes.csv",
+      "source": "cases/compact-scan-normals-02/Program.cs",
+      "source_sha256": "e2569cca84cd0edc70a63fb03422bc8d2bb03b8b9bd204455e82c6919a3754ab",
+      "input_sha256": "a97a21bda9c00aba1e266eea87435427a9905a9de51dd5e3a787946e3616d78e",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "half": [
+          2.64,
+          2.9000000000000004,
+          3.16
+        ],
+        "parser": "planes",
+        "header": [
+          "z",
+          "ny",
+          "x",
+          "nz",
+          "y",
+          "nx"
+        ]
+      }
+    },
+    {
+      "id": "compact-scan-normals-03",
+      "family": "scan-normals",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-scan-normals-03/planes.csv",
+      "source": "cases/compact-scan-normals-03/Program.cs",
+      "source_sha256": "e2569cca84cd0edc70a63fb03422bc8d2bb03b8b9bd204455e82c6919a3754ab",
+      "input_sha256": "e4b4409422a000df02be892ae28c5300f9830b37f02e716efcc4c90dae19e26e",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "half": [
+          2.82,
+          3.06,
+          3.3
+        ],
+        "parser": "planes",
+        "header": [
+          "ny",
+          "x",
+          "nz",
+          "z",
+          "nx",
+          "y"
+        ]
+      }
+    },
+    {
+      "id": "compact-scan-normals-04",
+      "family": "scan-normals",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-scan-normals-04/planes.csv",
+      "source": "cases/compact-scan-normals-04/Program.cs",
+      "source_sha256": "e2569cca84cd0edc70a63fb03422bc8d2bb03b8b9bd204455e82c6919a3754ab",
+      "input_sha256": "61aa692862920fc19ade4e70f7e15bfe545149ef8927a4457eec6778ff424533",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "half": [
+          3.0,
+          3.22,
+          3.44
+        ],
+        "parser": "planes",
+        "header": [
+          "y",
+          "nz",
+          "nx",
+          "x",
+          "z",
+          "ny"
+        ]
+      }
+    },
+    {
+      "id": "compact-debug-api-01",
+      "family": "debug-api",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-debug-api-01/input.dat",
+      "source": "cases/compact-debug-api-01/Program.cs",
+      "source_sha256": "2295d87e87778f911864700709c355fa82f93dc880dd5b66098e1846ad2a0d76",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "radius": 1.38,
+        "half_height": 2.48
+      }
+    },
+    {
+      "id": "compact-debug-api-02",
+      "family": "debug-api",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-debug-api-02/input.dat",
+      "source": "cases/compact-debug-api-02/Program.cs",
+      "source_sha256": "3e8f61987833446b0c6f568e28b0288eaf18a2b83ee773ce6509bfcc9c1457b0",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "radius": 1.5,
+        "half_height": 2.68
+      }
+    },
+    {
+      "id": "compact-debug-api-03",
+      "family": "debug-api",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-debug-api-03/input.dat",
+      "source": "cases/compact-debug-api-03/Program.cs",
+      "source_sha256": "4e834eac8812a48f7538dab79b943a38f683f2cf5f2a7475c8050d353e7128ed",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "radius": 1.62,
+        "half_height": 2.88
+      }
+    },
+    {
+      "id": "compact-debug-api-04",
+      "family": "debug-api",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-debug-api-04/input.dat",
+      "source": "cases/compact-debug-api-04/Program.cs",
+      "source_sha256": "b5454522a6891c1d6f4a8cb055fefde207b658aad46ab973201ecea6ee65c562",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "radius": 1.78,
+        "half_height": 3.08
+      }
+    },
+    {
+      "id": "compact-stl-skin-vent-01",
+      "family": "stl-skin-vent",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-stl-skin-vent-01/scan.stl",
+      "source": "cases/compact-stl-skin-vent-01/Program.cs",
+      "source_sha256": "43d83e75f52bff2fcc1aa6549208c06c83cc85028487819457f204ae9105fe2a",
+      "input_sha256": "2de3bcd4066589a44cac9b713faf0282f280f20e0350e0b782569cafdaf863f8",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.4,
+          0.4,
+          0.8
+        ],
+        "half": [
+          3.24,
+          3.52,
+          2.68
+        ],
+        "wall": 1.08,
+        "vent_radius": 1.58
+      }
+    },
+    {
+      "id": "compact-stl-skin-vent-02",
+      "family": "stl-skin-vent",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-stl-skin-vent-02/scan.stl",
+      "source": "cases/compact-stl-skin-vent-02/Program.cs",
+      "source_sha256": "26f97df83d16b99fbe809b861bb9dab65a4ac8612b7d250fa89842092333a5db",
+      "input_sha256": "93d6772e7a723444744691d9a3921e584bacde2c495999bdf9c74451ca31eeaa",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          0.8,
+          -0.6,
+          -0.4
+        ],
+        "half": [
+          3.4200000000000004,
+          3.68,
+          2.9000000000000004
+        ],
+        "wall": 1.18,
+        "vent_radius": 1.72
+      }
+    },
+    {
+      "id": "compact-stl-skin-vent-03",
+      "family": "stl-skin-vent",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-stl-skin-vent-03/scan.stl",
+      "source": "cases/compact-stl-skin-vent-03/Program.cs",
+      "source_sha256": "f0fab3062149e504980ab24f8dae1b67f865ae2add190dd1842f463daee98da2",
+      "input_sha256": "2132ffb9e0d091362d9608180600dfe619d46c2a7498534f5cabf222b6653c8c",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.6,
+          -0.8,
+          0.6
+        ],
+        "half": [
+          3.6,
+          3.84,
+          3.12
+        ],
+        "wall": 1.26,
+        "vent_radius": 1.84
+      }
+    },
+    {
+      "id": "compact-stl-skin-vent-04",
+      "family": "stl-skin-vent",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-stl-skin-vent-04/scan.stl",
+      "source": "cases/compact-stl-skin-vent-04/Program.cs",
+      "source_sha256": "d58c9b88fc12ad46e760f32aa81e42e08adc0e2e038e48a627f926a7533a0098",
+      "input_sha256": "a14aa6ec68cb2d5e761dd2801493107f80d0d438087db8b94fc919c49ff163d3",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          0.6,
+          0.8,
+          -0.2
+        ],
+        "half": [
+          3.7800000000000002,
+          4.0,
+          3.3400000000000003
+        ],
+        "wall": 1.34,
+        "vent_radius": 1.96
+      }
+    },
+    {
+      "id": "compact-xyz-occupancy-01",
+      "family": "xyz-occupancy",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/compact-xyz-occupancy-01/observations.xyz",
+      "source": "cases/compact-xyz-occupancy-01/Program.cs",
+      "source_sha256": "6c96649ca78959776565a2961f4afbcb5e98f10e421a9132156f1c9737b05950",
+      "input_sha256": "d957d2b349e7eff3e944ef6c170dd92ddaf6c19495e14e0e89b7fe221470a174",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -2.5,
+            0.4,
+            0.8
+          ],
+          [
+            1.7000000000000002,
+            0.4,
+            0.8
+          ],
+          [
+            -0.4,
+            -1.9,
+            2.0
+          ],
+          [
+            -0.4,
+            2.6999999999999997,
+            -0.3999999999999999
+          ]
+        ],
+        "radius": 0.72,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "compact-xyz-occupancy-02",
+      "family": "xyz-occupancy",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/compact-xyz-occupancy-02/observations.xyz",
+      "source": "cases/compact-xyz-occupancy-02/Program.cs",
+      "source_sha256": "6d991910354721254b4005f7b54a8109f32c7fffb8e53f95c15a1e338cf93108",
+      "input_sha256": "9f6d969c5f66f0e74e224820322dbc9bd9d172d531c16c64a74e615cd1331346",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -1.3,
+            -0.6,
+            -0.4
+          ],
+          [
+            2.9000000000000004,
+            -0.6,
+            -0.4
+          ],
+          [
+            0.8,
+            -2.9,
+            0.7999999999999999
+          ],
+          [
+            0.8,
+            1.6999999999999997,
+            -1.6
+          ]
+        ],
+        "radius": 0.84,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "compact-xyz-occupancy-03",
+      "family": "xyz-occupancy",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/compact-xyz-occupancy-03/observations.xyz",
+      "source": "cases/compact-xyz-occupancy-03/Program.cs",
+      "source_sha256": "79621b7e465e8aea187b66947b45672ce802778600ce8c249c4d98f7be84bef7",
+      "input_sha256": "07bc02e139aec219b58e40875cf768be10e48459e97d26b9740720b684847aaf",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -2.7,
+            -0.8,
+            0.6
+          ],
+          [
+            1.5,
+            -0.8,
+            0.6
+          ],
+          [
+            -0.6,
+            -3.0999999999999996,
+            1.7999999999999998
+          ],
+          [
+            -0.6,
+            1.4999999999999998,
+            -0.6
+          ]
+        ],
+        "radius": 0.96,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "compact-xyz-occupancy-04",
+      "family": "xyz-occupancy",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/compact-xyz-occupancy-04/observations.xyz",
+      "source": "cases/compact-xyz-occupancy-04/Program.cs",
+      "source_sha256": "fe786f356703bd36272e2a88d2d79c1ea4c1808262ade678ac3e088ecae8efc9",
+      "input_sha256": "6aea450889ae66bc0e66d43db3d784ac077f48003d311d4fe9897e139e04fd8c",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -1.5,
+            0.8,
+            -0.2
+          ],
+          [
+            2.7,
+            0.8,
+            -0.2
+          ],
+          [
+            0.6,
+            -1.4999999999999998,
+            1.0
+          ],
+          [
+            0.6,
+            3.0999999999999996,
+            -1.4
+          ]
+        ],
+        "radius": 1.08,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "compact-signed-range-refusal-01",
+      "family": "signed-range-refusal",
+      "variant": 1,
+      "kind": "refusal",
+      "input": "cases/compact-signed-range-refusal-01/unsigned.xyz",
+      "source": "cases/compact-signed-range-refusal-01/Program.cs",
+      "source_sha256": "b16cb90fedbe253b160ce05cada48e4eebfd1a879c0aced6673f39962173309e",
+      "input_sha256": "9f620d88606a2095f9da28c4ee89188e4d8e4abe97b6f80d111a63bf3c498278",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_oriented_surface_records",
+          "registered_camera_frame",
+          "signed_depth_frames"
+        ],
+        "input_valid": true
+      }
+    },
+    {
+      "id": "compact-signed-range-refusal-02",
+      "family": "signed-range-refusal",
+      "variant": 2,
+      "kind": "refusal",
+      "input": "cases/compact-signed-range-refusal-02/unsigned.xyz",
+      "source": "cases/compact-signed-range-refusal-02/Program.cs",
+      "source_sha256": "ed2d972da3e1cab5d8505dde39e3ff7587ef37c364370bd13e905f6d9f1ae8da",
+      "input_sha256": "0850d6831950efb0b42443f412933711bec5f48d21e0b0a986fa92e06f522941",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_scanner_pixel_model",
+          "outward_sample_directions",
+          "camera_ray_origins"
+        ],
+        "input_valid": true
+      }
+    },
+    {
+      "id": "compact-signed-range-refusal-03",
+      "family": "signed-range-refusal",
+      "variant": 3,
+      "kind": "refusal",
+      "input": "cases/compact-signed-range-refusal-03/unsigned.xyz",
+      "source": "cases/compact-signed-range-refusal-03/Program.cs",
+      "source_sha256": "a93f89c3a1c6adb49a393d69e439f45b0bf72fc0bb8f6abffc5c3f9aa9d13599",
+      "input_sha256": "a842dacfdd0ab21724cf1121f6abf6fbd40cf7059fe08e6c4fa6ccd0538ed44c",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_depth_image_model",
+          "surface_orientation_map",
+          "sensor_extrinsics"
+        ],
+        "input_valid": true
+      }
+    },
+    {
+      "id": "compact-signed-range-refusal-04",
+      "family": "signed-range-refusal",
+      "variant": 4,
+      "kind": "refusal",
+      "input": "cases/compact-signed-range-refusal-04/unsigned.xyz",
+      "source": "cases/compact-signed-range-refusal-04/Program.cs",
+      "source_sha256": "eada0aba00b18df30b87fe4df94662d854b474030989b556747fe432872e6a3d",
+      "input_sha256": "cd9cd7cf88cc85d8615a521c643312c7bcce625870ff1d9701673e35b1eba1fe",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_registered_range_samples",
+          "outward_normal_frame",
+          "visibility_confidence"
+        ],
+        "input_valid": true
+      }
+    }
+  ],
+  "reused_recipe_source_sha256": "d0f6e8850e227ceac4effe46b1c5e4024cd3a1c21cd7e6336b76e1d62e084603",
+  "implementation_changes": "New independent synthetic observations, explicit solid receiver naming, compact complete scoped programs and single-codeblock termination teaching; no captured model answers.",
+  "final_contents_read": false,
+  "native_validation": "pending; no eligibility before native proof",
+  "reused_implementation_recipe_sha256": "acc7108c6de1a928b5eab273b3b15499114b96473992bb2a2709782a79a9af89",
+  "reused_recipe_sha256": "070d58251f22256b7ea738abde2306dc99e1c983a65c346d18e5e44abd716a87"
+}

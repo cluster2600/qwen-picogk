@@ -296,6 +296,14 @@ change wall thickness. Neither that recipe nor Poisson reconstruction proves
 the missing material's shape. Our code retains the acquired scan and measures
 the proposed result instead of calling arbitrary smoothing a reconstruction.
 
+## PyMesh integration
+
+The current chain includes [PyMesh exact cleanup and an additional native-STL
+intersection gate](PYMESH_SCAN_RECONSTRUCTION.md). It requires the separately
+pinned PyMesh image as well as the existing geometry image. Original intake
+and historical results remain unchanged; the new worker and independent
+surface-preservation audit produce separate private receipts.
+
 ## Remaining metal-print work
 
 A successful result is a **geometry-screened demonstration STL**. A supplier

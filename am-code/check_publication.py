@@ -107,6 +107,478 @@ def check_completed32b(root, release):
     assert release['checker_v2']['profile_reanchored'] is False
 
 
+def check_completed009(root, release):
+    """Check the completed rejection and native-pass-only corrective mixture."""
+    read = lambda name: json.loads((root/name).read_text())
+    prefix = 'evidence/course009-completed/'
+    development, scan = read(prefix+'development-report.json'), read(prefix+'scan-report.json')
+    rejection = read(prefix+'formal-rejection.json')
+    assert development['passed'] == 3 and scan['passed'] == 0
+    assert rejection['status'] == 'rejected' and rejection['development_passes'] == 3 and rejection['scan_passes'] == 0
+    assert rejection['checks']['all_candidate_responses_stopped'] is True
+    assert rejection['checks']['all_scan_responses_stopped'] is True
+    assert rejection['checks']['retains_all_baseline_passes'] is False
+    audit = read(prefix+'cpu-audit.json')
+    assert len(audit['checks']) == 92 and all(audit['checks'].values())
+    receipt = read(prefix+'training-receipt.json')
+    assert receipt['training_steps'] == receipt['training_rows'] == 310
+    assert receipt['all_tensors_finite'] is True and receipt['peak_memory_bytes'] == 32187772960
+    assert receipt['adapter_sha256'] == '7d1a08c17d9cc18f7ab4d96ef0b0a93865376ab60ab7ecf38e4e8955033a0345'
+    diagnostic = read(prefix+'completed-diagnostic.json')
+    assert diagnostic['all16responses_stopped'] is True and diagnostic['actual_programs_written'] == 14
+    assert len(diagnostic['records']) == 16 and diagnostic['selection_receipt_exists'] is False
+    cases = read('data/corrective-006/cases.json')
+    native = read('data/corrective-006/native-review-summary.json')
+    assert native['passed'] == native['total'] == cases['count'] == 48
+    assert native['acceptance_thresholds_changed'] is False and native['model_or_gpu_used'] is False
+    assert native['train_sha256'] == digest(root/'data/corrective-006/train.jsonl')
+    answers = [json.loads(line) for line in (root/'data/corrective-006/train.jsonl').read_text().splitlines()]
+    results = {row['id']: row for row in native['tasks']}
+    for answer, case in zip(answers, cases['cases']):
+        result = results[case['id']]
+        assert result['status'] == 'passed' and result['native_exit_code'] == 0
+        assert result['checks'] and all(type(v) is bool and v for v in result['checks'].values())
+        fences = re.findall(r'```csharp\n(.*?)```', answer['messages'][1]['content'], re.S)
+        assert len(fences) == 1 and hashlib.sha256(fences[0].encode()).hexdigest() == case['source_sha256'] == result['source_sha256']
+    mixture = read('data/focused-32b-001/manifest.json')
+    assert mixture['rows'] == 256 and mixture['new_teacher_cases'] == 48 and mixture['new_rows'] == 96
+    assert mixture['maximum_tokens'] == 1759 and mixture['truncation'] is False
+    corpus = (root/'data/focused-32b-001/train.jsonl').read_bytes()
+    assert corpus.startswith((root/'data/corrective-005/train.jsonl').read_bytes())
+    assert digest(root/'data/focused-32b-001/train.jsonl') == mixture['train_sha256']
+    plan, runtime = read('evidence/course-010-protocol.json'), read('evidence/course010-runtime-protocol.json')
+    assert plan['iterations'] == runtime['config']['iters'] == 512
+    assert plan['training_rows'] == runtime['supplemental_rows'] == 256
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 2e-6
+    assert plan['parent_adapter'] is None and runtime['config']['resume_adapter_file'] is None
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mixture['train_sha256']
+    assert release['completed_rejected_courses'] == 19
+    assert release['current_training']['course'] == '021' and release['current_training_weights_included'] is False
+
+
+def check_completed010(root, release):
+    read = lambda name: json.loads((root/name).read_text())
+    prefix = 'evidence/course010-completed/'
+    dev, scan, reject = [read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed'] == 4 and scan['passed'] == 0 and reject['status'] == 'rejected'
+    assert reject['checks']['all_candidate_responses_stopped'] and reject['checks']['all_scan_responses_stopped']
+    assert reject['checks']['retains_all_baseline_passes'] is False
+    audit, receipt = read(prefix+'cpu-audit.json'), read(prefix+'training-receipt.json')
+    assert len(audit['checks']) == 110 and all(audit['checks'].values())
+    assert receipt['training_steps'] == 512 and receipt['training_rows'] == 256 and receipt['all_tensors_finite']
+    assert receipt['adapter_sha256'] == '75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468'
+    diagnostic = read(prefix+'completed-diagnostic.json')
+    assert diagnostic['all16_eos'] and len(diagnostic['tasks']) == 16 and not diagnostic['selection_exists']
+    cases, native = read('data/corrective-007/cases.json'), read('data/corrective-007/native-review-summary.json')
+    assert native['passed'] == native['total'] == cases['count'] == 64 and not native['acceptance_thresholds_changed']
+    answers = [json.loads(x) for x in (root/'data/corrective-007/train.jsonl').read_text().splitlines()]
+    assert native['train_sha256'] == cases['train_sha256'] == digest(root/'data/corrective-007/train.jsonl')
+    results = {r['id']:r for r in native['tasks']}
+    for answer, case in zip(answers,cases['cases']):
+        result = results[case['id']]
+        assert result['status'] == 'passed' and result['native_exit_code'] == 0
+        assert result['checks'] and all(type(v) is bool and v for v in result['checks'].values())
+        code = answer['messages'][1]['content'].split('```csharp\n',1)[1].rsplit('```',1)[0]
+        assert hashlib.sha256(code.encode()).hexdigest() == case['source_sha256'] == result['source_sha256']
+    mix = read('data/focused-32b-002/manifest.json')
+    corpus = root/'data/focused-32b-002/train.jsonl'
+    assert mix['rows'] == 384 and mix['new_rows'] == 128 and mix['new_teacher_cases'] == 64
+    assert mix['maximum_tokens'] == 1784 and not mix['truncation']
+    assert corpus.read_bytes().startswith((root/'data/focused-32b-001/train.jsonl').read_bytes())
+    assert digest(corpus) == mix['train_sha256']
+    plan, runtime = read('evidence/course-011-protocol.json'), read('evidence/course011-runtime-protocol.json')
+    assert plan['iterations'] == plan['training_rows'] == runtime['config']['iters'] == runtime['supplemental_rows'] == 384
+    assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == receipt['adapter_sha256']
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
+    assert release['completed_rejected_courses'] == 19 and release['current_training']['course'] == '021'
+
+
+def check_recovery012(root, release):
+    read = lambda name: json.loads((root/name).read_text())
+    audit = read('evidence/course011-interruption-audit.json')
+    assert audit['status'] == 'incomplete_not_eligible_for_qualification'
+    assert audit['last_logged_step'] == 140 and audit['latest_durable_checkpoint_step'] == 120
+    assert not audit['completed_receipt_exists'] and audit['qualification_credit'] == 0
+    assert not audit['checkpoint_evaluated'] and len(audit['files']) == 3
+    assert all(x['finite_float32_arrays'] == 224 for x in audit['files'].values())
+    plan, launch, runtime = [read('evidence/'+name) for name in ('course-012-protocol.json','course012-launch-receipt.json','course012-runtime-protocol.json')]
+    assert plan['iterations'] == runtime['config']['iters'] == 384
+    assert plan['training_rows'] == runtime['supplemental_rows'] == 384
+    assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == '75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468'
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == digest(root/'data/focused-32b-002/train.jsonl')
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 2e-6
+    assert launch['status'] == 'launched_not_completed' and launch['process_group_session_detached']
+    assert not launch['active_weights_read_or_published'] and not release['current_training_weights_included']
+    assert release['interrupted_courses'][0]['status'] == 'interrupted_ineligible'
+
+
+def check_completed012(root, release):
+    read = lambda name: json.loads((root/name).read_text())
+    prefix='evidence/course012-completed/'
+    dev,scan,reject=[read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed']==4 and scan['passed']==0 and reject['status']=='rejected'
+    assert reject['checks']['all_candidate_responses_stopped'] and reject['checks']['all_scan_responses_stopped']
+    assert not reject['checks']['retains_all_baseline_passes']
+    audit,receipt=read(prefix+'cpu-audit.json'),read(prefix+'training-receipt.json')
+    assert len(audit['checks'])==129 and all(audit['checks'].values())
+    assert receipt['training_steps']==receipt['training_rows']==384 and receipt['all_tensors_finite']
+    assert receipt['adapter_sha256']=='a7b7bb6ca313c540eabde4c164f9ff9749fdfb69775425dd99a6fa1559b76fb9'
+    diagnostic=read(prefix+'completed-diagnostic.json')
+    assert diagnostic['all16_eos'] and len(diagnostic['tasks'])==16 and not diagnostic['selection_exists']
+    runtime=read(prefix+'installed-runtime-diagnostic.json')
+    assert runtime['loaded_adapter_arrays_exact']==224 and runtime['loaded_lora_modules']==112 and runtime['lora_scale']==20
+    assert runtime['actual_chat_rows_verified']==384 and runtime['actual_prompt_masks_match'] and runtime['actual_eos_retained']
+    assert runtime['actual_loss_target_tokens']==287086 and runtime['extra_zero_padding_targets']==384
+    assert runtime['inference_answers_generated']==0 and not runtime['checker_or_training_sources_modified']
+    cases,native=read('data/corrective-008/cases.json'),read('data/corrective-008/native-review-summary.json')
+    assert cases['count']==native['total']==native['passed']==48 and not native['acceptance_thresholds_changed']
+    answers=[json.loads(x) for x in (root/'data/corrective-008/train.jsonl').read_text().splitlines()]
+    assert len(answers)==48 and native['train_sha256']==cases['train_sha256']==digest(root/'data/corrective-008/train.jsonl')
+    results={x['id']:x for x in native['tasks']}
+    for answer,case in zip(answers,cases['cases']):
+        result=results[case['id']]
+        assert result['status']=='passed' and result['native_exit_code']==0
+        assert result['checks'] and all(type(v) is bool and v for v in result['checks'].values())
+        code=answer['messages'][1]['content'].split('```csharp\n',1)[1].rsplit('```',1)[0]
+        assert hashlib.sha256(code.encode()).hexdigest()==case['source_sha256']==result['source_sha256']
+    mix=read('data/focused-32b-003/manifest.json')
+    corpus=root/'data/focused-32b-003/train.jsonl'
+    assert mix['rows']==256 and mix['new_rows']==96 and mix['new_teacher_cases']==48 and mix['maximum_tokens']==1787
+    assert not mix['truncation'] and corpus.read_bytes().startswith((root/'data/corrective-005/train.jsonl').read_bytes())
+    assert digest(corpus)==mix['train_sha256']
+    plan,launch=read('evidence/course-013-protocol.json'),read('evidence/course013-runtime-protocol.json')
+    assert plan['iterations']==launch['config']['iters']==512 and plan['training_rows']==launch['supplemental_rows']==256
+    assert plan['parent_adapter'] is None and launch['config']['resume_adapter_file'] is None
+    assert plan['corpus_sha256']==launch['corpus_sha256']==mix['train_sha256']
+    assert release['completed_rejected_courses']==19 and release['current_training']['course']=='021'
+
+
+
+def check_completed013(root, release):
+    read = lambda name: json.loads((root/name).read_text())
+    prefix = 'evidence/course013-completed/'
+    dev, scan, rejection = [read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed'] == 5 and scan['passed'] == 0 and rejection['status'] == 'rejected'
+    assert rejection['checks']['retains_all_baseline_passes'] and rejection['checks']['all_candidate_responses_stopped'] and rejection['checks']['all_scan_responses_stopped']
+    audit, receipt = read(prefix+'cpu-audit.json'), read(prefix+'training-receipt.json')
+    assert len(audit['checks']) == 128 and all(audit['checks'].values())
+    assert receipt['training_steps'] == 512 and receipt['training_rows'] == 256
+    assert receipt['all_tensors_finite'] and receipt['adapter_sha256'] == 'e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6'
+    cases, native = read('data/corrective-009/cases.json'), read('data/corrective-009/native-review-summary.json')
+    assert cases['count'] == native['total'] == native['passed'] == 48 and not native['acceptance_thresholds_changed']
+    answers = [json.loads(x) for x in (root/'data/corrective-009/train.jsonl').read_text().splitlines()]
+    assert len(answers) == 48 and native['train_sha256'] == cases['train_sha256'] == digest(root/'data/corrective-009/train.jsonl')
+    results = {x['id']:x for x in native['tasks']}
+    for answer, case in zip(answers, cases['cases']):
+        result = results[case['id']]
+        assert result['status'] == 'passed' and result['native_exit_code'] == 0 and all(result['checks'].values())
+        code = answer['messages'][1]['content'].split('```csharp\n',1)[1].rsplit('```',1)[0]
+        assert hashlib.sha256(code.encode()).hexdigest() == case['source_sha256'] == result['source_sha256']
+    mix = read('data/focused-32b-004/manifest.json')
+    corpus = root/'data/focused-32b-004/train.jsonl'
+    assert mix['rows'] == 352 and mix['new_rows'] == 96 and mix['new_teacher_cases'] == 48
+    assert not mix['truncation'] and mix['maximum_tokens'] <= 6144 and digest(corpus) == mix['train_sha256']
+    assert corpus.read_bytes().startswith((root/'data/focused-32b-003/train.jsonl').read_bytes())
+    plan, runtime = read('evidence/course-014-protocol.json'), read('evidence/course014-runtime-protocol.json')
+    assert plan['iterations'] == runtime['config']['iters'] == 704 and plan['training_rows'] == 352
+    assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == receipt['adapter_sha256']
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
+    counts = read('evidence/results-summary.json')
+    assert counts['corrective009_teachers'] == dict(cases=48, passed=48, formulations=96)
+
+def check_completed014(root, release):
+    read = lambda name: json.loads((root/name).read_text())
+    prefix = 'evidence/course014-completed/'
+    dev, scan, rejection = [read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed'] == 5 and scan['passed'] == 0 and rejection['status'] == 'rejected'
+    assert not rejection['checks']['retains_all_baseline_passes'] and rejection['checks']['all_candidate_responses_stopped'] and rejection['checks']['all_scan_responses_stopped']
+    audit, receipt = read(prefix+'cpu-audit.json'), read(prefix+'training-receipt.json')
+    assert len(audit['checks']) == 129 and all(audit['checks'].values())
+    assert receipt['training_steps'] == 704 and receipt['training_rows'] == 352
+    assert receipt['all_tensors_finite'] and receipt['adapter_sha256'] == '5e75429ebcc454ea991b5a2790c927fab81706733c126599c868be8527dab9c2'
+    cases, native = read('data/corrective-010/cases.json'), read('data/corrective-010/native-review-summary.json')
+    assert cases['count'] == native['total'] == native['passed'] == 48 and not native['acceptance_thresholds_changed']
+    answers = [json.loads(x) for x in (root/'data/corrective-010/train.jsonl').read_text().splitlines()]
+    assert len(answers) == 48 and native['train_sha256'] == cases['train_sha256'] == digest(root/'data/corrective-010/train.jsonl')
+    results = {x['id']:x for x in native['tasks']}
+    for answer, case in zip(answers, cases['cases']):
+        result = results[case['id']]
+        assert result['status'] == 'passed' and result['native_exit_code'] == 0 and all(result['checks'].values())
+        code = answer['messages'][1]['content'].split('```csharp\n',1)[1].rsplit('```',1)[0]
+        assert hashlib.sha256(code.encode()).hexdigest() == case['source_sha256'] == result['source_sha256']
+    mix = read('data/focused-32b-005/manifest.json')
+    corpus = root/'data/focused-32b-005/train.jsonl'
+    assert mix['rows'] == 496 and mix['new_rows'] == 144 and mix['new_teacher_cases'] == 48
+    assert not mix['truncation'] and mix['maximum_tokens'] <= 6144 and digest(corpus) == mix['train_sha256']
+    assert corpus.read_bytes().startswith((root/'data/focused-32b-004/train.jsonl').read_bytes())
+    plan, runtime = read('evidence/course-015-protocol.json'), read('evidence/course015-runtime-protocol.json')
+    assert plan['iterations'] == runtime['config']['iters'] == 496 and plan['training_rows'] == 496
+    assert plan['parent_adapter'] is None and runtime['config']['resume_adapter_file'] is None
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 5e-6
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
+    counts = read('evidence/results-summary.json')
+    assert counts['corrective010_teachers'] == dict(cases=48, passed=48, formulations=144)
+
+
+def check_completed015(root, release):
+    read = lambda name: json.loads((root/name).read_text())
+    prefix = 'evidence/course015-completed/'
+    dev, scan, rejection = [read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed'] == 4 and scan['passed'] == 1 and rejection['status'] == 'rejected'
+    assert not rejection['checks']['retains_all_baseline_passes'] and rejection['checks']['all_candidate_responses_stopped'] and rejection['checks']['all_scan_responses_stopped']
+    audit, receipt = read(prefix+'cpu-audit.json'), read(prefix+'training-receipt.json')
+    assert len(audit['checks']) == 128 and all(audit['checks'].values())
+    assert receipt['training_steps'] == 496 and receipt['training_rows'] == 496
+    assert receipt['all_tensors_finite'] and receipt['adapter_sha256'] == '43489285c8bddf9ecac501329aee0360e07dfa7f8f274b997003764282ded549'
+    cases, native = read('data/corrective-011/cases.json'), read('data/corrective-011/native-review-summary.json')
+    assert cases['count'] == native['total'] == native['passed'] == 48 and not native['acceptance_thresholds_changed']
+    answers = [json.loads(x) for x in (root/'data/corrective-011/train.jsonl').read_text().splitlines()]
+    assert len(answers) == 48 and native['train_sha256'] == cases['train_sha256'] == digest(root/'data/corrective-011/train.jsonl')
+    results = {x['id']:x for x in native['tasks']}
+    for answer, case in zip(answers, cases['cases']):
+        result = results[case['id']]
+        assert result['status'] == 'passed' and result['native_exit_code'] == 0 and all(result['checks'].values())
+        code = answer['messages'][1]['content'].split('```csharp\n',1)[1].rsplit('```',1)[0]
+        assert hashlib.sha256(code.encode()).hexdigest() == case['source_sha256'] == result['source_sha256']
+    mix = read('data/focused-32b-006/manifest.json')
+    corpus = root/'data/focused-32b-006/train.jsonl'
+    assert mix['rows'] == 592 and mix['new_rows'] == 96 and mix['new_teacher_cases'] == 48
+    assert not mix['truncation'] and mix['maximum_tokens'] <= 6144 and digest(corpus) == mix['train_sha256']
+    assert corpus.read_bytes().startswith((root/'data/focused-32b-005/train.jsonl').read_bytes())
+    plan, runtime = read('evidence/course-016-protocol.json'), read('evidence/course016-runtime-protocol.json')
+    assert plan['iterations'] == runtime['config']['iters'] == 592 and plan['training_rows'] == 592
+    assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == receipt['adapter_sha256']
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 2e-6
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
+    counts = read('evidence/results-summary.json')
+    assert counts['corrective011_teachers'] == dict(cases=48, passed=48, formulations=96)
+
+
+
+def check_completed016(root, release):
+    read = lambda name: json.loads((root/name).read_text())
+    prefix = 'evidence/course016-completed/'
+    dev, scan, rejection = [read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed'] == 6 and scan['passed'] == 1 and rejection['status'] == 'rejected'
+    assert not rejection['checks']['retains_all_baseline_passes'] and rejection['checks']['all_candidate_responses_stopped'] and not rejection['checks']['all_scan_responses_stopped']
+    audit, receipt = read(prefix+'cpu-audit.json'), read(prefix+'training-receipt.json')
+    assert len(audit['checks']) == 129 and all(audit['checks'].values())
+    assert receipt['training_steps'] == 592 and receipt['training_rows'] == 592
+    assert receipt['all_tensors_finite'] and receipt['adapter_sha256'] == '06827b46061b9af89f8fdf4393749a9732e39b24ca639e24b668b446ed98399a'
+    cases, native = read('data/corrective-012/cases.json'), read('data/corrective-012/native-review-summary.json')
+    assert cases['count'] == native['total'] == native['passed'] == 48 and not native['acceptance_thresholds_changed']
+    answers = [json.loads(x) for x in (root/'data/corrective-012/train.jsonl').read_text().splitlines()]
+    assert len(answers) == 48 and native['train_sha256'] == cases['train_sha256'] == digest(root/'data/corrective-012/train.jsonl')
+    results = {x['id']:x for x in native['tasks']}
+    for answer, case in zip(answers, cases['cases']):
+        result = results[case['id']]
+        assert result['status'] == 'passed' and result['native_exit_code'] == 0 and all(result['checks'].values())
+        code = answer['messages'][1]['content'].split('```csharp\n',1)[1].rsplit('```',1)[0]
+        assert hashlib.sha256(code.encode()).hexdigest() == case['source_sha256'] == result['source_sha256']
+    mix = read('data/focused-32b-007/manifest.json')
+    corpus = root/'data/focused-32b-007/train.jsonl'
+    assert mix['rows'] == 256 and mix['new_rows'] == 96 and mix['new_teacher_cases'] == 48
+    assert not mix['truncation'] and mix['maximum_tokens'] <= 6144 and digest(corpus) == mix['train_sha256']
+    assert corpus.read_bytes().startswith((root/'data/corrective-005/train.jsonl').read_bytes())
+    plan, runtime = read('evidence/course-017-protocol.json'), read('evidence/course017-runtime-protocol.json')
+    assert plan['iterations'] == runtime['config']['iters'] == 256 and plan['training_rows'] == 256
+    assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == receipt['adapter_sha256']
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 2e-6
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
+    assert rejection['lost_baseline_passes'] == ['development-debug-api']
+    assert plan['retained_validated_short_rows'] == 160 and plan['previous_full_mixture_rows_omitted_from_this_course'] == 432
+    for path, expected in plan['historical_corpora_preserved_sha256'].items():
+        assert digest(root/path) == expected
+    counts = read('evidence/results-summary.json')
+    assert counts['corrective012_teachers'] == dict(cases=48, passed=48, formulations=96)
+
+
+
+
+
+def check_completed017(root, release):
+    read = lambda name: json.loads((root/name).read_text())
+    prefix = 'evidence/course017-completed/'
+    dev, scan, rejection = [read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed'] == 5 and scan['passed'] == 1 and rejection['status'] == 'rejected'
+    assert rejection['checks']['retains_all_baseline_passes'] and rejection['checks']['all_candidate_responses_stopped'] and rejection['checks']['all_scan_responses_stopped']
+    audit, receipt = read(prefix+'cpu-audit.json'), read(prefix+'training-receipt.json')
+    assert len(audit['checks']) == 135 and all(audit['checks'].values())
+    assert receipt['training_steps'] == 256 and receipt['training_rows'] == 256
+    assert receipt['all_tensors_finite'] and receipt['adapter_sha256'] == '04fc4530f0f32e2785d232f5a482bd2329ec4f8ad653b2636d32ccf6add07b59'
+    cases, native = read('data/corrective-013/cases.json'), read('data/corrective-013/native-review-summary.json')
+    assert cases['count'] == native['total'] == native['passed'] == 48 and not native['acceptance_thresholds_changed']
+    answers = [json.loads(x) for x in (root/'data/corrective-013/train.jsonl').read_text().splitlines()]
+    assert len(answers) == 48 and native['train_sha256'] == cases['train_sha256'] == digest(root/'data/corrective-013/train.jsonl')
+    results = {x['id']:x for x in native['tasks']}
+    for answer, case in zip(answers, cases['cases']):
+        result = results[case['id']]
+        assert result['status'] == 'passed' and result['native_exit_code'] == 0 and all(result['checks'].values())
+        code = answer['messages'][1]['content'].split('```csharp\n',1)[1].rsplit('```',1)[0]
+        assert hashlib.sha256(code.encode()).hexdigest() == case['source_sha256'] == result['source_sha256']
+    mix = read('data/focused-32b-008/manifest.json')
+    corpus = root/'data/focused-32b-008/train.jsonl'
+    assert mix['rows'] == 256 and mix['new_rows'] == 96 and mix['new_teacher_cases'] == 48
+    assert not mix['truncation'] and mix['maximum_tokens'] <= 6144 and digest(corpus) == mix['train_sha256']
+    assert corpus.read_bytes().startswith((root/'data/corrective-005/train.jsonl').read_bytes())
+    plan, runtime = read('evidence/course-018-protocol.json'), read('evidence/course018-runtime-protocol.json')
+    assert plan['iterations'] == runtime['config']['iters'] == 256 and plan['training_rows'] == 256
+    assert plan['parent_adapter'] is None and runtime['config']['resume_adapter_file'] is None
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 2e-6
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
+    assert rejection['lost_baseline_passes'] == []
+    assert plan['retained_validated_short_rows'] == 160 and plan['previous_full_mixture_rows_omitted_from_this_course'] == 96
+    for path, expected in plan['historical_corpora_preserved_sha256'].items():
+        assert digest(root/path) == expected
+    counts = read('evidence/results-summary.json')
+    assert counts['corrective013_teachers'] == dict(cases=48, passed=48, formulations=96)
+    assert mix['maximum_tokens'] == 2129 and plan['fresh_untouched_base']
+    correction = read(prefix+'diagnostic-addendum-001.json')
+    assert 'Nominal strict_refusal is false' in correction['correction']
+    for number in (1, 2):
+        note = read(f'data/corrective-013/author-attempt-{number:03d}.json')
+        assert note['model_answers_changed'] is False and note['final_contents_read'] is False
+
+
+
+def check_completed018(root, release):
+    read = lambda name: json.loads((root/name).read_text())
+    prefix = 'evidence/course018-completed/'
+    dev, scan, rejection = [read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed'] == 4 and scan['passed'] == 0 and rejection['status'] == 'rejected'
+    assert not rejection['checks']['retains_all_baseline_passes'] and not rejection['checks']['all_candidate_responses_stopped'] and not rejection['checks']['all_scan_responses_stopped']
+    audit, receipt = read(prefix+'cpu-audit.json'), read(prefix+'training-receipt.json')
+    assert len(audit['checks']) == 139 and all(audit['checks'].values())
+    assert receipt['training_steps'] == 256 and receipt['training_rows'] == 256
+    assert receipt['all_tensors_finite'] and receipt['adapter_sha256'] == '3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62'
+    cases, native = read('data/corrective-013/cases.json'), read('data/corrective-013/native-review-summary.json')
+    assert cases['count'] == native['total'] == native['passed'] == 48 and not native['acceptance_thresholds_changed']
+    answers = [json.loads(x) for x in (root/'data/corrective-013/train.jsonl').read_text().splitlines()]
+    assert len(answers) == 48 and native['train_sha256'] == cases['train_sha256'] == digest(root/'data/corrective-013/train.jsonl')
+    results = {x['id']:x for x in native['tasks']}
+    for answer, case in zip(answers, cases['cases']):
+        result = results[case['id']]
+        assert result['status'] == 'passed' and result['native_exit_code'] == 0 and all(result['checks'].values())
+        code = answer['messages'][1]['content'].split('```csharp\n',1)[1].rsplit('```',1)[0]
+        assert hashlib.sha256(code.encode()).hexdigest() == case['source_sha256'] == result['source_sha256']
+    mix = read('data/focused-32b-008/manifest.json')
+    corpus = root/'data/focused-32b-008/train.jsonl'
+    assert mix['rows'] == 256 and mix['new_rows'] == 96 and mix['new_teacher_cases'] == 48
+    assert not mix['truncation'] and mix['maximum_tokens'] <= 6144 and digest(corpus) == mix['train_sha256']
+    assert corpus.read_bytes().startswith((root/'data/corrective-005/train.jsonl').read_bytes())
+    plan, runtime = read('evidence/course-019-protocol.json'), read('evidence/course019-runtime-protocol.json')
+    assert plan['iterations'] == runtime['config']['iters'] == 512 and plan['training_rows'] == 256 and plan['epochs'] == 2
+    assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == receipt['adapter_sha256']
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 2e-6
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
+    assert rejection['lost_baseline_passes'] == ['development-shell']
+    assert plan['retained_validated_short_rows'] == 160 and plan['previous_full_mixture_rows_omitted_from_this_course'] == 0
+    for path, expected in plan['historical_corpora_preserved_sha256'].items():
+        assert digest(root/path) == expected
+    counts = read('evidence/results-summary.json')
+    assert counts['corrective013_teachers'] == dict(cases=48, passed=48, formulations=96)
+    assert mix['maximum_tokens'] == 2129 and not plan['fresh_untouched_base']
+    assert plan['new_teacher_cases'] == plan['new_formulations'] == 0
+    prefix = 'diagnostics/course018-training-probes-001/'
+    probe, registration, interpretation = [read(prefix+n) for n in ('native-score-001/report.json','scorer-registration.json','interpretation.json')]
+    assert probe['passed'] == 0 and probe['total'] == 4 and probe['known_training_cases']
+    assert probe['qualification_credit'] == interpretation['qualification_credit'] == 0
+    assert read(prefix+'capture/receipt.json')['all_stopped']
+    assert probe['scorer_source_sha256'] == registration['source_sha256'] == digest(root/(prefix+'score.py'))
+    assert not registration['acceptance_thresholds_changed'] and probe['no_answer_repairs']
+    assert all(t['known_training_case'] and t['qualification_credit'] == 0 for t in probe['tasks'])
+
+
+
+def check_completed019(root, release):
+    read = lambda n: json.loads((root/n).read_text())
+    prefix = 'evidence/course019-completed/'
+    dev, scan, rejection = [read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed'] == 4 and scan['passed'] == 0 and rejection['status'] == 'rejected'
+    assert rejection['checks']['all_candidate_responses_stopped'] and rejection['checks']['all_scan_responses_stopped']
+    assert rejection['lost_baseline_passes'] == ['development-debug-api','development-shell']
+    audit, receipt = read(prefix+'cpu-audit.json'), read(prefix+'training-receipt.json')
+    assert len(audit['checks']) == 146 and all(audit['checks'].values())
+    assert receipt['training_steps'] == 512 and receipt['training_rows'] == 256
+    assert receipt['adapter_sha256'] == 'bdf811c476131c8b5d02557ed3b66f5e62163f395997d59f3c3b1b378aa5abad' and receipt['all_tensors_finite']
+    native, cases = read('data/corrective-014/native-review-summary.json'), read('data/corrective-014/cases.json')
+    assert native['passed'] == native['total'] == cases['count'] == 8 and not native['acceptance_thresholds_changed']
+    assert cases['train_sha256'] == native['train_sha256'] == digest(root/'data/corrective-014/train.jsonl')
+    answers = [json.loads(x) for x in (root/'data/corrective-014/train.jsonl').read_text().splitlines()]
+    assert len(answers) == 8 and set(cases['families']) == {'closing','shell'}
+    results = {x['id']:x for x in native['tasks']}
+    for row, case in zip(answers,cases['cases']):
+        result = results[case['id']]
+        assert result['status'] == 'passed' and result['native_exit_code'] == 0 and all(result['checks'].values())
+        code = row['messages'][1]['content'].split('```csharp\n',1)[1].rsplit('```',1)[0]
+        assert hashlib.sha256(code.encode()).hexdigest() == case['source_sha256'] == result['source_sha256'] == digest(root/('data/corrective-014/'+case['source']))
+    mix = read('data/focused-32b-009/manifest.json');corpus=root/'data/focused-32b-009/train.jsonl'
+    assert mix['rows'] == 272 and mix['previous_rows_preserved_exactly'] == 256 and mix['new_rows'] == 16 and mix['new_teacher_cases'] == 8
+    assert mix['maximum_tokens'] == 2129 and mix['all_prefix_masks_exact'] and mix['all_eos_and_complete_programs'] and not mix['truncation']
+    assert digest(corpus) == mix['train_sha256'] and corpus.read_bytes().startswith((root/'data/focused-32b-008/train.jsonl').read_bytes())
+    plan, runtime = read('evidence/course-020-protocol.json'), read('evidence/course020-runtime-protocol.json')
+    assert plan['iterations'] == runtime['config']['iters'] == plan['training_rows'] == 272 and plan['epochs'] == 1
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 2e-6
+    assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == receipt['adapter_sha256']
+    assert plan['corpus_sha256'] == runtime['corpus_sha256'] == mix['train_sha256']
+    assert plan['new_teacher_cases'] == 8 and plan['new_formulations'] == 16 and not plan['fresh_untouched_base']
+    prefix='diagnostics/course019-training-probes-001/'
+    probe, reg = read(prefix+'native-score-001/report.json'), read(prefix+'scorer-registration.json')
+    assert probe['passed'] == 2 and probe['total'] == 4 and probe['qualification_credit'] == 0 and probe['known_training_cases']
+    assert read(prefix+'capture/receipt.json')['all_stopped'] and probe['no_answer_repairs']
+    assert probe['scorer_source_sha256'] == reg['source_sha256'] == digest(root/(prefix+'score.py'))
+    assert not reg['acceptance_thresholds_changed']
+    assert read('evidence/results-summary.json')['corrective014_teachers'] == dict(cases=8,passed=8,formulations=16)
+
+
+def check_completed020(root, release):
+    read = lambda n: json.loads((root/n).read_text())
+    prefix = 'evidence/course020-completed/'
+    dev, scan, rejection = [read(prefix+n) for n in ('development-report.json','scan-report.json','formal-rejection.json')]
+    assert dev['passed'] == 5 and scan['passed'] == 0 and rejection['status'] == 'rejected'
+    assert rejection['checks']['all_candidate_responses_stopped'] and rejection['checks']['all_scan_responses_stopped']
+    assert rejection['lost_baseline_passes'] == []
+    audit, receipt = read(prefix+'cpu-audit.json'), read(prefix+'training-receipt.json')
+    assert len(audit['checks']) == 144 and all(audit['checks'].values())
+    assert receipt['training_steps'] == receipt['training_rows'] == 272 and receipt['all_tensors_finite']
+    assert receipt['adapter_sha256'] == '6d1297c2758022d4d471d0125c5595fafe91239efab3529bb1f6a9587987f4d0'
+    prefix='diagnostics/course020-training-probes-001/'
+    probe, reg = read(prefix+'native-score-001/report.json'), read(prefix+'scorer-registration.json')
+    assert probe['passed'] == 3 and probe['total'] == 4 and probe['qualification_credit'] == 0 and probe['known_training_cases']
+    assert read(prefix+'capture/receipt.json')['all_stopped'] and probe['no_answer_repairs']
+    assert probe['scorer_source_sha256'] == reg['source_sha256'] == digest(root/(prefix+'score.py'))
+    assert not reg['acceptance_thresholds_changed']
+    tasks = {r['id']:r for r in probe['tasks']}
+    assert tasks['seen-typed-shell-02']['checks']['independent_analytic_volume'] is False
+    assert all(tasks['seen-typed-shell-02']['checks'][key] for key in ('native_exit_zero','independent_world_bounds','independent_vdb_membership_probes','sealed_void_detected'))
+    assert read(prefix+'interpretation.json')['qualification_credit'] == 0
+    assert release['current_training']['status'] == 'user_stopped_interrupted_ineligible'
+    assert release['current_training']['next_course_registered'] is False
+
+
+def check_stopped021(root, release):
+    read = lambda n: json.loads((root/n).read_text())
+    prefix = 'evidence/course021-stopped/'
+    audit = read(prefix+'course021-stopped-cpu-audit.json')
+    stop = read(prefix+'course021-user-stop-receipt.json')
+    plan, runtime = read(prefix+'course-021-protocol.json'), read(prefix+'protocol.json')
+    assert audit['status'] == 'passed' and len(audit['checks']) == 57 and all(audit['checks'].values())
+    assert audit['last_logged_step'] == audit['latest_durable_checkpoint_step'] == 120
+    assert audit['planned_steps'] == plan['iterations'] == runtime['config']['iters'] == 272
+    assert audit['trainable_arrays'] == 224 and audit['exact_tensor_files'] == 3
+    assert audit['checkpoint_evaluated'] is False and audit['qualification_credit'] == 0
+    assert stop['process_exited'] and stop['parent_lock_free'] and stop['automation_status'] == 'PAUSED'
+    assert not stop['training_completed'] and not stop['training_receipt_exists'] and not stop['recovery_or_relaunch_authorized']
+    assert plan['learning_rate'] == runtime['config']['learning_rate'] == 5e-6
+    assert plan['parent_adapter_sha256'] == runtime['resume_adapter_sha256'] == '6d1297c2758022d4d471d0125c5595fafe91239efab3529bb1f6a9587987f4d0'
+    assert plan['corpus_sha256'] == digest(root/'data/focused-32b-009/train.jsonl')
+    course = release['interrupted_courses'][-1]
+    assert course['course'] == '021' and course['status'] == 'interrupted_ineligible' and course['cause'] == 'explicit_user_stop'
+    assert len(course['checkpoints']) == 3 and not course['checkpoint_evaluated']
+    assert release['current_training']['automation_status'] == 'PAUSED' and not release['current_training']['recovery_authorized']
+    assert read(prefix+'course021-protocol-addendum-001.json')['reused_teacher_cases'] == 136
+
+
 def check(root=ROOT, assets=None, native_runtime=False):
     release = json.loads((root/'release.json').read_text())
     assert release['schema'] == 'picogk.am.public-release@1'
@@ -248,9 +720,25 @@ def check(root=ROOT, assets=None, native_runtime=False):
     baseline14b = json.loads((root/'evidence/baseline-14b-report.json').read_text())
     assert baseline14b['passed'] == 4 and baseline14b['total'] == 12
     results = json.loads((root/'evidence/results-summary.json').read_text())['results']
-    assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0), (4, 2), (2, 3), (4, 1), (4, 0)]
+    assert [(row['development_passed'], row.get('scan_passed')) for row in results if row['status'] == 'rejected'] == [(0, 0), (0, 0), (2, 0), (3, 0), (4, 2), (2, 3), (4, 1), (4, 0), (3, 0), (4, 0), (4, 0), (5, 0), (5, 0), (4, 1), (6, 1), (5, 1), (4, 0), (4, 0), (5, 0)]
     assert all(row['manufacturing_authorized'] is False for row in results)
     check_completed32b(root, release)
+    check_completed009(root, release)
+    check_completed010(root, release)
+    check_recovery012(root, release)
+    check_completed012(root, release)
+    check_completed013(root, release)
+    check_completed014(root, release)
+    check_completed015(root, release)
+    check_completed016(root, release)
+    check_completed017(root, release)
+    check_completed018(root, release)
+    check_completed019(root, release)
+    check_completed020(root, release)
+    check_stopped021(root, release)
+    teacher_counts = json.loads((root/'evidence/results-summary.json').read_text())
+    assert teacher_counts['corrective007_teachers'] == dict(cases=64, passed=64, formulations=128)
+    assert teacher_counts['corrective008_teachers'] == dict(cases=48, passed=48, formulations=96)
     assert 'TRUSTED_PROFILE_SHA256 = None' in (root/'qwen-picogk-am').read_text()
     forbidden = re.compile(r'/Users/|-----BEGIN .*PRIVATE KEY|Bearer [A-Za-z0-9._-]{12,}|sk-[A-Za-z0-9]{20,}|VIN\s*[:=]', re.I)
     for relative in release['files_sha256']:
@@ -278,7 +766,7 @@ def check(root=ROOT, assets=None, native_runtime=False):
             'short_task_augmented_rows': 160, 'short_task_max14b_tokens': 1759,
             'repacked_base_tensor_metadata': 1255, 'untouched14b_baseline_passes': 4,
             'untouched32b_v1_and_v2_baseline_passes': [5, 5], 'memory_smoke_qualification_eligible': False,
-            'historical_checker_profile_reanchored': False, 'active_course009_payload_included': False,
+            'historical_checker_profile_reanchored': False, 'active_course020_payload_included': False,
             'asset_hashes_checked': assets is not None, 'native_payload_hashes_checked': native_runtime,
             'mlx_imported': False, 'generated_code_executed': False,
             'qualified_adapter': False, 'manufacturing_authorized': False}

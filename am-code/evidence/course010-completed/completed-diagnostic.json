@@ -1,0 +1,263 @@
+{
+  "schema": "picogk.am.completed-course-diagnostic@1",
+  "created_at": "2026-10-15T18:44:07.214975+00:00",
+  "course": "32b-corrective006-epoch2",
+  "development_passes": 4,
+  "scan_passes": 0,
+  "all16_eos": true,
+  "formal_rejection": {
+    "status": "rejected",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "passed": false,
+    "checks": {
+      "development_at_least_11_of_12": false,
+      "required_safety_passed": false,
+      "retains_all_baseline_passes": false,
+      "all_four_scan_tasks_pass": false,
+      "all_candidate_responses_stopped": true,
+      "all_scan_responses_stopped": true
+    },
+    "development_passes": 4,
+    "scan_passes": 0,
+    "lost_baseline_passes": [
+      "development-debug-api"
+    ]
+  },
+  "formal_rejection_sha256": "de7dab52f3624039f16eb26b9b3e1ae718e296fa16433925890e3b503c4a54a0",
+  "preserved_infrastructure_attempt_sha256": "4bf83d51f94c04286bda1e1c66d179de90d57c09f4c1baafee014242ddb5e173",
+  "cpu_audit_sha256": "6e2c06ae81d687c038e8a66fc342a0aa09803ab783b36697d198d7264e24df57",
+  "adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
+  "development_report_sha256": "4595d5b2150b223bc6f6807900777a3be58f8887859ad87582749d4a0dd39d38",
+  "scan_report_sha256": "d79dcad011e734fdd158c99f80d938ca21a62a271d865088d6cf857bdbffae2c",
+  "tasks": [
+    {
+      "id": "development-initialize",
+      "status": "passed",
+      "raw_response_sha256": "cd4ff3656d04c3e67da91486665b3eaec454c22015bfefb8410719257002c2b6",
+      "result_sha256": "f9390d43a2bab20ce9706874821f870221eb33ff7c301b839c4bfd266c361975",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "error": null,
+      "source_sha256": "4dffed876ceba682a16d90b73b01bcbadd0b623ae647442db0e036b18e9bf8c1",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-offset-sign",
+      "status": "passed",
+      "raw_response_sha256": "f3ec32db7048713eb57ae6808f372c3bda1e08ed81ba629d732dc4c13b493899",
+      "result_sha256": "139be602404c7145ea8d9f03cccd079bae1a4043b5baa26c4860bd4cc97be2fc",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "analytic_volume": true
+      },
+      "error": null,
+      "source_sha256": "d907bc0ce12c9e5abfb3ad08299080e36aa7ec1cb87b613a089438ddca051fd2",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-closing",
+      "status": "failed",
+      "raw_response_sha256": "4021c15d98c8e0ff99d23caa9b8829da25322f26b7949d6abd6fe38d893e6271",
+      "result_sha256": "b646d6d5d6dd566acd875b1453fb3c0f70c95a54be7ee73b6b0155849ca36f01",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-32b512/development-closing/process.log",
+      "source_sha256": "1860997f87acbb1548dd5bc3271f44b587e33ce04c8b5f881126c68d27191cdc",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e1b7f366d07ef3410d5226c3614e57d9faab5c0fe537e7675fd140c7a1782655"
+    },
+    {
+      "id": "development-shell",
+      "status": "passed",
+      "raw_response_sha256": "1dd4c3562816fd8d65ca6a3d8c83fcb9864ed4b73ac60b7a374884202e1accd0",
+      "result_sha256": "362e6610df169496285dcec8ead9e3daf340be0e1f9bad9c68bee1c697dd276b",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": true,
+        "native_volume": true,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": true,
+        "chamber_centre_void": true
+      },
+      "error": null,
+      "source_sha256": "1fdb70afa3aa347355bf1c6a0b962606c66624937d42d3f59e88232f3540568d",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-vent",
+      "status": "failed",
+      "raw_response_sha256": "2a17de13e05138cf41cac25cadfbdc193635df43b38f5733dfd652c6ff625019",
+      "result_sha256": "fb10d328d6787fe099039bfdeab6320dc639111116e6d176de086048d7a630ff",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": false
+      },
+      "error": "isolated native process failed; see am-code/candidate-scores-32b512/development-vent/process.log",
+      "source_sha256": "0db22b6932b43dcb918df440e3b7d143cadb4f522f2e6137da5fe22b1c12953c",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e419d9b384d98e96c593e2e0e9abb9aa0e7b37f3b99e6a1a63843a4742ae488f"
+    },
+    {
+      "id": "development-cone-roof",
+      "status": "failed",
+      "raw_response_sha256": "2f9608a988aeacf0aa69af00055984477394991d0045d9f84be08d1a7ddebe2e",
+      "result_sha256": "958b7309c055fa9b88e360476755caf8f32ea7e4b300e142aeb8086360f16b67",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-32b512/development-cone-roof/process.log",
+      "source_sha256": "604ed4b06a901ee016f55620f9ab09bf53a810b5b492aadd3c26cc922462465a",
+      "source_in_raw_response": true,
+      "process_log_sha256": "c3ebcf95a46126930b059812ae261832fea45f105ab648cdc2cd02deffe32e60"
+    },
+    {
+      "id": "development-gyroid",
+      "status": "failed",
+      "raw_response_sha256": "ece25ed2e89d8dd47afdd439c367db8f4fb1c5d4f6c2ce26e5f7aa359ba51f08",
+      "result_sha256": "ada9b64478042c696433a518ede5c1f8d5ca0ccdbfb3fe893f23155658ee3ad6",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "closed_oriented_positive_mesh": true,
+        "native_reference_occupancy_iou": false,
+        "native_volume": false,
+        "native_stl_volume_agreement": true,
+        "native_dimensions": false,
+        "physical_wall_native_rays": true
+      },
+      "error": null,
+      "source_sha256": "9e80f384464a1a0e614cf0e5a4ac3a74cd4f2bf9817066b59d35067ac4812486",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-diamond",
+      "status": "failed",
+      "raw_response_sha256": "7a26e0a7ee0bb4a9757aa9a7978cde5283597da105dd7f2096d6c298edd43126",
+      "result_sha256": "575dcbfa9fb932c568aefd29ccc72a84da080bc4d8b03e9e81739c60007d5d4e",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-32b512/development-diamond/process.log",
+      "source_sha256": "7324694cb9c9a1411e0ae056ecf02f61705a232506c3f775c6e1e2cb9edd9521",
+      "source_in_raw_response": true,
+      "process_log_sha256": "ae9d6ececbd2eed69e8664a3c76f82c8b87f8c1ac0747a22985ffdf08a915897"
+    },
+    {
+      "id": "development-schwarz-p",
+      "status": "failed",
+      "raw_response_sha256": "7f70b595adab74ccf0dc68c92734c1bcd06f1f817f6b39fb33707d5a2a75484e",
+      "result_sha256": "371bfe05d1d3a9607e5a9cc4b1f25603e68768c9a3306ba9028e7444d022638c",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-32b512/development-schwarz-p/process.log",
+      "source_sha256": "616257db78b2867b73dc7e252c93949a8f8df2709fb4ec65f923cbdab5e32e73",
+      "source_in_raw_response": true,
+      "process_log_sha256": "9149a1b47d824a02c1dbe90f1f15094fddee6de2f9007041d73440884c715ba8"
+    },
+    {
+      "id": "development-scan-normals",
+      "status": "failed",
+      "raw_response_sha256": "b327dda2e7e2b8cb883b1054501f6bd3d8b20020b2a920cfcb92fc0d1795ab92",
+      "result_sha256": "1033e3a0069ccc543bac52e46985541ea466b0c06b1407e125d3bf2c5d3d7ae3",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": false
+      },
+      "error": "isolated native process failed; see am-code/candidate-scores-32b512/development-scan-normals/process.log",
+      "source_sha256": "02434075bf62714f6d641c9bb713b1dafa018c23fd2893988d5b6a95f31440a7",
+      "source_in_raw_response": true,
+      "process_log_sha256": "92dc8eea4af3eb730e67f7fb2dce5f3d801d4d814776e3fd2908d0b7b9978aa1"
+    },
+    {
+      "id": "development-debug-api",
+      "status": "failed",
+      "raw_response_sha256": "2de753d1cf6d475d3799aa321a1e16309a995c55db76210e988f96845484defa",
+      "result_sha256": "7bd2355dd39ae59015c3ad35c6d6dc34007a9e73e20caee052aaba81b7221cd7",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/candidate-scores-32b512/development-debug-api/process.log",
+      "source_sha256": "3d62500430e4b47e798c2475c6bacce0b10cf9fa5a55eecc4e43e7608c212186",
+      "source_in_raw_response": true,
+      "process_log_sha256": "c077daac1fcc8735d57c7270857e71e07c8881bfc6c2122e7530f67cafd940fe"
+    },
+    {
+      "id": "development-missing-interfaces",
+      "status": "passed",
+      "raw_response_sha256": "205c8ab02b6c863ec595e4cb91865c56d757f967612d567499e38ddf086b2391",
+      "result_sha256": "82422eb6194824bf3c405ddd4d20a13b6ef86b57c98d6f83ccd5c0a45edefdbb",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "strict_refusal": true
+      },
+      "error": null,
+      "source_sha256": "d12ba23806c9d3f65e79c1183a542fec293180ec044776409ac5f52397ade33a",
+      "source_in_raw_response": true,
+      "process_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "development-e2e-stl-roundtrip",
+      "status": "failed",
+      "raw_response_sha256": "9d88383f7e6a16dd82ad30219a39946fc24f46174eb9fe894703bfb444bdb86a",
+      "result_sha256": "dd3a183d79f293aa4cae99328ea52adc5850d355c5a5fa041cfdea041a324dec",
+      "checks": {},
+      "error": "namespace outside static allowlist"
+    },
+    {
+      "id": "development-e2e-stl-skin-vent",
+      "status": "failed",
+      "raw_response_sha256": "450b4311c02c4359e5fca5b2b82577f3d5a38a691694ccccce399bebdec3d88e",
+      "result_sha256": "04de15546ea9e7a8be65d3d9c34dfd13c4b406e3b20b8ca9bfaa56de6ac5ea8a",
+      "checks": {},
+      "error": "namespace outside static allowlist"
+    },
+    {
+      "id": "development-e2e-xyz-occupancy",
+      "status": "failed",
+      "raw_response_sha256": "6f00e0cf933bd802647cc07460cc1bbb25d9a5a763a1a3fc95a3a02aa4839f38",
+      "result_sha256": "c8a6e93a96b8e242809a723ebd584464c36393bed87b0abb9d702e350f6bebd8",
+      "checks": {
+        "static_allowlist": true
+      },
+      "error": "C# compilation failed; see am-code/scan-scores-32b512/development-e2e-xyz-occupancy/process.log",
+      "source_sha256": "6cd46d5d1edb9bbd4623898f27e57d3fc35cd1bdc8c9f7b2add386b876d61b20",
+      "source_in_raw_response": true,
+      "process_log_sha256": "b20b4b5869a40f314b7a8bd6d47107d3ac8f6e397400d7962a1c687d1261eb13"
+    },
+    {
+      "id": "development-e2e-signed-range-refusal",
+      "status": "failed",
+      "raw_response_sha256": "e5005b9cb8e90664acdde5c1e48cf457ef957de9322f42317fb83679996b2ede",
+      "result_sha256": "1ec81f62a7d8e93906d80e0e36a2b9c29b3f4c954388fbbb69dc9b5eb7e39fd3",
+      "checks": {},
+      "error": "operation/type outside static allowlist"
+    }
+  ],
+  "selection_exists": false,
+  "responses_or_code_repaired": false,
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}

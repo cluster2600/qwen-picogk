@@ -1,0 +1,8 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{
+  "rows": 272,
+  "train_sha256": "50b461feb13055b6553c40e3c90ee261e859e02130916344cca5948890a1e4a0",
+  "maximum_tokens": 2129,
+  "total_assistant_tokens": 203414,
+  "status": "native_and_token_checks_passed"
+}

@@ -1,0 +1,21 @@
+{
+ "display_proxy": {
+  "cell_mm": 0.9,
+  "method": "vertex clustering for display only",
+  "triangles": 29960
+ },
+ "evidence": "evidence/dfam-code/strict-v3-20261015.json",
+ "frame_ms": 120,
+ "frames": 24,
+ "image": "scan-001.gif",
+ "image_sha256": "dd06e365becf23af0ee0e52a9f9c4159a24aa85127c3fb7213da38f3ddfdb68a",
+ "manufacturing_qualified": false,
+ "native_geometry_edited_for_render": false,
+ "points_plotted": 0,
+ "render_source_sha256": "5eff5b443194e452c72fe2ea1c01ecd2773f989b65ac0f4b89a4eb84459781eb",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6",
+ "sources_sha256": {
+  "scan-001.bin": "b177b5bfd5904d5a2a6e36d95eadcd916c4e307ab3fa7a938f116d7680707560",
+  "scan.xyz": "99a9d97f1fe5a414ff1b31b08344293cd1e3595d628376ec36c06a58a7f826c6"
+ }
+}

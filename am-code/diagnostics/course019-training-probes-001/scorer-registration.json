@@ -1,0 +1,11 @@
+{
+  "schema": "picogk.am.diagnostic-scorer-registration@1",
+  "registered_at_utc": "2026-10-18T10:12:39.035803+00:00",
+  "source": "score.py",
+  "source_sha256": "1df2641037ac46717db690860d68d7e9c18aad9f4ac244548d699cde01fb9c6d",
+  "native_oracles_source": "data/corrective-001/validate.py",
+  "native_oracles_sha256": "ab10c0fdbf05406e6f3c53ef126514470929dda814c9212520df1eba98176768",
+  "acceptance_thresholds_changed": false,
+  "qualification_credit": 0,
+  "final_contents_read": false
+}

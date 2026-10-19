@@ -1,0 +1,35 @@
+{
+ "explanation": "MechanicalPhysics::solve in adamantine 1.1 (source a2e3a41) solves the global system \"assuming that the deformation is elastic\" and then calls compute_stress, which applies the J2 radial return to the stress only; the plastic strain is not fed back into equilibrium, so the displacement field is the elastic one whatever the yield stress.",
+ "identical_displacement": true,
+ "manufacturing_qualified": false,
+ "question": "Does J2 plasticity change the displacement of a lumped-layer build in adamantine 1.1?",
+ "schema": "qwen-picogk.process.adamantine-plasticity-trial@1",
+ "setup": "solid blank, 2 mm cells, 6 mm clamped plate, 2 lumped 2 mm layers at 1720 K from t = 1 s every 300 s, cooling to t = 600 s; identical except for the plastic inputs",
+ "trials": {
+  "big": {
+   "final_output_sha256": "836abaa0a375580a1561f035cb6e93957ef5192cb3ffc9419a34c16697d0b257",
+   "final_time_s": 600.0,
+   "label": "plastic, uniaxial yield 1e9 MPa",
+   "max_displacement_mm": 0.381896,
+   "mean_displacement_mm": 0.073257,
+   "receipt_sha256": "f44c2c895ea8efd2ef23a53825e446d8a1a23d72f46b6b0b92b8da863e650969"
+  },
+  "el": {
+   "final_output_sha256": "be59a6dc673f033bf8838c6527bd46bdc94a4504da8df4cb1a2fcd4997bbefb0",
+   "final_time_s": 600.0,
+   "label": "elastic (no plastic inputs)",
+   "max_displacement_mm": 0.381896,
+   "mean_displacement_mm": 0.073257,
+   "receipt_sha256": "46bbd9cfddd6c6b4928958b74e02362e8f0b1105808e835c1d8da2e7293b4776"
+  },
+  "y300": {
+   "final_output_sha256": "9819fb9477a22e17ef6dffa1f0f6eef3b75def8ecb6cc2d85fea63efdb01a85b",
+   "final_time_s": 600.0,
+   "label": "plastic, uniaxial yield 300 MPa, plastic modulus 2 GPa, isotropic hardening",
+   "max_displacement_mm": 0.381896,
+   "mean_displacement_mm": 0.073257,
+   "receipt_sha256": "ca85271fda93fcd1ff0e9e5f29652c9ac233755b761b6515ae1d58bf1fe92dff"
+  }
+ },
+ "uncalibrated_for_any_machine": true
+}

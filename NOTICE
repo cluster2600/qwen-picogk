@@ -28,3 +28,11 @@ Apache-2.0 grant for original code and synthetic examples. No separate reuse
 licence is granted for this illustration or the underlying scan/part; source
 scan reuse rights remain unverified. Its provenance and limits are recorded in
 docs/visuals/scan-demo/fan-preview.json. No raw scan or derived STL is included.
+
+The scan reconstruction worker uses
+the external PyMesh/PyMesh Docker image pinned in config/scan-demo.json.
+That image and its dependencies are not vendored or relicensed by this project.
+The upstream repository currently has no top-level licence identified by the
+GitHub licence API; this project therefore asserts no redistribution licence
+for that image. The Apache-2.0 grant for our integration code does not grant
+rights to redistribute the external runtime or its third-party libraries.

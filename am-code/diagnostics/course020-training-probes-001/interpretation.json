@@ -1,0 +1,15 @@
+{
+  "schema": "picogk.am.seen-training-interpretation@1",
+  "created_at_utc": "2026-10-18T15:15:38.483498+00:00",
+  "passed": 3,
+  "total": 4,
+  "previous_passed": 2,
+  "all_eos": true,
+  "qualification_credit": 0,
+  "report_sha256": "55281a45db8ab273e1fc3b7c9d8dd155adc26f70e544bc0c6c5d4a3a2419abeb",
+  "findings": "Closing, normals and signed refusal pass. Shell compiles and passes bounds, membership and sealed-void checks but fails independent analytic volume. The generated radial field uses middle=2.39 and halfWidth=0.69; preserve this answer and its native results unchanged.",
+  "limits": "Four known training prompts, not held-out proof. Added semantic observations and additional optimization jointly changed; no causal attribution. Held-out development5/12+scan0/4 formally rejects020 despite retaining all five own-base passes.",
+  "next_experiment": "Do not repeat completed captures or blindly repeat training passes. Review conditioning coverage and API/type failures across the rejected development and scan families before registering a distinct local experiment. Any new synthetic teaching must use independent observations and unchanged native validation. No course021 registered yet.",
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}

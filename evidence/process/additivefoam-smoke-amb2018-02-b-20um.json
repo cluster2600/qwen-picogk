@@ -1,0 +1,91 @@
+{
+ "case": "amb2018-02-b",
+ "comparison": {
+  "acceptance": "within measured mean +/- 2 SD",
+  "measured_length_um": 359.0,
+  "measured_sd_um": 20.0,
+  "n": 10,
+  "reference": "NIST AM-Bench AMB2018-02 AMMT case B melt-pool length (in-situ thermography, 1290 degC)",
+  "reference_url": "https://www.nist.gov/ambench/chal-amb2018-02-mp-length",
+  "simulated_length_um_at_1290C": 299.5,
+  "within_2sd": false
+ },
+ "inputs_sha256": {
+  "0": "26d88ebc747be772cf1330dafc0051ca409b5ad5a5a5ab91ca893f80b81e68e4",
+  "constant": "5741782e8cad7f2d178f4d9ad1248f5a4f7c473556aac4da8b150a793a88fcbc",
+  "system": "caf2f2f7e772a2dec8ecc3951fb8c5559af007df158c7613a9a7178f8fd4fcad"
+ },
+ "manufacturing_qualified": false,
+ "melt_pool": {
+  "1410": {
+   "csv_sha256": "0996688ecd8edd7fdf4f1dc444367fcc484294abfc901858c68d5175e10fca2e",
+   "depth_sd_um": 0.03,
+   "depth_um": 43.65,
+   "length_sd_um": 1.36,
+   "length_um": 391.1,
+   "samples": 188,
+   "width_sd_um": 0.1,
+   "width_um": 137.28,
+   "window_s": [
+    0.001,
+    0.00225
+   ]
+  },
+  "1563.15": {
+   "csv_sha256": "63d619f26c8cc63c65f7a01eb1370986eca6d4142831bae84d636c63d80c030a",
+   "depth_sd_um": 0.05,
+   "depth_um": 38.5,
+   "length_sd_um": 1.4,
+   "length_um": 299.5,
+   "samples": 188,
+   "width_sd_um": 0.12,
+   "width_um": 123.47,
+   "window_s": [
+    0.001,
+    0.00225
+   ]
+  },
+  "1620": {
+   "csv_sha256": "d1a7e0241a8322da8b3e93eb892c54d320adae940eaf2b8251732d62da8808af",
+   "depth_sd_um": 0.05,
+   "depth_um": 36.73,
+   "length_sd_um": 1.08,
+   "length_um": 250.66,
+   "samples": 188,
+   "width_sd_um": 0.13,
+   "width_um": 118.46,
+   "window_s": [
+    0.001,
+    0.00225
+   ]
+  }
+ },
+ "mode": "smoke",
+ "parameters": {
+  "cell_um": 20.0,
+  "end_time_s": 0.004,
+  "eta": null,
+  "isotherms_k": [
+   1563.15,
+   1620.0,
+   1410.0
+  ],
+  "material": "IN625",
+  "power_w": 179.2,
+  "radius_m": null,
+  "speed_m_s": 0.8,
+  "track_m": 0.002
+ },
+ "provenance": {
+  "additivefoam_commit": "9c05c5eb54db03faa342b14b0806efe740de8c44",
+  "dockerfile_sha256": "8eaae1aef88176e25cd8e8efc4f9bb0744467238918a561018297dfbbddd84f7",
+  "harness_sha256": "604b5149cf33ab0cf4f9d60f1244394b6d7f7d92ab1f8b4324783bd0161809e8",
+  "image": "qwen-picogk/additivefoam:2.0.0-9c05c5e",
+  "image_id": "sha256:40db6cd51eb8700a5904efdb509a1f57e8d07191ad373aa5305b1afae7e28133",
+  "ranks": 8,
+  "tutorial": "tutorials/AMB2018-02-B"
+ },
+ "schema": "qwen-picogk.process.additivefoam@1",
+ "solver_seconds": 17.9,
+ "uncalibrated_for_any_machine": false
+}

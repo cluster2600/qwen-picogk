@@ -11,6 +11,19 @@ jobs:
         with:
           python-version: '3.12'
       - run: make check
+  pymesh-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test the actual pinned PyMesh engine offline
+        run: >-
+          docker run --rm --platform linux/amd64 --network none --read-only
+          --cap-drop ALL --security-opt no-new-privileges --pids-limit 128
+          --memory 4g --memory-swap 4g --tmpfs /tmp:rw,noexec,nosuid,size=128m
+          --entrypoint python -v "$PWD/scripts:/repo/scripts:ro" -v "$PWD/tests:/repo/tests:ro"
+          -v "$PWD/config:/repo/config:ro" -v "$PWD/evidence:/repo/evidence:ro"
+          pymesh/pymesh@sha256:ecf699d33793efe612b66c36b2a7d3954085af55999cc3f631748fcf1671eb4e
+          -m unittest discover -s /repo/tests -p test_scan_pymesh.py -v
   cleanup-math:
     runs-on: ubuntu-latest
     steps:

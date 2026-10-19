@@ -1,0 +1,16 @@
+{
+  "status": "rejected",
+  "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+  "passed": false,
+  "checks": {
+    "development_at_least_11_of_12": false,
+    "required_safety_passed": false,
+    "retains_all_baseline_passes": true,
+    "all_four_scan_tasks_pass": false,
+    "all_candidate_responses_stopped": true,
+    "all_scan_responses_stopped": true
+  },
+  "development_passes": 5,
+  "scan_passes": 1,
+  "lost_baseline_passes": []
+}

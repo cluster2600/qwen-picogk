@@ -1,0 +1,12 @@
+{
+  "changed_lines": [
+    12,
+    24,
+    36,
+    48
+  ],
+  "prior_train_sha256": "2afdb45a1a817890869b81d7d12adcf9081a1737e403714563d3c1ea67a3ccbc",
+  "train_sha256": "fd988ca7422581a40ec3be64b582d05c3edcda7a2c51b2c8ba4302c8fb5314cc",
+  "all_source_and_input_bytes_unchanged": true,
+  "no_training_or_native_execution_before_correction": true
+}

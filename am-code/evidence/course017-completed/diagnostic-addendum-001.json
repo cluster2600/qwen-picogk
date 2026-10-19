@@ -1,0 +1,9 @@
+{
+  "schema": "picogk.am.diagnostic-addendum@1",
+  "created_at_utc": "2026-10-17T21:12:56.607069+00:00",
+  "supersedes_wording_only": "course017-completed-diagnostic.json scan_failures.signed-range-refusal",
+  "original_diagnostic_sha256": "caf129e0865ffd87bedebe3d55decde46bc01084519b2603c3b3965699870759",
+  "correction": "Nominal strict_refusal is false, although nominal native exit is0 and no_geometry is true. Sparse native exit is0 but refused.json is absent. The original diagnostic claim that nominal refusal passed was incorrect; preserve both original diagnostic and this correction. No model answer, scorer, report or gate was changed.",
+  "final_contents_read": false,
+  "manufacturing_authorized": false
+}

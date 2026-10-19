@@ -1,0 +1,166 @@
+{
+  "schema": "picogk.am.native-score@2",
+  "development_only": true,
+  "reference_only": false,
+  "passed": 1,
+  "total": 4,
+  "tasks": [
+    {
+      "id": "development-e2e-stl-roundtrip",
+      "status": "passed",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "bounded_geometric_candidate": true,
+        "closed_oriented_positive_mesh": true,
+        "independent_analytic_volume": true,
+        "independent_world_bounds": true,
+        "independent_occupancy_probes": true,
+        "gold_native_occupancy_iou": true,
+        "alternate-box_native_exit_zero": true,
+        "alternate-box_bounded_geometric_candidate": true,
+        "alternate-box_closed_oriented_positive_mesh": true,
+        "alternate-box_independent_analytic_volume": true,
+        "alternate-box_independent_world_bounds": true,
+        "alternate-box_independent_occupancy_probes": true,
+        "alternate-box_gold_native_occupancy_iou": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "a195b7daa853b944059959238db45cb10ec451852cd2587933ee35d9133277b4",
+      "native_exit_code": 0,
+      "details": {
+        "native": {
+          "volume_mm3": 258.048,
+          "library_volume_mm3": 257.54028,
+          "volume_interval_mm3": [
+            212.16,
+            434.112
+          ],
+          "volume_method": "native Boolean raster with one-cell boundary interval",
+          "low": [
+            -1.6000001,
+            -4,
+            -2.8000002
+          ],
+          "high": [
+            4.8,
+            1.6000001,
+            4.4
+          ],
+          "triangles": 13004,
+          "unsupported_triangles": 1914,
+          "wall_rays_mm": [],
+          "inspected_rays": 160,
+          "grid": {
+            "low": -10,
+            "step": 0.4,
+            "n": 51
+          },
+          "native_version": "26.2.0",
+          "manufacturing_authorized": false
+        },
+        "mesh": {
+          "triangles": 13004,
+          "degenerate": 0,
+          "boundary": 0,
+          "nonmanifold": 0,
+          "inconsistent": 0,
+          "volume_mm3": 258.0480299916257
+        },
+        "occupancy_iou": 1.0
+      },
+      "additional_details": {
+        "alternate-box": {
+          "native": {
+            "volume_mm3": 268.736,
+            "library_volume_mm3": 268.19562,
+            "volume_interval_mm3": [
+              179.52,
+              383.04
+            ],
+            "volume_method": "native Boolean raster with one-cell boundary interval",
+            "low": [
+              -3.8000002,
+              -1.4000001,
+              -2.2
+            ],
+            "high": [
+              1.4000001,
+              5.4,
+              5.4
+            ],
+            "triangles": 13452,
+            "unsupported_triangles": 1890,
+            "wall_rays_mm": [],
+            "inspected_rays": 152,
+            "grid": {
+              "low": -10,
+              "step": 0.4,
+              "n": 51
+            },
+            "native_version": "26.2.0",
+            "manufacturing_authorized": false
+          },
+          "mesh": {
+            "triangles": 13452,
+            "degenerate": 0,
+            "boundary": 0,
+            "nonmanifold": 0,
+            "inconsistent": 0,
+            "volume_mm3": 268.7360273819079
+          },
+          "occupancy_iou": 1.0
+        }
+      },
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-e2e-stl-skin-vent",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "442af7387997f5868efee3e83de9ffcd0d85f47f3353f8f98987cf4574dc3919",
+      "error": "C# compilation failed; see am-code/scan-scores-course015/development-e2e-stl-skin-vent/process.log",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-e2e-xyz-occupancy",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "3fa4e03e47e6c8725860f90b9dbd05ff611177ef70fd3753fc8e0ee29ec0b06b",
+      "error": "C# compilation failed; see am-code/scan-scores-course015/development-e2e-xyz-occupancy/process.log",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    },
+    {
+      "id": "development-e2e-signed-range-refusal",
+      "status": "failed",
+      "checks": {
+        "static_allowlist": true,
+        "native_exit_zero": true,
+        "strict_refusal": true,
+        "no_geometry": true,
+        "sparse_native_exit_zero": true,
+        "sparse_strict_refusal": true,
+        "sparse-empty_native_exit_zero": true,
+        "sparse-empty_strict_refusal": false
+      },
+      "qualification": "software and geometry only",
+      "source_sha256": "f99546fa8ca0f59aa602ad543aa1e37cf94f7db869686e93a020999f01bed446",
+      "native_exit_code": 0,
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "checker_policy": "roslyn-static-allowlist@2"
+    }
+  ],
+  "physical_qualification": false,
+  "freeze_sha256": "e9fbeca73172f6dece5a45640fab5fe4ff7b37b2f3f51de4522cdba1f5a5da94",
+  "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+  "checker_policy": "roslyn-static-allowlist@2"
+}

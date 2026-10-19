@@ -85,3 +85,56 @@ show the relationship between these records.
 The images show bounded synthetic recipes, not measured Porsche components,
 optimised engineering designs or manufacturing-qualified parts. A good-looking
 image adds no strength, fitment or process qualification evidence.
+
+## DfAM corpus checker figures
+
+These figures show **corpus teacher programs**, not Qwen outputs. Each one is
+rendered from an output STL verified under `dfam-strict-v3`
+([receipt](../../evidence/dfam-code/strict-v3-20261015.json)), and each has a
+neighbouring JSON receipt with source, renderer and image hashes. Dense meshes
+are drawn through a vertex-clustering display proxy that the receipt records;
+the verified geometry itself is not edited.
+
+| Figure | Shows |
+|---|---|
+| ![](dfam/channel-section.png) | Section at x = 0 of `dfam-001` and its round-roof negative control; red facets face down flatter than 45 deg |
+| ![](dfam/selfintersection-fold.png) | The detached zero-volume sheet in `infill-001` that only the exact self-intersection check reports |
+| ![](dfam/infill-thickness.png) | Ray wall thickness of the cut gyroid in `infill-001` ([turntable](dfam/infill-thickness-turntable.gif)) |
+| ![](dfam/scan-001-reconstruction.png) | Raw synthetic scan and the `scan-001` reconstruction ([turntable](dfam/scan-001.gif)) |
+
+![scan-001 turntable](dfam/scan-001.gif)
+
+Regenerate after a verification run. The checker's optional fifth argument
+writes the per-triangle thickness dump; the script refuses to overwrite
+existing figures:
+
+```sh
+dotnet work/dfam-checker/Checker.dll check work/dfam-runs/TAG/CASE/part.stl \
+  work/dfam-fixtures/fixtures.json 0.3 1.0 work/thickness/CASE.bin
+python3 scripts/render_dfam_figures.py --dumps work/thickness \
+  --fixtures work/dfam-fixtures --out docs/visuals/NEW-DIR
+```
+
+The script needs numpy, matplotlib 3.10 and Pillow 11.
+
+## Process simulation figures
+
+Rendered by `physics/additivefoam/render_figures.py` from the receipts in
+`evidence/process/` and, for the animation, from the reconstructed ASCII
+temperature fields of the 20 um smoke case. Each figure has a JSON receipt.
+See [PROCESS_SIMULATION.md](../PROCESS_SIMULATION.md) for what the numbers
+support.
+
+| Figure | Shows |
+|---|---|
+| ![](process/amb2018-length-check.png) | Smoke test: simulated length per isotherm and mesh against NIST's measured band (fails at NIST's 1290 degC threshold) |
+| ![](process/316l-process-map.png) | 316L width and depth over power and speed, with the lack-of-fusion boundary (uncalibrated) |
+| ![](process/amb2018-abc-validation.png) | AM-Bench cases A, B and C: measured against simulated length, width and depth, with the pre-set acceptance bands |
+| ![](process/adamantine-energy-convergence.png) | adamantine heat balance for a laser line on dfam-001 at 1.0 and 0.5 mm cells |
+| ![](process/adamantine-dfam-001-peak.png) | Peak temperature on the dfam-001 slab top and in the section through its teardrop channel ([animation](process/adamantine-dfam-001-heat.gif)) |
+| ![](process/adamantine-layers-section.png) | Lumped-layer build: displacement in the section x = 0 for the solid blank, dfam-001 and debug-001 ([build animation](process/adamantine-layers-dfam-001.gif)) |
+| ![](process/adamantine-layers-comparison.png) | Maximum displacement and slab-top warp per variant, relative to the solid blank |
+| ![](process/adamantine-layers-robustness.png) | The dfam-001 channel effect on the aligned grid and on a grid shifted by half a cell |
+| ![](process/adamantine-layers-schedule.png) | The channel effect with 1 mm and 2 mm cells while hot, and on 2 mm cells after cooling to 300 K |
+
+![Temperature around the moving beam](process/amb2018-melt-pool.gif)

@@ -1,0 +1,65 @@
+{
+ "cases": {
+  "dfam-901": {
+   "case_sha256": "83d5d8a7ede2681fbf9de674b6fb1ac966e74762484a238fcb5d39c592499cbb",
+   "passed": false,
+   "reasons": [
+    "part.stl: overhang_fraction = 0.0483, declared max 0.035"
+   ],
+   "run": {
+    "exit": 0,
+    "failed": [
+     "part.stl: overhang_fraction = 0.0483, declared max 0.035"
+    ],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       35,
+       22,
+       30.000002
+      ],
+      "bbox_min": [
+       -35,
+       -22,
+       -1.04308135e-07
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0,
+      "enclosed_void_mm3": 0,
+      "enclosed_void_regions": 0,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 50105.14,
+      "min_wall_mm": 1,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 576.3,
+      "overhang_fraction": 0.0483,
+      "parity_volume_mm3": 50008.92,
+      "solid_components": 1,
+      "stl_sha256": "63c8c70e884872fa6d4f77851b66ead6d7998afdfd90fedf35409e4c209f7d62",
+      "surface_area_mm2": 11940.01,
+      "thin_fraction": 0.0002,
+      "triangles": 308020,
+      "volume_mm3": 50123.25,
+      "volume_ratio_to_fixture": 0.962
+     }
+    },
+    "seconds": 9.5
+   }
+  }
+ },
+ "checker_source_sha256": "b44e17ad4bb5c536551ca28ab3b42c2a471d395fa11fad1f744681762ec56be4",
+ "fixtures": {
+  "part.stl": "79cb1719d6ff41222be81d5dc43740db0680cb8f46be4db2fab6946df44830ed",
+  "part_open.stl": "601aaaca2f9f3fa6ff616c39f24c01958f197c44aff0c94bfc410a4d2c97d2a3",
+  "scan.csv": "1938faadfe8beea4bd50dc553b08cd627cab8223b2648dd799cdc6b662b16f69",
+  "scan.xyz": "99a9d97f1fe5a414ff1b31b08344293cd1e3595d628376ec36c06a58a7f826c6",
+  "scan_normals.xyz": "18a070ac655fe2cc6e15973b2008994ba13a7ac9ec4d37640f197d303fcb8993"
+ },
+ "isolation": "linux-bubblewrap-systemd",
+ "picogk_package": "2.3.0",
+ "policy": "dfam-strict-v2",
+ "policy_source_sha256": "ad8e27122d63f84ab8a8804effd7ae73eec7c887924114e5fb9db46a2ce4ed45",
+ "voxel_mm": 0.3
+}

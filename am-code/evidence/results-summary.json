@@ -594,16 +594,227 @@
       "task_sha256": "e8997f2068d512deda83388c7021f8058c3884e7303c602b5704ed9e04c7057c",
       "same_capture_regraded_without_model_query": true,
       "manufacturing_authorized": false
+    },
+    {
+      "name": "course009-32b-mixed001-epoch1",
+      "course": "009",
+      "run": "32b-mixed001-epoch1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 3,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "7d1a08c17d9cc18f7ab4d96ef0b0a93865376ab60ab7ecf38e4e8955033a0345",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-debug-api",
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course010-32b-corrective006-epoch2",
+      "course": "010",
+      "run": "32b-corrective006-epoch2",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 4,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-debug-api"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course012-32b-corrective007-recovery1",
+      "course": "012",
+      "run": "32b-corrective007-recovery1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 4,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "a7b7bb6ca313c540eabde4c164f9ff9749fdfb69775425dd99a6fa1559b76fb9",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course013-32b-state008-epoch2",
+      "course": "013",
+      "run": "32b-state008-epoch2",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 5,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course014-32b-api009-continuation2",
+      "course": "014",
+      "run": "32b-api009-continuation2",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 5,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "5e75429ebcc454ea991b5a2790c927fab81706733c126599c868be8527dab9c2",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course015-32b-repair010-fresh1",
+      "course": "015",
+      "run": "32b-repair010-fresh1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 4,
+      "development_total": 12,
+      "scan_passed": 1,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "43489285c8bddf9ecac501329aee0360e07dfa7f8f274b997003764282ded549",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-initialize",
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course016-32b-field011-continuation1",
+      "course": "016",
+      "run": "32b-field011-continuation1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 6,
+      "development_total": 12,
+      "scan_passed": 1,
+      "scan_total": 4,
+      "stopped": 15,
+      "truncated": 1,
+      "adapter_sha256": "06827b46061b9af89f8fdf4393749a9732e39b24ca639e24b668b446ed98399a",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-debug-api"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course017-32b-compact012-continuation1",
+      "course": "017",
+      "run": "32b-compact012-continuation1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 5,
+      "development_total": 12,
+      "scan_passed": 1,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "04fc4530f0f32e2785d232f5a482bd2329ec4f8ad653b2636d32ccf6add07b59",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course018-32b-typed013-fresh1",
+      "course": "018",
+      "run": "32b-typed013-fresh1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 4,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 13,
+      "truncated": 3,
+      "adapter_sha256": "3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course019-32b-typed013-continuation1",
+      "course": "019",
+      "run": "32b-typed013-continuation1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 4,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "bdf811c476131c8b5d02557ed3b66f5e62163f395997d59f3c3b1b378aa5abad",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [
+        "development-debug-api",
+        "development-shell"
+      ],
+      "manufacturing_authorized": false
+    },
+    {
+      "name": "course020-32b-semantic014-continuation1",
+      "course": "020",
+      "run": "32b-semantic014-continuation1",
+      "base": "32B",
+      "status": "rejected",
+      "development_passed": 5,
+      "development_total": 12,
+      "scan_passed": 0,
+      "scan_total": 4,
+      "stopped": 16,
+      "truncated": 0,
+      "adapter_sha256": "6d1297c2758022d4d471d0125c5595fafe91239efab3529bb1f6a9587987f4d0",
+      "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+      "lost_baseline_passes": [],
+      "manufacturing_authorized": false
     }
   ],
   "current_training": {
-    "status": "no_new_adaptation_registered_in_this_snapshot",
-    "active_training_weights_logs_or_captures_included": false,
-    "model_qualification": "not_established"
+    "course": "021",
+    "run": "32b-semantic014-rate5-continuation1",
+    "status": "user_stopped_interrupted_ineligible",
+    "automation_status": "PAUSED",
+    "next_course_registered": false,
+    "active_weights_logs_captures_or_scores_included": false,
+    "model_qualification": "not_established",
+    "recovery_authorized": false
   },
   "final_set": "embargoed; no final model evaluation claimed",
   "manufacturing_authorized": false,
-  "completed_course_count": 8,
+  "completed_course_count": 19,
   "corrective003_teachers": {
     "distinct_teachers": 16,
     "message_rows": 32,
@@ -626,36 +837,21 @@
     "formal_scores_unchanged": true
   },
   "last_completed_training": {
-    "course": "008",
-    "run": "14b-mixed001-epoch1",
-    "base": "14B",
-    "status": "completed_rejected",
-    "training_rows": 310,
-    "planned_steps": 310,
-    "epochs": 1,
-    "learning_rate": 2e-06,
-    "parent_adapter_sha256": "4a735fb12a763761cc0261224fa2e2f2fbd4b8f0adc94492cec6a256b8a73862",
-    "parent_config_sha256": "8811bcd1b3724aca87b481b7fcd1a0b33cac8e7b4451982f7b7774ec18bb61c6",
-    "base_profile_sha256": "ae1b81ddd239197ac4f470e6d01173dfc0132d05215ac09ea6a31946625cf89e",
-    "corpus_sha256": "68db482a8b8a9ae16e07870f018598fa59a31c3d03745c52a7a0e78664051be0",
-    "provenance_sha256": "f9da9f3610a7c18461d38ca35bfe4bf3463e940c359d240f5ef6285bd4aa4f12",
-    "token_receipt_sha256": "83b3d2dec6acd038abee1817bed9c6afe9a76634d14a29279ddc70494fd54bc5",
-    "protocol_sha256": "245348fa8b93613d2e53d311d25e745270cfeb2b201f7cb2011da87ba25caa18",
-    "runtime_protocol_original_sha256": "fde5601efcc71fbddd70476100b0f853bfb0ba6662304e126aed8a1ec948a7cc",
-    "running_protocol_audit_original_sha256": "2c70217123d05b4e5d6875b4930e6a9d637b7b4f01e6684e70c5a6bca9f919f2",
-    "model_qualification": "formal_gate_rejected",
-    "training_steps": 310,
-    "development_passed": 4,
+    "name": "course020-32b-semantic014-continuation1",
+    "course": "020",
+    "run": "32b-semantic014-continuation1",
+    "base": "32B",
+    "status": "rejected",
+    "development_passed": 5,
+    "development_total": 12,
     "scan_passed": 0,
-    "eos_responses": 9,
-    "truncated_responses": 7,
-    "all_generations_stopped": false,
-    "completed_weights_and_log_in_new_archive": true,
-    "adapter_sha256": "998e66e48905652d18c5817310d8c4691d7be28824d5ebc5ea77e177d21df860",
-    "adapter_config_sha256": "a2c7f437567739202feca9bae87345cb9b3f00e17a199209b97c8299ef5f40ad",
-    "completed_training_receipt_original_sha256": "4328d9f749177acd7da51cc56aafb5e3413af95cc21c2eae0975a43a3d1dbf6a",
-    "cpu_audit_original_sha256": "09ded5edddfaa91d4c5638de0f7b5c913fdc484ef265b741f2ffa0488aea6f0a",
-    "qualified_adapter": false
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "6d1297c2758022d4d471d0125c5595fafe91239efab3529bb1f6a9587987f4d0",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [],
+    "manufacturing_authorized": false
   },
   "task_body_diversity004": {
     "accepted_rows": 320,
@@ -765,14 +961,353 @@
     }
   ],
   "current_course009": {
-    "status": "registered_running_no_candidate_result",
-    "prospective_original_sha256": "5116e312f4d5e5cb9d429b99dec50e4d2335d9566500c9840143c3d3e690f3d3",
-    "runtime_protocol_original_sha256": "54c1c08b48fb8017ed827f18a6a73b904d4e1379ca39d063a2eb4b9dd0c528b4",
-    "training_rows": 310,
-    "planned_steps": 310,
-    "learning_rate": 5e-07,
-    "fresh_untouched_base": true,
-    "smoke_adapter_resumed": false,
-    "active_weights_logs_captures_or_scores_included": false
+    "name": "course009-32b-mixed001-epoch1",
+    "course": "009",
+    "run": "32b-mixed001-epoch1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 3,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "7d1a08c17d9cc18f7ab4d96ef0b0a93865376ab60ab7ecf38e4e8955033a0345",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-debug-api",
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective006_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
+  },
+  "current_course010": {
+    "name": "course010-32b-corrective006-epoch2",
+    "course": "010",
+    "run": "32b-corrective006-epoch2",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "75f5c735ab0f9f69abd0f9c77e9c173342386c9bf6abd898ea2d04695f53e468",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-debug-api"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective007_teachers": {
+    "cases": 64,
+    "passed": 64,
+    "formulations": 128
+  },
+  "interrupted_courses": [
+    {
+      "course": "011",
+      "run": "32b-corrective007-continuation1",
+      "status": "interrupted_ineligible",
+      "last_logged_step": 140,
+      "latest_durable_checkpoint_step": 120,
+      "planned_steps": 384,
+      "completed_receipt_exists": false,
+      "cause": "unknown",
+      "cpu_audit_original_sha256": "65f8ce2867e55c83515a8768541f4228e69dcc7fe31d007ed6c3e5b295eb662f",
+      "checkpoint_evaluated": false,
+      "qualification_credit": 0
+    },
+    {
+      "course": "021",
+      "run": "32b-semantic014-rate5-continuation1",
+      "status": "interrupted_ineligible",
+      "last_logged_step": 120,
+      "latest_durable_checkpoint_step": 120,
+      "planned_steps": 272,
+      "completed_receipt_exists": false,
+      "cause": "explicit_user_stop",
+      "cpu_audit_original_sha256": "3c9110c62caa7aeb6aafedb13fa1d9b05f2d64eba245690389dcf336a8d83b80",
+      "checkpoint_evaluated": false,
+      "qualification_credit": 0,
+      "automation_status": "PAUSED",
+      "recovery_authorized": false,
+      "asset": "interrupted-32b-course021-user-stopped-full-evidence.tar.gz",
+      "checkpoints": [
+        {
+          "path": "runs/32b-semantic014-rate5-continuation1/adapter/0000060_adapters.safetensors",
+          "sha256": "33279b54c76cfdbba90852357fcebbe7757e1179b2734b2d57cf52d169bfac2c",
+          "original_sha256": "33279b54c76cfdbba90852357fcebbe7757e1179b2734b2d57cf52d169bfac2c"
+        },
+        {
+          "path": "runs/32b-semantic014-rate5-continuation1/adapter/0000120_adapters.safetensors",
+          "sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5",
+          "original_sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5"
+        },
+        {
+          "path": "runs/32b-semantic014-rate5-continuation1/adapter/adapters.safetensors",
+          "sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5",
+          "original_sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5"
+        }
+      ]
+    }
+  ],
+  "current_course012": {
+    "name": "course012-32b-corrective007-recovery1",
+    "course": "012",
+    "run": "32b-corrective007-recovery1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "a7b7bb6ca313c540eabde4c164f9ff9749fdfb69775425dd99a6fa1559b76fb9",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective008_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
+  },
+  "current_course013": {
+    "name": "course013-32b-state008-epoch2",
+    "course": "013",
+    "run": "32b-state008-epoch2",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 5,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "e99971eac43fea8fc96c7f3ec724a536d0e75e1fa1151e3c4e6f2d3ea31980b6",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [],
+    "manufacturing_authorized": false
+  },
+  "corrective009_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
+  },
+  "current_course014": {
+    "name": "course014-32b-api009-continuation2",
+    "course": "014",
+    "run": "32b-api009-continuation2",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 5,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "5e75429ebcc454ea991b5a2790c927fab81706733c126599c868be8527dab9c2",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective010_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 144
+  },
+  "current_course015": {
+    "name": "course015-32b-repair010-fresh1",
+    "course": "015",
+    "run": "32b-repair010-fresh1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 1,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "43489285c8bddf9ecac501329aee0360e07dfa7f8f274b997003764282ded549",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-initialize",
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective011_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
+  },
+  "current_course016": {
+    "name": "course016-32b-field011-continuation1",
+    "course": "016",
+    "run": "32b-field011-continuation1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 6,
+    "development_total": 12,
+    "scan_passed": 1,
+    "scan_total": 4,
+    "stopped": 15,
+    "truncated": 1,
+    "adapter_sha256": "06827b46061b9af89f8fdf4393749a9732e39b24ca639e24b668b446ed98399a",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-debug-api"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective012_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
+  },
+  "current_course017": {
+    "name": "course017-32b-compact012-continuation1",
+    "course": "017",
+    "run": "32b-compact012-continuation1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 5,
+    "development_total": 12,
+    "scan_passed": 1,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "04fc4530f0f32e2785d232f5a482bd2329ec4f8ad653b2636d32ccf6add07b59",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [],
+    "manufacturing_authorized": false
+  },
+  "corrective013_teachers": {
+    "cases": 48,
+    "passed": 48,
+    "formulations": 96
+  },
+  "current_course018": {
+    "name": "course018-32b-typed013-fresh1",
+    "course": "018",
+    "run": "32b-typed013-fresh1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 13,
+    "truncated": 3,
+    "adapter_sha256": "3e21d521b37828504f9e24e5e30cdd2be06a9baac35144a93d8c53e1a2ec1a62",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "course018_seen_training_probes": {
+    "passed": 0,
+    "total": 4,
+    "all_eos": true,
+    "qualification_credit": 0
+  },
+  "current_course019": {
+    "name": "course019-32b-typed013-continuation1",
+    "course": "019",
+    "run": "32b-typed013-continuation1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 4,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "bdf811c476131c8b5d02557ed3b66f5e62163f395997d59f3c3b1b378aa5abad",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [
+      "development-debug-api",
+      "development-shell"
+    ],
+    "manufacturing_authorized": false
+  },
+  "corrective014_teachers": {
+    "cases": 8,
+    "passed": 8,
+    "formulations": 16
+  },
+  "course019_seen_training_probes": {
+    "passed": 2,
+    "total": 4,
+    "all_eos": true,
+    "qualification_credit": 0
+  },
+  "current_course020": {
+    "name": "course020-32b-semantic014-continuation1",
+    "course": "020",
+    "run": "32b-semantic014-continuation1",
+    "base": "32B",
+    "status": "completed_rejected",
+    "development_passed": 5,
+    "development_total": 12,
+    "scan_passed": 0,
+    "scan_total": 4,
+    "stopped": 16,
+    "truncated": 0,
+    "adapter_sha256": "6d1297c2758022d4d471d0125c5595fafe91239efab3529bb1f6a9587987f4d0",
+    "checker_profile_sha256": "7f6394323b81867faa37aef39db444ba0d0afe833c213baceb0cadc55fbf7c45",
+    "lost_baseline_passes": [],
+    "manufacturing_authorized": false
+  },
+  "course020_seen_training_probes": {
+    "passed": 3,
+    "total": 4,
+    "all_eos": true,
+    "qualification_credit": 0
+  },
+  "current_course021": {
+    "course": "021",
+    "run": "32b-semantic014-rate5-continuation1",
+    "status": "interrupted_ineligible",
+    "last_logged_step": 120,
+    "latest_durable_checkpoint_step": 120,
+    "planned_steps": 272,
+    "completed_receipt_exists": false,
+    "cause": "explicit_user_stop",
+    "cpu_audit_original_sha256": "3c9110c62caa7aeb6aafedb13fa1d9b05f2d64eba245690389dcf336a8d83b80",
+    "checkpoint_evaluated": false,
+    "qualification_credit": 0,
+    "automation_status": "PAUSED",
+    "recovery_authorized": false,
+    "asset": "interrupted-32b-course021-user-stopped-full-evidence.tar.gz",
+    "checkpoints": [
+      {
+        "path": "runs/32b-semantic014-rate5-continuation1/adapter/0000060_adapters.safetensors",
+        "sha256": "33279b54c76cfdbba90852357fcebbe7757e1179b2734b2d57cf52d169bfac2c",
+        "original_sha256": "33279b54c76cfdbba90852357fcebbe7757e1179b2734b2d57cf52d169bfac2c"
+      },
+      {
+        "path": "runs/32b-semantic014-rate5-continuation1/adapter/0000120_adapters.safetensors",
+        "sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5",
+        "original_sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5"
+      },
+      {
+        "path": "runs/32b-semantic014-rate5-continuation1/adapter/adapters.safetensors",
+        "sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5",
+        "original_sha256": "13fba335a3c28b546d2de132866d73e545bc29d16580bf542bdc3b3ad33b94e5"
+      }
+    ]
   }
 }

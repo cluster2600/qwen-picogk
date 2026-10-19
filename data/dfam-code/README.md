@@ -4,18 +4,20 @@ license: apache-2.0
 
 # PicoGK DfAM code corpus (work in progress)
 
-**Status: 1 of 150 planned cases.** This directory holds the tooling and the
-first historical native-verified example of a corpus for C# and PicoGK 2.3.0. The task
+**Status: 4 of 150 planned cases.** This directory holds the tooling and the
+first examples of a corpus for C# and PicoGK 2.3.0. The task
 it covers is turning 3D scan data into lightweight parts designed for
 laser powder bed fusion of metals (PBF-LB/M). The planned split is 45 scan
 repair, 60 bionic infill, 30 DfAM and 15 troubleshooting cases. No
-train/valid/test files exist yet. **No case is currently eligible for training:**
-the first case has 86 degenerate triangles in its original receipt, which
-the strengthened policy rejects. Its revised numerical export welds vertices
-consistently before removing collapsed faces. The revised full part is **not
-yet native-revalidated**. The old receipt and original source snapshot are
-preserved in `evidence/dfam-code/`. The public seed is assigned to the
-`graded-gyroid-sheet` training family and cannot become an untouched holdout.
+train/valid/test files exist yet, and assembly requires all 150 cases.
+All four cases pass the strict policy `dfam-strict-v3` under isolated native
+verification ([receipt](../../evidence/dfam-code/strict-v3-20261017.json)).
+`infill-001` now welds its export, drops collapsed faces and removes detached
+shells that enclose no volume. Its original source is archived byte for byte
+in [evidence/dfam-code/snapshots](../../evidence/dfam-code/snapshots/), and
+its earlier receipts are kept, together with the
+[first strict-v3 receipt](../../evidence/dfam-code/strict-v3-20261015.json) and
+the [strict-v2 receipt](../../evidence/dfam-code/strict-v2-20261015.json).
 See the [authoring and validation guide](../../docs/DFAM_CODE_CORPUS.md).
 
 ## How an example is accepted
@@ -45,14 +47,23 @@ corpus code. The measurements are:
   independently of OpenVDB;
 - the share of surface facing downward at less than 45 deg;
 - the thin-wall share, measured by morphological opening;
+- wall thickness on the mesh itself, by a ray from every triangle along the
+  inward normal (area-weighted percentiles and the area below the minimum
+  wall);
+- needle triangles, whose height is below 1e-3 of their longest edge;
+- self-intersecting triangle pairs, counted by a separate libigl sidecar with
+  exact predicates;
 - volume relative to the fixture.
 
 Every example must have no detected open/non-manifold edges, inconsistent
-orientations or degenerate triangles, and one voxel-connected solid. Enclosed
+orientations, degenerate or needle triangles, or self-intersecting pairs, and
+one voxel-connected solid. Enclosed
 voids must remain within the declared raster tolerances (2 mm³ total and
 0.25 mm³ for the largest pocket); this is not a physical depowdering guarantee.
-For the one example so far, an unvented copy fails with 19,216 mm³ of trapped
-powder.
+For `infill-001`, an unvented copy fails with 19,216 mm³ of trapped powder.
+For `dfam-001`, the same channel with a round roof measures an overhang
+fraction of 0.0483 and fails the declared 0.035 limit, which the teardrop
+passes at 0.0218 ([negative control](../../evidence/dfam-code/negative-controls/)).
 
 The fixtures are a synthetic slab with bosses, plus a noisy point cloud with
 outliers and gaps derived from it. They are not a vehicle part.

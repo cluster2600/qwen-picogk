@@ -21,11 +21,29 @@ This is a nonfunctional demonstration, without metal-print or rotation qualifica
 
 A separate [AM C# training study](am-code/README.md) publishes the requested
 150-pair corpus, 64 native-validated corrective teachers, prompt-style
-augmentation, portable guards and full rejected-course evidence. Its completed
-1.5B candidates remain rejected; a fresh 7B course is running at the snapshot.
+augmentation, portable guards and full rejected-course evidence. All nine
+completed 1.5B, 7B, 14B and 32B courses remain rejected; a fresh 32B course
+(010) is registered and running, with no result recorded at the snapshot.
 No AM C# adapter is qualified or made the default. Large experiment artifacts
 are inventoried as release assets, with local-path redaction and original/public
 hash bindings.
+
+A separate [PicoGK DfAM code corpus](docs/DFAM_CODE_CORPUS.md) is in progress:
+4 of 150 planned examples. All four pass strict isolated native verification,
+which now also measures wall thickness on the mesh and checks
+self-intersections with exact predicates; training assembly still requires
+the complete corpus. A [physics evidence plan](docs/PHYSICS_EVIDENCE_PLAN.md)
+reviews seven open-source AM simulation and geometry projects and schedules
+process and part-scale studies. Its first [process simulations](docs/PROCESS_SIMULATION.md)
+run AdditiveFOAM in a pinned container. Against three NIST AM-Bench cases,
+the calibrated tutorial reproduces cross-section width within 6 %. Its
+melt-pool length is 9 to 36 % short, which is recorded rather than tuned
+away. A 316L sweep is published as an uncalibrated trend. The
+[part-scale chain](docs/PART_SCALE_SIMULATION.md) now runs verified corpus
+geometry in a pinned adamantine image, and its heat balance closes at 0.5 mm
+cells.
+
+![Round roof versus teardrop roof: the overhang screen separates them](docs/visuals/dfam/channel-section.png)
 
 ![Actual geometry from our Qwen adapter and PicoGK](docs/visuals/generated/overview.png)
 
@@ -41,6 +59,10 @@ algorithms and a trusted PicoGK host. The model proposes a bounded plan from
 typed features; geometry checks control STL delivery. This addition does not
 replace the original planner or its benchmark, and it does not qualify a
 metal part for manufacture.
+
+The current scan chain adds [PyMesh exact cleanup and native intersection
+auditing](docs/PYMESH_SCAN_RECONSTRUCTION.md), with source correspondence,
+surface-preservation checks and a separately pinned offline runtime.
 
 The [traceable gallery](docs/visuals/README.md) contains five real model calls,
 their raw responses, native PicoGK STL files and mesh renders. The diagrams
@@ -126,11 +148,10 @@ model's wider usefulness needs independent evaluation.
 
 ## Contents
 
-The [DfAM corpus guide](docs/DFAM_CODE_CORPUS.md) describes a separate,
-one-example authoring effort and its strict training gates. Its historical
-export is rejected by the strengthened mesh policy; a numerical cleanup
-revision awaits full native revalidation. No DfAM training set or new
-qualified model is claimed.
+The [DfAM corpus guide](docs/DFAM_CODE_CORPUS.md) describes a separate
+authoring effort and its strict training gates. Its four examples pass
+isolated native verification under `dfam-strict-v3`; no DfAM training set or
+new qualified model is claimed.
 
 | Location | Purpose |
 |---|---|

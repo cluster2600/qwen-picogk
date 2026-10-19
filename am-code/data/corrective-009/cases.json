@@ -1,0 +1,1271 @@
+{
+  "schema": "picogk.am.compact-teaching@1",
+  "count": 48,
+  "families": [
+    "closing",
+    "shell",
+    "vent",
+    "cone-roof",
+    "gyroid",
+    "diamond",
+    "schwarz-p",
+    "scan-normals",
+    "debug-api",
+    "stl-skin-vent",
+    "xyz-occupancy",
+    "signed-range-refusal"
+  ],
+  "train_sha256": "34c495a8264cbdfdde644ad3672efe681c64db36c32b1664f077055f7e8e2088",
+  "author_sha256": "f07341e885eba3a34ee3e035ecb9f8122d29716631b1a795481294891fcaf815",
+  "cases": [
+    {
+      "id": "api-closing-01",
+      "family": "closing",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-closing-01/input.dat",
+      "source": "cases/api-closing-01/Program.cs",
+      "source_sha256": "75569a1ad4fe5cd6b9f191c637665cd869f581cf2c9c1a1814e827455b6e878e",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "half": 2.94
+      }
+    },
+    {
+      "id": "api-closing-02",
+      "family": "closing",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-closing-02/input.dat",
+      "source": "cases/api-closing-02/Program.cs",
+      "source_sha256": "73084ed96c2a1939c3654405925243dcda12173a30491833f41e1f4339e5341f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "half": 3.14
+      }
+    },
+    {
+      "id": "api-closing-03",
+      "family": "closing",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-closing-03/input.dat",
+      "source": "cases/api-closing-03/Program.cs",
+      "source_sha256": "d00f415ebad313bcadd19e3677ce7b74933ded6c719c2b681c5dcaa0695764e5",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "half": 3.46
+      }
+    },
+    {
+      "id": "api-closing-04",
+      "family": "closing",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-closing-04/input.dat",
+      "source": "cases/api-closing-04/Program.cs",
+      "source_sha256": "54e52eab629ebb9d4b0a2cd493169964f7fd7cbd81f1599ad52a2edf52ad37db",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "closing",
+        "centre": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "half": 3.7
+      }
+    },
+    {
+      "id": "api-shell-01",
+      "family": "shell",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-shell-01/input.dat",
+      "source": "cases/api-shell-01/Program.cs",
+      "source_sha256": "666b510fa2b4b5a770d860227485664459bd6eb1a5ceb6c246398f2ca8646d75",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "radius": 2.78,
+        "wall": 1.08
+      }
+    },
+    {
+      "id": "api-shell-02",
+      "family": "shell",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-shell-02/input.dat",
+      "source": "cases/api-shell-02/Program.cs",
+      "source_sha256": "3a148463f6d17e012dee9a771b5c93513b1ade3f6669435b55d53fbdd1383c65",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "radius": 2.98,
+        "wall": 1.18
+      }
+    },
+    {
+      "id": "api-shell-03",
+      "family": "shell",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-shell-03/input.dat",
+      "source": "cases/api-shell-03/Program.cs",
+      "source_sha256": "dc8d78d03ada700fe23a0c59e0a7ca787e0236a22ede4d3844e7de5f2b15e49b",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "radius": 3.28,
+        "wall": 1.26
+      }
+    },
+    {
+      "id": "api-shell-04",
+      "family": "shell",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-shell-04/input.dat",
+      "source": "cases/api-shell-04/Program.cs",
+      "source_sha256": "4e47305ba59ea12891173918b5104903cb931dffc70238fbde8261659b00a14d",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "shell",
+        "centre": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "radius": 3.58,
+        "wall": 1.34
+      }
+    },
+    {
+      "id": "api-vent-01",
+      "family": "vent",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-vent-01/input.dat",
+      "source": "cases/api-vent-01/Program.cs",
+      "source_sha256": "78bd547ac12de1b9ebc5e3e8bcf861967abcbb007e5d650e90781a2dc1c67e41",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "half": [
+          3.24,
+          3.52,
+          2.68
+        ],
+        "wall": 1.08,
+        "vent_radius": 1.58
+      }
+    },
+    {
+      "id": "api-vent-02",
+      "family": "vent",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-vent-02/input.dat",
+      "source": "cases/api-vent-02/Program.cs",
+      "source_sha256": "5e2459a9550edf401211854da5542c123e7dfe277aace31bef64454c7da8f587",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "half": [
+          3.4200000000000004,
+          3.68,
+          2.9000000000000004
+        ],
+        "wall": 1.18,
+        "vent_radius": 1.72
+      }
+    },
+    {
+      "id": "api-vent-03",
+      "family": "vent",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-vent-03/input.dat",
+      "source": "cases/api-vent-03/Program.cs",
+      "source_sha256": "005da4e32803003f68cb66dc69d369716adb9d15df4886462d630702dfde3486",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "half": [
+          3.6,
+          3.84,
+          3.12
+        ],
+        "wall": 1.26,
+        "vent_radius": 1.84
+      }
+    },
+    {
+      "id": "api-vent-04",
+      "family": "vent",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-vent-04/input.dat",
+      "source": "cases/api-vent-04/Program.cs",
+      "source_sha256": "c364528e34e32b0a148b50e16a251728fefa72bb758e3c54375959a4ac0faca1",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "half": [
+          3.7800000000000002,
+          4.0,
+          3.3400000000000003
+        ],
+        "wall": 1.34,
+        "vent_radius": 1.96
+      }
+    },
+    {
+      "id": "api-cone-roof-01",
+      "family": "cone-roof",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-cone-roof-01/input.dat",
+      "source": "cases/api-cone-roof-01/Program.cs",
+      "source_sha256": "a817aa295bf1cbf57f735ab581dd4830a1d38014264117a09f8daa795940b77b",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          0.8,
+          -0.4,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          0.8,
+          -0.4,
+          0
+        ],
+        "radius": 1.5,
+        "rise": 3.94,
+        "shoulder": 1.66,
+        "port": 1.18,
+        "floor": 1.06
+      }
+    },
+    {
+      "id": "api-cone-roof-02",
+      "family": "cone-roof",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-cone-roof-02/input.dat",
+      "source": "cases/api-cone-roof-02/Program.cs",
+      "source_sha256": "0afc71c3d759834fc01b576e6cb68cf6f7bf9f426020f5f5dbcfbd58a79100cd",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          -0.8,
+          1.0,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          -0.8,
+          1.0,
+          0
+        ],
+        "radius": 1.66,
+        "rise": 4.18,
+        "shoulder": 1.82,
+        "port": 1.26,
+        "floor": 1.06
+      }
+    },
+    {
+      "id": "api-cone-roof-03",
+      "family": "cone-roof",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-cone-roof-03/input.dat",
+      "source": "cases/api-cone-roof-03/Program.cs",
+      "source_sha256": "6155b2bb4909a1f5df7f7ed3399ea5291859e50ba9fb5991b4ed994b3cc8b84c",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          1.0,
+          -0.6,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          1.0,
+          -0.6,
+          0
+        ],
+        "radius": 1.82,
+        "rise": 4.46,
+        "shoulder": 1.98,
+        "port": 1.34,
+        "floor": 1.06
+      }
+    },
+    {
+      "id": "api-cone-roof-04",
+      "family": "cone-roof",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-cone-roof-04/input.dat",
+      "source": "cases/api-cone-roof-04/Program.cs",
+      "source_sha256": "4bc0afbe08e24d96213c57f92041f64f97e0e2dc5801f9fb8d9f67e3bcc83d37",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cone",
+        "centre": [
+          -0.4,
+          -0.8,
+          4.24
+        ],
+        "half": [
+          3.54,
+          3.78,
+          4.24
+        ],
+        "origin": [
+          -0.4,
+          -0.8,
+          0
+        ],
+        "radius": 1.98,
+        "rise": 4.74,
+        "shoulder": 2.14,
+        "port": 1.42,
+        "floor": 1.06
+      }
+    },
+    {
+      "id": "api-gyroid-01",
+      "family": "gyroid",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-gyroid-01/input.dat",
+      "source": "cases/api-gyroid-01/Program.cs",
+      "source_sha256": "1844c39f22788e424cdb62d31c0baec88cdeffee9ee8aa88f804638b62f70efc",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "origin": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "cell": 5.86,
+        "wall": 1.08,
+        "extent": 3.44
+      }
+    },
+    {
+      "id": "api-gyroid-02",
+      "family": "gyroid",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-gyroid-02/input.dat",
+      "source": "cases/api-gyroid-02/Program.cs",
+      "source_sha256": "6e335a76f61bfc102f3e6fe894c9e49b6226c52cbc300434c83ef91f2523be8f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "origin": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "cell": 6.18,
+        "wall": 1.18,
+        "extent": 3.56
+      }
+    },
+    {
+      "id": "api-gyroid-03",
+      "family": "gyroid",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-gyroid-03/input.dat",
+      "source": "cases/api-gyroid-03/Program.cs",
+      "source_sha256": "b5eda7122befe30cbb290631a5ce05d963b11f714f39220770fd9e025cf2dd63",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "origin": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "cell": 6.54,
+        "wall": 1.26,
+        "extent": 3.6799999999999997
+      }
+    },
+    {
+      "id": "api-gyroid-04",
+      "family": "gyroid",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-gyroid-04/input.dat",
+      "source": "cases/api-gyroid-04/Program.cs",
+      "source_sha256": "bc936619ca2f4fbcf08f4247671a9bcdc6ce1e31440f5b8ca1cf458545a45e58",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 0,
+        "centre": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "origin": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "cell": 6.98,
+        "wall": 1.34,
+        "extent": 3.8
+      }
+    },
+    {
+      "id": "api-diamond-01",
+      "family": "diamond",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-diamond-01/input.dat",
+      "source": "cases/api-diamond-01/Program.cs",
+      "source_sha256": "3cbb866529963753ffd5d01ab29ae7319c02ede6ea9876569ed2b1d8e012b2ad",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "origin": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "cell": 5.86,
+        "wall": 1.08,
+        "extent": 3.44
+      }
+    },
+    {
+      "id": "api-diamond-02",
+      "family": "diamond",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-diamond-02/input.dat",
+      "source": "cases/api-diamond-02/Program.cs",
+      "source_sha256": "c17433ac81aa9631e6e404406bf73f321f844dba3d46ebd62afa8ddaf1cea2dc",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "origin": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "cell": 6.18,
+        "wall": 1.18,
+        "extent": 3.56
+      }
+    },
+    {
+      "id": "api-diamond-03",
+      "family": "diamond",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-diamond-03/input.dat",
+      "source": "cases/api-diamond-03/Program.cs",
+      "source_sha256": "47c7f05e9ef3afda34ffe16b6b8e1a93b95f9af8bc480ea1c8298e6ed9d56d53",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "origin": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "cell": 6.54,
+        "wall": 1.26,
+        "extent": 3.6799999999999997
+      }
+    },
+    {
+      "id": "api-diamond-04",
+      "family": "diamond",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-diamond-04/input.dat",
+      "source": "cases/api-diamond-04/Program.cs",
+      "source_sha256": "97179932efdc1f897ea95e03c5394412d5bfa2363150f8540750d177861f568f",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 1,
+        "centre": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "origin": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "cell": 6.98,
+        "wall": 1.34,
+        "extent": 3.8
+      }
+    },
+    {
+      "id": "api-schwarz-p-01",
+      "family": "schwarz-p",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-schwarz-p-01/input.dat",
+      "source": "cases/api-schwarz-p-01/Program.cs",
+      "source_sha256": "2e076a715de81175c75cc9ab095ac055ebda2b4b706a4e5366a342c5149573fb",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "origin": [
+          -0.665,
+          -1.8650000000000002,
+          -0.8650000000000001
+        ],
+        "cell": 5.86,
+        "wall": 1.08,
+        "extent": 3.44
+      }
+    },
+    {
+      "id": "api-schwarz-p-02",
+      "family": "schwarz-p",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-schwarz-p-02/input.dat",
+      "source": "cases/api-schwarz-p-02/Program.cs",
+      "source_sha256": "16895d143b88fa656e41d8e9777edec71b64fc36c5e68766fcccad3cc3560cb0",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "origin": [
+          -2.3449999999999998,
+          -0.5449999999999999,
+          -1.145
+        ],
+        "cell": 6.18,
+        "wall": 1.18,
+        "extent": 3.56
+      }
+    },
+    {
+      "id": "api-schwarz-p-03",
+      "family": "schwarz-p",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-schwarz-p-03/input.dat",
+      "source": "cases/api-schwarz-p-03/Program.cs",
+      "source_sha256": "faf95bc1d62f3958e3679372f8b51071d15a61cb6b52913bb30e8bca328ec6db",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "origin": [
+          -0.635,
+          -2.235,
+          -1.835
+        ],
+        "cell": 6.54,
+        "wall": 1.26,
+        "extent": 3.6799999999999997
+      }
+    },
+    {
+      "id": "api-schwarz-p-04",
+      "family": "schwarz-p",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-schwarz-p-04/input.dat",
+      "source": "cases/api-schwarz-p-04/Program.cs",
+      "source_sha256": "b6824dd987800ae0abb8e708489fe408cd58ea2604fd5048ab165414d255d05b",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "tpms",
+        "kind": 2,
+        "centre": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "origin": [
+          -2.145,
+          -2.545,
+          -0.9450000000000001
+        ],
+        "cell": 6.98,
+        "wall": 1.34,
+        "extent": 3.8
+      }
+    },
+    {
+      "id": "api-scan-normals-01",
+      "family": "scan-normals",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-scan-normals-01/planes.csv",
+      "source": "cases/api-scan-normals-01/Program.cs",
+      "source_sha256": "aa1a18496287736a809f10393cb42325929f29bc298c2eedbb3081acce808eef",
+      "input_sha256": "0f8581c30954f4a97b590c20b7ba841314ab6fb5866269cc602183a5e115fbfa",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "half": [
+          2.46,
+          2.74,
+          3.02
+        ],
+        "parser": "planes",
+        "header": [
+          "nx",
+          "z",
+          "x",
+          "ny",
+          "y",
+          "nz"
+        ]
+      }
+    },
+    {
+      "id": "api-scan-normals-02",
+      "family": "scan-normals",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-scan-normals-02/planes.csv",
+      "source": "cases/api-scan-normals-02/Program.cs",
+      "source_sha256": "aa1a18496287736a809f10393cb42325929f29bc298c2eedbb3081acce808eef",
+      "input_sha256": "a8b34ad4a20cb403c81c363d276f70663da42046f4b24df149f57fa10fcc4e66",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "half": [
+          2.64,
+          2.9000000000000004,
+          3.16
+        ],
+        "parser": "planes",
+        "header": [
+          "z",
+          "ny",
+          "x",
+          "nz",
+          "y",
+          "nx"
+        ]
+      }
+    },
+    {
+      "id": "api-scan-normals-03",
+      "family": "scan-normals",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-scan-normals-03/planes.csv",
+      "source": "cases/api-scan-normals-03/Program.cs",
+      "source_sha256": "aa1a18496287736a809f10393cb42325929f29bc298c2eedbb3081acce808eef",
+      "input_sha256": "f759e113372ed549368175ad7bbe5b02d3383bf4adfc038c3ba2cf5c33d4c0bd",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "half": [
+          2.82,
+          3.06,
+          3.3
+        ],
+        "parser": "planes",
+        "header": [
+          "ny",
+          "x",
+          "nz",
+          "z",
+          "nx",
+          "y"
+        ]
+      }
+    },
+    {
+      "id": "api-scan-normals-04",
+      "family": "scan-normals",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-scan-normals-04/planes.csv",
+      "source": "cases/api-scan-normals-04/Program.cs",
+      "source_sha256": "aa1a18496287736a809f10393cb42325929f29bc298c2eedbb3081acce808eef",
+      "input_sha256": "6f4ad7b43d0be912ff903b52644bd0f3e0d022ba5164d0cb7aea04c6ffa310db",
+      "oracle": {
+        "shape": "box",
+        "centre": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "half": [
+          3.0,
+          3.22,
+          3.44
+        ],
+        "parser": "planes",
+        "header": [
+          "y",
+          "nz",
+          "nx",
+          "x",
+          "z",
+          "ny"
+        ]
+      }
+    },
+    {
+      "id": "api-debug-api-01",
+      "family": "debug-api",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-debug-api-01/input.dat",
+      "source": "cases/api-debug-api-01/Program.cs",
+      "source_sha256": "ac8a3f5fa572e5b36f6881c73dba854be30a8550f80a24823d16f2bab3481b4d",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "radius": 1.38,
+        "half_height": 2.48
+      }
+    },
+    {
+      "id": "api-debug-api-02",
+      "family": "debug-api",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-debug-api-02/input.dat",
+      "source": "cases/api-debug-api-02/Program.cs",
+      "source_sha256": "8c3e41b51a60fcec4a51990cea30b95469588daa8534c780cbcf06ac640f10ae",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "radius": 1.5,
+        "half_height": 2.68
+      }
+    },
+    {
+      "id": "api-debug-api-03",
+      "family": "debug-api",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-debug-api-03/input.dat",
+      "source": "cases/api-debug-api-03/Program.cs",
+      "source_sha256": "cddd393b54f8509083002be1f0652a17ebf0a06434a02003e9c7b8209bd943ea",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "radius": 1.62,
+        "half_height": 2.88
+      }
+    },
+    {
+      "id": "api-debug-api-04",
+      "family": "debug-api",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-debug-api-04/input.dat",
+      "source": "cases/api-debug-api-04/Program.cs",
+      "source_sha256": "8986e6786a0470360db33bff1227d67e4168302f947758efe8af1b8ddd7b9b78",
+      "input_sha256": "ad1cf4e18cb27287128ac47ba0c561211a576f765ca780523465bc5f21fadfef",
+      "oracle": {
+        "shape": "cylinder",
+        "centre": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "radius": 1.78,
+        "half_height": 3.08
+      }
+    },
+    {
+      "id": "api-stl-skin-vent-01",
+      "family": "stl-skin-vent",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-stl-skin-vent-01/scan.stl",
+      "source": "cases/api-stl-skin-vent-01/Program.cs",
+      "source_sha256": "7bc8f087c5a8df28ca491f7576dbb3fb4d7000fb60cc43f485f48866c10e647e",
+      "input_sha256": "8e5c1092d906e251af0d67e53fccea3b8e21b292ca5b545ea7b1abeda23d26e3",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          0.8,
+          -0.4,
+          0.6
+        ],
+        "half": [
+          3.24,
+          3.52,
+          2.68
+        ],
+        "wall": 1.08,
+        "vent_radius": 1.58
+      }
+    },
+    {
+      "id": "api-stl-skin-vent-02",
+      "family": "stl-skin-vent",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-stl-skin-vent-02/scan.stl",
+      "source": "cases/api-stl-skin-vent-02/Program.cs",
+      "source_sha256": "4e4090aa7d4479a13469aaaaac0de4c278f98fc59792c4942b2b38a33a58bac4",
+      "input_sha256": "bfcaf2e76d2bfb9d07753a68326db0930e72d8f43262814429435b22e623ef67",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.8,
+          1.0,
+          0.4
+        ],
+        "half": [
+          3.4200000000000004,
+          3.68,
+          2.9000000000000004
+        ],
+        "wall": 1.18,
+        "vent_radius": 1.72
+      }
+    },
+    {
+      "id": "api-stl-skin-vent-03",
+      "family": "stl-skin-vent",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-stl-skin-vent-03/scan.stl",
+      "source": "cases/api-stl-skin-vent-03/Program.cs",
+      "source_sha256": "94aea5761c6e10e1e614b8e205ac464c898292968e0d3fc989b058f5c2fca995",
+      "input_sha256": "8b46cc54609d604a6736a7dc79221bcf3b766d1055c1068e51de3d5df3ae32b0",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          1.0,
+          -0.6,
+          -0.2
+        ],
+        "half": [
+          3.6,
+          3.84,
+          3.12
+        ],
+        "wall": 1.26,
+        "vent_radius": 1.84
+      }
+    },
+    {
+      "id": "api-stl-skin-vent-04",
+      "family": "stl-skin-vent",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-stl-skin-vent-04/scan.stl",
+      "source": "cases/api-stl-skin-vent-04/Program.cs",
+      "source_sha256": "049942e8c1e342b89954a00a5224a7f7b51a449d6cac037dcf676bea251b8d1b",
+      "input_sha256": "31000a4de09bafa69265abe41d6e969c1f27306142154c360ac80cc6bc6b2714",
+      "oracle": {
+        "shape": "vent",
+        "centre": [
+          -0.4,
+          -0.8,
+          0.8
+        ],
+        "half": [
+          3.7800000000000002,
+          4.0,
+          3.3400000000000003
+        ],
+        "wall": 1.34,
+        "vent_radius": 1.96
+      }
+    },
+    {
+      "id": "api-xyz-occupancy-01",
+      "family": "xyz-occupancy",
+      "variant": 1,
+      "kind": "geometry",
+      "input": "cases/api-xyz-occupancy-01/observations.xyz",
+      "source": "cases/api-xyz-occupancy-01/Program.cs",
+      "source_sha256": "477e9c35fda232a4242a4c8a4e1129688b69f5815abf67ed3d25fd99551aabc0",
+      "input_sha256": "f292f8b0d01ee4ea09286a2af1a07389e09b46888ee9c9daa0f03080b733d559",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -1.3,
+            -0.4,
+            0.6
+          ],
+          [
+            2.9000000000000004,
+            -0.4,
+            0.6
+          ],
+          [
+            0.8,
+            -2.6999999999999997,
+            1.7999999999999998
+          ],
+          [
+            0.8,
+            1.9,
+            -0.6
+          ]
+        ],
+        "radius": 0.72,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "api-xyz-occupancy-02",
+      "family": "xyz-occupancy",
+      "variant": 2,
+      "kind": "geometry",
+      "input": "cases/api-xyz-occupancy-02/observations.xyz",
+      "source": "cases/api-xyz-occupancy-02/Program.cs",
+      "source_sha256": "f29cd575eed65938b9c85333d63fa933fad6ad71d4152a7d9d0378d66b26ed82",
+      "input_sha256": "7b43fad759c242cdcc2845afa5208336f9eef2b161aca0cef661475a67f178e5",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -2.9000000000000004,
+            1.0,
+            0.4
+          ],
+          [
+            1.3,
+            1.0,
+            0.4
+          ],
+          [
+            -0.8,
+            -1.2999999999999998,
+            1.6
+          ],
+          [
+            -0.8,
+            3.3,
+            -0.7999999999999999
+          ]
+        ],
+        "radius": 0.84,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "api-xyz-occupancy-03",
+      "family": "xyz-occupancy",
+      "variant": 3,
+      "kind": "geometry",
+      "input": "cases/api-xyz-occupancy-03/observations.xyz",
+      "source": "cases/api-xyz-occupancy-03/Program.cs",
+      "source_sha256": "86bdc006634c256c8a6af61a20ca27300d49f10a58abe5574d05e8dbe300decd",
+      "input_sha256": "1c8fb19fc393197e728451548ab90aa273dd6a59bd730ab7d16d2a82262c79ed",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -1.1,
+            -0.6,
+            -0.2
+          ],
+          [
+            3.1,
+            -0.6,
+            -0.2
+          ],
+          [
+            1.0,
+            -2.9,
+            1.0
+          ],
+          [
+            1.0,
+            1.6999999999999997,
+            -1.4
+          ]
+        ],
+        "radius": 0.96,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "api-xyz-occupancy-04",
+      "family": "xyz-occupancy",
+      "variant": 4,
+      "kind": "geometry",
+      "input": "cases/api-xyz-occupancy-04/observations.xyz",
+      "source": "cases/api-xyz-occupancy-04/Program.cs",
+      "source_sha256": "eb11fed81d3a046c5c52502174d31e15d1d687fb7fdcfef3da1b72c0c84477e1",
+      "input_sha256": "937312339b0757a7598704f6b4a51051468e2fd00d642ee4a3f3cae2e6738182",
+      "oracle": {
+        "shape": "splats",
+        "points": [
+          [
+            -2.5,
+            -0.8,
+            0.8
+          ],
+          [
+            1.7000000000000002,
+            -0.8,
+            0.8
+          ],
+          [
+            -0.4,
+            -3.0999999999999996,
+            2.0
+          ],
+          [
+            -0.4,
+            1.4999999999999998,
+            -0.3999999999999999
+          ]
+        ],
+        "radius": 1.08,
+        "parser": "xyz"
+      }
+    },
+    {
+      "id": "api-signed-range-refusal-01",
+      "family": "signed-range-refusal",
+      "variant": 1,
+      "kind": "refusal",
+      "input": "cases/api-signed-range-refusal-01/unsigned.xyz",
+      "source": "cases/api-signed-range-refusal-01/Program.cs",
+      "source_sha256": "bb84af22a4b4779a81b0a0b41d49bbe1ad31faca34d8d9f577519de5597b5169",
+      "input_sha256": "9f620d88606a2095f9da28c4ee89188e4d8e4abe97b6f80d111a63bf3c498278",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_oriented_surface_records",
+          "registered_camera_frame",
+          "signed_depth_frames"
+        ],
+        "input_valid": true
+      }
+    },
+    {
+      "id": "api-signed-range-refusal-02",
+      "family": "signed-range-refusal",
+      "variant": 2,
+      "kind": "refusal",
+      "input": "cases/api-signed-range-refusal-02/unsigned.xyz",
+      "source": "cases/api-signed-range-refusal-02/Program.cs",
+      "source_sha256": "3fa81b2664a67d74e317dcd25666c1cfd231f9cb3834fb9d094dcf669f54dc6e",
+      "input_sha256": "0850d6831950efb0b42443f412933711bec5f48d21e0b0a986fa92e06f522941",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_scanner_pixel_model",
+          "outward_sample_directions",
+          "camera_ray_origins"
+        ],
+        "input_valid": true
+      }
+    },
+    {
+      "id": "api-signed-range-refusal-03",
+      "family": "signed-range-refusal",
+      "variant": 3,
+      "kind": "refusal",
+      "input": "cases/api-signed-range-refusal-03/unsigned.xyz",
+      "source": "cases/api-signed-range-refusal-03/Program.cs",
+      "source_sha256": "c09f59e79bd9cf59396eb398233606c4f8bd2ad7296a64cfe4f6be0fa0531447",
+      "input_sha256": "a842dacfdd0ab21724cf1121f6abf6fbd40cf7059fe08e6c4fa6ccd0538ed44c",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_depth_image_model",
+          "surface_orientation_map",
+          "sensor_extrinsics"
+        ],
+        "input_valid": true
+      }
+    },
+    {
+      "id": "api-signed-range-refusal-04",
+      "family": "signed-range-refusal",
+      "variant": 4,
+      "kind": "refusal",
+      "input": "cases/api-signed-range-refusal-04/unsigned.xyz",
+      "source": "cases/api-signed-range-refusal-04/Program.cs",
+      "source_sha256": "b99033af731b56b0139f95ad540d3faafdc45d25fb800d19b01c91d658fa3084",
+      "input_sha256": "cd9cd7cf88cc85d8615a521c643312c7bcce625870ff1d9701673e35b1eba1fe",
+      "oracle": {
+        "shape": "unsigned-refusal",
+        "missing": [
+          "calibrated_registered_range_samples",
+          "outward_normal_frame",
+          "visibility_confidence"
+        ],
+        "input_valid": true
+      }
+    }
+  ],
+  "reused_recipe_source_sha256": "d0f6e8850e227ceac4effe46b1c5e4024cd3a1c21cd7e6336b76e1d62e084603",
+  "implementation_changes": "Explicit constructor types, nested complete helpers, shared static same-solid export, strict namespace/schema/parser teaching; separate synthetic observations.",
+  "final_contents_read": false,
+  "native_validation": "pending; no training eligibility until independent native proof",
+  "reused_implementation_recipe_sha256": "acc7108c6de1a928b5eab273b3b15499114b96473992bb2a2709782a79a9af89"
+}
