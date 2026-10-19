@@ -1,0 +1,20 @@
+{
+ "evidence": "evidence/dfam-code/strict-v3-20261019.json",
+ "frame_ms": 140,
+ "frames": 46,
+ "image": "infill-002-section-sweep.gif",
+ "image_sha256": "5f1faa2ef45faac2355f34da913c6bd4006150cd7e77a3375860b65403d61915",
+ "manufacturing_qualified": false,
+ "native_geometry_edited_for_render": false,
+ "render_source_sha256": "238784149bdeabe112da7308c2c84286853e0065582117dc0fe00398d66a7fd6",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6, scipy 1.15.3, libigl fast_winding_number",
+ "sources_sha256": {
+  "infill-002/part.stl": "730de9dbe5a381259cc43bb1a78eaab3841f9c46926171ebd5eb844cb6e572d1"
+ },
+ "sweep_mm": [
+  -16,
+  16
+ ],
+ "synthetic_fixtures": true,
+ "view": "planar sections filled by winding number"
+}

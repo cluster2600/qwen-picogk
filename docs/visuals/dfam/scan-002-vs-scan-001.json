@@ -1,0 +1,17 @@
+{
+ "evidence": "evidence/dfam-code/strict-v3-20261019.json",
+ "image": "scan-002-vs-scan-001.png",
+ "image_sha256": "272341f87e72652861074d00e269bcc2f47209eace43d44eda4384ea67a64fad",
+ "manufacturing_qualified": false,
+ "native_geometry_edited_for_render": false,
+ "render_source_sha256": "238784149bdeabe112da7308c2c84286853e0065582117dc0fe00398d66a7fd6",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6, scipy 1.15.3, libigl fast_winding_number",
+ "scan001_on_bracket": "scan-001 case code run on bracket/scan.xyz with the development runner (not isolated, not part of the verification receipt)",
+ "sources_sha256": {
+  "bracket/part.stl": "c49d5f72e3a305f1d6fe782b1c59458f36867b6740c009828c5c7b6bda4b7c7d",
+  "scan-001-on-bracket/part.stl": "d9905316b993a22310ed0bd78ea546185ebf3796bed5c321eab40bd9f53cb3f0",
+  "scan-002/part.stl": "a50e3f339f661fc3dc3bb5ad436dc9b598a665182830bc5db4516e25f9625e7c"
+ },
+ "synthetic_fixtures": true,
+ "view": "planar sections of the actual meshes; reference filled by winding number"
+}

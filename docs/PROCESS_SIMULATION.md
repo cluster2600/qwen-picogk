@@ -194,10 +194,12 @@ wide, which is a geometric sanity bound only.
    is too short by up to a third. Run it only after the length is brought into
    agreement, for example by a calibration that includes length. Otherwise
    report it strictly as a comparison between widths under the same model.
-2. Add AdditiveFOAM (JOSS, doi:10.21105/joss.07770), Knapp et al. (2023),
-   Lane et al. (2020) and Tang et al. (2017) to
-   `data/dfam-code/bibliography.json` once a corpus explanation cites these
-   results.
+2. AdditiveFOAM (JOSS, doi:10.21105/joss.07770), Knapp et al. (2023),
+   Lane et al. (2020) and Tang et al. (2017) have scoped entries in
+   `data/dfam-code/bibliography.json` (`coleman2025`, `knapp2023`,
+   `lane2020`, `tang2017`; metadata checked against Crossref). No corpus
+   explanation cites them yet. The first process-aware case should, and only
+   within each entry's scope.
 
 ## Reproduce
 

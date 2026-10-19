@@ -98,5 +98,30 @@
   "cite": "Borisov et al. (2025)",
   "entry": "Borisov, E. V., Repnin, A. V., & Popovich, A. A. (2025). Additive manufacturing of functionally graded products by selective laser melting: A review. Powder Metallurgy and Functional Coatings, 19(4), 77-90. https://doi.org/10.17073/1997-308X-2025-4-77-90 (CC BY-NC-ND 4.0)",
   "scope": "Review of multi-material / functionally graded SLM: interface zone widths (about 300 um at 50 um layers for VZh159/BrKhZrTV, overlap zone about 350-400 um), pre-deformed models to compensate warping (no numbers). Never cite it for what PicoGK is (its description is wrong)."
+ },
+ "barill2018": {
+  "cite": "Barill et al. (2018)",
+  "entry": "Barill, G., Dickson, N. G., Schmidt, R., Levin, D. I. W., & Jacobson, A. (2018). Fast winding numbers for soups and clouds. ACM Transactions on Graphics, 37(4), 1-12. https://doi.org/10.1145/3197517.3201337",
+  "scope": "Generalised winding number for triangle soups and oriented point clouds: each point contributes its area times its normal as a dipole, giving about 1 inside and 0 outside, robust to holes, noise and non-manifold input. Cite for the winding-number inside test. Corpus code lumps far samples per grid cell; it does not implement the paper's tree and Taylor expansions."
+ },
+ "tang2017": {
+  "cite": "Tang et al. (2017)",
+  "entry": "Tang, M., Pistorius, P. C., & Beuth, J. L. (2017). Prediction of lack-of-fusion porosity for powder bed fusion. Additive Manufacturing, 14, 39-48. https://doi.org/10.1016/j.addma.2016.12.001",
+  "scope": "Geometric lack-of-fusion criterion from melt-pool width and depth, hatch spacing and layer thickness: (h/W)^2 + (L/D)^2 <= 1 for full overlap. Cite for that criterion only; it predicts the onset of lack-of-fusion porosity, not part quality or other defect types."
+ },
+ "coleman2025": {
+  "cite": "Coleman et al. (2025)",
+  "entry": "Coleman, J., Kincaid, K., Knapp, G. L., Stump, B., Reeve, S. T., Rolchigo, M., & Plotkowski, A. (2025). AdditiveFOAM: A continuum multiphysics code for additive manufacturing. Journal of Open Source Software, 10(109), 7770. https://doi.org/10.21105/joss.07770",
+  "scope": "The open-source OpenFOAM-based heat and mass transfer solver for melt-pool simulation used for this project's process evidence. Cite as the software; it does not calibrate a machine or qualify parts."
+ },
+ "knapp2023": {
+  "cite": "Knapp et al. (2023)",
+  "entry": "Knapp, G. L., Coleman, J., Rolchigo, M., Stoyanov, M., & Plotkowski, A. (2023). Calibrating uncertain parameters in melt pool simulations of additive manufacturing. Computational Materials Science, 218, 111904. https://doi.org/10.1016/j.commatsci.2022.111904",
+  "scope": "Calibration of melt-pool simulation parameters against AM-Bench 2018 IN625 single tracks; the origin of AdditiveFOAM's calibrated single-track tutorial. Cite for that calibration only."
+ },
+ "lane2020": {
+  "cite": "Lane et al. (2020)",
+  "entry": "Lane, B., Heigel, J., Ricker, R., Zhirnov, I., Khromschenko, V., Weaver, J., Phan, T., Stoudt, M., Mekhontsev, S., & Levine, L. (2020). Measurements of melt pool geometry and cooling rates of individual laser traces on IN625 bare plates. Integrating Materials and Manufacturing Innovation, 9(1), 16-30. https://doi.org/10.1007/s40192-020-00169-1",
+  "scope": "AM-Bench 2018 (AMB2018-02) measurements of melt-pool width, depth and cooling rate for single laser traces on IN625 bare plates. Cite for those reference measurements only."
  }
 }

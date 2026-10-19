@@ -30,7 +30,20 @@ public static class MeshCleanup
                        checked((long)MathF.Round(v.Y * scale)),
                        checked((long)MathF.Round(v.Z * scale)));
             if (!vertices.TryGetValue(key, out Vector3 canonical))
-                vertices[key] = canonical = v;
+            {
+                // A vertex within the tolerance can sit just across a cell
+                // boundary; left apart, the pair forms needle triangles.
+                canonical = v;
+                for (long dx = -1; dx <= 1 && canonical == v; dx++)
+                    for (long dy = -1; dy <= 1 && canonical == v; dy++)
+                        for (long dz = -1; dz <= 1 && canonical == v; dz++)
+                            if (vertices.TryGetValue((key.Item1 + dx, key.Item2 + dy, key.Item3 + dz), out Vector3 near) &&
+                                Vector3.Distance(near, v) <= tolerance)
+                                canonical = near;
+                // Only an unshared vertex claims the cell, so later vertices
+                // never snap further than the cell-diagonal budget.
+                if (canonical == v) vertices[key] = v;
+            }
             float displacement = Vector3.Distance(v, canonical);
             // Large coordinates can lose precision during float quantization.
             // Refuse a weld that exceeds the cell-diagonal movement budget.

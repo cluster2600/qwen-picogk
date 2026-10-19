@@ -117,6 +117,34 @@ python3 scripts/render_dfam_figures.py --dumps work/thickness \
 
 The script needs numpy, matplotlib 3.10 and Pillow 11.
 
+### Fixture families and the 2026-10-19 cases
+
+Rendered by `scripts/render_dfam_families.py` from the fixtures and the
+outputs verified in the
+[2026-10-19 receipt](../../evidence/dfam-code/strict-v3-20261019.json).
+Section outlines are exact planar cuts of the meshes. Section fills classify
+each raster point by the mesh's generalised winding number (libigl), which
+stays correct where mesh vertices lie in the cutting plane.
+
+| Figure | Shows |
+|---|---|
+| ![](dfam/fixture-families.png) | The three synthetic fixture families; the manifold's internal channel in blue |
+| ![](dfam/scan-002-vs-scan-001.png) | The bracket reconstructed from the same points with normals (`scan-002`) and without (`scan-001`'s code, run outside the verifier) |
+| ![](dfam/dfam-002-gusset.png) | Section y = 0 before and after `dfam-002`; red facets face within 45 deg of straight down |
+| ![](dfam/infill-002-sections.png) | Lattice, skin, sleeves and channels of `infill-002` ([section sweep](dfam/infill-002-section-sweep.gif)) |
+| ![](dfam/debug-002-pockets.png) | `debug-002`: sealed pockets in the broken output, open pockets in the corrected one |
+
+![infill-002 section sweep](dfam/infill-002-section-sweep.gif)
+
+```sh
+python3 scripts/render_dfam_families.py --fixtures work/dfam-fixtures \
+  --runs work/dfam-runs/TAG --scan001-bracket PATH/part.stl --out docs/visuals/NEW-DIR
+```
+
+`--scan001-bracket` is the STL from running `scan-001`'s code on
+`bracket/scan.xyz`; its hash is recorded in the figure's receipt. The script
+also needs scipy and libigl 2.6.
+
 ## Process simulation figures
 
 Rendered by `physics/additivefoam/render_figures.py` from the receipts in

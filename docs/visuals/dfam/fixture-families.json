@@ -1,0 +1,20 @@
+{
+ "display_proxy": {
+  "cell_mm": 0.8,
+  "method": "vertex clustering for display only"
+ },
+ "evidence": "evidence/dfam-code/strict-v3-20261019.json",
+ "image": "fixture-families.png",
+ "image_sha256": "6d50618220944093a3c1ed2722e41a3abefc718a64ea42089a1b9055953f0e41",
+ "manufacturing_qualified": false,
+ "native_geometry_edited_for_render": false,
+ "note": "Synthetic shapes made by the trusted fixture generator; not vehicle parts.",
+ "render_source_sha256": "238784149bdeabe112da7308c2c84286853e0065582117dc0fe00398d66a7fd6",
+ "renderer": "matplotlib 3.10.8, Pillow 11.3.0, numpy 2.2.6, scipy 1.15.3, libigl fast_winding_number",
+ "sources_sha256": {
+  "bracket/part.stl": "c49d5f72e3a305f1d6fe782b1c59458f36867b6740c009828c5c7b6bda4b7c7d",
+  "manifold/part.stl": "4da798323d1c36d863e15e7b296772c62fbd2595e30747ba4f4eee3cf1af2c4e",
+  "part.stl": "79cb1719d6ff41222be81d5dc43740db0680cb8f46be4db2fab6946df44830ed"
+ },
+ "synthetic_fixtures": true
+}

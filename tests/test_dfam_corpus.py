@@ -271,6 +271,27 @@ class DfamCorpusTest(unittest.TestCase):
             self.assertTrue(result['failed'])
             checker.assert_not_called()
 
+    def test_family_inputs_are_measured_against_their_own_fixture(self):
+        fixtures = Path('fixtures')
+        for kind, name in dfam_corpus.INPUTS.items():
+            family = name.split('/')[0] if '/' in name else None
+            expected = fixtures/family/'fixture.json' if family else fixtures/'fixtures.json'
+            self.assertEqual(dfam_corpus.reference_json(fixtures, kind), expected, kind)
+            if family:
+                self.assertIn(family, dfam_corpus.FAMILIES)
+        self.assertTrue(all(c['input'] in dfam_corpus.INPUTS for c in self.cases))
+        self.assertTrue(any('/' in dfam_corpus.INPUTS[c['input']] for c in self.cases))
+
+    def test_run_case_binds_only_the_family_file_and_checks_against_its_reference(self):
+        case = next(c for c in self.cases if c['input'] == 'bracket_stl')
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); out = root/'runs'/case['id']; out.mkdir(parents=True)
+            (out/'part.stl').write_text('solid')
+            with patch.object(dfam_corpus.shutil, 'rmtree'), patch.object(Path, 'mkdir'), patch.object(dfam_corpus, 'sandbox_command', return_value=['true']) as sandbox, patch.object(dfam_corpus.subprocess, 'run', return_value=Mock(returncode=0)), patch.object(dfam_corpus, 'check_stl', return_value={'checker_error': 'stub'}) as checker:
+                dfam_corpus.run_case(Path('runner'), Path('checker'), root, case, False, {'PATH': '/usr/bin'}, root/'runs', 1)
+            self.assertEqual(sandbox.call_args.args[1], str(root/'bracket/part.stl'))
+            self.assertEqual(checker.call_args.args[1], root/'bracket/fixture.json')
+
     def test_assembly_does_not_overwrite_existing_partitions(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
