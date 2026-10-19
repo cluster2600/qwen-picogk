@@ -62,14 +62,148 @@ sealed class FixtureShape : IBoundedImplicit
     }
 }
 
+/// <summary>Signed-distance helpers for the synthetic fixture families.</summary>
+static class Sdf
+{
+    public static float RoundBox(Vector3 p, Vector3 c, Vector3 h, float r)
+    {
+        Vector3 q = Vector3.Abs(p - c) - (h - new Vector3(r));
+        return Vector3.Max(q, Vector3.Zero).Length() + MathF.Min(MathF.Max(q.X, MathF.Max(q.Y, q.Z)), 0) - r;
+    }
+
+    public static float CylinderZ(Vector3 p, float x, float y, float r, float z0, float z1)
+    {
+        Vector2 d = new(new Vector2(p.X - x, p.Y - y).Length() - r, MathF.Abs(p.Z - 0.5f * (z0 + z1)) - 0.5f * (z1 - z0));
+        return MathF.Min(MathF.Max(d.X, d.Y), 0) + Vector2.Max(d, Vector2.Zero).Length();
+    }
+
+    public static float Capsule(Vector3 p, Vector3 a, Vector3 b, float r)
+    {
+        Vector3 pa = p - a, ba = b - a;
+        float h = Math.Clamp(Vector3.Dot(pa, ba) / Vector3.Dot(ba, ba), 0, 1);
+        return (pa - ba * h).Length() - r;
+    }
+
+    public static float SmoothMin(float a, float b, float k)
+    {
+        float h = Math.Clamp(0.5f + 0.5f * (b - a) / k, 0, 1);
+        return b + (a - b) * h - k * h * (1 - h);
+    }
+}
+
+/// <summary>
+/// Synthetic bracket: a base plate, a 2 mm vertical web, a 12 mm horizontal
+/// lip overhanging from the top of the web, a 0.8 mm rib below the usual
+/// minimum wall and a mounting hole. It is not a vehicle part.
+/// </summary>
+sealed class BracketShape : IBoundedImplicit
+{
+    public BBox3 oBounds => new(new Vector3(-33, -23, -2), new Vector3(33, 23, 41));
+
+    public float fSignedDistance(in Vector3 p)
+    {
+        float plate = Sdf.RoundBox(p, new Vector3(0, 0, 4), new Vector3(30, 20, 4), 2);
+        float web = Sdf.RoundBox(p, new Vector3(-19, 0, 22.5f), new Vector3(1, 18, 15.5f), 0.3f);
+        float lip = Sdf.RoundBox(p, new Vector3(-12.5f, 0, 36.5f), new Vector3(6.5f, 18, 1.5f), 0.3f);
+        float rib = Sdf.RoundBox(p, new Vector3(5.4f, -11.5f, 13.5f), new Vector3(0.4f, 6.5f, 6.5f), 0.15f);
+        float body = MathF.Min(Sdf.SmoothMin(plate, MathF.Min(web, lip), 1.5f), rib);
+        // 6.4 mm M6 clearance; a radius on the voxel lattice would meet grid nodes exactly.
+        float hole = Sdf.CylinderZ(p, 15, 0, 3.2f, -5, 15);
+        return MathF.Max(MathF.Max(body, -hole), -p.Z);
+    }
+}
+
+/// <summary>
+/// Synthetic manifold block with an internal 6 mm channel: in through the -x
+/// face, up, and out through the +y face, plus a blind branch. It is not a
+/// vehicle part.
+/// </summary>
+sealed class ManifoldShape : IBoundedImplicit
+{
+    public BBox3 oBounds => new(new Vector3(-28, -21, -2), new Vector3(28, 21, 32));
+
+    public float fSignedDistance(in Vector3 p)
+    {
+        float block = Sdf.RoundBox(p, new Vector3(0, 0, 15), new Vector3(25, 18, 15), 3);
+        Vector3 inlet = new(-30, -8, 8), corner = new(8, -8, 8), top = new(8, -8, 22), outlet = new(8, 22, 22);
+        float channel = MathF.Min(MathF.Min(Sdf.Capsule(p, inlet, corner, 3), Sdf.Capsule(p, corner, top, 3)),
+                                  Sdf.Capsule(p, top, outlet, 3));
+        float blind = Sdf.Capsule(p, corner, new Vector3(8, 8, 8), 3);
+        return MathF.Max(MathF.Max(block, -MathF.Min(channel, blind)), -p.Z);
+    }
+}
+
 static class Fixtures
 {
+    // Each family: folder, shape, description, scanner gaps, gap radius and seed.
+    static readonly (string Name, IBoundedImplicit Shape, string Label, Vector3[] Gaps, float GapRadius, int Seed)[] Families =
+    {
+        ("bracket", new BracketShape(), "synthetic bracket: base plate, 2 mm web, 12 mm overhanging lip, 0.8 mm rib, " +
+         "mounting hole; not a vehicle part",
+         new Vector3[] { new(-12, 0, 35), new(-18, 10, 25), new(18, 12, 8) }, 3.0f, 9931015),
+        ("manifold", new ManifoldShape(), "synthetic manifold block with an internal 6 mm L-shaped channel and a " +
+         "blind branch; not a vehicle part",
+         new Vector3[] { new(-10, 18, 20), new(20, 0, 30), new(0, -18, 25) }, 3.0f, 9931016),
+    };
+
+    static string Sha(string path) => Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path))).ToLowerInvariant();
+
     public static int Write(string dir, float voxel)
     {
         if (Directory.Exists(dir) || File.Exists(dir)) throw new IOException("Use a new fixture directory");
         Directory.CreateDirectory(dir);
         using Library lib = new(voxel);
-        using Voxels vox = new(lib, new FixtureShape());
+        // The original slab keeps its folder, seed and output bytes.
+        var root = WriteSet(lib, dir, new FixtureShape(), new Vector3[] { new(0, 22, 9), new(20, 0, 30), new(-30, -10, 16) },
+                            3.5f, 9931014);
+        var files = new SortedDictionary<string, string>(root.Files);
+        var families = new SortedDictionary<string, object>();
+        foreach (var f in Families)
+        {
+            string sub = Path.Combine(dir, f.Name);
+            Directory.CreateDirectory(sub);
+            var set = WriteSet(lib, sub, f.Shape, f.Gaps, f.GapRadius, f.Seed);
+            File.WriteAllText(Path.Combine(sub, "fixture.json"), Describe(f.Label, voxel, set, f.Gaps, f.GapRadius, set.Files));
+            foreach (var (name, hash) in set.Files) files[$"{f.Name}/{name}"] = hash;
+            families[f.Name] = new { shape = f.Label, volume_mm3 = set.Volume, fixture_json = $"{f.Name}/fixture.json" };
+        }
+        File.WriteAllText(Path.Combine(dir, "fixtures.json"), JsonSerializer.Serialize(new
+        {
+            shape = "synthetic rounded slab with bored boss and pin boss; not a vehicle part",
+            voxel_mm = voxel, volume_mm3 = root.Volume,
+            bbox_min = new[] { root.Box.vecMin.X, root.Box.vecMin.Y, root.Box.vecMin.Z },
+            bbox_max = new[] { root.Box.vecMax.X, root.Box.vecMax.Y, root.Box.vecMax.Z },
+            scan_points = root.Points, scan_outliers = root.Outliers, scan_noise_sigma_mm = 0.06,
+            gap_centres = new[] { new[] { 0f, 22f, 9f }, new[] { 20f, 0f, 30f }, new[] { -30f, -10f, 16f } },
+            gap_radius_mm = 3.5f, triangles = root.Triangles, open_triangles = root.OpenTriangles,
+            files_sha256 = files, families,
+        }, new JsonSerializerOptions { WriteIndented = true }) + "\n");
+        return 0;
+    }
+
+    static string Describe(string label, float voxel, SetResult s, Vector3[] gaps, float gapRadius,
+                           SortedDictionary<string, string> files) =>
+        JsonSerializer.Serialize(new
+        {
+            shape = label, voxel_mm = voxel, volume_mm3 = s.Volume,
+            bbox_min = new[] { s.Box.vecMin.X, s.Box.vecMin.Y, s.Box.vecMin.Z },
+            bbox_max = new[] { s.Box.vecMax.X, s.Box.vecMax.Y, s.Box.vecMax.Z },
+            scan_points = s.Points, scan_outliers = s.Outliers, scan_noise_sigma_mm = 0.06,
+            gap_centres = gaps.Select(g => new[] { g.X, g.Y, g.Z }), gap_radius_mm = gapRadius,
+            triangles = s.Triangles, open_triangles = s.OpenTriangles, files_sha256 = files,
+        }, new JsonSerializerOptions { WriteIndented = true }) + "\n";
+
+    public sealed record SetResult(float Volume, BBox3 Box, int Points, int Outliers, int Triangles, int OpenTriangles,
+                                   SortedDictionary<string, string> Files);
+
+    /// <summary>
+    /// One fixture set: the closed STL, an open STL with scanner gaps, and a noisy
+    /// point cloud with outliers in three formats. The sampling order is fixed by
+    /// the seed, so the files are reproducible byte for byte.
+    /// </summary>
+    static SetResult WriteSet(Library lib, string dir, IBoundedImplicit shape, Vector3[] gaps, float gapRadius, int seed)
+    {
+        using Voxels vox = new(lib, shape);
         using Mesh msh = vox.mshAsMesh();
         vox.CalculateProperties(out float volume, out BBox3 box);
         msh.SaveToStlFile(Path.Combine(dir, "part.stl"), Mesh.EStlUnit.MM);
@@ -88,11 +222,9 @@ static class Fixtures
 
         // Scanner gaps: points inside these spheres are dropped, and the open
         // STL loses the triangles inside them.
-        Vector3[] gaps = { new(0, 22, 9), new(20, 0, 30), new(-30, -10, 16) };
-        const float gapRadius = 3.5f;
         bool bInGap(Vector3 p) => gaps.Any(g => Vector3.Distance(g, p) < gapRadius);
 
-        Random rnd = new(9931014);
+        Random rnd = new(seed);
         float Gauss() => (float)(Math.Sqrt(-2 * Math.Log(1 - rnd.NextDouble())) * Math.Cos(2 * Math.PI * rnd.NextDouble()));
         StringBuilder xyz = new("# synthetic scan fixture, millimetres, columns: x y z\n");
         StringBuilder xyzn = new("# synthetic scan fixture, millimetres, columns: x y z nx ny nz\n");
@@ -143,18 +275,8 @@ static class Fixtures
 
         var files = new SortedDictionary<string, string>();
         foreach (string f in new[] { "part.stl", "part_open.stl", "scan.xyz", "scan_normals.xyz", "scan.csv" })
-            files[f] = Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(Path.Combine(dir, f)))).ToLowerInvariant();
-        File.WriteAllText(Path.Combine(dir, "fixtures.json"), JsonSerializer.Serialize(new
-        {
-            shape = "synthetic rounded slab with bored boss and pin boss; not a vehicle part",
-            voxel_mm = voxel, volume_mm3 = volume,
-            bbox_min = new[] { box.vecMin.X, box.vecMin.Y, box.vecMin.Z },
-            bbox_max = new[] { box.vecMax.X, box.vecMax.Y, box.vecMax.Z },
-            scan_points = points, scan_outliers = outliers, scan_noise_sigma_mm = 0.06,
-            gap_centres = gaps.Select(g => new[] { g.X, g.Y, g.Z }), gap_radius_mm = gapRadius,
-            triangles = n, open_triangles = open.nTriangleCount(), files_sha256 = files,
-        }, new JsonSerializerOptions { WriteIndented = true }) + "\n");
-        return 0;
+            files[f] = Sha(Path.Combine(dir, f));
+        return new SetResult(volume, box, points, outliers, n, open.nTriangleCount(), files);
     }
 }
 

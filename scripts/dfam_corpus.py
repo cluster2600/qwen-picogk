@@ -34,8 +34,13 @@ CATEGORIES = {'scan': 'scan_repair', 'infill': 'bionic_infill', 'dfam': 'dfam', 
 COUNTS = {'scan': 45, 'infill': 60, 'dfam': 30, 'debug': 15}
 SPLITS = {  # valid, test per category; the rest is train
     'scan': (5, 4), 'infill': (6, 6), 'dfam': (3, 3), 'debug': (1, 2)}
-INPUTS = {'xyz': 'scan.xyz', 'xyzn': 'scan_normals.xyz', 'csv': 'scan.csv',
-          'stl': 'part.stl', 'stl_open': 'part_open.stl', 'none': ''}
+FIXTURE_FILES = {'xyz': 'scan.xyz', 'xyzn': 'scan_normals.xyz', 'csv': 'scan.csv',
+                 'stl': 'part.stl', 'stl_open': 'part_open.stl'}
+# Fixture families live in subfolders with their own fixture.json: input
+# 'bracket_stl' is bracket/part.stl and is compared with bracket/fixture.json.
+FAMILIES = ('bracket', 'manifold')
+INPUTS = {**FIXTURE_FILES, 'none': '',
+          **{f'{family}_{kind}': f'{family}/{name}' for family in FAMILIES for kind, name in FIXTURE_FILES.items()}}
 VOXEL_MM = 0.3
 RUN_SIGNATURE = 'public static void Run(Library lib, string strInputPath, string strOutputDir)'
 # Names that do not exist in PicoGK 2.3.0 or break the headless convention.
@@ -416,15 +421,21 @@ def ensure_trusted(env):
         shutil.rmtree(WORK / 'dfam-fixtures', ignore_errors=True)
     ensure_selfcheck()
     fixtures = WORK / 'dfam-fixtures'
-    if not (fixtures / 'fixtures.json').exists():
+    if not all((fixtures / f / 'fixture.json').exists() for f in FAMILIES) or not (fixtures / 'fixtures.json').exists():
         shutil.rmtree(fixtures, ignore_errors=True)
         subprocess.run(capped(['dotnet', str(checker), 'fixtures', str(fixtures), str(VOXEL_MM)], '4G'),
                        env=env, check=True, capture_output=True, timeout=600)
     return checker, fixtures, stamp
 
 
-def check_stl(checker, fixtures, stl, min_wall, env):
-    proc = subprocess.run(capped(['dotnet', str(checker), 'check', str(stl), str(fixtures / 'fixtures.json'),
+def reference_json(fixtures, kind):
+    """The fixture description whose volume an output of this input kind is compared with."""
+    folder = INPUTS[kind].rpartition('/')[0]
+    return fixtures / folder / 'fixture.json' if folder else fixtures / 'fixtures.json'
+
+
+def check_stl(checker, reference, stl, min_wall, env):
+    proc = subprocess.run(capped(['dotnet', str(checker), 'check', str(stl), str(reference),
                                   str(VOXEL_MM), str(min_wall)], '4G'),
                           env=env, capture_output=True, text=True, timeout=900)
     line = next((l for l in proc.stdout.splitlines() if l.startswith('{')), None)
@@ -523,7 +534,7 @@ def run_case(runner, checker, fixtures, case, broken, env, run_root, timeout):
         if not stl.is_file() or stl.is_symlink() or not stl.resolve().is_relative_to(out.resolve()):
             failed.append(f'missing declared output {name}')
             continue
-        metrics = check_stl(checker, fixtures, stl, expect.get('min_wall_mm', 1.0), env)
+        metrics = check_stl(checker, reference_json(fixtures, case['input']), stl, expect.get('min_wall_mm', 1.0), env)
         record['outputs'][name] = dict(metrics, stl_sha256=sha(stl.read_bytes()))
         failed += [f'{name}: {f}' for f in evaluate(metrics, expect)]
     record['failed'] = failed
