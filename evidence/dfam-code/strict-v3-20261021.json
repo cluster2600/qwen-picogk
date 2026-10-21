@@ -1,0 +1,649 @@
+{
+ "cases": {
+  "debug-001": {
+   "broken_build": {
+    "compiled": false,
+    "error_codes": [
+     "CS0029"
+    ]
+   },
+   "case_sha256": "e6c62c776b28324bcf8c3d39010b2d51300776ecdd1b2bfb2521b9ffdfd5dfe2",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       35,
+       22,
+       30.000002
+      ],
+      "bbox_min": [
+       -35,
+       -22,
+       -1.04308135e-07
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0,
+      "enclosed_void_mm3": 0,
+      "enclosed_void_regions": 0,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 51319.58,
+      "min_wall_mm": 1,
+      "needle_triangles": 0,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 257.99,
+      "overhang_fraction": 0.0232,
+      "parity_volume_mm3": 51223.3,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 0,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 9.01,
+      "selfcheck_triangles": 286768,
+      "solid_components": 1,
+      "stl_sha256": "0e1a0cf135be450413566748354f3561bf154f6ea29d793fa119dab7874ebb27",
+      "surface_area_mm2": 11134.43,
+      "thin_fraction": 0.0004,
+      "thin_wall_area_fraction": 0,
+      "triangles": 286768,
+      "volume_mm3": 51333.55,
+      "volume_ratio_to_fixture": 0.9852,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 4,
+      "wall_thickness_p05_mm": 4
+     }
+    },
+    "seconds": 31.7
+   }
+  },
+  "debug-002": {
+   "broken_run": {
+    "exit": 0,
+    "failed": [
+     "part.stl: degenerate_triangles = 388, required 0",
+     "part.stl: needle_triangles = 388, required 0",
+     "part.stl: trapped powder: 2623.104 mm3 enclosed, largest pocket 437.184 mm3 (allowed 2.0 / 0.25)",
+     "part.stl: volume_ratio_to_fixture = 0.9997, declared [0.92, 0.96]"
+    ],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       35,
+       22,
+       30.000002
+      ],
+      "bbox_min": [
+       -35,
+       -22,
+       -1.04308135e-07
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 388,
+      "enclosed_void_largest_mm3": 437.184,
+      "enclosed_void_mm3": 2623.104,
+      "enclosed_void_regions": 6,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 49434.06,
+      "min_wall_mm": 1,
+      "needle_triangles": 388,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 598.95,
+      "overhang_fraction": 0.0479,
+      "parity_volume_mm3": 49349.36,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 388,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 12.41,
+      "selfcheck_triangles": 326108,
+      "solid_components": 1,
+      "stl_sha256": "f2d8933ef361e358142a2b509cb31d830acb350e2b6c05f33625983e4d02da26",
+      "surface_area_mm2": 12517.15,
+      "thin_fraction": 0.0002,
+      "thin_wall_area_fraction": 0,
+      "triangles": 326496,
+      "volume_mm3": 52085.13,
+      "volume_ratio_to_fixture": 0.9997,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 2,
+      "wall_thickness_p05_mm": 4
+     }
+    },
+    "seconds": 14.5
+   },
+   "case_sha256": "a3e26498f57072b61fa462474c44af92d20fdfd333b42434e7d7f08e98aefd7f",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       35,
+       22,
+       30.000002
+      ],
+      "bbox_min": [
+       -35,
+       -22,
+       -1.04308135e-07
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0,
+      "enclosed_void_mm3": 0,
+      "enclosed_void_regions": 0,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 48815.76,
+      "min_wall_mm": 1,
+      "needle_triangles": 0,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 265.95,
+      "overhang_fraction": 0.0218,
+      "parity_volume_mm3": 48704.93,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 0,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 12.69,
+      "selfcheck_triangles": 323544,
+      "solid_components": 1,
+      "stl_sha256": "9553d9c342e45c587550c106c417ef8985639aa0fd7cf95dd94512653659ba4b",
+      "surface_area_mm2": 12224.25,
+      "thin_fraction": 0.0006,
+      "thin_wall_area_fraction": 0,
+      "triangles": 323544,
+      "volume_mm3": 48846.45,
+      "volume_ratio_to_fixture": 0.9375,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 4,
+      "wall_thickness_p05_mm": 4
+     }
+    },
+    "seconds": 41.5
+   }
+  },
+  "dfam-001": {
+   "case_sha256": "85a8cf849117987d6913738bb9a64c4b28759e257f83142e8088ebce279456ab",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       35,
+       22,
+       30.000002
+      ],
+      "bbox_min": [
+       -35,
+       -22,
+       -1.04308135e-07
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0,
+      "enclosed_void_mm3": 0,
+      "enclosed_void_regions": 0,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 49901.98,
+      "min_wall_mm": 1,
+      "needle_triangles": 0,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 262.79,
+      "overhang_fraction": 0.0218,
+      "parity_volume_mm3": 49813.84,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 0,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 13.61,
+      "selfcheck_triangles": 313476,
+      "solid_components": 1,
+      "stl_sha256": "4b7ece573fc7364d6f8bea34d880f0b709cc39f6d5624f2a7315d5d97c6231da",
+      "surface_area_mm2": 12065.85,
+      "thin_fraction": 0.0003,
+      "thin_wall_area_fraction": 0,
+      "triangles": 313476,
+      "volume_mm3": 49921.88,
+      "volume_ratio_to_fixture": 0.9581,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 3.9883,
+      "wall_thickness_p05_mm": 4
+     }
+    },
+    "seconds": 31.2
+   }
+  },
+  "dfam-002": {
+   "case_sha256": "21df8fe89dcc5c824ac6ae0fc9c8aa9943d28a4081a5742f89a3ffcc1d6450bf",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       30,
+       20.000002,
+       38
+      ],
+      "bbox_min": [
+       -29.999998,
+       -20.000002,
+       -1.04308135e-07
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0,
+      "enclosed_void_mm3": 0,
+      "enclosed_void_regions": 0,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 25308.1,
+      "min_wall_mm": 1,
+      "needle_triangles": 0,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 56.15,
+      "overhang_fraction": 0.0059,
+      "parity_volume_mm3": 25610.02,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 0,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 10.7,
+      "selfcheck_triangles": 227840,
+      "solid_components": 1,
+      "stl_sha256": "f1c21e9a1f8c2aaca02fb18cf2966558f9246e55281b7a234ec28832e7bc0d2f",
+      "surface_area_mm2": 9437.43,
+      "thin_fraction": 0.001,
+      "thin_wall_area_fraction": 0,
+      "triangles": 227840,
+      "volume_mm3": 25298.46,
+      "volume_ratio_to_fixture": 1.1411,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 1.2,
+      "wall_thickness_p05_mm": 2
+     }
+    },
+    "seconds": 37.8
+   }
+  },
+  "infill-001": {
+   "case_sha256": "45cfba17eb43c2b26df97677103bf965d8406c8cee04bedb9254d7fc88a4ead3",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       35,
+       22,
+       30.000002
+      ],
+      "bbox_min": [
+       -35,
+       -22,
+       -1.04308135e-07
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0.054,
+      "enclosed_void_mm3": 0.108,
+      "enclosed_void_regions": 2,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 32587.01,
+      "min_wall_mm": 1,
+      "needle_triangles": 0,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 4431.69,
+      "overhang_fraction": 0.1086,
+      "parity_volume_mm3": 32535.52,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 0,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 25.48,
+      "selfcheck_triangles": 1295538,
+      "solid_components": 1,
+      "stl_sha256": "91ec53f88a853126c97035af0879ce1f19231fae301facc25ff7367249c8cdfc",
+      "surface_area_mm2": 40818.58,
+      "thin_fraction": 0.0081,
+      "thin_wall_area_fraction": 0.00371,
+      "triangles": 1295538,
+      "volume_mm3": 33600.56,
+      "volume_ratio_to_fixture": 0.6449,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 1.0495,
+      "wall_thickness_p05_mm": 1.2039
+     }
+    },
+    "seconds": 102.7
+   }
+  },
+  "infill-002": {
+   "case_sha256": "40302dc4bb76a1836ba33887b85c45d72cc4c9de3e977e9fbf945e9389309659",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       25,
+       18,
+       29.999998
+      ],
+      "bbox_min": [
+       -25,
+       -18,
+       -2.0861627e-07
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0,
+      "enclosed_void_mm3": 0,
+      "enclosed_void_regions": 0,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 28464.68,
+      "min_wall_mm": 1,
+      "needle_triangles": 0,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 3839.94,
+      "overhang_fraction": 0.1112,
+      "parity_volume_mm3": 28593.14,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 0,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 11.54,
+      "selfcheck_triangles": 1072966,
+      "solid_components": 1,
+      "stl_sha256": "730de9dbe5a381259cc43bb1a78eaab3841f9c46926171ebd5eb844cb6e572d1",
+      "surface_area_mm2": 34528.05,
+      "thin_fraction": 0.0039,
+      "thin_wall_area_fraction": 0.00193,
+      "triangles": 1072966,
+      "volume_mm3": 28882.96,
+      "volume_ratio_to_fixture": 0.5701,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 1.1375,
+      "wall_thickness_p05_mm": 1.1428
+     }
+    },
+    "seconds": 247.1
+   }
+  },
+  "scan-001": {
+   "case_sha256": "063ca1d5554acc508f86306de9f02754e85af261ceeccbb33d4420bf168ca9f3",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       35.151062,
+       22.26779,
+       30.15139
+      ],
+      "bbox_min": [
+       -35.148895,
+       -22.601595,
+       -0.31787786
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0,
+      "enclosed_void_mm3": 0,
+      "enclosed_void_regions": 0,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 54670.59,
+      "min_wall_mm": 1,
+      "needle_triangles": 0,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 475.98,
+      "overhang_fraction": 0.0477,
+      "parity_volume_mm3": 54679.38,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 0,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 8.43,
+      "selfcheck_triangles": 264304,
+      "solid_components": 1,
+      "stl_sha256": "83b8b64151e89095e6537fd5cc9db3c55863514530fd8b4bbac921f19f5a531a",
+      "surface_area_mm2": 9978.95,
+      "thin_fraction": 0.0001,
+      "thin_wall_area_fraction": 0,
+      "triangles": 264304,
+      "volume_mm3": 54674.7,
+      "volume_ratio_to_fixture": 1.0494,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 4,
+      "wall_thickness_p05_mm": 4
+     }
+    },
+    "seconds": 259.8
+   }
+  },
+  "scan-002": {
+   "case_sha256": "750319c5813c4e94bcba8864f46152c5f3e44985e9a2e62937750aa9f40dc44b",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       30.066034,
+       20.057852,
+       38.10167
+      ],
+      "bbox_min": [
+       -30.055399,
+       -20.05679,
+       -0.090157025
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0,
+      "enclosed_void_mm3": 0,
+      "enclosed_void_regions": 0,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 22205.6,
+      "min_wall_mm": 1,
+      "needle_triangles": 0,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 495.03,
+      "overhang_fraction": 0.0516,
+      "parity_volume_mm3": 22340.88,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 0,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 5.51,
+      "selfcheck_triangles": 252544,
+      "solid_components": 1,
+      "stl_sha256": "a50e3f339f661fc3dc3bb5ad436dc9b598a665182830bc5db4516e25f9625e7c",
+      "surface_area_mm2": 9587.08,
+      "thin_fraction": 0.0066,
+      "thin_wall_area_fraction": 0.03167,
+      "triangles": 252544,
+      "volume_mm3": 22194.03,
+      "volume_ratio_to_fixture": 1.0011,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 0.7936,
+      "wall_thickness_p05_mm": 1.9755
+     }
+    },
+    "seconds": 209.7
+   }
+  },
+  "scan-003": {
+   "case_sha256": "189a3e88fbbbd0d37bfa1414ec976de806a9e0f94854c6f6b4f7f3bb6a916507",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       25,
+       18,
+       29.999998
+      ],
+      "bbox_min": [
+       -25,
+       -18,
+       -1.04308135e-07
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0,
+      "enclosed_void_mm3": 0,
+      "enclosed_void_regions": 0,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 50651.62,
+      "min_wall_mm": 1,
+      "needle_triangles": 0,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 450.74,
+      "overhang_fraction": 0.0464,
+      "parity_volume_mm3": 50755.63,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 0,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 4.63,
+      "selfcheck_triangles": 238688,
+      "solid_components": 1,
+      "stl_sha256": "c86175857bd6786395b5a15938e14d34e3ce99d01534461c95e36757a3c57688",
+      "surface_area_mm2": 9718.87,
+      "thin_fraction": 0.0001,
+      "thin_wall_area_fraction": 0,
+      "triangles": 238688,
+      "volume_mm3": 50662.91,
+      "volume_ratio_to_fixture": 1.0001,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 4,
+      "wall_thickness_p05_mm": 4
+     }
+    },
+    "seconds": 27.7
+   }
+  },
+  "scan-004": {
+   "case_sha256": "de6f4c69ae37b76491d191e6e59e7dc06aa85e3bfd2765e40ca0fc0ab9f4fbdd",
+   "passed": true,
+   "reasons": [],
+   "run": {
+    "exit": 0,
+    "failed": [],
+    "outputs": {
+     "part.stl": {
+      "bbox_max": [
+       35.05596,
+       22.531479,
+       30.323738
+      ],
+      "bbox_min": [
+       -35.046574,
+       -22.074903,
+       -0.30765906
+      ],
+      "boundary_edges": 0,
+      "degenerate_triangles": 0,
+      "enclosed_void_largest_mm3": 0,
+      "enclosed_void_mm3": 0,
+      "enclosed_void_regions": 0,
+      "inconsistent_orientation_edges": 0,
+      "largest_component_fraction": 1,
+      "mesh_volume_mm3": 52016.01,
+      "min_wall_mm": 1,
+      "needle_triangles": 0,
+      "nonmanifold_edges": 0,
+      "overhang_area_mm2": 455.39,
+      "overhang_fraction": 0.0427,
+      "parity_volume_mm3": 51940.07,
+      "self_intersecting_coplanar_pairs": 0,
+      "self_intersecting_pairs": 0,
+      "self_intersecting_triangles": 0,
+      "selfcheck_collapsed_triangles": 0,
+      "selfcheck_engine": "libigl 2.6.3 find_self_intersections",
+      "selfcheck_seconds": 7.15,
+      "selfcheck_triangles": 305568,
+      "solid_components": 1,
+      "stl_sha256": "e53e176a6200b0aa35ad847468a04aeb4295b8fcc88689f06f2e84b68dd4e6cb",
+      "surface_area_mm2": 10661.48,
+      "thin_fraction": 0.0002,
+      "thin_wall_area_fraction": 0.0002,
+      "triangles": 305568,
+      "volume_mm3": 52021.12,
+      "volume_ratio_to_fixture": 0.9984,
+      "wall_thickness_cap_mm": 4,
+      "wall_thickness_p01_mm": 4,
+      "wall_thickness_p05_mm": 4
+     }
+    },
+    "seconds": 63.0
+   }
+  }
+ },
+ "checker_source_sha256": "8fe84000b7f59a16a4208f8138bab26efd572ea9680ff44233e5144e2be78469",
+ "fixtures": {
+  "bracket/part.stl": "c49d5f72e3a305f1d6fe782b1c59458f36867b6740c009828c5c7b6bda4b7c7d",
+  "bracket/part_open.stl": "9bcf3293e9e955bce6fc753ef356a2a2315d772749c425b204d1772148fda882",
+  "bracket/scan.csv": "b33c8da307ef6944ab2860cce0c323a231d9353ec821f42e521e29cedfb7f798",
+  "bracket/scan.xyz": "522379b6d28901285f4b8786c1b50f518fbd23018a52fccca525960fb07bf03c",
+  "bracket/scan_normals.xyz": "85240fb9800ae727f31fd781eb28709904db6b3c724dbb1ae69a9e7a6ea2393b",
+  "manifold/part.stl": "4da798323d1c36d863e15e7b296772c62fbd2595e30747ba4f4eee3cf1af2c4e",
+  "manifold/part_open.stl": "cce95904ddc413543455c2bc68c902b5414ef5e5f7734e115474d671c01cc94b",
+  "manifold/scan.csv": "d6a707e35395e8dbdecbff8bb51e8f70cc844cfe016d55d88f4e98d2a4fac231",
+  "manifold/scan.xyz": "f9ee6f48b701a249715e6bf02cb0c09db0156778a28c97589edd5e7eb94365aa",
+  "manifold/scan_normals.xyz": "99b60c459e1364a74d29040e4a5274af3656e84bf76e20b17de6c7ee007d5b5c",
+  "part.stl": "79cb1719d6ff41222be81d5dc43740db0680cb8f46be4db2fab6946df44830ed",
+  "part_open.stl": "601aaaca2f9f3fa6ff616c39f24c01958f197c44aff0c94bfc410a4d2c97d2a3",
+  "scan.csv": "1938faadfe8beea4bd50dc553b08cd627cab8223b2648dd799cdc6b662b16f69",
+  "scan.xyz": "99a9d97f1fe5a414ff1b31b08344293cd1e3595d628376ec36c06a58a7f826c6",
+  "scan_normals.xyz": "18a070ac655fe2cc6e15973b2008994ba13a7ac9ec4d37640f197d303fcb8993"
+ },
+ "isolation": "linux-bubblewrap-systemd",
+ "picogk_package": "2.3.0",
+ "policy": "dfam-strict-v3",
+ "policy_source_sha256": "9402e03bf4a91c2a2a293d022e51014bb2e6c69106280335196fdf872232435d",
+ "voxel_mm": 0.3
+}

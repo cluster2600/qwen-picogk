@@ -1,16 +1,19 @@
 # PicoGK DfAM corpus: authoring, verification and training gates
 
 This is a work-in-progress teaching corpus, separate from the released
-parameter planner and the AM C# study. It has **eight examples**, not 150
+parameter planner and the AM C# study. It has **ten examples**, not 150
 completed examples and not a newly trained model. Under the current
-`dfam-strict-v3` policy, all eight cases pass isolated native verification on
-Linux ([receipt](../evidence/dfam-code/strict-v3-20261019.json)).
+`dfam-strict-v3` policy, all ten cases pass isolated native verification on
+Linux ([receipt](../evidence/dfam-code/strict-v3-20261021.json)).
+- `scan-003` and `scan-004` were added on 2026-10-21. They are the first
+  cases to read the open STL and the CSV inputs.
 - `scan-002`, `dfam-002`, `infill-002` and `debug-002` were added on
   2026-10-19, together with two new [fixture families](#fixture-families).
 - `infill-001` was revised to weld its export, drop collapsed faces and
   remove the detached zero-volume sheet described below. Its original source
   is archived in `evidence/dfam-code/snapshots/`.
-- The [2026-10-17](../evidence/dfam-code/strict-v3-20261017.json) and
+- The [2026-10-19](../evidence/dfam-code/strict-v3-20261019.json),
+  [2026-10-17](../evidence/dfam-code/strict-v3-20261017.json) and
   [first](../evidence/dfam-code/strict-v3-20261015.json) strict-v3 receipts
   and the [strict-v2](../evidence/dfam-code/strict-v2-20261015.json) receipt
   are kept as history.
@@ -92,9 +95,9 @@ flowchart LR
     G["Checker fixtures<br/>trusted, deterministic"] --> S["slab<br/>fixtures.json"]
     G --> B["bracket/<br/>fixture.json"]
     G --> M["manifold/<br/>fixture.json"]
-    S --> C1["scan-001 · infill-001 · dfam-001<br/>debug-001 · debug-002"]
+    S --> C1["scan-001 · infill-001 · dfam-001<br/>debug-001 · debug-002<br/>scan-004 from csv"]
     B --> C2["scan-002 from bracket_xyzn<br/>dfam-002 from bracket_stl"]
-    M --> C3["infill-002 from manifold_stl"]
+    M --> C3["infill-002 from manifold_stl<br/>scan-003 from manifold_stl_open"]
 ```
 
 One radius had to change before the bracket was usable. A 3.0 mm hole
@@ -219,6 +222,48 @@ sealed volume.
 
 ![debug-002 broken and corrected](visuals/dfam/debug-002-pockets.png)
 
+### Cases added on 2026-10-21
+
+Both are scan repairs with methods the corpus did not have yet. All numbers
+are from the [2026-10-21 receipt](../evidence/dfam-code/strict-v3-20261021.json),
+which also re-verifies the eight earlier cases.
+
+**`scan-003`: open STL repaired on the mesh.** The manifold's open STL lacks
+the triangles of three 6 mm scanner gaps. The program welds the triangle
+soup, finds the hole rims as directed edges without a reverse, and closes
+each rim with a minimum-area triangulation computed by dynamic programming
+(Barequet and Sharir 1995). It then voxelises and remeshes the closed
+surface. Volume ratio 1.0001, no enclosed void, and the 6 mm channel and its
+ports stay open, in 28 s. Run through `scan-001`'s published code outside the
+verifier, the manifold's point cloud comes out 5.6 % over volume with no
+enclosed void, about the channel's volume: the closing bridges the ports and
+fills the channel. The program stops on flipped, duplicate or non-manifold
+faces, and on holes wider than a scanner gap (12 mm bounding-box diagonal).
+
+**`scan-004`: CSV cloud with normals estimated from the points.** The slab's
+`scan.csv` is read by header name, so column order, units in the header,
+semicolons and decimal commas do not matter, and normal columns are ignored.
+Normals come from PCA of each point's 16 neighbours and are oriented along a
+minimum spanning tree (Hoppe et al. 1992). The solid is the signed distance
+to the nearest tangent plane. Volume ratio 0.9984 with the 9 mm bore open,
+against 1.0494 for `scan-001`'s closing on the same slab, in 63 s.
+
+Three pitfalls found while writing it are explained in the case:
+- With one-way neighbour links, a stray point is nobody's neighbour and
+  keeps an arbitrary sign. Its plane then claims its whole Voronoi cell, a
+  cone of material that runs out to the render box. Links go both ways.
+- Fitted together with its own neighbours, an outlier tilts its plane
+  towards itself and passes the offset test. Planes are fitted without the
+  point.
+- The orientation cost 1 − |ni · nj| rates the two faces of a thin wall as a
+  perfect match, so the sign jumps through the wall. Links between parallel
+  planes more than 0.25 mm apart are dropped.
+
+On the bracket's 0.8 mm rib the method still fails, because 16-point
+neighbourhoods span both faces. The program checks its own mesh for open
+edges and refuses that input rather than exporting it. `scan-002`, which uses
+the scanner's normals and a winding number, is the case for such parts.
+
 ### Limits of the checks
 
 The checker still does not establish strength, fatigue, dimensional
@@ -336,7 +381,7 @@ python3.12 scripts/dfam_corpus.py assemble --check \
   --receipt work/dfam-strict-v3.json --base /path/to/exact/base
 ```
 
-Both commands currently refuse the incomplete eight-case corpus with an explicit
+Both commands currently refuse the incomplete ten-case corpus with an explicit
 diagnostic. They require the complete category counts and partition plan,
 current passing native receipts and unchanged base files. The tokenizer applies
 its actual chat template once, including end markers. Every row must fit
@@ -348,7 +393,7 @@ and unchanged files are left in place. Use a new corpus version for a new
 partition protocol.
 Raw `text` ChatML rows are incompatible with `mask_prompt: true` in the pinned
 MLX-LM 0.31.3. With the pinned tokenizer the current examples assemble to
-3.2k-7.1k tokens (`scan-002` is the longest); the original 1,024-token
+3.2k-7.5k tokens (`scan-004` is the longest); the original 1,024-token
 planner configurations are unsuitable for complete DfAM programs.
 
 `training/configs/dfam-code.json` is a JSON configuration (also valid YAML),
