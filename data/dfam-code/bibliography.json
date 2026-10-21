@@ -123,5 +123,10 @@
   "cite": "Lane et al. (2020)",
   "entry": "Lane, B., Heigel, J., Ricker, R., Zhirnov, I., Khromschenko, V., Weaver, J., Phan, T., Stoudt, M., Mekhontsev, S., & Levine, L. (2020). Measurements of melt pool geometry and cooling rates of individual laser traces on IN625 bare plates. Integrating Materials and Manufacturing Innovation, 9(1), 16-30. https://doi.org/10.1007/s40192-020-00169-1",
   "scope": "AM-Bench 2018 (AMB2018-02) measurements of melt-pool width, depth and cooling rate for single laser traces on IN625 bare plates. Cite for those reference measurements only."
+ },
+ "barequet1995": {
+  "cite": "Barequet and Sharir (1995)",
+  "entry": "Barequet, G., & Sharir, M. (1995). Filling gaps in the boundary of a polyhedron. Computer Aided Geometric Design, 12(2), 207-229. https://doi.org/10.1016/0167-8396(94)00011-G",
+  "scope": "Repairing polyhedral boundaries with gaps: boundary loops are identified and each remaining hole is closed by a minimum-area triangulation found by an O(n^3) dynamic program over the loop's vertex order. Cite for the hole-triangulation step. Corpus code fills each boundary loop independently; it does not implement the paper's matching of boundary chains across gaps."
  }
 }
