@@ -1,10 +1,13 @@
 # PicoGK DfAM corpus: authoring, verification and training gates
 
 This is a work-in-progress teaching corpus, separate from the released
-parameter planner and the AM C# study. It has **ten examples**, not 150
+parameter planner and the AM C# study. It has **eleven examples**, not 150
 completed examples and not a newly trained model. Under the current
-`dfam-strict-v3` policy, all ten cases pass isolated native verification on
-Linux ([receipt](../evidence/dfam-code/strict-v3-20261021.json)).
+`dfam-strict-v3` policy, all eleven cases pass isolated native verification on
+Linux ([receipt](../evidence/dfam-code/strict-v3-20261021b.json)).
+- `infill-003` was added later on 2026-10-21. It is the first strut lattice
+  and the first case designed to leave no down-skin inside the part flatter
+  than 45 deg.
 - `scan-003` and `scan-004` were added on 2026-10-21. They are the first
   cases to read the open STL and the CSV inputs.
 - `scan-002`, `dfam-002`, `infill-002` and `debug-002` were added on
@@ -12,7 +15,8 @@ Linux ([receipt](../evidence/dfam-code/strict-v3-20261021.json)).
 - `infill-001` was revised to weld its export, drop collapsed faces and
   remove the detached zero-volume sheet described below. Its original source
   is archived in `evidence/dfam-code/snapshots/`.
-- The [2026-10-19](../evidence/dfam-code/strict-v3-20261019.json),
+- The [first 2026-10-21](../evidence/dfam-code/strict-v3-20261021.json),
+  [2026-10-19](../evidence/dfam-code/strict-v3-20261019.json),
   [2026-10-17](../evidence/dfam-code/strict-v3-20261017.json) and
   [first](../evidence/dfam-code/strict-v3-20261015.json) strict-v3 receipts
   and the [strict-v2](../evidence/dfam-code/strict-v2-20261015.json) receipt
@@ -37,8 +41,9 @@ flowchart LR
 ## Shared export cleanup
 
 PicoGK's mesher can emit zero-area triangles where a surface passes exactly
-through voxel lattice points. Six cases (`infill-001`, `debug-001`,
-`dfam-001`, `dfam-002`, `infill-002` and `debug-002`) therefore embed the
+through voxel lattice points. Eight cases (`infill-001`, `debug-001`,
+`dfam-001`, `dfam-002`, `infill-002`, `debug-002`, `scan-003` and
+`infill-003`) therefore embed the
 same export cleanup, kept as a single source in
 `dfam-native/MeshCleanup.cs`. It replaces vertices consistently by the first
 vertex in each rounded 0.0001 mm cell, which is the checker's own weld
@@ -95,7 +100,7 @@ flowchart LR
     G["Checker fixtures<br/>trusted, deterministic"] --> S["slab<br/>fixtures.json"]
     G --> B["bracket/<br/>fixture.json"]
     G --> M["manifold/<br/>fixture.json"]
-    S --> C1["scan-001 · infill-001 · dfam-001<br/>debug-001 · debug-002<br/>scan-004 from csv"]
+    S --> C1["scan-001 · infill-001 · dfam-001<br/>debug-001 · debug-002 · infill-003<br/>scan-004 from csv"]
     B --> C2["scan-002 from bracket_xyzn<br/>dfam-002 from bracket_stl"]
     M --> C3["infill-002 from manifold_stl<br/>scan-003 from manifold_stl_open"]
 ```
@@ -264,6 +269,51 @@ neighbourhoods span both faces. The program checks its own mesh for open
 edges and refuses that input rather than exporting it. `scan-002`, which uses
 the scanner's normals and a winding number, is the case for such parts.
 
+### Case added later on 2026-10-21
+
+**`infill-003`: a strut lattice with no flat down-skin inside.** The first
+two infill cases use sheet TPMS, and the underside of the top skin stays a
+ceiling over open cells. `infill-003` hollows the slab to a 1.5 mm skin and
+fills it with a body-centred cubic strut lattice stretched along z (6 x 6 x
+12.5 mm cells, 1.4 mm struts), so the diagonals rise at 55.8 deg instead of
+35.3 deg. Vertical struts stand at the cell corners and centres, a square
+grid turned 45 deg with no point of the plan more than 3 mm from one. Each
+carries a capital, an inverted cone that widens at 51 deg until it meets the
+ceiling, as on the columns of a flat-slab floor. Neighbouring capitals meet
+in pointed ridges, so the ceiling of the cavity is edges, not flat patches.
+Grid points just outside the core get capitals too, which become chamfers
+against the wall.
+
+In the [second 2026-10-21 receipt](../evidence/dfam-code/strict-v3-20261021b.json),
+which re-verifies all eleven cases, the part is one solid with no open
+edges, no enclosed void and no self-intersection, at 0.531 of the solid
+volume, in 40 s. Its overhang fraction is 0.0259 (797 mm² of 30,781 mm²),
+against 0.1086 for `infill-001`'s gyroid on the same slab. About 330 mm² of
+that is the slab's own rounded bottom edge; most of the rest lies along the
+capital ridges, which the voxel mesh rounds into strips about one voxel
+wide. A development control run of the same lattice without capitals, outside
+the verifier, measured 2,520 mm² (0.0665) at 0.453 of the volume: the
+capitals cost 0.08 of the solid volume and remove about 1,700 mm² of
+down-skin. The 1st percentile of the mesh wall thickness is 1.30 mm.
+
+Three details came from the checker rather than from the idea:
+- Capitals cut off flat just above their own ceiling closed an 11 mm³ powder
+  pocket under the taller pin boss. They are no longer cut off, so the
+  bosses end up partly solid near their walls.
+- Diagonals that climb into a capital run almost parallel to its face, a
+  fraction of a millimetre below it, and sealed 49 one-voxel slivers. Those
+  diagonals are skipped; the vertical strut carries the capital.
+- The capital field is a min/max of continuous terms rendered into a box
+  grown by the reach. A field with jumps meshed open (see the runtime
+  findings in the [corpus README](../data/dfam-code/README.md)).
+
+Capitals only serve the top ceiling of each column. The program walks every
+column to the bottom and refuses a core that reappears below a gap: on the
+manifold fixture it stops because 27 columns meet a second ceiling under the
+channel. On the bracket, outside the verifier, it returns one solid with no
+enclosed void; that output's higher overhang share (0.055) comes from the
+bracket's own 12 mm lip.
+
 ### Limits of the checks
 
 The checker still does not establish strength, fatigue, dimensional
@@ -381,7 +431,7 @@ python3.12 scripts/dfam_corpus.py assemble --check \
   --receipt work/dfam-strict-v3.json --base /path/to/exact/base
 ```
 
-Both commands currently refuse the incomplete ten-case corpus with an explicit
+Both commands currently refuse the incomplete eleven-case corpus with an explicit
 diagnostic. They require the complete category counts and partition plan,
 current passing native receipts and unchanged base files. The tokenizer applies
 its actual chat template once, including end markers. Every row must fit

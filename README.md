@@ -149,7 +149,7 @@ model's wider usefulness needs independent evaluation.
 ## Contents
 
 The [DfAM corpus guide](docs/DFAM_CODE_CORPUS.md) describes a separate
-authoring effort and its strict training gates. Its ten examples pass
+authoring effort and its strict training gates. Its eleven examples pass
 isolated native verification under `dfam-strict-v3`; no DfAM training set or
 new qualified model is claimed.
 
