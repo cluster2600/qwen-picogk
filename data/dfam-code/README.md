@@ -11,12 +11,13 @@ laser powder bed fusion of metals (PBF-LB/M). The planned split is 45 scan
 repair, 60 bionic infill, 30 DfAM and 15 troubleshooting cases. No
 train/valid/test files exist yet, and assembly requires all 150 cases.
 All eleven cases pass the strict policy `dfam-strict-v3` under isolated native
-verification ([receipt](../../evidence/dfam-code/strict-v3-20261021b.json)).
+verification ([receipt](../../evidence/dfam-code/strict-v3-20261022c.json)).
 `infill-001` now welds its export, drops collapsed faces and removes detached
 shells that enclose no volume. Its original source is archived byte for byte
 in [evidence/dfam-code/snapshots](../../evidence/dfam-code/snapshots/), and
 its earlier receipts are kept, together with the
-[first 2026-10-21](../../evidence/dfam-code/strict-v3-20261021.json),
+2026-10-21 ([first](../../evidence/dfam-code/strict-v3-20261021.json),
+[second](../../evidence/dfam-code/strict-v3-20261021b.json)),
 [2026-10-19](../../evidence/dfam-code/strict-v3-20261019.json),
 [2026-10-17](../../evidence/dfam-code/strict-v3-20261017.json) and
 [first](../../evidence/dfam-code/strict-v3-20261015.json) strict-v3 receipts and

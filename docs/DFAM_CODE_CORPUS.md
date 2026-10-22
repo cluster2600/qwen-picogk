@@ -4,10 +4,11 @@ This is a work-in-progress teaching corpus, separate from the released
 parameter planner and the AM C# study. It has **eleven examples**, not 150
 completed examples and not a newly trained model. Under the current
 `dfam-strict-v3` policy, all eleven cases pass isolated native verification on
-Linux ([receipt](../evidence/dfam-code/strict-v3-20261021b.json)).
-- `infill-003` was added later on 2026-10-21. It is the first strut lattice
-  and the first case designed to leave no down-skin inside the part flatter
-  than 45 deg.
+Linux ([receipt](../evidence/dfam-code/strict-v3-20261022c.json)).
+- `infill-003` was added on 2026-10-21 and revised on 2026-10-22 after
+  review. It is the first strut lattice, and the first case that measures
+  its own inner down-skin: faces flatter than 45 deg may only form strips
+  narrower than 1 mm.
 - `scan-003` and `scan-004` were added on 2026-10-21. They are the first
   cases to read the open STL and the CSV inputs.
 - `scan-002`, `dfam-002`, `infill-002` and `debug-002` were added on
@@ -15,7 +16,8 @@ Linux ([receipt](../evidence/dfam-code/strict-v3-20261021b.json)).
 - `infill-001` was revised to weld its export, drop collapsed faces and
   remove the detached zero-volume sheet described below. Its original source
   is archived in `evidence/dfam-code/snapshots/`.
-- The [first 2026-10-21](../evidence/dfam-code/strict-v3-20261021.json),
+- The 2026-10-21 ([first](../evidence/dfam-code/strict-v3-20261021.json),
+  [second](../evidence/dfam-code/strict-v3-20261021b.json)),
   [2026-10-19](../evidence/dfam-code/strict-v3-20261019.json),
   [2026-10-17](../evidence/dfam-code/strict-v3-20261017.json) and
   [first](../evidence/dfam-code/strict-v3-20261015.json) strict-v3 receipts
@@ -284,14 +286,22 @@ in pointed ridges, so the ceiling of the cavity is edges, not flat patches.
 Grid points just outside the core get capitals too, which become chamfers
 against the wall.
 
-In the [second 2026-10-21 receipt](../evidence/dfam-code/strict-v3-20261021b.json),
+In the [2026-10-22 receipt](../evidence/dfam-code/strict-v3-20261022c.json),
 which re-verifies all eleven cases, the part is one solid with no open
 edges, no enclosed void and no self-intersection, at 0.531 of the solid
-volume, in 40 s. Its overhang fraction is 0.0259 (797 mm² of 30,781 mm²),
+volume, in 102 s on a loaded host. Its overhang fraction is 0.0259 (797 mm² of 30,781 mm²),
 against 0.1086 for `infill-001`'s gyroid on the same slab. About 330 mm² of
-that is the slab's own rounded bottom edge; most of the rest lies along the
-capital ridges, which the voxel mesh rounds into strips about one voxel
-wide. A development control run of the same lattice without capitals, outside
+that is the slab's own rounded bottom edge. The rest is inside: a level set
+rounds every ridge tip through straight down, so a strip along each ridge
+is flatter than 45 deg. A whole-part fraction cannot tell such strips from a
+flat ceiling, so the program checks them itself before export. It takes the
+faces flatter than 45 deg that lie deeper in the body than the narrow band,
+rasterises them in plan on a 0.1 mm grid per 1 mm layer and erodes them to
+measure the widest patch, and it stops above 1.0 mm, inside the one to two
+millimetres of horizontal overhang Kokkonen et al. advise against
+exceeding. On the slab, 539 mm² of inner faces are flatter than 45 deg and
+the widest patch is about 0.8 mm; the same lattice without capitals is
+refused at about 4.4 mm. A development control run of the same lattice without capitals, outside
 the verifier, measured 2,520 mm² (0.0665) at 0.453 of the volume: the
 capitals cost 0.08 of the solid volume and remove about 1,700 mm² of
 down-skin. The 1st percentile of the mesh wall thickness is 1.30 mm.
