@@ -4,18 +4,19 @@ license: apache-2.0
 
 # PicoGK DfAM code corpus (work in progress)
 
-**Status: 8 of 150 planned cases.** This directory holds the tooling and the
+**Status: 10 of 150 planned cases.** This directory holds the tooling and the
 first examples of a corpus for C# and PicoGK 2.3.0. The task
 it covers is turning 3D scan data into lightweight parts designed for
 laser powder bed fusion of metals (PBF-LB/M). The planned split is 45 scan
 repair, 60 bionic infill, 30 DfAM and 15 troubleshooting cases. No
 train/valid/test files exist yet, and assembly requires all 150 cases.
-All eight cases pass the strict policy `dfam-strict-v3` under isolated native
-verification ([receipt](../../evidence/dfam-code/strict-v3-20261019.json)).
+All ten cases pass the strict policy `dfam-strict-v3` under isolated native
+verification ([receipt](../../evidence/dfam-code/strict-v3-20261021.json)).
 `infill-001` now welds its export, drops collapsed faces and removes detached
 shells that enclose no volume. Its original source is archived byte for byte
 in [evidence/dfam-code/snapshots](../../evidence/dfam-code/snapshots/), and
 its earlier receipts are kept, together with the
+[2026-10-19](../../evidence/dfam-code/strict-v3-20261019.json),
 [2026-10-17](../../evidence/dfam-code/strict-v3-20261017.json) and
 [first](../../evidence/dfam-code/strict-v3-20261015.json) strict-v3 receipts and
 the [strict-v2 receipt](../../evidence/dfam-code/strict-v2-20261015.json).
