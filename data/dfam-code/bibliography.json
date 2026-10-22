@@ -128,5 +128,15 @@
   "cite": "Barequet and Sharir (1995)",
   "entry": "Barequet, G., & Sharir, M. (1995). Filling gaps in the boundary of a polyhedron. Computer Aided Geometric Design, 12(2), 207-229. https://doi.org/10.1016/0167-8396(94)00011-G",
   "scope": "Repairing polyhedral boundaries with gaps: boundary loops are identified and each remaining hole is closed by a minimum-area triangulation found by an O(n^3) dynamic program over the loop's vertex order. Cite for the hole-triangulation step. Corpus code fills each boundary loop independently; it does not implement the paper's matching of boundary chains across gaps."
+ },
+ "gumruk2013": {
+  "cite": "Gümrük & Mines (2013)",
+  "entry": "Gümrük, R., & Mines, R. A. W. (2013). Compressive behaviour of stainless steel micro-lattice structures. International Journal of Mechanical Sciences, 68, 125-139. https://doi.org/10.1016/j.ijmecsci.2013.01.006",
+  "scope": "Static compression of 316L body-centred cubic (BCC) micro-lattices made by selective laser melting, with Timoshenko beam models for the initial stiffness that account for material overlap at the strut joints; the response is governed by the strut aspect ratio. Abstract-level only (full text not read): cite for BCC strut lattices being built by SLM and modelled as beams, never for numbers or for BCC-Z results."
+ },
+ "deshpande2001": {
+  "cite": "Deshpande et al. (2001)",
+  "entry": "Deshpande, V. S., Ashby, M. F., & Fleck, N. A. (2001). Foam topology: bending versus stretching dominated architectures. Acta Materialia, 49(6), 1035-1040. https://doi.org/10.1016/S1359-6454(00)00379-7",
+  "scope": "Classifies cellular architectures as bending- or stretching-dominated from their nodal connectivity, a Maxwell-type rigidity argument; stretching-dominated lattices are stiffer and stronger at the same relative density. Full text not read here: cite only for the qualitative classification, never for numbers or connectivity thresholds."
  }
 }

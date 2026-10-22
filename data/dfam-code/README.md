@@ -4,18 +4,20 @@ license: apache-2.0
 
 # PicoGK DfAM code corpus (work in progress)
 
-**Status: 10 of 150 planned cases.** This directory holds the tooling and the
+**Status: 11 of 150 planned cases.** This directory holds the tooling and the
 first examples of a corpus for C# and PicoGK 2.3.0. The task
 it covers is turning 3D scan data into lightweight parts designed for
 laser powder bed fusion of metals (PBF-LB/M). The planned split is 45 scan
 repair, 60 bionic infill, 30 DfAM and 15 troubleshooting cases. No
 train/valid/test files exist yet, and assembly requires all 150 cases.
-All ten cases pass the strict policy `dfam-strict-v3` under isolated native
-verification ([receipt](../../evidence/dfam-code/strict-v3-20261021.json)).
+All eleven cases pass the strict policy `dfam-strict-v3` under isolated native
+verification ([receipt](../../evidence/dfam-code/strict-v3-20261022c.json)).
 `infill-001` now welds its export, drops collapsed faces and removes detached
 shells that enclose no volume. Its original source is archived byte for byte
 in [evidence/dfam-code/snapshots](../../evidence/dfam-code/snapshots/), and
 its earlier receipts are kept, together with the
+2026-10-21 ([first](../../evidence/dfam-code/strict-v3-20261021.json),
+[second](../../evidence/dfam-code/strict-v3-20261021b.json)),
 [2026-10-19](../../evidence/dfam-code/strict-v3-20261019.json),
 [2026-10-17](../../evidence/dfam-code/strict-v3-20261017.json) and
 [first](../../evidence/dfam-code/strict-v3-20261015.json) strict-v3 receipts and
@@ -99,6 +101,14 @@ These were observed with PicoGK 2.3.0 and PicoGKRuntime `0f26321` on Linux:
   place several vertices on or next to that node. The result is zero-area or
   needle triangles: a 3.0 mm hole centred on a node gave 200. Keep implicit
   values off zero, or weld vertices within 0.0001 mm across cell boundaries.
+- An implicit whose field jumps, or whose solid is cut by the render box,
+  gives an open level set: during `infill-003` development a capital field of
+  that kind meshed with 5,718 open edges, and its union with the lattice
+  stayed open. Write fields as min/max of continuous terms and render into a
+  box larger than the solid.
+- `CalculateProperties` on a skin made with `voxBoolSubtract` (body minus its
+  offset core) reported 52,093 mm³, the body's volume, while the skin's mesh
+  measured 15,129 mm³. Measure hollow intermediates on the mesh.
 
 ## Limits
 
