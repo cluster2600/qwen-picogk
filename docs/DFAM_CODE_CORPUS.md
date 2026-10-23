@@ -419,6 +419,12 @@ different labels alone do not prove independent families. Keep future test
 authors and test results separate from training decisions. Existing public
 examples and exposed tests cannot be called untouched holdouts.
 
+The names of the 30 evaluation families, and two fixture families no training
+case may use, are proposed in
+[reserved validation and test families](DFAM_HOLDOUT_FAMILIES.md). That
+document is a proposal under review: no case carries a `valid` or `test` split
+yet, and reserving a name verifies nothing.
+
 Prioritize genuinely different data/operations: oriented versus unoriented
 point clouds, open versus closed meshes, multiple components, thin features,
 internal channels, independent lattice families and failure/refusal cases.
