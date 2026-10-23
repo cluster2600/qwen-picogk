@@ -1,10 +1,12 @@
 # PicoGK DfAM corpus: authoring, verification and training gates
 
 This is a work-in-progress teaching corpus, separate from the released
-parameter planner and the AM C# study. It has **eleven examples**, not 150
+parameter planner and the AM C# study. It has **twelve examples**, not 150
 completed examples and not a newly trained model. Under the current
-`dfam-strict-v3` policy, all eleven cases pass isolated native verification on
-Linux ([receipt](../evidence/dfam-code/strict-v3-20261022c.json)).
+`dfam-strict-v3` policy, all twelve cases pass isolated native verification on
+Linux ([receipt](../evidence/dfam-code/strict-v3-20261023c.json)).
+- `debug-003` was added on 2026-10-23. It is the first case about a defect in
+  the pinned runtime rather than in the program's geometry.
 - `infill-003` was added on 2026-10-21 and revised on 2026-10-22 after
   review. It is the first strut lattice, and the first case that measures
   its own inner down-skin: faces flatter than 45 deg may only form strips
@@ -16,7 +18,9 @@ Linux ([receipt](../evidence/dfam-code/strict-v3-20261022c.json)).
 - `infill-001` was revised to weld its export, drop collapsed faces and
   remove the detached zero-volume sheet described below. Its original source
   is archived in `evidence/dfam-code/snapshots/`.
-- The 2026-10-21 ([first](../evidence/dfam-code/strict-v3-20261021.json),
+- The [first 2026-10-23](../evidence/dfam-code/strict-v3-20261023.json),
+  [2026-10-22](../evidence/dfam-code/strict-v3-20261022c.json),
+  2026-10-21 ([first](../evidence/dfam-code/strict-v3-20261021.json),
   [second](../evidence/dfam-code/strict-v3-20261021b.json)),
   [2026-10-19](../evidence/dfam-code/strict-v3-20261019.json),
   [2026-10-17](../evidence/dfam-code/strict-v3-20261017.json) and
@@ -43,9 +47,9 @@ flowchart LR
 ## Shared export cleanup
 
 PicoGK's mesher can emit zero-area triangles where a surface passes exactly
-through voxel lattice points. Eight cases (`infill-001`, `debug-001`,
-`dfam-001`, `dfam-002`, `infill-002`, `debug-002`, `scan-003` and
-`infill-003`) therefore embed the
+through voxel lattice points. Nine cases (`infill-001`, `debug-001`,
+`dfam-001`, `dfam-002`, `infill-002`, `debug-002`, `scan-003`,
+`infill-003` and `debug-003`) therefore embed the
 same export cleanup, kept as a single source in
 `dfam-native/MeshCleanup.cs`. It replaces vertices consistently by the first
 vertex in each rounded 0.0001 mm cell, which is the checker's own weld
@@ -102,7 +106,7 @@ flowchart LR
     G["Checker fixtures<br/>trusted, deterministic"] --> S["slab<br/>fixtures.json"]
     G --> B["bracket/<br/>fixture.json"]
     G --> M["manifold/<br/>fixture.json"]
-    S --> C1["scan-001 · infill-001 · dfam-001<br/>debug-001 · debug-002 · infill-003<br/>scan-004 from csv"]
+    S --> C1["scan-001 · infill-001 · dfam-001<br/>debug-001 · debug-002 · infill-003<br/>debug-003 · scan-004 from csv"]
     B --> C2["scan-002 from bracket_xyzn<br/>dfam-002 from bracket_stl"]
     M --> C3["infill-002 from manifold_stl<br/>scan-003 from manifold_stl_open"]
 ```
@@ -324,6 +328,56 @@ channel. On the bracket, outside the verifier, it returns one solid with no
 enclosed void; that output's higher overhang share (0.055) comes from the
 bracket's own 12 mm lip.
 
+### Case added on 2026-10-23
+
+**`debug-003`: the implicit intersect aborts in the pinned runtime.** The
+first case whose defect is in the runtime and not in the program. The task is
+cosmetic: eight cosine grooves per side, 1.5 mm deep, cut into the vertical
+sides of the slab, which need no support because they run the full height.
+The broken program writes the groove envelope as an `IBoundedImplicit` and
+asks the voxel field to intersect itself with it. It compiles, and at the
+corpus voxel size of 0.3 mm the process dies in native code with
+`ValueError: expected grid A outside value > 0, got 0` and no STL.
+
+The abort is OpenVDB refusing the operation: the grid it was handed has a
+background value of zero, so nothing marks which side is material. The band
+width reaches it through an integer parameter (`PicoGKVdbVoxels.h:390`) that
+receives a value in millimetres, so below 1/3 mm it truncates to zero. Above
+1/3 mm the same defect is silent: the band is merely narrower than asked, and
+the intersect can return the body untouched. The corrected program renders
+the same field into the box the field declares and intersects two voxel
+fields, which keeps the band in voxel units. The field itself is unchanged.
+
+This is a `runtime_failure` case, so the broken program is compiled and run
+in every verification and must keep failing. It does, with a non-zero exit
+and that message.
+
+Eight grooves per side is a count, not a pitch, so each side pair gets its
+own frequency: a whole number of periods over that side's length, 8.8 mm
+along x and 5.5 mm along y on this blank, with the phase measured from the
+footprint corner. A shared pitch would leave a different count per pair and
+a partial groove at the corners. A count that leaves a pitch below three
+times the depth is refused.
+
+Three things are checked rather than assumed. An envelope that renders empty
+is refused. An intersect that removed essentially nothing is refused, which
+is what the narrowed band produces; the mean depth over the bounding box's
+side area is reported as a reference but not used as a threshold, because a
+part is rarely as wide as its box everywhere. And the declared 1.0 mm
+minimum wall is measured on the cut part: opening it with a ball of half the
+minimum wall removes every feature thinner than that minimum, so whatever
+the opening removes is material the shop will not accept. On the slab that
+is 1.5 mm³, three thousandths of a percent, the opening's own rounding of the
+groove crests, against a limit of two hundredths of a percent. On the
+bracket fixture, whose web is 2 mm thick, the same program refuses with
+117 mm³, 0.55 % of the part, below the minimum wall. The manifold block is
+refused earlier still: eight grooves on its 36 mm side leaves a 4.5 mm pitch.
+
+The output is one solid with no open edges, no enclosed void and no
+self-intersection, at 0.9654 of the slab, the grooves having removed
+1,775 mm³. Its overhang fraction of 0.0208 is the slab's own rounded bottom
+edge, and the wall thickness percentiles sit at the checker's 4 mm cap.
+
 ### Limits of the checks
 
 The checker still does not establish strength, fatigue, dimensional
@@ -447,7 +501,7 @@ python3.12 scripts/dfam_corpus.py assemble --check \
   --receipt work/dfam-strict-v3.json --base /path/to/exact/base
 ```
 
-Both commands currently refuse the incomplete eleven-case corpus with an explicit
+Both commands currently refuse the incomplete twelve-case corpus with an explicit
 diagnostic. They require the complete category counts and partition plan,
 current passing native receipts and unchanged base files. The tokenizer applies
 its actual chat template once, including end markers. Every row must fit
