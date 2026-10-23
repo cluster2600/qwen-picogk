@@ -40,6 +40,14 @@ trained on this repository's prose has seen the diagnosis. They belong in
 One case per family for now. A later variant of a reserved family, in any
 dimension, language or noise level, goes to that family's partition.
 
+Several reserved operations below refuse an input. None of them refuses the
+fixture it is graded on. `verify` measures an STL from every case, and only a
+troubleshooting case may carry `broken` code that is expected to fail, so a
+refusal path is exercised the way `dfam-001` and `infill-003` exercise theirs:
+the graded run succeeds, and a variant that the program refuses is recorded as
+a negative control under `evidence/dfam-code/negative-controls/`. A holdout
+whose graded fixture it refuses is a holdout that cannot be verified.
+
 ### Scan repair (5 validation, 4 test)
 
 | Split | Family | Operation that makes it distinct |
@@ -68,7 +76,7 @@ dimension, language or noise level, goes to that family's partition.
 | test | `infill-packed-hollow-spheres` | Packed hollow spheres, each with its own drain opening |
 | test | `infill-topology-blend` | A continuous blend between two sheet topologies, with a continuity guard |
 | test | `infill-channel-clearance-band` | A lattice holding a declared clearance band around internal channels |
-| test | `infill-capital-check-refusal` | A cell whose own down-skin self-check refuses the part |
+| test | `infill-guard-refuses-a-control` | A cell whose own down-skin self-check passes the graded fixture and refuses a recorded control variant |
 | test | `infill-multi-body-part` | A lattice in the reserved multi-body fixture |
 
 ### DfAM (3 validation, 3 test)
