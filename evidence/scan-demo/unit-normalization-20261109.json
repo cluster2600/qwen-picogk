@@ -1,0 +1,141 @@
+{
+  "schema": "qwen-picogk.scan-units-check@1",
+  "date": "2026-11-09",
+  "scope": "Synthetic 2 x 3 x 4 mm box, offset from the origin, written in four declared units; unit handling only",
+  "platform": "Linux x86_64 (WSL2), CPU",
+  "runtime": {
+    "picogk_package": "2.3.0",
+    "native": {
+      "name": "PicoGK Core Library",
+      "version": "26.2.0",
+      "build": "2026-06-05 21:31:47 picogk"
+    },
+    "native_source": "https://github.com/leap71/PicoGKRuntime/tree/0f26321c18ed878a7820ef769c38fd5d49d39242",
+    "voxel_mm": 0.5
+  },
+  "chain": [
+    "scripts/scan_units.py normalize",
+    "scripts/scan_mesh.py inspect",
+    "scripts/scan_mesh.py reconstruct (direct_voxelization, 1 mm/unit)",
+    "scan-native ScanDemo (scale argument 1)"
+  ],
+  "sources_sha256": {
+    "scripts/scan_units.py": "149a70311b1cb7e09430d7bb6ec63570fc36c757812b83dc119e82c1a8c3e286",
+    "scripts/scan_mesh.py": "6a9f88f00af1d83b4a3bbdfcae6fd13de0505626cce26f535f96a2598fda782f",
+    "scripts/scan_policy.py": "e1667ed881c297e163f49d6f57c1bd07b825537b23d4a956028daa222fc062d1",
+    "scan-native/Program.cs": "09502cb21da03a35e46c09c0d7cb10066035cdf03a28354a97b2d96e3f281eb1",
+    "tests/test_scan_units.py": "228e281ddd23b32a91a192bfa2874b476a4721735220bda2ed17a61e883c0a1b"
+  },
+  "analytic": {
+    "extents_mm": [
+      2.0,
+      3.0,
+      4.0
+    ],
+    "volume_mm3": 24.0
+  },
+  "cases": {
+    "mm": {
+      "scale": {
+        "status": "scale_resolved",
+        "basis": "declared_unit",
+        "declared_unit": "mm",
+        "mm_per_source_unit": 1.0,
+        "conversion_verified": true,
+        "physical_scale_verified": false
+      },
+      "normalized_obj_sha256": "9950f1a61bd945ff510d7442287383a6d27a38c2a565ce51a2996816b121cd87",
+      "reconstructed_sha256": "578c1651038a90fc8b391367d83631295005c29682be2ace8b5bd4a36fd9e2c8",
+      "native_sha256": "9bc3c1ee95b924d525d33472ed4bd19a54634d920cc487d9e9d56829ff534daf",
+      "native_triangles": 572,
+      "native_extents_mm": [
+        2.000000238418579,
+        3.000000238418579,
+        4.0
+      ],
+      "native_mesh_volume_mm3": 24.000004023313522,
+      "native_watertight": true,
+      "picogk_voxel_property_volume_mm3": 25.935953,
+      "native_scale_argument": 1
+    },
+    "cm": {
+      "scale": {
+        "status": "scale_resolved",
+        "basis": "declared_unit",
+        "declared_unit": "cm",
+        "mm_per_source_unit": 10.0,
+        "conversion_verified": true,
+        "physical_scale_verified": false
+      },
+      "normalized_obj_sha256": "9950f1a61bd945ff510d7442287383a6d27a38c2a565ce51a2996816b121cd87",
+      "reconstructed_sha256": "578c1651038a90fc8b391367d83631295005c29682be2ace8b5bd4a36fd9e2c8",
+      "native_sha256": "9bc3c1ee95b924d525d33472ed4bd19a54634d920cc487d9e9d56829ff534daf",
+      "native_triangles": 572,
+      "native_extents_mm": [
+        2.000000238418579,
+        3.000000238418579,
+        4.0
+      ],
+      "native_mesh_volume_mm3": 24.000004023313522,
+      "native_watertight": true,
+      "picogk_voxel_property_volume_mm3": 25.935953,
+      "native_scale_argument": 1
+    },
+    "m": {
+      "scale": {
+        "status": "scale_resolved",
+        "basis": "declared_unit",
+        "declared_unit": "m",
+        "mm_per_source_unit": 1000.0,
+        "conversion_verified": true,
+        "physical_scale_verified": false
+      },
+      "normalized_obj_sha256": "9950f1a61bd945ff510d7442287383a6d27a38c2a565ce51a2996816b121cd87",
+      "reconstructed_sha256": "578c1651038a90fc8b391367d83631295005c29682be2ace8b5bd4a36fd9e2c8",
+      "native_sha256": "9bc3c1ee95b924d525d33472ed4bd19a54634d920cc487d9e9d56829ff534daf",
+      "native_triangles": 572,
+      "native_extents_mm": [
+        2.000000238418579,
+        3.000000238418579,
+        4.0
+      ],
+      "native_mesh_volume_mm3": 24.000004023313522,
+      "native_watertight": true,
+      "picogk_voxel_property_volume_mm3": 25.935953,
+      "native_scale_argument": 1
+    },
+    "in": {
+      "scale": {
+        "status": "scale_resolved",
+        "basis": "declared_unit",
+        "declared_unit": "in",
+        "mm_per_source_unit": 25.4,
+        "conversion_verified": true,
+        "physical_scale_verified": false
+      },
+      "normalized_obj_sha256": "9950f1a61bd945ff510d7442287383a6d27a38c2a565ce51a2996816b121cd87",
+      "reconstructed_sha256": "578c1651038a90fc8b391367d83631295005c29682be2ace8b5bd4a36fd9e2c8",
+      "native_sha256": "9bc3c1ee95b924d525d33472ed4bd19a54634d920cc487d9e9d56829ff534daf",
+      "native_triangles": 572,
+      "native_extents_mm": [
+        2.000000238418579,
+        3.000000238418579,
+        4.0
+      ],
+      "native_mesh_volume_mm3": 24.000004023313522,
+      "native_watertight": true,
+      "picogk_voxel_property_volume_mm3": 25.935953,
+      "native_scale_argument": 1
+    }
+  },
+  "findings": {
+    "reconstructed_stl_identical_across_units": true,
+    "native_stl_identical_across_units": true,
+    "native_mesh_volume_relative_error": 1.6763806343078613e-07,
+    "picogk_voxel_property_volume_relative_excess": 0.08066470833333339,
+    "note": "The native STL encloses the analytic volume in every unit. PicoGK Voxels.CalculateProperties, recorded by the host as volume_mm3_assumed, exceeds it by the same amount in every unit; that is a voxel-estimate effect, not a unit effect."
+  },
+  "physical_scale_verified": false,
+  "scanned_object": false,
+  "manufacturing_qualified": false
+}
