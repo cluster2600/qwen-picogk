@@ -32,6 +32,8 @@ uses **1 mm per source coordinate unit**, **0.5 mm voxels**, **AlSi10Mg** as the
 intended demonstration material and **laser powder bed fusion** as the intended
 process. The material and process labels do not select machine parameters or
 alter the mesh. A filename containing `0.5mm` does not calibrate the input.
+The scale is a supplied assumption, not a conversion; an explicit
+[declared-unit step](#declared-units-and-unknown-scale) can replace it before intake.
 
 The source is private and unchanged. Intake removes only exactly zero-area
 triangles and applies a reversible rigid PCA pose. PCA is not a measured axis
@@ -189,6 +191,55 @@ are registered before geometry evaluation. They are not fitment tolerances.
 The reverse direction includes reconstructed closures where the scan has gaps.
 Sampled maxima are not exact Hausdorff distances, and the filters are finite
 numerical screens rather than mathematical proofs.
+
+## Declared units and unknown scale
+
+OBJ files carry no unit. `scripts/scan_units.py` is an explicit normalization
+step before intake that records the basis of every scale in `scale.json`:
+
+| Basis | Meaning | Receipt |
+|---|---|---|
+| `declared_unit` | A person states `mm`, `cm`, `m` or `in`; positions are multiplied once by the defined factor (1, 10, 1000, 25.4) | `conversion_verified: true` |
+| `supplied_assumption` | A person authorises a hypothesis inside the registered 0.1–2 mm/unit course | `conversion_verified: false` |
+| `unknown` | Neither; no millimetre geometry is written and no default is adopted. Source-unit bounds are kept so a person can declare the unit. Exit code 3 | `status: unknown_scale` |
+
+`physical_scale_verified` is false for every basis: a declaration is checked
+arithmetically, not against the object.
+
+```sh
+python3 scripts/scan_units.py --unit cm /private/path/scan.obj work/new-units
+```
+
+This writes `normalized.obj` in millimetres. Faces and all other records are
+copied verbatim, so the unchanged intake contract still applies. Downstream
+stages then run at the identity scale: after conversion, their 1 mm per unit is
+exact rather than a hypothesis. The `normalized_obj_sha256` in `scale.json`
+equals the chain's `input_sha256`, which binds the two receipts.
+
+`tests/test_scan_units.py` checks unit handling separately from reconstruction
+quality. The same 2 × 3 × 4 mm box, offset from the origin, is written in each
+declared unit, normalized, and compared with the expected dimensions, position
+and 24 mm³ volume at a relative tolerance of 1e-9. A wrong declaration and a
+repeated conversion each miss by a factor of ten and fail. A companion box with
+no declared unit must keep `unknown_scale`. These cases run in `make check`
+with the standard library. In the geometry runtime, the normalized boxes also
+pass the unchanged `inspect` and direct `reconstruct` stages with matching
+dimensions and volume.
+
+A [local Linux check](../evidence/scan-demo/unit-normalization-20261109.json)
+also passed the four boxes through the pinned `scan-native` host (PicoGK 2.3.0,
+PicoGKRuntime `0f26321`, 0.5 mm voxels). Reconstructed and native STLs are
+byte-identical across units; the native STL measures 2 × 3 × 4 mm and encloses
+24 mm³ to within 2e-7. The host's `volume_mm3_assumed`, taken from PicoGK's
+voxel properties, reads 8.07 % high in every unit; that is a voxel-estimate
+effect, not a unit effect. None of these checks establishes the physical size of
+a scanned object.
+
+`scan_demo.py` is not yet wired to this step. Its sources are hash-bound to the
+last completed private integration receipt, so an explicit `--unit` or
+`--assume-mm-per-unit` option, and an `unknown_scale` result in place of the
+bundled `--demo` default, wait for a new recorded run. Until then, normalize
+first and pass `normalized.obj` to the existing command.
 
 ## Local command and runtime
 
